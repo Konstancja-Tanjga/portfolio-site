@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { Shell } from "./components/Shell";
 import { Home } from "./pages/Home";
 import { Case } from "./pages/Case";
@@ -8,6 +9,7 @@ import { Watercolours } from "./pages/Watercolours";
 export default function App() {
   return (
     <Shell>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/:slug" element={<Case />} />

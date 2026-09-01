@@ -63,6 +63,14 @@ export function Watercolours() {
   );
 }
 
+/**
+ * A regular grid of mounts.
+ *
+ * The paintings are 1:1 and 4:3 and a few taller, so filling a uniform tile
+ * would crop them. Instead every tile is the same 4:3 mount and the painting
+ * sits inside it, centred and whole — which is how a framed set hangs, and
+ * the reason the grid reads as one wall rather than a pile.
+ */
 function Plates({
   paintings,
   onOpen,
@@ -71,28 +79,37 @@ function Plates({
   onOpen: (shot: { src: string; caption?: string }) => void;
 }) {
   return (
-    <div className="plates">
-      {paintings.map((painting) => {
+    <ul className="plates">
+      {paintings.map((painting, index) => {
         const caption = [painting.title, painting.note].filter(Boolean).join(" · ");
         return (
-          <figure className="plate" key={painting.src}>
+          <li
+            className="plate"
+            key={painting.src}
+            // Staggered arrival, capped so a long series does not make the
+            // last painting wait two seconds for its turn.
+            style={{ ["--plate-delay" as string]: `${Math.min(index, 7) * 45}ms` }}
+          >
             <button
               type="button"
-              className="plate__open"
+              className="plate__mount"
               onClick={() => onOpen({ src: asset(painting.src), caption })}
               aria-label={caption ? `${caption} — view full size` : "View full size"}
             >
               <img src={asset(painting.src)} alt={caption} loading="lazy" decoding="async" />
+              <span className="plate__zoom" aria-hidden="true">
+                Full size
+              </span>
             </button>
             {caption && (
-              <figcaption>
+              <p className="plate__caption">
                 {painting.title}
                 {painting.note && <span className="plate__note"> · {painting.note}</span>}
-              </figcaption>
+              </p>
             )}
-          </figure>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import type { Chapter } from "../content/types";
 
 /**
@@ -28,12 +30,16 @@ export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[
     return () => observer.disconnect();
   }, [chapters]);
 
-  if (!named.length) return null;
-
   return (
     <div className="jump">
       <div className="jump__inner">
+        {/* Always present, sticky, first in the tab order after the masthead:
+            a project page is long, and browser Back is not an interface. */}
+        <Link to="/" className="jump__back">
+          <span aria-hidden="true">←</span> Work
+        </Link>
         <span className="jump__title">{title}</span>
+        {named.length > 0 && (
         <nav className="jump__nav" aria-label="Chapters">
           {named.map((c) => (
             <a
@@ -45,6 +51,7 @@ export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[
             </a>
           ))}
         </nav>
+        )}
       </div>
     </div>
   );

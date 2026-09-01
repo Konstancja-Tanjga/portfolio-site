@@ -67,6 +67,12 @@ export function Case() {
             </Link>
           </Lane>
         )}
+
+        <Lane width="wall">
+          <Link to="/" className="back">
+            <span aria-hidden="true">←</span> All work
+          </Link>
+        </Lane>
       </Wall>
       </article>
       {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}

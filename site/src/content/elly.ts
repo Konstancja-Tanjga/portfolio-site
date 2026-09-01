@@ -16,6 +16,7 @@ export const elly: CaseStudy = {
     stamp: "STREAMING · CITATIONS · ERROR STATES · HANDOFF",
     credit: "Lead designer · Asseco Solutions · released with APplus 9, 2025",
     shot: { src: "/work/elly-ai-assistant/01.png" },
+    art: true,
   },
   meta: [
     { label: "Role", value: "Lead designer — designed from zero" },
