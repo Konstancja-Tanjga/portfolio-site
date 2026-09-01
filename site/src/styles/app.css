@@ -773,3 +773,32 @@ img { max-width: 100%; height: auto; }
   .lightbox { animation: none; }
   .shot__hint { opacity: 1; transform: none; }
 }
+
+/* ---------- a series inside a watercolour category ---------- */
+.series { margin-bottom: var(--bh-space-6); }
+.series__name {
+  margin: var(--bh-space-4) 0 var(--bh-space-1);
+  font-size: var(--bh-size-h3);
+  font-weight: 400;
+  color: var(--bh-text-strong);
+}
+.series__blurb {
+  max-width: var(--bh-measure);
+  margin: 0 0 var(--bh-space-4);
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+}
+.plate__open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.plate__open img { transition: box-shadow 180ms ease, transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.plate__open:hover img { box-shadow: 0 4px 20px rgb(0 0 0 / 0.16); transform: scale(1.008); }
+.plate__note { color: var(--bh-text-quiet); }
+@media (prefers-reduced-motion: reduce) {
+  .plate__open:hover img { transform: none; }
+}
