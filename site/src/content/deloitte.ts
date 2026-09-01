@@ -15,7 +15,6 @@ export const deloitte: CaseStudy = {
     stamp: "DESIGNED FROM ZERO · RECRUITMENT · EMPLOYER BRAND",
     credit: "Deloitte Poland · 2017–2021",
     shot: { src: "/work/deloitte-career/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Designer — owned the site end to end" },

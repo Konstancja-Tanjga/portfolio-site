@@ -15,7 +15,6 @@ export const energy: CaseStudy = {
     stamp: "CORPORATE SITE · DATA VISUALISATION · INDUSTRIAL ENERGY",
     credit: "Senior UX & UI designer · Xecta · 2022",
     shot: { src: "/work/energy-fuel/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Senior UX & UI designer, freelance" },

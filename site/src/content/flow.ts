@@ -16,7 +16,6 @@ export const flow: CaseStudy = {
     stamp: "DESKTOP · TABLET · MOBILE · SHIPPED NATIVE",
     credit: "Lead designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-flow/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Lead designer — owned the concept end to end" },
@@ -70,8 +69,7 @@ export const flow: CaseStudy = {
           html:
             "<p>TODO — why grouped by status rather than by module or by date, and what the tenant switcher had to make impossible.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/04.png" },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/05.png" },
+        { kind: "shot", width: "wall", src: "/work/applus-flow/07.png" },
       ],
     },
     {
@@ -101,7 +99,8 @@ export const flow: CaseStudy = {
           html:
             "<p>The goods-receipt scan went from five or six clicks to one, and three workarounds users had invented for themselves became unnecessary.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/07.png" },
+        { kind: "shot", width: "wall", src: "/work/applus-flow/04.png" },
+        { kind: "shot", width: "wall", src: "/work/applus-flow/05.png" },
         {
           kind: "stats",
           items: [

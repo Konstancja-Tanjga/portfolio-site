@@ -201,27 +201,6 @@ img { max-width: 100%; height: auto; }
 }
 .cover__stamp { margin-top: var(--bh-space-5); max-width: 30ch; line-height: 1.7; }
 .cover__credit { margin: var(--bh-space-5) 0 0; font-size: var(--bh-size-lead); font-weight: 300; color: var(--bh-site-on-mark); }
-.cover__shot { align-self: center; }
-.cover__shot img { display: block; width: 100%; }
-.cover__slot {
-  display: grid;
-  place-items: center;
-  min-height: 20rem;
-  border: 1px dashed var(--bh-site-on-mark);
-  font-family: var(--bh-font-id);
-  font-size: var(--bh-size-id);
-  color: var(--bh-site-on-mark);
-  padding: var(--bh-space-4);
-  text-align: center;
-}
-
-.cover--art {
-  display: block;
-  min-height: 0;
-  padding: 0;
-  background: var(--bh-mark);
-}
-.cover--art img { display: block; width: 100%; height: auto; }
 
 /* ---------- lead and meta ---------- */
 .wall__lead { margin-top: var(--bh-space-6); }
@@ -591,11 +570,13 @@ img { max-width: 100%; height: auto; }
 /* ---------- narrow ---------- */
 @media (max-width: 62rem) {
   .cover {
-    grid-template-columns: 1fr;
-    padding-left: var(--bh-gutter);
-    padding-right: var(--bh-gutter);
+    grid-template-columns: minmax(0, 1fr);
     min-height: 0;
   }
+  .cover__text { padding: var(--bh-space-6) var(--bh-gutter) var(--bh-space-5); }
+  /* Below the fold on a phone the fragment becomes a band rather than a
+     column, so the type still gets the width it needs. */
+  .cover__shot { aspect-ratio: 16 / 9; }
   .uc__slot { grid-template-columns: 1fr; gap: var(--bh-space-2); }
   .uc__note--aside { border-left: none; padding-left: 0; border-top: 2px solid var(--bh-mark); padding-top: var(--bh-space-2); }
   .step { grid-template-columns: 1fr; gap: var(--bh-space-3); }

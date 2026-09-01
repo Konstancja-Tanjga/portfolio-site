@@ -3,26 +3,19 @@ import { asset } from "./asset";
 import { Lane } from "./Wall";
 
 /**
- * The cover. Yellow field, black display, the product bleeding off
- * the right edge — the same frame every project opens on, which is
- * what makes eight projects read as one body of work.
+ * The intro. One frame every project opens on: the mark as a full field, the
+ * kicker, headline, subline, stamp and credit typeset by the site, and a
+ * fragment of the project's cover art running off the right edge.
+ *
+ * The fragment is anchored right on purpose. Every cover artboard is laid out
+ * the same way — type on the left, the product bleeding off the right — so
+ * cropping to the right edge shows the product and never the artboard's own
+ * type. Setting the whole artboard here printed the credit line twice.
+ *
+ * Sixteen identical intros is what makes sixteen projects read as one body of
+ * work rather than a folder of files.
  */
 export function Cover({ cover }: { cover: CoverData }) {
-  // A finished artboard already carries the type. Drawing the fields
-  // beside it would print the headline twice.
-  if (cover.art && cover.shot.src) {
-    return (
-      <Lane width="bleed">
-        <div className="cover cover--art">
-          <img
-            src={asset(cover.shot.src)}
-            alt={`${cover.headline.join(" ")} — ${cover.subline}`}
-          />
-        </div>
-      </Lane>
-    );
-  }
-
   return (
     <Lane width="bleed">
       <div className="cover">
@@ -37,13 +30,12 @@ export function Cover({ cover }: { cover: CoverData }) {
           <p className="kicker cover__stamp">{cover.stamp}</p>
           <p className="cover__credit">{cover.credit}</p>
         </div>
-        <div className="cover__shot">
-          {cover.shot.src ? (
+
+        {cover.shot.src && (
+          <div className="cover__shot" aria-hidden="true">
             <img src={asset(cover.shot.src)} alt="" />
-          ) : (
-            <div className="cover__slot">{cover.shot.slot ?? "hero"}</div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </Lane>
   );

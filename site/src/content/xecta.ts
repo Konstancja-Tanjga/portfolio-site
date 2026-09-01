@@ -15,7 +15,6 @@ export const xecta: CaseStudy = {
     stamp: "SAFETY-CRITICAL · DATA-DENSE · HEAVY VISUALISATION",
     credit: "Senior UX & UI designer · Xecta · 2020–2021",
     shot: { src: "/work/xecta/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Senior UX & UI designer, freelance — owned my streams end to end" },

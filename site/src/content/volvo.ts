@@ -20,7 +20,6 @@ export const volvo: CaseStudy = {
     stamp: "LEGACY REDESIGN · DESIGN SYSTEM · ACCESS AND PERMISSIONS",
     credit: "Senior UX/UI designer · Volvo Group · 2022–2023",
     shot: { src: "/work/volvo-erp/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Senior UX/UI designer, contract" },

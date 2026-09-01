@@ -19,7 +19,6 @@ export const futures: CaseStudy = {
     stamp: "STEEP · MULTIPLE FUTURES · 2×2 SCENARIOS · JOBS TO BE DONE",
     credit: "Designed and facilitated · APplus ERP · 2025",
     shot: { src: "/work/futures-thinking/00-cover.png" },
-    art: true,
   },
   meta: [
     { label: "Role", value: "Designed the programme and facilitated every session" },
