@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { byGroup, earlier } from "../content";
 import type { CaseStudy } from "../content/types";
+import { asset } from "../system/asset";
 
 export function Home() {
   return (
@@ -88,7 +89,7 @@ function Card({ study, compact }: { study: CaseStudy; compact?: boolean }) {
     <Link to={`/work/${study.slug}`} className="card">
       <div className="card__cover">
         {study.cover.shot.src ? (
-          <img src={study.cover.shot.src} alt="" loading="lazy" decoding="async" />
+          <img src={asset(study.cover.shot.src)} alt="" loading="lazy" decoding="async" />
         ) : (
           <div className="card__slot">
             <span className="kicker">{study.cover.kicker}</span>

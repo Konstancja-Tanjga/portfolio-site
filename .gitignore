@@ -3,3 +3,7 @@ dist/
 .DS_Store
 *.local
 .vercel
+
+# Watercolour originals — 100MB+ scans. The web-ready JPEGs live in
+# site/public/watercolours/ and are generated from these.
+Watercolours/

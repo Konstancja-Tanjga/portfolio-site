@@ -1,6 +1,7 @@
 import { Badge } from "@bighatpoland/ui";
 
 import type { Annotated as AnnotatedData } from "../content/types";
+import { asset } from "./asset";
 import { Lane } from "./Wall";
 
 /**
@@ -26,7 +27,7 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
 
             <figure className="shot">
               {a.shot.src ? (
-                <img className="shot__img" src={a.shot.src} alt={a.shot.caption ?? ""} loading="lazy" />
+                <img className="shot__img" src={asset(a.shot.src)} alt={a.shot.caption ?? ""} loading="lazy" />
               ) : (
                 <div className="shot__slot">
                   <span>{a.shot.slot ?? "annotated screen"}</span>

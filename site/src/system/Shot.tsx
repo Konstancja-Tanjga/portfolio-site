@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 
 import type { Shot as ShotData, Width } from "../content/types";
+import { asset } from "./asset";
 import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
 
@@ -58,7 +59,7 @@ function ShotFrame({ src, slot, caption }: ShotData) {
   }
 
   const img = (
-    <img className="shot__img" src={src} alt={caption ?? ""} loading="lazy" decoding="async" />
+    <img className="shot__img" src={asset(src)} alt={caption ?? ""} loading="lazy" decoding="async" />
   );
 
   if (!view) return img;
@@ -67,7 +68,7 @@ function ShotFrame({ src, slot, caption }: ShotData) {
     <button
       type="button"
       className="shot__open"
-      onClick={() => view({ src, caption })}
+      onClick={() => view({ src: asset(src), caption })}
       aria-label={caption ? `${caption} — view full size` : "View full size"}
     >
       {img}

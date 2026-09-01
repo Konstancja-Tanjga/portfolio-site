@@ -2,6 +2,7 @@ import { StateBlock } from "@bighatpoland/ui";
 
 import { countPaintings, watercolours } from "../content/watercolours";
 import type { Painting } from "../content/watercolours";
+import { asset } from "../system/asset";
 import { Lightbox, useLightbox } from "../system/Lightbox";
 
 /**
@@ -78,10 +79,10 @@ function Plates({
             <button
               type="button"
               className="plate__open"
-              onClick={() => onOpen({ src: painting.src, caption })}
+              onClick={() => onOpen({ src: asset(painting.src), caption })}
               aria-label={caption ? `${caption} — view full size` : "View full size"}
             >
-              <img src={painting.src} alt={caption} loading="lazy" decoding="async" />
+              <img src={asset(painting.src)} alt={caption} loading="lazy" decoding="async" />
             </button>
             {caption && (
               <figcaption>

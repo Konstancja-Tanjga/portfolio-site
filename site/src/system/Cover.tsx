@@ -1,4 +1,5 @@
 import type { Cover as CoverData } from "../content/types";
+import { asset } from "./asset";
 import { Lane } from "./Wall";
 
 /**
@@ -14,7 +15,7 @@ export function Cover({ cover }: { cover: CoverData }) {
       <Lane width="bleed">
         <div className="cover cover--art">
           <img
-            src={cover.shot.src}
+            src={asset(cover.shot.src)}
             alt={`${cover.headline.join(" ")} — ${cover.subline}`}
           />
         </div>
@@ -38,7 +39,7 @@ export function Cover({ cover }: { cover: CoverData }) {
         </div>
         <div className="cover__shot">
           {cover.shot.src ? (
-            <img src={cover.shot.src} alt="" />
+            <img src={asset(cover.shot.src)} alt="" />
           ) : (
             <div className="cover__slot">{cover.shot.slot ?? "hero"}</div>
           )}

@@ -1,0 +1,71 @@
+# Build the Vite app and publish it to GitHub Pages.
+#
+# Without this, Pages runs Jekyll over the repository root and serves
+# README.md as the site — which is what it was doing.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a queued run supersedes an older one rather than
+# racing it.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      # The design system is installed from GitHub, not npm, so the
+      # checkout needs git available for that dependency to resolve.
+      - run: npm ci
+
+      - name: Build
+        env:
+          # Served from https://<user>.github.io/portfolio-site/ — every
+          # asset URL needs that prefix. Read back at runtime by asset().
+          BASE_PATH: /portfolio-site/
+        run: npm run build
+
+      - name: Add SPA fallback and disable Jekyll
+        run: |
+          # Pages has no rewrite rule, so a deep link like
+          # /work/applus-analytics is a 404 the router never sees.
+          # Serving index.html as the 404 body hands it to the router.
+          cp dist/index.html dist/404.html
+          # Stops Pages processing the output with Jekyll, which would
+          # drop any file or folder beginning with an underscore.
+          touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
