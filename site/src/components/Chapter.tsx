@@ -9,6 +9,7 @@ import {
   Points,
   Pull,
   Shot,
+  ShotSet,
   Spec,
   Stats,
   Steps,
@@ -29,6 +30,8 @@ function BlockView({ block }: { block: Block }) {
       );
     case "duo":
       return <Duo items={block.items} caption={block.caption} />;
+    case "set":
+      return <ShotSet items={block.items} size={block.size} caption={block.caption} />;
     case "stats":
       return <Stats items={block.items} />;
     case "pull":

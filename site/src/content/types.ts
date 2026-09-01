@@ -96,6 +96,22 @@ export type Block =
   | { kind: "points"; items: string[] }
   | ({ kind: "shot"; width?: Width } & Shot)
   | { kind: "duo"; items: Shot[]; caption?: string }
+  /**
+   * Several small screens laid out across the wall instead of one per
+   * screenful. A 360x800 phone export stretched to the full wall is both
+   * unreadable and endless to scroll; in a row of five it is legible and the
+   * set can be compared, which is the point of showing five.
+   *
+   * `size` is what the images are, not how many columns to draw — the grid
+   * works that out from the width available.
+   */
+  | {
+      kind: "set";
+      items: Shot[];
+      /** phone: tall handset · square: an icon or illustration · wide: a screen */
+      size?: "phone" | "square" | "wide";
+      caption?: string;
+    }
   | { kind: "stats"; items: { value: string; label: string }[] }
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }

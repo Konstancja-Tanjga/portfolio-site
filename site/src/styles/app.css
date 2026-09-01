@@ -807,3 +807,28 @@ img { max-width: 100%; height: auto; }
   .jump__back:hover span[aria-hidden],
   .back:hover span[aria-hidden] { transform: none; }
 }
+
+/* ---------- a set of small screens ------------------------------
+   Ten phone exports, one per screenful, is a scroll nobody finishes
+   and a 360px image stretched to 1150px besides. Across the wall
+   they are legible and, more usefully, comparable.
+   ---------------------------------------------------------------- */
+.shot__set {
+  display: grid;
+  gap: var(--bh-space-3);
+  align-items: start;
+}
+.shot__set--phone { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.shot__set--square { grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
+.shot__set--wide { grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+
+.shot__cell { min-width: 0; }
+/* The images inside a set keep their own proportions — these are exports of
+   different things, and a uniform tile would crop half of them. */
+.shot__set .shot__img { border: 1px solid var(--bh-border); }
+.shot__set .shot__slot { aspect-ratio: 9 / 16; }
+.shot__set--square .shot__slot { aspect-ratio: 1; }
+.shot__set--wide .shot__slot { aspect-ratio: 16 / 9; }
+/* The hover hint is too big for a 150px cell. */
+.shot__set .shot__hint { display: none; }
+.shot--set { margin-top: var(--bh-beat-block); }

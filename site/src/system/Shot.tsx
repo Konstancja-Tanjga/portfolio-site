@@ -47,6 +47,39 @@ export function Duo({ items, caption }: { items: ShotData[]; caption?: string })
   );
 }
 
+/**
+ * A set of small screens, laid out across the wall.
+ *
+ * Each item is still openable at full size, because a phone screen at 200px
+ * wide is legible as a layout and not as a document.
+ */
+export function ShotSet({
+  items,
+  size = "phone",
+  caption,
+}: {
+  items: ShotData[];
+  size?: "phone" | "square" | "wide";
+  caption?: string;
+}) {
+  const { ref, shown } = useReveal<HTMLElement>();
+  return (
+    <Lane width="wall">
+      <figure ref={ref} className={shown ? "shot shot--set is-shown" : "shot shot--set"}>
+        <div className={`shot__set shot__set--${size}`}>
+          {items.map((item, i) => (
+            <div className="shot__cell" key={item.src ?? i}>
+              <ShotFrame {...item} />
+              {item.caption && <span className="shot__subcaption">{item.caption}</span>}
+            </div>
+          ))}
+        </div>
+        {caption && <figcaption className="shot__caption">{caption}</figcaption>}
+      </figure>
+    </Lane>
+  );
+}
+
 function ShotFrame({ src, slot, caption }: ShotData) {
   const view = useContext(ShotViewer);
 

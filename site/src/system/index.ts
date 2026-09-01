@@ -7,7 +7,7 @@
  * ships as a package.
  */
 export { Wall, Lane } from "./Wall";
-export { Shot, Duo } from "./Shot";
+export { Shot, Duo, ShotSet } from "./Shot";
 export { Passage, Points, Pull, Thesis, Kicker } from "./Text";
 export { Stats, Spec, MetaStrip } from "./Data";
 export { Cover } from "./Cover";
