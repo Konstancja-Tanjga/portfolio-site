@@ -113,6 +113,13 @@ export type Chapter = {
   /** the number on the wall, keeping the Figma numbering: "01", "17" */
   n?: string;
   heading?: string;
+  /**
+   * The sharp claim, one or two sentences, directly under the heading.
+   * Not a summary of the chapter — an assertion the chapter then earns.
+   * "A frame without an identifier is an opinion."
+   */
+  maxim?: string;
+  /** The explanatory line: what this chapter actually covers. */
   standfirst?: string;
   blocks: Block[];
 };

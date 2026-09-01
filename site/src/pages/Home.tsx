@@ -6,13 +6,16 @@ export function Home() {
     <div className="page">
       <section className="opening">
         <h1 className="opening__claim">
-          I build the design system, then design the products that{" "}
-          <em>run on it</em>.
+          I design products and lead the implementation of the design system{" "}
+          <em>they run on</em>.
         </h1>
         <p className="opening__body">
-          Ten years in complex, data-rich software. Currently Lead Designer and UX
-          Engineer for APplus ERP, where I designed two applications from zero and
-          own the design system all six products in the platform run on.
+          Ten years in complex, data-rich software — ERP, banking, insurance, legal
+          and regulatory, industrial energy. Currently Lead Designer / UX Engineer
+          for APplus ERP, where I have designed three new applications from zero on
+          a design system of nearly 80 components that six products run on.
+          Development receives a working React prototype built from those
+          components, not a picture of one.
         </p>
       </section>
 

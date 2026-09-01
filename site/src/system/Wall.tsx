@@ -14,13 +14,21 @@ export function Lane({
   width = "wall",
   children,
   className,
+  id,
 }: {
   width?: Width;
   children: ReactNode;
   className?: string;
+  /** Anchor and scroll target. Must sit on a Lane, not on the chapter
+      wrapper: that wrapper is display:contents, so it has no box and
+      IntersectionObserver would never see it. */
+  id?: string;
 }) {
   return (
-    <div className={["lane", `lane--${width}`, className].filter(Boolean).join(" ")}>
+    <div
+      id={id}
+      className={["lane", `lane--${width}`, className].filter(Boolean).join(" ")}
+    >
       {children}
     </div>
   );

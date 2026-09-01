@@ -17,7 +17,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </nav>
         </header>
       </div>
-      <main className="page">{children}</main>
+      <main>{children}</main>
       <div className="page">
         <footer className="footer">
           <div className="footer__links">
@@ -28,7 +28,10 @@ export function Shell({ children }: { children: ReactNode }) {
             <a href="https://github.com/konstancja-tanjga">GitHub</a>
             <a href="https://linkedin.com/in/konstancja-tanjga">LinkedIn</a>
           </div>
-          <p>Warsaw, CET. Remote only, permanent or B2B.</p>
+          <p>
+            Built on Big Hat — the components in <code>src/system</code> render every
+            page on this site. Warsaw, CET. Remote only, permanent or B2B.
+          </p>
         </footer>
       </div>
     </>

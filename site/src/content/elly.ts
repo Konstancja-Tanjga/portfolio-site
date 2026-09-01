@@ -1,22 +1,23 @@
 import type { CaseStudy } from "./types";
 
+/** Structure mirrors the Figma wall — twelve sections, in its numbering. */
 export const elly: CaseStudy = {
   slug: "elly-ai-assistant",
   title: "Elly",
-  what: "The platform's first AI assistant, desktop and mobile",
+  what: "The platform's first AI assistant, designed from zero",
   lead:
     "Streaming answers over the product documentation, with citations, error states and handoff to a person — the states that decide trust, not the chat bubble.",
   status: { state: "live" },
   cover: {
     kicker: "PRODUCT DESIGN · AI IN PRODUCTION",
-    headline: ["Elly"],
-    subline: "the platform's first AI assistant",
+    headline: ["Smart help", "for an ERP"],
+    subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · HANDOFF",
-    credit: "Lead designer · Asseco Solutions · 2025",
-    shot: { slot: "Cover — Elly answering, with its sources visible. 3232×2528." },
+    credit: "Lead designer · Asseco Solutions · released with APplus 9, 2025",
+    shot: { slot: "Cover hero — Elly answering with its sources visible, desktop and mobile. 2400px." },
   },
   meta: [
-    { label: "Role", value: "Lead designer" },
+    { label: "Role", value: "Lead designer — designed from zero" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Elly" },
     { label: "Design system", value: "FOX v2.2" },
@@ -25,43 +26,102 @@ export const elly: CaseStudy = {
   ],
   chapters: [
     {
-      id: "claim",
+      id: "what-it-is",
+      n: "01",
+      heading: "Elly Smart Help",
+      maxim:
+        "The design work was never the conversation. It was the states around it.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>The first AI surface in the platform. The design work was not the conversation — it was the states around it: what a streaming answer looks like while it is still wrong, where a source goes, and what happens when the assistant cannot help.</p>",
+            "<p>The first AI surface in the platform, desktop and mobile: streaming answers over the product documentation, with citations, error states and a route to a person.</p>",
         },
-        { kind: "shot", slot: "Hero — Elly answering with a citation, desktop and mobile side by side." },
+        {
+          kind: "passage",
+          html:
+            "<p>What a streaming answer looks like while it is still wrong, where a source goes, and what happens when the assistant cannot help — those decide whether anyone uses it twice. The chat bubble does not.</p>",
+        },
+        { kind: "shot", width: "wall", slot: "Elly answering with a citation, desktop and mobile side by side. 2400px." },
       ],
     },
     {
-      id: "study",
-      heading: "The study that changed the roadmap",
+      id: "constraints",
+      n: "02a",
+      heading: "Three constraints",
+      maxim: "TODO — the one-line claim this chapter earns.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Thirteen consultants and solution architects. Twelve of thirteen would use it again, but trust scored lowest of every dimension: answers appeared without visible sources. Citations shipped as a direct result.</p>",
+            "<p>TODO — the three constraints, named, and what each one ruled out. This is the chapter that shows the brief was hard rather than open.</p>",
         },
+        { kind: "shot", width: "wall", slot: "The three constraints, as laid out in Figma. 2400px." },
+      ],
+    },
+    {
+      id: "audit",
+      n: "03",
+      heading: "Audit and research",
+      blocks: [
+        {
+          kind: "passage",
+          html: "<p>TODO — what existed before, who was asked, and what came back.</p>",
+        },
+        { kind: "shot", width: "wall", slot: "Audit and research synthesis. 2400px." },
+      ],
+    },
+    {
+      id: "exploration",
+      n: "04",
+      heading: "Exploration",
+      standfirst:
+        "Entry point, affordance and footprint — decided explicitly, because an assistant nobody finds is not an assistant.",
+      blocks: [
+        {
+          kind: "points",
+          items: [
+            "One click to Elly, from the side menu",
+            "A visible button — colour and symbol argued out rather than assumed",
+            "A human face at 42px, against stars and a help bulb",
+            "A footprint capped at 20 per cent of the page",
+          ],
+        },
+        { kind: "shot", width: "wall", slot: "Entry-point exploration. 2400px." },
+      ],
+    },
+    {
+      id: "use-cases",
+      n: "05",
+      heading: "Twelve use cases",
+      maxim: "TODO",
+      blocks: [
         {
           kind: "passage",
           html:
-            "<p>Eight of thirteen had never seen the assistant at all. That is a discovery problem, not a usability one, and it changed where the entry point lives.</p>",
+            "<p>TODO — the twelve, and how they were cut down to the ones that shipped.</p>",
         },
+        { kind: "shot", width: "wall", slot: "The twelve use cases. 2400px." },
+      ],
+    },
+    {
+      id: "decisions",
+      n: "06",
+      heading: "The decisions inside them",
+      blocks: [
         {
-          kind: "stats",
-          items: [
-            { value: "13", label: "consultants and solution architects" },
-            { value: "12/13", label: "would use it again" },
-            { value: "8/13", label: "had never seen the assistant" },
-          ],
+          kind: "passage",
+          html: "<p>TODO — the decisions, and the alternative each one beat.</p>",
         },
+        { kind: "shot", width: "wall", slot: "Decisions, annotated. 2400px." },
       ],
     },
     {
       id: "states",
+      n: "06a",
       heading: "The states that decide trust",
+      maxim:
+        "A hedge is not a confidence signal. Saying so plainly is.",
       blocks: [
         {
           kind: "points",
@@ -72,22 +132,102 @@ export const elly: CaseStudy = {
             "Error and retry, without losing the question",
           ],
         },
-        { kind: "shot", slot: "State matrix — the four states above, desktop and mobile." },
+        { kind: "shot", width: "wall", slot: "State matrix — the four states above, desktop and mobile. 2400px." },
         {
           kind: "passage",
           html:
-            '<p>The same states are implemented in my own design system, on my own tokens, and you can click them: <a href="https://konstancja-tanjga.github.io/bighat-design-system/?path=/story/templates-ai-chat--ready">the AI chat template in the Big Hat design system</a>. Elly itself belongs to Asseco, so this is the version I can show in full.</p>',
+            '<p>The same states are implemented in my own design system, on my own tokens, and you can click them: <a href="https://konstancja-tanjga.github.io/bighat-design-system/?path=/story/templates-ai-chat--ready">the AI chat template in Big Hat</a>. Elly itself belongs to Asseco, so this is the version I can show in full.</p>',
         },
       ],
     },
     {
-      id: "next",
-      heading: "What I would do differently",
+      id: "prototype",
+      n: "07",
+      heading: "The prototype",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>TODO — two or three sentences. This section is worth more to a hiring manager than any screen above it, so write it honestly.</p>",
+            "<p>TODO — what development received, and what that changed about how the build ran.</p>",
+        },
+        { kind: "shot", width: "wall", slot: "The prototype. 2400px." },
+      ],
+    },
+    {
+      id: "unseen",
+      n: "08",
+      heading: "Nobody had seen it",
+      maxim:
+        "Eight of thirteen had never seen the assistant. That is a discovery problem, not a usability one.",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>And it changed where the entry point lives — a finding about placement, arrived at by asking about trust.</p>",
+        },
+      ],
+    },
+    {
+      id: "sessions",
+      n: "09",
+      heading: "Nine sessions, in their words",
+      blocks: [
+        {
+          kind: "passage",
+          html: "<p>TODO — the quotes that carried weight, and what each one changed.</p>",
+        },
+        { kind: "shot", width: "wall", slot: "Session quotes. 2400px." },
+      ],
+    },
+    {
+      id: "trust",
+      n: "10",
+      heading: "Easy, yes. Trusted, no.",
+      maxim:
+        "Twelve of thirteen would use it again — and trust still scored lowest of every dimension.",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>Thirteen consultants and solution architects. Usability scored well; trust did not, because answers appeared without visible sources. Citations shipped as a direct result.</p>",
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "13", label: "consultants and solution architects" },
+            { value: "12/13", label: "would use it again" },
+            { value: "8/13", label: "had never seen the assistant" },
+          ],
+        },
+        { kind: "shot", width: "wall", slot: "Scores by dimension. 2400px." },
+      ],
+    },
+    {
+      id: "barriers",
+      n: "11",
+      heading: "The two barriers users named",
+      blocks: [
+        {
+          kind: "passage",
+          html: "<p>TODO — the two, in their words, and what each one cost.</p>",
+        },
+      ],
+    },
+    {
+      id: "what-i-designed",
+      n: "12",
+      heading: "What I designed",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>TODO — what shipped off the back of the study, and what is still on the roadmap because of it.</p>",
+        },
+        { kind: "shot", width: "wall", slot: "What shipped. 2400px." },
+        {
+          kind: "passage",
+          html:
+            "<p>TODO — what I would do differently. Two or three sentences. This section is worth more to a hiring manager than any screen above it, so write it honestly.</p>",
         },
       ],
     },

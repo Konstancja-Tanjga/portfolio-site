@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <>
+    <div className="page">
       <section className="opening">
         <h1 className="opening__claim">How I work</h1>
         <p className="opening__body">
@@ -9,7 +9,7 @@ export function About() {
         </p>
       </section>
 
-      <section className="section">
+      <section className="prose-section">
         <h2>The pipeline</h2>
         <p>
           Figma library with variants and tokens, Storybook as living
@@ -25,7 +25,7 @@ export function About() {
         </p>
       </section>
 
-      <section className="section">
+      <section className="prose-section">
         <h2>Research</h2>
         <p>
           Surveys with 195 internal and 37 external respondents, a 13-participant
@@ -35,7 +35,7 @@ export function About() {
         </p>
       </section>
 
-      <section className="section">
+      <section className="prose-section">
         <h2>Recognition</h2>
         <p>
           ERP System of the Year 2025, UX category, for APplus. WUD Silesia
@@ -43,13 +43,13 @@ export function About() {
         </p>
       </section>
 
-      <section className="section">
+      <section className="prose-section">
         <h2>Practical</h2>
         <p>
           Warsaw, CET. Remote only, permanent or B2B. Polish native, English C2,
           German and Spanish basic.
         </p>
       </section>
-    </>
+    </div>
   );
 }

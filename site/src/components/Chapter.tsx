@@ -52,11 +52,12 @@ function BlockView({ block }: { block: Block }) {
 
 export function ChapterView({ chapter }: { chapter: Chapter }) {
   return (
-    <section className="chapter" id={chapter.id}>
-      {(chapter.heading || chapter.standfirst) && (
-        <Lane width="wall" className="chapter__head">
+    <section className="chapter">
+      {(chapter.heading || chapter.maxim || chapter.standfirst) && (
+        <Lane width="wall" className="chapter__head" id={chapter.id}>
           {chapter.n && <span className="chapter__n">{chapter.n}</span>}
           {chapter.heading && <h2 className="chapter__heading">{chapter.heading}</h2>}
+          {chapter.maxim && <p className="maxim">{chapter.maxim}</p>}
           {chapter.standfirst && <p className="standfirst">{chapter.standfirst}</p>}
         </Lane>
       )}
