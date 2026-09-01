@@ -15,7 +15,8 @@ export const flow: CaseStudy = {
     subline: "logistics for APplus ERP",
     stamp: "DESKTOP · TABLET · MOBILE · SHIPPED NATIVE",
     credit: "Lead designer · Asseco Solutions · 2026",
-    shot: { src: "/work/applus-flow/01.png" },
+    shot: { src: "/work/applus-flow/00-cover.png" },
+    art: true,
   },
   meta: [
     { label: "Role", value: "Lead designer — owned the concept end to end" },
@@ -38,6 +39,7 @@ export const flow: CaseStudy = {
           html:
             "<p>Shipments were managed across multiple disconnected screens, which meant there was no single trusted status view — and no way to tell, at a glance, whose move it was next.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/applus-flow/01.png" },
         { kind: "shot", width: "wall", src: "/work/applus-flow/02.png" },
       ],
     },

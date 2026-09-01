@@ -15,6 +15,7 @@ export const riyad: CaseStudy = {
     stamp: "DESIGNED FROM SCRATCH · 3D NAVIGATION · ILLUSTRATION SYSTEM · SHIPPED",
     credit: "UX/UI designer · Big Hat, via Intellias · Riyad Bank, Saudi Arabia",
     shot: { src: "/work/riyad-bank/00-cover.png" },
+    art: true,
   },
   meta: [
     { label: "Role", value: "UX/UI designer — Big Hat, my own company, via Intellias" },

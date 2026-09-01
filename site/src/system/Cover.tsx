@@ -7,6 +7,21 @@ import { Lane } from "./Wall";
  * what makes eight projects read as one body of work.
  */
 export function Cover({ cover }: { cover: CoverData }) {
+  // A finished artboard already carries the type. Drawing the fields
+  // beside it would print the headline twice.
+  if (cover.art && cover.shot.src) {
+    return (
+      <Lane width="bleed">
+        <div className="cover cover--art">
+          <img
+            src={cover.shot.src}
+            alt={`${cover.headline.join(" ")} — ${cover.subline}`}
+          />
+        </div>
+      </Lane>
+    );
+  }
+
   return (
     <Lane width="bleed">
       <div className="cover">

@@ -134,7 +134,9 @@ img { max-width: 100%; height: auto; }
 }
 .card { display: block; }
 .card__cover {
-  aspect-ratio: 16 / 10;
+  /* The ratio of a Behance cover artboard, 3232 x 2528. Cutting cards
+     to 16:10 cropped a fifth off the top and bottom of every cover. */
+  aspect-ratio: 3232 / 2528;
   overflow: hidden;
   background: var(--bh-mark);
   color: var(--bh-site-on-mark);
@@ -212,6 +214,14 @@ img { max-width: 100%; height: auto; }
   padding: var(--bh-space-4);
   text-align: center;
 }
+
+.cover--art {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: var(--bh-mark);
+}
+.cover--art img { display: block; width: 100%; height: auto; }
 
 /* ---------- lead and meta ---------- */
 .wall__lead { margin-top: var(--bh-space-6); }
@@ -635,7 +645,7 @@ img { max-width: 100%; height: auto; }
   color: var(--bh-text-quiet);
 }
 .grid--compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--bh-space-5) var(--bh-space-4); }
-.grid--compact .card__cover { aspect-ratio: 4 / 3; }
+.grid--compact .card__cover { aspect-ratio: 3232 / 2528; }
 
 /* ---------- watercolours ---------- */
 .plates {

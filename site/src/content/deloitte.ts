@@ -14,7 +14,8 @@ export const deloitte: CaseStudy = {
     subline: "corporation",
     stamp: "DESIGNED FROM ZERO · RECRUITMENT · EMPLOYER BRAND",
     credit: "Deloitte Poland · 2017–2021",
-    shot: { src: "/work/deloitte-career/01.png" },
+    shot: { src: "/work/deloitte-career/00-cover.png" },
+    art: true,
   },
   meta: [
     { label: "Role", value: "Designer — owned the site end to end" },
@@ -35,6 +36,7 @@ export const deloitte: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — what the site had to do, for how many practices, and who else had a stake in it.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/deloitte-career/01.png" },
         { kind: "shot", width: "wall", src: "/work/deloitte-career/02.png" },
       ],
     },

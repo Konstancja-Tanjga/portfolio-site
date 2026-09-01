@@ -136,6 +136,17 @@ export type Cover = {
   /** "Lead designer · Asseco Solutions · 2026" */
   credit: string;
   shot: Shot;
+  /**
+   * true when `shot` is a finished cover artboard exported from Figma —
+   * one that already carries the kicker, headline, subline, stamp and
+   * credit as drawn type. The wall then renders the image full-bleed and
+   * alone; the fields above are still used for the card, the document
+   * title and the alt text, but never drawn twice.
+   *
+   * Artboards are 3232 × 2528 — ratio 1.279, which is what the cards
+   * are cut to.
+   */
+  art?: boolean;
 };
 
 /**

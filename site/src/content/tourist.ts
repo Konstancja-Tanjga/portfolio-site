@@ -14,7 +14,7 @@ export const tourist: CaseStudy = {
     subline: "a tourist app for a Polish town",
     stamp: "MOBILE · CIVIC · CONTENT MAINTAINED BY NON-DESIGNERS",
     credit: "One of three designers · 2021",
-    shot: { src: "/work/tourist-app/01.png" },
+    shot: { src: "/work/tourist-app/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "One of three designers" },
@@ -35,6 +35,7 @@ export const tourist: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — the town, the visitor, and the one thing the app had to do on a first open.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/tourist-app/01.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/02.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/03.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/04.png" },
