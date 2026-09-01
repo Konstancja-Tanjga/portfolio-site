@@ -14,14 +14,13 @@ export const xecta: CaseStudy = {
     subline: "and optimisation, for upstream oil and gas",
     stamp: "SAFETY-CRITICAL · DATA-DENSE · HEAVY VISUALISATION",
     credit: "Senior UX & UI designer · Xecta · 2020–2021",
-    shot: { src: "/work/xecta/01.png" },
+    shot: { src: "/work/xecta/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "Senior UX & UI designer, freelance — owned my streams end to end" },
     { label: "Company", value: "Xecta, Texas, USA, remote" },
     { label: "Team", value: "3 designers, a distributed US team" },
     { label: "Documentation", value: "Confluence" },
-    { label: "Also", value: "The corporate website, xecta.com" },
     { label: "Period", value: "April 2020 – July 2021" },
   ],
   chapters: [
@@ -36,6 +35,7 @@ export const xecta: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — what the platform monitors, who reads it, and what happens when they read it wrong.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/xecta/01.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/02.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/03.png" },
       ],
@@ -55,26 +55,8 @@ export const xecta: CaseStudy = {
       ],
     },
     {
-      id: "website",
-      n: "03",
-      heading: "The corporate website",
-      standfirst:
-        "Same client, opposite problem: the product had to be read by six people who use it daily, the website by hundreds who will never log in.",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the brief for xecta.com, and what it had to do that the product did not.</p>",
-        },
-        { kind: "shot", width: "wall", src: "/work/energy-fuel/01.png" },
-        { kind: "shot", width: "wall", src: "/work/energy-fuel/02.png" },
-        { kind: "shot", width: "wall", src: "/work/energy-fuel/03.png" },
-        { kind: "shot", width: "wall", src: "/work/energy-fuel/04.png" },
-        { kind: "shot", width: "wall", src: "/work/energy-fuel/05.png" },
-      ],
-    },
-    {
       id: "handoff",
-      n: "04",
+      n: "03",
       heading: "What it changed",
       blocks: [
         {

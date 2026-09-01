@@ -4,6 +4,7 @@ import { bydgoszcz } from "./bydgoszcz";
 import { deloitte } from "./deloitte";
 import { dms } from "./dms";
 import { elly } from "./elly";
+import { energy } from "./energy";
 import { flow } from "./flow";
 import { fox } from "./fox";
 import { futures } from "./futures";
@@ -30,6 +31,7 @@ export const cases: CaseStudy[] = [
   flow,
   volvo,
   xecta,
+  energy,
   riyad,
   pzu,
   deloitte,

@@ -33,7 +33,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </div>
           <p>
             Built on{" "}
-            <a href="https://github.com/bighatpoland/bighat-design-system">
+            <a href="https://konstancja-tanjga.github.io/bighat-design-system/">
               @bighatpoland/ui v{dsVersion}
             </a>{" "}
             — my own design system, installed as a package. Its tokens drive every

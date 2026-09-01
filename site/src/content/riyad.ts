@@ -14,7 +14,7 @@ export const riyad: CaseStudy = {
     subline: "Digital Insights, for Riyad Bank",
     stamp: "DESIGNED FROM SCRATCH · 3D NAVIGATION · ILLUSTRATION SYSTEM · SHIPPED",
     credit: "UX/UI designer · Big Hat, via Intellias · Riyad Bank, Saudi Arabia",
-    shot: { src: "/work/riyad-bank/27.png" },
+    shot: { src: "/work/riyad-bank/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "UX/UI designer — Big Hat, my own company, via Intellias" },
@@ -32,6 +32,7 @@ export const riyad: CaseStudy = {
       maxim:
         "A bank teaching people about money has a credibility problem before it has a design problem.",
       blocks: [
+        { kind: "shot", width: "wall", src: "/work/riyad-bank/27.png" },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/01.png" },
         {
           kind: "passage",
