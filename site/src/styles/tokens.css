@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------------
+   Big Hat — token layer.
+
+   The only place a raw value is allowed to appear in this project.
+   Everything else, including every component in src/system, reads
+   from here. When Big Hat ships as a package this file is what the
+   build emits.
+   --------------------------------------------------------------- */
+:root {
+  /* ---- colour: primitive ---- */
+  --bh-ink: #1f242b;
+  --bh-slate: #3a4149;
+  --bh-mute: #6b7785;
+  --bh-paper: #ffffff;
+  --bh-accent: #ffc300;
+  --bh-line: #e4e7eb;
+  --bh-line-strong: #c9ced6;
+  --bh-shade: #f6f7f9;
+  --bh-well: #eceef1;
+
+  /* ---- colour: semantic ---- */
+  --bh-text: var(--bh-slate);
+  --bh-text-strong: var(--bh-ink);
+  --bh-text-quiet: var(--bh-mute);
+  --bh-surface: var(--bh-paper);
+  --bh-surface-sunken: var(--bh-shade);
+  --bh-border: var(--bh-line);
+  --bh-border-strong: var(--bh-line-strong);
+  --bh-focus: var(--bh-ink);
+  --bh-mark: var(--bh-accent);
+
+  /* ---- type ---- */
+  --bh-font-body: "Rubik", system-ui, -apple-system, sans-serif;
+  --bh-font-id: "IBM Plex Mono", ui-monospace, monospace;
+  --bh-size-display: clamp(2.5rem, 6vw, 4.25rem);
+  --bh-size-h2: clamp(1.5rem, 2.6vw, 2rem);
+  --bh-size-h3: 1.25rem;
+  --bh-size-lead: clamp(1.125rem, 1.6vw, 1.4rem);
+  --bh-size-body: 1.0625rem;
+  --bh-size-small: 0.875rem;
+  --bh-size-id: 0.75rem;
+
+  /* ---- space ---- */
+  --bh-space-1: 0.25rem;
+  --bh-space-2: 0.5rem;
+  --bh-space-3: 1rem;
+  --bh-space-4: 1.5rem;
+  --bh-space-5: 2.5rem;
+  --bh-space-6: 4rem;
+  --bh-space-7: 6rem;
+  --bh-space-8: 9rem;
+
+  /* ---- layout ----
+     measure  reading width for prose
+     wall     the image column on a project page
+     page     everything else
+     gutter   the minimum edge margin a bleed shot leaves alone   */
+  --bh-measure: 68ch;
+  --bh-wall: 72rem;
+  --bh-page: 74rem;
+  --bh-gutter: var(--bh-space-4);
+
+  /* ---- wall rhythm: the vertical beat of a project page ---- */
+  --bh-beat-block: var(--bh-space-4);
+  --bh-beat-chapter: var(--bh-space-7);
+}
