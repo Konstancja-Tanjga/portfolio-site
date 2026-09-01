@@ -626,3 +626,34 @@ img { max-width: 100%; height: auto; }
   letter-spacing: -0.015em;
   color: var(--bh-text-strong);
 }
+
+/* ---------- bands on the work page ---------- */
+.band__note {
+  max-width: var(--bh-measure);
+  margin: 0 0 var(--bh-space-5);
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+}
+.grid--compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--bh-space-5) var(--bh-space-4); }
+.grid--compact .card__cover { aspect-ratio: 4 / 3; }
+
+/* ---------- watercolours ---------- */
+.plates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--bh-space-4);
+  margin-bottom: var(--bh-space-6);
+}
+.plate { margin: 0; }
+.plate img { display: block; width: 100%; border: 1px solid var(--bh-border); }
+.plate figcaption { margin-top: var(--bh-space-2); font-size: var(--bh-size-small); color: var(--bh-text-quiet); }
+.plates__empty {
+  max-width: var(--bh-measure);
+  margin: 0 0 var(--bh-space-6);
+  padding: var(--bh-space-4);
+  border: 1px dashed var(--bh-border-strong);
+  background: var(--bh-surface-sunken);
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+}
+.plates__empty code { font-family: var(--bh-font-id); font-size: 0.95em; }

@@ -7,6 +7,7 @@ export const fox: CaseStudy = {
   lead:
     "A design system in code, not a Figma library with a code appendix. I built it from nothing and led its migration to v3 across the platform's product lines, across Angular, React and web components.",
   status: { state: "live" },
+  group: "practice",
   cover: {
     kicker: "DESIGN SYSTEMS IN CODE · ENTERPRISE PLATFORM",
     headline: ["Design system", "as code"],

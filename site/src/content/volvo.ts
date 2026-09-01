@@ -12,13 +12,14 @@ export const volvo: CaseStudy = {
   lead:
     "Baldo, the ERP Volvo Group runs for resource and access management across the whole group — inventory, production, finance and logistics. Twenty years old, largely unchanged since 2007. I redesigned it and built its design system on the corporate Volvo Design System, developing it to a later major version.",
   status: { state: "live" },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
     headline: ["Enterprise", "Resource Planning"],
     subline: "for Volvo Group",
     stamp: "LEGACY REDESIGN · DESIGN SYSTEM · ACCESS AND PERMISSIONS",
     credit: "Senior UX/UI designer · Volvo Group · 2022–2023",
-    shot: { src: "/work/volvo-erp/01.jpg" },
+    shot: { src: "/work/volvo-erp/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "Senior UX/UI designer, contract" },
@@ -42,6 +43,7 @@ export const volvo: CaseStudy = {
             "<p>Baldo is the ERP Volvo Group uses for resource and access management across the whole group, covering inventory management, production, finance and logistics.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/02.png" },
+        { kind: "shot", width: "wall", src: "/work/volvo-erp/01.jpg" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/03.png" },
       ],
     },

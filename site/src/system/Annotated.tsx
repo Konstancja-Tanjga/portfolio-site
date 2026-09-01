@@ -1,3 +1,5 @@
+import { Badge } from "@bighatpoland/ui";
+
 import type { Annotated as AnnotatedData } from "../content/types";
 import { Lane } from "./Wall";
 
@@ -64,7 +66,7 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
                     <ul>
                       {a.rules.map((r) => (
                         <li key={r.id}>
-                          <span className="anno__chip">{r.id}</span>
+                          <Badge tone="info">{r.id}</Badge>
                           {r.text}
                         </li>
                       ))}

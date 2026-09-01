@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { findCase, neighbours } from "../content";
 import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
+import { Badge } from "@bighatpoland/ui";
 import { Cover, Lane, MetaStrip, Wall } from "../system";
 
 export function Case() {
@@ -38,7 +39,10 @@ export function Case() {
         {study.status.state === "held" && (
           <Lane width="column">
             <p className="held">
-              Screens publish {study.status.until}. {study.status.why}
+              <Badge tone="warning" dot>
+                Screens publish {study.status.until}
+              </Badge>{" "}
+              {study.status.why}
             </p>
           </Lane>
         )}

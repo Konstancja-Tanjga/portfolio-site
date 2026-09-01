@@ -8,6 +8,7 @@ export const flow: CaseStudy = {
   lead:
     "Flow mode is the logistics module inside APplus ERP. Shipments had been managed across several disconnected screens, so nobody could see one trusted status view. I owned the concept end to end — first workflow sketches through to a shipped native release on desktop, tablet and mobile.",
   status: { state: "live" },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
     headline: ["Flow mode"],

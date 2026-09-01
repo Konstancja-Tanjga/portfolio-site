@@ -8,13 +8,14 @@ export const elly: CaseStudy = {
   lead:
     "Streaming answers over the product documentation, with citations, error states and handoff to a person — the states that decide trust, not the chat bubble.",
   status: { state: "live" },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · AI IN PRODUCTION",
     headline: ["Smart help", "for an ERP"],
     subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · HANDOFF",
     credit: "Lead designer · Asseco Solutions · released with APplus 9, 2025",
-    shot: { slot: "Cover hero — Elly answering with its sources visible, desktop and mobile. 2400px." },
+    shot: { src: "/work/elly-ai-assistant/01.png" },
   },
   meta: [
     { label: "Role", value: "Lead designer — designed from zero" },
@@ -229,6 +230,30 @@ export const elly: CaseStudy = {
           html:
             "<p>TODO — what I would do differently. Two or three sentences. This section is worth more to a hiring manager than any screen above it, so write it honestly.</p>",
         },
+      ],
+    },
+    {
+      id: "live",
+      n: "13",
+      heading: "The live product",
+      standfirst:
+        "Elly as it ships in APplus 9 — the screens, not the reasoning. The chapters above are how it got here.",
+      blocks: [
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/02.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/03.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/04.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/05.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/06.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/07.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/08.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/09.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/10.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/11.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/12.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/13.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/14.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/15.png" },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/16.png" },
       ],
     },
   ],

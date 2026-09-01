@@ -7,6 +7,7 @@ export const dms: CaseStudy = {
   lead:
     "Versioning, metadata, search, permissions and retention over documents that lived in network drives and mail threads.",
   status: { state: "held", until: "5 October 2026", why: "The product is generally available then; until it is, the reasoning is here and the screens are not." },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
     headline: ["Document", "Management"],

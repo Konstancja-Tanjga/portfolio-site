@@ -5,21 +5,23 @@ export const pzu: CaseStudy = {
   title: "MojePZU",
   what: "Insurance and healthcare at consumer scale, under regulatory constraint",
   lead:
-    "Web and mobile: insurance policies and healthcare services for a national insurer. I owned the information architecture, simplified account setup off the back of user interviews, and defined the interaction and motion models.",
+    "MojePZU, web and mobile: insurance policies and healthcare services for a national insurer. I owned the information architecture, simplified account setup off the back of user interviews, and defined the interaction and motion models.",
   status: { state: "live" },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · INSURANCE AND HEALTHCARE",
     headline: ["MojePZU"],
     subline: "insurance and healthcare, web and mobile",
-    stamp: "INFORMATION ARCHITECTURE · ACCOUNT SETUP · MOTION",
+    stamp: "INFORMATION ARCHITECTURE · ACCOUNT SETUP · INTERACTION AND MOTION",
     credit: "UI designer · PZU · 2019",
-    shot: { slot: "Cover hero — export 2400px wide, product bleeding off the right edge." },
+    shot: { src: "/work/mojepzu/01.png" },
   },
   meta: [
     { label: "Role", value: "UI designer, freelance" },
     { label: "Company", value: "PZU, Warsaw" },
     { label: "Platforms", value: "Web and mobile" },
-    { label: "Constraint", value: "Regulated — insurance and health data" },
+    { label: "Constraint", value: "Regulated — insurance policies and health data" },
+    { label: "Owned", value: "Information architecture, account setup, interaction and motion models" },
     { label: "Period", value: "January – December 2019" },
   ],
   chapters: [
@@ -27,85 +29,41 @@ export const pzu: CaseStudy = {
       id: "what-it-is",
       n: "01",
       heading: "What it is",
+      maxim:
+        "Two regulated domains in one account: an insurance policy and a medical record do not get to look like the same object.",
       blocks: [
         {
           kind: "passage",
-          html: "<p>TODO — what MojePZU is, in three sentences, and what I owned on it.</p>",
+          html: "<p>TODO — what MojePZU does, and for how many people.</p>",
         },
-        { kind: "shot", width: "wall", slot: "The account, web and mobile. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/mojepzu/02.png" },
       ],
     },
     {
-      id: "hard-brief",
+      id: "setup",
       n: "02",
-      heading: "Why it was a hard brief",
+      heading: "Account setup, simplified",
       blocks: [
         {
           kind: "passage",
-          html: "<p>TODO — the constraint that made this hard. One paragraph, one concrete example.</p>",
-        },
-      ],
-    },
-    {
-      id: "who-for",
-      n: "03",
-      heading: "Who it was for",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the roles, and the one place their needs conflicted.</p>",
-        },
-        { kind: "shot", width: "wall", slot: "Account setup, before and after. 2400px." },
-      ],
-    },
-    {
-      id: "discovery",
-      n: "04",
-      heading: "Discovery and research",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — who was asked, what was asked, and the finding that changed the product rather than confirming it.</p>",
-        },
-      ],
-    },
-    {
-      id: "design-system",
-      n: "05",
-      heading: "Design system",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the system this ran on: what existed, what I added, and how a change shipped.</p>",
-        },
-      ],
-    },
-    {
-      id: "use-cases",
-      n: "06",
-      heading: "Use cases",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — one use case on the UC template — actor, trigger, precondition, flow, two exits, the rule it sets.</p>",
-        },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "07",
-      heading: "Handoff",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what development received, the numbers, and one thing I would do differently.</p>",
+          html: "<p>TODO — what the interviews found about setup, what was removed, and what that cost.</p>",
         },
         {
           kind: "stats",
           items: [
             { value: "TODO", label: "TODO" },
-            { value: "TODO", label: "TODO" },
           ],
+        },
+      ],
+    },
+    {
+      id: "handoff",
+      n: "03",
+      heading: "What it changed",
+      blocks: [
+        {
+          kind: "passage",
+          html: "<p>TODO — what shipped, and one thing I would do differently.</p>",
         },
       ],
     },

@@ -19,6 +19,7 @@ export const bi: CaseStudy = {
     until: "5 October 2026",
     why: "The product is generally available then; until it is, the reasoning is here and the screens are not.",
   },
+  group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
     headline: ["Business", "Intelligence"],

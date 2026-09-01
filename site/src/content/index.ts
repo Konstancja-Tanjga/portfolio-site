@@ -1,40 +1,74 @@
+import { award } from "./award";
 import { bi } from "./bi";
+import { bydgoszcz } from "./bydgoszcz";
+import { deloitte } from "./deloitte";
 import { dms } from "./dms";
 import { elly } from "./elly";
+import { flow } from "./flow";
 import { fox } from "./fox";
+import { futures } from "./futures";
+import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { riyad } from "./riyad";
+import { tourist } from "./tourist";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
-import type { CaseStudy } from "./types";
+import type { CaseStudy, Group } from "./types";
 
 /**
- * The eight walls, in the order they appear on the work page.
+ * Every wall, in the order they appear within their band.
  *
- * FOX sits second on purpose: the second card is where a reader
- * confirms what I am, and the answer should be "she builds the
- * system", not "another ERP screen".
+ * Within `product`, the order is deliberate: Analytics leads, and FOX
+ * is second among practice because the design system is the claim the
+ * rest of the site exists to support.
  */
-export const cases: CaseStudy[] = [bi, fox, dms, elly, volvo, xecta, pzu, riyad];
+export const cases: CaseStudy[] = [
+  // product
+  bi,
+  dms,
+  elly,
+  flow,
+  volvo,
+  xecta,
+  riyad,
+  pzu,
+  deloitte,
+  tourist,
+  // practice
+  fox,
+  futures,
+  // recognition
+  award,
+  bydgoszcz,
+  possible,
+];
 
 /**
- * What the work page lists. A held project keeps its wall — the URL
- * works, the reasoning is there — it just isn't advertised until the
- * product it describes is generally available.
+ * What the work page lists. A held wall keeps its URL — the reasoning
+ * is there and it can be sent to one person — it just isn't advertised
+ * until the product it describes is generally available.
  */
 export const published: CaseStudy[] = cases.filter((c) => c.status.state === "live");
+
+export const byGroup = (group: Group): CaseStudy[] =>
+  published.filter((c) => c.group === group);
 
 export const findCase = (slug?: string): CaseStudy | undefined =>
   cases.find((c) => c.slug === slug);
 
-/** Previous and next, for the foot of a wall. Held projects are skipped. */
+/**
+ * Previous and next, for the foot of a wall. Stays inside the band, so
+ * a product case study never hands the reader a competition entry.
+ */
 export function neighbours(slug: string) {
-  const list = published.length ? published : cases;
-  const i = list.findIndex((c) => c.slug === slug);
-  if (i === -1) return { previous: undefined, next: list[0] };
+  const current = findCase(slug);
+  const list = current ? byGroup(current.group) : published;
+  const pool = list.length ? list : published;
+  const i = pool.findIndex((c) => c.slug === slug);
+  if (i === -1) return { previous: undefined, next: pool[0] };
   return {
-    previous: list[(i - 1 + list.length) % list.length],
-    next: list[(i + 1) % list.length],
+    previous: pool[(i - 1 + pool.length) % pool.length],
+    next: pool[(i + 1) % pool.length],
   };
 }
 
@@ -45,13 +79,19 @@ export const earlier: EarlierEntry[] = [
   {
     client: "Wolters Kluwer",
     what:
-      "Growth features for a legal and regulatory information platform: user flows, visual patterns, and contributions to the core component library.",
+      "Growth features for wolterskluwer-online.de, a legal and regulatory information platform: user flows, visual patterns, and development of the core design system.",
     when: "2021–2022",
   },
   {
     client: "Deloitte",
     what:
-      "Employee health and wellbeing platform, web and mobile, plus the global career site. Awarded HR Dream Team for best wellbeing service.",
+      "Employee health and wellbeing platform, web and mobile. Awarded HR Dream Team for best wellbeing service.",
     when: "2017–2021",
+  },
+  {
+    client: "Other",
+    what:
+      "A next-generation banking concept; a real-estate investment platform; a brand system for a digital agency.",
+    when: "—",
   },
 ];

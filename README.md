@@ -34,26 +34,48 @@ React and web components.
   React prototypes built from design system components — code ready for
   production, not a spec sheet to rebuild from.
 
-## The nine walls
+## The walls
 
 Each project is one long vertical page — cover, the reasoning, the screens, the
-numbers. Same eight chapters, same components, so nine projects read as one body
-of work.
+numbers. The same chapter vocabulary throughout, so the set reads as one body of
+work. Three bands, because fifteen pages of equal weight is not a hierarchy.
 
-| # | Project | What it is | Status |
-|---|---|---|---|
-| 1 | APplus Analytics | BI for an ERP platform, designed from zero | Held to 5 Oct 2026 |
-| 2 | FOX design system | Nearly 80 components, six consuming products | Live |
-| 3 | APplus Documents | Document management, designed from zero | Held to 5 Oct 2026 |
-| 4 | Elly | The platform's first AI assistant | Live |
-| 5 | Volvo Group ERP | Redesign, plus a system on the corporate parent system | Live |
-| 6 | Xecta | Production surveillance, upstream oil and gas | Live |
-| 7 | MojePZU | Insurance and healthcare at consumer scale | Live |
-| 8 | Riyad Bank | Financial education from scratch, 3D navigation, illustration system | Live |
-| 9 | Futures Thinking | A foresight workshop framework I designed and facilitated | Live |
+**Products** — shipped software.
 
-Earlier, without a wall: Wolters Kluwer (legal and regulatory), Deloitte
-(wellbeing platform and career site — HR Dream Team award).
+| Project | What it is | Status |
+|---|---|---|
+| APplus Analytics | BI for an ERP platform, designed from zero | Held to 5 Oct 2026 |
+| APplus Documents | Document management, designed from zero | Held to 5 Oct 2026 |
+| Elly | The platform's first AI assistant, designed from zero | Live |
+| APplus Flow mode | Logistics, redesigned around status and ownership | Live |
+| Volvo Group ERP | A legacy ERP redesign, plus a system on the corporate parent | Live |
+| Xecta | Production surveillance for upstream oil and gas | Live |
+| Riyad Bank — Digital Insights | Financial education from scratch, shipped to both stores | Live |
+| MojePZU | Insurance and healthcare at consumer scale | Live |
+| Deloitte career site | The global career site, designed from zero | Live |
+| Tourist app | A mobile guide for a Polish town, with two other designers | Live |
+
+**Practice** — how the work gets done.
+
+| Project | What it is |
+|---|---|
+| FOX design system | Nearly 80 components, six consuming products, v3 migration |
+| Futures Thinking | A foresight workshop framework I designed and facilitated |
+
+**Recognition** — short pages, not case studies.
+
+| | |
+|---|---|
+| ERP System of the Year 2025 | APplus, winner in the User Experience category |
+| Bydgoszcz Design Challenge | Competition entry, distinction |
+| Possible Reality | Speculative design, WUD Silesia 10.5, distinction |
+
+Plus **Watercolours** at `/watercolours` — architecture, birds, animals, people.
+Deliberately off the work page: it says something true, and it should not be the
+second thing a hiring manager scrolls past.
+
+Earlier, without a page: Wolters Kluwer, the Deloitte wellbeing platform, and
+other selected work.
 
 **Held** means the wall exists and its URL works, but the product it describes is
 not generally available yet, so it is not listed on the work page and its screens
@@ -62,16 +84,31 @@ release day.
 
 ## The site is the artefact
 
-The point of building this rather than posting to Behance: the site is a consumer
-of its own design system. Everything on every page comes out of
-[`site/src/system`](site/src/system) — the components, driven entirely from the
-token layer in [`site/src/styles/tokens.css`](site/src/styles/tokens.css). No CSS
-framework, no raw values outside the token file.
+The point of building this rather than posting to Behance: the site is a real
+consumer of my own published design system, not a description of one.
+
+`@bighatpoland/ui` — [bighat-design-system](https://github.com/bighatpoland/bighat-design-system),
+39 components, two token layers, WCAG AA enforced in CI — is installed as a
+dependency. Its `styles.css` supplies every colour, radius, elevation and the
+dark theme; its components render the badges, the surface-rule chips and the
+empty states. The footer prints the installed version, read from the package at
+build time, so the claim is checkable rather than asserted.
+
+[`site/src/styles/tokens.css`](site/src/styles/tokens.css) is what the site adds
+on top, and only that: a display type scale the library has no opinion about
+(its scale tops out at 26px, right for an application and far too small for a
+cover), the wall widths, the vertical rhythm of a project page, and one brand
+value — `--bh-site-mark`, green.400 from the library's own primitive ramp.
+
+[`site/src/system`](site/src/system) holds the editorial components the library
+does not have and should not: the wall, the cover, the persona set, the use-case
+template. They consume the library's semantic tokens and nothing else.
 
 ```
 site/src/
-  content/          nine walls, as data — never markup
+  content/          the walls, as data — never markup
     types.ts        the content model: cover, personas, steps, use cases, evolution
+    watercolours.ts the painting gallery
   system/           Big Hat — the closed set of components every page renders with
     Wall.tsx        one column, three widths: column · wall · bleed
     Cover.tsx       the yellow field every project opens on
@@ -84,7 +121,7 @@ site/src/
     Evolution.tsx   how the design system moved, version by version
     Annotated.tsx   a screen with its zone map, legend and surface rules
   components/       page-level: masthead, chapter renderer, jump bar
-  pages/            Home (the covers) · Case (a wall) · About
+  pages/            Home (three bands) · Case (a wall) · Watercolours · About
 ```
 
 A wall is a list of chapters; a chapter is a list of blocks. Adding a section
