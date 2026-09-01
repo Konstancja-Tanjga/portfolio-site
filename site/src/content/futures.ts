@@ -18,7 +18,8 @@ export const futures: CaseStudy = {
     subline: "a workshop framework, for the Flow Hub navigation work",
     stamp: "STEEP · MULTIPLE FUTURES · 2×2 SCENARIOS · JOBS TO BE DONE",
     credit: "Designed and facilitated · APplus ERP · 2025",
-    shot: { slot: "Cover — the chosen 2×2 matrix on the green field. 2400px." },
+    shot: { src: "/work/futures-thinking/00-cover.png" },
+    art: true,
   },
   meta: [
     { label: "Role", value: "Designed the programme and facilitated every session" },
@@ -41,7 +42,7 @@ export const futures: CaseStudy = {
           html:
             "<p>Flow Hub needed a navigation model. TODO — state the two arguments plainly: whether people should enter through one place or many, and the second one.</p>",
         },
-        { kind: "shot", width: "wall", slot: "futures-overview.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch01.png" },
       ],
     },
     {
@@ -74,7 +75,7 @@ export const futures: CaseStudy = {
             { key: "gallery walk", value: "What surprised you, what patterns do you see" },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-structure.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch02.png" },
       ],
     },
     {
@@ -132,7 +133,7 @@ export const futures: CaseStudy = {
             },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-workshop-one.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch03.png" },
       ],
     },
     {
@@ -153,7 +154,7 @@ export const futures: CaseStudy = {
             "<strong>Human–AI co-work, not hand-off.</strong> Team leads and office workers want AI to assist. Final authority stays human, and the interface has to make that visible rather than assumed.",
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-crosscutting.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch04.png" },
       ],
     },
     {
@@ -174,7 +175,7 @@ export const futures: CaseStudy = {
             { key: "…", value: "TODO — the remaining two matrices" },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-six-matrices.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch05.png" },
       ],
     },
     {
@@ -213,7 +214,7 @@ export const futures: CaseStudy = {
             },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-matrix-chosen.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch06.png" },
       ],
     },
     {
@@ -239,7 +240,7 @@ export const futures: CaseStudy = {
             },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-jobs-decisions.svg" },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch07.png" },
       ],
     },
     {
@@ -253,11 +254,7 @@ export const futures: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — what the day actually did, and what it produced by the end of it.</p>",
         },
-        {
-          kind: "shot",
-          width: "wall",
-          slot: "futures-offsite.svg — plus two or three photographs of the paper work, faces cropped out",
-        },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch08.png" },
       ],
     },
     {
@@ -298,6 +295,7 @@ export const futures: CaseStudy = {
             { key: "Axis, then quadrant", value: "TODO — where it landed." },
           ],
         },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch09.png" },
       ],
     },
     {
@@ -339,12 +337,7 @@ export const futures: CaseStudy = {
             },
           ],
         },
-        { kind: "shot", width: "wall", slot: "futures-framework.svg" },
-        {
-          kind: "shot",
-          width: "column",
-          slot: "certificate — cropped, no personal data beyond your name",
-        },
+        { kind: "shot", width: "wall", src: "/work/futures-thinking/ch10.png" },
       ],
     },
   ],

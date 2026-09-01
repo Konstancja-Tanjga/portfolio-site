@@ -43,7 +43,7 @@ export const elly: CaseStudy = {
           html:
             "<p>What a streaming answer looks like while it is still wrong, where a source goes, and what happens when the assistant cannot help — those decide whether anyone uses it twice. The chat bubble does not.</p>",
         },
-        { kind: "shot", width: "wall", slot: "Elly answering with a citation, desktop and mobile side by side. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch01.png" },
       ],
     },
     {
@@ -57,7 +57,7 @@ export const elly: CaseStudy = {
           html:
             "<p>TODO — the three constraints, named, and what each one ruled out. This is the chapter that shows the brief was hard rather than open.</p>",
         },
-        { kind: "shot", width: "wall", slot: "The three constraints, as laid out in Figma. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch02a.png" },
       ],
     },
     {
@@ -69,7 +69,7 @@ export const elly: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — what existed before, who was asked, and what came back.</p>",
         },
-        { kind: "shot", width: "wall", slot: "Audit and research synthesis. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch03.png" },
       ],
     },
     {
@@ -88,7 +88,7 @@ export const elly: CaseStudy = {
             "A footprint capped at 20 per cent of the page",
           ],
         },
-        { kind: "shot", width: "wall", slot: "Entry-point exploration. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch04.png" },
       ],
     },
     {
@@ -102,7 +102,7 @@ export const elly: CaseStudy = {
           html:
             "<p>TODO — the twelve, and how they were cut down to the ones that shipped.</p>",
         },
-        { kind: "shot", width: "wall", slot: "The twelve use cases. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch05.png" },
       ],
     },
     {
@@ -114,7 +114,7 @@ export const elly: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — the decisions, and the alternative each one beat.</p>",
         },
-        { kind: "shot", width: "wall", slot: "Decisions, annotated. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch06.png" },
       ],
     },
     {
@@ -151,7 +151,7 @@ export const elly: CaseStudy = {
           html:
             "<p>TODO — what development received, and what that changed about how the build ran.</p>",
         },
-        { kind: "shot", width: "wall", slot: "The prototype. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch07.png" },
       ],
     },
     {
@@ -166,6 +166,7 @@ export const elly: CaseStudy = {
           html:
             "<p>And it changed where the entry point lives — a finding about placement, arrived at by asking about trust.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch08.png" },
       ],
     },
     {
@@ -177,7 +178,7 @@ export const elly: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — the quotes that carried weight, and what each one changed.</p>",
         },
-        { kind: "shot", width: "wall", slot: "Session quotes. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch09.png" },
       ],
     },
     {
@@ -200,7 +201,7 @@ export const elly: CaseStudy = {
             { value: "8/13", label: "had never seen the assistant" },
           ],
         },
-        { kind: "shot", width: "wall", slot: "Scores by dimension. 2400px." },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch10.png" },
       ],
     },
     {
@@ -212,6 +213,7 @@ export const elly: CaseStudy = {
           kind: "passage",
           html: "<p>TODO — the two, in their words, and what each one cost.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch11.png" },
       ],
     },
     {
@@ -224,12 +226,12 @@ export const elly: CaseStudy = {
           html:
             "<p>TODO — what shipped off the back of the study, and what is still on the roadmap because of it.</p>",
         },
-        { kind: "shot", width: "wall", slot: "What shipped. 2400px." },
         {
           kind: "passage",
           html:
             "<p>TODO — what I would do differently. Two or three sentences. This section is worth more to a hiring manager than any screen above it, so write it honestly.</p>",
         },
+        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch12.png" },
       ],
     },
     {

@@ -667,3 +667,109 @@ img { max-width: 100%; height: auto; }
   color: var(--bh-text-quiet);
 }
 .plates__empty code { font-family: var(--bh-font-id); font-size: 0.95em; }
+
+/* ---------- micro-interactions -----------------------------------
+   Four, each earning its place on a thirty-screen page: how far
+   through you are, a shot arriving as you reach it, a shot openable
+   at full size, and a card that responds to the pointer.
+   Every one is off under prefers-reduced-motion.
+   ---------------------------------------------------------------- */
+
+.progress { position: sticky; top: 0; z-index: 11; height: 2px; background: transparent; }
+.progress__bar {
+  height: 100%;
+  background: var(--bh-mark);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  transition: transform 90ms linear;
+}
+
+/* Shots arrive. The un-revealed state is only ever applied when the
+   observer is available and motion is allowed — see useReveal. */
+.shot { opacity: 0; transform: translateY(12px); transition: opacity 520ms ease, transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.shot.is-shown { opacity: 1; transform: none; }
+
+/* A shot you can open. The button is transparent chrome around the
+   image, so the image is still the whole target. */
+.shot__open {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+}
+.shot__open .shot__img { transition: box-shadow 180ms ease; }
+.shot__open:hover .shot__img { box-shadow: 0 2px 18px rgb(0 0 0 / 0.13); }
+.shot__hint {
+  position: absolute;
+  right: var(--bh-space-3);
+  bottom: var(--bh-space-3);
+  padding: 0.25rem 0.55rem;
+  background: var(--bh-mark);
+  color: var(--bh-site-on-mark);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+.shot__open:hover .shot__hint,
+.shot__open:focus-visible .shot__hint { opacity: 1; transform: none; }
+
+/* Full size. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  background: rgb(0 0 0 / 0.82);
+  overflow: auto;
+  animation: lb-in 160ms ease;
+}
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox__scroll { padding: var(--bh-space-6) var(--bh-space-4); margin: auto; max-width: 100%; }
+.lightbox__scroll img { display: block; max-width: 100%; height: auto; background: var(--bh-surface); }
+.lightbox__close {
+  position: fixed;
+  top: var(--bh-space-3);
+  right: var(--bh-space-3);
+  z-index: 1;
+  display: inline-flex;
+  gap: var(--bh-space-2);
+  padding: 0.45rem 0.85rem;
+  border: 0;
+  background: var(--bh-mark);
+  color: var(--bh-site-on-mark);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Cards lift very slightly. Anything more and a grid of sixteen
+   becomes a trampoline. */
+.card__cover { transition: box-shadow 200ms ease; }
+.card { transition: transform 200ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.card:hover { transform: translateY(-3px); }
+.card:hover .card__cover { box-shadow: 0 6px 24px rgb(0 0 0 / 0.13); }
+.card__cover img { transition: transform 480ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.card:hover .card__cover img { transform: scale(1.018); }
+
+/* The next-project link answers the pointer with the arrow moving. */
+.next__title { display: inline-block; transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.next:hover .next__title { transform: translateX(6px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .shot { opacity: 1; transform: none; }
+  .card:hover, .card:hover .card__cover img, .next:hover .next__title { transform: none; }
+  .lightbox { animation: none; }
+  .shot__hint { opacity: 1; transform: none; }
+}

@@ -3,11 +3,16 @@ import { findCase, neighbours } from "../content";
 import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
 import { Badge } from "@bighatpoland/ui";
+
+import { ReadingProgress } from "../components/ReadingProgress";
+import { Lightbox, useLightbox } from "../system/Lightbox";
+import { ShotViewer } from "../system/Shot";
 import { Cover, Lane, MetaStrip, Wall } from "../system";
 
 export function Case() {
   const { slug } = useParams();
   const study = findCase(slug);
+  const lightbox = useLightbox();
 
   if (!study) {
     return (
@@ -25,7 +30,9 @@ export function Case() {
   const { next } = neighbours(study.slug);
 
   return (
-    <article>
+    <ShotViewer.Provider value={lightbox.show}>
+      <article>
+      <ReadingProgress />
       <JumpBar title={study.title} chapters={study.chapters} />
       <Wall>
         <Cover cover={study.cover} />
@@ -61,6 +68,8 @@ export function Case() {
           </Lane>
         )}
       </Wall>
-    </article>
+      </article>
+      {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
+    </ShotViewer.Provider>
   );
 }
