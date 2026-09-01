@@ -1,36 +1,47 @@
 /* ---------------------------------------------------------------
-   Big Hat — token layer.
+   The site layer.
 
-   The only place a raw value is allowed to appear in this project.
-   Everything else, including every component in src/system, reads
-   from here. When Big Hat ships as a package this file is what the
-   build emits.
+   @bighatpoland/ui owns colour, spacing, radius, elevation and the
+   dark theme — imported before this file in main.tsx. This file adds
+   only what a long-form editorial site needs and the component
+   library has no opinion about: a display type scale, the wall
+   widths, the vertical rhythm of a project page, and the brand mark.
+
+   Rule: no raw colour value below except --bh-site-mark, and that one
+   should graduate into the design system as a semantic `brand` token
+   with a contrast test, at which point this file loses it too.
    --------------------------------------------------------------- */
 :root {
-  /* ---- colour: primitive ---- */
-  --bh-ink: #1f242b;
-  --bh-slate: #3a4149;
-  --bh-mute: #6b7785;
-  --bh-paper: #ffffff;
-  --bh-accent: #ffc300;
-  --bh-line: #e4e7eb;
-  --bh-line-strong: #c9ced6;
-  --bh-shade: #f6f7f9;
-  --bh-well: #eceef1;
+  /* ---- the mark ----
+     green.400 from the Big Hat primitive ramp. Chosen as a field
+     colour: black body text on it measures 10.4:1, so it can carry
+     type at any size rather than only decorate. */
+  --bh-site-mark: #34d399;
+  --bh-site-mark-deep: var(--bh-status-success-fg);
+  /* Type that sits ON the mark. Fixed in both themes: the field does
+     not follow the theme, so its foreground must not either, or the
+     cover drops to 1.9:1 in dark mode. */
+  --bh-site-on-mark: #14181c;
 
-  /* ---- colour: semantic ---- */
-  --bh-text: var(--bh-slate);
-  --bh-text-strong: var(--bh-ink);
-  --bh-text-quiet: var(--bh-mute);
-  --bh-surface: var(--bh-paper);
-  --bh-surface-sunken: var(--bh-shade);
-  --bh-border: var(--bh-line);
-  --bh-border-strong: var(--bh-line-strong);
-  --bh-focus: var(--bh-ink);
-  --bh-mark: var(--bh-accent);
+  /* ---- aliases onto the design system ----
+     The site's stylesheet speaks in these; the values come from the
+     package. Change nothing here to restyle — change the package. */
+  --bh-text: var(--bh-text-secondary);
+  --bh-text-strong: var(--bh-text-primary);
+  --bh-text-quiet: var(--bh-text-muted);
+  --bh-surface: var(--bh-surface-base);
+  --bh-border: var(--bh-border-subtle);
+  --bh-focus: var(--bh-border-focus);
+  --bh-mark: var(--bh-site-mark);
+  --bh-well: var(--bh-surface-sunken);
+  /* --bh-surface-sunken and --bh-border-strong come straight from the
+     package under the names the site already used. */
 
-  /* ---- type ---- */
-  --bh-font-body: "Rubik", system-ui, -apple-system, sans-serif;
+  /* ---- editorial type ----
+     The library's scale tops out at 26px, which is right for an
+     application and far too small for a cover. These sizes are the
+     site's own, and they are the only type tokens it adds. */
+  --bh-font-body: "Rubik", var(--bh-font-family);
   --bh-font-id: "IBM Plex Mono", ui-monospace, monospace;
   --bh-size-display: clamp(2.5rem, 6vw, 4.25rem);
   --bh-size-h2: clamp(1.5rem, 2.6vw, 2rem);
@@ -40,11 +51,13 @@
   --bh-size-small: 0.875rem;
   --bh-size-id: 0.75rem;
 
-  /* ---- space ---- */
-  --bh-space-1: 0.25rem;
-  --bh-space-2: 0.5rem;
-  --bh-space-3: 1rem;
-  --bh-space-4: 1.5rem;
+  /* ---- space ----
+     The library's 4px scale stops at 64px, which a wall needs to go
+     past. 1–6 map onto it; 7 and 8 are the site's own. */
+  --bh-space-1: var(--bh-gap-tight);
+  --bh-space-2: var(--bh-gap-snug);
+  --bh-space-3: var(--bh-gap-loose);
+  --bh-space-4: var(--bh-padding-section);
   --bh-space-5: 2.5rem;
   --bh-space-6: 4rem;
   --bh-space-7: 6rem;
@@ -54,7 +67,7 @@
      measure  reading width for prose
      wall     the image column on a project page
      page     everything else
-     gutter   the minimum edge margin a bleed shot leaves alone   */
+     gutter   the edge margin a bleed shot leaves alone */
   --bh-measure: 68ch;
   --bh-wall: 72rem;
   --bh-page: 74rem;
@@ -63,4 +76,12 @@
   /* ---- wall rhythm: the vertical beat of a project page ---- */
   --bh-beat-block: var(--bh-space-4);
   --bh-beat-chapter: var(--bh-space-7);
+}
+
+/* The mark has to survive the package's dark theme. Black type on
+   green.400 passes in both, so the field itself does not change —
+   only what sits behind the page does. */
+:root[data-theme="dark"] {
+  --bh-site-mark: #34d399;
+  --bh-site-on-mark: #14181c;
 }

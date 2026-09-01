@@ -145,6 +145,15 @@ export type Cover = {
  */
 export type Status = { state: "live" } | { state: "held"; until: string; why: string };
 
+/**
+ * Which band of the work page a wall sits in.
+ *
+ * product      — the shipped products. The main grid.
+ * practice     — how I work: methods, systems, workshops.
+ * recognition  — awards and competition entries. Short, not case studies.
+ */
+export type Group = "product" | "practice" | "recognition";
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -152,6 +161,7 @@ export type CaseStudy = {
   what: string;
   lead: string;
   status: Status;
+  group: Group;
   cover: Cover;
   /** the strip under the title */
   meta: { label: string; value: string }[];

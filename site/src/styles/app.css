@@ -137,6 +137,7 @@ img { max-width: 100%; height: auto; }
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: var(--bh-mark);
+  color: var(--bh-site-on-mark);
   border: 1px solid var(--bh-border);
 }
 .card__cover img { width: 100%; height: 100%; object-fit: cover; }
@@ -152,7 +153,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.015em;
-  color: var(--bh-text-strong);
+  color: var(--bh-site-on-mark);
 }
 .card__text { padding-top: var(--bh-space-3); }
 .card__title { margin: 0; font-size: var(--bh-size-h3); font-weight: 500; color: var(--bh-text-strong); }
@@ -167,6 +168,8 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- the cover ---------- */
 .cover {
+  /* Text on the mark uses the fixed foreground, not the themed one. */
+  color: var(--bh-site-on-mark);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
@@ -179,6 +182,7 @@ img { max-width: 100%; height: auto; }
 .cover__text { max-width: 34ch; }
 .cover__headline {
   display: grid;
+  color: var(--bh-site-on-mark);
   margin: var(--bh-space-4) 0 0;
   font-size: clamp(2.75rem, 7vw, 5.5rem);
   font-weight: 300;
@@ -191,20 +195,20 @@ img { max-width: 100%; height: auto; }
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 300;
   letter-spacing: -0.02em;
-  color: var(--bh-text-strong);
+  color: var(--bh-site-on-mark);
 }
 .cover__stamp { margin-top: var(--bh-space-5); max-width: 30ch; line-height: 1.7; }
-.cover__credit { margin: var(--bh-space-5) 0 0; font-size: var(--bh-size-lead); font-weight: 300; color: var(--bh-text-strong); }
+.cover__credit { margin: var(--bh-space-5) 0 0; font-size: var(--bh-size-lead); font-weight: 300; color: var(--bh-site-on-mark); }
 .cover__shot { align-self: center; }
 .cover__shot img { display: block; width: 100%; }
 .cover__slot {
   display: grid;
   place-items: center;
   min-height: 20rem;
-  border: 1px dashed var(--bh-text-strong);
+  border: 1px dashed var(--bh-site-on-mark);
   font-family: var(--bh-font-id);
   font-size: var(--bh-size-id);
-  color: var(--bh-text-strong);
+  color: var(--bh-site-on-mark);
   padding: var(--bh-space-4);
   text-align: center;
 }
@@ -280,6 +284,7 @@ img { max-width: 100%; height: auto; }
   margin: var(--bh-space-6) 0 0;
   padding: var(--bh-space-5);
   background: var(--bh-mark);
+  color: var(--bh-site-on-mark);
 }
 .thesis__text {
   max-width: 44ch;
@@ -288,7 +293,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.015em;
-  color: var(--bh-text-strong);
+  color: var(--bh-site-on-mark);
 }
 
 /* ---------- shots ---------- */
@@ -514,7 +519,7 @@ img { max-width: 100%; height: auto; }
   background: var(--bh-mark);
   font-family: var(--bh-font-id);
   font-size: var(--bh-size-id);
-  color: var(--bh-text-strong);
+  color: var(--bh-site-on-mark);
 }
 
 /* ---------- jump bar ---------- */
