@@ -33,7 +33,7 @@ export const fox: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>FOX belongs to Asseco, so the screens below are Big Hat — my own design system, built on the same principles and published in the open. Where a FOX artefact cannot be shown, this is the equivalent artefact I can show in full: <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">the Big Hat Storybook</a>.</p>",
+            "<p>The screens on this page are <strong>Big Hat</strong>, a design system of my own. I built it from nothing for my own projects, and it is not a version, a fork or a sibling of FOX \u2014 the two share no code, no tokens and no components. FOX is Asseco's and its artefacts stay there. Big Hat is published under MIT: <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">Storybook</a> \u00b7 <a href=\"https://github.com/bighatpoland/bighat-design-system\">source</a>.</p>",
         },
         {
           kind: "shot",
@@ -160,7 +160,7 @@ export const fox: CaseStudy = {
       maxim:
         "What a decision cost is the part of design systems work that never survives into a portfolio.",
       standfirst:
-        "FOX cannot be exported. So I built the same argument as a system of my own, published under MIT with its reasoning attached — and the screens above come from it.",
+        "My own design system, built for my own projects and published under MIT with its reasoning attached. Independent of FOX, and the source of every screen on this page.",
       blocks: [
         {
           kind: "passage",
