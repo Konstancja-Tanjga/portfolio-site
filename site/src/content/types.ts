@@ -23,6 +23,25 @@ export type Shot = {
 
 /* ---------- the repeating content components ---------- */
 
+/**
+ * A video file in public/work/<slug>/, with the source it came from.
+ *
+ * Self-hosted rather than embedded — see Video.tsx for why a portfolio
+ * cannot rent its evidence from someone else's channel.
+ */
+export type Video = {
+  /** "/work/elly-ai-assistant/elly-help.mp4" */
+  src: string;
+  /** names the player for screen readers, so it cannot be "video" */
+  title: string;
+  /** a still, shown before play and while the file loads */
+  poster?: string;
+  caption?: string;
+  /** whose film this is, and where it was published */
+  credit?: { text: string; href?: string };
+};
+
+
 /** One of the four-up persona cards. Same slots every time. */
 export type Persona = {
   n: string;
@@ -115,19 +134,7 @@ export type Block =
       size?: "phone" | "square" | "wide";
       caption?: string;
     }
-  /**
-   * A video, played in place. `youtube` is the id, not a URL — the embed
-   * host is the component's business, not the content file's.
-   */
-  | {
-      kind: "video";
-      youtube: string;
-      title: string;
-      /** a still in public/, shown until someone clicks. See Video.tsx. */
-      poster?: string;
-      caption?: string;
-      width?: Width;
-    }
+  | ({ kind: "video"; width?: Width } & Video)
   | { kind: "stats"; items: { value: string; label: string }[] }
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }

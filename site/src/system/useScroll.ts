@@ -65,8 +65,30 @@ export function useScroll(): ScrollState {
   return state;
 }
 
-/** Send the page back to the top, honouring the motion preference. */
+/**
+ * Send the page back to the top, honouring the motion preference.
+ *
+ * A smooth scroll over a wall of lazy-loaded images does not reliably land on
+ * zero: an image above the current position finishes loading mid-animation,
+ * the document grows, and the browser stops a few hundred pixels short — which
+ * looks exactly like the page rendered with its top cut off. So the scroll is
+ * asserted again once it has settled.
+ */
 export function scrollToTop() {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   window.scrollTo({ top: 0, behavior: reduced ? "instant" : "smooth" });
+  if (reduced) return;
+
+  const settle = () => window.scrollTo({ top: 0, behavior: "instant" });
+
+  // Read the capability before branching: `"onscrollend" in window` narrows
+  // `window` itself, and TypeScript's lib.dom does not declare the handler,
+  // so the narrowed type comes out as `never`.
+  const hasScrollEnd = "onscrollend" in window;
+  if (hasScrollEnd) {
+    window.addEventListener("scrollend", settle, { once: true });
+  }
+  // Belt and braces either way: scrollend never fires if the scroll had
+  // nowhere to go.
+  window.setTimeout(settle, hasScrollEnd ? 1200 : 700);
 }

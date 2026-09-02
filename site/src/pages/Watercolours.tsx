@@ -2,8 +2,9 @@ import { StateBlock } from "@bighatpoland/ui";
 
 import { countPaintings, watercolours } from "../content/watercolours";
 import type { Painting } from "../content/watercolours";
+import { Gallery, useGallery } from "../system/Gallery";
+import type { GalleryItem } from "../system/Gallery";
 import { asset } from "../system/asset";
-import { Lightbox, useLightbox } from "../system/Lightbox";
 
 /**
  * A gallery, not a wall. Deliberately kept off the work page: it says
@@ -11,7 +12,7 @@ import { Lightbox, useLightbox } from "../system/Lightbox";
  * manager scrolls past.
  */
 export function Watercolours() {
-  const lightbox = useLightbox();
+  const gallery = useGallery();
 
   return (
     <div className="page">
@@ -31,14 +32,14 @@ export function Watercolours() {
           {category.blurb && <p className="band__note">{category.blurb}</p>}
 
           {category.paintings?.length ? (
-            <Plates paintings={category.paintings} onOpen={lightbox.show} />
+            <Plates paintings={category.paintings} onOpen={gallery.show} />
           ) : null}
 
           {category.series?.map((series) => (
             <div className="series" key={series.id}>
               <h3 className="series__name">{series.name}</h3>
               {series.blurb && <p className="series__blurb">{series.blurb}</p>}
-              <Plates paintings={series.paintings} onOpen={lightbox.show} />
+              <Plates paintings={series.paintings} onOpen={gallery.show} />
             </div>
           ))}
 
@@ -58,7 +59,14 @@ export function Watercolours() {
         </section>
       ))}
 
-      {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
+      {gallery.open && (
+        <Gallery
+          items={gallery.open.items}
+          index={gallery.open.index}
+          onClose={gallery.close}
+          onIndex={gallery.goto}
+        />
+      )}
     </div>
   );
 }
@@ -76,7 +84,7 @@ function Plates({
   onOpen,
 }: {
   paintings: Painting[];
-  onOpen: (shot: { src: string; caption?: string }) => void;
+  onOpen: (items: GalleryItem[], index: number) => void;
 }) {
   return (
     <ul className="plates">
@@ -93,7 +101,7 @@ function Plates({
             <button
               type="button"
               className="plate__mount"
-              onClick={() => onOpen({ src: asset(painting.src), caption })}
+              onClick={() => onOpen(paintings, index)}
               aria-label={caption ? `${caption} — view full size` : "View full size"}
             >
               <img src={asset(painting.src)} alt={caption} loading="lazy" decoding="async" />

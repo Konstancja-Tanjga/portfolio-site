@@ -36,10 +36,11 @@ function BlockView({ block }: { block: Block }) {
     case "video":
       return (
         <Video
-          youtube={block.youtube}
+          src={block.src}
           title={block.title}
           poster={block.poster}
           caption={block.caption}
+          credit={block.credit}
           width={block.width}
         />
       );

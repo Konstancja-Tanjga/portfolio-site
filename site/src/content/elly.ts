@@ -176,10 +176,15 @@ export const elly: CaseStudy = {
       blocks: [
         {
           kind: "video",
-          youtube: "eFn6maci6mA",
-          title: "Elly Help in APplus 9",
+          src: "/work/elly-ai-assistant/elly-help.mp4",
+          title: "Elly Help in APplus — Asseco Solutions product film",
           poster: "/work/elly-ai-assistant/video-poster.jpg",
-          caption: "Elly Help, as APplus ships it. Published by Asseco Solutions.",
+          caption:
+            "Elly Help as APplus ships it — the vendor's own product film, four minutes.",
+          credit: {
+            text: "Asseco Solutions DACH, August 2025",
+            href: "https://www.youtube.com/watch?v=eFn6maci6mA",
+          },
         },
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/09.png" },
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/12.png" },
