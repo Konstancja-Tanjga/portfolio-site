@@ -115,6 +115,19 @@ export type Block =
       size?: "phone" | "square" | "wide";
       caption?: string;
     }
+  /**
+   * A video, played in place. `youtube` is the id, not a URL — the embed
+   * host is the component's business, not the content file's.
+   */
+  | {
+      kind: "video";
+      youtube: string;
+      title: string;
+      /** a still in public/, shown until someone clicks. See Video.tsx. */
+      poster?: string;
+      caption?: string;
+      width?: Width;
+    }
   | { kind: "stats"; items: { value: string; label: string }[] }
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }

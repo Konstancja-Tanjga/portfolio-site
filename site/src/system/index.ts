@@ -8,6 +8,7 @@
  */
 export { Wall, Lane } from "./Wall";
 export { Shot, Duo, ShotSet } from "./Shot";
+export { Video } from "./Video";
 export { Passage, Points, Pull, Thesis, Kicker } from "./Text";
 export { Stats, Spec, MetaStrip } from "./Data";
 export { Cover } from "./Cover";

@@ -15,6 +15,7 @@ import {
   Steps,
   Thesis,
   UseCase,
+  Video,
 } from "../system";
 
 /** Content block → component. The only place this mapping exists. */
@@ -32,6 +33,16 @@ function BlockView({ block }: { block: Block }) {
       return <Duo items={block.items} caption={block.caption} />;
     case "set":
       return <ShotSet items={block.items} size={block.size} caption={block.caption} />;
+    case "video":
+      return (
+        <Video
+          youtube={block.youtube}
+          title={block.title}
+          poster={block.poster}
+          caption={block.caption}
+          width={block.width}
+        />
+      );
     case "stats":
       return <Stats items={block.items} />;
     case "pull":

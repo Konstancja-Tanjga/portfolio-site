@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import type { Chapter } from "../content/types";
+import { useScroll } from "../system/useScroll";
 
 /**
  * A sticky index for a long wall. Behance has no equivalent, which is
@@ -9,6 +10,7 @@ import type { Chapter } from "../content/types";
  * part you wanted. Marks the chapter you are in.
  */
 export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[] }) {
+  const { direction } = useScroll();
   const named = chapters.filter((c) => c.heading);
   const [active, setActive] = useState<string | undefined>(named[0]?.id);
 
@@ -31,7 +33,7 @@ export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[
   }, [chapters]);
 
   return (
-    <div className="jump">
+    <div className={direction === "down" ? "jump is-tucked" : "jump"}>
       <div className="jump__inner">
         {/* Always present, sticky, first in the tab order after the masthead:
             a project page is long, and browser Back is not an interface. */}

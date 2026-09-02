@@ -4,6 +4,7 @@ import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
 import { Badge } from "@bighatpoland/ui";
 
+import { BackToTop } from "../components/BackToTop";
 import { ReadingProgress } from "../components/ReadingProgress";
 import { Lightbox, useLightbox } from "../system/Lightbox";
 import { ShotViewer } from "../system/Shot";
@@ -75,6 +76,7 @@ export function Case() {
         </Lane>
       </Wall>
       </article>
+      <BackToTop />
       {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
     </ShotViewer.Provider>
   );

@@ -174,6 +174,13 @@ export const elly: CaseStudy = {
       standfirst:
         "Elly as it ships in APplus 9 — the screens, not the reasoning. The chapters above are how it got here.",
       blocks: [
+        {
+          kind: "video",
+          youtube: "eFn6maci6mA",
+          title: "Elly Help in APplus 9",
+          poster: "/work/elly-ai-assistant/video-poster.jpg",
+          caption: "Elly Help, as APplus ships it. Published by Asseco Solutions.",
+        },
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/09.png" },
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/12.png" },
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/15.png" },
