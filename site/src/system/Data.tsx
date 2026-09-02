@@ -43,14 +43,22 @@ export function Spec({
 }
 
 /** The strip under a project title. */
-export function MetaStrip({ items }: { items: { label: string; value: string }[] }) {
+export function MetaStrip({ items }: { items: { label: string; value: string; href?: string }[] }) {
   return (
     <Lane width="wall">
       <dl className="meta">
         {items.map((item) => (
           <div className="meta__item" key={item.label}>
             <dt>{item.label}</dt>
-            <dd>{item.value}</dd>
+            <dd>
+              {item.href ? (
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  {item.value}
+                </a>
+              ) : (
+                item.value
+              )}
+            </dd>
           </div>
         ))}
       </dl>
