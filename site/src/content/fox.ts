@@ -14,7 +14,7 @@ export const fox: CaseStudy = {
     subline: "for a six-product ERP platform",
     stamp: "TOKENS · COMPONENTS · STORYBOOK · CHROMATIC · VERSIONED PACKAGES",
     credit: "Design system owner · Asseco Solutions · 2023–2026",
-    shot: { slot: "Cover hero — export 2400px wide, product bleeding off the right edge." },
+    shot: { src: "/work/fox-design-system/bighat-records.png" },
   },
   meta: [
     { label: "Role", value: "Design system owner — I review and merge the component pull requests" },
@@ -30,7 +30,17 @@ export const fox: CaseStudy = {
       n: "01",
       heading: "What it is",
       blocks: [
-        { kind: "shot", width: "wall", slot: "Component catalogue in Storybook. 2400px." },
+        {
+          kind: "passage",
+          html:
+            "<p>FOX belongs to Asseco, so the screens below are Big Hat — my own design system, built on the same principles and published in the open. Where a FOX artefact cannot be shown, this is the equivalent artefact I can show in full: <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">the Big Hat Storybook</a>.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/bighat-catalogue.png",
+          caption: "The catalogue as a consuming team meets it: Storybook, with foundations, templates and components in one navigation. Big Hat.",
+        },
       ],
     },
     {
@@ -47,6 +57,12 @@ export const fox: CaseStudy = {
             { key: "consumers", value: "6 products, 3 frameworks" },
           ],
         },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/bighat-tokens.png",
+          caption: "The semantic layer, as it is published: every token with its CSS variable and its value in both themes. Big Hat.",
+        },
       ],
     },
     {
@@ -56,7 +72,12 @@ export const fox: CaseStudy = {
       standfirst:
         "The API, the states, the keyboard behaviour, the test — one component shown completely beats fifty listed.",
       blocks: [
-        { kind: "shot", width: "wall", slot: "The component's states, as a matrix. 2400px." },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/bighat-stateblock.png",
+          caption: "StateBlock in Big Hat — empty, loading and error as one component, each with its own announcement strategy, and a do/don't for the two situations \u201cempty\u201d actually covers.",
+        },
       ],
     },
     {
@@ -99,7 +120,16 @@ export const fox: CaseStudy = {
       standfirst:
         "The hard part was never the components.",
       blocks: [
-        { kind: "shot", width: "wall", slot: "Adoption across the product lines. 2400px." },
+        {
+          kind: "set",
+          size: "wide",
+          items: [
+            { src: "/work/fox-design-system/bighat-records.png", caption: "Records" },
+            { src: "/work/fox-design-system/bighat-kanban.png", caption: "Kanban board" },
+            { src: "/work/fox-design-system/bighat-ai-chat.png", caption: "AI chat" },
+          ],
+          caption: "What adoption looks like from the system's side: three unrelated surfaces, one token set, no product-local components. Big Hat templates.",
+        },
       ],
     },
     {
@@ -109,7 +139,12 @@ export const fox: CaseStudy = {
       standfirst:
         "Contrast tokens so colour decisions can't fail silently; keyboard and focus behaviour defined at component level.",
       blocks: [
-        { kind: "shot", width: "wall", slot: "A failing contrast check. 2400px." },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/bighat-contrast.png",
+          caption: "Every foreground/background pair the system promises to keep legible, asserted in CI in both themes at the WCAG level that applies to it \u2014 4.5:1 for text, 3:1 for focus rings and control boundaries. A regression fails the build rather than the review. Big Hat.",
+        },
       ],
     },
     {
