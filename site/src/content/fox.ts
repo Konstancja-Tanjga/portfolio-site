@@ -14,7 +14,7 @@ export const fox: CaseStudy = {
     subline: "for a six-product ERP platform",
     stamp: "TOKENS · COMPONENTS · STORYBOOK · CHROMATIC · VERSIONED PACKAGES",
     credit: "Design system owner · Asseco Solutions · 2023–2026",
-    shot: { slot: "Cover hero — export 2400px wide, product bleeding off the right edge." },
+    shot: { src: "/work/fox-design-system/colors.png" },
   },
   meta: [
     { label: "Role", value: "Design system owner — I review and merge the component pull requests" },
@@ -23,6 +23,7 @@ export const fox: CaseStudy = {
     { label: "Frameworks", value: "Angular, React, web components" },
     { label: "Pipeline", value: "Figma → Storybook → Chromatic → Nexus" },
     { label: "Period", value: "November 2023 – present" },
+    { label: "Storybook", value: "Public — design-system-v1.assecosolutions.com", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
   ],
   chapters: [
     {
@@ -30,7 +31,17 @@ export const fox: CaseStudy = {
       n: "01",
       heading: "What it is",
       blocks: [
-        { kind: "shot", width: "wall", slot: "Component catalogue in Storybook. 2400px." },
+        {
+          kind: "passage",
+          html:
+            "<p>FOX is Asseco's, and it is public: the catalogue below is the live library, not a mock-up of it. <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/catalogue.png",
+          caption: "Atoms, molecules and organisms in one navigation, published on Chromatic \u2014 the end of the pipeline the case study describes.",
+        },
       ],
     },
     {
@@ -56,7 +67,12 @@ export const fox: CaseStudy = {
       standfirst:
         "The API, the states, the keyboard behaviour, the test — one component shown completely beats fifty listed.",
       blocks: [
-        { kind: "shot", width: "wall", slot: "The component's states, as a matrix. 2400px." },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/button-api.png",
+          caption: "fox-button as a consuming developer meets it: every prop with its default, and controls that change the rendered component rather than a picture of it.",
+        },
       ],
     },
     {

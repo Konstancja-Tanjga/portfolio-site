@@ -20,7 +20,7 @@ export const dms: CaseStudy = {
     { label: "Role", value: "Lead designer — sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Documents" },
-    { label: "Design system", value: "FOX v2.3" },
+    { label: "Design system", value: "FOX v2.3", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
     { label: "Scope", value: "11 functional areas" },
     { label: "Period", value: "December 2025 – October 2026" },
   ],
