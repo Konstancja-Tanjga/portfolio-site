@@ -30,10 +30,6 @@ export const fox: CaseStudy = {
       n: "01",
       heading: "What it is",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what FOX is, what it is not, and what it replaced.</p>",
-        },
         { kind: "shot", width: "wall", slot: "Component catalogue in Storybook. 2400px." },
       ],
     },
@@ -45,15 +41,9 @@ export const fox: CaseStudy = {
         "Three layers, and why not two.",
       blocks: [
         {
-          kind: "passage",
-          html: "<p>TODO — primitive, semantic, component. What the build emits, and what a consumer is allowed to reach for.</p>",
-        },
-        {
           kind: "spec",
           caption: "What the build emits.",
-          rows: [
-            { key: "source", value: "TODO — tokens.json" },
-            { key: "emits", value: "CSS custom properties, TS types" },
+          rows: [            { key: "emits", value: "CSS custom properties, TS types" },
             { key: "consumers", value: "6 products, 3 frameworks" },
           ],
         },
@@ -66,10 +56,6 @@ export const fox: CaseStudy = {
       standfirst:
         "The API, the states, the keyboard behaviour, the test — one component shown completely beats fifty listed.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the component. What the API takes, what was rejected, and why.</p>",
-        },
         { kind: "shot", width: "wall", slot: "The component's states, as a matrix. 2400px." },
       ],
     },
@@ -113,10 +99,6 @@ export const fox: CaseStudy = {
       standfirst:
         "The hard part was never the components.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — breaking changes, the deprecation window, how six product teams were brought across, and what it cost.</p>",
-        },
         { kind: "shot", width: "wall", slot: "Adoption across the product lines. 2400px." },
       ],
     },
@@ -127,10 +109,6 @@ export const fox: CaseStudy = {
       standfirst:
         "Contrast tokens so colour decisions can't fail silently; keyboard and focus behaviour defined at component level.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the checks that run, and what happens when one fails.</p>",
-        },
         { kind: "shot", width: "wall", slot: "A failing contrast check. 2400px." },
       ],
     },
@@ -139,10 +117,6 @@ export const fox: CaseStudy = {
       n: "07",
       heading: "What it changed",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what six products got out of it, and one thing I would do differently.</p>",
-        },
         {
           kind: "stats",
           items: [

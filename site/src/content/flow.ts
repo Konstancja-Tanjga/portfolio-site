@@ -64,11 +64,6 @@ export const flow: CaseStudy = {
       standfirst:
         "A ticketing board grouped by status, an integrated details panel, and an explicit tenant switcher for multi-organisation contexts.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — why grouped by status rather than by module or by date, and what the tenant switcher had to make impossible.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/applus-flow/07.png" },
       ],
     },
@@ -79,11 +74,6 @@ export const flow: CaseStudy = {
       standfirst:
         "The same board structure at adapted density: larger touch targets, sliding panels, usable held or propped.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — what changed and, more usefully, what deliberately did not.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/applus-flow/06.png" },
       ],
     },
@@ -124,7 +114,7 @@ export const flow: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Built in Figma and Figma Make, with design-to-code handoff through Codex and Claude Code. TODO — one thing I would do differently.</p>",
+            "<p>Built in Figma and Figma Make, with design-to-code handoff through Codex and Claude Code.</p>",
         },
       ],
     },

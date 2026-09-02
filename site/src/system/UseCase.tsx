@@ -31,6 +31,7 @@ export function UseCase({ uc }: { uc: UseCaseData }) {
           <p>{uc.precondition.body}</p>
         </Slot>
 
+        {uc.flow.length > 0 && (
         <Slot label="Main flow">
           <ol className="uc__flow">
             {uc.flow.map((f) => (
@@ -44,17 +45,23 @@ export function UseCase({ uc }: { uc: UseCaseData }) {
             ))}
           </ol>
         </Slot>
+        )}
 
-        <Slot label={`Exits — ${uc.exits.length}, no third`} note={uc.exitsNote}>
-          <div className="uc__exits">
-            {uc.exits.map((e) => (
-              <div className="uc__exit" key={e.label}>
-                <p className="field__label">{e.label}</p>
-                <p>{e.text}</p>
-              </div>
-            ))}
-          </div>
-        </Slot>
+        {uc.exits?.length ? (
+          <Slot
+            label={`Exits — ${uc.exits.length === 2 ? "two" : uc.exits.length}, no third`}
+            note={uc.exitsNote}
+          >
+            <div className="uc__exits">
+              {uc.exits.map((e) => (
+                <div className="uc__exit" key={e.label}>
+                  <p className="field__label">{e.label}</p>
+                  <p>{e.text}</p>
+                </div>
+              ))}
+            </div>
+          </Slot>
+        ) : null}
 
         <Slot label="Postcondition" note={uc.postcondition.note}>
           <p>{uc.postcondition.body}</p>

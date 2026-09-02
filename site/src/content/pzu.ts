@@ -32,39 +32,7 @@ export const pzu: CaseStudy = {
       maxim:
         "Two regulated domains in one account: an insurance policy and a medical record do not get to look like the same object.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what MojePZU does, and for how many people.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/mojepzu/02.png" },
-      ],
-    },
-    {
-      id: "setup",
-      n: "02",
-      heading: "Account setup, simplified",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the interviews found about setup, what was removed, and what that cost.</p>",
-        },
-        {
-          kind: "stats",
-          items: [
-            { value: "TODO", label: "TODO" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "03",
-      heading: "What it changed",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what shipped, and one thing I would do differently.</p>",
-        },
       ],
     },
   ],

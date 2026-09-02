@@ -63,18 +63,6 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why it's a hard brief",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — one paragraph. Four audiences with genuinely different jobs, one data foundation, and a permission model that has to hold while the same object travels between them.</p>",
-        },
-      ],
-    },
-    {
       id: "who-for",
       n: "13",
       heading: "Who it is for",
@@ -166,11 +154,6 @@ export const bi: CaseStudy = {
       n: "14",
       heading: "Discovery and research",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — how the 27 came about: who was asked, what was asked, and the one finding that changed the product rather than confirming it.</p>",
-        },
         { kind: "shot", width: "wall", slot: "Research synthesis. 2400px." },
       ],
     },
@@ -179,11 +162,6 @@ export const bi: CaseStudy = {
       n: "15",
       heading: "Analysis of the initial idea",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — what the inherited concept assumed, which of those assumptions survived the audit, and which did not.</p>",
-        },
         {
           kind: "duo",
           items: [
@@ -199,10 +177,6 @@ export const bi: CaseStudy = {
       n: "16",
       heading: "First prototypes",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the first build got wrong, and how it was found out.</p>",
-        },
         { kind: "shot", width: "wall", slot: "Early prototype. 2400px." },
       ],
     },
@@ -230,8 +204,7 @@ export const bi: CaseStudy = {
               sourceOfTruth: "Figma variables mapped to published tokens.",
               ships: "A token change propagates; a structural change still needs both sides edited.",
               costs: "The binding has to be maintained, and it silently rots when it isn't.",
-              moved: "TODO — what actually moved between 2.3 and 3.0.",
-            },
+                    },
             {
               version: "v3.0",
               claim: "The code is the system",
@@ -274,10 +247,6 @@ export const bi: CaseStudy = {
                   body: "Main actions only in the action cluster. Never in the card, never in the rail.",
                 },
               ],
-              rules: [
-                { id: "R1", text: "TODO — the rule this screen demonstrates." },
-                { id: "R3", text: "TODO" },
-              ],
             },
             {
               id: "04",
@@ -303,7 +272,6 @@ export const bi: CaseStudy = {
                   body: "The sheet is a child of the content-layer, not a sibling of the page. Contrast with the modal, which is neither.",
                 },
               ],
-              rules: [{ id: "R2", text: "TODO" }],
             },
             {
               id: "08",
@@ -319,12 +287,6 @@ export const bi: CaseStudy = {
               title: "Detail page — enlarged",
               standfirst: "viz-workspace--enlarged. Enlarge is the one view that leaves the content-layer.",
               shot: { slot: "Zone map 09 — enlarged. 2400px." },
-              notes: [
-                {
-                  label: "Why inset: 0",
-                  body: "TODO — why enlarge escapes the layer instead of growing inside it.",
-                },
-              ],
             },
           ],
         },
@@ -459,18 +421,12 @@ export const bi: CaseStudy = {
             flow: [
               { n: "1", text: "The query is an object with an owner, not a record in a list." },
               { n: "2", text: "Its audience is shown at rest: administrator, moderator, users — with data model, author and date." },
-              { n: "3", text: "Permissions sit beside the object's own properties and its system links." },
-              { n: "4", text: "TODO" },
-              {
+              { n: "3", text: "Permissions sit beside the object's own properties and its system links." },              {
                 n: "5",
                 text: "Translations, versions and update policy live in the same shell.",
                 note:
                   "Configuration you can verify where you write it does not become a support ticket next month.",
               },
-            ],
-            exits: [
-              { label: "Publish", text: "TODO" },
-              { label: "Keep private", text: "TODO" },
             ],
             postcondition: {
               body:
@@ -581,11 +537,6 @@ export const bi: CaseStudy = {
       heading: "Handoff",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>TODO — what development actually received, and what that changed about how the build ran.</p>",
-        },
-        {
           kind: "stats",
           items: [
             { value: "10", label: "functional areas owned" },
@@ -593,11 +544,6 @@ export const bi: CaseStudy = {
             { value: "2", label: "customer beta sites" },
             { value: "v3.0", label: "design system shipped on" },
           ],
-        },
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — what I would do differently. One real thing, with the cost named.</p>",
         },
       ],
     },

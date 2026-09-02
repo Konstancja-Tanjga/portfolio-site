@@ -69,16 +69,5 @@ export const dms: CaseStudy = {
         { kind: "shot", slot: "Diagram — the three permission layers and how a multi-role assignment resolves." },
       ],
     },
-    {
-      id: "migration",
-      heading: "Getting the existing documents in",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — the migration assistant: what a customer starts with, what the assistant asks them, and what happens to documents it cannot classify.</p>",
-        },
-      ],
-    },
   ],
 };

@@ -32,10 +32,6 @@ export const riyad: CaseStudy = {
       maxim:
         "A bank teaching people about money has a credibility problem before it has a design problem.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the product teaches, to whom, and why a bank was the one to build it.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/27.png" },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/01.png" },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/03.png" },
@@ -50,29 +46,12 @@ export const riyad: CaseStudy = {
       ],
     },
     {
-      id: "research",
-      n: "02",
-      heading: "Before a single screen",
-      standfirst:
-        "C-level interviews, subject-matter sessions and A/B testing all ran before the build, not after it.",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the C-level interviews and SME sessions settled, and what A/B testing settled after them.</p>",
-        },
-      ],
-    },
-    {
       id: "navigation",
       n: "03",
       heading: "The 3D navigation",
       maxim:
         "An interactive metaphor is a promise. If it does not make finding things faster, it is decoration you pay to maintain.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — why 3D rather than a list, and what it had to earn to justify the cost.</p>",
-        },
         {
           kind: "set",
           size: "phone",
@@ -106,10 +85,6 @@ export const riyad: CaseStudy = {
         "Not a set of illustrations — a system, so a topic added next year still looks like it belongs.",
       blocks: [
         {
-          kind: "passage",
-          html: "<p>TODO — the rules: what the system can and cannot draw, and how a new topic gets an image without a designer.</p>",
-        },
-        {
           kind: "set",
           size: "square",
           caption: "The illustration system — one rule set, any topic.",
@@ -131,10 +106,6 @@ export const riyad: CaseStudy = {
       n: "05",
       heading: "Shipped",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what shipping to both stores changed, and one thing I would do differently.</p>",
-        },
         {
           kind: "set",
           size: "wide",

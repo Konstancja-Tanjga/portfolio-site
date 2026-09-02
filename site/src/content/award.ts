@@ -30,10 +30,6 @@ export const award: CaseStudy = {
       heading: "The award",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/erp-of-the-year/01.jpg" },
-        {
-          kind: "passage",
-          html: "<p>TODO — what the jury cited, and which work it covered.</p>",
-        },
       ],
     },
   ],

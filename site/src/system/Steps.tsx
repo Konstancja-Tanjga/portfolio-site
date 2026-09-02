@@ -19,10 +19,12 @@ export function Steps({ items, standfirst }: { items: Step[]; standfirst?: strin
               <p className="field__label">{s.rule.label}</p>
               <p>{s.rule.body}</p>
             </div>
-            <div className="step__half step__half--why">
-              <p className="field__label">{s.why.label}</p>
-              <p>{s.why.body}</p>
-            </div>
+            {s.why && (
+              <div className="step__half step__half--why">
+                <p className="field__label">{s.why.label}</p>
+                <p>{s.why.body}</p>
+              </div>
+            )}
           </li>
         ))}
       </ol>

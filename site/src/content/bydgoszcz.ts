@@ -5,7 +5,7 @@ export const bydgoszcz: CaseStudy = {
   title: "Bydgoszcz Design Challenge",
   what: "A competition entry, awarded a distinction",
   lead:
-    "Our solution for the Bydgoszcz Design Challenge, awarded a distinction. TODO — the brief in one sentence, and what our answer was.",
+    "Our solution for the Bydgoszcz Design Challenge, awarded a distinction.",
   status: { state: "live" },
   group: "recognition",
   cover: {
@@ -18,20 +18,13 @@ export const bydgoszcz: CaseStudy = {
   },
   meta: [
     { label: "Competition", value: "Bydgoszcz Design Challenge" },
-    { label: "Result", value: "Distinction" },
-    { label: "Role", value: "TODO — your role in the team" },
-    { label: "Team", value: "TODO" },
-  ],
+    { label: "Result", value: "Distinction" },  ],
   chapters: [
     {
       id: "entry",
       n: "01",
       heading: "The entry",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the brief, our answer, and why the jury singled it out.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/bydgoszcz/02.png" },
         { kind: "shot", width: "wall", src: "/work/bydgoszcz/03.png" },
         { kind: "shot", width: "wall", src: "/work/bydgoszcz/04.png" },

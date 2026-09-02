@@ -36,9 +36,11 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
               {a.shot.caption && <figcaption className="shot__caption">{a.shot.caption}</figcaption>}
             </figure>
 
-            {(a.legend || a.notes || a.rules) && (
+            {/* A ternary, not `&&`: these are lengths, and `0 && …` renders a
+                literal zero on the page. */}
+            {a.legend?.length || a.notes?.length || a.rules?.length ? (
               <div className="anno__apparatus">
-                {a.legend && (
+                {a.legend?.length ? (
                   <div className="anno__legend">
                     <p className="field__label">Colour code</p>
                     <ul>
@@ -54,14 +56,14 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
                       ))}
                     </ul>
                   </div>
-                )}
+                ) : null}
                 {a.notes?.map((n) => (
                   <div key={n.label}>
                     <p className="field__label">{n.label}</p>
                     <p>{n.body}</p>
                   </div>
                 ))}
-                {a.rules && (
+                {a.rules?.length ? (
                   <div className="anno__rules">
                     <p className="field__label">Surface rules</p>
                     <ul>
@@ -73,9 +75,9 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
                       ))}
                     </ul>
                   </div>
-                )}
+                ) : null}
               </div>
-            )}
+            ) : null}
           </section>
         </Lane>
       ))}

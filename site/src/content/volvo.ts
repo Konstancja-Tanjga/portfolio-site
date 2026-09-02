@@ -57,7 +57,7 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Redesigning a large legacy application is a risk in itself — the complexity is the point of the exercise, and every screen is load-bearing for somebody. TODO — the constraint that mattered most, and one concrete example of what it ruled out.</p>",
+            "<p>Redesigning a large legacy application is a risk in itself — the complexity is the point of the exercise, and every screen is load-bearing for somebody.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/04.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/05.jpg" },
@@ -71,7 +71,7 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Interviews and moderated usability tests with people who use the system daily. TODO — what came back, and the one finding that changed the design rather than confirming it.</p>",
+            "<p>Interviews and moderated usability tests with people who use the system daily.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/06.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/07.png" },
@@ -87,7 +87,7 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The access and permissions redesign: roles, entitlements, approval paths. TODO — the model, and what a non-technical administrator had to be able to reason about without help.</p>",
+            "<p>The access and permissions redesign: roles, entitlements, approval paths.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/08.jpg" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/09.png" },
@@ -101,11 +101,6 @@ export const volvo: CaseStudy = {
       standfirst:
         "Not a system from nothing: a product-level system built on the corporate Volvo Design System, extending its tokens into the components the product was rebuilt on.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — what the parent system gave and what it did not, where I extended rather than overrode, and how the product system was taken to a later major version.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/11.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/12.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/13.png" },
@@ -119,7 +114,7 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Delivered with four Angular developers, a business analyst, a product owner and a project manager. TODO — how the work actually moved between design and the four developers.</p>",
+            "<p>Delivered with four Angular developers, a business analyst, a product owner and a project manager.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/14.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/15.png" },
@@ -134,11 +129,6 @@ export const volvo: CaseStudy = {
         { kind: "shot", width: "wall", src: "/work/volvo-erp/17.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/18.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/19.png" },
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — what shipped, and one thing I would do differently. The original project documentation is no longer accessible to me, so this chapter is written from memory and the exports above; keep it to what you can stand behind.</p>",
-        },
       ],
     },
   ],

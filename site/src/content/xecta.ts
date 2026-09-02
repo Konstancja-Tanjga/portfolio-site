@@ -31,10 +31,6 @@ export const xecta: CaseStudy = {
       maxim:
         "The operators are not analysts. A chart they misread is not a usability problem, it is a safety one.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the platform monitors, who reads it, and what happens when they read it wrong.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/xecta/01.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/02.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/03.png" },
@@ -45,24 +41,9 @@ export const xecta: CaseStudy = {
       n: "02",
       heading: "Visualisation for non-analysts",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the visualisation decisions, and what each one refused to do.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/xecta/04.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/05.png" },
         { kind: "shot", width: "wall", src: "/work/xecta/06.png" },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "03",
-      heading: "What it changed",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what shipped, and one thing I would do differently.</p>",
-        },
       ],
     },
   ],

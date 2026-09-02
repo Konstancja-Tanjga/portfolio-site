@@ -31,11 +31,6 @@ export const energy: CaseStudy = {
       maxim:
         "A site that has to make a data-dense product legible to someone who will never open it.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — who the site had to convince, and what it had to prove before it could ask for anything.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/energy-fuel/01.png" },
         { kind: "shot", width: "wall", src: "/work/energy-fuel/02.png" },
       ],
@@ -45,11 +40,6 @@ export const energy: CaseStudy = {
       n: "02",
       heading: "The design",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>TODO — the decisions, and how the product's visual language was and wasn't reused here.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/energy-fuel/03.png" },
         { kind: "shot", width: "wall", src: "/work/energy-fuel/04.png" },
         { kind: "shot", width: "wall", src: "/work/energy-fuel/05.png" },

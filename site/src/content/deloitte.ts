@@ -25,29 +25,11 @@ export const deloitte: CaseStudy = {
   ],
   chapters: [
     {
+      // No heading and no copy: the two boards carry the story themselves.
       id: "what-it-is",
-      n: "01",
-      heading: "What it is",
-      maxim:
-        "A career site is a filter that has to feel like an invitation.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the site had to do, for how many practices, and who else had a stake in it.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/deloitte-career/01.png" },
         { kind: "shot", width: "wall", src: "/work/deloitte-career/02.png" },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "02",
-      heading: "What it changed",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what shipped, and one thing I would do differently.</p>",
-        },
       ],
     },
   ],

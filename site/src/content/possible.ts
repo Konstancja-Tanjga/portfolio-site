@@ -19,9 +19,7 @@ export const possible: CaseStudy = {
   meta: [
     { label: "Competition", value: "WUD Silesia 10.5, speculative design" },
     { label: "Result", value: "Distinction" },
-    { label: "Title", value: "The Wisdom of a Vanishing Adventure" },
-    { label: "Role", value: "TODO" },
-  ],
+    { label: "Title", value: "The Wisdom of a Vanishing Adventure" },  ],
   chapters: [
     {
       id: "entry",
@@ -29,10 +27,6 @@ export const possible: CaseStudy = {
       heading: "The entry",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/possible-reality/01.png" },
-        {
-          kind: "passage",
-          html: "<p>TODO — the premise, the argument, and what it was arguing against.</p>",
-        },
       ],
     },
   ],

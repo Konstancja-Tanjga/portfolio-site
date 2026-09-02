@@ -39,7 +39,7 @@ export const futures: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Flow Hub needed a navigation model. TODO — state the two arguments plainly: whether people should enter through one place or many, and the second one.</p>",
+            "<p>Flow Hub needed a navigation model.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/futures-thinking/ch01.png" },
       ],
@@ -124,11 +124,6 @@ export const futures: CaseStudy = {
                 label: "One complete 2×2",
                 body: "Axes, four named quadrants, implications — filled in by me.",
               },
-              why: {
-                label: "Why a worked example",
-                body:
-                  "TODO — what went wrong the first time you asked a group to fill a 2×2 cold.",
-              },
             },
           ],
         },
@@ -170,9 +165,7 @@ export const futures: CaseStudy = {
             { key: "AI Assist × Entry Points", value: "Smart & Seamless · Manual Relevance · Autonomous Confusion · Legacy Blindspot" },
             { key: "AI Assist × Dynamic UI", value: "Adaptive Co-Pilot · Manual Control Panel · Frozen Manual Mode" },
             { key: "AI Assist × Guardrailed Personalisation", value: "Self-Directed Automation · Human-Centric Studio" },
-            { key: "Entry Points × Dynamic UI", value: "Adaptive Role Cockpit" },
-            { key: "…", value: "TODO — the remaining two matrices" },
-          ],
+            { key: "Entry Points × Dynamic UI", value: "Adaptive Role Cockpit" },          ],
         },
         { kind: "shot", width: "wall", src: "/work/futures-thinking/ch05.png" },
       ],
@@ -232,12 +225,7 @@ export const futures: CaseStudy = {
             {
               key: "When I begin my workday, I want immediate visibility of my open tasks so that I can decide what to tackle first",
               value: "Today: tasks are only visible from inside an open Flow Board. Verdict: expand AI Dashboards and make them visible everywhere.",
-            },
-            {
-              key: "When I'm unsure how to perform a step, I want help without leaving my flow",
-              value: "TODO — today, and the verdict.",
-            },
-          ],
+            },          ],
         },
         { kind: "shot", width: "wall", src: "/work/futures-thinking/ch07.png" },
       ],
@@ -249,10 +237,6 @@ export const futures: CaseStudy = {
       maxim:
         "A day that ends in a list of owners is a working day. A day that ends in enthusiasm is a nice day.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what the day actually did, and what it produced by the end of it.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/futures-thinking/ch08.png" },
       ],
     },
@@ -267,9 +251,7 @@ export const futures: CaseStudy = {
           kind: "stats",
           items: [
             { value: "3", label: "workshops, including a one-day off-site" },
-            { value: "6", label: "user groups turned into job stories" },
-            { value: "TODO", label: "scope, with an owner on every step" },
-          ],
+            { value: "6", label: "user groups turned into job stories" },          ],
         },
         {
           kind: "spec",
@@ -290,9 +272,7 @@ export const futures: CaseStudy = {
             {
               key: "Impact × uncertainty",
               value: "High impact, high uncertainty. It survives the cut, and becomes a candidate axis.",
-            },
-            { key: "Axis, then quadrant", value: "TODO — where it landed." },
-          ],
+            },          ],
         },
         { kind: "shot", width: "wall", src: "/work/futures-thinking/ch09.png" },
       ],

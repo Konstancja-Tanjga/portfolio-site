@@ -45,7 +45,9 @@ export type Step = {
   n: string;
   title: string;
   rule: { label: string; body: string };
-  why: { label: string; body: string };
+  /** The second half — why the rule is not decoration. Omit when there
+   *  isn't one worth writing; a required field only invites a placeholder. */
+  why?: { label: string; body: string };
 };
 
 /** The use-case template. Every UC on every wall fills the same slots. */
@@ -57,8 +59,9 @@ export type UseCase = {
   trigger: { body: string; note?: string };
   precondition: { body: string; note?: string };
   flow: { n: string; text: string; note?: string }[];
-  /** two exits and no third */
-  exits: { label: string; text: string }[];
+  /** Two exits and no third — the shape most of these take. Optional
+   *  because a use case may not have had them written yet. */
+  exits?: { label: string; text: string }[];
   exitsNote?: string;
   postcondition: { body: string; note?: string };
   /** why this shape, and the rule it sets for the rest of the product */

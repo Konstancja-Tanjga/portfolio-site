@@ -31,10 +31,6 @@ export const tourist: CaseStudy = {
       maxim:
         "A visitor opens a town's app once, outdoors, on a bad connection, and never again.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the town, the visitor, and the one thing the app had to do on a first open.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/tourist-app/01.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/02.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/03.png" },
@@ -47,25 +43,10 @@ export const tourist: CaseStudy = {
       n: "02",
       heading: "The design",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — the decisions, and how the work was split between three designers.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/tourist-app/06.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/07.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/08.png" },
         { kind: "shot", width: "wall", src: "/work/tourist-app/09.png" },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "03",
-      heading: "What it changed",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>TODO — what shipped, and one thing I would do differently.</p>",
-        },
       ],
     },
   ],
