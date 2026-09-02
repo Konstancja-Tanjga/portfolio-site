@@ -158,13 +158,19 @@ export function Gallery({
       aria-label={caption || "Gallery"}
       ref={frame}
       tabIndex={-1}
+      onClick={(event) => {
+        // The scrim closes; the sheet does not.
+        if (event.target === event.currentTarget) onClose();
+      }}
     >
+      <div className="gal__sheet">
       <header className="gal__bar">
         <p className="gal__count">
           {index + 1} <span aria-hidden="true">/</span> {items.length}
         </p>
         <button type="button" className="gal__close" onClick={onClose}>
-          Close <span aria-hidden="true">✕</span>
+          <span className="gal__close-label">Close</span>
+          <span aria-hidden="true">✕</span>
         </button>
       </header>
 
@@ -221,6 +227,7 @@ export function Gallery({
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }

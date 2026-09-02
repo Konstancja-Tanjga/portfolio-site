@@ -910,24 +910,48 @@ img { max-width: 100%; height: auto; }
   .to-top:hover span[aria-hidden] { transform: none; }
 }
 
-/* ---------- full-screen gallery ------------------------------------
-   Paintings on a near-black ground, one at a time, with the set laid
-   along the bottom. The ground is deliberately not the page's white:
-   a watercolour's own paper is the lightest thing in it, and on white
-   that paper disappears.
+/* ---------- gallery -----------------------------------------------
+   An inset sheet rather than an edge-to-edge takeover: at three
+   quarters of the viewport the page stays visible behind it, so the
+   gallery reads as something opened on top of the wall rather than a
+   different place you have been sent to.
+
+   The sheet is where this leans on iOS: a large radius, a translucent
+   dark material, a hairline light border, and circular glass controls.
    ------------------------------------------------------------------- */
 .gal {
   position: fixed;
   inset: 0;
   z-index: 200;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto auto;
-  background: #0d0f11;
-  color: #f3f4f5;
+  place-items: center;
+  padding: var(--bh-space-4);
+  background: rgb(8 10 12 / 0.72);
+  backdrop-filter: blur(10px) saturate(120%);
   animation: gal-in 200ms ease;
 }
 .gal:focus { outline: none; }
 @keyframes gal-in { from { opacity: 0; } to { opacity: 1; } }
+
+.gal__sheet {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  width: 75vw;
+  height: 75vh;
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 24px;
+  background: rgb(20 23 26 / 0.92);
+  color: #f3f4f5;
+  overflow: hidden;
+  box-shadow: 0 32px 90px rgb(0 0 0 / 0.55);
+  animation: gal-rise 260ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes gal-rise {
+  from { opacity: 0; transform: scale(0.975) translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
 
 .gal__bar {
   display: flex;
@@ -936,8 +960,7 @@ img { max-width: 100%; height: auto; }
   gap: var(--bh-space-4);
   padding: var(--bh-space-3) var(--bh-space-4);
 }
-.gal__count,
-.gal__close {
+.gal__count {
   margin: 0;
   font-family: var(--bh-font-id);
   font-size: var(--bh-size-id);
@@ -945,13 +968,19 @@ img { max-width: 100%; height: auto; }
   font-variant-numeric: tabular-nums;
   color: rgb(255 255 255 / 0.62);
 }
+/* Circular, glass, and the only chrome that is always visible. */
 .gal__close {
-  display: inline-flex;
-  gap: var(--bh-space-2);
-  padding: 0.4rem 0.7rem;
-  border: 1px solid rgb(255 255 255 / 0.22);
-  background: none;
-  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.1);
+  color: #f3f4f5;
+  font-size: 0.9rem;
+  line-height: 1;
   cursor: pointer;
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
@@ -960,9 +989,14 @@ img { max-width: 100%; height: auto; }
   border-color: var(--bh-mark);
   color: var(--bh-site-on-mark);
 }
+.gal__close-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
 
-/* The stage. The painting is never cropped and never upscaled past its own
-   pixels — a 2000px scan blown up to a 4K screen looks worse, not bigger. */
 .gal__stage {
   position: relative;
   display: grid;
@@ -982,7 +1016,7 @@ img { max-width: 100%; height: auto; }
   animation: gal-fade 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 @keyframes gal-fade {
-  from { opacity: 0; transform: scale(0.992); }
+  from { opacity: 0; transform: scale(0.994); }
   to { opacity: 1; transform: none; }
 }
 .gal__figure img {
@@ -991,19 +1025,21 @@ img { max-width: 100%; height: auto; }
   width: auto;
   height: auto;
   object-fit: contain;
-  box-shadow: 0 18px 60px rgb(0 0 0 / 0.55);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 0.5);
 }
 
 .gal__step {
   display: grid;
   place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid rgb(255 255 255 / 0.18);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(255 255 255 / 0.16);
   border-radius: 50%;
-  background: rgb(255 255 255 / 0.06);
+  background: rgb(255 255 255 / 0.08);
+  backdrop-filter: blur(6px);
   color: #f3f4f5;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
   transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
@@ -1016,7 +1052,7 @@ img { max-width: 100%; height: auto; }
 .gal__step--prev:hover:not(:disabled) { transform: translateX(-2px); }
 .gal__step--next:hover:not(:disabled) { transform: translateX(2px); }
 .gal__step:disabled { opacity: 0; pointer-events: none; }
-.gal__step span { display: block; margin-top: -0.16em; }
+.gal__step span { display: block; margin-top: -0.14em; }
 
 .gal__caption {
   margin: 0;
@@ -1027,46 +1063,53 @@ img { max-width: 100%; height: auto; }
 .gal__title { color: #f3f4f5; }
 .gal__note { color: rgb(255 255 255 / 0.55); }
 
-/* The strip. Every painting in the set, the current one lifted out of the
-   row so it can be found without reading the labels. */
 .gal__strip {
   display: flex;
   gap: var(--bh-space-2);
-  padding: var(--bh-space-3) var(--bh-space-4) var(--bh-space-4);
+  padding: var(--bh-space-3) var(--bh-space-4);
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgb(255 255 255 / 0.28) transparent;
+  scrollbar-color: rgb(255 255 255 / 0.24) transparent;
   scroll-padding-inline: var(--bh-space-4);
 }
 .gal__thumb {
   flex: 0 0 auto;
-  width: 4.5rem;
-  height: 3.4rem;
+  width: 3.6rem;
+  height: 2.7rem;
   padding: 0;
-  border: 1px solid rgb(255 255 255 / 0.16);
-  background: rgb(255 255 255 / 0.04);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 0.05);
   cursor: pointer;
-  opacity: 0.5;
+  overflow: hidden;
+  opacity: 0.55;
   transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 .gal__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gal__thumb:hover { opacity: 0.85; }
+.gal__thumb:hover { opacity: 0.9; }
 .gal__thumb[aria-current="true"] {
   opacity: 1;
-  border-color: var(--bh-mark);
-  box-shadow: 0 0 0 1px var(--bh-mark);
-  transform: translateY(-3px);
+  border-color: rgb(255 255 255 / 0.9);
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.28);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 40rem) {
-  /* On a phone the arrows are what the swipe is for. */
+@media (max-width: 48rem) {
+  /* A sheet with margins on a phone wastes the only space there is. */
+  .gal { padding: 0; }
+  .gal__sheet {
+    width: 100vw;
+    height: 100vh;
+    border: 0;
+    border-radius: 0;
+  }
   .gal__step { display: none; }
   .gal__stage { grid-template-columns: minmax(0, 1fr); padding: 0 var(--bh-space-2); }
-  .gal__thumb { width: 3.4rem; height: 2.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .gal,
+  .gal__sheet,
   .gal__figure { animation: none; }
   .gal__step:hover:not(:disabled),
   .gal__thumb[aria-current="true"] { transform: none; }
