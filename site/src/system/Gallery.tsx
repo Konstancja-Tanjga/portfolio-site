@@ -3,7 +3,10 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { asset } from "./asset";
 
 export type GalleryItem = {
+  /** Full size — what the stage shows. */
   src: string;
+  /** Small — what the filmstrip shows. Falls back to `src`. */
+  thumb?: string;
   title?: string;
   note?: string;
 };
@@ -222,7 +225,12 @@ export function Gallery({
               aria-label={item.title ?? `Painting ${i + 1}`}
               onClick={() => onIndex(i)}
             >
-              <img src={asset(item.src)} alt="" loading="lazy" decoding="async" />
+              <img
+                src={asset(item.thumb ?? item.src)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </button>
           ))}
         </div>

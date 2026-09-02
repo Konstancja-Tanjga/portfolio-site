@@ -114,17 +114,45 @@ const dirs = (path) =>
 const images = (path) =>
   existsSync(path) ? readdirSync(path).filter((name) => IMAGE.test(name)).sort() : [];
 
-/** sips: 2000px long edge, JPEG q82. A 110MB scan lands under 1MB. */
-function convert(from, to) {
+/**
+ * Two sizes, both kept in the repo.
+ *
+ * `full` is what the gallery shows: 2000px long edge, which is sharp on a
+ * retina screen at the size the viewer displays it and no larger — upscaling
+ * a scan past its own pixels looks worse, not bigger.
+ *
+ * `thumb` is what the grid and the filmstrip show: 700px, enough for a 240px
+ * tile at 2x. Without it the gallery page downloads 32MB of full-size scans to
+ * fill tiles a quarter of their width, which is most of the page's weight for
+ * none of its detail.
+ */
+const SIZES = [
+  { suffix: '', long: 2000, quality: '82' },
+  { suffix: '-thumb', long: 700, quality: '78' },
+];
+
+function convert(from, to, long, quality) {
   execFileSync(
     'sips',
-    ['-s', 'format', 'jpeg', '-s', 'formatOptions', '82', '-Z', '2000', from, '--out', to],
+    ['-s', 'format', 'jpeg', '-s', 'formatOptions', quality, '-Z', String(long), from, '--out', to],
     { stdio: 'ignore' },
   );
 }
 
-function name(file, index) {
-  return `${String(index + 1).padStart(2, '0')}-${slug(basename(file, extname(file)))}.jpg`;
+/** Writes both sizes and returns the pair of public paths. */
+function emit(from, dir, publicDir, base) {
+  const out = {};
+  for (const { suffix, long, quality } of SIZES) {
+    const file = `${base}${suffix}.jpg`;
+    convert(from, join(dir, file), long, quality);
+    out[suffix === '' ? 'src' : 'thumb'] = `${publicDir}/${file}`;
+  }
+  return out;
+}
+
+/** `03-chambord` — the number is the order, the slug is the painting. */
+function base(file, index) {
+  return `${String(index + 1).padStart(2, '0')}-${slug(basename(file, extname(file)))}`;
 }
 
 function build() {
@@ -151,9 +179,8 @@ function build() {
       const to = join(OUT, id);
       mkdirSync(to, { recursive: true });
       direct.forEach((file, index) => {
-        const out = name(file, index);
-        convert(join(from, file), join(to, out));
-        loose.push({ src: `/watercolours/${id}/${out}`, title: title(file) });
+        const paths = emit(join(from, file), to, `/watercolours/${id}`, base(file, index));
+        loose.push({ ...paths, title: title(file) });
         count += 1;
       });
     }
@@ -175,10 +202,14 @@ function build() {
       mkdirSync(to, { recursive: true });
 
       const paintings = files.map((file, index) => {
-        const out = name(file, index);
-        convert(join(from, folder, file), join(to, out));
+        const paths = emit(
+          join(from, folder, file),
+          to,
+          `/watercolours/${id}/${seriesId}`,
+          base(file, index),
+        );
         count += 1;
-        return { src: `/watercolours/${id}/${seriesId}/${out}`, title: title(file) };
+        return { ...paths, title: title(file) };
       });
 
       series.push({ id: seriesId, name: label, blurb: note, paintings });
@@ -196,7 +227,9 @@ function build() {
       if (category.paintings.length) {
         lines.push('    paintings: [');
         for (const p of category.paintings) {
-          lines.push(`      { src: ${ts(p.src)}, title: ${ts(p.title)} },`);
+          lines.push(
+            `      { src: ${ts(p.src)}, thumb: ${ts(p.thumb)}, title: ${ts(p.title)} },`,
+          );
         }
         lines.push('    ],');
       }
@@ -207,7 +240,9 @@ function build() {
           if (s.blurb) lines.push(`        blurb: ${ts(s.blurb)},`);
           lines.push('        paintings: [');
           for (const p of s.paintings) {
-            lines.push(`          { src: ${ts(p.src)}, title: ${ts(p.title)} },`);
+            lines.push(
+              `          { src: ${ts(p.src)}, thumb: ${ts(p.thumb)}, title: ${ts(p.title)} },`,
+            );
           }
           lines.push('        ],', '      },');
         }
@@ -232,7 +267,10 @@ function build() {
  * product work cannot.
  */
 export type Painting = {
+  /** 2000px long edge — what the gallery shows. */
   src: string;
+  /** 700px — what the grid and the filmstrip show. */
+  thumb?: string;
   title?: string;
   note?: string;
 };

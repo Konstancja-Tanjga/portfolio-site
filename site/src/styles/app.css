@@ -301,6 +301,31 @@ img { max-width: 100%; height: auto; }
   font-size: var(--bh-size-id);
   line-height: 1.7;
 }
+/* An openable shot says so by behaving like one — the cursor, and a lift on
+   hover — rather than by carrying a "Full size" label under every image.
+   Fifty labels down a wall are noise; the affordance only has to be there
+   at the moment someone is pointing at the picture. */
+.shot__open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.shot__open .shot__img { transition: transform 160ms ease-out, box-shadow 160ms ease-out; }
+.shot__open:hover .shot__img,
+.shot__open:focus-visible .shot__img {
+  transform: scale(1.006);
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.13);
+}
+.shot__open:focus-visible { outline: 2px solid var(--bh-text-strong); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .shot__open .shot__img { transition: none; }
+  .shot__open:hover .shot__img,
+  .shot__open:focus-visible .shot__img { transform: none; }
+}
+
 .shot__caption { margin-top: var(--bh-space-2); font-size: var(--bh-size-small); color: var(--bh-text-quiet); }
 .shot__pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--bh-space-3); }
 .shot__subcaption {
@@ -842,7 +867,6 @@ img { max-width: 100%; height: auto; }
 .shot__set--square .shot__slot { aspect-ratio: 1; }
 .shot__set--wide .shot__slot { aspect-ratio: 16 / 9; }
 /* The hover hint is too big for a 150px cell. */
-.shot__set .shot__hint { display: none; }
 .shot--set { margin-top: var(--bh-beat-block); }
 
 /* ---------- the bar tucks away going down --------------------------
@@ -935,6 +959,9 @@ img { max-width: 100%; height: auto; }
 
 .gal__sheet {
   display: grid;
+  /* bar · stage · caption · strip. The stage is the only row that flexes,
+     and `minmax(0, 1fr)` rather than `1fr` so it is allowed to be shorter
+     than its content instead of pushing the strip off the sheet. */
   grid-template-rows: auto minmax(0, 1fr) auto auto;
   width: 75vw;
   height: 75vh;
@@ -1001,18 +1028,25 @@ img { max-width: 100%; height: auto; }
   position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  align-items: stretch;
   min-height: 0;
+  gap: var(--bh-space-3);
   padding: 0 var(--bh-space-3);
   touch-action: pan-y;
 }
+/* The arrows are centred against the stage, not stretched by it. */
+.gal__stage > .gal__step { align-self: center; }
 .gal__figure {
-  display: grid;
-  place-items: center;
+  /* The image is positioned rather than laid out, because a percentage
+     max-height does not resolve inside nested grid rows — `max-height: 100%`
+     was being dropped, the painting overflowed the stage, and it printed over
+     the thumbnail strip. Absolute inset plus `contain` is deterministic: the
+     whole painting, never cropped, never upscaled past its own pixels. */
+  position: relative;
   min-height: 0;
   height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 0 var(--bh-space-3);
   animation: gal-fade 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 @keyframes gal-fade {
@@ -1020,13 +1054,13 @@ img { max-width: 100%; height: auto; }
   to { opacity: 1; transform: none; }
 }
 .gal__figure img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 16px 48px rgb(0 0 0 / 0.5);
+  /* A radius on a `contain` image would round the box, not the painting —
+     the corners of the box are empty. The shadow would draw the box too. */
 }
 
 .gal__step {

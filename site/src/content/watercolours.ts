@@ -10,7 +10,10 @@
  * product work cannot.
  */
 export type Painting = {
+  /** 2000px long edge — what the gallery shows. */
   src: string;
+  /** 700px — what the grid and the filmstrip show. */
+  thumb?: string;
   title?: string;
   note?: string;
 };
@@ -41,15 +44,15 @@ export const watercolours: Category[] = [
         name: "France, Loire and castles",
         blurb: "A trip through the Loire and Brittany — the châteaux, and what was growing and standing around them.",
         paintings: [
-          { src: "/watercolours/architecture/france/01-cedre-noir.jpg", title: "Cèdre Noir" },
-          { src: "/watercolours/architecture/france/02-chambord.jpg", title: "Chambord" },
-          { src: "/watercolours/architecture/france/03-chanonceau.jpg", title: "Chenonceau" },
-          { src: "/watercolours/architecture/france/04-chaumont-sur-loire.jpg", title: "Chaumont sur Loire" },
-          { src: "/watercolours/architecture/france/05-chateau-de-saumur.jpg", title: "Château de Saumur" },
-          { src: "/watercolours/architecture/france/06-chateau-du-clos-luce.jpg", title: "Château du Clos Lucé" },
-          { src: "/watercolours/architecture/france/07-great-elephant-from-nantes.jpg", title: "The Great Elephant, Nantes" },
-          { src: "/watercolours/architecture/france/08-levazereau.jpg", title: "Le Vazereau" },
-          { src: "/watercolours/architecture/france/09-pierre-bertrand-couly.jpg", title: "Pierre Bertrand Couly" },
+          { src: "/watercolours/architecture/france/01-cedre-noir.jpg", thumb: "/watercolours/architecture/france/01-cedre-noir-thumb.jpg", title: "Cèdre Noir" },
+          { src: "/watercolours/architecture/france/02-chambord.jpg", thumb: "/watercolours/architecture/france/02-chambord-thumb.jpg", title: "Chambord" },
+          { src: "/watercolours/architecture/france/03-chanonceau.jpg", thumb: "/watercolours/architecture/france/03-chanonceau-thumb.jpg", title: "Chenonceau" },
+          { src: "/watercolours/architecture/france/04-chaumont-sur-loire.jpg", thumb: "/watercolours/architecture/france/04-chaumont-sur-loire-thumb.jpg", title: "Chaumont sur Loire" },
+          { src: "/watercolours/architecture/france/05-chateau-de-saumur.jpg", thumb: "/watercolours/architecture/france/05-chateau-de-saumur-thumb.jpg", title: "Château de Saumur" },
+          { src: "/watercolours/architecture/france/06-chateau-du-clos-luce.jpg", thumb: "/watercolours/architecture/france/06-chateau-du-clos-luce-thumb.jpg", title: "Château du Clos Lucé" },
+          { src: "/watercolours/architecture/france/07-great-elephant-from-nantes.jpg", thumb: "/watercolours/architecture/france/07-great-elephant-from-nantes-thumb.jpg", title: "The Great Elephant, Nantes" },
+          { src: "/watercolours/architecture/france/08-levazereau.jpg", thumb: "/watercolours/architecture/france/08-levazereau-thumb.jpg", title: "Le Vazereau" },
+          { src: "/watercolours/architecture/france/09-pierre-bertrand-couly.jpg", thumb: "/watercolours/architecture/france/09-pierre-bertrand-couly-thumb.jpg", title: "Pierre Bertrand Couly" },
         ],
       },
       {
@@ -57,10 +60,10 @@ export const watercolours: Category[] = [
         name: "Sevilla",
         blurb: "La Giralda, the Setas, and the park in between.",
         paintings: [
-          { src: "/watercolours/architecture/sevilla/01-la-giralda-copy.jpg", title: "La Giralda" },
-          { src: "/watercolours/architecture/sevilla/02-maria-luisa-park-copy.jpg", title: "Maria Luisa Park" },
-          { src: "/watercolours/architecture/sevilla/03-setas-copy.jpg", title: "Setas" },
-          { src: "/watercolours/architecture/sevilla/04-untitled-1-copy.jpg", title: "Untitled 1" },
+          { src: "/watercolours/architecture/sevilla/01-la-giralda-copy.jpg", thumb: "/watercolours/architecture/sevilla/01-la-giralda-copy-thumb.jpg", title: "La Giralda" },
+          { src: "/watercolours/architecture/sevilla/02-maria-luisa-park-copy.jpg", thumb: "/watercolours/architecture/sevilla/02-maria-luisa-park-copy-thumb.jpg", title: "Maria Luisa Park" },
+          { src: "/watercolours/architecture/sevilla/03-setas-copy.jpg", thumb: "/watercolours/architecture/sevilla/03-setas-copy-thumb.jpg", title: "Setas" },
+          { src: "/watercolours/architecture/sevilla/04-untitled-1-copy.jpg", thumb: "/watercolours/architecture/sevilla/04-untitled-1-copy-thumb.jpg", title: "Untitled 1" },
         ],
       },
       {
@@ -68,12 +71,12 @@ export const watercolours: Category[] = [
         name: "Málaga",
         blurb: "The city — its cathedral, its port and its light.",
         paintings: [
-          { src: "/watercolours/architecture/malaga/01-centre-pompidou-malaga-copy.jpg", title: "Centre Pompidou Malaga" },
-          { src: "/watercolours/architecture/malaga/02-fuente-del-rey-malaga-copy.jpg", title: "Fuente del Rey Malaga" },
-          { src: "/watercolours/architecture/malaga/03-malaga-catedral-copy.jpg", title: "Malaga Catedral" },
-          { src: "/watercolours/architecture/malaga/04-malaga-palmeral-de-las-sorpresas-copy.jpg", title: "Malaga Palmeral de las Sorpresas" },
-          { src: "/watercolours/architecture/malaga/05-the-palacio-de-ferias-y-congresos-de-malaga-copy.jpg", title: "The Palacio de Ferias y Congresos de Málaga" },
-          { src: "/watercolours/architecture/malaga/06-white-street-in-malaga-copy.jpg", title: "White street in Malaga" },
+          { src: "/watercolours/architecture/malaga/01-centre-pompidou-malaga-copy.jpg", thumb: "/watercolours/architecture/malaga/01-centre-pompidou-malaga-copy-thumb.jpg", title: "Centre Pompidou Malaga" },
+          { src: "/watercolours/architecture/malaga/02-fuente-del-rey-malaga-copy.jpg", thumb: "/watercolours/architecture/malaga/02-fuente-del-rey-malaga-copy-thumb.jpg", title: "Fuente del Rey Malaga" },
+          { src: "/watercolours/architecture/malaga/03-malaga-catedral-copy.jpg", thumb: "/watercolours/architecture/malaga/03-malaga-catedral-copy-thumb.jpg", title: "Malaga Catedral" },
+          { src: "/watercolours/architecture/malaga/04-malaga-palmeral-de-las-sorpresas-copy.jpg", thumb: "/watercolours/architecture/malaga/04-malaga-palmeral-de-las-sorpresas-copy-thumb.jpg", title: "Malaga Palmeral de las Sorpresas" },
+          { src: "/watercolours/architecture/malaga/05-the-palacio-de-ferias-y-congresos-de-malaga-copy.jpg", thumb: "/watercolours/architecture/malaga/05-the-palacio-de-ferias-y-congresos-de-malaga-copy-thumb.jpg", title: "The Palacio de Ferias y Congresos de Málaga" },
+          { src: "/watercolours/architecture/malaga/06-white-street-in-malaga-copy.jpg", thumb: "/watercolours/architecture/malaga/06-white-street-in-malaga-copy-thumb.jpg", title: "White street in Malaga" },
         ],
       },
       {
@@ -81,12 +84,12 @@ export const watercolours: Category[] = [
         name: "Portugal",
         blurb: "Lisbon, on location.",
         paintings: [
-          { src: "/watercolours/architecture/portugal/01-arco-de-rua-augusta-rocio-train-station-lisbon.jpg", title: "Arco da Rua Augusta" },
-          { src: "/watercolours/architecture/portugal/02-cathedral-se-lisbon-copy.jpg", title: "Cathedral Se Lisbon" },
-          { src: "/watercolours/architecture/portugal/03-se-cathedral.jpg", title: "Sé cathedral" },
-          { src: "/watercolours/architecture/portugal/04-watercolour20250114-23141251.jpg", title: "Untitled" },
-          { src: "/watercolours/architecture/portugal/05-watercolour20250114-23400642.jpg", title: "Untitled" },
-          { src: "/watercolours/architecture/portugal/06-watercolour20250115-15125537.jpg", title: "Untitled" },
+          { src: "/watercolours/architecture/portugal/01-arco-de-rua-augusta-rocio-train-station-lisbon.jpg", thumb: "/watercolours/architecture/portugal/01-arco-de-rua-augusta-rocio-train-station-lisbon-thumb.jpg", title: "Arco da Rua Augusta" },
+          { src: "/watercolours/architecture/portugal/02-cathedral-se-lisbon-copy.jpg", thumb: "/watercolours/architecture/portugal/02-cathedral-se-lisbon-copy-thumb.jpg", title: "Cathedral Se Lisbon" },
+          { src: "/watercolours/architecture/portugal/03-se-cathedral.jpg", thumb: "/watercolours/architecture/portugal/03-se-cathedral-thumb.jpg", title: "Sé cathedral" },
+          { src: "/watercolours/architecture/portugal/04-watercolour20250114-23141251.jpg", thumb: "/watercolours/architecture/portugal/04-watercolour20250114-23141251-thumb.jpg", title: "Untitled" },
+          { src: "/watercolours/architecture/portugal/05-watercolour20250114-23400642.jpg", thumb: "/watercolours/architecture/portugal/05-watercolour20250114-23400642-thumb.jpg", title: "Untitled" },
+          { src: "/watercolours/architecture/portugal/06-watercolour20250115-15125537.jpg", thumb: "/watercolours/architecture/portugal/06-watercolour20250115-15125537-thumb.jpg", title: "Untitled" },
         ],
       },
       {
@@ -94,17 +97,17 @@ export const watercolours: Category[] = [
         name: "Prague",
         blurb: "March, and mostly indoors.",
         paintings: [
-          { src: "/watercolours/architecture/prague/01-dox-copy.jpg", title: "DOX" },
-          { src: "/watercolours/architecture/prague/02-emaus-monastery-copy.jpg", title: "Emaus Monastery" },
-          { src: "/watercolours/architecture/prague/03-food-copy.jpg", title: "Food" },
+          { src: "/watercolours/architecture/prague/01-dox-copy.jpg", thumb: "/watercolours/architecture/prague/01-dox-copy-thumb.jpg", title: "DOX" },
+          { src: "/watercolours/architecture/prague/02-emaus-monastery-copy.jpg", thumb: "/watercolours/architecture/prague/02-emaus-monastery-copy-thumb.jpg", title: "Emaus Monastery" },
+          { src: "/watercolours/architecture/prague/03-food-copy.jpg", thumb: "/watercolours/architecture/prague/03-food-copy-thumb.jpg", title: "Food" },
         ],
       },
       {
         id: "new-york",
         name: "New York",
         paintings: [
-          { src: "/watercolours/architecture/new-york/01-golden-gate-ramka.jpg", title: "Golden Gate" },
-          { src: "/watercolours/architecture/new-york/02-guggenheim-museum-new-york-ramka.jpg", title: "Guggenheim Museum" },
+          { src: "/watercolours/architecture/new-york/01-golden-gate-ramka.jpg", thumb: "/watercolours/architecture/new-york/01-golden-gate-ramka-thumb.jpg", title: "Golden Gate" },
+          { src: "/watercolours/architecture/new-york/02-guggenheim-museum-new-york-ramka.jpg", thumb: "/watercolours/architecture/new-york/02-guggenheim-museum-new-york-ramka-thumb.jpg", title: "Guggenheim Museum" },
         ],
       },
       {
@@ -112,8 +115,8 @@ export const watercolours: Category[] = [
         name: "Cádiz province",
         blurb: "Andalusia — the white towns and the hills behind them.",
         paintings: [
-          { src: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-magazine-copy.jpg", title: "Cathedral in Jerez Magazine" },
-          { src: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-1-copy.jpg", title: "Molinos de Vejer 1" },
+          { src: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-magazine-copy.jpg", thumb: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-magazine-copy-thumb.jpg", title: "Cathedral in Jerez Magazine" },
+          { src: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-1-copy.jpg", thumb: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-1-copy-thumb.jpg", title: "Molinos de Vejer 1" },
         ],
       },
     ],
@@ -122,29 +125,29 @@ export const watercolours: Category[] = [
     id: "birds",
     name: "Birds",
     paintings: [
-      { src: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy.jpg", title: "Flaming na krzesle" },
-      { src: "/watercolours/birds/02-gaviota-i-monstera-copy.jpg", title: "Gaviota i monstera" },
-      { src: "/watercolours/birds/03-glossy-ibis-mockup.jpg", title: "Glossy ibis" },
+      { src: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy.jpg", thumb: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy-thumb.jpg", title: "Flaming na krzesle" },
+      { src: "/watercolours/birds/02-gaviota-i-monstera-copy.jpg", thumb: "/watercolours/birds/02-gaviota-i-monstera-copy-thumb.jpg", title: "Gaviota i monstera" },
+      { src: "/watercolours/birds/03-glossy-ibis-mockup.jpg", thumb: "/watercolours/birds/03-glossy-ibis-mockup-thumb.jpg", title: "Glossy ibis" },
     ],
   },
   {
     id: "animals",
     name: "Animals",
     paintings: [
-      { src: "/watercolours/animals/01-alejandro-w-ramce-4-copy.jpg", title: "Alejandro" },
-      { src: "/watercolours/animals/02-carmela-horse-kiss-ramka-1.jpg", title: "Carmela, the kiss" },
-      { src: "/watercolours/animals/03-carmela-mloda-na-siwym-koniu-4-copy.jpg", title: "Carmela mloda na siwym koniu 4" },
-      { src: "/watercolours/animals/04-geneta-w-ramce-3-copy.jpg", title: "Geneta" },
-      { src: "/watercolours/animals/05-tuna-squid-and-meduzas.jpg", title: "Tuna, squid and jellyfish" },
-      { src: "/watercolours/animals/06-tunczyk-na-scianie-nad-sofa.jpg", title: "Tuna" },
-      { src: "/watercolours/animals/07-orka-w-ramce-copy.jpg", title: "orka" },
+      { src: "/watercolours/animals/01-alejandro-w-ramce-4-copy.jpg", thumb: "/watercolours/animals/01-alejandro-w-ramce-4-copy-thumb.jpg", title: "Alejandro" },
+      { src: "/watercolours/animals/02-carmela-horse-kiss-ramka-1.jpg", thumb: "/watercolours/animals/02-carmela-horse-kiss-ramka-1-thumb.jpg", title: "Carmela, the kiss" },
+      { src: "/watercolours/animals/03-carmela-mloda-na-siwym-koniu-4-copy.jpg", thumb: "/watercolours/animals/03-carmela-mloda-na-siwym-koniu-4-copy-thumb.jpg", title: "Carmela mloda na siwym koniu 4" },
+      { src: "/watercolours/animals/04-geneta-w-ramce-3-copy.jpg", thumb: "/watercolours/animals/04-geneta-w-ramce-3-copy-thumb.jpg", title: "Geneta" },
+      { src: "/watercolours/animals/05-tuna-squid-and-meduzas.jpg", thumb: "/watercolours/animals/05-tuna-squid-and-meduzas-thumb.jpg", title: "Tuna, squid and jellyfish" },
+      { src: "/watercolours/animals/06-tunczyk-na-scianie-nad-sofa.jpg", thumb: "/watercolours/animals/06-tunczyk-na-scianie-nad-sofa-thumb.jpg", title: "Tuna" },
+      { src: "/watercolours/animals/07-orka-w-ramce-copy.jpg", thumb: "/watercolours/animals/07-orka-w-ramce-copy-thumb.jpg", title: "orka" },
     ],
   },
   {
     id: "people",
     name: "People",
     paintings: [
-      { src: "/watercolours/people/01-eve-andrzej-2.jpg", title: "Eve and Andrzej" },
+      { src: "/watercolours/people/01-eve-andrzej-2.jpg", thumb: "/watercolours/people/01-eve-andrzej-2-thumb.jpg", title: "Eve and Andrzej" },
     ],
   },
 ];

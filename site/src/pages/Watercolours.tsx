@@ -104,7 +104,12 @@ function Plates({
               onClick={() => onOpen(paintings, index)}
               aria-label={caption ? `${caption} — view full size` : "View full size"}
             >
-              <img src={asset(painting.src)} alt={caption} loading="lazy" decoding="async" />
+              <img
+                src={asset(painting.thumb ?? painting.src)}
+                alt={caption}
+                loading="lazy"
+                decoding="async"
+              />
               <span className="plate__zoom" aria-hidden="true">
                 Full size
               </span>

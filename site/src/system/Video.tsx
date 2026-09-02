@@ -21,6 +21,7 @@ export function Video({
   title,
   poster,
   caption,
+  subtitles,
   credit,
   width = "wall",
 }: VideoData & { width?: Width }) {
@@ -37,7 +38,20 @@ export function Video({
           controls
           playsInline
           preload="none"
-        />
+          crossOrigin={subtitles ? "anonymous" : undefined}
+        >
+          {subtitles && (
+            /* `default` so the track is on without anyone hunting for the
+               CC menu — the film is in German and the page is not. */
+            <track
+              kind="subtitles"
+              src={asset(subtitles.src)}
+              label={subtitles.label}
+              srcLang={subtitles.srclang}
+              default
+            />
+          )}
+        </video>
         {(caption || credit) && (
           <figcaption className="shot__caption">
             {caption}

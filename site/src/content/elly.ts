@@ -180,7 +180,12 @@ export const elly: CaseStudy = {
           title: "Elly Help in APplus — Asseco Solutions product film",
           poster: "/work/elly-ai-assistant/video-poster.jpg",
           caption:
-            "Elly Help as APplus ships it — the vendor's own product film, four minutes.",
+            "Elly Help as APplus ships it — the vendor's own product film, four minutes. Spoken in German; English subtitles are my translation.",
+          subtitles: {
+            src: "/work/elly-ai-assistant/elly-help.en.vtt",
+            label: "English",
+            srclang: "en",
+          },
           credit: {
             text: "Asseco Solutions DACH, August 2025",
             href: "https://www.youtube.com/watch?v=eFn6maci6mA",

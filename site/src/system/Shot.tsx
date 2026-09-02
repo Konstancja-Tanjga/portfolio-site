@@ -105,7 +105,6 @@ function ShotFrame({ src, slot, caption }: ShotData) {
       aria-label={caption ? `${caption} — view full size` : "View full size"}
     >
       {img}
-      <span className="shot__hint" aria-hidden="true">Full size</span>
     </button>
   );
 }

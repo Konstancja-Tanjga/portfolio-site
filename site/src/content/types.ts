@@ -37,6 +37,13 @@ export type Video = {
   /** a still, shown before play and while the file loads */
   poster?: string;
   caption?: string;
+  /**
+   * A WebVTT file in public/, and the language it is in. Present when the
+   * film is not in the language of the page: this site is in English and
+   * the Elly film is in German, so without a track half the evidence is
+   * inaudible to the people it is meant to convince.
+   */
+  subtitles?: { src: string; label: string; srclang: string };
   /** whose film this is, and where it was published */
   credit?: { text: string; href?: string };
 };

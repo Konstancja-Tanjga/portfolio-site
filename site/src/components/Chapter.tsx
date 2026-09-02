@@ -40,6 +40,7 @@ function BlockView({ block }: { block: Block }) {
           title={block.title}
           poster={block.poster}
           caption={block.caption}
+          subtitles={block.subtitles}
           credit={block.credit}
           width={block.width}
         />
