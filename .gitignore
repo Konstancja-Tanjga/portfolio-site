@@ -5,5 +5,11 @@ dist/
 .vercel
 
 # Watercolour originals — 100MB+ scans. The web-ready JPEGs live in
-# site/public/watercolours/ and are generated from these.
-Watercolours/
+# site/public/watercolours/ and are generated from these by
+# site/scripts/watercolours.mjs.
+#
+# Anchored to the repo root on purpose. Unanchored, `Watercolours/` matches a
+# folder of that name at any depth — and because macOS sets
+# core.ignoreCase=true, it also matched site/public/watercolours/ and silently
+# excluded 31 of the 43 published images.
+/Watercolours/
