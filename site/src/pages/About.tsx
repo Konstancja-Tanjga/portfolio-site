@@ -26,6 +26,21 @@ export function About() {
       </section>
 
       <section className="prose-section">
+        <h2>Two design systems, and they are not the same one</h2>
+        <p>
+          FOX is Asseco's. I own it there — the tokens, the component API, the
+          review gate — and the products I designed for that platform are built
+          on it. Its artefacts stay inside the company.
+        </p>
+        <p>
+          Big Hat is mine. I built it from nothing for my own projects, it shares
+          no code with FOX, and it is public under MIT — so it is the one where
+          the tokens, the contrast gate, the migration and the source can all be
+          read in full. This site is built on it.
+        </p>
+      </section>
+
+      <section className="prose-section">
         <h2>Research</h2>
         <p>
           Surveys with 195 internal and 37 external respondents, a 13-participant
