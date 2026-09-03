@@ -1,4 +1,4 @@
-import { Badge } from "@bighatpoland/ui";
+import { Badge } from "@bighat/ui";
 
 import type { Annotated as AnnotatedData } from "../content/types";
 import { asset } from "./asset";

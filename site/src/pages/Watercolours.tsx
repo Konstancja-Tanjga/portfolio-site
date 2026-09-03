@@ -1,4 +1,4 @@
-import { StateBlock } from "@bighatpoland/ui";
+import { StateBlock } from "@bighat/ui";
 
 import { countPaintings, watercolours } from "../content/watercolours";
 import type { Painting } from "../content/watercolours";

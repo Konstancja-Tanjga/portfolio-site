@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import type { ReactNode } from "react";
 
-import { version as dsVersion } from "@bighatpoland/ui/package.json";
+import { version as dsVersion } from "@bighat/ui/package.json";
 
 export function Shell({ children }: { children: ReactNode }) {
   return (
@@ -34,7 +34,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <p>
             Built on{" "}
             <a href="https://konstancja-tanjga.github.io/bighat-design-system/">
-              @bighatpoland/ui v{dsVersion}
+              @bighat/ui v{dsVersion}
             </a>{" "}
             — my own design system, installed as a package. Its tokens drive every
             colour on this page, and its components render the badges and states.

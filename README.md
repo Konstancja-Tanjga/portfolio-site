@@ -87,7 +87,7 @@ release day.
 The point of building this rather than posting to Behance: the site is a real
 consumer of my own published design system, not a description of one.
 
-`@bighatpoland/ui` — [bighat-design-system](https://github.com/bighatpoland/bighat-design-system),
+`@bighat/ui` — [bighat-design-system](https://github.com/Konstancja-Tanjga/bighat-design-system),
 39 components, two token layers, WCAG AA enforced in CI — is installed as a
 dependency. Its `styles.css` supplies every colour, radius, elevation and the
 dark theme; its components render the badges, the surface-rule chips and the

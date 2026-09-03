@@ -10,7 +10,7 @@ export const bighat: CaseStudy = {
   title: "Big Hat design system",
   what: "My own design system, built from zero — and the site you are reading is built on it",
   lead:
-    "@bighatpoland/ui — a design system I built from nothing for my own projects, published under MIT with its reasoning attached. Thirty-nine components, two token layers, WCAG AA held by a failing build rather than a review comment, and one breaking change carried from announcement to removal across two major versions.",
+    "@bighat/ui — a design system I built from nothing for my own projects, published under MIT with its reasoning attached. Thirty-nine components, two token layers, WCAG AA held by a failing build rather than a review comment, and one breaking change carried from announcement to removal across two major versions.",
   status: { state: "live" },
   group: "practice",
   cover: {
@@ -23,7 +23,7 @@ export const bighat: CaseStudy = {
   },
   meta: [
     { label: "Role", value: "Sole author — design and code" },
-    { label: "Package", value: "@bighatpoland/ui" },
+    { label: "Package", value: "@bighat/ui" },
     { label: "Scale", value: "39 components, 3 page templates, 2 token layers" },
     { label: "Enforced", value: "58 contrast assertions in CI, 134 tests" },
     { label: "Used by", value: "This portfolio site, and Docu Manager" },
@@ -40,7 +40,7 @@ export const bighat: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A design system of my own, unconnected to any employer's: I built it from nothing, for my own projects, and it is what this site and Docu Manager are made of. It is deliberately small. It is not trying to cover every surface an enterprise product needs — it is trying to be legible about <em>why</em> each decision was made and <em>what each one cost</em>. <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">Storybook</a> · <a href=\"https://github.com/bighatpoland/bighat-design-system\">source</a>.</p>",
+            "<p>A design system of my own, unconnected to any employer's: I built it from nothing, for my own projects, and it is what this site and Docu Manager are made of. It is deliberately small. It is not trying to cover every surface an enterprise product needs — it is trying to be legible about <em>why</em> each decision was made and <em>what each one cost</em>. <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">Storybook</a> · <a href=\"https://github.com/Konstancja-Tanjga/bighat-design-system\">source</a>.</p>",
         },
         {
           kind: "shot",

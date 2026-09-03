@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { findCase, neighbours } from "../content";
 import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
-import { Badge } from "@bighatpoland/ui";
+import { Badge } from "@bighat/ui";
 
 import { BackToTop } from "../components/BackToTop";
 import { ReadingProgress } from "../components/ReadingProgress";
