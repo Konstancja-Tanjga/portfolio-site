@@ -93,6 +93,15 @@ export type Portrait = {
   facts?: { label: string; value: string }[];
 };
 
+/**
+ * One line of a stack: what the stage is, and what does it.
+ *
+ * `mine` marks a stage that is not in the workflow this pipeline is based on —
+ * the distinction the row set exists to draw, so it is data, not a colour
+ * chosen in a component.
+ */
+export type StackRow = { key: string; value: string; mine?: boolean };
+
 /** The use-case template. Every UC on every wall fills the same slots. */
 export type UseCase = {
   /** "UC-01" */
@@ -163,6 +172,7 @@ export type Block =
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
+  | { kind: "stack"; rows: StackRow[]; caption?: string }
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
   | { kind: "steps"; standfirst?: string; items: Step[] }

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="280" viewBox="0 0 1600 280" role="img" aria-label="Eight stages from idea to a prototype published on GitHub">
+  <text x="80" y="46" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" letter-spacing="3" fill="#59636f">IDEA TO PUBLISHED PROTOTYPE</text>
+  <line x1="94" y1="132" x2="1506" y2="132" stroke="#dfe3e7" stroke-width="2"/>
+  <circle cx="170" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="170" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">01</text>
+  <text x="170" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Idea</text>
+  <circle cx="350" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="350" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">02</text>
+  <text x="350" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Ideation</text>
+  <circle cx="530" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="530" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">03</text>
+  <text x="530" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Chosen</text>
+  <circle cx="710" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="710" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">04</text>
+  <text x="710" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Figma</text>
+  <circle cx="890" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="890" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">05</text>
+  <text x="890" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Publish</text>
+  <circle cx="1070" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="1070" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">06</text>
+  <text x="1070" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Specs</text>
+  <circle cx="1250" cy="132" r="14" fill="#f7f8f9" stroke="#59636f" stroke-width="2"/>
+  <text x="1250" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">07</text>
+  <text x="1250" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">Prototype</text>
+  <circle cx="1430" cy="132" r="14" fill="#34d399" stroke="#34d399" stroke-width="2"/>
+  <text x="1430" y="94" text-anchor="middle" font-family="IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#59636f">08</text>
+  <text x="1430" y="188" text-anchor="middle" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="25" font-weight="400" fill="#14181c">GitHub</text>
+  <text x="80" y="248" font-family="Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="24" font-weight="300" fill="#59636f">Governed by two skills — design-system-compliance, handoff-readiness — updated once a quarter.</text>
+  </svg>

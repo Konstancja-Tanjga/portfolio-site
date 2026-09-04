@@ -76,8 +76,8 @@ Rules that keep eight long walls loadable:
 images outside `public/work/`:
 
 ```
-public/about/portrait.jpg      the photograph — 4:5, 1200x1500, under 250 KB
-public/about/process.png       idea to published prototype — bleed, 2304px wide
+public/about/portrait.jpg      the photograph — 4:5, 858x1073, under 250 KB
+public/about/process.png       idea to published prototype — column, 2304px wide
 public/about/stack.png         the framework's seven stages — wall, 2304px wide
 public/about/mcp.png           the MCP integration point — wall, 2304px wide
 public/about/review-loop.png   the review loop — wall, 2304px wide

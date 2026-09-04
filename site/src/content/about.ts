@@ -28,6 +28,7 @@ export const aboutChapters: Chapter[] = [
             { label: "Languages", value: "Polish native · English C2 · German, Spanish basic" },
           ],
           shot: {
+            src: "/about/portrait.jpg",
             slot: "portrait — public/about/portrait.jpg",
             caption: "Konstancja Tanjga-Nawrot",
           },
@@ -46,7 +47,7 @@ export const aboutChapters: Chapter[] = [
     blocks: [
       {
         kind: "shot",
-        width: "bleed",
+        width: "column",
         src: "/about/process.png",
         slot: "diagram — public/about/process.png · idea to published prototype",
         caption:
@@ -158,18 +159,25 @@ export const aboutChapters: Chapter[] = [
         ],
       },
       {
-        kind: "spec",
+        kind: "stack",
         caption:
-          "The stack, stage by stage. Everything below the line is where my pipeline extends the documented workflow.",
+          "The stack, stage by stage. The four marked stages are not in the documented workflow — they are what I added to it.",
         rows: [
           { key: "Source of truth", value: "Figma — variables, styles, Auto Layout, Code Connect" },
           { key: "Token model", value: "Three tiers: base → composite → semantic" },
           { key: "Read path", value: "Figma MCP server, Dev Mode, read-only" },
-          { key: "Implementation", value: "Claude Code, under authored skills and a project constitution" },
-          { key: "Contract", value: "Storybook — every variant and state as a story, a11y checks on the set" },
-          { key: "Visual regression", value: "Chromatic, diffed on every pull request" },
-          { key: "Review gate", value: "My merge — Angular, React, web components" },
-          { key: "Storage and versioning", value: "Nexus, semver packages" },
+          {
+            key: "Implementation",
+            value: "Claude Code, under authored skills and a project constitution",
+          },
+          {
+            key: "Contract",
+            value: "Storybook — every variant and state as a story, a11y checks on the set",
+            mine: true,
+          },
+          { key: "Visual regression", value: "Chromatic, diffed on every pull request", mine: true },
+          { key: "Review gate", value: "My merge — Angular, React, web components", mine: true },
+          { key: "Storage and versioning", value: "Nexus, semver packages", mine: true },
           { key: "Adoption", value: "Six products, each on the version it chooses" },
         ],
       },

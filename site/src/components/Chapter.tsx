@@ -12,6 +12,7 @@ import {
   Shot,
   ShotSet,
   Spec,
+  Stack,
   Stats,
   Steps,
   Thesis,
@@ -52,6 +53,8 @@ function BlockView({ block }: { block: Block }) {
       return <Pull text={block.text} />;
     case "thesis":
       return <Thesis label={block.label} text={block.text} />;
+    case "stack":
+      return <Stack rows={block.rows} caption={block.caption} />;
     case "spec":
       return <Spec rows={block.rows} caption={block.caption} />;
     case "portrait":
