@@ -604,6 +604,79 @@ img { max-width: 100%; height: auto; }
 .earlier__what { font-size: var(--bh-size-small); }
 .earlier__when { font-family: var(--bh-font-id); font-size: var(--bh-size-id); color: var(--bh-text-quiet); }
 
+/* ---------- about: the portrait opening -------------------------
+   The one place on the site where a photograph opens a wall. Two
+   columns: the picture at a fixed measure, the claim taking the rest.
+   The photograph is the narrower column on purpose — this page is an
+   argument about how the work gets made, and the face introduces it
+   rather than being the subject.
+   --------------------------------------------------------------- */
+.portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  gap: var(--bh-space-5) var(--bh-space-6);
+  align-items: start;
+  padding: var(--bh-space-7) 0 var(--bh-space-5);
+}
+.portrait__frame { margin: 0; }
+.portrait__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--bh-border);
+}
+.portrait__slot {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  padding: var(--bh-space-4);
+  text-align: center;
+  border: 1px dashed var(--bh-border-strong);
+  background: var(--bh-surface-sunken);
+  color: var(--bh-text-quiet);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  line-height: 1.7;
+}
+.portrait__claim {
+  margin: var(--bh-space-3) 0 0;
+  max-width: 34ch;
+  /* Half a step down from the home page display size: that claim is the
+     site's headline, this one is a section opening under it. */
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--bh-text-strong);
+}
+.portrait__lead {
+  margin: var(--bh-space-4) 0 0;
+  max-width: 54ch;
+  font-size: var(--bh-size-lead);
+  font-weight: 300;
+}
+.portrait__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--bh-space-3);
+  margin: var(--bh-space-5) 0 0;
+  padding-top: var(--bh-space-3);
+  border-top: 1px solid var(--bh-border);
+}
+.portrait__fact dt {
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bh-text-quiet);
+}
+.portrait__fact dd {
+  margin: var(--bh-space-1) 0 0;
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-strong);
+}
+
 /* ---------- narrow ---------- */
 @media (max-width: 62rem) {
   .cover {
@@ -620,6 +693,10 @@ img { max-width: 100%; height: auto; }
   .step__title, .step__half:first-of-type, .step__half { grid-column: 1; }
   .shot__pair { grid-template-columns: 1fr; }
   .earlier__row { grid-template-columns: 1fr; gap: var(--bh-space-1); }
+  /* Stacked, the photograph would otherwise be a full-width portrait
+     crop and the claim would start below the fold. */
+  .portrait { grid-template-columns: minmax(0, 1fr); padding-top: var(--bh-space-6); }
+  .portrait__frame { max-width: 15rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
