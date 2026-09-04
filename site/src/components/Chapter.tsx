@@ -7,6 +7,7 @@ import {
   Passage,
   Personas,
   Points,
+  Portrait,
   Pull,
   Shot,
   ShotSet,
@@ -53,6 +54,8 @@ function BlockView({ block }: { block: Block }) {
       return <Thesis label={block.label} text={block.text} />;
     case "spec":
       return <Spec rows={block.rows} caption={block.caption} />;
+    case "portrait":
+      return <Portrait portrait={block.portrait} />;
     case "personas":
       return <Personas items={block.items} standfirst={block.standfirst} />;
     case "steps":

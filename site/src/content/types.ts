@@ -76,6 +76,23 @@ export type Step = {
   why?: { label: string; body: string };
 };
 
+/**
+ * A photograph beside the claim — the opening of the About wall.
+ *
+ * Only that wall has one, and only one of them. A second portrait block
+ * would be a person appearing twice, which is not a layout problem.
+ */
+export type Portrait = {
+  shot: Shot;
+  kicker?: string;
+  /** set large, the claim the rest of the wall earns */
+  claim: string;
+  /** the paragraph beside the photograph */
+  lead: string;
+  /** location, availability, languages — a person's meta strip */
+  facts?: { label: string; value: string }[];
+};
+
 /** The use-case template. Every UC on every wall fills the same slots. */
 export type UseCase = {
   /** "UC-01" */
@@ -146,6 +163,7 @@ export type Block =
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
+  | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
   | { kind: "steps"; standfirst?: string; items: Step[] }
   | { kind: "usecase"; uc: UseCase }

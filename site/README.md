@@ -70,6 +70,29 @@ Rules that keep eight long walls loadable:
   cropped tight on the yellow field. If the covers read as a system, the site does
   too.
 
+### The About page
+
+`public/about/` holds the five images that page wants, and they are the only
+images outside `public/work/`:
+
+```
+public/about/portrait.jpg      the photograph — 4:5, 1200x1500, under 250 KB
+public/about/process.png       idea to published prototype — bleed, 2304px wide
+public/about/stack.png         the framework's seven stages — wall, 2304px wide
+public/about/mcp.png           the MCP integration point — wall, 2304px wide
+public/about/review-loop.png   the review loop — wall, 2304px wide
+```
+
+The portrait is cropped to 4:5 by CSS whatever it is, so give it 4:5 and put the
+face in the upper half. The four diagrams are drawn in Claude Design and exported
+from there at those widths — 2x what they render at, so they stay crisp on a
+retina screen.
+
+Until a file lands, the block renders its `slot` label instead, so the page is
+walkable while empty. When one arrives, add the `src` beside the slot in
+[`src/content/about.ts`](src/content/about.ts) — the same swap as a project shot,
+and the slot label names the file it is waiting for.
+
 ## Held projects
 
 A project whose product hasn't been released carries:

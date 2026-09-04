@@ -12,6 +12,7 @@ export { Video } from "./Video";
 export { Passage, Points, Pull, Thesis, Kicker } from "./Text";
 export { Stats, Spec, MetaStrip } from "./Data";
 export { Cover } from "./Cover";
+export { Portrait } from "./Portrait";
 export { Personas } from "./Personas";
 export { Steps } from "./Steps";
 export { UseCase } from "./UseCase";
