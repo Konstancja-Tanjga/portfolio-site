@@ -1,5 +1,6 @@
 import { award } from "./award";
 import { bi } from "./bi";
+import { bighat } from "./bighat";
 import { bydgoszcz } from "./bydgoszcz";
 import { deloitte } from "./deloitte";
 import { dms } from "./dms";
@@ -19,9 +20,10 @@ import type { CaseStudy, Group } from "./types";
 /**
  * Every wall, in the order they appear within their band.
  *
- * Within `product`, the order is deliberate: Analytics leads, and FOX
- * is second among practice because the design system is the claim the
- * rest of the site exists to support.
+ * Within `product`, the order is deliberate: Analytics leads. Big Hat
+ * opens `practice` because it is the one design system whose artefacts
+ * can be shown in full — it is mine. FOX follows: the same discipline
+ * at six-product scale, but its exports belong to Asseco.
  */
 export const cases: CaseStudy[] = [
   // product
@@ -37,6 +39,7 @@ export const cases: CaseStudy[] = [
   deloitte,
   tourist,
   // practice
+  bighat,
   fox,
   futures,
   // recognition

@@ -232,6 +232,8 @@ export type CaseStudy = {
   group: Group;
   cover: Cover;
   /** the strip under the title */
-  meta: { label: string; value: string }[];
+  meta: { label: string; value: string; 
+    /** turns the value into a link — for a system or product with a public home */
+    href?: string }[];
   chapters: Chapter[];
 };

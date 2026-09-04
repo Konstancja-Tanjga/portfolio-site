@@ -32,7 +32,7 @@ export const bi: CaseStudy = {
     { label: "Role", value: "Lead designer — sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Analytics (PR-07)" },
-    { label: "Design system", value: "FOX v2.3 → v3.0, co-authored with one other designer" },
+    { label: "Design system", value: "FOX v2.3 → v3.0, co-authored with one other designer", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
     { label: "Team", value: "3 developers, 1 requirements engineer, QA, a PM" },
     { label: "Period", value: "January – September 2026" },
   ],

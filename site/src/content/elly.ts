@@ -21,7 +21,7 @@ export const elly: CaseStudy = {
     { label: "Role", value: "Lead designer — designed from zero" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Elly" },
-    { label: "Design system", value: "FOX v2.2" },
+    { label: "Design system", value: "FOX v2.2", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
     { label: "Released", value: "April 2025, with APplus 9" },
     { label: "Research", value: "13 consultants and solution architects" },
   ],

@@ -14,7 +14,7 @@ export const fox: CaseStudy = {
     subline: "for a six-product ERP platform",
     stamp: "TOKENS · COMPONENTS · STORYBOOK · CHROMATIC · VERSIONED PACKAGES",
     credit: "Design system owner · Asseco Solutions · 2023–2026",
-    shot: { src: "/work/fox-design-system/bighat-records.png" },
+    shot: { src: "/work/fox-design-system/colors.png" },
   },
   meta: [
     { label: "Role", value: "Design system owner — I review and merge the component pull requests" },
@@ -23,6 +23,7 @@ export const fox: CaseStudy = {
     { label: "Frameworks", value: "Angular, React, web components" },
     { label: "Pipeline", value: "Figma → Storybook → Chromatic → Nexus" },
     { label: "Period", value: "November 2023 – present" },
+    { label: "Storybook", value: "Public — design-system-v1.assecosolutions.com", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
   ],
   chapters: [
     {
@@ -33,13 +34,13 @@ export const fox: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>FOX belongs to Asseco, so the screens below are Big Hat — my own design system, built on the same principles and published in the open. Where a FOX artefact cannot be shown, this is the equivalent artefact I can show in full: <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">the Big Hat Storybook</a>.</p>",
+            "<p>FOX is Asseco's, and it is public: the catalogue below is the live library, not a mock-up of it. <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/fox-design-system/bighat-catalogue.png",
-          caption: "The catalogue as a consuming team meets it: Storybook, with foundations, templates and components in one navigation. Big Hat.",
+          src: "/work/fox-design-system/catalogue.png",
+          caption: "Atoms, molecules and organisms in one navigation, published on Chromatic \u2014 the end of the pipeline the case study describes.",
         },
       ],
     },
@@ -57,12 +58,6 @@ export const fox: CaseStudy = {
             { key: "consumers", value: "6 products, 3 frameworks" },
           ],
         },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/fox-design-system/bighat-tokens.png",
-          caption: "The semantic layer, as it is published: every token with its CSS variable and its value in both themes. Big Hat.",
-        },
       ],
     },
     {
@@ -75,8 +70,8 @@ export const fox: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/fox-design-system/bighat-stateblock.png",
-          caption: "StateBlock in Big Hat — empty, loading and error as one component, each with its own announcement strategy, and a do/don't for the two situations \u201cempty\u201d actually covers.",
+          src: "/work/fox-design-system/button-api.png",
+          caption: "fox-button as a consuming developer meets it: every prop with its default, and controls that change the rendered component rather than a picture of it.",
         },
       ],
     },
@@ -120,16 +115,7 @@ export const fox: CaseStudy = {
       standfirst:
         "The hard part was never the components.",
       blocks: [
-        {
-          kind: "set",
-          size: "wide",
-          items: [
-            { src: "/work/fox-design-system/bighat-records.png", caption: "Records" },
-            { src: "/work/fox-design-system/bighat-kanban.png", caption: "Kanban board" },
-            { src: "/work/fox-design-system/bighat-ai-chat.png", caption: "AI chat" },
-          ],
-          caption: "What adoption looks like from the system's side: three unrelated surfaces, one token set, no product-local components. Big Hat templates.",
-        },
+        { kind: "shot", width: "wall", slot: "Adoption across the product lines. 2400px." },
       ],
     },
     {
@@ -139,12 +125,7 @@ export const fox: CaseStudy = {
       standfirst:
         "Contrast tokens so colour decisions can't fail silently; keyboard and focus behaviour defined at component level.",
       blocks: [
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/fox-design-system/bighat-contrast.png",
-          caption: "Every foreground/background pair the system promises to keep legible, asserted in CI in both themes at the WCAG level that applies to it \u2014 4.5:1 for text, 3:1 for focus rings and control boundaries. A regression fails the build rather than the review. Big Hat.",
-        },
+        { kind: "shot", width: "wall", slot: "A failing contrast check. 2400px." },
       ],
     },
     {

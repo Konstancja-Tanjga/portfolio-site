@@ -232,8 +232,23 @@ export const aboutChapters: Chapter[] = [
   },
 
   {
-    id: "research",
+    id: "systems",
     n: "03",
+    heading: "Two design systems, and they are not the same one",
+    maxim: "One of them I can show you in full. The other one I can only describe.",
+    blocks: [
+      {
+        kind: "passage",
+        html:
+          "<p><strong>FOX is Asseco's.</strong> I own it there &mdash; the tokens, the component API, the review gate &mdash; and the products I designed for that platform are built on it. Its artefacts stay inside the company.</p>" +
+          "<p><strong>Big Hat is mine.</strong> I built it from nothing for my own projects, it shares no code with FOX, and it is public under MIT &mdash; so it is the one where the tokens, the contrast gate, the migration and the source can all be read in full. This site is built on it.</p>",
+      },
+    ],
+  },
+
+  {
+    id: "research",
+    n: "04",
     heading: "Research",
     maxim: "There is no dedicated researcher on the team, so I field it myself.",
     blocks: [
@@ -256,7 +271,7 @@ export const aboutChapters: Chapter[] = [
 
   {
     id: "practice",
-    n: "04",
+    n: "05",
     heading: "Practice",
     blocks: [
       {
@@ -294,7 +309,7 @@ export const aboutChapters: Chapter[] = [
 
   {
     id: "recognition",
-    n: "05",
+    n: "06",
     heading: "Recognition and education",
     blocks: [
       {
