@@ -55,8 +55,6 @@ export const aboutChapters: Chapter[] = [
       },
       {
         kind: "steps",
-        standfirst:
-          "Seven stages. Each one sets a rule, and each rule exists because skipping it produces a specific, nameable failure.",
         items: [
           {
             n: "01",
