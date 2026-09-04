@@ -11,6 +11,7 @@ export { Shot, Duo, ShotSet } from "./Shot";
 export { Video } from "./Video";
 export { Passage, Points, Pull, Thesis, Kicker } from "./Text";
 export { Stats, Spec, MetaStrip } from "./Data";
+export { Stack } from "./Stack";
 export { Cover } from "./Cover";
 export { Portrait } from "./Portrait";
 export { Personas } from "./Personas";
