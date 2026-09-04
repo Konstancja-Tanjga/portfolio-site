@@ -182,66 +182,15 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "passage",
         html:
-          '<p>The workflow this is built on is documented publicly: <a href="https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/design-to-code.md">design-to-code with Figma MCP</a>, in Florian Bruniaux&rsquo;s Claude Code Ultimate Guide. I did not invent the shape and there is no reason to pretend otherwise. What is mine is the specification layer, the Storybook contract, the Nexus versioning, and the fact that the review gate and the token contract belong to the same person.</p>',
-      },
-      {
-        kind: "shot",
-        width: "wall",
-        slot: "diagram — public/about/stack.png · the framework's seven stages",
-        caption:
-          "The stack as the guide documents it, stage by stage. Green marks the four places mine does something else: Nexus alongside the repository, no Style Dictionary, custom properties rather than Tailwind, and Storybook at the end instead of the component library.",
-      },
-      {
-        kind: "shot",
-        width: "wall",
-        slot: "diagram — public/about/mcp.png · what the agent can and cannot read",
-        caption:
-          "The integration point, and why read-only is the point: the agent sees everything it needs to build a component and cannot touch the file the design lives in.",
-      },
-    ],
-  },
-
-  {
-    id: "loop",
-    n: "02",
-    heading: "The review loop",
-    maxim: "Speed is not the interesting part of an agentic pipeline. The gate at the end of it is.",
-    standfirst:
-      "Generation is minutes. What decides whether the library stays coherent after eighty components is what has to be true before a pull request can merge.",
-    blocks: [
-      {
-        kind: "shot",
-        width: "wall",
-        slot: "diagram — public/about/review-loop.png · spec → build → stories → gate → publish",
-        caption:
-          "The loop runs until the gate passes. Only a merge publishes a version, and only I merge.",
-      },
-      {
-        kind: "spec",
-        caption: "What has to be true before a component pull request merges.",
-        rows: [
-          { key: "Tokens", value: "Semantic tier only — no raw values, no magic numbers" },
-          { key: "States", value: "Empty, loading, error, disabled, long content — each a story" },
-          { key: "Keyboard", value: "Focus order and focus behaviour defined at component level" },
-          { key: "Contrast", value: "WCAG AA, enforced in CI rather than reviewed by eye" },
-          { key: "Parity", value: "Chromatic diff explained, or the diff is the bug" },
-          { key: "API", value: "Props match the Figma variant set, names included" },
-        ],
-      },
-      {
-        kind: "thesis",
-        label: "The part that does not automate",
-        text:
-          "Deciding what a component should be is design work, and no amount of tooling moves it. The pipeline removes the transcription, not the judgement.",
+          '<p>The shape comes from <a href="https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/design-to-code.md">design-to-code with Figma MCP</a>, in Florian Bruniaux&rsquo;s Claude Code Ultimate Guide. Mine adds the specification layer, the Storybook contract and the Nexus versioning.</p>',
       },
     ],
   },
 
   {
     id: "systems",
-    n: "03",
+    n: "02",
     heading: "Two design systems, and they are not the same one",
-    maxim: "One of them I can show you in full. The other one I can only describe.",
     blocks: [
       {
         kind: "passage",
@@ -254,7 +203,7 @@ export const aboutChapters: Chapter[] = [
 
   {
     id: "research",
-    n: "04",
+    n: "03",
     heading: "Research",
     maxim: "There is no dedicated researcher on the team, so I field it myself.",
     blocks: [
@@ -277,7 +226,7 @@ export const aboutChapters: Chapter[] = [
 
   {
     id: "practice",
-    n: "05",
+    n: "04",
     heading: "Practice",
     blocks: [
       {
@@ -315,7 +264,7 @@ export const aboutChapters: Chapter[] = [
 
   {
     id: "recognition",
-    n: "06",
+    n: "05",
     heading: "Recognition and education",
     blocks: [
       {
