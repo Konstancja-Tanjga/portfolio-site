@@ -3,17 +3,12 @@
   "designSystem": {
     "package": "@bighatpoland/ui",
     "tokenPrefix": "--bh-",
-    "primitiveNames": [
-      "color.",
-      "space.",
-      "radius.",
-      "fontSize."
-    ],
-    "inventory": "node_modules/@bighatpoland/ui/components.json"
+    "primitiveNames": ["color.", "space.", "radius.", "fontSize."],
+    "inventory": "site/node_modules/@bighatpoland/ui/components.json"
   },
   "commands": {
     "install": "npm ci",
-    "check": null,
+    "check": "npm run check",
     "lint": null,
     "test": null,
     "build": "npm run build",
@@ -21,34 +16,14 @@
     "devUrl": "http://localhost:5173"
   },
   "routes": [
-    {
-      "name": "Home",
-      "path": "/"
-    },
-    {
-      "name": "About",
-      "path": "/about"
-    },
-    {
-      "name": "Case",
-      "path": "/work/bighat-design-system"
-    },
-    {
-      "name": "Watercolours",
-      "path": "/watercolours"
-    }
+    { "name": "Home", "path": "/" },
+    { "name": "About", "path": "/about" },
+    { "name": "Case", "path": "/work/bighat-design-system" },
+    { "name": "Watercolours", "path": "/watercolours" }
   ],
-  "themes": [
-    {
-      "name": "light",
-      "query": ""
-    }
-  ],
-  "widths": [
-    430,
-    900,
-    1400
-  ],
+  "themes": [{ "name": "light", "query": "" }],
+  "widths": [430, 900, 1400],
   "shotHeight": 1400,
+  "minContentChars": 80,
   "screenshots": ".handoff/shots"
 }
