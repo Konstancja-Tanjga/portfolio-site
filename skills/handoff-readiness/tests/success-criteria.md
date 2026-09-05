@@ -60,6 +60,17 @@ between runs mean a gate is written as a judgement where it should be a check.
 Not yet measured — `claude -p` is now on PATH, so `scripts/run_eval.py` from
 skill-creator can do this without a human sitting through three runs.
 
+This is a test of the skill, on the fixture, once a quarter and after any change
+to `references/gates.md`. It is **not** a thing to do to a branch. Repetition
+measures variance: it tells you whether a gate answers the same way twice, and
+nothing at all about whether it can see. A gate blind to a defect is blind to it
+on every run, so three agreeing runs on real work buy confidence that was never
+earned — the click-through script would have reported "no blank pages" three
+times out of three.
+
+Step 7 of the skill re-checks a gate after a fix, which is a different thing
+again: not the same input measured twice, but a changed input measured once.
+
 **Run cost stays in proportion.** A run on a repository this size should be
 minutes, not a session. Note the wall-clock time on the tripwire branch after
 each change; a step that doubles it needs to earn it. No baseline recorded yet —

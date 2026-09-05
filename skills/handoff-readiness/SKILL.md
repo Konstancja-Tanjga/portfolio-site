@@ -158,6 +158,33 @@ it.
 components, deferred requirements, known gaps, and where a reviewer should
 look first.
 
+### Step 7: Re-check what gets fixed
+
+The report is a snapshot, and a branch does not stop moving when it is read.
+When a `fail` is fixed — by you, after the separate question, or by the person
+themselves — run **that gate again**, on its own, and record both verdicts:
+
+> Gate 6 · accessibility — `fail` → `pass`. `ProcessBoard.tsx:34` now has a
+> label; focus ring restored in `process-board.css:21`. Re-checked after the fix.
+
+Two things make this worth the tokens. A fix aimed at one gate routinely breaks
+another — a focus ring added in a stylesheet is a changed stylesheet, which is
+gate 2's subject — so the re-check is where that surfaces. And a verdict that
+moved is more useful to a reviewer than a verdict that was always green,
+because it says what was wrong and what closed it.
+
+Re-run only the gates whose subject the fix touched. A full second pass costs
+what the first one cost, and this skill competes with nobody checking at all.
+
+**Repeating a gate is not the same as strengthening it.** If a gate could not
+see a defect the first time, it will not see it the fifth: running it again
+measures variance, never blind spots. Three agreeing runs are one result
+measured three times.
+
+**Nothing here ends in "done".** However many times a gate is re-checked, the
+skill still reports what passed. Opening the pull request stays with the person,
+and a green re-check is evidence for that decision, never a substitute for it.
+
 ## Output format
 
 Every gate returns exactly one of three words. There is no fourth.
@@ -198,6 +225,13 @@ that cannot be run is a fact about the handoff and belongs in the note.
 **Report the gate you could not run.** `not checked` is the verdict that makes
 the other two mean something. A skill that quietly drops a gate it could not
 run is worse than no skill, because the note then claims coverage nobody has.
+
+**A repeated check is not a second opinion.** Running a gate five times and
+getting the same answer five times is one measurement, not five. It says the
+gate is stable; it says nothing about whether the gate can see. The
+click-through script reported "no blank pages" for a route that rendered
+nothing, and would have reported it identically on every rerun — what caught
+it was opening the screenshot, not running the script again.
 
 **Name files and lines, not areas.** "Accessibility issues in the form" sends
 the reader looking; `Input.tsx:42 — placeholder used as the label` does not.
