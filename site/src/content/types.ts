@@ -48,7 +48,6 @@ export type Video = {
   credit?: { text: string; href?: string };
 };
 
-
 /** One of the four-up persona cards. Same slots every time. */
 export type Persona = {
   n: string;
@@ -70,10 +69,30 @@ export type Persona = {
 export type Step = {
   n: string;
   title: string;
+  /** Two or three words for the rail — the stage, not the sentence. */
+  stage?: string;
+  /**
+   * What the stage receives and what it hands on. A pipeline the reader can
+   * follow needs this; a list of rules does not, which is the difference
+   * between the two.
+   */
+  flow?: { from: string; to: string };
   rule: { label: string; body: string };
   /** The second half — why the rule is not decoration. Omit when there
    *  isn't one worth writing; a required field only invites a placeholder. */
   why?: { label: string; body: string };
+  /**
+   * The rule distilled, against the thing it replaces. Both halves are one
+   * line: the pair is for scanning, and the prose above it is for reading.
+   */
+  contrast?: { does: string; instead: string };
+  /**
+   * A few lines of the real artefact — a spec, a diff, an import. Only on the
+   * stages that carry the argument, because seven of them would be wallpaper.
+   */
+  artefact?: { caption: string; lines: string[] };
+  /** Given the full width and the artefact. Three of seven, at most. */
+  feature?: boolean;
 };
 
 /**
@@ -221,7 +240,8 @@ export type Cover = {
  * held — finished, published on `until`. Excluded from the production
  *        bundle; visible locally with `npm run dev`.
  */
-export type Status = { state: "live" } | { state: "held"; until: string; why: string };
+export type Status =
+  { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
  * Which band of the work page a wall sits in.
@@ -242,8 +262,11 @@ export type CaseStudy = {
   group: Group;
   cover: Cover;
   /** the strip under the title */
-  meta: { label: string; value: string; 
+  meta: {
+    label: string;
+    value: string;
     /** turns the value into a link — for a system or product with a public home */
-    href?: string }[];
+    href?: string;
+  }[];
   chapters: Chapter[];
 };
