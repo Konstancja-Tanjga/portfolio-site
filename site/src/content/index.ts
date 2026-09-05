@@ -12,7 +12,6 @@ import { futures } from "./futures";
 import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { riyad } from "./riyad";
-import { tourist } from "./tourist";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
 import type { CaseStudy, Group } from "./types";
@@ -37,7 +36,6 @@ export const cases: CaseStudy[] = [
   riyad,
   pzu,
   deloitte,
-  tourist,
   // practice
   bighat,
   fox,
