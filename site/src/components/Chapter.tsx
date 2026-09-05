@@ -8,6 +8,7 @@ import {
   Personas,
   Points,
   Portrait,
+  ProcessBoard,
   Pull,
   Shot,
   ShotSet,
@@ -61,6 +62,8 @@ function BlockView({ block }: { block: Block }) {
       return <Portrait portrait={block.portrait} />;
     case "personas":
       return <Personas items={block.items} standfirst={block.standfirst} />;
+    case "process":
+      return <ProcessBoard process={block.process} />;
     case "steps":
       return <Steps items={block.items} standfirst={block.standfirst} />;
     case "usecase":

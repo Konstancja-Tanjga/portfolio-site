@@ -48,7 +48,6 @@ export type Video = {
   credit?: { text: string; href?: string };
 };
 
-
 /** One of the four-up persona cards. Same slots every time. */
 export type Persona = {
   n: string;
@@ -70,10 +69,71 @@ export type Persona = {
 export type Step = {
   n: string;
   title: string;
+  /** Two or three words for the rail — the stage, not the sentence. */
+  stage?: string;
+  /**
+   * What the stage receives and what it hands on. A pipeline the reader can
+   * follow needs this; a list of rules does not, which is the difference
+   * between the two.
+   */
+  flow?: { from: string; to: string };
   rule: { label: string; body: string };
   /** The second half — why the rule is not decoration. Omit when there
    *  isn't one worth writing; a required field only invites a placeholder. */
   why?: { label: string; body: string };
+  /**
+   * The rule distilled, against the thing it replaces. Both halves are one
+   * line: the pair is for scanning, and the prose above it is for reading.
+   */
+  contrast?: { does: string; instead: string };
+  /**
+   * A few lines of the real artefact — a spec, a diff, an import. Only on the
+   * stages that carry the argument, because seven of them would be wallpaper.
+   */
+  artefact?: { caption: string; lines: string[] };
+  /** Given the full width and the artefact. Three of seven, at most. */
+  feature?: boolean;
+  /**
+   * Which stages of the process board this rule governs. Hovering the rule
+   * lights them; clicking a stage comes back here. The mapping is not one to
+   * one and pretending it were would be the dishonest version: the board is
+   * eight stages of making a thing, and these are seven rules about how.
+   */
+  governs?: string[];
+};
+
+/**
+ * The process board: eight stages from idea to published prototype.
+ *
+ * It was a PNG. A picture of a diagram cannot be searched, selected, read by a
+ * screen reader, or pointed at — and pointing at it is the whole reason this
+ * exists, because each stage is governed by one of the rules below it. It is
+ * text and boxes, so it is written as text and boxes rather than drawn: an SVG
+ * would have solved the pointing and kept the rest of the problems.
+ */
+export type ProcessStage = {
+  n: string;
+  title: string;
+  /** The small line under the title — who, from what, on what. */
+  kicker?: string;
+  body: string;
+  /** The dashed aside — something running beside the stage, not after it. */
+  note?: { label: string; body: string };
+};
+
+export type Process = {
+  /** Top-left, the board's own title. */
+  label: string;
+  /** Top-right, the count. It is a claim the stages have to match. */
+  count: string;
+  stages: ProcessStage[];
+  /** What runs underneath every stage rather than at one of them. */
+  underneath?: {
+    label: string;
+    kicker?: string;
+    chips: string[];
+    body: string;
+  };
 };
 
 /**
@@ -176,6 +236,7 @@ export type Block =
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
   | { kind: "steps"; standfirst?: string; items: Step[] }
+  | { kind: "process"; process: Process }
   | { kind: "usecase"; uc: UseCase }
   | { kind: "evolution"; items: Version[] }
   | { kind: "annotated"; items: Annotated[] };
@@ -221,7 +282,8 @@ export type Cover = {
  * held — finished, published on `until`. Excluded from the production
  *        bundle; visible locally with `npm run dev`.
  */
-export type Status = { state: "live" } | { state: "held"; until: string; why: string };
+export type Status =
+  { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
  * Which band of the work page a wall sits in.
@@ -242,8 +304,11 @@ export type CaseStudy = {
   group: Group;
   cover: Cover;
   /** the strip under the title */
-  meta: { label: string; value: string; 
+  meta: {
+    label: string;
+    value: string;
     /** turns the value into a link — for a system or product with a public home */
-    href?: string }[];
+    href?: string;
+  }[];
   chapters: Chapter[];
 };

@@ -15,6 +15,7 @@ export { Stack } from "./Stack";
 export { Cover } from "./Cover";
 export { Portrait } from "./Portrait";
 export { Personas } from "./Personas";
+export { ProcessBoard } from "./Process";
 export { Steps } from "./Steps";
 export { UseCase } from "./UseCase";
 export { Evolution } from "./Evolution";

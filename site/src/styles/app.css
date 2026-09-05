@@ -422,24 +422,229 @@ img { max-width: 100%; height: auto; }
   color: var(--bh-text-strong);
 }
 
-/* ---------- steps ---------- */
-.steps { list-style: none; margin: var(--bh-beat-block) 0 0; padding: 0; }
-.step {
+/* ---------- the process board ---------- */
+/* Eight stages, in text rather than in a PNG of text. Each stage lights when
+   the rule that governs it is pointed at, which is the whole reason it stopped
+   being a picture. */
+.process {
+  margin: var(--bh-beat-block) 0 0;
+  border-top: 2px solid var(--bh-text-strong);
+  font-size: var(--bh-size-small);
+}
+.process__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bh-space-3);
+  padding: var(--bh-space-2) 0 var(--bh-space-4);
+}
+.process__label,
+.process__count,
+.process__kicker,
+.process__n {
+  margin: 0;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bh-text-quiet);
+}
+.process__label { color: var(--bh-text-strong); }
+.process__stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--bh-space-5) var(--bh-space-4);
+}
+.process__stage {
+  display: grid;
+  align-content: start;
+  gap: var(--bh-space-1);
+  padding-top: var(--bh-space-2);
+  border-top: 2px solid var(--bh-text-strong);
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+/* The last stage is where the process ends, and the board said so in mint
+   before this was a component. */
+.process__stage:last-of-type { border-top-color: var(--bh-mark); }
+.process__title {
+  margin: 0;
+  font-size: var(--bh-size-body);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--bh-text-strong);
+  text-wrap: balance;
+}
+.process__body { margin: 0; color: var(--bh-text); }
+.process__note {
+  margin-top: var(--bh-space-2);
+  padding: var(--bh-space-2);
+  border: 1px dashed var(--bh-border-strong, var(--bh-border));
+  border-radius: var(--bh-radius-control, 6px);
+  display: grid;
+  gap: var(--bh-space-1);
+}
+.process__under {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
   gap: var(--bh-space-4);
+  margin-top: var(--bh-space-5);
+  padding-top: var(--bh-space-3);
+  border-top: 2px solid var(--bh-text-strong);
+  transition: background-color 200ms ease;
+}
+.process__chips { display: flex; flex-wrap: wrap; gap: var(--bh-space-1); margin: 0 0 var(--bh-space-2); }
+.process__chip {
+  padding: 0.15rem 0.5rem;
+  background: var(--bh-mark);
+  color: var(--bh-site-on-mark);
+  border-radius: var(--bh-radius-control, 6px);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+}
+
+/* Lit: the stage a rule governs, while the rule is pointed at. A tint and a
+   mark, the same pair the design system uses for a current row — colour alone
+   would say nothing in greyscale. */
+.process__stage.is-lit,
+.process__under.is-lit {
+  border-top-color: var(--bh-mark);
+  /* A wash of the mark rather than the well: the well is a two-per-cent grey,
+     which is the right weight for a surface and no weight at all for an
+     answer to "which one". The fallback below it is what a browser without
+     color-mix gets, and it is still a visible change of ground. */
+  background: var(--bh-well);
+  background: color-mix(in srgb, var(--bh-mark) 18%, var(--bh-surface));
+  box-shadow: 0 0 0 var(--bh-space-2) color-mix(in srgb, var(--bh-mark) 18%, var(--bh-surface));
+}
+@media (prefers-reduced-motion: reduce) {
+  .process__stage,
+  .process__under { transition: none; }
+  /* useReveal already refuses to arm the board, but a class set before the
+     query matched would otherwise leave eight stages at opacity 0 forever —
+     the same trap the stack has a guard for. */
+  .process.is-running .process__stage {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Arriving in order, like the stack and the stages: the board is a sequence
+   too, and it assembles the same way. */
+.process.is-running .process__stage {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: stack-row-in 420ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.process.is-running .process__stage:nth-child(1) { animation-delay: 0ms; }
+.process.is-running .process__stage:nth-child(2) { animation-delay: 60ms; }
+.process.is-running .process__stage:nth-child(3) { animation-delay: 120ms; }
+.process.is-running .process__stage:nth-child(4) { animation-delay: 180ms; }
+.process.is-running .process__stage:nth-child(5) { animation-delay: 240ms; }
+.process.is-running .process__stage:nth-child(6) { animation-delay: 300ms; }
+.process.is-running .process__stage:nth-child(7) { animation-delay: 360ms; }
+.process.is-running .process__stage:nth-child(8) { animation-delay: 420ms; }
+
+@media (max-width: 62rem) {
+  .process__stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .process__under { grid-template-columns: minmax(0, 1fr); gap: var(--bh-space-2); }
+}
+@media (max-width: 40rem) {
+  .process__stages { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- the pipeline ---------- */
+/* Seven stages, a rail that says where the reader is, and three stages that
+   carry an artefact. The rules that used to live here drew seven identical
+   two-column rows; what replaced them is in Steps.tsx, above the component. */
+.pipeline {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: var(--bh-space-6);
+  margin: var(--bh-beat-block) 0 0;
+}
+
+/* ---- the rail ---- */
+.pipeline__rail { position: sticky; top: var(--bh-space-6); align-self: start; }
+.rail__head {
+  margin: 0 0 var(--bh-space-2) var(--bh-space-2);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bh-text-quiet);
+}
+.pipeline__rail ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--bh-space-1);
+  border-left: 1px solid var(--bh-border);
+}
+.rail__link {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--bh-space-1);
+  padding: 0.35rem 0 0.35rem var(--bh-space-2);
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.rail__link:hover { color: var(--bh-text-strong); }
+.rail__link.is-current { color: var(--bh-text-strong); border-left-color: var(--bh-mark); }
+.rail__n { font-family: var(--bh-font-id); font-size: var(--bh-size-id); }
+.rail__stage { text-wrap: balance; }
+/* Folding is offered where the reader already looks for the shape of the
+   chapter, not as a control bar above it. */
+.rail__fold {
+  margin: var(--bh-space-3) 0 0 var(--bh-space-2);
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bh-text-quiet);
+  cursor: pointer;
+  border-bottom: 1px solid var(--bh-border);
+}
+.rail__fold:hover { color: var(--bh-text-strong); border-bottom-color: var(--bh-mark); }
+
+/* ---- the stages ---- */
+.stages { list-style: none; margin: 0; padding: 0; }
+.stage {
   padding: var(--bh-space-5) 0;
   border-top: 1px solid var(--bh-border);
   font-size: var(--bh-size-small);
+  scroll-margin-top: var(--bh-space-6);
 }
-.step:last-child { border-bottom: 1px solid var(--bh-border); }
+.stage__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  column-gap: var(--bh-space-5);
+  margin-top: var(--bh-space-3);
+}
+.stage:first-child { border-top: none; padding-top: 0; }
+/* Folded, the seven heads are meant to read as one diagram rather than as
+   seven roomy rows, so a closed stage keeps less of the beat. Browsers
+   without :has() simply keep the open spacing, which is the safe way round. */
+.stage:has(> .stage__fold:not([open])) { padding-block: var(--bh-space-3); }
+.stage:last-child { border-bottom: 1px solid var(--bh-border); }
 
-/* The rule moves to a pseudo-element so it can be drawn rather than just
-   appear — same device as the stack, so the two blocks in this chapter
-   assemble the same way. The border above is what shows with no
-   animation running, so it stays. */
-.steps.is-running .step { border-top-color: transparent; position: relative; }
-.steps.is-running .step::before {
+/* The rule draws itself as the stage lands — same device as the stack, so
+   the two blocks in this chapter assemble the same way. */
+.stages.is-running .stage { border-top-color: transparent; position: relative; }
+.stages.is-running .stage:first-child { position: relative; }
+.stages.is-running .stage::before {
   content: "";
   position: absolute;
   inset-block-start: -1px;
@@ -450,28 +655,216 @@ img { max-width: 100%; height: auto; }
   transform-origin: left center;
   animation: stack-rule-in 460ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--step-delay, 0ms) forwards;
 }
-.steps.is-running .step > * {
+.stages.is-running .stage:first-child::before { content: none; }
+.stages.is-running .stage__head,
+.stages.is-running .stage__panel {
   opacity: 0;
   transform: translateY(8px);
   animation: stack-row-in 460ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--step-delay, 0ms) forwards;
 }
-/* The number, then the title, then the two halves — a stage reads in that
-   order, so it arrives in it. */
-.steps.is-running .step__title { animation-delay: calc(var(--step-delay, 0ms) + 60ms); }
-.steps.is-running .step__half { animation-delay: calc(var(--step-delay, 0ms) + 110ms); }
-.steps.is-running .step__half--why { animation-delay: calc(var(--step-delay, 0ms) + 160ms); }
-.step__n { font-family: var(--bh-font-id); font-size: var(--bh-size-id); color: var(--bh-text-quiet); }
-.step__title {
-  grid-column: 2 / -1;
-  margin: 0;
+.stages.is-running .stage__panel { animation-delay: calc(var(--step-delay, 0ms) + 90ms); }
+
+.stage__head {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0 var(--bh-space-1);
+  padding-right: var(--bh-space-4);
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+/* Both spellings: Safari still ships the WebKit pseudo-element. */
+.stage__head::marker { content: ""; }
+.stage__head::-webkit-details-marker { display: none; }
+.stage__head:focus-visible { outline: 2px solid var(--bh-focus); outline-offset: 4px; }
+/* The caret is the only thing on the head that moves, and it points at the
+   state the head is in rather than at the one a click would produce. */
+.stage__head::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0.45em;
+  inset-inline-end: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid var(--bh-text-quiet);
+  border-bottom: 1.5px solid var(--bh-text-quiet);
+  transform: rotate(-45deg);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.stage__fold[open] > .stage__head::after { transform: rotate(45deg); }
+.stage__head:hover::after { border-color: var(--bh-mark-deep, var(--bh-text-strong)); }
+.stage__n { grid-column: 1; }
+.stage__title { grid-column: 2; }
+.stage__flow { grid-column: 2; }
+.stage__n {
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  color: var(--bh-text-quiet);
+}
+.stage__fold { border: none; }
+.stage__title {
+  margin: 0.15rem 0 0;
   font-size: var(--bh-size-h3);
   font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--bh-text-strong);
+  text-wrap: balance;
 }
-.step__half { grid-column: span 1; }
-.step__half:first-of-type { grid-column: 2; }
-.step__half p { margin: 0; }
-.step__half--why { color: var(--bh-text-quiet); }
+/* A stage takes what the one before it produced. Saying so is what makes the
+   sequence readable as a pipeline rather than as seven rules in a row. */
+.stage__flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bh-space-1);
+  margin: var(--bh-space-2) 0 0;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.04em;
+  color: var(--bh-text-quiet);
+}
+.flow__end {
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--bh-border);
+  border-radius: var(--bh-radius-pill, 9999px);
+}
+.flow__arrow { color: var(--bh-mark-deep, var(--bh-text-quiet)); }
+
+/* What this rule governs, said in words as well as in the highlight: the
+   board is usually off screen by the time the reader is down here, and a
+   pointer effect nobody can see is not information. */
+.stage__governs {
+  margin: var(--bh-space-2) 0 0;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.04em;
+  color: var(--bh-text-quiet);
+}
+.stage__governs a { color: inherit; text-decoration-color: var(--bh-border); }
+.stage__governs a:hover { color: var(--bh-mark-deep, var(--bh-text-strong)); }
+
+.stage__rule { margin: 0; max-width: 62ch; }
+
+/* ---- the pair: the rule, against the thing it replaces ---- */
+.verdict {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--bh-space-2);
+  margin: var(--bh-space-3) 0 0;
+  max-width: 62ch;
+}
+.verdict__side {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  gap: var(--bh-space-1);
+  margin: 0;
+  padding: var(--bh-space-2);
+  border: 1px solid;
+  border-radius: var(--bh-radius-control, 6px);
+  font-size: var(--bh-size-small);
+}
+.verdict__mark { font-family: var(--bh-font-id); line-height: 1.4; }
+.verdict__side--does {
+  background: var(--bh-status-success-bg);
+  border-color: var(--bh-status-success-border);
+  color: var(--bh-status-success-fg);
+}
+.verdict__side--instead {
+  background: var(--bh-status-critical-bg);
+  border-color: var(--bh-status-critical-border);
+  color: var(--bh-status-critical-fg);
+}
+
+/* ---- why: subordinate, never hidden ---- */
+.stage__why {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  padding-left: var(--bh-space-3);
+  border-left: 1px solid var(--bh-border);
+  color: var(--bh-text-quiet);
+}
+.why__label {
+  margin: 0 0 var(--bh-space-1);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.why__body { margin: 0; font-size: var(--bh-size-small); }
+
+/* The microaction, and the whole of it: on a pointer, the note recedes until
+   the stage is under the cursor or holds focus. Nothing is hidden — a reader
+   with no pointer, or one who never hovers, gets it at full strength. */
+@media (hover: hover) and (pointer: fine) {
+  .stage__why { transition: color 200ms ease, border-color 200ms ease; }
+  .stage:not(:hover):not(:focus-within) .stage__why { color: var(--bh-text-quiet); opacity: 0.7; }
+  .stage:hover .stage__why,
+  .stage:focus-within .stage__why {
+    color: var(--bh-text);
+    border-left-color: var(--bh-mark);
+    opacity: 1;
+  }
+  .stage:hover .why__label,
+  .stage:focus-within .why__label { color: var(--bh-mark-deep, var(--bh-text-strong)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage__why { transition: none; }
+}
+
+/* ---- the artefact, on the three stages that carry the argument ---- */
+/* Marked structurally, not decorated: the same mark the rail uses runs down
+   the stage, so "this one matters" is said by the layout rather than by a
+   badge reading IMPORTANT. */
+.stage--feature {
+  padding-bottom: var(--bh-space-5);
+  padding-left: var(--bh-space-4);
+  margin-left: calc(var(--bh-space-4) * -1);
+  border-left: 2px solid var(--bh-mark);
+}
+.stage--feature .stage__n { color: var(--bh-mark-deep, var(--bh-text-strong)); }
+.stage--feature .stage__title { font-size: var(--bh-size-h2); font-weight: 300; }
+.artefact {
+  grid-column: 1 / -1;
+  margin: var(--bh-space-4) 0 0;
+}
+.artefact__code {
+  margin: 0;
+  padding: var(--bh-space-3);
+  overflow-x: auto;
+  background: var(--bh-well);
+  border: 1px solid var(--bh-border);
+  border-radius: var(--bh-radius-surface, 10px);
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  line-height: 1.7;
+  color: var(--bh-text-strong);
+  tab-size: 2;
+}
+.artefact__caption {
+  margin: var(--bh-space-2) 0 0;
+  max-width: 62ch;
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+}
+
+@media (max-width: 62rem) {
+  .pipeline { grid-template-columns: minmax(0, 1fr); gap: var(--bh-space-4); }
+  .pipeline__rail { position: static; }
+  .pipeline__rail ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--bh-space-1) var(--bh-space-2);
+    border-left: none;
+    border-bottom: 1px solid var(--bh-border);
+    padding-bottom: var(--bh-space-2);
+  }
+  .rail__link { border-left: none; border-bottom: 2px solid transparent; padding: 0.2rem 0; }
+  .rail__link.is-current { border-left-color: transparent; border-bottom-color: var(--bh-mark); }
+  .stage__panel { grid-template-columns: minmax(0, 1fr); row-gap: var(--bh-space-3); }
+  .stage__why { grid-column: 1; grid-row: auto; }
+}
 
 /* ---------- use case ---------- */
 .uc {
@@ -940,8 +1333,6 @@ img { max-width: 100%; height: auto; }
   .cover__shot { aspect-ratio: 16 / 9; }
   .uc__slot { grid-template-columns: 1fr; gap: var(--bh-space-2); }
   .uc__note--aside { border-left: none; padding-left: 0; border-top: 2px solid var(--bh-mark); padding-top: var(--bh-space-2); }
-  .step { grid-template-columns: 1fr; gap: var(--bh-space-3); }
-  .step__title, .step__half:first-of-type, .step__half { grid-column: 1; }
   .shot__pair { grid-template-columns: 1fr; }
   .earlier__row { grid-template-columns: 1fr; gap: var(--bh-space-1); }
   /* Stacked, the photograph would otherwise be a full-width portrait
@@ -1472,9 +1863,10 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .lightbox,
   .lightbox__sheet { animation: none; }
-  .steps.is-running .step { border-top-color: var(--bh-border); }
-  .steps.is-running .step::before,
-  .steps.is-running .step > * {
+  .stages.is-running .stage { border-top-color: var(--bh-border); }
+  .stages.is-running .stage::before,
+  .stages.is-running .stage__head,
+  .stages.is-running .stage__panel {
     animation: none;
     opacity: 1;
     transform: none;
