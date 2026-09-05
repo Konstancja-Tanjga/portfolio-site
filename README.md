@@ -40,28 +40,34 @@ and versioning the system.
 
 ## Skills
 
-The stages above are governed by written-down skills rather than by whoever is
-at the keyboard. They run in Claude Code, are versioned in this repository, and
-are updated once a quarter.
+Two Claude Code skills govern the stages above, so the process is enforced by
+something written down rather than by whoever is at the keyboard. Both live in
+the design system, because that is where the rules they check are defined — one
+description of a rule, not two that drift apart.
 
-### My skills
+### Mine
 
-| Skill | What it does | |
-|---|---|---|
-| [`handoff-readiness`](skills/handoff-readiness) | Runs ten gates over a branch before it becomes a pull request — build, design-system alignment, requirements from the linked issue, a real click-through of the running prototype, states, accessibility, both themes, container widths, copy, closeout — and returns one verdict per gate with the evidence behind it. It reports: it does not edit code, open the pull request, or declare the work done. | in use |
-| `design-system-compliance` | Checks that a screen is assembled from published system components and semantic tokens, and that anything local is named as local. | planned |
+| Skill | What it does |
+| --- | --- |
+| [`bighat-design-system`](https://github.com/Konstancja-Tanjga/bighat-design-system/blob/main/agent/SKILL.md) | Thirteen rules a correct-looking, type-checking, lint-passing component can still break: primitives, the scale, `StateBlock`, labels, focus, colour, drag. The rules the libraries cannot enforce at the type level. |
+| [`handoff-readiness`](https://github.com/Konstancja-Tanjga/bighat-design-system/tree/main/skills/handoff-readiness) | Runs those rules as ten gates over a branch before it becomes a pull request — build, design-system alignment, requirements, a real click-through of the running prototype, states, accessibility, themes, widths, copy, closeout — and returns one verdict per gate with the evidence behind it. It reports: it does not edit code, open the pull request, or declare the work done. |
 
-`handoff-readiness` carries its own [tests](skills/handoff-readiness/tests): the
-trigger phrases it has to fire on in both working languages, a branch with one
-seeded defect per gate, and the criteria it is measured against. A checker that
-is never checked is a claim like any other.
+`handoff-readiness` carries its own
+[tests](https://github.com/Konstancja-Tanjga/bighat-design-system/tree/main/skills/handoff-readiness/tests):
+the trigger phrases it has to fire on in both working languages, a branch with
+one seeded defect per gate, and the criteria it is measured against. A checker
+that is never checked is a claim like any other.
+
+This repository keeps only [`.claude/handoff.json`](.claude/handoff.json) — the
+config naming what this project is made of, which is the part that cannot live
+in the design system because it describes a consumer of it.
 
 ### Borrowed
 
 Anthropic's, not mine — linked rather than copied in.
 
 | Skill | Used for |
-|---|---|
+| --- | --- |
 | [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Drafting, evaluating and benchmarking the skills above |
 | [`mcp-builder`](https://github.com/anthropics/skills/tree/main/skills/mcp-builder) | Building MCP servers |
 
