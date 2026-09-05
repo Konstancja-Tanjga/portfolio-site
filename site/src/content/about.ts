@@ -50,18 +50,81 @@ export const aboutChapters: Chapter[] = [
       "The shape is the design-to-code workflow documented in the Claude Code Ultimate Guide: Figma as the source of truth, read through the Figma MCP server, implemented by Claude Code against a written specification. I run it with two additions the guide does not cover — Storybook as the acceptance contract, and Nexus for storing and versioning the design system as a package.",
     blocks: [
       {
-        kind: "shot",
-        width: "column",
-        src: "/about/process.png",
-        slot: "diagram — public/about/process.png · idea to published prototype",
-        caption:
-          "Idea, discussed with the requirement engineer and the PM → ideations in Claude Design, several options, with architecture and security discussed alongside → one candidate chosen → redrawn in Figma on design components → published to the repository and the hub through Figma MCP and Code Connect → specs and a walkthrough for stakeholders and the AI Harvester → a clickable prototype in code → published to GitHub. Governed by two skills, updated once a quarter.",
+        kind: "process",
+        process: {
+          label: "Idea to published prototype",
+          count: "Eight stages",
+          stages: [
+            {
+              n: "01",
+              title: "The idea",
+              kicker: "Requirement engineer & PM",
+              body: "The starting point, talked through with the requirement engineer and the PM.",
+            },
+            {
+              n: "02",
+              title: "Ideation in Claude Design",
+              kicker: "Several options, iterated",
+              body: "I iterate ideations in Claude Design, and put up several options rather than one.",
+              note: {
+                label: "Alongside",
+                body: "Architecture and security discussed with our specialists.",
+              },
+            },
+            {
+              n: "03",
+              title: "One candidate chosen",
+              kicker: "From the options I made",
+              body: "We pick one of the several options, and the rest are set aside.",
+            },
+            {
+              n: "04",
+              title: "Redrawn in Figma",
+              kicker: "On design components",
+              body: "The work moves to Figma, where the chosen solution is redrawn on design components.",
+            },
+            {
+              n: "05",
+              title: "Published through Figma MCP",
+              kicker: "And Code Connect",
+              body: "The element goes to the repository and to the hub through Figma MCP and Code Connect.",
+            },
+            {
+              n: "06",
+              title: "Specs and walkthrough",
+              kicker: "Stakeholders & AI Harvester",
+              body: "Specs and a walkthrough travel with the element \u2014 for the stakeholders, and for the AI Harvester.",
+            },
+            {
+              n: "07",
+              title: "A clickable prototype",
+              kicker: "As code",
+              body: "Several elements assembled into a clickable prototype, built on design system components, in code.",
+            },
+            {
+              n: "08",
+              title: "Published to GitHub",
+              kicker: "Where the process ends",
+              body: "The prototype is published to GitHub.",
+            },
+          ],
+          underneath: {
+            label: "Running underneath",
+            kicker: "Updated once a quarter",
+            chips: [
+              "design-system-compliance skill",
+              "handoff-readiness skill",
+            ],
+            body: "Built for Claude on Anthropic\u2019s skill-creator and on best practices, and updated once a quarter \u2014 so the stages above are governed by something written down, not by whoever is at the keyboard.",
+          },
+        },
       },
       {
         kind: "steps",
         items: [
           {
             n: "01",
+            governs: ["04"],
             stage: "Source of truth",
             flow: { from: "A brand decision", to: "Named variables" },
             title: "The Figma library is the source of truth",
@@ -80,6 +143,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "02",
+            governs: ["05"],
             stage: "Read",
             flow: { from: "A Figma URL", to: "Exact spacing and variants" },
             title: "Claude Code reads the frame, nobody transcribes it",
@@ -98,6 +162,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "03",
+            governs: ["06", "skills"],
             stage: "Specify",
             flow: {
               from: "What the component is for",
@@ -134,6 +199,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "04",
+            governs: ["07"],
             stage: "Contract",
             flow: { from: "An implementation", to: "Enumerated states" },
             title: "Storybook is the contract",
@@ -152,6 +218,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "05",
+            governs: ["05"],
             stage: "Review",
             flow: {
               from: "A component pull request",
@@ -186,6 +253,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "06",
+            governs: ["08"],
             stage: "Version",
             flow: { from: "A merged component", to: "@bighat/ui@3.2.0" },
             title: "Nexus stores and versions the system",
@@ -204,6 +272,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             n: "07",
+            governs: ["07", "08"],
             stage: "Hand off",
             flow: {
               from: "The published package",

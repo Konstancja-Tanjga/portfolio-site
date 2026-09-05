@@ -93,6 +93,47 @@ export type Step = {
   artefact?: { caption: string; lines: string[] };
   /** Given the full width and the artefact. Three of seven, at most. */
   feature?: boolean;
+  /**
+   * Which stages of the process board this rule governs. Hovering the rule
+   * lights them; clicking a stage comes back here. The mapping is not one to
+   * one and pretending it were would be the dishonest version: the board is
+   * eight stages of making a thing, and these are seven rules about how.
+   */
+  governs?: string[];
+};
+
+/**
+ * The process board: eight stages from idea to published prototype.
+ *
+ * It was a PNG. A picture of a diagram cannot be searched, selected, read by a
+ * screen reader, or pointed at — and pointing at it is the whole reason this
+ * exists, because each stage is governed by one of the rules below it. It is
+ * text and boxes, so it is written as text and boxes rather than drawn: an SVG
+ * would have solved the pointing and kept the rest of the problems.
+ */
+export type ProcessStage = {
+  n: string;
+  title: string;
+  /** The small line under the title — who, from what, on what. */
+  kicker?: string;
+  body: string;
+  /** The dashed aside — something running beside the stage, not after it. */
+  note?: { label: string; body: string };
+};
+
+export type Process = {
+  /** Top-left, the board's own title. */
+  label: string;
+  /** Top-right, the count. It is a claim the stages have to match. */
+  count: string;
+  stages: ProcessStage[];
+  /** What runs underneath every stage rather than at one of them. */
+  underneath?: {
+    label: string;
+    kicker?: string;
+    chips: string[];
+    body: string;
+  };
 };
 
 /**
@@ -195,6 +236,7 @@ export type Block =
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
   | { kind: "steps"; standfirst?: string; items: Step[] }
+  | { kind: "process"; process: Process }
   | { kind: "usecase"; uc: UseCase }
   | { kind: "evolution"; items: Version[] }
   | { kind: "annotated"; items: Annotated[] };

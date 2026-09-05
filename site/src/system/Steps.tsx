@@ -7,6 +7,7 @@ import {
 } from "react";
 
 import type { Step } from "../content/types";
+import { focusStages } from "./pipelineFocus";
 import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
 
@@ -34,6 +35,13 @@ import { Lane } from "./Wall";
  * It sits typographically subordinate and lifts to full strength when the
  * stage is hovered or focused — a pointer-only nicety, so a touch reader and a
  * keyboard reader get it at full strength from the start.
+ *
+ * Pointing at a rule lights the stages of the board above that it governs.
+ * The mapping is not one to one — the board is eight stages of making a thing
+ * and these are seven rules about how — so a rule can govern two stages, two
+ * rules can govern one, and the pair that runs underneath all of them lights
+ * as its own stage. It is an enhancement in the strict sense: the board is
+ * complete without it and the rules are complete without the board.
  *
  * Folding is the reader's choice, not the page's: every stage is open on
  * arrival, and "collapse all" folds them to their heads. That state is worth
@@ -136,6 +144,10 @@ export function Steps({
               }}
               className={s.feature ? "stage stage--feature" : "stage"}
               style={{ "--step-delay": `${i * 90}ms` } as CSSProperties}
+              onMouseEnter={() => focusStages(s.governs ?? [])}
+              onMouseLeave={() => focusStages([])}
+              onFocus={() => focusStages(s.governs ?? [])}
+              onBlur={() => focusStages([])}
             >
               <details
                 className="stage__fold"
@@ -155,6 +167,24 @@ export function Steps({
                     </span>
                   )}
                 </summary>
+
+                {s.governs && s.governs.length > 0 && (
+                  <p className="stage__governs">
+                    Governs{" "}
+                    {s.governs.map((n, index) => (
+                      <span key={n}>
+                        {index > 0 && ", "}
+                        <a
+                          href={`#process-${n}`}
+                          onMouseEnter={() => focusStages([n])}
+                        >
+                          {n === "skills" ? "the two skills" : `stage ${n}`}
+                        </a>
+                      </span>
+                    ))}{" "}
+                    of the board above.
+                  </p>
+                )}
 
                 <div className="stage__panel">
                   <div className="stage__body">
