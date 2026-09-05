@@ -9,11 +9,11 @@
       "radius.",
       "fontSize."
     ],
-    "inventory": "node_modules/@bighatpoland/ui/components.json"
+    "inventory": "site/node_modules/@bighatpoland/ui/components.json"
   },
   "commands": {
     "install": "npm ci",
-    "check": null,
+    "check": "npm run check",
     "lint": null,
     "test": null,
     "build": "npm run build",
@@ -50,5 +50,6 @@
     1400
   ],
   "shotHeight": 1400,
-  "screenshots": ".handoff/shots"
+  "screenshots": ".handoff/shots",
+  "minContentChars": 80
 }

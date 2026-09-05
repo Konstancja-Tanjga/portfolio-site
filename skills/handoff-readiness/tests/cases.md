@@ -77,6 +77,16 @@ invisible: the report reads as coverage and is a claim. Audit for it directly â€
 read the pass rows, not just the fail rows. The click-through bug above is
 exactly this, and it was invisible until a branch with a known answer existed.
 
+## Regressions found by this fixture
+
+Every miss on a real run becomes a row here, with the date and what changed.
+This is the list that turns a fixture into an evaluation suite without anyone
+sitting down to build one.
+
+| Date | What was missed | Why | Fix |
+| --- | --- | --- | --- |
+| 2026-09-05 | Gate 4: the empty `/board` route was reported `ok` on the first run | The blank check read the whole viewport, and a site with a header and a footer is never blank â€” the route rendered nothing between them and the pixels said otherwise | `clickthrough.mjs` now also measures the route's own content: the text inside `<main>`, or inside the body with the chrome removed. 0 characters on `/board`, and the gate fails |
+
 ## Running it
 
 ```bash

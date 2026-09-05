@@ -105,10 +105,55 @@ function inkFraction(file) {
   return sampled ? inked / sampled : 0;
 }
 
+/**
+ * How much content the route itself renders.
+ *
+ * The ink check reads the whole viewport, and on a site with a header and a
+ * footer the whole viewport is never blank — which is how the first run of
+ * this script called an empty route "ok". So the route is also measured where
+ * its own content goes: inside `<main>` when there is one, and inside the body
+ * with the chrome removed when there is not.
+ */
+function contentLength(url) {
+  let dom = '';
+  try {
+    dom = execFileSync(
+      CHROME,
+      ['--headless=new', '--disable-gpu', '--virtual-time-budget=20000', '--dump-dom', url],
+      { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, timeout: 90_000 },
+    );
+  } catch {
+    return null;
+  }
+
+  const main = dom.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+  const body = dom.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+  let region = main ? main[1] : (body ? body[1] : dom);
+  if (!main) region = region.replace(/<(header|footer|nav)\b[\s\S]*?<\/\1>/gi, '');
+
+  return region
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim().length;
+}
+
 const findings = [];
 let shots = 0;
 
 for (const route of routes) {
+  /* Once per route: the content measure does not change with the width, and a
+     DOM dump per width would triple the run for the same answer. */
+  const content = contentLength(`${base}${route.path}${themes[0]?.query ?? ''}`);
+  if (content === null) {
+    findings.push(`${route.name}: the page could not be read at all — ${route.path}`);
+  } else if (content < (config.minContentChars ?? 80)) {
+    findings.push(
+      `${route.name}: renders ${content} characters of its own content — the route is empty inside the page chrome (${route.path})`,
+    );
+  }
+
   for (const theme of themes) {
     for (const width of widths) {
       const url = `${base}${route.path}${theme.query ?? ''}`;
