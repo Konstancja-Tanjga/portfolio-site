@@ -13,3 +13,7 @@ dist/
 # core.ignoreCase=true, it also matched site/public/watercolours/ and silently
 # excluded 31 of the 43 published images.
 /Watercolours/
+
+# Handoff evidence — screenshots from skills/handoff-readiness. The evidence
+# belongs in the report, not in the repository.
+.handoff/
