@@ -1,6 +1,20 @@
 ---
 name: handoff-readiness
-description: Checks a branch before it becomes a pull request and writes the handoff note for its description. Runs ten gates - sanity, design-system alignment, requirements from the linked issue, a real click-through of the running prototype, state completeness, accessibility, both themes, container widths, copy and closeout - and returns one verdict per gate with the evidence behind it. Make sure to use this skill whenever the user mentions handoff, handoff-readiness, "ready for PR", "before I open the PR", "is this handoff-safe", "check this prototype", "review before merge", or asks whether work built on a design system actually uses that design system - even when they do not use the word handoff. The team writes in Polish as often as in English, so it triggers equally on "gotowe do PR", "sprawdz przed PR", "czy to jest handoff-safe", "sprawdz czy to zgodne z design systemem", "przejrzyj zanim otworzysz PR" and "czy prototyp dziala". Reports only: it never edits code, opens a pull request, merges, or declares work done.
+description: >-
+  Checks a branch before it becomes a pull request and writes the handoff note for its
+  description. Runs ten gates over the diff and the running prototype - build, design system,
+  requirements, click-through, states, accessibility, themes, widths, copy, closeout - and
+  returns one verdict per gate with the evidence behind it. Make sure to use this skill whenever
+  the user mentions handoff, "ready for PR", "before I open the PR", "is this handoff-safe",
+  "check this prototype", "review before merge", or asks whether a prototype actually runs and
+  clicks, or whether work built on a design system really uses it - even without the word
+  handoff. The team writes Polish as often as English, so it triggers equally on "gotowe do PR",
+  "sprawdz przed PR", "czy to jest handoff-safe", "sprawdz czy to zgodne z design systemem",
+  "przejrzyj zanim otworzysz PR" and "czy prototyp dziala". Reports only: it never edits code,
+  opens or merges a PR, or declares work done - asking to open or merge one is not this skill.
+compatibility: >-
+  Needs git, an authenticated gh, Node and a Chrome or Chromium binary. Without Chrome,
+  gates 4, 7 and 8 report not checked rather than failing the run.
 ---
 
 # Handoff readiness
@@ -17,7 +31,8 @@ Four things stay with the person, because each is a commitment made in
 someone's name:
 
 - **It does not edit code.** A checker that also fixes is a judge in its own
-  case, and the report is the thing being handed over.
+  case, and the report is the thing being handed over. The one file it may
+  write is `.claude/handoff.json` in step 1, and nothing else.
 - **It does not open or merge the pull request.** Opening one claims the work
   is ready.
 - **It does not declare anything done.** It reports what passed.
@@ -114,8 +129,12 @@ setup: the two most expensive bugs this skill exists to catch are both
 invisible in the source and obvious in a screenshot.
 
 ```bash
-node ~/.claude/skills/handoff-readiness/scripts/clickthrough.mjs
+node scripts/clickthrough.mjs        # path is relative to this skill's directory
 ```
+
+The path above is relative to wherever this skill is installed — a personal
+install resolves it under `~/.claude/skills/`, a copy vendored into a repository
+under `skills/`. Resolve it against this file rather than hard-coding either.
 
 The script starts nothing — run the config's dev command yourself first — then
 visits every route in every theme at every width, writes one screenshot per
