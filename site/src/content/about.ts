@@ -112,10 +112,10 @@ export const aboutChapters: Chapter[] = [
             label: "Running underneath",
             kicker: "Updated once a quarter",
             chips: [
-              "design-system-compliance skill",
+              "bighat-design-system skill",
               "handoff-readiness skill",
             ],
-            body: "Built for Claude on Anthropic\u2019s skill-creator and on best practices, and updated once a quarter \u2014 so the stages above are governed by something written down, not by whoever is at the keyboard.",
+            body: "Two skills, both living in the design system repository: one states the rules a type-checking, lint-passing component can still break, the other runs them as ten gates over a branch and returns one verdict each with the evidence. Built on Anthropic\u2019s skill-creator, updated once a quarter \u2014 so the stages above are governed by something written down, not by whoever is at the keyboard.",
           },
         },
       },
