@@ -38,6 +38,33 @@ with four stages of my own: Storybook as the acceptance contract, Chromatic for
 visual regression, my own merge as the only review gate, and Nexus for storing
 and versioning the system.
 
+## Skills
+
+The stages above are governed by written-down skills rather than by whoever is
+at the keyboard. They run in Claude Code, are versioned in this repository, and
+are updated once a quarter.
+
+### My skills
+
+| Skill | What it does | |
+|---|---|---|
+| [`handoff-readiness`](skills/handoff-readiness) | Runs ten gates over a branch before it becomes a pull request — build, design-system alignment, requirements from the linked issue, a real click-through of the running prototype, states, accessibility, both themes, container widths, copy, closeout — and returns one verdict per gate with the evidence behind it. It reports: it does not edit code, open the pull request, or declare the work done. | in use |
+| `design-system-compliance` | Checks that a screen is assembled from published system components and semantic tokens, and that anything local is named as local. | planned |
+
+`handoff-readiness` carries its own [tests](skills/handoff-readiness/tests): the
+trigger phrases it has to fire on in both working languages, a branch with one
+seeded defect per gate, and the criteria it is measured against. A checker that
+is never checked is a claim like any other.
+
+### Borrowed
+
+Anthropic's, not mine — linked rather than copied in.
+
+| Skill | Used for |
+|---|---|
+| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Drafting, evaluating and benchmarking the skills above |
+| [`mcp-builder`](https://github.com/anthropics/skills/tree/main/skills/mcp-builder) | Building MCP servers |
+
 ## What is on the site
 
 | Band | | |
