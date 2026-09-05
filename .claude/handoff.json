@@ -4,7 +4,8 @@
     "package": "@bighatpoland/ui",
     "tokenPrefix": "--bh-",
     "primitiveNames": ["color.", "space.", "radius.", "fontSize."],
-    "inventory": "site/node_modules/@bighatpoland/ui/components.json"
+    "inventory": "site/node_modules/@bighatpoland/ui/components.json",
+    "rules": "site/node_modules/@bighatpoland/ui/agent/SKILL.md"
   },
   "commands": {
     "install": "npm ci",
