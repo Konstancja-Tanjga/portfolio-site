@@ -467,19 +467,43 @@ img { max-width: 100%; height: auto; }
 .rail__link.is-current { color: var(--bh-text-strong); border-left-color: var(--bh-mark); }
 .rail__n { font-family: var(--bh-font-id); font-size: var(--bh-size-id); }
 .rail__stage { text-wrap: balance; }
+/* Folding is offered where the reader already looks for the shape of the
+   chapter, not as a control bar above it. */
+.rail__fold {
+  margin: var(--bh-space-3) 0 0 var(--bh-space-2);
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bh-text-quiet);
+  cursor: pointer;
+  border-bottom: 1px solid var(--bh-border);
+}
+.rail__fold:hover { color: var(--bh-text-strong); border-bottom-color: var(--bh-mark); }
 
 /* ---- the stages ---- */
 .stages { list-style: none; margin: 0; padding: 0; }
 .stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 15rem;
-  column-gap: var(--bh-space-5);
   padding: var(--bh-space-5) 0;
   border-top: 1px solid var(--bh-border);
   font-size: var(--bh-size-small);
   scroll-margin-top: var(--bh-space-6);
 }
+.stage__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  column-gap: var(--bh-space-5);
+  margin-top: var(--bh-space-3);
+}
 .stage:first-child { border-top: none; padding-top: 0; }
+/* Folded, the seven heads are meant to read as one diagram rather than as
+   seven roomy rows, so a closed stage keeps less of the beat. Browsers
+   without :has() simply keep the open spacing, which is the safe way round. */
+.stage:has(> .stage__fold:not([open])) { padding-block: var(--bh-space-3); }
 .stage:last-child { border-bottom: 1px solid var(--bh-border); }
 
 /* The rule draws itself as the stage lands — same device as the stack, so
@@ -498,21 +522,53 @@ img { max-width: 100%; height: auto; }
   animation: stack-rule-in 460ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--step-delay, 0ms) forwards;
 }
 .stages.is-running .stage:first-child::before { content: none; }
-.stages.is-running .stage > * {
+.stages.is-running .stage__head,
+.stages.is-running .stage__panel {
   opacity: 0;
   transform: translateY(8px);
   animation: stack-row-in 460ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--step-delay, 0ms) forwards;
 }
-.stages.is-running .stage__body { animation-delay: calc(var(--step-delay, 0ms) + 90ms); }
-.stages.is-running .stage__why { animation-delay: calc(var(--step-delay, 0ms) + 140ms); }
-.stages.is-running .artefact { animation-delay: calc(var(--step-delay, 0ms) + 190ms); }
+.stages.is-running .stage__panel { animation-delay: calc(var(--step-delay, 0ms) + 90ms); }
 
-.stage__head { grid-column: 1 / -1; margin-bottom: var(--bh-space-3); }
+.stage__head {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0 var(--bh-space-1);
+  padding-right: var(--bh-space-4);
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+/* Both spellings: Safari still ships the WebKit pseudo-element. */
+.stage__head::marker { content: ""; }
+.stage__head::-webkit-details-marker { display: none; }
+.stage__head:focus-visible { outline: 2px solid var(--bh-focus); outline-offset: 4px; }
+/* The caret is the only thing on the head that moves, and it points at the
+   state the head is in rather than at the one a click would produce. */
+.stage__head::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0.45em;
+  inset-inline-end: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid var(--bh-text-quiet);
+  border-bottom: 1.5px solid var(--bh-text-quiet);
+  transform: rotate(-45deg);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.stage__fold[open] > .stage__head::after { transform: rotate(45deg); }
+.stage__head:hover::after { border-color: var(--bh-mark-deep, var(--bh-text-strong)); }
+.stage__n { grid-column: 1; }
+.stage__title { grid-column: 2; }
+.stage__flow { grid-column: 2; }
 .stage__n {
   font-family: var(--bh-font-id);
   font-size: var(--bh-size-id);
   color: var(--bh-text-quiet);
 }
+.stage__fold { border: none; }
 .stage__title {
   margin: 0.15rem 0 0;
   font-size: var(--bh-size-h3);
@@ -576,7 +632,7 @@ img { max-width: 100%; height: auto; }
 /* ---- why: subordinate, never hidden ---- */
 .stage__why {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   align-self: start;
   padding-left: var(--bh-space-3);
   border-left: 1px solid var(--bh-border);
@@ -659,7 +715,7 @@ img { max-width: 100%; height: auto; }
   }
   .rail__link { border-left: none; border-bottom: 2px solid transparent; padding: 0.2rem 0; }
   .rail__link.is-current { border-left-color: transparent; border-bottom-color: var(--bh-mark); }
-  .stage { grid-template-columns: minmax(0, 1fr); row-gap: var(--bh-space-3); }
+  .stage__panel { grid-template-columns: minmax(0, 1fr); row-gap: var(--bh-space-3); }
   .stage__why { grid-column: 1; grid-row: auto; }
 }
 
@@ -1662,7 +1718,8 @@ img { max-width: 100%; height: auto; }
   .lightbox__sheet { animation: none; }
   .stages.is-running .stage { border-top-color: var(--bh-border); }
   .stages.is-running .stage::before,
-  .stages.is-running .stage > * {
+  .stages.is-running .stage__head,
+  .stages.is-running .stage__panel {
     animation: none;
     opacity: 1;
     transform: none;
