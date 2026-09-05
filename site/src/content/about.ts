@@ -362,7 +362,7 @@ export const aboutChapters: Chapter[] = [
   {
     id: "systems",
     n: "02",
-    heading: "Two design systems, and they are not the same one",
+    heading: "Two different design systems",
     blocks: [
       {
         kind: "passage",
