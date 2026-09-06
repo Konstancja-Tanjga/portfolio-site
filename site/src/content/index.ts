@@ -1,6 +1,7 @@
 import { award } from "./award";
 import { bi } from "./bi";
 import { bighat } from "./bighat";
+import { bph } from "./bph";
 import { bydgoszcz } from "./bydgoszcz";
 import { deloitte } from "./deloitte";
 import { dms } from "./dms";
@@ -29,6 +30,7 @@ export const cases: CaseStudy[] = [
   bi,
   dms,
   elly,
+  bph,
   flow,
   volvo,
   xecta,
