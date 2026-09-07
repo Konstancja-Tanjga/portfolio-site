@@ -149,6 +149,33 @@ portfolio should live on `konstancja-tanjga.github.io` instead, Pages needs
 `dist/index.html` copied to `dist/404.html` to stand in for the rewrite, plus a
 publish workflow; Vercel is less work for a router-driven site.
 
+## Visitor statistics
+
+The counter is [Umami Cloud](https://cloud.umami.is): no cookies, no consent
+banner, and a dashboard only your account can open — nothing about the numbers
+is visible on the site itself.
+
+Setting it up is one value:
+
+1. Sign in to Umami Cloud, **Add website**, domain
+   `konstancja-tanjga.github.io`.
+2. Copy the **Website ID** it gives you.
+3. In GitHub: repository **Settings → Secrets and variables → Actions →
+   Variables → New repository variable**, name `UMAMI_WEBSITE_ID`, value that
+   ID.
+4. Push to `main`. Until that variable exists the build simply omits the
+   counter, which is also what keeps forks and `npm run dev` out of the data.
+
+**Excluding yourself.** Open the live site once as
+`https://konstancja-tanjga.github.io/portfolio-site/?skipcount=1` in each
+browser you use; `?skipcount=0` undoes it. It stores Umami's own opt-out flag
+in that browser, so it has to be done per browser and per device — recognising
+you across devices would mean storing something that identifies you, which is
+the point of a cookie-less counter to avoid.
+
+The whole integration is [src/components/Analytics.tsx](src/components/Analytics.tsx),
+which sends one page view per router navigation.
+
 ## Before publishing
 
 1. **Fill the TODOs.** `grep -rn TODO src/content` — these are the paragraphs a
