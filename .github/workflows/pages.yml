@@ -44,6 +44,12 @@ jobs:
           # Served from https://<user>.github.io/portfolio-site/ — every
           # asset URL needs that prefix. Read back at runtime by asset().
           BASE_PATH: /portfolio-site/
+          # Umami Cloud website ID — the private visitor counter wired up in
+          # src/components/Analytics.tsx. A repository variable, not a secret:
+          # it ships inside the built JavaScript either way, and what keeps
+          # the statistics private is the Umami account, not this string.
+          # Unset, the build simply omits the counter.
+          VITE_UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
         run: npm run build
 
       - name: Add SPA fallback and disable Jekyll

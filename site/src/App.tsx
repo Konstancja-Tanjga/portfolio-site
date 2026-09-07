@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Analytics } from "./components/Analytics";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Shell } from "./components/Shell";
 import { Home } from "./pages/Home";
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <Shell>
       <ScrollToTop />
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/:slug" element={<Case />} />
