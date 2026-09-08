@@ -3,6 +3,7 @@ import { bi } from "./bi";
 import { bighat } from "./bighat";
 import { bph } from "./bph";
 import { bydgoszcz } from "./bydgoszcz";
+import { chihuahua } from "./chihuahua";
 import { deloitte } from "./deloitte";
 import { dms } from "./dms";
 import { elly } from "./elly";
@@ -42,6 +43,7 @@ export const cases: CaseStudy[] = [
   bighat,
   fox,
   futures,
+  chihuahua,
   // recognition
   award,
   bydgoszcz,
