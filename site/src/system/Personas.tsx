@@ -1,4 +1,5 @@
 import type { Persona } from "../content/types";
+import { asset } from "./asset";
 import { Lane } from "./Wall";
 
 /**
@@ -12,6 +13,17 @@ export function Personas({ items, standfirst }: { items: Persona[]; standfirst?:
       <div className="personas">
         {items.map((p) => (
           <article className="persona" key={p.n}>
+            {p.shot?.src && (
+              /* Decorative: the name is right underneath in text, so alt text
+                 here would be the same words read twice. */
+              <img
+                className="persona__photo"
+                src={asset(p.shot.src)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            )}
             <header className="persona__head">
               <span className="persona__n">{p.n}</span>
               <h3 className="persona__name">{p.name}</h3>

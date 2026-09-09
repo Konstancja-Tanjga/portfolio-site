@@ -52,6 +52,14 @@ export type Video = {
 export type Persona = {
   n: string;
   name: string;
+  /**
+   * A face at the top of the card. Optional, and deliberately so: most
+   * personas on this site are composites of several interviewed people, and
+   * handing a composite one real person's photograph would be a small lie
+   * about the research. Present only when the persona is one individual who
+   * can actually be photographed.
+   */
+  shot?: Shot;
   /** "AUTHOR · IT OR DEPARTMENT POWER USER" */
   badge: string;
   quote: string;
@@ -192,6 +200,24 @@ export type Version = {
   moved?: string;
 };
 
+/**
+ * One colour in a palette, with the job it does.
+ *
+ * The hex lives in the content because it is a fact about the project being
+ * described, not a styling decision of this site — which is why the component
+ * reads it from data and the stylesheet stays colour-free. A swatch without a
+ * `role` would be decoration; the role is the reason it is on the page.
+ */
+export type Swatch = {
+  /** "#0033FF" */
+  hex: string;
+  name: string;
+  /** what this colour is allowed to mean, in the system being shown */
+  role: string;
+  /** the evidence or constraint behind it, when there is one */
+  note?: string;
+};
+
 /** A screen with the reasoning drawn on it: legend, zones, guardrails. */
 export type Annotated = {
   id?: string;
@@ -235,6 +261,7 @@ export type Block =
   | { kind: "stack"; rows: StackRow[]; caption?: string }
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
+  | { kind: "palette"; standfirst?: string; items: Swatch[]; caption?: string }
   | { kind: "steps"; standfirst?: string; items: Step[] }
   | { kind: "process"; process: Process }
   | { kind: "usecase"; uc: UseCase }

@@ -4,6 +4,7 @@ import {
   Duo,
   Evolution,
   Lane,
+  Palette,
   Passage,
   Personas,
   Points,
@@ -62,6 +63,8 @@ function BlockView({ block }: { block: Block }) {
       return <Portrait portrait={block.portrait} />;
     case "personas":
       return <Personas items={block.items} standfirst={block.standfirst} />;
+    case "palette":
+      return <Palette items={block.items} standfirst={block.standfirst} caption={block.caption} />;
     case "process":
       return <ProcessBoard process={block.process} />;
     case "steps":

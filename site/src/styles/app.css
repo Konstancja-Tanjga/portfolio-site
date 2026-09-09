@@ -1886,3 +1886,103 @@ img { max-width: 100%; height: auto; }
   .gal__step:hover:not(:disabled),
   .gal__thumb[aria-current="true"] { transform: none; }
 }
+
+/* ---------------------------------------------------------------
+   A face on a persona card.
+
+   Square, and the full width of the card, so four cards read as one
+   row of portraits rather than four differently-shaped crops. The
+   source images are cropped square by the project's own build script,
+   so this element does not have to correct anyone's framing.
+   --------------------------------------------------------------- */
+.persona__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--bh-border);
+}
+
+/* ---------------------------------------------------------------
+   A palette, stated rather than displayed.
+
+   Every colour arrives with its value printed and its role written
+   out, because for one of the systems on this site the whole subject
+   is a user who cannot tell two of the swatches apart. Colour that is
+   the only carrier of the information would be the wrong way to
+   present exactly that argument.
+
+   The chip colour comes in as an inline style from the content: these
+   are values belonging to the system being described, not to this
+   site, which is why no hex appears in this stylesheet.
+   --------------------------------------------------------------- */
+/* .standfirst carries no top margin, because normally a chapter heading
+   sits above it and provides the space. Opening a block with one leaves it
+   touching whatever came before, so this instance supplies its own. The same
+   tightness exists on the shared `personas` and `steps` blocks; fixing it
+   there means touching every wall that uses them, so it is left alone. */
+.palette__lead { margin-top: var(--bh-beat-block); }
+.palette { margin: var(--bh-space-5) 0 0; }
+.palette__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--bh-space-4);
+}
+.palette__swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bh-space-1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 460ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              transform 460ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.palette.is-shown .palette__swatch { opacity: 1; transform: none; }
+.palette__chip {
+  aspect-ratio: 3 / 2;
+  /* A one-pixel border, not a shadow: two of these palettes are flat
+     poster colour, and an elevation effect would be this site adding a
+     material the system it is describing does not have. */
+  border: 1px solid var(--bh-border-strong);
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.palette__hex {
+  margin: var(--bh-space-2) 0 0;
+  font-family: var(--bh-font-id);
+  font-size: var(--bh-size-id);
+  color: var(--bh-text-quiet);
+}
+.palette__name {
+  margin: 0;
+  font-size: var(--bh-size-h3);
+  font-weight: 400;
+  color: var(--bh-text-strong);
+}
+.palette__role { margin: 0; font-size: var(--bh-size-small); }
+.palette__note {
+  margin: var(--bh-space-1) 0 0;
+  padding-top: var(--bh-space-2);
+  border-top: 1px solid var(--bh-border);
+  font-size: var(--bh-size-small);
+  color: var(--bh-text-quiet);
+}
+
+/* Hover only where hovering means something, and only on the chip:
+   the text stays put, because a reader following the roles down the
+   row should not have the words move under the pointer. */
+@media (hover: hover) and (pointer: fine) {
+  .palette__swatch:hover .palette__chip { transform: translateY(-4px); }
+  .palette__swatch:hover .palette__hex { color: var(--bh-text-strong); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* useReveal never arms under this query, but a class set before the
+     query matched would otherwise strand the swatches at opacity 0. */
+  .palette__swatch {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .palette__chip { transition: none; }
+  .palette__swatch:hover .palette__chip { transform: none; }
+}

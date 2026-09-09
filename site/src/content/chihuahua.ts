@@ -51,6 +51,14 @@ export const chihuahua: CaseStudy = {
             "<p>My two chihuahuas gave me a brief. Karmel is five, Auri is twelve and she is his mother, and what they want is a kindred spirit who is not each other. I said I would build them an app. They now have one, on an old iPhone 13 Pro Max, and they work it themselves.</p><p>The frame is <strong>speculative design</strong>, and I want to be precise about what that actually buys, because it is not a licence to wave my hands. It is exactly one assumption held constant — <em>a dog can operate a touchscreen</em> — so that everything downstream has to be answered properly. Grant that one thing and what remains is a real design problem: two-colour vision, about a quarter of your visual acuity, no reading, no language, a pointing device that is wet and considerably bigger than a fingertip, and absolutely no way of telling me I got it wrong.</p><p>I have designed for enterprise users I could not get access to. This is the same problem with the excuses taken away.</p>",
         },
         {
+          kind: "duo",
+          items: [
+            { src: "/work/tinder-for-chihuahua/photos/karmel.jpg", caption: "Karmel, five. The one who will work a screen for a treat." },
+            { src: "/work/tinder-for-chihuahua/photos/auri.jpg", caption: "Auri, twelve, his mother. The one who sets every threshold in the system." },
+          ],
+          caption: "The clients. Neither of them can be interviewed, and only one of them is reliably motivated.",
+        },
+        {
           kind: "thesis",
           label: "The thesis",
           text:
@@ -122,17 +130,63 @@ export const chihuahua: CaseStudy = {
         },
         { kind: "pull", text: "Design for Auri. Test with Karmel." },
         {
+          kind: "personas",
+          items: [
+            {
+              n: "01",
+              name: "Karmel",
+              shot: { src: "/work/tinder-for-chihuahua/photos/karmel-persona.jpg" },
+              badge: "PRIMARY SWIPER · THE STRESS TEST FOR INPUT",
+              quote: "He touched it and nothing happened. Sound too quiet. Screen too far away.",
+              context:
+                "Five years old, male. Dichromat, acuity around 20/75, flicker threshold 70–80 Hz. Sees blue and yellow-green.",
+              goals: [
+                "Novelty, a treat, and your attention — in that order",
+                "Someone to love who is not his mother",
+              ],
+              breaks: "Quick and agile, so he produces the messiest, longest, multi-point nose drags in the house.",
+              must: "Tolerate sloppy input. If his swipe registers, anyone's will.",
+              job: "SWIPE",
+            },
+            {
+              n: "02",
+              name: "Auri",
+              shot: { src: "/work/tinder-for-chihuahua/photos/auri-persona.jpg" },
+              badge: "THE USER THIS APP HAS REAL VALUE FOR",
+              quote: "Someone to love who is not her son.",
+              context:
+                "Twelve years old, female, Karmel's mother. Same dichromat baseline, but reduced contrast sensitivity from age-related changes in the lens.",
+              goals: [
+                "Routine, quiet, and a person nearby",
+                "Cognitive stimulation — precisely the population the Vienna research was aimed at",
+              ],
+              breaks: "Calmer, and needs a longer pause before deciding, so she manages fewer cards per session.",
+              must: "Set the floor: minimum contrast, minimum target size, maximum session length.",
+              job: "SET THE FLOOR",
+            },
+            {
+              n: "03",
+              name: "Konstancja",
+              badge: "OWNER · OPERATOR · MATCHMAKER",
+              quote: "She cannot be in two modes at once: while the dog works, she rewards — she does not tap.",
+              context:
+                "The only participant who understands why any of this exists, and the only one who can act on the result.",
+              goals: [
+                "Two less bored dogs, and one real meeting",
+                "A result legible at a glance, and silence once the session is over",
+              ],
+              breaks: "Setup has to take minutes, not hours, or the session simply does not happen.",
+              must: "Keep her hands free. She is the interpreter, and the decision stays hers.",
+              job: "INTERPRET",
+            },
+          ],
+        },
+        {
           kind: "passage",
           html:
             "<p>Designing for the average of the two would have produced something that fails one user and bores the other. None of which is dog-specific — it is the ordinary reason you size for the worst-case user and recruit the willing one.</p>",
         },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch03-personas.png",
-          caption:
-            "Two canine personas described by sensory profile and motor behaviour, plus the human persona described by role. No favourite colours, no lifestyle photography.",
-        },
+
       ],
     },
 
@@ -313,6 +367,39 @@ export const chihuahua: CaseStudy = {
           ],
         },
         {
+          kind: "palette",
+          standfirst:
+            "The whole palette. Two hues carry every piece of meaning in dog mode, and the other two are forbidden from carrying any.",
+          items: [
+            {
+              hex: "#0033FF",
+              name: "Blue",
+              role: "Signal. One of exactly two colours allowed to mean anything.",
+              note: "Sits near the short-wavelength cone peak at 429–435 nm.",
+            },
+            {
+              hex: "#D6F000",
+              name: "Acid",
+              role: "Signal. The other one. Reward, progress, yes.",
+              note: "Sits near the long/medium cone peak at 555 nm. It replaced a warmer yellow for exactly this reason.",
+            },
+            {
+              hex: "#000000",
+              name: "Ink",
+              role: "Ground. Never a signal, in either mode.",
+              note: "Also the reason D5 works: a screen with no acid on it reads as nothing left to win.",
+            },
+            {
+              hex: "#FFFFFF",
+              name: "White",
+              role: "Figure. Shape and edge, never meaning.",
+              note: "Text set in it is for the human. The dog gets shape, motion or sound instead.",
+            },
+          ],
+          caption:
+            "Red and green are absent because they are not distinguishable to this user — so a red warning would be a warning nobody receives.",
+        },
+        {
           kind: "spec",
           caption: "Four of the thirty-four.",
           rows: [
@@ -478,10 +565,32 @@ export const chihuahua: CaseStudy = {
           ],
         },
         {
+          kind: "set",
+          size: "square",
+          items: [
+            { src: "/work/tinder-for-chihuahua/photos/deck-1.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-2.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-3.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-4.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-5.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-6.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-7.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-8.jpg" },
+          ],
+          caption:
+            "The deck is built from four-second clips of real chihuahuas, who appear in the app under assumed names — so that a deck never reads as Karmel's own family. Thirteen candidates, all of them somebody's dog.",
+        },
+        {
           kind: "thesis",
           label: "Why this is on the site at all",
           text:
             "It is a full method run end to end — research, personas, journey, blueprint, guidelines, tokens, and a built, instrumented, deployed thing — on a brief silly enough that no stakeholder was ever going to rescue a weak decision by agreeing with it. Every shortcut had to show. Also the users are unreasonably photogenic, and every candidate video is one of my own dogs under an assumed name.",
+        },
+        {
+          kind: "shot",
+          width: "column",
+          src: "/work/tinder-for-chihuahua/photos/oboje.jpg",
+          caption: "Auri and Karmel, waiting for the next session. She is his mother, which is the one match the app is built to rule out.",
         },
         {
           kind: "passage",
