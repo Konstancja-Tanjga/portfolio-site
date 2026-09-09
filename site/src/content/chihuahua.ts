@@ -135,7 +135,7 @@ export const chihuahua: CaseStudy = {
             {
               n: "01",
               name: "Karmel",
-              shot: { src: "/work/tinder-for-chihuahua/photos/karmel-persona.jpg" },
+              shot: { src: "/work/tinder-for-chihuahua/photos/karmel-bieg.jpg" },
               badge: "PRIMARY SWIPER · THE STRESS TEST FOR INPUT",
               quote: "He touched it and nothing happened. Sound too quiet. Screen too far away.",
               context:
@@ -151,7 +151,7 @@ export const chihuahua: CaseStudy = {
             {
               n: "02",
               name: "Auri",
-              shot: { src: "/work/tinder-for-chihuahua/photos/auri-persona.jpg" },
+              shot: { src: "/work/tinder-for-chihuahua/photos/auri-bieg.jpg" },
               badge: "THE USER THIS APP HAS REAL VALUE FOR",
               quote: "Someone to love who is not her son.",
               context:
@@ -568,17 +568,22 @@ export const chihuahua: CaseStudy = {
           kind: "set",
           size: "square",
           items: [
-            { src: "/work/tinder-for-chihuahua/photos/deck-1.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-2.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-3.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-4.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-5.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-6.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-7.jpg" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-8.jpg" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-auris.jpg", caption: "Fasola" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-aurora.jpg", caption: "Malina" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-baltic.jpg", caption: "Rogal" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-ciastek.jpg", caption: "Piegus" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-fistaszka.jpg", caption: "Bąbel" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-kwiatuch.jpg", caption: "Szpilka" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-lola.jpg", caption: "Kluska" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-mafinka.jpg", caption: "Truskawka" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-misiek.jpg", caption: "Pączek" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-okruszek.jpg", caption: "Bajgiel" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-orotava.jpg", caption: "Tofik" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-pindzia.jpg", caption: "Sernik" },
+            { src: "/work/tinder-for-chihuahua/photos/deck-skowronek.jpg", caption: "Kajtek" },
           ],
           caption:
-            "The deck is built from four-second clips of real chihuahuas, who appear in the app under assumed names — so that a deck never reads as Karmel's own family. Thirteen candidates, all of them somebody's dog.",
+            "The whole deck, straight from the clips that are in the app — one still each. Every candidate is a real chihuahua under an assumed name, so that a deck never reads as Karmel's own family.",
         },
         {
           kind: "thesis",
