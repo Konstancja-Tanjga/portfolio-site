@@ -8,9 +8,8 @@ import type { CaseStudy } from "./types";
  * research to tokens to guidelines to a working build — on a brief absurd
  * enough that every shortcut shows. That is what `practice` is for.
  *
- * Panels are the same 1800px exports the repo uses, in English. The two that
- * do not exist yet stand as `slot`, so the wall stays walkable and the missing
- * ones are visibly missing rather than quietly dropped.
+ * Panels are the same 1800px exports the repo uses, in English. All eleven
+ * chapters that carry one now have it; nothing stands as a placeholder.
  */
 export const chihuahua: CaseStudy = {
   slug: "tinder-for-chihuahua",
@@ -88,7 +87,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>No interviews, no analytics, no way to ask. So the requirements came from published research instead, with one rule: every finding has to arrive with a design consequence attached. A finding with no consequence is trivia, and a requirement with no finding behind it is my taste wearing a lab coat.</p><p>Four of the ten did most of the heavy lifting:</p>",
+            "<p>No interviews, no analytics, no way to ask. So the requirements came from published research instead, with one rule: every finding has to arrive with a design consequence attached.</p><p>Four of the ten did most of the heavy lifting:</p>",
         },
         {
           kind: "points",
@@ -125,7 +124,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Auri sets the floor because she is the harder case: get contrast and size right for her and Karmel is covered for free. Karmel does the testing because he is five, motivated, and will absolutely work a screen for a treat. Designing for the average of the two would have produced something that fails one user and bores the other. None of which is dog-specific — it is the ordinary reason you size for the worst-case user and recruit the willing one.</p>",
+            "<p>Designing for the average of the two would have produced something that fails one user and bores the other. None of which is dog-specific — it is the ordinary reason you size for the worst-case user and recruit the willing one.</p>",
         },
         {
           kind: "shot",
@@ -148,11 +147,6 @@ export const chihuahua: CaseStudy = {
         "Eleven steps of a dog's session, in swimlanes, marked by where each one actually happens.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>Map the loop and something structural falls straight out. The reward for a swipe is <em>a treat, from a human hand</em>. Not confetti, not a haptic, not a badge, not a streak. Which means the reinforcement loop does not close on the screen at all — it closes in the room.</p><p>Look at the “Screen” lane and you will find two gaps in it. The second, at step 08, is the reward. The single most important step in the whole product is one where the correct behaviour of the application is to sit quietly and stay out of the way.</p><p>That is an architectural finding, not a copy note. It is why D4 exists purely to announce that a treat is coming and then get off stage, and it is why the app has no mechanism whatsoever for congratulating anybody.</p>",
-        },
-        {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch04-journey-sesja-psa.png",
@@ -172,7 +166,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The human journey is five steps and exists to make one thing structurally true: the app cannot arrange a meeting. It can only report a preference. Step 04 is a human confirmation, lifted more or less directly from the double opt-in that Tinder and Bumble run — except the two consenting parties here are not two daters. They are <em>the one who swiped</em> and <em>the one who is responsible for what happens next</em>.</p><p>Which is also the honest answer to the obvious objection. A dog picking another dog off a four-second video is choosing on the least informative channel available to it, because dogs recognise each other by smell. The interface knows this about itself. That is precisely why the decision gets escalated to a human instead of being dressed up as a match.</p>",
+            "<p>The human journey is five steps and exists to make one thing structurally true: the app cannot arrange a meeting. It can only report a preference.</p>",
         },
         {
           kind: "shot",
@@ -194,7 +188,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Front-stage against back-stage, with a line of interaction, a line of visibility and a bottom row of risks. Everything below the first line is invisible to Karmel, and without it there is no session.</p><p>The risk row is where the numbers in this project were actually decided. My favourite entry, because it sounds silly and then turns into three real constraints:</p>",
+            "<p>The risk row is where the numbers in this project were actually decided. My favourite entry, because it sounds silly and then turns into three real constraints:</p>",
         },
         {
           kind: "spec",
@@ -216,36 +210,6 @@ export const chihuahua: CaseStudy = {
       ],
     },
 
-    /* --------------------------------------------------------------- 06a */
-    {
-      id: "scope",
-      n: "06a",
-      heading: "Four screens became nine",
-      maxim: "This is what doing the research before the design buys you, stated as a number.",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>My original list had four screens. Research added five, and it is the most concrete argument for sequencing I have ever had on a project of my own. Every addition exists because a finding demanded it, not because a flow felt thin.</p>",
-        },
-        {
-          kind: "spec",
-          caption: "The five that were not in the first list.",
-          rows: [
-            { key: "D2 Warm-up", value: "Calibrates the contact patch for this dog and builds the nose → consequence association. Also the only place audio can legally unlock" },
-            { key: "D5 End of session", value: "A calm terminal state instead of another card. The deck is finished and the app says so by going quiet" },
-            { key: "H1 Session result", value: "The preference ranking and decision times. This screen is the actual product" },
-            { key: "H4 Session setup", value: "Deck length, sounds, video spec, and the per-dog calibration measured back on D2" },
-            { key: "the mode gesture", value: "Not a screen, but it needed designing: a way in that a nose cannot perform" },
-          ],
-        },
-        {
-          kind: "passage",
-          html:
-            "<p>D4 was not added so much as redefined. It started life as a “match moment” — the celebratory beat every dating app has. It is now a <em>reward cue</em>: a bark, and a signal to the human that it is treat o'clock. Same slot in the flow, completely different job, because the celebration was for me and the cue is for the dog.</p>",
-        },
-      ],
-    },
 
     /* ---------------------------------------------------------------- 07 */
     {
@@ -290,11 +254,12 @@ export const chihuahua: CaseStudy = {
           text: "A swipe that only moves something onto a “maybe later” pile has not saved anyone any work. It has relocated the decision.",
         },
         {
-          kind: "passage",
-          html:
-            "<p>That line is the diagnosis for the entire graveyard of “Tinder for jobs” apps, and it is the trap this project was strolling directly into. Swiping only works as a primitive when the gesture <em>is</em> the decision. On the dating side a right-swipe is a real commitment. On the job side it was a vague expression of interest that a human still had to process later — effort moved, not removed. Which is why the output here is a ranking with a named human owner: the dog's swipe is not a filing action, it is the whole of the dog's contribution, and it is finished.</p>",
+          kind: "shot",
+          width: "wall",
+          src: "/work/tinder-for-chihuahua/wall/ch07-benchmark.png",
+          caption:
+            "Part one: the two families and the empty space between them. Part two: what dating and recruitment already paid to find out, and what this project takes from each.",
         },
-        { kind: "shot", width: "wall", slot: "07 · Benchmark — two families of dog apps, plus the transferable findings from dating and recruitment" },
       ],
     },
 
@@ -307,11 +272,6 @@ export const chihuahua: CaseStudy = {
       standfirst:
         "The same three screens in each column, so the comparison is between directions and not between my choice of screens.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>Three directions, explored as artboards on a Claude Design canvas: <strong>A soft</strong>, <strong>B geometric</strong>, <strong>C poster</strong>. C won, and it won on a criterion rather than a mood — the highest available contrast between figure and ground, which is what Auri's raised contrast threshold requires. The personas had already settled who sets the floor, so the visual decision was largely pre-made. That is the nicest thing that can happen to a visual decision.</p><p>It helps that C is the direction that most nearly <em>is</em> the research. When your palette is pinned to two hues by cone response, your type has to be four times human size, and soft edges are the first thing to dissolve at 20/75, you are already most of the way to poster design whether you intended it or not.</p><p>One idea came across from B and survived: explicit values in monospace, right next to the thing they govern. That is now how the token sheet reads.</p>",
-        },
         {
           kind: "shot",
           width: "wall",
@@ -353,11 +313,6 @@ export const chihuahua: CaseStudy = {
           ],
         },
         {
-          kind: "passage",
-          html:
-            "<p>The single source of truth matters rather more than the laws do. <code>design/tokens.json</code> holds every colour, size, timing and threshold with its rationale attached, and three things are generated from it: the guidelines in English, the working copy in Polish, and the app's own CSS and TypeScript constants. The guidelines cannot drift from the build, because both are outputs of the same file. Prose in the token file is bilingual by structure — <code>{en, pl}</code> — which is how one file produces a specification and a working document without either being a translation of the other.</p>",
-        },
-        {
           kind: "spec",
           caption: "Four of the thirty-four.",
           rows: [
@@ -366,11 +321,6 @@ export const chihuahua: CaseStudy = {
             { key: "CIG-5.1", value: "A deck is 6 to 12 cards. A rising decision time is the signal to shorten it, not to add cards" },
             { key: "CIG-7.1", value: "120 Hz is required, not preferred. Below canine flicker fusion the screen flickers to the user" },
           ],
-        },
-        {
-          kind: "passage",
-          html:
-            "<p>The generator refuses to write a file at all if a value came out <code>undefined</code>, if a placeholder was left unsubstituted, if an object stringified itself into the page, or if Polish text turns up in the English output. That last check exists because it caught me twice, which is exactly two times more than I would like to admit.</p>",
         },
         {
           kind: "shot",
@@ -401,7 +351,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Five screens: choose the dog, warm up, the card, the reward cue, the end. The entire interaction vocabulary is one horizontal drag. Tap, long-press, double-tap, pinch and edge-swipe are all forbidden, with a single carve-out on the warm-up screen where the whole display is one target and a tap counts, because the point of that screen is to reward any contact at all.</p><p>The card screen divides into two zones, 214 px each, running the full 926 px height. Missing is geometrically impossible. There is no cancel region, no dead margin and no small control anywhere on the surface. The one strip at human scale along the top is deliberate: undo and the deck counter belong to the person sitting alongside, and the difference in scale is what says so.</p><p>My favourite screen is the last one. D5 ends the session and its job is to be <em>unrewarding</em>: no acid, no motion, no affordance hinting there is more. The app will not top the deck up. Interfaces built for humans spend their effort on retention; this one deliberately spends it on letting the user lose interest and wander off, because a dog swiping past its attention span is producing noise, not preferences.</p>",
+            "<p>Five screens: choose the dog, warm up, the card, the reward cue, the end. The entire interaction vocabulary is one horizontal drag. Tap, long-press, double-tap, pinch and edge-swipe are all forbidden, with a single carve-out on the warm-up screen where the whole display is one target and a tap counts, because the point of that screen is to reward any contact at all.</p>",
         },
         {
           kind: "shot",
@@ -457,11 +407,6 @@ export const chihuahua: CaseStudy = {
           ],
         },
         {
-          kind: "passage",
-          html:
-            "<p>So the vertical slice is a real installable PWA rather than a prototype, and it instruments itself: contact-patch size in millimetres, decision latency per card, frame rate, and every rejected event with the reason it was rejected — below threshold, or inside cooldown. All attributed to whichever dog is in the session, because the entire persona argument depends on Karmel and Auri producing different numbers.</p><p>Mouse input is tagged separately and excluded from the patch statistics. I added mouse support because I was testing on a laptop with no touchscreen, and a trackpad politely reporting a 3 mm contact patch would have quietly poisoned the only dataset this project has.</p>",
-        },
-        {
           kind: "thesis",
           label: "First result, and it is not the one I wanted",
           text:
@@ -472,7 +417,13 @@ export const chihuahua: CaseStudy = {
           html:
             "<p>Which is the useful kind of failure. The requirement came out of research, went into the guidelines as a numbered law, got designed for, got built — and the very first recorded session says the platform did not deliver it. A specification that cannot be caught failing is not a specification, it is a wish.</p>",
         },
-        { kind: "shot", width: "wall", slot: "12 · The test protocol — four rungs, from laptop to a dog on the floor" },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/tinder-for-chihuahua/wall/ch12-test.png",
+          caption:
+            "The ladder, with the state of play rather than the plan — including rung 2, which failed on refresh rate.",
+        },
       ],
     },
 
@@ -501,12 +452,6 @@ export const chihuahua: CaseStudy = {
             { key: "Video", value: "ffmpeg — cropped to a measured grid, boomerang-looped, CRF fitted to a byte budget", mine: true },
             { key: "Deploy", value: "GitHub Actions to GitHub Pages. HTTPS, which is what makes it installable as a PWA" },
           ],
-        },
-        {
-          kind: "thesis",
-          label: "What that costs",
-          text:
-            "No Figma means no component library anyone else could consume, and no visual regression safety net. It also means the palette is still hard-coded in the canvas artboards — ten instances of the blue, fourteen of the acid — which is exactly the drift the token pipeline exists to prevent, sitting in the one layer I have not automated. Figma variables, a Storybook and Code Connect are the recorded next step, not a thing that happened.",
         },
       ],
     },
