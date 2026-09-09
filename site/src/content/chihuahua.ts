@@ -26,7 +26,7 @@ export const chihuahua: CaseStudy = {
     subline: "Designing for a user who cannot read, tap, or be interviewed",
     stamp: "RESEARCH · GUIDELINES · TOKENS · PWA · TESTING",
     credit: "Design, research and build · Personal project · 2026",
-    shot: { slot: "00 · Cover" },
+    shot: { src: "/work/tinder-for-chihuahua/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "Everything — research, guidelines, design system, build" },
@@ -390,6 +390,15 @@ export const chihuahua: CaseStudy = {
       maxim: "Two targets, each 214 px wide and the full height of the display. There is nothing to miss.",
       blocks: [
         {
+          kind: "video",
+          width: "column",
+          src: "/work/tinder-for-chihuahua/showcase-sesja.mp4",
+          poster: "/work/tinder-for-chihuahua/showcase-poster.png",
+          title: "One full session in dog mode, recorded on the phone",
+          caption:
+            "A screen recording of the running app: the warm-up, six candidate cards, and the end screen with the session log. Thirty-three seconds, one whole session. The candidates are my own dogs under assumed names, which is why the deck is suspiciously photogenic.",
+        },
+        {
           kind: "passage",
           html:
             "<p>Five screens: choose the dog, warm up, the card, the reward cue, the end. The entire interaction vocabulary is one horizontal drag. Tap, long-press, double-tap, pinch and edge-swipe are all forbidden, with a single carve-out on the warm-up screen where the whole display is one target and a tap counts, because the point of that screen is to reward any contact at all.</p><p>The card screen divides into two zones, 214 px each, running the full 926 px height. Missing is geometrically impossible. There is no cancel region, no dead margin and no small control anywhere on the surface. The one strip at human scale along the top is deliberate: undo and the deck counter belong to the person sitting alongside, and the difference in scale is what says so.</p><p>My favourite screen is the last one. D5 ends the session and its job is to be <em>unrewarding</em>: no acid, no motion, no affordance hinting there is more. The app will not top the deck up. Interfaces built for humans spend their effort on retention; this one deliberately spends it on letting the user lose interest and wander off, because a dog swiping past its attention span is producing noise, not preferences.</p>",
@@ -451,6 +460,17 @@ export const chihuahua: CaseStudy = {
           kind: "passage",
           html:
             "<p>So the vertical slice is a real installable PWA rather than a prototype, and it instruments itself: contact-patch size in millimetres, decision latency per card, frame rate, and every rejected event with the reason it was rejected — below threshold, or inside cooldown. All attributed to whichever dog is in the session, because the entire persona argument depends on Karmel and Auri producing different numbers.</p><p>Mouse input is tagged separately and excluded from the patch statistics. I added mouse support because I was testing on a laptop with no touchscreen, and a trackpad politely reporting a 3 mm contact patch would have quietly poisoned the only dataset this project has.</p>",
+        },
+        {
+          kind: "thesis",
+          label: "First result, and it is not the one I wanted",
+          text:
+            "The session log in the recording reads FPS 60. CIG-7.1 requires 120 Hz, because below canine flicker fusion the screen flickers to the user — and 120 Hz is the reason a specific handset is named in the brief. The hardware can do it; this build measured half of it. I have not established why yet, so I am not going to pretend the requirement is met: it is the first thing to chase, ahead of anything cosmetic.",
+        },
+        {
+          kind: "passage",
+          html:
+            "<p>Which is the useful kind of failure. The requirement came out of research, went into the guidelines as a numbered law, got designed for, got built — and the very first recorded session says the platform did not deliver it. A specification that cannot be caught failing is not a specification, it is a wish.</p>",
         },
         { kind: "shot", width: "wall", slot: "12 · The test protocol — four rungs, from laptop to a dog on the floor" },
       ],
