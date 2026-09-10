@@ -102,7 +102,7 @@ export const chihuahua: CaseStudy = {
           items: [
             "<strong>Two hues, and that is the entire palette.</strong> Dogs are dichromats, cone peaks near 429–435 nm and near 555 nm. Red and green are not a thing. So blue and yellow-green carry every scrap of meaning, and black and white are allowed to carry none — they are ground and figure, never signal.",
             "<strong>Everything roughly four times bigger.</strong> Canine acuity runs about 20/75 against a human 20/20, a factor of 3.75. The dog-scale type and target floors are that factor applied on purpose, not “a bit bigger, looks about right”.",
-            "<strong>120 Hz is a hardware requirement, not a flex.</strong> Canine flicker fusion sits at 70–80 Hz against a human ~60 Hz, which means a 60 Hz panel visibly flickers to a dog. That is the entire reason a specific handset is named in the brief — the phone spec came out of the eye research.",
+            "<strong>Canine flicker fusion sits at 70–80 Hz</strong> against a human ~60 Hz — dogs resolve change faster than we do. This is the finding that made me name a specific handset in the brief, and it is also the one I drew the wrong conclusion from. What flickers on a phone is not the frame rate; see chapter 12.",
             "<strong>The native gesture is a drag, not a tap.</strong> A nose does not land as a point. It lands as a large, wet, multi-point, moving contact patch. Designing tap targets for that is designing for a finger that is not going to show up.",
           ],
         },
@@ -406,7 +406,8 @@ export const chihuahua: CaseStudy = {
             { key: "CIG-2.1", value: "Meaning is carried by blue (#0033FF) and acid (#D6F000) only. Black and white are ground and figure, never signal" },
             { key: "CIG-3.2", value: "Dog-scale display type is 112 px, names 80 px, values 44 px. Minimum target: 214 × 300 px" },
             { key: "CIG-5.1", value: "A deck is 6 to 12 cards. A rising decision time is the signal to shorten it, not to add cards" },
-            { key: "CIG-7.1", value: "120 Hz is required, not preferred. Below canine flicker fusion the screen flickers to the user" },
+            { key: "CIG-1.3", value: "Flicker is luminance modulation, not frame rate. On this panel that is PWM dimming at 480 Hz — six times the canine threshold, so it fuses" },
+            { key: "CIG-2.5", value: "120 Hz is for motion continuity, not against flicker. Measure the rate the page actually gets; do not assume the panel's reaches it" },
           ],
         },
         {
@@ -495,14 +496,20 @@ export const chihuahua: CaseStudy = {
         },
         {
           kind: "thesis",
-          label: "First result, and it is not the one I wanted",
+          label: "First result, and it broke a law rather than the build",
           text:
-            "The session log in the recording reads FPS 60. CIG-7.1 requires 120 Hz, because below canine flicker fusion the screen flickers to the user — and 120 Hz is the reason a specific handset is named in the brief. The hardware can do it; this build measured half of it. I have not established why yet, so I am not going to pretend the requirement is met: it is the first thing to chase, ahead of anything cosmetic.",
+            "The session log reads FPS 60, against a law demanding 120 Hz “or the screen flickers to the dog”. That looked like a straightforward failure for about an hour. It was not: the law was conflating two different things, and the research I had done supported only one of them.",
         },
         {
           kind: "passage",
           html:
-            "<p>Which is the useful kind of failure. The requirement came out of research, went into the guidelines as a numbered law, got designed for, got built — and the very first recorded session says the platform did not deliver it. A specification that cannot be caught failing is not a specification, it is a wish.</p>",
+            "<p>Flicker is <strong>luminance modulation</strong> — how often the light actually goes on and off. On a sample-and-hold OLED that is the <em>dimming</em>, not the refresh: this phone runs PWM at 480 Hz at every brightness level, with no DC dimming, measured at 97.6% modulation depth. Against a canine threshold of 70–80 Hz that is roughly six times the headroom. <strong>The screen never flickered for the dog, and it never could have.</strong></p><p>What 60 fps actually costs is <strong>motion continuity</strong>, which is a real concern for an animal that resolves change up to 80 Hz — a swipe following its nose is genuinely steppier to Karmel than to me. And 60 fps turned out not to be the hardware either: iOS Safari caps page rendering near 60 fps by default, on ProMotion devices too, to save battery. There is a feature flag named <code>Prefer Page Rendering Updates near 60fps</code> that lifts it, and whether it reaches a home-screen PWA is the next thing to test.</p><p>So the requirement was rewritten into two, because it had been one law doing two jobs badly. Flicker is now CIG-1.3 and it is satisfied by the dimming. Frame rate is CIG-2.5 and it asks for motion continuity, with an instruction not to assume the panel's rate reaches the page.</p>",
+        },
+        {
+          kind: "thesis",
+          label: "And the flicker risk moved somewhere I was not looking",
+          text:
+            "Off the screen entirely, and into the room. A dimmed or mains-driven lamp can modulate below 80 Hz, which puts the one genuine flicker risk in the lighting above the dog rather than in the device under it — outside the application, and squarely in the blueprint's support layer.",
         },
         {
           kind: "shot",
@@ -561,6 +568,7 @@ export const chihuahua: CaseStudy = {
             "<strong>Fifty values were publishing the word “undefined”.</strong> An audit found 47 of 53 token lookups in the generator would silently emit <code>undefined</code> into the guidelines and exit successfully. Six failed loudly, purely by luck. Everything I had been saying about a single source of truth was true of the architecture and not yet true of the output. The build guard exists because of this, and I verified it by deliberately breaking five things and confirming each one now fails the build.",
             "<strong>I overclaimed, repeatedly, and had to walk it back.</strong> “Not one value typed by hand” was false. “Three departures from the HIG” was two. “29 laws, every one testable” had quietly omitted five platform laws, so the checklist is 34. “Everything derives from ×4” — the acuity factor is 3.75, and the size floors actually land at 4.9×, 6.8× and 4.3×. Every one of those read beautifully and none survived being checked.",
             "<strong>I tried to improve the silhouette and made it worse.</strong> An attempt to sharpen the ears produced something between a cat and a Pikachu. I reverted rather than iterate, which was the right call roughly twenty minutes later than it should have been. The silhouette is still the weakest thing on the poster screens.",
+            "<strong>One of my laws was describing the wrong variable.</strong> “120 Hz is required, or the screen flickers to the dog” sounded rigorous, had a real number behind it, and survived being written into the guidelines, designed for, and built. It conflated flicker with frame rate. The measurement that looked like it had caught the build failing had actually caught the law being wrong — and I only went looking because the number disagreed with me.",
             "<strong>The panels were in the wrong language.</strong> Diagrams built for a Polish working document went onto an English page, which is evidence nobody can read. The panel renderer now fails the build on Polish diacritics in an English panel, because I evidently cannot be trusted to notice.",
           ],
         },
