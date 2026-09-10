@@ -612,5 +612,78 @@ export const chihuahua: CaseStudy = {
         },
       ],
     },
+
+    /* ---------------------------------------------------------------- 14 */
+    {
+      id: "sources",
+      n: "14",
+      heading: "Sources",
+      maxim:
+        "The whole argument of this project is that the requirements came from published research rather than from my taste. That claim is worthless unless it is checkable.",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>A bibliography, not footnotes. The academic work is named rather than linked, because titles and journals are what make a paper findable; the web sources are linked because a URL is all they have.</p><p>One claim in this project is <strong>deliberately unsupported</strong> and it matters, because it is the claim the whole persona split rests on: that Auri&rsquo;s contrast sensitivity is lower <em>because</em> she is twelve. Age-related lens change in dogs is well documented; a measured contrast threshold for this specific twelve-year-old is not, and I did not have a way to measure one. So &ldquo;design for Auri&rdquo; is an argument from the direction of the effect, not from a number. Rung 4 of the test protocol is where that gets checked.</p>",
+        },
+        {
+          kind: "passage",
+          html: "<p><strong>Canine vision</strong></p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "Neitz, Geist &amp; Jacobs, <em>Color vision in the dog</em>, Visual Neuroscience, 1989 — the cone peaks at 429 and 555 nm that fix the palette to two hues.",
+            "<em>In vivo electroretinographic differentiation of rod, short- and long/medium-wavelength cone responses in dogs</em> — the same result confirmed by ERG.",
+            "<em>Are dogs red–green colour blind?</em>, Royal Society Open Science.",
+            "<em>What do dogs see? A review of vision in dogs and implications for cognition research</em>, Psychonomic Bulletin &amp; Review — acuity 20/75 and the 70–80 Hz flicker threshold, which are the two numbers most of this design is built on.",
+            "Coile et al., 1989 — canine critical flicker fusion at 80 Hz, summarised in <a href=\"https://www.sciencedirect.com/topics/immunology-and-microbiology/critical-flicker-fusion\">this overview of critical flicker fusion</a>.",
+            "<em>On the use of touchscreen-based behavioural and cognitive research with dogs</em> — gesture morphology, and the recommendation of a blue–yellow pair.",
+            "<em>How dogs scan familiar and inverted faces: an eye movement study</em>, Animal Cognition — fixation on the eyes, which is why the card frames a muzzle.",
+            "<em>Dogs recognize familiar faces from images</em>; <em>2D or Not 2D? An fMRI study of how dogs visually process objects</em>; <em>Familiarity with images affects how dogs process life-size video projections of humans</em> — the three that decide whether a dog on a screen is a dog at all.",
+          ],
+        },
+        {
+          kind: "passage",
+          html: "<p><strong>Ageing, and why this app has a point</strong></p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<em>Brain training for old dogs</em>, Vetmeduni Vienna / Messerli Research Institute — the cognitive-enrichment frame the product&rsquo;s value rests on.",
+            "<em>Utilising dog-computer interactions to provide mental stimulation in dogs especially during ageing</em>.",
+            "<em>Aging effects on discrimination learning, logical reasoning and memory in pet dogs</em>, GeroScience.",
+          ],
+        },
+        {
+          kind: "passage",
+          html: "<p><strong>Screens, flicker and the platform</strong> — the chapter 12 correction</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<a href=\"https://www.oled-info.com/pulse-width-modulation-pwm-oled-displays\">PWM dimming in OLED displays</a> — why nearly every OLED phone dims at 240 or 480 Hz, and why that is the frequency that matters for flicker.",
+            "<a href=\"https://www.dxomark.com/apple-iphone-13-pro-max-display-test-retested/\">DXOMARK, iPhone 13 Pro Max display test</a> — 480.19 Hz measured at 97.6% modulation depth, at every brightness, with no DC dimming. This is the measurement that says the screen never flickered for the dog.",
+            "<a href=\"https://www.dxomark.com/flicker-the-display-affliction/\">Flicker, the display affliction</a> — flicker as luminance modulation rather than as frame rate.",
+            "<a href=\"https://www.macrumors.com/how-to/enable-smoother-120hz-browsing-in-safari/\">Safari&rsquo;s 60 fps default and the flag that lifts it</a>, and <a href=\"https://bugs.webkit.org/show_bug.cgi?id=173434\">WebKit bug 173434 on 120 Hz requestAnimationFrame</a> — why the log read 60 and why that was not the hardware.",
+            "<a href=\"https://www.sciencedirect.com/science/article/abs/pii/S016815912500190X\">Behavioural differences of shelter dogs under fluorescent versus LED lighting</a> — the reason the remaining flicker risk sits in the room&rsquo;s lighting rather than in the device.",
+          ],
+        },
+        {
+          kind: "passage",
+          html: "<p><strong>The products in the benchmark</strong></p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "App for Dog — the source of &ldquo;big, full-screen buttons, so a curious nose can&rsquo;t miss them&rdquo;. BetterPawPlay — eleven nose-and-paw games, tablet flat.",
+            "<em>Training senior dogs to play games on touch screens</em>, PetMD.",
+            "Pawmates and &ldquo;Tinder for dogs&rdquo;, PawTracks; <em>Man makes &ldquo;Tinder for dogs&rdquo; after his senior pup couldn&rsquo;t find playmates</em>, Newsweek — the founder story that is, more or less, this brief.",
+            "<em>Dating apps are swiping left on the features that made them</em> — Hinge, Bumble, and &ldquo;fewer, better, more considered signals&rdquo;. <em>The Death of the Swipe</em>, urdesignmag.",
+            "<em>Where have all the &ldquo;Tinders of the job market&rdquo; gone?</em>, ToTalent; <em>Why swipe UX for jobs works (better than you&rsquo;d think)</em> — the two halves of the &ldquo;maybe later&rdquo; pile argument. Switch (app), Wikipedia.",
+          ],
+        },
+      ],
+    },
   ],
 };
