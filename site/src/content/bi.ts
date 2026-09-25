@@ -1,16 +1,18 @@
 import type { CaseStudy } from "./types";
 
 /**
- * Structure mirrors the Figma wall — twelve frames, in its numbering,
- * so the file and the canvas stay walkable side by side.
+ * Structure mirrors the Figma wall — its twelve frames (01, 01a, 02–11),
+ * in its numbering, so the file and the canvas stay walkable side by side.
  *
  * Chapters carry a heading and their frame, and nothing else. Every
  * maxim, standfirst and paragraph this wall wants is typeset inside the
  * frame itself; repeating it here printed the same sentence twice.
  *
- * Two exceptions: chapter 12 has no frame and is written as blocks, and
- * the closing numbers are cut from the bottom of ch11 so it can sit
- * between them and the handoff.
+ * Two exceptions. Chapter 12 ("after-development") has no frame: it is
+ * written as native blocks and carries its own maxim and standfirst.
+ * And the closing numbers are cropped off the bottom of ch11 into
+ * ch11-close.png, shown as the unnumbered, headingless "adds-up" entry,
+ * so chapter 12 can sit between the handoff and those numbers.
  */
 export const bi: CaseStudy = {
   slug: "applus-analytics",
@@ -114,8 +116,8 @@ export const bi: CaseStudy = {
       blocks: [{ kind: "shot", width: "wall", src: "/work/applus-analytics/wall/ch11.png" }],
     },
     /* Not a Figma frame: the one chapter of this wall written as native
-       blocks. Handoff ends where the frame does; what happens to a feature
-       after it is built is a sequence, and the steps block is that shape. */
+       blocks. The last frame (11, Handoff) stops at delivery; what happens
+       to a feature after it is built is a sequence, and the steps block is that shape. */
     {
       id: "after-development",
       n: "12",
@@ -252,6 +254,8 @@ export const bi: CaseStudy = {
         },
       ],
     },
+    /* Closing numbers, cropped from frame 11 — see header. No heading on
+       purpose: it closes the wall, it is not a thirteenth jump-bar entry. */
     {
       id: "adds-up",
       blocks: [{ kind: "shot", width: "wall", src: "/work/applus-analytics/wall/ch11-close.png" }],
