@@ -34,8 +34,11 @@ const escape = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 /** Preview descriptions are cut at about two lines; end on a word. */
-const clip = (s: string, max = 200) =>
-  s.length <= max ? s : s.slice(0, s.lastIndexOf(" ", max - 1)).replace(/[,;:—–-]\s*$/, "") + "…";
+function clip(s: string, max = 200) {
+  if (s.length <= max) return s;
+  const space = s.lastIndexOf(" ", max - 1);
+  return s.slice(0, space > 0 ? space : max - 1).replace(/\s*[,;:—–-]?\s*$/, "") + "…";
+}
 
 function pages(defaultDescription: string): Page[] {
   return [
@@ -70,9 +73,10 @@ function render(template: string, page: Page, base: string, origin?: string): st
     );
   }
   return template
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
-    .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${description}" />`)
-    .replace("</head>", `    ${tags.join("\n    ")}\n  </head>`);
+    // Functions, not strings: a `$&` in a title must be printed, not expanded.
+    .replace(/<title>[\s\S]*?<\/title>/, () => `<title>${title}</title>`)
+    .replace(/<meta name="description"[^>]*>/, () => `<meta name="description" content="${description}" />`)
+    .replace("</head>", () => `    ${tags.join("\n    ")}\n  </head>`);
 }
 
 export function linkPreviews(): Plugin {
@@ -88,8 +92,10 @@ export function linkPreviews(): Plugin {
     closeBundle() {
       const origin = process.env.SITE_ORIGIN?.replace(/\/$/, "");
       const template = readFileSync(resolve(outDir, "index.html"), "utf8");
-      const fallback =
-        template.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "";
+      // Read back from built HTML, so already escaped: undo it once, or
+      // render() would print &amp;amp;.
+      const fallback = (template.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "")
+        .replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
       for (const page of pages(fallback)) {
         const html = render(template, page, base, origin);
         const targets = page.path
