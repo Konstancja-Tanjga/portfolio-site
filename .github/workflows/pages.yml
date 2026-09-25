@@ -44,6 +44,9 @@ jobs:
           # Served from https://<user>.github.io/portfolio-site/ — every
           # asset URL needs that prefix. Read back at runtime by asset().
           BASE_PATH: /portfolio-site/
+          # Link previews (LinkedIn, Slack) need absolute image URLs; see
+          # scripts/link-previews.ts. Unset, the build omits those tags.
+          SITE_ORIGIN: https://konstancja-tanjga.github.io
           # Umami Cloud website ID — the private visitor counter wired up in
           # src/components/Analytics.tsx. A repository variable, not a secret:
           # it ships inside the built JavaScript either way, and what keeps

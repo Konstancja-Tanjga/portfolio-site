@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+import { linkPreviews } from "./scripts/link-previews";
+
 /**
  * `base` is the whole difference between working locally and working on
  * GitHub Pages.
@@ -16,5 +18,5 @@ import react from "@vitejs/plugin-react";
  */
 export default defineConfig({
   base: process.env.BASE_PATH ?? "/",
-  plugins: [react()],
+  plugins: [react(), linkPreviews()],
 });
