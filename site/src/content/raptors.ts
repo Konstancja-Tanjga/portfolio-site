@@ -8,9 +8,10 @@ import type { CaseStudy } from "./types";
  * shipped to a customer, but it is a whole method run end to end — content
  * model, information architecture, a design system under load, a deployed
  * build. The screens on Big Hat 4.1 — the commit the app is pinned to — are
- * the "before". Held until the app runs on Big Hat 4.3 and the slots
- * in the `big-hat-4-3` chapter (07) are filled; the URL
- * does not change when `status` flips to live.
+ * the "before"; the "after" in the `big-hat-4-3` chapter (07) is the same
+ * commit built locally on 4.3.3. Held until the deployed app runs on 4.3, so
+ * the wall never shows screens its live link does not; the URL does not change
+ * when `status` flips to live.
  */
 export const raptors: CaseStudy = {
   slug: "world-of-raptors",
@@ -21,7 +22,7 @@ export const raptors: CaseStudy = {
   status: {
     state: "held",
     until: "with Big Hat 4.3",
-    why: "The course, the atlas and the build on Big Hat 4.1 are finished and live. The chapter this wall is actually about — what 4.3 changes on the same screens — is still being built in the design system repo.",
+    why: "The course is live on Big Hat 4.1. The 4.3 screens in chapter 07 are the same code built locally; this wall goes live once the deployed app runs on 4.3 too.",
   },
   group: "practice",
   cover: {
@@ -269,7 +270,8 @@ export const raptors: CaseStudy = {
       n: "07",
       heading: "Big Hat 4.3, on the same screens",
       maxim: "The honest way to show a new version of a system is the old screens, redrawn by it, and nothing else changed.",
-      standfirst: "In progress. The 4.3 screens land here once World of Raptors is migrated.",
+      standfirst:
+        "The same commit of World of Raptors, built locally with Big Hat bumped from 4.1 to 4.3.3. The live app is still on 4.1 — these are the screens it will get.",
       blocks: [
         {
           kind: "passage",
@@ -277,19 +279,44 @@ export const raptors: CaseStudy = {
             "<p>Big Hat up to 4.1 answered <em>is it correct</em>. Big Hat 4.3 has to answer <em>is it worth looking at</em> — without giving up any of what 4.1 enforces. It landed in two releases: 4.2 draws surfaces with height instead of lines, 4.3 turns buttons into glass capsules. World of Raptors is the proving ground: same content, same routes, same components, only the system underneath moves.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          slot: "Start page on Big Hat 4.3 — against the 4.1 screen in chapter 02",
+          kind: "duo",
+          items: [
+            { src: "/work/world-of-raptors/before/home.webp", caption: "Big Hat 4.1: white boxes with grey borders, a square button." },
+            { src: "/work/world-of-raptors/after/home.webp", caption: "Big Hat 4.3.3: cards drawn with height, a 20px corner, the button a glass capsule." },
+          ],
+          caption: "The start page, not one line of World of Raptors changed. Everything that is a Big Hat component moved on its own.",
         },
         {
-          kind: "shot",
-          width: "wall",
-          slot: "Species card on Big Hat 4.3 — against the 4.1 card in chapter 04",
+          kind: "passage",
+          html:
+            "<p>The start page is the good news. The species card is the lesson. It barely moved — because the two panels that make it useful, “what to look at” and “easy to confuse with”, are not Big Hat components. They are the project's own CSS, built from semantic tokens, and tokens carry colour and corner radius but not the decision to replace a border with height. So they still wear the 4.1 look: a tinted box with a 1px border, next to cards that no longer have one.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          slot: "Whether ButtonLink survived the migration, or 4.3 made it unnecessary",
+          kind: "duo",
+          items: [
+            { src: "/work/world-of-raptors/before/species.webp", caption: "Big Hat 4.1." },
+            { src: "/work/world-of-raptors/after/species.webp", caption: "Big Hat 4.3.3. The panels are the project's, so they stayed where they were." },
+          ],
+          caption: "The species card: what a system release cannot reach.",
+        },
+        {
+          kind: "passage",
+          html:
+            "<p>ButtonLink, the local anchor in button clothing from chapter 06, did pick up the capsule — because it rides on the button's internal class names, and 4.3 happened not to rename them. The risk written down in DS-GAPS.md did not materialise this time. Nothing guaranteed that it wouldn't.</p>",
+        },
+        {
+          kind: "duo",
+          items: [
+            { src: "/work/world-of-raptors/before/buttonlink.webp", caption: "Big Hat 4.1." },
+            { src: "/work/world-of-raptors/after/buttonlink.webp", caption: "Big Hat 4.3.3: the capsule arrived through classes that are not an API." },
+          ],
+          caption: "“Start: lesson 1” — a link that looks like a button.",
+        },
+        {
+          kind: "thesis",
+          label: "What the migration proved",
+          text:
+            "A release reaches exactly what is a component and nothing else. Every panel a project draws for itself is a panel the next release will leave behind. The migration turned three local pieces of World of Raptors into candidates for Big Hat — a callout panel, a photograph with its credit, a link that looks like a button — and found one defect in Big Hat itself: Card's accent stripe bends round the new 20px corner.",
         },
       ],
     },
