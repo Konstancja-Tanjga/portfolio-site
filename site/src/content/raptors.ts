@@ -8,8 +8,8 @@ import type { CaseStudy } from "./types";
  * shipped to a customer, but it is a whole method run end to end — content
  * model, information architecture, a design system under load, a deployed
  * build. The screens on Big Hat 4.1 — the commit the app is pinned to — are
- * the "before". Held until the app runs on the Big Hat redesign (4.2 onwards)
- * and the slots in the `big-hat-redesign` chapter (07) are filled; the URL
+ * the "before". Held until the app runs on Big Hat 4.3 and the slots
+ * in the `big-hat-4-3` chapter (07) are filled; the URL
  * does not change when `status` flips to live.
  */
 export const raptors: CaseStudy = {
@@ -20,15 +20,15 @@ export const raptors: CaseStudy = {
     "A private online course on diurnal raptors and owls, focused on Poland, southern Spain and the Strait of Gibraltar: twelve modules, sixty lessons, a 42-species atlas and an observation checklist. I built it to put what I already know in order and to learn to tell these birds apart in the field — and it turned into the first real test of my own design system, Big Hat, by a project it was not designed around.",
   status: {
     state: "held",
-    until: "with the Big Hat redesign",
-    why: "The course, the atlas and the build on Big Hat 4.1 are finished and live. The chapter this wall is actually about — what the redesign changes on the same screens — is still being built in the design system repo.",
+    until: "with Big Hat 4.3",
+    why: "The course, the atlas and the build on Big Hat 4.1 are finished and live. The chapter this wall is actually about — what 4.3 changes on the same screens — is still being built in the design system repo.",
   },
   group: "practice",
   cover: {
     kicker: "PERSONAL PROJECT · LEARNING PRODUCT",
     headline: ["World of", "Raptors"],
     subline: "A course I wrote for myself, and a design system put under load",
-    stamp: "CONTENT MODEL · ATLAS · CHECKLIST · BIG HAT 4.1 → REDESIGN · NEXT.JS",
+    stamp: "CONTENT MODEL · ATLAS · CHECKLIST · BIG HAT 4.1 → 4.3 · NEXT.JS",
     credit: "Content, design and build · Personal project · 2026",
     shot: { src: "/work/world-of-raptors/00-cover.png" },
   },
@@ -36,7 +36,7 @@ export const raptors: CaseStudy = {
     { label: "Role", value: "Everything — course content, information architecture, design, build" },
     { label: "User", value: "Me: a birder who wants to name what I see, correctly" },
     { label: "Scope", value: "12 modules, 60 lessons, 42 species, an observation checklist" },
-    { label: "System", value: "Big Hat design system — 4.1 today, the redesign in progress" },
+    { label: "System", value: "Big Hat design system — 4.1 today, 4.3 in progress" },
     { label: "Live", value: "Running on Vercel", href: "https://world-of-raptors.vercel.app" },
     { label: "Source", value: "Public, course content included", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
     { label: "Period", value: "September 2026" },
@@ -265,31 +265,31 @@ export const raptors: CaseStudy = {
 
     /* ---------------------------------------------------------------- 07 */
     {
-      id: "big-hat-redesign",
+      id: "big-hat-4-3",
       n: "07",
-      heading: "The redesign, on the same screens",
+      heading: "Big Hat 4.3, on the same screens",
       maxim: "The honest way to show a new version of a system is the old screens, redrawn by it, and nothing else changed.",
-      standfirst: "In progress. The redesigned screens land here once World of Raptors is migrated.",
+      standfirst: "In progress. The 4.3 screens land here once World of Raptors is migrated.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Big Hat up to 4.1 answered <em>is it correct</em>. The redesign has to answer <em>is it worth looking at</em> — without giving up any of what 4.1 enforces. It is landing release by release: 4.2 draws surfaces with height instead of lines, 4.3 turns buttons into glass capsules. World of Raptors is the proving ground: same content, same routes, same components, only the system underneath moves.</p>",
+            "<p>Big Hat up to 4.1 answered <em>is it correct</em>. Big Hat 4.3 has to answer <em>is it worth looking at</em> — without giving up any of what 4.1 enforces. It landed in two releases: 4.2 draws surfaces with height instead of lines, 4.3 turns buttons into glass capsules. World of Raptors is the proving ground: same content, same routes, same components, only the system underneath moves.</p>",
         },
         {
           kind: "shot",
           width: "wall",
-          slot: "Start page after the redesign — against the 4.1 screen in chapter 02",
+          slot: "Start page on Big Hat 4.3 — against the 4.1 screen in chapter 02",
         },
         {
           kind: "shot",
           width: "wall",
-          slot: "Species card after the redesign — against the 4.1 card in chapter 04",
+          slot: "Species card on Big Hat 4.3 — against the 4.1 card in chapter 04",
         },
         {
           kind: "shot",
           width: "wall",
-          slot: "Whether ButtonLink survived the migration, or the redesign made it unnecessary",
+          slot: "Whether ButtonLink survived the migration, or 4.3 made it unnecessary",
         },
       ],
     },
