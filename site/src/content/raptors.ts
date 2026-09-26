@@ -19,7 +19,7 @@ export const raptors: CaseStudy = {
     "A private online course on diurnal raptors and owls, focused on Poland, southern Spain and the Strait of Gibraltar: twelve modules, sixty lessons, a 42-species atlas and an observation checklist. I built it to put what I already know in order and to learn to tell these birds apart in the field — and it turned into the first real test of my own design system, Big Hat, by a project it was not designed around.",
   status: {
     state: "held",
-    until: "once World of Raptors runs on Big Hat v2",
+    until: "with Big Hat v2",
     why: "The course, the atlas and the v1 build are finished and live. The chapter this wall is actually about — what v2 changed on the same screens — is still being built in the design system repo.",
   },
   group: "practice",
@@ -172,7 +172,7 @@ export const raptors: CaseStudy = {
         },
         {
           kind: "shot",
-          width: "wall",
+          width: "column",
           src: "/work/world-of-raptors/field/booted-eagle.webp",
           caption:
             "Mine, on a phone, September 2026. What the course lets me say now: most likely a pale-morph booted eagle — dark flight feathers against pale underwing coverts, a long straight-cut tail, six clear “fingers”. And it taught me to keep the “most likely”.",
