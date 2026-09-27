@@ -26,7 +26,7 @@ export const bighat: CaseStudy = {
     { label: "Package", value: "@bighatpoland/ui" },
     { label: "Scale", value: "39 components, 3 page templates, 2 token layers" },
     { label: "Enforced", value: "58 contrast assertions in CI, 134 tests" },
-    { label: "Used by", value: "This portfolio site, and Docu Manager" },
+    { label: "Used by", value: "This portfolio site, Docu Manager and World of Raptors" },
     { label: "Licence", value: "MIT — Storybook and source are public" },
   ],
   chapters: [
