@@ -40,7 +40,7 @@ export const bighat: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A design system of my own, unconnected to any employer's: I built it from nothing, for my own projects, and it is what this site and Docu Manager are made of. It is deliberately small. It is not trying to cover every surface an enterprise product needs — it is trying to be legible about <em>why</em> each decision was made and <em>what each one cost</em>. <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">Storybook</a> · <a href=\"https://github.com/bighatpoland/bighat-design-system\">source</a>.</p>",
+            "<p>A design system of my own, unconnected to any employer's: I built it from nothing, for my own projects, and it is what this site, Docu Manager and World of Raptors are made of. It is deliberately small. It is not trying to cover every surface an enterprise product needs — it is trying to be legible about <em>why</em> each decision was made and <em>what each one cost</em>. <a href=\"https://konstancja-tanjga.github.io/bighat-design-system/\">Storybook</a> · <a href=\"https://github.com/bighatpoland/bighat-design-system\">source</a>.</p>",
         },
         {
           kind: "shot",

@@ -9,8 +9,8 @@ import type { CaseStudy } from "./types";
  * model, information architecture, a design system under load, a deployed
  * build. The screens on Big Hat 4.1 — the commit the app is pinned to — are
  * the "before"; the "after" in the `big-hat-4-3` chapter (07) is the same
- * commit built locally on 4.3.3. The deployed app still runs 4.1, and chapter
- * 07 says so, so the page does not claim screens its live link does not show.
+ * commit built locally on 4.3.3. The deployed app still runs 4.1; chapter 07
+ * says so, and the page never claims screens its live link does not show.
  */
 export const raptors: CaseStudy = {
   slug: "world-of-raptors",
