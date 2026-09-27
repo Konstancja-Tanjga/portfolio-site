@@ -23,7 +23,15 @@ const idFromHash = (hash: string) =>
  * answer is derived from where the page actually is, and is therefore right
  * on the first frame, after a reflow, and after a deep link alike.
  */
-export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[] }) {
+export function JumpBar({
+  title,
+  chapters,
+  back = { to: "/", label: "Work" },
+}: {
+  title: string;
+  chapters: Chapter[];
+  back?: { to: string; label: string };
+}) {
   const { direction } = useScroll();
   const location = useLocation();
   const named = useMemo(() => chapters.filter((c) => c.heading), [chapters]);
@@ -119,8 +127,8 @@ export function JumpBar({ title, chapters }: { title: string; chapters: Chapter[
       <div className="jump__inner">
         {/* Always present, sticky, first in the tab order after the masthead:
             a project page is long, and browser Back is not an interface. */}
-        <Link to="/" className="jump__back">
-          <span aria-hidden="true">←</span> Work
+        <Link to={back.to} className="jump__back">
+          <span aria-hidden="true">←</span> {back.label}
         </Link>
         <span className="jump__title">{title}</span>
         {named.length > 0 && (

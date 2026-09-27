@@ -298,14 +298,14 @@ export type Cover = {
   /** "Lead designer · Asseco Solutions · 2026" */
   credit: string;
   /**
-   * The thumbnail on the work page. Not drawn on the intro — see Cover.tsx
+   * The thumbnail on the listing cards (Work and Practice). Not drawn on the intro — see Cover.tsx
    * for why sixteen projects share one typeset frame instead.
    */
   shot: Shot;
 };
 
 /**
- * live — on the work wall and in the build
+ * live — listed (on Work or Practice) and in the build
  * held — finished, published on `until`. Excluded from the production
  *        bundle; visible locally with `npm run dev`.
  */
@@ -313,10 +313,12 @@ export type Status =
   { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
- * Which band of the work page a wall sits in.
+ * Which band a wall sits in, and so which listing: product and recognition
+ * are on the home (Work) page, practice has its own page at /practice
+ * (see listingFor).
  *
  * product      — the shipped products. The main grid.
- * practice     — how I work: methods, systems, workshops.
+ * practice     — how I work: design systems, methods, and personal projects that test them.
  * recognition  — awards and competition entries. Short, not case studies.
  */
 export type Group = "product" | "practice" | "recognition";

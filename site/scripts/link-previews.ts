@@ -14,7 +14,8 @@ import { published } from "../src/content";
  * title, description or image to show even if it had tried.
  *
  * So after the build, index.html is copied to each route, as both
- * work/<slug>.html and work/<slug>/index.html (Pages answers the bare path
+ * <path>.html and <path>/index.html (e.g. work/<slug>.html and
+ * work/<slug>/index.html) (Pages answers the bare path
  * from either, and one of them avoids the trailing-slash redirect), with
  * that page's own title, description and cover as Open Graph tags. The
  * router still does the rendering; the copy only changes what a crawler
@@ -44,6 +45,11 @@ function pages(defaultDescription: string): Page[] {
   return [
     { path: "", title: `${NAME} — Lead Designer / UX Engineer`, description: defaultDescription },
     { path: "about", title: `About — ${NAME}`, description: defaultDescription },
+    {
+      path: "practice",
+      title: `Practice — ${NAME}`,
+      description: "Design systems, the methods I run, and personal projects that put my design system on a real brief.",
+    },
     { path: "watercolours", title: `Watercolours — ${NAME}`, description: defaultDescription },
     ...published.map((c) => ({
       path: `work/${c.slug}`,

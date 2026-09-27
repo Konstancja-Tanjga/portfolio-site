@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { findCase, neighbours } from "../content";
+import { findCase, listingFor, neighbours } from "../content";
 import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
 import { Badge } from "@bighatpoland/ui";
@@ -29,12 +29,13 @@ export function Case() {
   }
 
   const { next } = neighbours(study.slug);
+  const listing = listingFor(study);
 
   return (
     <ShotViewer.Provider value={lightbox.show}>
       <article>
       <ReadingProgress />
-      <JumpBar title={study.title} chapters={study.chapters} />
+      <JumpBar title={study.title} chapters={study.chapters} back={listing} />
       <Wall>
         <Cover cover={study.cover} />
 
@@ -70,8 +71,8 @@ export function Case() {
         )}
 
         <Lane width="wall">
-          <Link to="/" className="back">
-            <span aria-hidden="true">←</span> All work
+          <Link to={listing.to} className="back">
+            <span aria-hidden="true">←</span> {listing.all}
           </Link>
         </Lane>
       </Wall>
