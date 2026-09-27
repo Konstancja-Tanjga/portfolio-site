@@ -112,11 +112,43 @@ export const raptors: CaseStudy = {
           ],
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: "/work/world-of-raptors/before/home.webp",
-          caption:
-            "The start page on Big Hat 4.1: both paths, every module, and checklist progress at the top. The side navigation follows the same structure.",
+          kind: "process",
+          process: {
+            label: "How the course is put together",
+            count: "2 paths · 1 atlas",
+            stages: [
+              {
+                n: "A",
+                title: "Path A, biology",
+                kicker: "7 modules · 35 lessons",
+                body: "What makes a raptor, anatomy, hunting, breeding, migration, conservation, raptors and people.",
+              },
+              {
+                n: "B",
+                title: "Path B, fieldcraft",
+                kicker: "5 modules · 25 lessons",
+                body: "B1 teaches the identification method first. Then Poland, the Strait, southern Spain and the owls.",
+                note: { label: "Shared species", body: "A black kite appears in three regional modules and is described once, in the atlas." },
+              },
+              {
+                n: "01",
+                title: "Atlas",
+                kicker: "42 species",
+                body: "Four names, the silhouette in lesson order, look-alikes, season and region for every species. Lessons link here.",
+              },
+              {
+                n: "02",
+                title: "Checklist",
+                kicker: "stored on the device",
+                body: "The atlas as a life list: tick a species, add the date, the place and a note.",
+              },
+            ],
+            underneath: {
+              label: "One source of data",
+              chips: ["moduly.json", "gatunki.json", "zdjecia.json", "Markdown lessons"],
+              body: "The navigation, the atlas and the checklist read the same files, and the lessons stay readable on GitHub without the app.",
+            },
+          },
         },
         {
           kind: "passage",
@@ -143,7 +175,7 @@ export const raptors: CaseStudy = {
           width: "wall",
           src: "/work/world-of-raptors/before/atlas.webp",
           caption:
-            "The atlas: search by Polish, Latin, English or Spanish name, and filter by region and by day or night. The photographs come from Wikimedia Commons and are credited on each species card.",
+            "The atlas on Big Hat 4.1, the whole app window with its side navigation. Search by Polish, Latin, English or Spanish name, and filter by region and by day or night. The photographs come from Wikimedia Commons and are credited on each species card.",
         },
         {
           kind: "spec",
@@ -174,7 +206,7 @@ export const raptors: CaseStudy = {
         },
         {
           kind: "shot",
-          width: "column",
+          width: "wall",
           src: "/work/world-of-raptors/field/booted-eagle.webp",
           caption:
             "My photograph, on a phone, September 2026. With the course I can say more: most likely a pale-morph booted eagle, because of the dark flight feathers against pale underwing coverts, the long square-cut tail and the six clear “fingers”. I still say “most likely”.",
@@ -281,10 +313,10 @@ export const raptors: CaseStudy = {
         {
           kind: "duo",
           items: [
-            { src: "/work/world-of-raptors/before/home.webp", caption: "Big Hat 4.1: white boxes with grey borders, a boxy button." },
-            { src: "/work/world-of-raptors/after/home.webp", caption: "Big Hat 4.3.3: cards with shadows and 20px corners, and the button as a glass capsule." },
+            { src: "/work/world-of-raptors/before/home-detail.webp", caption: "Big Hat 4.1: cards with grey borders, a boxy button with an outline." },
+            { src: "/work/world-of-raptors/after/home-detail.webp", caption: "Big Hat 4.3.3: cards with shadows and 20px corners, the button a glass capsule." },
           ],
-          caption: "The start page. World of Raptors' own code did not change; the Big Hat components updated themselves.",
+          caption: "A detail of the start page. World of Raptors' own code did not change; the Big Hat components updated themselves.",
         },
         {
           kind: "passage",
@@ -294,10 +326,10 @@ export const raptors: CaseStudy = {
         {
           kind: "duo",
           items: [
-            { src: "/work/world-of-raptors/before/species.webp", caption: "Big Hat 4.1." },
-            { src: "/work/world-of-raptors/after/species.webp", caption: "Big Hat 4.3.3. The panels belong to the project, so they did not change." },
+            { src: "/work/world-of-raptors/before/species-detail.webp", caption: "Big Hat 4.1: a tinted panel with a 1px border." },
+            { src: "/work/world-of-raptors/after/species-detail.webp", caption: "Big Hat 4.3.3: the corner grew to 20px through the token, the border stayed." },
           ],
-          caption: "The species card. A Big Hat release cannot update what the project draws itself.",
+          caption: "The “what to look at” panel on the species card. A Big Hat release cannot update what the project draws itself.",
         },
         {
           kind: "passage",
