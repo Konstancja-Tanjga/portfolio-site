@@ -1,11 +1,11 @@
 import { Band } from "../components/Band";
 
 /**
- * The practice band on a page of its own.
+ * The practice band, on a page of its own rather than on the home page.
  *
- * It lived on the home page under the products. It is the band that keeps
- * growing — every personal project that tests the design system lands here —
- * and a reader looking for shipped work should not have to scroll past it.
+ * It is the band that keeps growing — every personal project that tests the
+ * design system lands here — and a reader looking for shipped work should not
+ * have to scroll past it. Home links here from under Products.
  */
 export function Practice() {
   return (
@@ -16,8 +16,8 @@ export function Practice() {
         </h1>
         <p className="opening__body">
           My own design system and the one I lead at work, the methods I run with
-          teams, and personal projects: each one uses the system on a real brief and
-          shows where it holds and where it does not.
+          teams, and personal projects that put my system on a real brief and show
+          where it holds and where it does not.
         </p>
       </section>
 

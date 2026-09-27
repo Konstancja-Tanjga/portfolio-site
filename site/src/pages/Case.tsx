@@ -72,7 +72,7 @@ export function Case() {
 
         <Lane width="wall">
           <Link to={listing.to} className="back">
-            <span aria-hidden="true">←</span> {listing.to === "/" ? "All work" : `All ${listing.label.toLowerCase()}`}
+            <span aria-hidden="true">←</span> {listing.all}
           </Link>
         </Lane>
       </Wall>

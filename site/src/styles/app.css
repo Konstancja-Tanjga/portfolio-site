@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; }
 .masthead__nav { display: flex; flex-wrap: wrap; gap: var(--bh-space-2) var(--bh-space-4); font-size: var(--bh-size-small); }
 .masthead__nav a { color: var(--bh-text-quiet); }
 .masthead__nav a:hover,
-.masthead__nav a[aria-current="page"] { color: var(--bh-text-strong); }
+.masthead__nav a[aria-current] { color: var(--bh-text-strong); }
 
 .footer {
   margin-top: var(--bh-space-7);
@@ -1374,7 +1374,7 @@ img { max-width: 100%; height: auto; }
   color: var(--bh-text-strong);
 }
 
-/* ---------- bands on the work page ---------- */
+/* ---------- bands (listing pages) ---------- */
 .band__note {
   max-width: var(--bh-measure);
   margin: 0 0 var(--bh-space-5);

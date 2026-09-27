@@ -5,14 +5,23 @@ import type { ReactNode } from "react";
 import { version as dsVersion } from "@bighatpoland/ui/package.json";
 
 export function Shell({ children }: { children: ReactNode }) {
-  // A listing is current on its own page and on every wall it lists, so a
-  // reader deep in a practice wall still sees where they are. NavLink cannot
-  // express the second half, so the state is worked out here.
-  // Pages may answer /practice as /practice/; compare without the trailing slash.
+  // A listing is the current page on its own page ("page"), and the current
+  // location on every wall it lists ("true"), so a reader deep in a practice
+  // wall still sees where they are without a screen reader calling the
+  // listing the page they are on. NavLink only matches its own `to`, so the
+  // state is worked out here. An unknown wall marks nothing.
+
+  // GitHub Pages can serve /practice as /practice/ (from practice/index.html).
+  // Drop trailing slashes before comparing, but keep the bare "/" for Work.
   const pathname = useLocation().pathname.replace(/(.)\/+$/, "$1");
   const wall = pathname.match(/^\/work\/([^/]+)/);
-  const here = wall ? listingFor(findCase(wall[1])).to : pathname;
-  const current = (to: string) => (here === to ? { "aria-current": "page" as const } : {});
+  const study = wall ? findCase(wall[1]) : undefined;
+  const current = (to: string) =>
+    pathname === to
+      ? { "aria-current": "page" as const }
+      : study && listingFor(study).to === to
+        ? { "aria-current": "true" as const }
+        : {};
 
   return (
     <>

@@ -3,7 +3,10 @@ import { byGroup } from "../content";
 import type { CaseStudy, Group } from "../content/types";
 import { asset } from "../system/asset";
 
-/** One band of the work: a label, a line on what is in it, and its cards. */
+/**
+ * One band of a listing page: a label, a line on what is in it, and its cards.
+ * Renders nothing if the group has no published walls.
+ */
 export function Band({
   id,
   label,

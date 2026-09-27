@@ -53,7 +53,7 @@ export const cases: CaseStudy[] = [
 ];
 
 /**
- * What the work page lists. A held wall keeps its URL — the reasoning
+ * What the listings show (Work and Practice) and what gets a link-preview page. A held wall keeps its URL — the reasoning
  * is there and it can be sent to one person — it just isn't advertised
  * until the product it describes is generally available.
  */
@@ -68,10 +68,13 @@ export const findCase = (slug?: string): CaseStudy | undefined =>
 /**
  * The listing a wall belongs to: practice walls have their own page, and
  * everything else is listed on the home page. Back links and the masthead
- * read this, so a reader leaving a practice wall returns to Practice.
+ * read this, so a reader leaving a practice wall returns to Practice. An
+ * unknown wall (undefined) belongs to Work.
  */
-export const listingFor = (study?: CaseStudy): { to: string; label: string } =>
-  study?.group === "practice" ? { to: "/practice", label: "Practice" } : { to: "/", label: "Work" };
+export const listingFor = (study?: CaseStudy): { to: string; label: string; all: string } =>
+  study?.group === "practice"
+    ? { to: "/practice", label: "Practice", all: "All practice work" }
+    : { to: "/", label: "Work", all: "All work" };
 
 /**
  * Previous and next, for the foot of a wall. Stays inside the band, so
