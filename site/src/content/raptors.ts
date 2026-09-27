@@ -276,20 +276,20 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Big Hat up to 4.1 answered <em>is it correct</em>. Big Hat 4.3 has to answer <em>is it worth looking at</em> — without giving up any of what 4.1 enforces. It landed in two releases: 4.2 draws surfaces with height instead of lines, 4.3 turns buttons into glass capsules. World of Raptors is the proving ground: same content, same routes, same components, only the system underneath moves.</p>",
+            "<p>Big Hat up to 4.1 answered <em>is it correct</em>. Big Hat 4.3 was built to answer <em>is it worth looking at</em> — without giving up any of what 4.1 enforces. It landed in two releases: 4.2 draws surfaces with height instead of lines, 4.3 turns buttons into glass capsules. World of Raptors is the proving ground: same content, same routes, same components, only the system underneath moves.</p>",
         },
         {
           kind: "duo",
           items: [
-            { src: "/work/world-of-raptors/before/home.webp", caption: "Big Hat 4.1: white boxes with grey borders, a square button." },
+            { src: "/work/world-of-raptors/before/home.webp", caption: "Big Hat 4.1: white boxes with grey borders, a boxy button." },
             { src: "/work/world-of-raptors/after/home.webp", caption: "Big Hat 4.3.3: cards drawn with height, a 20px corner, the button a glass capsule." },
           ],
-          caption: "The start page, not one line of World of Raptors changed. Everything that is a Big Hat component moved on its own.",
+          caption: "The start page, not one line of World of Raptors' own code changed. Everything that is a Big Hat component moved on its own.",
         },
         {
           kind: "passage",
           html:
-            "<p>The start page is the good news. The species card is the lesson. It barely moved — because the two panels that make it useful, “what to look at” and “easy to confuse with”, are not Big Hat components. They are the project's own CSS, built from semantic tokens, and tokens carry colour and corner radius but not the decision to replace a border with height. So they still wear the 4.1 look: a tinted box with a 1px border, next to cards that no longer have one.</p>",
+            "<p>The start page is the good news. The species card is the lesson. It barely moved — because the two panels that make it useful, “what to look at” and “easy to confuse with”, are not Big Hat components. They are the project's own CSS, built from semantic tokens, and tokens carry colour and corner radius but not the decision to replace a border with height. So they took the new 20px corner and kept the 4.1 treatment: a tinted box with a 1px border, next to cards that no longer have one.</p>",
         },
         {
           kind: "duo",
@@ -316,7 +316,7 @@ export const raptors: CaseStudy = {
           kind: "thesis",
           label: "What the migration proved",
           text:
-            "A release reaches exactly what is a component and nothing else. Every panel a project draws for itself is a panel the next release will leave behind. The migration turned three local pieces of World of Raptors into candidates for Big Hat — a callout panel, a photograph with its credit, a link that looks like a button — and found one defect in Big Hat itself: Card's accent stripe bends round the new 20px corner.",
+            "A release reaches exactly what is a component and nothing else. Every panel a project draws for itself is a panel the next release will leave behind. The migration turned three local pieces of World of Raptors into candidates for Big Hat — a callout panel, a photograph with its credit, a link that looks like a button — and raised one question for Big Hat itself: Card's accent stripe now bends round the 20px corner, the way Toast's does by design. On a card that holds a whole module, the curve reads as accident rather than intent.",
         },
       ],
     },
