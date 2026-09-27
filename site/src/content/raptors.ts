@@ -59,10 +59,10 @@ export const raptors: CaseStudy = {
         {
           kind: "duo",
           items: [
-            { src: "/work/world-of-raptors/field/rooftop-falcons.webp", caption: "Two small falcons on a roof, March 2026, taken on a phone." },
-            { src: "/work/world-of-raptors/field/little-owl.webp", caption: "A little owl, one of the owls the course covers." },
+            { src: "/work/world-of-raptors/field/red-kite-commons.webp", caption: "Red kite in flight. Photo: Hansueli Krapf, CC BY-SA 3.0, Wikimedia Commons, cropped." },
+            { src: "/work/world-of-raptors/field/little-owl.webp", caption: "Little owl. My own photograph." },
           ],
-          caption: "My own photographs. Most of my phone photos look like the one on the left, which is why the course leans on shape.",
+          caption: "A red kite and a little owl, two of the birds I get to see and the course covers.",
         },
         {
           kind: "passage",
@@ -202,14 +202,14 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>I took this photograph in September and saved it as <em>chyba booted eagle</em>, “probably a booted eagle”. The bird was high up and the phone recorded little more than its outline, which is the usual situation in the field.</p>",
+            "<p>A booted eagle as it is usually seen: high up, from below, against a bright sky. The outline is clear; most of the plumage is in shadow.</p>",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/world-of-raptors/field/booted-eagle.webp",
+          src: "/work/world-of-raptors/field/booted-eagle-commons.webp",
           caption:
-            "My photograph, on a phone, September 2026. With the course I can say more: most likely a pale-morph booted eagle, because of the dark flight feathers against pale underwing coverts, the long square-cut tail and the six clear “fingers”. I still say “most likely”.",
+            "A pale-morph booted eagle: dark flight feathers against pale underwing coverts, a square-cut tail and six clear “fingers”. Photo: Javier Perez Montes, CC BY-SA 4.0, Wikimedia Commons.",
         },
         {
           kind: "passage",
@@ -395,7 +395,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The course is live: <a href=\"https://world-of-raptors.vercel.app\">open it here</a>. The <a href=\"https://github.com/Konstancja-Tanjga/world-of-raptors\">source</a> is public, including the lessons and the atlas.</p>",
+            "<p>The course is live: <a href=\"https://world-of-raptors.vercel.app\">open it here</a>. The <a href=\"https://github.com/Konstancja-Tanjga/world-of-raptors\">source</a> is public, including the lessons and the atlas.</p><p><strong>Photo credits.</strong> Red kite: Hansueli Krapf, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Milvus_milvus_(2011-04-17_Switzerland_Kanton_Schaffhausen_Gennersbrunn_2).jpg\">Wikimedia Commons</a>, cropped. Booted eagle: Javier Perez Montes, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Aguila_Calzada_-_Parque_Lineal_del_Manzanares_-_Section_II_-_Madrid_01.jpg\">Wikimedia Commons</a>. The photographs inside the app screenshots also come from Wikimedia Commons and are credited on each species card. The little owl is my own.</p>",
         },
       ],
     },
