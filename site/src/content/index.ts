@@ -66,6 +66,14 @@ export const findCase = (slug?: string): CaseStudy | undefined =>
   cases.find((c) => c.slug === slug);
 
 /**
+ * The listing a wall belongs to: practice walls have their own page, and
+ * everything else is listed on the home page. Back links and the masthead
+ * read this, so a reader leaving a practice wall returns to Practice.
+ */
+export const listingFor = (study?: CaseStudy): { to: string; label: string } =>
+  study?.group === "practice" ? { to: "/practice", label: "Practice" } : { to: "/", label: "Work" };
+
+/**
  * Previous and next, for the foot of a wall. Stays inside the band, so
  * a product case study never hands the reader a competition entry.
  */

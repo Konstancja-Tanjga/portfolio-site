@@ -44,6 +44,11 @@ function pages(defaultDescription: string): Page[] {
   return [
     { path: "", title: `${NAME} — Lead Designer / UX Engineer`, description: defaultDescription },
     { path: "about", title: `About — ${NAME}`, description: defaultDescription },
+    {
+      path: "practice",
+      title: `Practice — ${NAME}`,
+      description: "Design systems, methods and personal projects that test them, each one a single long page.",
+    },
     { path: "watercolours", title: `Watercolours — ${NAME}`, description: defaultDescription },
     ...published.map((c) => ({
       path: `work/${c.slug}`,

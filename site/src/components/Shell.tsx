@@ -1,9 +1,19 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { findCase, listingFor } from "../content";
 import type { ReactNode } from "react";
 
 import { version as dsVersion } from "@bighatpoland/ui/package.json";
 
 export function Shell({ children }: { children: ReactNode }) {
+  // A listing is current on its own page and on every wall it lists, so a
+  // reader deep in a practice wall still sees where they are. NavLink cannot
+  // express the second half, so the state is worked out here.
+  // Pages may answer /practice as /practice/; compare without the trailing slash.
+  const pathname = useLocation().pathname.replace(/(.)\/+$/, "$1");
+  const wall = pathname.match(/^\/work\/([^/]+)/);
+  const here = wall ? listingFor(findCase(wall[1])).to : pathname;
+  const current = (to: string) => (here === to ? { "aria-current": "page" as const } : {});
+
   return (
     <>
       <div className="page">
@@ -12,9 +22,10 @@ export function Shell({ children }: { children: ReactNode }) {
             Konstancja Tanjga-Nawrot
           </Link>
           <nav className="masthead__nav" aria-label="Sections">
-            <NavLink to="/">Work</NavLink>
-            <NavLink to="/watercolours">Watercolours</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <Link to="/" {...current("/")}>Work</Link>
+            <Link to="/practice" {...current("/practice")}>Practice</Link>
+            <Link to="/watercolours" {...current("/watercolours")}>Watercolours</Link>
+            <Link to="/about" {...current("/about")}>About</Link>
             <a href="https://github.com/konstancja-tanjga">GitHub</a>
             <a href="https://linkedin.com/in/konstancja-tanjga">LinkedIn</a>
           </nav>
