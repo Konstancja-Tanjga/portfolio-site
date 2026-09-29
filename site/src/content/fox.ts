@@ -49,12 +49,13 @@ export const fox: CaseStudy = {
       n: "02",
       heading: "Token architecture",
       standfirst:
-        "Three layers, and why not two.",
+        "One token build and one output that every product reads, whatever its framework.",
       blocks: [
         {
           kind: "spec",
           caption: "What the build emits.",
-          rows: [            { key: "emits", value: "CSS custom properties, TS types" },
+          rows: [
+            { key: "emits", value: "CSS custom properties, TS types" },
             { key: "consumers", value: "6 products, 3 frameworks" },
           ],
         },
@@ -65,7 +66,7 @@ export const fox: CaseStudy = {
       n: "03",
       heading: "One component in full",
       standfirst:
-        "The API, the states, the keyboard behaviour, the test — one component shown completely beats fifty listed.",
+        "The button's public API in Storybook: the page a developer reads before using it.",
       blocks: [
         {
           kind: "shot",
@@ -109,28 +110,8 @@ export const fox: CaseStudy = {
       ],
     },
     {
-      id: "migration",
-      n: "05",
-      heading: "Migrating v3 across six products",
-      standfirst:
-        "The hard part was never the components.",
-      blocks: [
-        { kind: "shot", width: "wall", slot: "Adoption across the product lines. 2400px." },
-      ],
-    },
-    {
-      id: "enforced",
-      n: "06",
-      heading: "What is enforced in code",
-      standfirst:
-        "Contrast tokens so colour decisions can't fail silently; keyboard and focus behaviour defined at component level.",
-      blocks: [
-        { kind: "shot", width: "wall", slot: "A failing contrast check. 2400px." },
-      ],
-    },
-    {
       id: "handoff",
-      n: "07",
+      n: "05",
       heading: "What it changed",
       blocks: [
         {
