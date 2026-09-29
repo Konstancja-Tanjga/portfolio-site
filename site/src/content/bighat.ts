@@ -19,7 +19,7 @@ export const bighat: CaseStudy = {
     subline: "Big Hat — and this site runs on it",
     stamp: "TOKENS · COMPONENTS · CONTRAST GATE · MIGRATION · MIT",
     credit: "Sole author · Big Hat · 2025–2026",
-    shot: { src: "/work/bighat-design-system/template-records.png" },
+    shot: { src: "/work/bighat-design-system/cover-ai-chat.png" },
   },
   meta: [
     { label: "Role", value: "Sole author — design and code" },
