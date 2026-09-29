@@ -109,28 +109,8 @@ export const fox: CaseStudy = {
       ],
     },
     {
-      id: "migration",
-      n: "05",
-      heading: "Migrating v3 across six products",
-      standfirst:
-        "The hard part was never the components.",
-      blocks: [
-        { kind: "shot", width: "wall", slot: "Adoption across the product lines. 2400px." },
-      ],
-    },
-    {
-      id: "enforced",
-      n: "06",
-      heading: "What is enforced in code",
-      standfirst:
-        "Contrast tokens so colour decisions can't fail silently; keyboard and focus behaviour defined at component level.",
-      blocks: [
-        { kind: "shot", width: "wall", slot: "A failing contrast check. 2400px." },
-      ],
-    },
-    {
       id: "handoff",
-      n: "07",
+      n: "05",
       heading: "What it changed",
       blocks: [
         {
