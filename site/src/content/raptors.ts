@@ -9,9 +9,8 @@ import type { CaseStudy } from "./types";
  * model, information architecture, a design system under load, a deployed
  * build. The screens on Big Hat 4.1 — the commit the app is pinned to — are
  * the "before"; the "after" in the `big-hat-4-3` chapter (07) is the same
- * commit built locally on 4.3.3. Held until the deployed app runs on 4.3, so
- * the wall never shows screens its live link does not; the URL does not change
- * when `status` flips to live.
+ * commit built locally on 4.3.3. The deployed app still runs 4.1; chapter 07
+ * says so, and the page never claims screens its live link does not show.
  */
 export const raptors: CaseStudy = {
   slug: "world-of-raptors",
@@ -19,11 +18,7 @@ export const raptors: CaseStudy = {
   what: "A course on birds of prey I wrote for myself, and the project that tested my design system",
   lead:
     "A private online course on diurnal raptors and owls in Poland, southern Spain and the Strait of Gibraltar. It has twelve modules, sixty lessons, an atlas of 42 species and an observation checklist. I built it to put what I know about these birds in order and to learn to tell them apart in the field. It also became the first project to use my design system, Big Hat, without the system having been designed for it.",
-  status: {
-    state: "held",
-    until: "with Big Hat 4.3",
-    why: "The course is live on Big Hat 4.1. The 4.3 screens in chapter 07 are the same code built locally. This page goes live once the deployed app runs on 4.3 too.",
-  },
+  status: { state: "live" },
   group: "practice",
   cover: {
     kicker: "PERSONAL PROJECT · LEARNING PRODUCT",
@@ -303,7 +298,7 @@ export const raptors: CaseStudy = {
       heading: "The same screens on Big Hat 4.3",
       maxim: "To see what a new version of a design system changes, keep the product the same and swap only the system.",
       standfirst:
-        "The same commit of World of Raptors, built locally with Big Hat raised from 4.1 to 4.3.3. The live app is still on 4.1; these are the screens it will get.",
+        "The same commit of World of Raptors, built locally with Big Hat raised from 4.1 to 4.3.3. The deployed app at world-of-raptors.vercel.app still runs 4.1, so these screens show its next version, not the one you can open today.",
       blocks: [
         {
           kind: "passage",
