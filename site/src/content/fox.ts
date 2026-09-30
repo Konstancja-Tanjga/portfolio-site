@@ -64,7 +64,7 @@ export const fox: CaseStudy = {
     {
       id: "one-component",
       n: "03",
-      heading: "One component in full",
+      heading: "One component's API",
       standfirst:
         "The button's public API in Storybook: the page a developer reads before using it.",
       blocks: [
