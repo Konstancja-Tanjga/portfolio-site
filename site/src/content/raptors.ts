@@ -7,10 +7,11 @@ import type { CaseStudy } from "./types";
  * It sits in `practice` for the same reason Tinder for Chihuahua does: nothing
  * shipped to a customer, but it is a whole method run end to end — content
  * model, information architecture, a design system under load, a deployed
- * build. The screens on Big Hat 4.1 — the commit the app is pinned to — are
- * the "before"; the "after" in the `big-hat-4-3` chapter (07) is the same
- * commit built locally on 4.3.3. The deployed app still runs 4.1; chapter 07
- * says so, and the page never claims screens its live link does not show.
+ * build. The screens on Big Hat 4.1 are the "before", taken from commit
+ * 9496fc0. The `big-hat-4-3` chapter (07) is an experiment on that same commit
+ * built locally on 4.3.3; the `big-hat-4-9` chapter (08) shows the deployed
+ * app after the real migration to 4.9.0 (World of Raptors PR #11), which also
+ * changed the product, so it is not a like-for-like comparison.
  */
 export const raptors: CaseStudy = {
   slug: "world-of-raptors",
@@ -24,7 +25,7 @@ export const raptors: CaseStudy = {
     kicker: "PERSONAL PROJECT · LEARNING PRODUCT",
     headline: ["World of", "Raptors"],
     subline: "A birding course, and a design system tested by it",
-    stamp: "CONTENT MODEL · ATLAS · CHECKLIST · BIG HAT 4.1 → 4.3 · NEXT.JS",
+    stamp: "CONTENT MODEL · ATLAS · CHECKLIST · BIG HAT 4.1 → 4.9 · NEXT.JS",
     credit: "Content, design and build · Personal project · 2026",
     shot: { src: "/work/world-of-raptors/00-cover.jpg" },
   },
@@ -32,7 +33,7 @@ export const raptors: CaseStudy = {
     { label: "Role", value: "Course content, information architecture, design and build" },
     { label: "User", value: "Me. I want to name the birds I see, and name them correctly" },
     { label: "Scope", value: "12 modules, 60 lessons, 42 species, an observation checklist" },
-    { label: "System", value: "Big Hat design system, 4.1 in production, 4.3 in preparation" },
+    { label: "System", value: "Big Hat design system, 4.1 at launch, 4.9 in production" },
     { label: "Live", value: "Running on Vercel", href: "https://world-of-raptors.vercel.app" },
     { label: "Source", value: "Public, course content included", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
     { label: "Period", value: "September 2026" },
@@ -163,7 +164,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A booted eagle is <em>orzełek włochaty</em> in Polish, <em>aguililla calzada</em> in Spanish and <em>Booted Eagle</em> in English field guides. Current checklists call it <em>Aquila pennata</em>; older sources still use <em>Hieraaetus pennatus</em>. If you know only one of these names, you will not recognise the bird when someone uses another.</p><p>Every species in the atlas stores all four names, and search matches any of them. If I hear or read a name I do not know, I can still find the bird.</p>",
+            "<p>A booted eagle is <em>orzełek włochaty</em> in Polish, <em>aguililla calzada</em> in Spanish and <em>Booted Eagle</em> in English field guides. Some bird lists call it <em>Aquila pennata</em>, others <em>Hieraaetus pennatus</em>. If you know only one of these names, you will not recognise the bird when someone uses another.</p><p>Every species in the atlas stores all four names, and search matches any of them. If I hear or read a name I do not know, I can still find the bird.</p>",
         },
         {
           kind: "shot",
@@ -221,7 +222,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The species card applies the method to one bird. The “what to look at” panel lists the silhouette features in lesson order. The “easy to confuse with” panel below it shows the species most often mistaken for this one, because in the field I usually need to rule out the look-alikes before I can be sure.</p>",
+            "<p>On Big Hat 4.1, the species card applied the method to one bird. The “what to look at” panel listed the silhouette features in lesson order. The “easy to confuse with” panel below it showed the species most often mistaken for this one, because in the field I usually need to rule out the look-alikes before I can be sure. Chapter 08 shows how the card works now.</p>",
         },
         {
           kind: "duo",
@@ -295,10 +296,10 @@ export const raptors: CaseStudy = {
     {
       id: "big-hat-4-3",
       n: "07",
-      heading: "The same screens on Big Hat 4.3",
+      heading: "An experiment: the same code on Big Hat 4.3",
       maxim: "To see what a new version of a design system changes, keep the product the same and swap only the system.",
       standfirst:
-        "The same commit of World of Raptors, built locally with Big Hat raised from 4.1 to 4.3.3. The deployed app at world-of-raptors.vercel.app still runs 4.1, so these screens show its next version, not the one you can open today.",
+        "Before the real migration, I built the same commit of World of Raptors locally with Big Hat raised from 4.1 to 4.3.3. Only the system changed.",
       blocks: [
         {
           kind: "passage",
@@ -341,7 +342,7 @@ export const raptors: CaseStudy = {
         },
         {
           kind: "thesis",
-          label: "What the migration showed",
+          label: "What the experiment showed",
           text:
             "A Big Hat release updates only what is built from Big Hat components. Anything a project draws itself stays as it was. The comparison points to three local parts of World of Raptors that could become Big Hat components: the tinted panel, the photograph with its credit line, and the link styled as a button. It also raises a question about Big Hat itself. Card's accent stripe now curves around the 20px corner, as Toast's does by design, and on a module card it looks unintended.",
         },
@@ -350,8 +351,78 @@ export const raptors: CaseStudy = {
 
     /* ---------------------------------------------------------------- 08 */
     {
-      id: "build",
+      id: "big-hat-4-9",
       n: "08",
+      heading: "Big Hat 4.9 in production",
+      maxim: "The real migration changed the product as well as the system, and it removed the parts a release could not reach.",
+      standfirst:
+        "World of Raptors moved from Big Hat 4.1 to 4.9.0 in one pull request. These screens are the deployed app.",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>The experiment in chapter 07 showed which parts of the course a Big Hat release could not update. The migration dealt with most of them. The species card no longer has its own tinted panels: it compares the bird with its look-alikes in a single table, built from Big Hat's <code>Card</code> and <code>Table</code>. The table rows follow the order of the silhouette method, and each look-alike links to its own card.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/live/species.webp",
+          caption:
+            "The booted eagle's card on Big Hat 4.9: photographs, then “what to look at” as one table comparing it with the species it is mistaken for.",
+        },
+        {
+          kind: "passage",
+          html:
+            "<p>Lessons moved onto <code>Article</code>, a component that arrived in Big Hat 4.9.0. It gives every lesson a title with its length, a contents list that marks the section in view, and a margin for photographs and notes next to the paragraph they belong to. The last lesson of each module now ends with a step-by-step quiz with an 80% pass mark; passing it marks the lesson as finished.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/live/lesson.webp",
+          caption:
+            "B1, lesson 1 on Article: the module's lessons in the side navigation, the lesson in the middle, “in this lesson” on the right.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/live/home.webp",
+          caption: "The start page now opens with a species of the day, a different bird each day.",
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "24", label: "Big Hat components in use, up from 19" },
+            { value: "1", label: "local stand-in for a Big Hat component: ButtonLink" },
+            { value: "4", label: "gaps recorded in DS-GAPS.md" },
+          ],
+        },
+        {
+          kind: "passage",
+          html:
+            "<p>The gaps file grew as the course used more of the system. It now lists four things Big Hat does not cover:</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>A link that looks like a button.</strong> ButtonLink is still a local anchor on Big Hat's internal button classes.",
+            "<strong>Uppercase labels built into components.</strong> <code>DescriptionList</code>, <code>Divider</code>, <code>NavGroup</code> and <code>Table</code> headers set their labels in capitals, and the product cannot turn that off without overriding Big Hat's classes.",
+            "<strong>Table columns and row headers.</strong> <code>Table</code> accepts grid-track widths such as <code>1fr</code> that a real table ignores, and it cannot mark the first column as row headers, which weakens the comparison table for screen readers.",
+            "<strong>No text size for a page's one big heading.</strong> The largest step in the type scale is 4px above a section heading, too small for the species of the day.",
+          ],
+        },
+        {
+          kind: "thesis",
+          label: "What the migration showed",
+          text:
+            "Moving the course onto new Big Hat components did more for it than any release could do on its own. The local panels went away because the product changed, not because the system reached them. What is left is a short, written list of what Big Hat still lacks, each item with the screen that needed it.",
+        },
+      ],
+    },
+
+    /* ---------------------------------------------------------------- 09 */
+    {
+      id: "build",
+      n: "09",
       heading: "From Markdown to production",
       maxim: "Every page is generated at build time, so the site serves static files.",
       blocks: [
@@ -371,17 +442,17 @@ export const raptors: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 09 */
+    /* ---------------------------------------------------------------- 10 */
     {
       id: "next",
-      n: "09",
+      n: "10",
       heading: "What comes next",
       maxim: "Reading about a silhouette does not train you to recognise one quickly.",
       blocks: [
         {
           kind: "points",
           items: [
-            "<strong>Quizzes and flashcards with spaced repetition</strong> for silhouettes, field marks, look-alike pairs and calls, so the difficult ones come back more often.",
+            "<strong>Flashcards with spaced repetition</strong> for silhouettes, field marks, look-alike pairs and calls, so the difficult ones come back more often. The end-of-module quiz already exists; the flashcards do not yet.",
             "<strong>A “compare” quiz</strong> that shows two similar species side by side, turning the look-alike panel into practice.",
             "<strong>A virtual watchpoint</strong>, with silhouettes crossing the screen at the speed of real migration over the Strait, to identify and count.",
             "<strong>A map of watchpoints</strong> on OpenStreetMap, and a shared checklist so my phone and laptop show the same list.",
