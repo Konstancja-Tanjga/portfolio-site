@@ -164,7 +164,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A booted eagle is <em>orzełek włochaty</em> in Polish, <em>aguililla calzada</em> in Spanish and <em>Booted Eagle</em> in English field guides. Current checklists call it <em>Aquila pennata</em>; older sources still use <em>Hieraaetus pennatus</em>. If you know only one of these names, you will not recognise the bird when someone uses another.</p><p>Every species in the atlas stores all four names, and search matches any of them. If I hear or read a name I do not know, I can still find the bird.</p>",
+            "<p>A booted eagle is <em>orzełek włochaty</em> in Polish, <em>aguililla calzada</em> in Spanish and <em>Booted Eagle</em> in English field guides. Some bird lists call it <em>Aquila pennata</em>, others <em>Hieraaetus pennatus</em>. If you know only one of these names, you will not recognise the bird when someone uses another.</p><p>Every species in the atlas stores all four names, and search matches any of them. If I hear or read a name I do not know, I can still find the bird.</p>",
         },
         {
           kind: "shot",
