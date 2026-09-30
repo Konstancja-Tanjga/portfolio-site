@@ -27,7 +27,7 @@ export function AnnotatedSet({ items }: { items: AnnotatedData[] }) {
 
             <figure className="shot">
               {a.shot.src ? (
-                <img className="shot__img" src={asset(a.shot.src)} alt={a.shot.caption ?? ""} loading="lazy" />
+                <img className="shot__img" src={asset(a.shot.src)} alt="" loading="lazy" />
               ) : (
                 <div className="shot__slot">
                   <span>{a.shot.slot ?? "annotated screen"}</span>

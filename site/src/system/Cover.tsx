@@ -22,8 +22,13 @@ export function Cover({ cover }: { cover: CoverData }) {
         <div className="cover__text">
           <p className="kicker">{cover.kicker}</p>
           <h1 className="cover__headline">
-            {cover.headline.map((line) => (
-              <span key={line}>{line}</span>
+            {/* The space keeps the lines apart for a screen reader, which would
+                otherwise read "World ofRaptors". */}
+            {cover.headline.map((line, i) => (
+              <span key={line}>
+                {i > 0 && " "}
+                {line}
+              </span>
             ))}
           </h1>
           <p className="cover__subline">{cover.subline}</p>

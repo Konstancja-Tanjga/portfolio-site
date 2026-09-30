@@ -91,8 +91,11 @@ function ShotFrame({ src, slot, caption }: ShotData) {
     );
   }
 
+  // Every caller prints the caption next to the image (figcaption or
+  // subcaption), so the image and its button stay unnamed here: naming them
+  // too made a screen reader read each caption twice.
   const img = (
-    <img className="shot__img" src={asset(src)} alt={caption ?? ""} loading="lazy" decoding="async" />
+    <img className="shot__img" src={asset(src)} alt="" loading="lazy" decoding="async" />
   );
 
   if (!view) return img;
@@ -102,7 +105,7 @@ function ShotFrame({ src, slot, caption }: ShotData) {
       type="button"
       className="shot__open"
       onClick={() => view({ src: asset(src), caption })}
-      aria-label={caption ? `${caption} — view full size` : "View full size"}
+      aria-label="View full size"
     >
       {img}
     </button>
