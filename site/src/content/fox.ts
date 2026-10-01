@@ -3,7 +3,7 @@ import type { CaseStudy } from "./types";
 export const fox: CaseStudy = {
   slug: "fox-design-system",
   title: "FOX design system",
-  what: "Fifty components, six consuming products — and the pull requests I merge",
+  what: "Around 80 components, six consuming products — and the pull requests I merge",
   lead:
     "A design system in code, not a Figma library with a code appendix. I built it from nothing and led its migration to v3 across the platform's product lines, across Angular, React and web components.",
   status: { state: "live" },
@@ -19,13 +19,27 @@ export const fox: CaseStudy = {
   meta: [
     { label: "Role", value: "Design system owner — I review and merge the component pull requests" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Scale", value: "50 components, 6 consuming products" },
+    { label: "Scale", value: "Around 80 components, 6 consuming products" },
     { label: "Frameworks", value: "Angular, React, web components" },
     { label: "Pipeline", value: "Figma → Storybook → Chromatic → Nexus" },
     { label: "Period", value: "November 2023 – present" },
     { label: "Storybook", value: "Public — design-system-v1.assecosolutions.com", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
   ],
   chapters: [
+    /* The opening, before the numbered chapters. No heading on purpose: it is
+       the case in three sentences, not a jump-bar entry. */
+    {
+      id: "opening",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p><strong>The problem.</strong> Every design system team knows the moment: the Figma library says one thing, the product says another, and nobody is sure which is right. Tokens are copied by hand, specs are rewritten for every ticket, and each release widens the gap.</p>" +
+            "<p><strong>What I did.</strong> I built FOX from nothing for APplus ERP and set it up so the two sides stay aligned: one token set behind both the Figma library and the code, every component mapped between them through Code Connect, Storybook on Chromatic as the reference designers and engineers both check against, and handoff specs generated from the design and pulled into Jira instead of written by hand.</p>" +
+            "<p><strong>The result.</strong> Around 80 components and six products on one system, migrated to v3 across product lines.</p>",
+        },
+      ],
+    },
     {
       id: "what-it-is",
       n: "01",
@@ -117,7 +131,7 @@ export const fox: CaseStudy = {
         {
           kind: "stats",
           items: [
-            { value: "50", label: "components" },
+            { value: "~80", label: "components" },
             { value: "6", label: "consuming products" },
             { value: "3", label: "frameworks" },
             { value: "v3.0", label: "migrated across product lines" },

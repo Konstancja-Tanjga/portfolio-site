@@ -11,12 +11,11 @@ export function Home() {
           <em>they run on</em>.
         </h1>
         <p className="opening__body">
-          Ten years in complex, data-rich software — ERP, banking, insurance, legal
-          and regulatory, industrial energy. Currently Lead Designer / UX Engineer
-          for APplus ERP, where I have designed three new applications from zero on
-          a design system of nearly 80 components that six products run on.
-          Development receives a working React prototype built from those
-          components, not a picture of one.
+          Lead Product Designer for complex enterprise software. Ten years
+          designing products people run their work through — ERP, document
+          management, analytics, AI assistance. I take a product from the first
+          interview to the shipped screen, and I build design systems that keep
+          what is designed and what is built the same thing.
         </p>
       </section>
 
