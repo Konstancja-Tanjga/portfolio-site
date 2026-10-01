@@ -1,17 +1,18 @@
 import type { CaseStudy } from "./types";
 
 /**
- * Chapter numbers follow the Figma wall (page "BI" in the portfolio file),
- * so the file and the canvas stay walkable side by side. "00" and "13" have
- * no frame there: the summary and the results were written for this page.
+ * Chapter numbers follow the Figma wall (page "BI" in the portfolio file;
+ * frames 01, 01a, 02–11), so the file and the canvas stay walkable side by
+ * side. 00, 06a, 06b, 12 and 13 have no frame there: they were written for
+ * this page.
  *
  * The words are text, not pictures of text. The wall used to be twelve PNG
  * exports with every paragraph typeset inside them, which a reader could not
  * search, select or enlarge on a phone, and a screen reader could not read.
- * Images here are screens and diagrams only, exported one by one from the
- * same frames into /work/applus-analytics/screens/.
+ * Apart from the cover, images are screens and diagrams only, exported one
+ * by one from the Figma file into /work/applus-analytics/screens/.
  *
- * Every figure on this page has a source: the Figma file (audit stickies,
+ * Every number on this page has a source: the Figma file (audit stickies,
  * surface-rule cards and their PR-07 evidence), the About page's research
  * counts, or the author's confirmation. Nothing is rounded up.
  */
@@ -509,12 +510,12 @@ export const bi: CaseStudy = {
           items: [
             "<strong>R1 · Object scope → modal.</strong> An action on the whole object the page shows opens a modal, so it belongs in fox-app-bar. <em>In the prototype:</em> 6 of 6 app-bar actions obey it (share, permissions, edit analysis on four pages, create data model, copy analysis, query create and edit).",
             "<strong>R2 · Render scope → right side sheet.</strong> Changing how the body is rendered opens the side sheet, without a scrim, from the body toolbar. <em>In the prototype:</em> 6 of 6 panels obey it.",
-            "<strong>R3 · Object inside the body → modal.</strong> A card or a widget is still an object, so its actions open a modal from its own overflow menu. <em>In the prototype:</em> the six controls that looked like exceptions (widget settings, card edit, copy, delete, permissions) all pass the scope test.",
+            "<strong>R3 · Object inside the body → modal.</strong> A card or a widget is still an object, so its actions open a modal from its own overflow menu. <em>In the prototype:</em> the controls that looked like exceptions (widget settings, card edit, copy, delete, permissions) all pass the scope test.",
             "<strong>R4 · Short choice → anchored menu.</strong> No inputs, no scrim, closes on an outside click. If it needs a field it is a modal; if it must stay open it is a sheet.",
-            "<strong>R5 · Destructive → modal that names the object.</strong> The trigger may only ask. <em>In the prototype:</em> delete data model (REQ2764, REQ2783, REQ2784), delete analysis (REQ-2290), delete query, author only (REQ-2332).",
+            "<strong>R5 · Destructive → modal that names the object.</strong> The trigger may only ask. <em>In the prototype:</em> delete data model (REQ-2764, REQ-2783, REQ-2784), delete analysis (REQ-2290), delete query, author only (REQ-2332).",
             "<strong>R6 · Immediate commit or view state → no surface.</strong> It acts on click and a toast confirms: save, enlarge, grid/list, the verified toggle. Safe only when the act is cheap to undo; otherwise it is R5.",
             "<strong>R7 · One entry point per action.</strong> Never the same control in the app bar and the body. The one sanctioned exception is Enlarge, which graph and pivot both delegate up to the page.",
-            "<strong>R8 · Another object's domain → route.</strong> Go to the page that owns it and open its surface there, carrying the intent. <em>In the prototype:</em> query permissions route to /queries with Eligible roles highlighted, because the Queries SRS puts access in that field (REQ2392, REQ2399, REQ2336, REQ2401).",
+            "<strong>R8 · Another object's domain → route.</strong> Go to the page that owns it and open its surface there, carrying the intent. <em>In the prototype:</em> query permissions route to /queries with Eligible roles highlighted, because the Queries SRS puts access in that field (REQ-2392, REQ-2399, REQ-2336, REQ-2401).",
             "<strong>R9 · Application configuration → full overlay.</strong> Settings replaces the page area. It is a place you work in, not a single decision, and it has nothing to do with the page you came from.",
           ],
         },
@@ -609,6 +610,8 @@ export const bi: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: `${S}/analyst-thread.png`,
+          caption:
+            "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
         },
         {
           kind: "usecase",

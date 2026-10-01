@@ -1,10 +1,12 @@
+import type { Attribution } from "../content/types";
 import { Lane } from "./Wall";
 
 /**
- * A few lines of real source, in the same well as a step's artefact.
+ * A few lines of real source, styled like a step's artefact (Steps.tsx).
  *
- * Verbatim or not at all: the caption names where the lines were copied
- * from, so the reader can open the page and find them.
+ * `source` names where the lines were copied from, linked when it has a
+ * public URL, so the reader can open the page and find them. `caption` is
+ * commentary on top of that.
  */
 export function Code({
   code,
@@ -13,7 +15,7 @@ export function Code({
 }: {
   code: string;
   caption?: string;
-  source?: { text: string; href?: string };
+  source: Attribution;
 }) {
   return (
     <Lane width="column">
@@ -21,20 +23,16 @@ export function Code({
         <pre className="artefact__code">
           <code>{code}</code>
         </pre>
-        {(caption || source) && (
-          <figcaption className="artefact__caption">
-            {caption}
-            {caption && source && " "}
-            {source &&
-              (source.href ? (
-                <a href={source.href} target="_blank" rel="noopener noreferrer">
-                  {source.text}
-                </a>
-              ) : (
-                source.text
-              ))}
-          </figcaption>
-        )}
+        <figcaption className="artefact__caption">
+          {caption && `${caption} `}
+          {source.href ? (
+            <a href={source.href} target="_blank" rel="noopener noreferrer">
+              {source.text}
+            </a>
+          ) : (
+            source.text
+          )}
+        </figcaption>
       </figure>
     </Lane>
   );
