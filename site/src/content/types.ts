@@ -23,6 +23,9 @@ export type Shot = {
 
 /* ---------- the repeating content components ---------- */
 
+/** Who made a thing, or where it was copied from — linked when it has a public home. */
+export type Attribution = { text: string; href?: string };
+
 /**
  * A video file in public/work/<slug>/, with the source it came from.
  *
@@ -45,7 +48,7 @@ export type Video = {
    */
   subtitles?: { src: string; label: string; srclang: string };
   /** whose film this is, and where it was published */
-  credit?: { text: string; href?: string };
+  credit?: Attribution;
 };
 
 /** One of the four-up persona cards. Same slots every time. */
@@ -258,6 +261,12 @@ export type Block =
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
+  /**
+   * Source code, copied verbatim from where it lives. `source` says where,
+   * and is required: a snippet a reader cannot trace is an illustration,
+   * not evidence. `href` stays optional for sources with no public home.
+   */
+  | { kind: "code"; code: string; caption?: string; source: Attribution }
   | { kind: "stack"; rows: StackRow[]; caption?: string }
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }
