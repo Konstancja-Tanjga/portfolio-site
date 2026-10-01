@@ -258,6 +258,16 @@ export type Block =
   | { kind: "pull"; text: string }
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
+  /**
+   * Source code, copied verbatim from where it lives. `source` says where,
+   * because a snippet a reader cannot trace is an illustration, not evidence.
+   */
+  | {
+      kind: "code";
+      code: string;
+      caption?: string;
+      source?: { text: string; href?: string };
+    }
   | { kind: "stack"; rows: StackRow[]; caption?: string }
   | { kind: "portrait"; portrait: Portrait }
   | { kind: "personas"; standfirst?: string; items: Persona[] }

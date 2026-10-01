@@ -1,6 +1,7 @@
 import type { Block, Chapter } from "../content/types";
 import {
   AnnotatedSet,
+  Code,
   Duo,
   Evolution,
   Lane,
@@ -59,6 +60,8 @@ function BlockView({ block }: { block: Block }) {
       return <Stack rows={block.rows} caption={block.caption} />;
     case "spec":
       return <Spec rows={block.rows} caption={block.caption} />;
+    case "code":
+      return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":
       return <Portrait portrait={block.portrait} />;
     case "personas":
