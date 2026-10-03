@@ -15,6 +15,7 @@ import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { raptors } from "./raptors";
 import { riyad } from "./riyad";
+import { sky } from "./sky";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
 import type { CaseStudy, Group, Process } from "./types";
@@ -46,6 +47,7 @@ export const cases: CaseStudy[] = [
   futures,
   chihuahua,
   raptors,
+  sky,
   // recognition
   award,
   bydgoszcz,
