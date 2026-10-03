@@ -608,7 +608,7 @@ export const elly: CaseStudy = {
       id: "what-i-designed",
       n: "13",
       heading: "What I designed",
-      standfirst: "Five decisions, each answering something the study surfaced.",
+      standfirst: "Four decisions, each answering something the study surfaced.",
       blocks: [
         {
           kind: "points",
@@ -688,7 +688,7 @@ export const elly: CaseStudy = {
           kind: "points",
           items: [
             "The study confirmed what the panel has to show: sources at the claim, a state for each failure, and Elly's own statement of what she can and cannot do.",
-            "Each of the five decisions is something the interface shows or hides: the source, the failure, the limit, the way out.",
+            "Each of the four decisions is something the interface shows or hides: the source, the failure, the limit.",
           ],
         },
       ],
