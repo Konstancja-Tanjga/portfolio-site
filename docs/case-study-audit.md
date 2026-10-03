@@ -2,7 +2,7 @@
 
 Stan na 3 października 2026, gałąź `main` po PR #26.
 
-Wzorcem jest **APplus Analytics** (`site/src/content/bi.ts`, `/work/applus-analytics`). Ten dokument opisuje ten wzorzec, porównuje z nim pozostałe 12 pozycji z zakładki Work i zawiera plan zmian. Każda liczba przy pozycji pochodzi z jej pliku treści, z plansz PNG albo z pliku Figmy portfolio (`J7Bt7UqoJm0gHO3IcUl48d`). Wszystko, co jest wnioskiem, a nie odczytem, jest tak oznaczone.
+Wzorcem jest **APplus Analytics** (`site/src/content/bi.ts`, `/work/applus-analytics`). Ten dokument opisuje ten wzorzec, porównuje z nim pozostałe 13 pozycji z zakładki Work (10 produktów i 3 wyróżnienia) i zawiera plan zmian. Każda liczba przy pozycji pochodzi z jej pliku treści, z plansz PNG (tam jest większość cytatów, np. „several hundred manufacturers”, „5 people”) albo z pliku Figmy portfolio (`J7Bt7UqoJm0gHO3IcUl48d`). Wszystko, co jest wnioskiem, a nie odczytem, jest tak oznaczone.
 
 ---
 
@@ -12,7 +12,7 @@ Dziesięć elementów, w tej kolejności:
 
 | # | Element | Co robi w Analytics | Bloki |
 |---|---|---|---|
-| 1 | Rama | Precyzyjna rola („Sole designer”), firma, produkt, skład zespołu, okres i release w pasku meta | `meta`, `cover` |
+| 1 | Rama | Precyzyjna rola („Sole designer”), firma, produkt, skład zespołu, okres i release w pasku meta | pola `meta` i `cover` |
 | 2 | In short (00) | Tabela na 30 sekund: Problem, My part, Decision 1–3, Evidence, Shipped | `spec` |
 | 3 | Kontekst | „What it is” (akapit i ekran) oraz „Why this is a hard brief”: ograniczenie zapisane jako problem UI, zamknięte jednym zdaniem | `passage`, `shot`, `pull` |
 | 4 | Ludzie | Persony z polami „Where it breaks today”, „So the product must” i zadaniem (BUILD, INTERROGATE…), bez zdjęć stockowych | `personas` |
@@ -48,9 +48,9 @@ Skala: **H** — jest, **P** — częściowo, **M** — brak.
 | MojePZU | P | M | P | M | P | M | M | P | M | M | cały (jedna plansza) |
 | Deloitte career site | P | M | M | M | P | P | M | P | M | M | cały (jedna plansza) |
 
-Wyróżnienia (ERP System of the Year, Bydgoszcz Design Challenge, Possible Reality) mają z założenia lżejszą poprzeczkę. Oceniam je w punkcie 5.
+Wyróżnienia (ERP System of the Year, Bydgoszcz Design Challenge, Possible Reality) mają z założenia lżejszą poprzeczkę. Oceniam je w punkcie 6.
 
-**Co łączy wszystkie pozycje:** żadna nie ma rozdziału „In short”, persony w formie bloku `personas`, bloku `usecase`, bloku `code`, ekranów z podpisami ani rozdziału z wynikami. Żaden obrazek poza Analytics nie ma podpisu. Komponent `Shot` renderuje obrazy z `alt=""` i zakłada, że podpis jest obok, więc czytnik ekranu pomija te obrazki w całości.
+**Co łączy wszystkie pozycje:** żadna nie ma rozdziału „In short”, persony w formie bloku `personas`, bloku `usecase`, bloku `code`, ekranów z podpisami ani rozdziału z wynikami. Poza Analytics podpisy mają tylko trzy zestawy obrazków na Riyad; pozostałe obrazki są bez podpisu. Komponent `Shot` renderuje obrazy z `alt=""` i zakłada, że podpis jest obok, więc czytnik ekranu pomija te obrazki w całości.
 
 ---
 
@@ -76,7 +76,7 @@ Te rzeczy trzeba usunąć przed wszystkim innym, bo szkodzą bez względu na jak
 
 | Temat | Co mówią strony | Do ustalenia |
 |---|---|---|
-| Tytuł | About i Home mówią „Lead Product Designer”. DMS, BPH, Elly i Flow mówią „Lead designer”. Volvo i Xecta: „Senior UX/UI designer”. Nagroda: „Lead Designer / UX Engineer” | Jedna formuła dla projektów APplus (proponuję: „Lead Product Designer”, a przy rolach jednoosobowych „sole designer on the product”). Projekty historyczne zachowują tytuł z tamtego okresu, opisany wprost jako tytuł z danego roku |
+| Tytuł | About i Home mówią „Lead Product Designer”. DMS, BPH, Elly i Flow mówią „Lead designer”. Volvo: „Senior UX/UI designer”. Xecta i strona Xecta: „Senior UX & UI designer”. Nagroda: „Lead Designer / UX Engineer” | Jedna formuła dla projektów APplus (proponuję: „Lead Product Designer”, a przy rolach jednoosobowych „sole designer on the product”). Projekty historyczne zachowują tytuł z tamtego okresu, opisany wprost jako tytuł z danego roku |
 | FOX | Analytics: „FOX, which I own”. BPH: „v2.3 then v3.0, which I developed with one other designer”. DMS: „FOX 2.3 co-authored” w latach 2025–26 | Jedno zdanie o własności FOX na całej stronie. Do tego: na jakiej wersji FOX wyszły DMS i BPH |
 | Liczba klientów | DMS: „several hundred manufacturers”. BPH: „2,000+ customers running APplus” (ze źródłem) | Jedna liczba ze źródłem |
 | Nagroda 2025 | Plakietka na DMS, choć DMS ruszył w październiku 2025, w miesiącu wręczenia. Flow „contributed”. Strona nagrody mówi, że nagroda „covers” Flow, Elly i design system | Co faktycznie było pokazywane w pitchu |
