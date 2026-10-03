@@ -72,7 +72,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "exploration",
-      n: "05",
+      n: "04",
       heading: "Exploration",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch05.webp" },
@@ -80,7 +80,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "concept",
-      n: "06",
+      n: "05",
       heading: "Design concept",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch06.webp" },
@@ -88,7 +88,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "search-filter",
-      n: "07",
+      n: "06",
       heading: "Use case: Search & filter",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch07.webp" },
@@ -96,7 +96,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "install",
-      n: "08",
+      n: "07",
       heading: "Use case: Install & import",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch08.webp" },
@@ -104,7 +104,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "design-system",
-      n: "09",
+      n: "08",
       heading: "Design system",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch09.webp" },

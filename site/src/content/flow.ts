@@ -81,11 +81,6 @@ export const flow: CaseStudy = {
       standfirst:
         "An inbox that surfaces priority items, with inline editing of location, owner, floor, weight and timing.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>The goods-receipt scan went from five or six clicks to one, and three workarounds users had invented for themselves became unnecessary.</p>",
-        },
         { kind: "shot", width: "wall", src: "/work/applus-flow/04.png" },
         { kind: "shot", width: "wall", src: "/work/applus-flow/05.png" },
       ],

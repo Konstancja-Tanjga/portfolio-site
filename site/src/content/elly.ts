@@ -56,7 +56,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "exploration",
-      n: "04",
+      n: "03",
       heading: "Exploration",
       standfirst:
         "Entry point, affordance and footprint — decided explicitly, because an assistant nobody finds is not an assistant.",
@@ -75,7 +75,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "use-cases",
-      n: "05",
+      n: "04",
       heading: "Twelve use cases",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch05.png" },
@@ -83,7 +83,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "decisions",
-      n: "06",
+      n: "05",
       heading: "The decisions inside them",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch06.png" },
@@ -91,7 +91,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "prototype",
-      n: "07",
+      n: "06",
       heading: "The prototype",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch07.png" },
@@ -99,7 +99,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "unseen",
-      n: "08",
+      n: "07",
       heading: "Nobody had seen it",
       maxim:
         "Eight of thirteen had never seen the assistant. That is a discovery problem, not a usability one.",
@@ -114,7 +114,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "sessions",
-      n: "09",
+      n: "08",
       heading: "Nine sessions, in their words",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch09.png" },
@@ -122,7 +122,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "trust",
-      n: "10",
+      n: "09",
       heading: "Easy, yes. Trusted, no.",
       maxim:
         "Twelve of thirteen would use it again — and trust still scored lowest of every dimension.",
@@ -145,7 +145,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "barriers",
-      n: "11",
+      n: "10",
       heading: "The two barriers users named",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch11.png" },
@@ -153,7 +153,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "what-i-designed",
-      n: "12",
+      n: "11",
       heading: "What I designed",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch12.png" },
@@ -161,7 +161,7 @@ export const elly: CaseStudy = {
     },
     {
       id: "live",
-      n: "13",
+      n: "12",
       heading: "The live product",
       standfirst:
         "Elly as it ships in APplus 9 — the screens, not the reasoning. The chapters above are how it got here.",

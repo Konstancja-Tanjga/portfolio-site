@@ -110,7 +110,7 @@ export const dms: CaseStudy = {
         { kind: "shot", width: "wall", src: "/work/applus-documents/wall/ch21.png" },
         {
           kind: "passage",
-          html: '<p>Documents follows the surface rules written for Analytics (PR-07): the scope of what is acted on decides the surface. They are set out in full in <a href="../applus-analytics#surface-rules">APplus Analytics</a>.</p>',
+          html: '<p>Documents follows the surface rules written for Analytics (PR-07): the scope of what is acted on decides the surface. They are set out in full in <a href="applus-analytics#surface-rules">APplus Analytics</a>.</p>',
         },
       ],
     },
