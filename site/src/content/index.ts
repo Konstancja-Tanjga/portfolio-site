@@ -13,7 +13,6 @@ import { fox } from "./fox";
 import { futures } from "./futures";
 import { possible } from "./possible";
 import { pzu } from "./pzu";
-import { raptors } from "./raptors";
 import { riyad } from "./riyad";
 import { sky } from "./sky";
 import { volvo } from "./volvo";
@@ -48,7 +47,6 @@ export const cases: CaseStudy[] = [
   fox,
   futures,
   chihuahua,
-  raptors,
   sky,
   // recognition
   award,
