@@ -89,7 +89,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The home page works out how high the sun stands over Warsaw and paints the sky to match: dawn, day, dusk or night. By day a kettle of migrating raptors circles in a thermal and climbs, and the birds at the top peel off to the south-west, the way autumn migrants leave the Strait of Gibraltar. New birds join from below, so the column never empties. At night there are stars and the moon, and now and then an owl crosses it.</p><p>The birds are the atlas silhouettes, seen from below as the method lessons teach, banking as they turn and flapping now and then. The scene has a pause button, and with reduced motion it is a single still frame.</p>",
+            "<p>The home page works out how high the sun stands over Warsaw and paints the sky to match: dawn, day, dusk or night. By day a kettle of soaring migrants circles in a thermal and climbs, and the birds at the top glide off on their way, as migrants do once a thermal has lifted them high enough. New birds join from below, so the column never empties. At night there are stars and the moon, and now and then an owl crosses it.</p><p>The birds are the atlas silhouettes, seen from below as the method lessons teach, banking as they turn and flapping now and then. The scene has a pause button, and with reduced motion it is a single still frame.</p>",
         },
         {
           kind: "set",
@@ -229,7 +229,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The flashcards are scheduled by FSRS, the spaced-repetition algorithm newer versions of Anki use: hard cards come back sooner, easy ones less and less often. The deck has 282 cards of three kinds. Photographs are shown whole over a blurred copy of themselves, because a crop can hide the very mark that identifies the bird. Silhouettes fly in the species' own style, at a different heading and spread on every review, and the answer gives the group first, then the species, as the method teaches. Names go both ways between Polish and English or Spanish.</p><p>As in Anki, a new card waits until tomorrow if a card of the same species was answered today, so one card cannot give away the next.</p>",
+            "<p>The flashcards are scheduled by FSRS, the spaced-repetition algorithm Anki offers as an option: hard cards come back sooner, easy ones less and less often. The deck has 282 cards of three kinds. Photographs are shown whole over a blurred copy of themselves, because a crop can hide the very mark that identifies the bird. Silhouettes fly in the species' own style, at a different heading and spread on every review, and the answer gives the group first, then the species, as the method teaches. Names go both ways between Polish and English or Spanish.</p><p>As in Anki, a new card waits until tomorrow if a card of the same species was answered today, so one card cannot give away the next.</p>",
         },
         {
           kind: "duo",
@@ -290,7 +290,7 @@ export const sky: CaseStudy = {
         },
         {
           kind: "palette",
-          standfirst: "Two palettes, one for each mode. Every pair of text and background passes WCAG AA.",
+          standfirst: "Two palettes, one for each mode. Every text colour passes WCAG AA on its background, and text over the skies and photos sits on a shade measured to pass.",
           items: [
             { hex: "#F8F3E9", name: "Paper", role: "The page in light mode: a field guide's paper" },
             { hex: "#261D17", name: "Ink", role: "Text on paper", note: "14.9:1 on Paper" },
@@ -317,8 +317,8 @@ export const sky: CaseStudy = {
           items: [
             "<strong>Motion explains.</strong> A morph shows exactly what separates two groups, and a hovering kestrel shows the hover. Motion that taught nothing was cut.",
             "<strong>Two registers.</strong> Short motion, up to a quarter of a second, answers a click. Long motion, a second or longer, tells the story: the sky, the photo of the species of the day opening as if through binoculars, the morphs.",
-            "<strong>Content first.</strong> Every page is complete from its first frame. Scroll-linked effects run only in browsers with scroll-driven animations; elsewhere the page is simply still.",
-            "<strong>Less motion is not no motion.</strong> With reduced motion set in the system, movement turns into fading and the scenes hold still. Every loop has a pause button.",
+            "<strong>Content first.</strong> Nothing waits for a click or a scroll to appear. The opening entrance lasts about a second, and scroll-linked effects run only in browsers with scroll-driven animations; elsewhere the page is simply still.",
+            "<strong>Less motion is not no motion.</strong> With reduced motion set in the system, small movements only fade, entrances and page transitions are skipped, and the scenes hold still. Every loop has a pause button.",
           ],
         },
         {

@@ -27,16 +27,16 @@ export const bph: CaseStudy = {
     headline: ["Best Practice", "Hub"],
     subline: "for APplus ERP",
     stamp: "TEMPLATE LIBRARY · SEARCH · FILTER · VERSIONING · INSTALL",
-    credit: "Lead designer · Asseco Solutions · 2024–2025",
+    credit: "Lead Product Designer · Asseco Solutions · 2024–2025",
     shot: { src: "/work/applus-best-practice-hub/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — sole designer on the product" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Best Practice Hub" },
     {
       label: "Design system",
-      value: "FOX v2.3, then v3.0 — which I developed with one other designer",
+      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -71,16 +71,8 @@ export const bph: CaseStudy = {
       ],
     },
     {
-      id: "audit",
-      n: "04",
-      heading: "Audit & research",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch04.webp" },
-      ],
-    },
-    {
       id: "exploration",
-      n: "05",
+      n: "04",
       heading: "Exploration",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch05.webp" },
@@ -88,7 +80,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "concept",
-      n: "06",
+      n: "05",
       heading: "Design concept",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch06.webp" },
@@ -96,7 +88,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "search-filter",
-      n: "07",
+      n: "06",
       heading: "Use case: Search & filter",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch07.webp" },
@@ -104,7 +96,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "install",
-      n: "08",
+      n: "07",
       heading: "Use case: Install & import",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch08.webp" },
@@ -112,7 +104,7 @@ export const bph: CaseStudy = {
     },
     {
       id: "design-system",
-      n: "09",
+      n: "08",
       heading: "Design system",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch09.webp" },

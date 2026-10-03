@@ -30,16 +30,16 @@ export const dms: CaseStudy = {
     headline: ["Document", "Management"],
     subline: "for APplus ERP",
     stamp: "VERSIONING · METADATA · SEARCH · PERMISSIONS · RETENTION",
-    credit: "Lead designer · Asseco Solutions · 2026",
+    credit: "Lead Product Designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-documents/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — sole designer on the product" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Documents" },
     {
       label: "Design system",
-      value: "FOX v2.3, co-authored with one other designer",
+      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -65,7 +65,7 @@ export const dms: CaseStudy = {
             {
               key: "My part",
               value:
-                "The shape of the product, the user flows, the competitive analysis, prototypes in Figma Make, the low-fidelity work, requirement-level design and sign-off, and day-to-day work with the developers. I co-authored FOX 2.3, the design system it is built on, with one other designer.",
+                "The shape of the product, the user flows, the competitive analysis, prototypes in Figma Make, the low-fidelity work, requirement-level design and sign-off, and day-to-day work with the developers. FOX, the design system it is built on, is mine to own; I did its migration from v2.3 to v3.0 with one other designer.",
             },
             {
               key: "Decision 1",
@@ -310,7 +310,7 @@ export const dms: CaseStudy = {
       n: "09",
       heading: "Design system",
       standfirst:
-        "I co-authored FOX 2.3 with one other designer, so on this product I was both a consumer of the system and one of its two owners. That is why the update process is worth showing: the loop took days.",
+        "I own FOX, so on this product I was both a consumer of the system and its owner. That is why the update process is worth showing: the loop took days.",
       blocks: [
         {
           kind: "shot",

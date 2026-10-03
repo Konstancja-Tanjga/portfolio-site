@@ -73,7 +73,6 @@ export const volvo: CaseStudy = {
           html:
             "<p>Interviews and moderated usability tests with people who use the system daily.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/volvo-erp/06.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/07.png" },
       ],
     },
@@ -90,7 +89,6 @@ export const volvo: CaseStudy = {
             "<p>The access and permissions redesign: roles, entitlements, approval paths.</p>",
         },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/08.jpg" },
-        { kind: "shot", width: "wall", src: "/work/volvo-erp/09.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/10.png" },
       ],
     },
@@ -116,7 +114,6 @@ export const volvo: CaseStudy = {
           html:
             "<p>Delivered with four Angular developers, a business analyst, a product owner and a project manager.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/volvo-erp/14.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/15.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/16.png" },
       ],
@@ -126,7 +123,6 @@ export const volvo: CaseStudy = {
       n: "07",
       heading: "What it changed",
       blocks: [
-        { kind: "shot", width: "wall", src: "/work/volvo-erp/17.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/18.png" },
         { kind: "shot", width: "wall", src: "/work/volvo-erp/19.png" },
       ],

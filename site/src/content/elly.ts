@@ -8,7 +8,7 @@ import type { CaseStudy } from "./types";
  * /work/elly-ai-assistant/screens/.
  *
  * Every number on this page comes from those frames: the study counts (13
- * participants, 9 sessions of 45 minutes, 14–25 April 2025), the scores, the
+ * participants, 13 sessions of 45 minutes, 14–25 April 2025), the scores, the
  * panel widths and the 331 prototype interactions. Nothing is rounded up.
  */
 export const elly: CaseStudy = {
@@ -16,19 +16,19 @@ export const elly: CaseStudy = {
   title: "Elly",
   what: "The platform's first AI assistant, designed from zero",
   lead:
-    "Streaming answers over the product documentation, with citations, error states and handoff to a person. The work was in the states that decide whether a user trusts the answer.",
+    "Streaming answers over the product documentation, with citations and error states. The work was in the states that decide whether a user trusts the answer.",
   status: { state: "live" },
   group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · AI IN PRODUCTION",
     headline: ["Smart help", "for an ERP"],
     subline: "Elly, for APplus ERP",
-    stamp: "STREAMING · CITATIONS · ERROR STATES · HANDOFF",
-    credit: "Lead designer · Asseco Solutions · released with APplus 9, 2025",
+    stamp: "STREAMING · CITATIONS · ERROR STATES · VOICE",
+    credit: "Lead Product Designer · Asseco Solutions · released with APplus 9, 2025",
     shot: { src: "/work/elly-ai-assistant/01.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — designed from zero" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Elly" },
     { label: "Design system", value: "FOX v2.2", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
@@ -54,7 +54,7 @@ export const elly: CaseStudy = {
             {
               key: "My part",
               value:
-                "Lead designer and the only designer on the product: the audit of existing assistants, the layout exploration, twelve use cases, a clickable prototype, a moderated study with 13 people, and the design that shipped.",
+                "Lead Product Designer and the only designer on the product: the audit of existing assistants, the layout exploration, twelve use cases, a clickable prototype, a moderated study with 13 people, and the design that shipped.",
             },
             {
               key: "Decision 1",
@@ -87,7 +87,7 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Elly Smart Help is the first AI assistant shipped in APplus ERP, on desktop and mobile, with voice input. It answers questions from the APplus documentation, with citations, error states and a route to a person.</p>" +
+            "<p>Elly Smart Help is the first AI assistant shipped in APplus ERP, on desktop and mobile, with voice input. It answers questions from the APplus documentation, with citations and error states.</p>" +
             "<p>APplus is an ERP used by mid-sized and large manufacturers across the DACH region. Any assistant demo can answer a question. What matters is the moment after, when a consultant takes the answer into a customer call and repeats it as fact.</p>",
         },
         {
@@ -241,7 +241,7 @@ export const elly: CaseStudy = {
             "<strong>Activation:</strong> how Elly is reached, from where, and what the button looks like in every state.",
             "<strong>Asking a text question:</strong> six states for one question (UC-01 below).",
             "<strong>Voice mode:</strong> opening it and interacting inside it, including the consent moment (UC-02).",
-            "<strong>Recommendations and handoff:</strong> navigating suggestions, and reaching online help or support when documentation is not enough.",
+            "<strong>Recommendations and support:</strong> navigating suggestions, and reaching online help or support when documentation is not enough.",
             "<strong>Errors:</strong> handling and recovery (UC-03).",
             "<strong>The rest of the panel:</strong> starting a new conversation, resizing the sidebar, and using Elly on mobile down to a 320px breakpoint.",
           ],
@@ -464,7 +464,7 @@ export const elly: CaseStudy = {
           kind: "passage",
           html:
             "<p>Every demo runs inside a complete 1920×1080 APplus Flow screen: app bar, navigation, content, and the Elly sidebar docked at its real 380px. If the point of the design was that the assistant must not take the screen away from the work, the prototype had to be able to prove it.</p>" +
-            "<p>Four demos, aimed at the four places where trust is won or lost: the default text conversation across nine sequential screens, the three error states, voice mode, and the expanded Resources list. Plus iPhone frames for the mobile path. It was built on the sidebar component set rather than duplicated frames, so every state in the prototype is the same variant the design system ships, and a fix in one place fixes it everywhere.</p>",
+            "<p>Demos aimed at the places where trust is won or lost: the default text conversation across nine sequential screens, the three error states and voice mode. Plus iPhone frames for the mobile path. It was built on the sidebar component set rather than duplicated frames, so every state in the prototype is the same variant the design system ships, and a fix in one place fixes it everywhere.</p>",
         },
         {
           kind: "shot",
@@ -499,7 +499,7 @@ export const elly: CaseStudy = {
       heading: "The study",
       maxim: "Eight of the thirteen had never seen Elly, and they work inside the company that builds the product.",
       standfirst:
-        "A moderated study with 13 internal consultants and solution architects, 14–25 April 2025, deliberately before the APplus 9 release so findings could still reach launch. Nine sessions of 45 minutes, one at a time, on the working prototype.",
+        "A moderated study with 13 internal consultants and solution architects, 14–25 April 2025, deliberately before the APplus 9 release so findings could still reach launch. Thirteen sessions of 45 minutes, one at a time, on the working prototype.",
       blocks: [
         {
           kind: "stats",
@@ -615,7 +615,6 @@ export const elly: CaseStudy = {
           items: [
             "<strong>Citations at the claim.</strong> Every factual statement carries a numbered marker inline, and the numbers resolve in a Resources block the user can expand, with the actual document identifiers in the customer's own documentation namespace. A consultant can open the source before quoting it.",
             "<strong>A designed state for every way this fails.</strong> Retrieval failure, model failure, monthly question limit exceeded, daily limit reached, and limit reached mid-voice-input, each with its own recovery path, plus a standing disclaimer that Elly reads APplus documentation and can be wrong.",
-            "<strong>Handoff to a person as a first-class action.</strong> When the assistant is out of its depth, which 7 of 13 users expected on complex work, the panel offers a route to a human rather than another paragraph.",
             "<strong>A panel that behaves like part of the product.</strong> 380px by default, resizable to 580px, docked rather than floating, with the conversation flow specified at both widths. A full mobile version. Voice input with its own visual mode and its own error and limit states. Customer theming, because APplus ships in customer colours and an assistant that ignores them reads as bolted on.",
             "<strong>The entry point as a product decision.</strong> Opening Elly from the classic interface takes the user into Flow mode directly, so the assistant doubles as the transition path into the newer navigation model.",
           ],
