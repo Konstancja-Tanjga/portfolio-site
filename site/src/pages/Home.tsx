@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Band } from "../components/Band";
-import { earlier } from "../content";
+import { earlier, howIWork } from "../content";
+import { ProcessBoard } from "../system";
 
 export function Home() {
   return (
@@ -28,6 +29,13 @@ export function Home() {
         The design system, the methods I run and the projects I build to test them
         are on a page of their own: <Link to="/practice">Practice</Link>.
       </p>
+      <section className="how" aria-labelledby="how-heading">
+        <h2 id="how-heading" className="section-label">
+          How I work
+        </h2>
+        <ProcessBoard process={howIWork} />
+      </section>
+
       <Band
         id="recognition"
         label="Recognition"

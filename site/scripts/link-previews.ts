@@ -43,7 +43,7 @@ function clip(s: string, max = 200) {
 
 function pages(defaultDescription: string): Page[] {
   return [
-    { path: "", title: `${NAME} — Lead Designer / UX Engineer`, description: defaultDescription },
+    { path: "", title: `${NAME} — Lead Product Designer`, description: defaultDescription },
     { path: "about", title: `About — ${NAME}`, description: defaultDescription },
     {
       path: "practice",

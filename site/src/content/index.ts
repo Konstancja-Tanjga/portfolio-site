@@ -17,7 +17,7 @@ import { raptors } from "./raptors";
 import { riyad } from "./riyad";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
-import type { CaseStudy, Group } from "./types";
+import type { CaseStudy, Group, Process } from "./types";
 
 /**
  * Every wall, in the order they appear within their band.
@@ -115,3 +115,40 @@ export const earlier: EarlierEntry[] = [
     when: "—",
   },
 ];
+
+/**
+ * How I work, on the home page: the same four steps as the CV, and the one
+ * thing underneath all of them. Drawn by the same board as the About
+ * pipeline, so it is text a reader can select, not a picture of it.
+ */
+export const howIWork: Process = {
+  label: "From the first interview to the shipped screen",
+  count: "Four steps",
+  stages: [
+    {
+      n: "01",
+      title: "Discovery",
+      body: "Interviews, observation of real work and an audit of what already exists, until the problem is stated in the users' own words.",
+    },
+    {
+      n: "02",
+      title: "Design in Figma",
+      body: "Flows, information architecture and screens, built from the design system's components and tied to the requirement each one answers.",
+    },
+    {
+      n: "03",
+      title: "Prototype and validation",
+      body: "A clickable prototype on the same components, walked end to end with users and subject-matter experts before anything is signed off.",
+    },
+    {
+      n: "04",
+      title: "Handoff",
+      body: "Engineers build from component code and a spec frozen with it. I review the build against the acceptance criteria before it ships.",
+    },
+  ],
+  underneath: {
+    label: "The foundation",
+    chips: ["Design system in code", "Storybook", "Chromatic"],
+    body: "Every step stands on one design system in code. Storybook on Chromatic is the reference design and engineering both check against.",
+  },
+};

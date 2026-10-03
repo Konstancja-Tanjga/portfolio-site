@@ -59,8 +59,23 @@ export const fox: CaseStudy = {
       ],
     },
     {
-      id: "tokens",
+      id: "source-of-truth",
       n: "02",
+      heading: "Source of truth",
+      blocks: [
+        {
+          kind: "points",
+          items: [
+            "Shipped components live in code, as versioned packages.",
+            "The Figma library mirrors them through variables and Code Connect.",
+            "Storybook on Chromatic is the reference both design and engineering check against.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "tokens",
+      n: "03",
       heading: "Token architecture",
       standfirst:
         "One token build and one output that every product reads, whatever its framework.",
@@ -77,7 +92,7 @@ export const fox: CaseStudy = {
     },
     {
       id: "one-component",
-      n: "03",
+      n: "04",
       heading: "One component's API",
       standfirst:
         "The button's public API in Storybook: the page a developer reads before using it.",
@@ -92,7 +107,7 @@ export const fox: CaseStudy = {
     },
     {
       id: "evolution",
-      n: "04",
+      n: "05",
       heading: "How it moved",
       blocks: [
         {
@@ -125,7 +140,7 @@ export const fox: CaseStudy = {
     },
     {
       id: "handoff",
-      n: "05",
+      n: "06",
       heading: "What it changed",
       blocks: [
         {
