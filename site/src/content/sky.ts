@@ -52,7 +52,7 @@ export const sky: CaseStudy = {
       id: "brief",
       n: "01",
       heading: "From plain to gripping",
-      maxim: "The first version ended on a sentence I did not enjoy writing: correct, accessible, and plain.",
+      maxim: "The first version was correct, accessible, and plain.",
       blocks: [
         {
           kind: "passage",
