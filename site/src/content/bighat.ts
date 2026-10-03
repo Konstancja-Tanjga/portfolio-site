@@ -14,7 +14,7 @@ export const bighat: CaseStudy = {
   title: "Big Hat design system",
   what: "My own design system, built from zero in code and in Figma — and the site you are reading is built on it",
   lead:
-    "Big Hat is a design system I built from nothing for my own projects: a React package, a Storybook, and a published Figma library generated from the same tokens. Forty-six components, two token layers, WCAG AA held by a failing build rather than a review comment, and Figma and code kept in step by variables and Code Connect rather than by hand.",
+    "Big Hat is a design system I built from nothing for my own projects: a React package, a Storybook, and a Figma team library generated from the same tokens. Forty-six components, two token layers, WCAG AA held by a failing build rather than a review comment, and Figma and code kept in step by variables and Code Connect rather than by hand.",
   status: { state: "live" },
   group: "practice",
   cover: {
@@ -27,10 +27,10 @@ export const bighat: CaseStudy = {
   },
   meta: [
     { label: "Role", value: "Sole author — design, Figma library and code" },
-    { label: "Package", value: "@bighatpoland/ui — React, with an Angular sibling" },
+    { label: "Package", value: "@bighat/ui — React, with an Angular sibling" },
     { label: "Scale", value: "46 components, 4 page templates, 126 semantic tokens" },
-    { label: "Figma", value: "Published library: 224 variables, Light and Dark, Code Connect" },
-    { label: "Enforced", value: "124 contrast assertions and 313 tests in CI" },
+    { label: "Figma", value: "Team library: 224 variables, Light and Dark, Code Connect" },
+    { label: "Enforced", value: "124 contrast assertions and over 300 tests in CI" },
     { label: "Used by", value: "This portfolio site, Docu Manager and World of Raptors" },
     { label: "Licence", value: "MIT — Storybook and source are public" },
   ],
@@ -53,7 +53,7 @@ export const bighat: CaseStudy = {
             { value: "46", label: "components, in two layers" },
             { value: "224", label: "Figma variables, generated from the tokens" },
             { value: "124", label: "contrast assertions in CI" },
-            { value: "313", label: "tests, including the contrast gate" },
+            { value: "300+", label: "tests, including the contrast gate" },
           ],
         },
         {
@@ -107,7 +107,7 @@ export const bighat: CaseStudy = {
       "$value": "{color.green.500}"
     },`,
           caption: "The source, in the W3C design tokens format. A semantic role is an alias, never a value. The build turns it into --bh-action-primary-bg for code and into a Figma variable whose code syntax is that same name.",
-          source: { text: "tokens/semantic.tokens.json", href: "https://github.com/bighatpoland/bighat-design-system/blob/main/tokens/semantic.tokens.json" },
+          source: { text: "tokens/semantic.tokens.json", href: "https://github.com/Konstancja-Tanjga/bighat-design-system/blob/main/tokens/semantic.tokens.json" },
         },
         {
           kind: "shot",
@@ -147,10 +147,10 @@ export const bighat: CaseStudy = {
           caption: "The same API in both places.",
           rows: [
             { key: "variant", value: "primary · secondary · ghost — visual weight" },
-            { key: "tone", value: "default · critical — consequence. A separate axis since 2.0, and a separate component set in Figma, so a destructive action can still be quiet." },
+            { key: "tone", value: "critical, or not — consequence. A separate axis since 2.0, and a separate component set in Figma, so a destructive action can still be quiet." },
             { key: "size", value: "sm · md · lg — bound to control.sm/md/lg; lg is the 44px touch target" },
             { key: "state", value: "default · hover · disabled in Figma; pressed and focus are drawn by the browser, not by a variant" },
-            { key: "Loading", value: "A boolean in Figma, the loading prop in code: the label stays, so the button never changes width mid-click" },
+            { key: "Loading", value: "A boolean in Figma, the loading prop in code: a spinner joins the label rather than replacing it, so the reader still sees what is in progress" },
           ],
         },
         {
@@ -195,10 +195,17 @@ export const bighat: CaseStudy = {
         },
         {
           kind: "code",
-          code: `const variant = instance.getEnum('variant', {
+          code: `const label = instance.getString('Label');
+// primary and md are the defaults in code, so they are left out of the snippet.
+const variant = instance.getEnum('variant', {
   primary: '',
   secondary: ' variant="secondary"',
   ghost: ' variant="ghost"',
+});
+const size = instance.getEnum('size', {
+  sm: ' size="sm"',
+  md: '',
+  lg: ' size="lg"',
 });
 // hover is a pointer state, not a prop.
 const disabled = instance.getEnum('state', {
@@ -206,18 +213,19 @@ const disabled = instance.getEnum('state', {
   hover: '',
   disabled: ' disabled',
 });
+const loading = instance.getBoolean('Loading', { true: ' loading', false: '' });
 
 export default {
   example: figma.code\`<Button\${variant}\${size}\${loading}\${disabled}>\${label}</Button>\`,
-  imports: ['import { Button } from "@bighat/ui"'],`,
+  // …`,
           caption: "The Code Connect template behind Button. Defaults are left out, so a primary medium button reads <Button>Save</Button> — the snippet a developer copies should be the one they would have written.",
-          source: { text: "figma/Button.figma.ts", href: "https://github.com/bighatpoland/bighat-design-system/blob/main/figma/Button.figma.ts" },
+          source: { text: "figma/Button.figma.ts", href: "https://github.com/Konstancja-Tanjga/bighat-design-system/blob/main/figma/Button.figma.ts" },
         },
         {
           kind: "thesis",
           label: "A decision that started in Figma",
           text:
-            "The radius scale and the two smallest type sizes were moved onto a 4px grid in the Figma library first. Under the rule above, that was drift until it reached the tokens — so it went back as a pull request that changed the primitives, rewrote the token descriptions, superseded a recorded decision against 10px type, and kept that decision's warning as a rule: 10px is for labels and metadata, never for a figure the reader has to read.",
+            "The radius scale and the two smallest type sizes were moved onto a 4px grid in the Figma library first. Under the rule above, that was drift until it reached the tokens — so it went back as two pull requests that changed the primitives, rewrote the token descriptions, superseded a recorded decision against 10px type, and kept that decision's warning as a rule: 10px is for labels and metadata, never for a figure the reader has to read.",
         },
       ],
     },
@@ -281,7 +289,7 @@ export default {
     {
       id: "templates",
       n: "08",
-      heading: "Templates, four states each",
+      heading: "Templates, every state they can reach",
       standfirst:
         "Assembling a happy path from good components is the easy half. Remembering on every screen that a request can return nothing is the half that costs teams weeks.",
       blocks: [
@@ -293,7 +301,7 @@ export default {
             { src: "/work/bighat-design-system/template-kanban.png", caption: "Kanban — filters are chips you can see and remove; moving a card works without a pointer, WCAG 2.5.1" },
             { src: "/work/bighat-design-system/template-ai-chat.png", caption: "AI chat — the prompt is a textarea in a form, the modes are a radio group" },
           ],
-          caption: "Each ships ready, loading, empty and error stories. Records splits empty in two, because nothing exists and nothing matches are the same zero rows with opposite meanings and opposite actions.",
+          caption: "Each ships ready, loading and error stories, and empty wherever a list can be empty. Records splits empty in two, because nothing exists and nothing matches are the same zero rows with opposite meanings and opposite actions.",
         },
       ],
     },
