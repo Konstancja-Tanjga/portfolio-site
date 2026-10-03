@@ -225,7 +225,7 @@ export default {
           kind: "thesis",
           label: "A decision that started in Figma",
           text:
-            "The radius scale and the two smallest type sizes were moved onto a 4px grid in the Figma library first. Under the rule above, that was drift until it reached the tokens — so it went back as two pull requests that changed the primitives, rewrote the token descriptions, superseded a recorded decision against 10px type, and kept that decision's warning as a rule: 10px is for labels and metadata, never for a figure the reader has to read.",
+            "The radius scale and the two smallest type sizes were moved onto a 4px grid in the Figma library first. Under the rule above, that was drift until it reached the tokens — so it went back as two pull requests that changed the primitives, rewrote the token descriptions, superseded a recorded decision against 10px type, and kept that decision's warning as a rule: 10px is for labels and metadata, never for a figure the reader has to read. Table cells kept 12px for exactly that reason.",
         },
       ],
     },
@@ -401,7 +401,7 @@ export default {
             "No screen reader has been run against it. The announcement policies are testable claims, and nobody has tested them in NVDA or VoiceOver",
             "The Figma library has the foundations and Button; the other components exist in code and Storybook first, and are being added to the library one by one",
             "Pressed and focus are not drawn in Figma — the browser draws them, and the library says so rather than faking them",
-            "10px labels are a recent decision; dense tables are the place to watch it",
+            "10px labels are a recent decision. Table cells were kept at 12px for that reason; labels and metadata are where to watch it",
           ],
         },
       ],
