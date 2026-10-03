@@ -14,7 +14,9 @@ import type { CaseStudy } from "./types";
  *
  * The screens are the app in Polish, as on the `world-of-raptors` wall, taken
  * from World of Raptors `feature/redesign` at commit 6d16cea, running
- * locally; the sky shots set the hour with `?pora=`. The films are not screen
+ * locally; the sky shots set the hour with `?pora=`. The redesign reached
+ * production in World of Raptors PR #14 (merge commit f45ab72), which the
+ * code snippet's link pins. The films are not screen
  * recordings: each frame is a screenshot taken under Playwright's paused
  * clock, stepped exactly 1/30 s per frame and encoded at 30 fps, so they play
  * at the app's speed. The look-alike slider film is the exception: it moves
@@ -131,7 +133,10 @@ export const sky: CaseStudy = {
   },`,
           caption:
             "Two look-alikes, side by side in the source. The red kite has the longer, deeply forked tail (ogonDl, ogonSrodek); the black kite has broader wings (ramie, dlon) and a tail that looks almost straight when fanned. The field names are Polish, like most of the app's identifiers; its comments are in English.",
-          source: { text: "src/lib/sylwetki.ts, World of Raptors", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
+          source: {
+            text: "src/lib/sylwetki.ts, lines 69–73, World of Raptors",
+            href: "https://github.com/Konstancja-Tanjga/world-of-raptors/blob/f45ab7260eaecd3c0ceeaaf0a29641e175a68b4f/src/lib/sylwetki.ts#L69-L73",
+          },
         },
       ],
     },
