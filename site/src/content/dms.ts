@@ -29,16 +29,16 @@ export const dms: CaseStudy = {
     headline: ["Document", "Management"],
     subline: "for APplus ERP",
     stamp: "VERSIONING · METADATA · SEARCH · PERMISSIONS · RETENTION",
-    credit: "Lead designer · Asseco Solutions · 2026",
+    credit: "Lead Product Designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-documents/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — sole designer on the product" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Documents" },
     {
       label: "Design system",
-      value: "FOX v2.3, co-authored with one other designer",
+      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -71,12 +71,6 @@ export const dms: CaseStudy = {
       n: "15",
       heading: "Discovery and research",
       blocks: [{ kind: "shot", width: "wall", src: "/work/applus-documents/wall/ch15.png" }],
-    },
-    {
-      id: "competition",
-      n: "16",
-      heading: "Competition analysis",
-      blocks: [{ kind: "shot", width: "wall", src: "/work/applus-documents/wall/ch16.png" }],
     },
     {
       id: "specification",
@@ -112,7 +106,13 @@ export const dms: CaseStudy = {
       id: "design-system",
       n: "21",
       heading: "Design system",
-      blocks: [{ kind: "shot", width: "wall", src: "/work/applus-documents/wall/ch21.png" }],
+      blocks: [
+        { kind: "shot", width: "wall", src: "/work/applus-documents/wall/ch21.png" },
+        {
+          kind: "passage",
+          html: '<p>Documents follows the surface rules written for Analytics (PR-07): the scope of what is acted on decides the surface. They are set out in full in <a href="applus-analytics#surface-rules">APplus Analytics</a>.</p>',
+        },
+      ],
     },
     {
       id: "handoff",

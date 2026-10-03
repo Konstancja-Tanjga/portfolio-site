@@ -31,11 +31,11 @@ export const bi: CaseStudy = {
     headline: ["Business", "Intelligence"],
     subline: "for APplus ERP",
     stamp: "DASHBOARDS · QUERIES · DATA MODELS · AI ANALYST",
-    credit: "Sole designer · Asseco Solutions · 2026",
+    credit: "Lead Product Designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-analytics/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Sole product designer on the product, design lead" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Analytics" },
     {
