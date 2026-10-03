@@ -27,16 +27,16 @@ export const bph: CaseStudy = {
     headline: ["Best Practice", "Hub"],
     subline: "for APplus ERP",
     stamp: "TEMPLATE LIBRARY · SEARCH · FILTER · VERSIONING · INSTALL",
-    credit: "Lead designer · Asseco Solutions · 2024–2025",
+    credit: "Lead Product Designer · Asseco Solutions · 2024–2025",
     shot: { src: "/work/applus-best-practice-hub/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — sole designer on the product" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Best Practice Hub" },
     {
       label: "Design system",
-      value: "FOX v2.3, then v3.0 — which I developed with one other designer",
+      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -68,14 +68,6 @@ export const bph: CaseStudy = {
       heading: "By the numbers",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch03.webp" },
-      ],
-    },
-    {
-      id: "audit",
-      n: "04",
-      heading: "Audit & research",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/applus-best-practice-hub/wall/ch04.webp" },
       ],
     },
     {

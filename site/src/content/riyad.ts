@@ -5,7 +5,7 @@ export const riyad: CaseStudy = {
   title: "Riyad Bank — Digital Insights",
   what: "A financial-education product designed from scratch, shipped to both stores",
   lead:
-    "A mobile financial-education product for Riyad Bank, Saudi Arabia, covering banking and finance topics in text, video and podcast. C-level interviews, SME sessions and A/B testing before build. I designed the interactive 3D navigation and the illustration system, and it shipped to the App Store and Google Play.",
+    "A mobile financial-education product for Riyad Bank, Saudi Arabia, covering banking and finance topics in text, video and podcast. C-level interviews, SME sessions and A/B testing before build. I designed the interactive 3D navigation, and it shipped to the App Store and Google Play.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -21,7 +21,7 @@ export const riyad: CaseStudy = {
     { label: "Client", value: "Riyad Bank, Saudi Arabia" },
     { label: "Shipped", value: "App Store and Google Play" },
     { label: "Research", value: "C-level interviews, SME sessions, A/B testing before build" },
-    { label: "Owned", value: "Interactive 3D navigation, illustration system" },
+    { label: "Owned", value: "Interactive 3D navigation" },
     { label: "Content", value: "Text, video and podcast" },
   ],
   chapters: [
@@ -32,14 +32,12 @@ export const riyad: CaseStudy = {
       maxim:
         "A bank teaching people about money has a credibility problem before it has a design problem.",
       blocks: [
-        { kind: "shot", width: "wall", src: "/work/riyad-bank/27.png" },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/01.png" },
         { kind: "shot", width: "wall", src: "/work/riyad-bank/03.png" },
         {
           kind: "set",
           size: "wide",
           items: [
-            { src: "/work/riyad-bank/02.png" },
             { src: "/work/riyad-bank/04.png" },
           ],
         },
@@ -47,7 +45,7 @@ export const riyad: CaseStudy = {
     },
     {
       id: "navigation",
-      n: "03",
+      n: "02",
       heading: "The 3D navigation",
       maxim:
         "An interactive metaphor is a promise. If it does not make finding things faster, it is decoration you pay to maintain.",
@@ -78,32 +76,8 @@ export const riyad: CaseStudy = {
       ],
     },
     {
-      id: "illustration",
-      n: "04",
-      heading: "The illustration system",
-      standfirst:
-        "Not a set of illustrations — a system, so a topic added next year still looks like it belongs.",
-      blocks: [
-        {
-          kind: "set",
-          size: "square",
-          caption: "The illustration system — one rule set, any topic.",
-          items: [
-            { src: "/work/riyad-bank/15.png" },
-            { src: "/work/riyad-bank/16.png" },
-            { src: "/work/riyad-bank/17.png" },
-            { src: "/work/riyad-bank/18.png" },
-            { src: "/work/riyad-bank/19.png" },
-            { src: "/work/riyad-bank/20.png" },
-            { src: "/work/riyad-bank/21.png" },
-            { src: "/work/riyad-bank/22.png" },
-          ],
-        },
-      ],
-    },
-    {
       id: "shipped",
-      n: "05",
+      n: "03",
       heading: "Shipped",
       blocks: [
         {
@@ -112,8 +86,6 @@ export const riyad: CaseStudy = {
           caption: "As shipped, App Store and Google Play.",
           items: [
             { src: "/work/riyad-bank/23.png" },
-            { src: "/work/riyad-bank/24.png" },
-            { src: "/work/riyad-bank/25.png" },
             { src: "/work/riyad-bank/26.png" },
           ],
         },

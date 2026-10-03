@@ -3,9 +3,9 @@ import type { CaseStudy } from "./types";
 export const award: CaseStudy = {
   slug: "erp-of-the-year",
   title: "ERP System of the Year 2025",
-  what: "APplus, winner in the User Experience category",
+  what: "APplus, Gold in the User Experience ERP category",
   lead:
-    "APplus won ERP-System des Jahres 2025 in the User Experience category. The award covers the work on this site: the Flow mode redesign, Elly, and the design system the platform runs on.",
+    "APplus won Gold at ERP-System des Jahres 2025, in the User Experience ERP category, awarded by the Center for Enterprise Research (University of Potsdam) and GITO Events.",
   status: { state: "live" },
   group: "recognition",
   cover: {
@@ -13,15 +13,15 @@ export const award: CaseStudy = {
     headline: ["ERP System", "of the Year"],
     subline: "2025 — User Experience category",
     stamp: "APPLUS · ASSECO SOLUTIONS · UX CATEGORY",
-    credit: "Lead Designer / UX Engineer · Asseco Solutions · 2025",
+    credit: "Lead Designer / UX Engineer (title in 2025) · Asseco Solutions · 2025",
     shot: { src: "/work/erp-of-the-year/01.jpg" },
   },
   meta: [
     { label: "Award", value: "ERP-System des Jahres 2025" },
-    { label: "Category", value: "User Experience" },
+    { label: "Category", value: "User Experience ERP, Gold" },
     { label: "Product", value: "APplus ERP" },
-    { label: "Company", value: "Asseco Solutions DACH" },
-    { label: "My role", value: "Lead Designer / UX Engineer" },
+    { label: "Company", value: "Asseco Solutions AG" },
+    { label: "My role", value: "Lead Designer / UX Engineer (title in 2025)" },
   ],
   chapters: [
     {
@@ -29,7 +29,12 @@ export const award: CaseStudy = {
       n: "01",
       heading: "The award",
       blocks: [
-        { kind: "shot", width: "wall", src: "/work/erp-of-the-year/01.jpg" },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/erp-of-the-year/01.jpg",
+          caption: "The trophy and the certificate: ERP-System des Jahres 2025, Gold in the User Experience ERP category, Asseco Solutions AG.",
+        },
       ],
     },
   ],

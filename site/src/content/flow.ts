@@ -6,7 +6,7 @@ export const flow: CaseStudy = {
   title: "APplus Flow mode",
   what: "A logistics module redesigned around status and ownership, desktop to mobile",
   lead:
-    "Flow mode is the logistics module inside APplus ERP. Shipments had been managed across several disconnected screens, so nobody could see one trusted status view. I owned the concept end to end — first workflow sketches through to a shipped native release on desktop, tablet and mobile.",
+    "Flow mode is the logistics module inside APplus ERP. Shipments had been managed across several disconnected screens, so nobody could see one trusted status view.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -14,15 +14,14 @@ export const flow: CaseStudy = {
     headline: ["Flow mode"],
     subline: "logistics for APplus ERP",
     stamp: "DESKTOP · TABLET · MOBILE · SHIPPED NATIVE",
-    credit: "Lead designer · Asseco Solutions · 2026",
+    credit: "Lead Product Designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-flow/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — owned the concept end to end" },
+    { label: "Role", value: "Lead Product Designer" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Flow mode, logistics" },
     { label: "Platforms", value: "Desktop, tablet, mobile — shipped native" },
-    { label: "Deployed", value: "Across the APplus enterprise client base" },
     { label: "Recognition", value: "Contributed to ERP System of the Year 2025, UX category" },
   ],
   chapters: [
@@ -38,8 +37,6 @@ export const flow: CaseStudy = {
           html:
             "<p>Shipments were managed across multiple disconnected screens, which meant there was no single trusted status view — and no way to tell, at a glance, whose move it was next.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/01.png" },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/02.png" },
       ],
     },
     {
@@ -91,14 +88,6 @@ export const flow: CaseStudy = {
         },
         { kind: "shot", width: "wall", src: "/work/applus-flow/04.png" },
         { kind: "shot", width: "wall", src: "/work/applus-flow/05.png" },
-        {
-          kind: "stats",
-          items: [
-            { value: "6 → 1", label: "clicks for the goods-receipt scan" },
-            { value: "3", label: "user-invented workarounds retired" },
-            { value: "3", label: "platforms, one model" },
-          ],
-        },
       ],
     },
     {
@@ -109,7 +98,7 @@ export const flow: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The module replaced fragmented processes with workflows that match how logistics teams actually think about a shipment. It is deployed across the APplus enterprise client base and contributed to ERP System of the Year 2025 in the UX category.</p>",
+            "<p>The module replaced fragmented processes with workflows that match how logistics teams actually think about a shipment. It contributed to ERP System of the Year 2025 in the UX category.</p>",
         },
         {
           kind: "passage",

@@ -14,11 +14,11 @@ export const elly: CaseStudy = {
     headline: ["Smart help", "for an ERP"],
     subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · HANDOFF",
-    credit: "Lead designer · Asseco Solutions · released with APplus 9, 2025",
+    credit: "Lead Product Designer · Asseco Solutions · released with APplus 9, 2025",
     shot: { src: "/work/elly-ai-assistant/01.png" },
   },
   meta: [
-    { label: "Role", value: "Lead designer — designed from zero" },
+    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP — Elly" },
     { label: "Design system", value: "FOX v2.2", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
@@ -52,14 +52,6 @@ export const elly: CaseStudy = {
       heading: "Three constraints",
       blocks: [
         { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch02a.png" },
-      ],
-    },
-    {
-      id: "audit",
-      n: "03",
-      heading: "Audit and research",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/wall/ch03.png" },
       ],
     },
     {
