@@ -342,18 +342,19 @@ export const raptors: CaseStudy = {
       heading: "Big Hat 4.1 in a real project",
       maxim:
         "I built Big Hat for my own projects. World of Raptors was the first project that had to live with its rules without shaping them.",
+      standfirst: "World of Raptors as first deployed, on Big Hat 4.1 (commit 9496fc0).",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Big Hat was built for this portfolio and for Docu Manager. World of Raptors installs it from GitHub at a pinned commit and follows the rules in its agent documentation: components come through one client bridge, they take no <code>className</code> or <code>style</code>, styles use semantic <code>--bh-*</code> tokens only, and every empty, loading or error state goes through <code>StateBlock</code>.</p><p>Those rules were enough for the whole app. It uses nineteen Big Hat components. The project's own stylesheet adds layout, the typography for lessons and a few panels, all from semantic tokens and without a single colour of its own. The result is correct and accessible, and also plain. I would not call it inviting.</p>",
+            "<p>Big Hat was built for this portfolio and for Docu Manager. World of Raptors installs it from GitHub at a pinned commit and follows the rules in its agent documentation: components come through one client bridge, they take no <code>className</code> or <code>style</code>, styles use semantic <code>--bh-*</code> tokens only, and every empty, loading or error state goes through <code>StateBlock</code>.</p><p>Those rules were enough for the whole app. It used nineteen Big Hat components. The project's own stylesheet added layout, the typography for lessons and a few panels, all from semantic tokens and without a single colour of its own. The result was correct and accessible, and also plain. I would not have called it inviting.</p>",
         },
         {
           kind: "stats",
           items: [
-            { value: "19", label: "Big Hat components in use" },
+            { value: "19", label: "Big Hat components in use on 4.1" },
             { value: "1", label: "component built locally, next to the system" },
-            { value: "0", label: "hard-coded colours in the project" },
+            { value: "0", label: "hard-coded colours at launch" },
           ],
         },
         {
@@ -477,7 +478,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The gaps file grew as the course used more of the system. It now lists four things Big Hat does not cover:</p>",
+            "<p>The gaps file grew as the course used more of the system. At that point it listed four things Big Hat did not cover:</p>",
         },
         {
           kind: "points",
@@ -509,7 +510,7 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The redesign kept every rule from chapter 06. Components still come from Big Hat and take no <code>className</code>. What changed is what the course puts around them: scenes that set the time of day, silhouettes that move, type sized for reading, and a palette that belongs to this subject rather than to a dense business application.</p>",
+            "<p>The redesign kept the component rules from chapter 06. Components still come from Big Hat and take no <code>className</code>, and no <code>bh-*</code> class is overridden. What changed is what the course puts around them: scenes that set the time of day, silhouettes that move, type sized for reading, and a palette that belongs to this subject rather than to a dense business application.</p>",
         },
         {
           kind: "shot",
@@ -617,7 +618,7 @@ export const SYLWETKI: Record<string, Ksztalt> = {
       id: "build",
       n: "10",
       heading: "From Markdown to production",
-      maxim: "122 pages are generated at build time. Only the start page is rendered per request, because its sky depends on the time.",
+      maxim: "Every page is generated at build time except the start page, which is rendered per request because its sky depends on the time.",
       blocks: [
         {
           kind: "stack",
