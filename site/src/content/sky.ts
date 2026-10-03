@@ -3,15 +3,23 @@ import type { CaseStudy } from "./types";
 /**
  * World of Raptors, redesigned: the companion to the `world-of-raptors` wall.
  * That wall is the course and the design system it tested; this one is the
- * redesign that turned the course into a sky you can read.
+ * redesign that turned the course into a sky you can read. It sits in
+ * `practice` for the same reason that wall does: a personal project, run
+ * end to end.
  *
  * I wrote the course and directed the redesign; Claude, Anthropic's AI model,
- * designed, animated and built it with me in Claude Code. The credits say
- * both, here and on the app's own About page, because both are true.
+ * designed, animated and built it with me in Claude Code. The credit says
+ * both, in this file and on the app's About page (/o-projekcie), because both
+ * are true; change them together.
  *
- * The screens are the app in Polish, as on the first wall. The four films
- * were rendered frame by frame from the running app with its clock paused
- * between frames, so they play at the speed the app does.
+ * The screens are the app in Polish, as on the `world-of-raptors` wall, taken
+ * from World of Raptors `feature/redesign` at commit 6d16cea, running
+ * locally; the sky shots set the hour with `?pora=`. The films are not screen
+ * recordings: each frame is a screenshot taken under Playwright's paused
+ * clock, stepped exactly 1/30 s per frame and encoded at 30 fps, so they play
+ * at the app's speed. The look-alike slider film is the exception: it moves
+ * one keyboard step (1%) per frame and its clock never runs, so its pace was
+ * chosen for the film, not the app's.
  */
 export const sky: CaseStudy = {
   slug: "reading-the-sky",
@@ -54,8 +62,8 @@ export const sky: CaseStudy = {
         {
           kind: "video",
           width: "wall",
-          src: "/work/reading-the-sky/02-kettle.mp4",
-          poster: "/work/reading-the-sky/02-kettle-poster.webp",
+          src: "/work/reading-the-sky/01-kettle.mp4",
+          poster: "/work/reading-the-sky/01-kettle-poster.webp",
           title: "The home page by day: a kettle of raptors circling a thermal",
           caption:
             "Fourteen seconds of the home page by day. The birds in the kettle are the soaring migrants of the Strait: honey buzzards, black kites, booted eagles, short-toed eagles, griffon vultures, buzzards and Egyptian vultures.",
@@ -85,12 +93,12 @@ export const sky: CaseStudy = {
           kind: "set",
           size: "wide",
           items: [
-            { src: "/work/reading-the-sky/01-sky-dawn.webp", caption: "Dawn" },
-            { src: "/work/reading-the-sky/01-sky-dusk.webp", caption: "Dusk" },
-            { src: "/work/reading-the-sky/01-sky-night.webp", caption: "Night" },
+            { src: "/work/reading-the-sky/02-sky-dawn.webp", caption: "Dawn" },
+            { src: "/work/reading-the-sky/02-sky-dusk.webp", caption: "Dusk" },
+            { src: "/work/reading-the-sky/02-sky-night.webp", caption: "Night" },
           ],
           caption:
-            "The same opening at three more hours; the film above is the day. The line over the title changes with the light: at night it says the sky belongs to the owls, which are heard more often than seen.",
+            "The same opening at dawn, dusk and night; the film above is the day. The line over the title changes with the light: at night it says the sky belongs to the owls, which are heard more often than seen.",
         },
       ],
     },
@@ -122,7 +130,7 @@ export const sky: CaseStudy = {
     ogonKoniec: [7.5, 14], ogonSrodek: [-5, -0.5], ogonOstry: 0.4, ogonRogi: 1.2,
   },`,
           caption:
-            "Two look-alikes as a diff. The red kite has the longer, deeply forked tail (ogonDl, ogonSrodek); the black kite has broader wings (ramie, dlon) and a tail that looks almost straight when fanned. The field names are Polish, like the rest of the code.",
+            "Two look-alikes, side by side in the source. The red kite has the longer, deeply forked tail (ogonDl, ogonSrodek); the black kite has broader wings (ramie, dlon) and a tail that looks almost straight when fanned. The field names are Polish, like most of the app's identifiers; its comments are in English.",
           source: { text: "src/lib/sylwetki.ts, World of Raptors", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
         },
       ],
@@ -138,7 +146,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The method sorts raptors into eight silhouette groups. On the home page one silhouette steps through them, from vultures to eagles to buzzards and on, while the cues from the lesson's own table change beside it. What moves on screen is exactly what tells the groups apart.</p><p>The same idea works for single pairs. Every species page puts the bird next to each of its look-alikes on a slider: drag it, and the numbers of one silhouette become the numbers of the other, while each species' cues fade in as the drawing comes closer to it.</p>",
+            "<p>The method sorts raptors into eight silhouette groups. On the home page one silhouette steps through them, from vultures to eagles to buzzards and on, while the cues from the lesson's own table change beside it. What moves on screen is exactly what tells the groups apart.</p><p>The same idea works for single pairs. Every diurnal species page puts the bird next to each of its diurnal look-alikes on a slider: drag it, and the numbers of one silhouette become the numbers of the other, while each species' cues fade in as the drawing comes closer to it.</p>",
         },
         {
           kind: "video",
@@ -156,7 +164,7 @@ export const sky: CaseStudy = {
           poster: "/work/reading-the-sky/04-pair-poster.webp",
           title: "Common buzzard or honey buzzard: the morph slider",
           caption:
-            "The hardest pair in the Polish module. Sliding pushes the head forward on a longer neck, lengthens the tail and narrows the wings where they meet the body.",
+            "One of the pairs most often confused; the course compares them in the Strait of Gibraltar module. Sliding pushes the head forward on a longer neck, lengthens the tail and narrows the wings where they meet the body.",
         },
       ],
     },
@@ -200,7 +208,7 @@ export const sky: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/reading-the-sky/08-owls.webp",
+          src: "/work/reading-the-sky/06-owls.webp",
           caption: "“Nocny chór”, the night chorus on the home page: ten owls and their calls, from the eagle owl to the pygmy owl.",
         },
       ],
@@ -221,10 +229,10 @@ export const sky: CaseStudy = {
         {
           kind: "duo",
           items: [
-            { src: "/work/reading-the-sky/09-card-front.webp", caption: "The question: a silhouette in flight, against the light." },
-            { src: "/work/reading-the-sky/09-card-back.webp", caption: "The answer: the group, the species, its cues and the look-alike to rule out." },
+            { src: "/work/reading-the-sky/07-card-front.webp", caption: "The question: a silhouette in flight, against the light." },
+            { src: "/work/reading-the-sky/07-card-back.webp", caption: "The answer: the group, the species, its cues and the look-alike to rule out." },
           ],
-          caption: "A silhouette card. The four answers set when it comes back, from a minute to days.",
+          caption: "A silhouette card. Each of the four answers sets when the card comes back, from a minute to days.",
         },
       ],
     },
@@ -244,13 +252,13 @@ export const sky: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/reading-the-sky/06-species.webp",
+          src: "/work/reading-the-sky/08-species.webp",
           caption: "The red kite's page opens on the bird itself, with the navigation turning light over the dark scene.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/reading-the-sky/07-scale.webp",
+          src: "/work/reading-the-sky/08-scale.webp",
           caption:
             "The scale view. Every cell is the same field, as wide as the largest wingspan in the atlas; the dashed line is a person's arm span, about 170 cm.",
         },
@@ -267,12 +275,12 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Titles are set in Półtawski Nowy, a revival of the antiqua Adam Półtawski drew for Polish text in the 1920s, with the accents and tails designed in from the start; the revival is by Mateusz Machalski, Borys Kosmynka and Ania Wieluńska. Lessons are set in Newsreader by Production Type, a typeface for long reading on screen, with an italic for the Latin names. The interface stays in the system font.</p><p>The interface is kept quiet so that the only saturated colours on screen are the birds'. Light mode is the warm paper of a field guide; dark mode, and every story scene in both modes, is the sky after sunset.</p>",
+            "<p>Titles are set in Półtawski Nowy, a revival of the antiqua Adam Półtawski drew for Polish text in the 1920s, with the accents and tails designed in from the start; the revival is by Mateusz Machalski, Borys Kosmynka and Ania Wieluńska. Lessons are set in Newsreader by Production Type, a typeface for long reading on screen, with an italic for the Latin names. The interface stays in the system font.</p><p>The interface is kept quiet so that the only saturated colours on screen are the birds'. Light mode is the warm paper of a field guide; dark mode takes the colours of the sky after sunset, and so does every story scene in both modes, whatever sky is drawn behind it.</p>",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/reading-the-sky/10-type.webp",
+          src: "/work/reading-the-sky/09-type.webp",
           caption: "Polish accents in Półtawski Nowy, on the About page.",
         },
         {
@@ -283,7 +291,7 @@ export const sky: CaseStudy = {
             { hex: "#261D17", name: "Ink", role: "Text on paper", note: "14.9:1 on Paper" },
             { hex: "#A54A24", name: "Red kite rust", role: "The accent in light mode: links, numbers, progress", note: "5.3:1 on Paper" },
             { hex: "#2B5D86", name: "Focus blue", role: "The keyboard focus ring in light mode", note: "6.3:1 on Paper" },
-            { hex: "#0A1018", name: "Night", role: "The page in dark mode and every scene" },
+            { hex: "#0A1018", name: "Night", role: "The page in dark mode" },
             { hex: "#F2EEE6", name: "Bone", role: "Text on the night sky", note: "16.5:1 on Night" },
             { hex: "#F5B75B", name: "Eye gold", role: "The accent at night: a raptor's eye", note: "10.7:1 on Night" },
             { hex: "#A85556", name: "Dusk rose", role: "The middle of the dusk sky, never behind text" },
@@ -303,7 +311,7 @@ export const sky: CaseStudy = {
           kind: "points",
           items: [
             "<strong>Motion explains.</strong> A morph shows exactly what separates two groups, and a hovering kestrel shows the hover. Motion that taught nothing was cut.",
-            "<strong>Two registers.</strong> Short motion, up to a quarter of a second, answers a click. Long motion, up to a second and more, tells the story: the sky, the binoculars, the morphs.",
+            "<strong>Two registers.</strong> Short motion, up to a quarter of a second, answers a click. Long motion, a second or longer, tells the story: the sky, the photo of the species of the day opening as if through binoculars, the morphs.",
             "<strong>Content first.</strong> Every page is complete from its first frame. Scroll-linked effects run only in browsers with scroll-driven animations; elsewhere the page is simply still.",
             "<strong>Less motion is not no motion.</strong> With reduced motion set in the system, movement turns into fading and the scenes hold still. Every loop has a pause button.",
           ],
