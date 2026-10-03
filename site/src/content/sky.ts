@@ -1,10 +1,8 @@
 import type { CaseStudy } from "./types";
 
 /**
- * World of Raptors, redesigned: the companion to the `world-of-raptors` wall.
- * That wall is the course and the design system it tested; this one is the
- * redesign that turned the course into a sky you can read. It sits in
- * `practice` for the same reason that wall does: a personal project, run
+ * World of Raptors, redesigned: the course on birds of prey turned into a sky
+ * you can read. It sits in `practice` because it is a personal project, run
  * end to end.
  *
  * I wrote the course and directed the redesign; Claude, Anthropic's AI model,
@@ -12,7 +10,7 @@ import type { CaseStudy } from "./types";
  * both, in this file and on the app's About page (/o-projekcie), because both
  * are true; change them together.
  *
- * The screens are the app in Polish, as on the `world-of-raptors` wall, taken
+ * The screens are the app in Polish, taken
  * from World of Raptors `feature/redesign` at commit 6d16cea, running
  * locally; the sky shots set the hour with `?pora=`. The redesign reached
  * production in World of Raptors PR #14 (merge commit f45ab72), which the
