@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/readme/banner-dark.svg">
-  <img src=".github/readme/banner-light.svg" alt="Konstancja Tanjga-Nawrot — Lead Designer / UX Engineer">
+  <img src=".github/readme/banner-light.svg" alt="Konstancja Tanjga-Nawrot — Lead Product Designer">
 </picture>
 
 **[konstancja-tanjga.github.io/portfolio-site](https://konstancja-tanjga.github.io/portfolio-site/)**
@@ -13,7 +13,7 @@ Warsaw, CET · remote only
 ---
 
 I design products and lead the implementation of the design system they run on.
-Currently Lead Designer / UX Engineer for APplus ERP — **ERP System of the Year
+Currently Lead Product Designer for APplus ERP — **ERP System of the Year
 2025, UX category** — where I designed three applications from zero on a design
 system I built from nothing and still develop.
 

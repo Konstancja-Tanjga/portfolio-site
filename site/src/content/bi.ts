@@ -23,7 +23,7 @@ export const bi: CaseStudy = {
   title: "APplus Analytics",
   what: "Business intelligence for an ERP platform, designed from zero",
   lead:
-    "A standalone BI platform inside APplus ERP: a data warehouse and the analytics application on top of it. No analytics surface existed before. The numbers lived in module lists and Excel exports.",
+    "A standalone BI platform inside APplus ERP: a data warehouse and the analytics application on top of it. It replaced the external BI tool APplus customers had used for their reporting until then.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -58,7 +58,7 @@ export const bi: CaseStudy = {
             {
               key: "Problem",
               value:
-                "APplus ERP had no analytics surface. The PM had built a working prototype in Lovable, which showed the product could be built but left open how people would find, trust and share a number.",
+                "APplus customers did their reporting in an external BI tool, outside the ERP. The PM had built a working prototype of an in-house replacement in Lovable, which showed it could be built but left open how people would find, trust and share a number.",
             },
             {
               key: "My part",
@@ -107,7 +107,10 @@ export const bi: CaseStudy = {
           caption:
             "The AI Data Analyst with a detail thread open: one fragment of an answer questioned without touching the main analysis.",
         },
-        { kind: "pull", text: "I don't hand over static mockups. I hand over a clickable React prototype built on FOX, and its code goes into the implementation." },
+        {
+          kind: "pull",
+          text: "Design and code stay one system. The Figma library and tokens mirror what ships, Code Connect links every component to its implementation, and the spec engineers build from is frozen with the code it describes.",
+        },
         {
           kind: "passage",
           html:

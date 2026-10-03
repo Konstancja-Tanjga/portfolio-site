@@ -26,5 +26,9 @@ export function subscribeToStages(listener: Listener): () => void {
   listener(focused);
   return () => {
     listeners.delete(listener);
+    /* The last board left the page, so nothing is being pointed at. Without
+       this, a rule focused on About would still be lit when the next board
+       mounts on another route — Home's uses the same stage numbers. */
+    if (listeners.size === 0) focused = [];
   };
 }
