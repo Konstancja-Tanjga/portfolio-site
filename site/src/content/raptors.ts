@@ -7,38 +7,95 @@ import type { CaseStudy } from "./types";
  * It sits in `practice` for the same reason Tinder for Chihuahua does: nothing
  * shipped to a customer, but it is a whole method run end to end — content
  * model, information architecture, a design system under load, a deployed
- * build. The screens on Big Hat 4.1 are the "before", taken from commit
- * 9496fc0. The `big-hat-4-3` chapter (07) is an experiment on that same commit
- * built locally on 4.3.3; the `big-hat-4-9` chapter (08) shows the deployed
- * app after the real migration to 4.9.0 (World of Raptors PR #11), which also
- * changed the product, so it is not a like-for-like comparison.
+ * build.
+ *
+ * Chapters 06–08 are history and keep their screens: Big Hat 4.1 (commit
+ * 9496fc0), the local 4.3.3 experiment, and the 4.9.0 migration (World of
+ * Raptors PR #11). Chapter 09 is the redesign that is live now (PR #14, merged
+ * 3 October 2026); every screen outside 06–08 comes from it, captured from the
+ * live site and set into device frames in /work/world-of-raptors/v2/.
+ *
+ * Credits follow the project's own rule (its CLAUDE.md and About page): the
+ * idea, the plan and the content are Konstancja's; the redesign's design,
+ * motion and code were made with Claude.
  */
 export const raptors: CaseStudy = {
   slug: "world-of-raptors",
   title: "World of Raptors",
-  what: "A course on birds of prey I wrote for myself, and the project that tested my design system",
+  what: "A course on birds of prey I wrote for myself: an atlas, silhouettes drawn from numbers, flashcards, on my own design system",
   lead:
-    "A private online course on diurnal raptors and owls in Poland, southern Spain and the Strait of Gibraltar. It has twelve modules, sixty lessons, an atlas of 42 species and an observation checklist. I built it to put what I know about these birds in order and to learn to tell them apart in the field. It also became the first project to use my design system, Big Hat, without the system having been designed for it.",
+    "A private online course on diurnal raptors and owls in Poland, southern Spain and the Strait of Gibraltar. It has twelve modules, sixty lessons, an atlas of 42 species and an observation checklist. I built it to put what I know about these birds in order and to learn to tell them apart in the field. It also became the first project to use my design system, Big Hat, without the system having been designed for it, and in October 2026 it was redesigned on top of it.",
   status: { state: "live" },
   group: "practice",
   cover: {
     kicker: "PERSONAL PROJECT · LEARNING PRODUCT",
     headline: ["World of", "Raptors"],
     subline: "A birding course, and a design system tested by it",
-    stamp: "CONTENT MODEL · ATLAS · CHECKLIST · BIG HAT 4.1 → 4.9 · NEXT.JS",
-    credit: "Content, design and build · Personal project · 2026",
+    stamp: "ATLAS · SILHOUETTES FROM NUMBERS · FLASHCARDS · BIG HAT 4.9 · NEXT.JS",
+    credit: "Idea and content mine, built with Claude · Personal project · 2026",
     shot: { src: "/work/world-of-raptors/00-cover.jpg" },
   },
   meta: [
-    { label: "Role", value: "Course content, information architecture, design and build" },
+    { label: "Role", value: "Idea, plan and content: me. Design, motion and code of the redesign: made with Claude" },
     { label: "User", value: "Me. I want to name the birds I see, and name them correctly" },
     { label: "Scope", value: "12 modules, 60 lessons, 42 species, an observation checklist" },
-    { label: "System", value: "Big Hat design system, 4.1 at launch, 4.9 in production" },
+    { label: "System", value: "Big Hat 4.9, with the course's own theme on its semantic roles" },
     { label: "Live", value: "Running on Vercel", href: "https://world-of-raptors.vercel.app" },
     { label: "Source", value: "Public, course content included", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
-    { label: "Period", value: "September 2026" },
+    { label: "Period", value: "September – October 2026; redesign live 3 October" },
   ],
   chapters: [
+    /* ---------------------------------------------------------------- 00 */
+    {
+      id: "in-short",
+      n: "00",
+      heading: "In short",
+      blocks: [
+        {
+          kind: "spec",
+          rows: [
+            {
+              key: "Problem",
+              value:
+                "I could not name the raptors I see with confidence. The nearest course teaches biology and identification separately, and identification for North America only.",
+            },
+            {
+              key: "My part",
+              value:
+                "The idea, the plan and all the content: 12 modules, 60 lessons, the atlas of 42 species. The redesign's design, motion and code were made with Claude, on my design system.",
+            },
+            {
+              key: "Decision 1",
+              value: "One atlas that every lesson links to, with four names per species, so each bird is described once.",
+            },
+            {
+              key: "Decision 2",
+              value:
+                "Silhouette first. Every bird is a couple of dozen numbers, so one outline serves the lessons, the atlas, the flashcards and the look-alike comparisons.",
+            },
+            {
+              key: "Decision 3",
+              value:
+                "The course's look sits on Big Hat's semantic roles instead of overriding its components. What the system could not do is written down: nine gaps, each with the screen that needed it.",
+            },
+            {
+              key: "Evidence",
+              value:
+                "42 species, 60 lessons, 122 quiz questions, 282 flashcards, 287 credited photos. 20 Big Hat components in use. Every text and background pair checked to WCAG AA.",
+            },
+            { key: "Live", value: "world-of-raptors.vercel.app; the redesign went live on 3 October 2026" },
+          ],
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/skies.webp",
+          caption:
+            "The start page at dawn, by day, at dusk and at night. The sky follows the sun's height over Warsaw: kites circling in a thermal by day, the moon and an owl at night.",
+        },
+      ],
+    },
+
     /* ---------------------------------------------------------------- 01 */
     {
       id: "the-promise",
@@ -167,11 +224,13 @@ export const raptors: CaseStudy = {
             "<p>A booted eagle is <em>orzełek włochaty</em> in Polish, <em>aguililla calzada</em> in Spanish and <em>Booted Eagle</em> in English field guides. Some bird lists call it <em>Aquila pennata</em>, others <em>Hieraaetus pennatus</em>. If you know only one of these names, you will not recognise the bird when someone uses another.</p><p>Every species in the atlas stores all four names, and search matches any of them. If I hear or read a name I do not know, I can still find the bird.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: "/work/world-of-raptors/before/atlas.webp",
+          kind: "duo",
+          items: [
+            { src: "/work/world-of-raptors/v2/atlas-silhouettes.webp", caption: "The atlas as silhouettes, grouped the way lesson B1 groups them." },
+            { src: "/work/world-of-raptors/v2/atlas-scale.webp", caption: "The same 42 birds at one scale, next to a person's arm span of about 170 cm." },
+          ],
           caption:
-            "The atlas on Big Hat 4.1, the whole app window with its side navigation. Search by Polish, Latin, English or Spanish name, and filter by region and by day or night. The photographs come from Wikimedia Commons and are credited on each species card.",
+            "The atlas has three views: photographs, silhouettes and to scale. Search takes any of the four names, and the filters are region and day or night.",
         },
         {
           kind: "spec",
@@ -215,22 +274,41 @@ export const raptors: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/world-of-raptors/before/lesson.webp",
+          src: "/work/world-of-raptors/v2/lesson.webp",
           caption:
-            "B1, lesson 1: the eight silhouette groups compared by wings, tail and head. The species cards ask the same questions in the same order.",
+            "B1, lesson 1, “Silhouette: 8 groups”, with the module bar above it. Each module ends with a step-by-step quiz with an 80% pass mark; here a wrong answer and the correct one.",
         },
         {
           kind: "passage",
           html:
-            "<p>On Big Hat 4.1, the species card applied the method to one bird. The “what to look at” panel listed the silhouette features in lesson order. The “easy to confuse with” panel below it showed the species most often mistaken for this one, because in the field I usually need to rule out the look-alikes before I can be sure. Chapter 08 shows how the card works now.</p>",
+            "<p>The species card applies the method to one bird, in the order B1 teaches it: the silhouette with its features labelled, how it flies, its size against a person's arm span, then the species it is most often mistaken for.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/species.webp",
+          caption:
+            "The booted eagle's card on desktop and on a phone, which is how I read it outdoors. Photograph: Javier Perez Montes, CC BY-SA 4.0, Wikimedia Commons, credited on the card.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/plate.webp",
+          caption: "“What to look at”: the silhouette from below, with the head, the wings, the six “fingers” and the tail labelled.",
         },
         {
           kind: "duo",
           items: [
-            { src: "/work/world-of-raptors/before/species.webp", caption: "Booted eagle on desktop: perched and in flight, then the silhouette in the order B1 teaches." },
-            { src: "/work/world-of-raptors/before/species-mobile.webp", caption: "The same card on a phone, which is how I read it outdoors." },
+            { src: "/work/world-of-raptors/v2/flight.webp", caption: "“How it flies”: the same outline, animated in the bird's own flight style." },
+            { src: "/work/world-of-raptors/v2/wingspan.webp", caption: "“When and where”: wingspan to scale, then season, places and course regions." },
           ],
-          caption: "Photographs from Wikimedia Commons, with the author and licence under each one.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/lookalikes.webp",
+          caption:
+            "Look-alikes. The slider turns the booted eagle's silhouette into the Egyptian vulture's, with the two descriptions side by side below it.",
         },
       ],
     },
@@ -245,14 +323,14 @@ export const raptors: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The checklist is a life list. I tick a species and can add the date, the place and a note. It is saved in the browser, and I can export it to a JSON file and import it again as a backup, so there is no login and no database to maintain. Lesson progress is stored the same way: when every lesson in a module is finished, the module gets a tick in the navigation.</p><p>The drawback is that my phone and laptop keep separate lists. A shared list is planned for a later stage.</p>",
+            "<p>The checklist is a life list. I tick a species and can add the date, the place, a note and my own photos. It is saved in the browser, and I can export it to a JSON file and import it again as a backup, so there is no login and no database to maintain. Lesson progress is stored the same way: when every lesson in a module is finished, the module gets a tick in the navigation.</p><p>The drawback is that my phone and laptop keep separate lists. A shared list is planned for a later stage.</p>",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/world-of-raptors/before/checklist.webp",
+          src: "/work/world-of-raptors/v2/collection.webp",
           caption:
-            "The checklist on Big Hat 4.1, with the same filters as the atlas, a “seen / missing” switch and a count for each group.",
+            "On the start page the checklist becomes a collection: each species I have seen fills in its silhouette.",
         },
       ],
     },
@@ -264,18 +342,19 @@ export const raptors: CaseStudy = {
       heading: "Big Hat 4.1 in a real project",
       maxim:
         "I built Big Hat for my own projects. World of Raptors was the first project that had to live with its rules without shaping them.",
+      standfirst: "World of Raptors as first deployed, on Big Hat 4.1 (commit 9496fc0).",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Big Hat was built for this portfolio and for Docu Manager. World of Raptors installs it from GitHub at a pinned commit and follows the rules in its agent documentation: components come through one client bridge, they take no <code>className</code> or <code>style</code>, styles use semantic <code>--bh-*</code> tokens only, and every empty, loading or error state goes through <code>StateBlock</code>.</p><p>Those rules were enough for the whole app. It uses nineteen Big Hat components. The project's own stylesheet adds layout, the typography for lessons and a few panels, all from semantic tokens and without a single colour of its own. The result is correct and accessible, and also plain. I would not call it inviting.</p>",
+            "<p>Big Hat was built for this portfolio and for Docu Manager. World of Raptors installs it from GitHub at a pinned commit and follows the rules in its agent documentation: components come through one client bridge, they take no <code>className</code> or <code>style</code>, styles use semantic <code>--bh-*</code> tokens only, and every empty, loading or error state goes through <code>StateBlock</code>.</p><p>Those rules were enough for the whole app. It used nineteen Big Hat components. The project's own stylesheet added layout, the typography for lessons and a few panels, all from semantic tokens and without a single colour of its own. The result was correct and accessible, and also plain. I would not have called it inviting.</p>",
         },
         {
           kind: "stats",
           items: [
-            { value: "19", label: "Big Hat components in use" },
+            { value: "19", label: "Big Hat components in use on 4.1" },
             { value: "1", label: "component built locally, next to the system" },
-            { value: "0", label: "hard-coded colours in the project" },
+            { value: "0", label: "hard-coded colours at launch" },
           ],
         },
         {
@@ -356,7 +435,7 @@ export const raptors: CaseStudy = {
       heading: "Big Hat 4.9 in production",
       maxim: "The real migration changed the product as well as the system, and it removed the parts a release could not reach.",
       standfirst:
-        "World of Raptors moved from Big Hat 4.1 to 4.9.0 in one pull request. These screens are the deployed app.",
+        "World of Raptors moved from Big Hat 4.1 to 4.9.0 in one pull request (PR #11). These screens are the app as it was deployed then; chapter 09 shows what replaced them.",
       blocks: [
         {
           kind: "passage",
@@ -391,15 +470,15 @@ export const raptors: CaseStudy = {
         {
           kind: "stats",
           items: [
-            { value: "24", label: "Big Hat components in use, up from 19" },
+            { value: "24", label: "Big Hat components in use after PR #11, up from 19" },
             { value: "1", label: "local stand-in for a Big Hat component: ButtonLink" },
-            { value: "4", label: "gaps recorded in DS-GAPS.md" },
+            { value: "4", label: "gaps recorded in DS-GAPS.md at the time" },
           ],
         },
         {
           kind: "passage",
           html:
-            "<p>The gaps file grew as the course used more of the system. It now lists four things Big Hat does not cover:</p>",
+            "<p>The gaps file grew as the course used more of the system. At that point it listed four things Big Hat did not cover:</p>",
         },
         {
           kind: "points",
@@ -421,22 +500,114 @@ export const raptors: CaseStudy = {
 
     /* ---------------------------------------------------------------- 09 */
     {
-      id: "build",
+      id: "redesign",
       n: "09",
-      heading: "From Markdown to production",
-      maxim: "Every page is generated at build time, so the site serves static files.",
+      heading: "The redesign",
+      maxim: "Correct and accessible was the floor. The course also had to make me want to open it.",
+      standfirst:
+        "Chapter 06 ended on a plain course. PR #14, merged on 3 October 2026, redesigned it on the same system: the sky, the silhouettes, a theme of its own and flashcards. I set the direction and the content; the design, motion and code were made with Claude.",
       blocks: [
         {
-          kind: "stack",
-          caption: "The stack, and which part does what.",
-          rows: [
-            { key: "framework", value: "Next.js 16, App Router, every page generated at build time" },
-            { key: "interface", value: "Big Hat design system, pinned to a commit, through one client bridge" },
-            { key: "lessons", value: "Markdown in the repository, rendered with react-markdown, remark-gfm and rehype-raw" },
-            { key: "data", value: "Species, modules and photos as JSON, one source for the atlas, the checklist and the navigation" },
-            { key: "photos", value: "Wikimedia Commons, found and credited by a script, with author and licence on each", mine: true },
-            { key: "checklist", value: "localStorage, with JSON export and import", mine: true },
-            { key: "hosting", value: "Vercel: main is production, and every branch gets a preview" },
+          kind: "passage",
+          html:
+            "<p>The redesign kept the component rules from chapter 06. Components still come from Big Hat and take no <code>className</code>, and no <code>bh-*</code> class is overridden. What changed is what the course puts around them: scenes that set the time of day, silhouettes that move, type sized for reading, and a palette that belongs to this subject rather than to a dense business application.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/morph.webp",
+          caption:
+            "“Eight silhouettes against the sky” on the start page. Choosing a group morphs the outline into it and lists its wings, tail, head and examples.",
+        },
+        {
+          kind: "duo",
+          items: [
+            { src: "/work/world-of-raptors/v2/owls.webp", caption: "The night chorus: the ten owls, introduced by their calls first." },
+            { src: "/work/world-of-raptors/v2/morph-kites.webp", caption: "The same scene switched to kites: long, narrow wings and a forked tail." },
+          ],
+        },
+        {
+          kind: "passage",
+          html:
+            "<p>The silhouettes are not drawings. Each species is a couple of dozen numbers: how far the head reaches, the width of the arm, where the wrist sits, how many fingers, how forked the tail is. The outline is computed from them, so the same bird can be drawn at any size, flap its wings, fan its tail or turn into a look-alike, because the numbers interpolate and the outline follows. A group has an archetype, and a species is written as its differences from it.</p>",
+        },
+        {
+          kind: "code",
+          code: `const KANIE: Ksztalt = {
+  glowa: 15, glowaSzer: 8, glowaPlaska: 0.1, tulow: 12, tulowDl: 35,
+  ogonDl: 44, ogonNasada: 5.5, ogonKoniec: [7.5, 14], ogonSrodek: [-12, -9], ogonOstry: 0.9, ogonRogi: 0.6, ogonBoki: 0.5,
+  ramie: 32, nadgarstek: 0.45, nadgarstekY: -4.5, dlon: 29, koniecY: 14, koniecSzer: 20, koniecOkragly: 0.6,
+  palce: 5, palceDl: 13, wybrzuszenie: 2.5, zwezenie: 0.5,
+};
+
+export const SYLWETKI: Record<string, Ksztalt> = {
+  // Kanie
+  'kania-ruda': { ...KANIE, ramie: 31, dlon: 28, nadgarstekY: -5.5, koniecY: 15.5, ogonDl: 50, ogonSrodek: [-16, -11] },`,
+          caption:
+            "The kite archetype and the red kite as its differences: a narrower arm, the hand swept further back, a longer and more deeply forked tail. Two excerpts from src/lib/sylwetki.ts; the Ksztalt type is in src/lib/sylwetka.ts.",
+          source: {
+            text: "Source: world-of-raptors on GitHub.",
+            href: "https://github.com/Konstancja-Tanjga/world-of-raptors/blob/main/src/lib/sylwetki.ts",
+          },
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/module.webp",
+          caption:
+            "A module opens with its own page: the method module B1, five lessons and a quiz. Inside it, a module bar replaces the side navigation.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/flashcards.webp",
+          caption:
+            "Flashcards: “first the group, then the species”. 282 cards from photographs, silhouettes and names, scheduled with FSRS, ten new ones a day.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/mobile.webp",
+          caption: "On a phone: the start page at night, the booted eagle, lesson B1 and the eagle owl.",
+        },
+        {
+          kind: "palette",
+          standfirst:
+            "The theme gives Big Hat's semantic roles this course's values, with the same selectors Big Hat uses for its own themes. No bh-* class is overridden, so every component follows the role.",
+          items: [
+            { hex: "#fdfaf4", name: "Field paper", role: "Surface in the light theme", note: "Papier terenowy" },
+            { hex: "#261d17", name: "Ink", role: "Primary text on paper" },
+            { hex: "#a54a24", name: "Kite rufous", role: "Primary action and accent in the light theme", note: "From the red kite" },
+            { hex: "#2b5d86", name: "Focus blue", role: "Focus ring in the light theme" },
+            { hex: "#0f1620", name: "Dusk", role: "Surface in the dark theme", note: "Zmierzch" },
+            { hex: "#f2eee6", name: "Bone", role: "Primary text at dusk" },
+            { hex: "#f5b75b", name: "Raptor's eye", role: "Primary action, accent and focus in the dark theme" },
+          ],
+          caption:
+            "Every text and background pair was checked by a script against WCAG AA: 4.5:1 for text, 3:1 for borders. Body text is 15px instead of Big Hat's 13px, because this is a course to read, not a dense application.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/world-of-raptors/v2/themes.webp",
+          caption: "The booted eagle's card in both themes. The photographic scenes stay at dusk in both.",
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "20", label: "Big Hat components in use; AppShell and the nav set gave way to a local frame" },
+            { value: "9", label: "gaps in DS-GAPS.md, up from 4" },
+            { value: "0", label: "bh-* classes overridden" },
+          ],
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>The link that looks like a button</strong> now has more cases: the large calls to action in the scenes, “Continue” in the navigation and the next-lesson card. It is an argument for a link-button component with a hero size.",
+            "<strong>A product theme.</strong> Big Hat has one cool light theme and one dark one. The course needed its own colours and a larger text size, set on the semantic roles.",
+            "<strong>An expressive layer.</strong> Display sizes, layout rhythm and motion for story moments live in a second token layer, --wor-*, because Big Hat has none of them.",
+            "<strong>AppShell</strong> is built for applications, and its contract excludes publication pages, so the course uses a local frame instead.",
+            "<strong>Page transitions</strong> and a formatted quiz question (RadioGroup's legend takes plain text only) are the last two.",
           ],
         },
       ],
@@ -444,16 +615,96 @@ export const raptors: CaseStudy = {
 
     /* ---------------------------------------------------------------- 10 */
     {
-      id: "next",
+      id: "build",
       n: "10",
+      heading: "From Markdown to production",
+      maxim: "Every page is generated at build time except the start page, which is rendered per request because its sky depends on the time.",
+      blocks: [
+        {
+          kind: "stack",
+          caption: "The stack, and which part does what.",
+          rows: [
+            { key: "framework", value: "Next.js 16 and React 19, App Router; the start page is dynamic, the rest static" },
+            { key: "interface", value: "Big Hat 4.9, pinned to a commit, through one client bridge" },
+            { key: "theme", value: "Big Hat's semantic roles set to the course's values, plus a --wor-* layer for display type, rhythm and motion", mine: true },
+            { key: "silhouettes", value: "Computed from numbers, rendered as SVG on the server and animated in the browser", mine: true },
+            { key: "flashcards", value: "FSRS scheduling with ts-fsrs, stored on the device", mine: true },
+            { key: "type", value: "Półtawski Nowy for titles, Newsreader for reading, through next/font" },
+            { key: "motion", value: "View Transitions between pages; the scenes have a “stop motion” button, and reduced motion turns movement off" },
+            { key: "lessons", value: "Markdown in the repository, rendered with react-markdown, remark-gfm and rehype-raw" },
+            { key: "data", value: "Species, modules and photos as JSON, one source for the atlas, the checklist and the navigation" },
+            { key: "photos", value: "Wikimedia Commons, found and credited by a script, with author and licence on each", mine: true },
+            { key: "checklist", value: "localStorage, own photos in IndexedDB, with JSON export and import", mine: true },
+            { key: "hosting", value: "Vercel: main is production, and every branch gets a preview" },
+          ],
+        },
+      ],
+    },
+
+    /* ---------------------------------------------------------------- 11 */
+    {
+      id: "delivery",
+      n: "11",
+      heading: "How it ships",
+      blocks: [
+        {
+          kind: "spec",
+          caption: "How a change ships. The checks are the ones run on the redesign pull request (#14).",
+          rows: [
+            { key: "branches", value: "Every change on its own branch, with a Vercel preview; main is production" },
+            { key: "checks", value: "TypeScript, lint and a production build" },
+            { key: "screens", value: "Playwright at 1440 and 390 pixels, light and dark, before merge" },
+            { key: "contrast", value: "Every text and background pair measured against WCAG AA" },
+            { key: "gaps", value: "Anything Big Hat could not do goes into DS-GAPS.md, not into an override" },
+            { key: "not yet", value: "Safari and Firefox are not tested" },
+          ],
+        },
+      ],
+    },
+
+    /* ---------------------------------------------------------------- 12 */
+    {
+      id: "results",
+      n: "12",
+      heading: "What it adds up to",
+      standfirst: "The course in numbers, from its About page.",
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "42", label: "species: 32 diurnal raptors and 10 owls" },
+            { value: "60", label: "lessons in 12 modules, about 45,000 words" },
+            { value: "122", label: "quiz questions" },
+            { value: "282", label: "flashcards" },
+          ],
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "287", label: "photographs, from 214 credited photographers" },
+            { value: "58", label: "curiosities" },
+            { value: "68", label: "links between look-alike species" },
+          ],
+        },
+        {
+          kind: "passage",
+          html:
+            "<p><strong>What I cannot count yet.</strong> Progress, the checklist and flashcard reviews are stored only in my browser, by design, so there is no usage data. The test that matters is in the field: whether a bird in flight gets the right name, and the reason for it.</p>",
+        },
+      ],
+    },
+
+    /* ---------------------------------------------------------------- 13 */
+    {
+      id: "next",
+      n: "13",
       heading: "What comes next",
       maxim: "Reading about a silhouette does not train you to recognise one quickly.",
       blocks: [
         {
           kind: "points",
           items: [
-            "<strong>Flashcards with spaced repetition</strong> for silhouettes, field marks, look-alike pairs and calls, so the difficult ones come back more often. The end-of-module quiz already exists; the flashcards do not yet.",
-            "<strong>A “compare” quiz</strong> that shows two similar species side by side, turning the look-alike panel into practice.",
+                        "<strong>A “compare” quiz</strong> that shows two similar species side by side, turning the look-alike panel into practice.",
             "<strong>A virtual watchpoint</strong>, with silhouettes crossing the screen at the speed of real migration over the Strait, to identify and count.",
             "<strong>A map of watchpoints</strong> on OpenStreetMap, and a shared checklist so my phone and laptop show the same list.",
           ],

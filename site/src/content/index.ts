@@ -15,6 +15,7 @@ import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { raptors } from "./raptors";
 import { riyad } from "./riyad";
+import { sky } from "./sky";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
 import type { CaseStudy, Group, Process } from "./types";
@@ -25,7 +26,9 @@ import type { CaseStudy, Group, Process } from "./types";
  * Within `product`, the order is deliberate: Analytics leads. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
- * at six-product scale, but its exports belong to Asseco.
+ * at six-product scale, but its exports belong to Asseco. After those
+ * two, `practice` runs oldest to newest, so a new practice wall goes at
+ * the end of the band.
  */
 export const cases: CaseStudy[] = [
   // product
@@ -46,6 +49,7 @@ export const cases: CaseStudy[] = [
   futures,
   chihuahua,
   raptors,
+  sky,
   // recognition
   award,
   bydgoszcz,
