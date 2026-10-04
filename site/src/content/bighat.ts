@@ -5,8 +5,8 @@ import type { CaseStudy } from "./types";
  * shown in full — including the source. Nothing here is shared with FOX:
  * different employer, different codebase, different decisions.
  *
- * Ordered the way a design system is read: what it is, foundations,
- * components, the design-to-code workflow, quality, templates, governance and
+ * Ordered the way a design system is read: what it is, the logo,
+ * foundations, components, the design-to-code workflow, quality, templates, governance and
  * what it does not claim. Kept short on purpose: the pictures carry it.
  */
 export const bighat: CaseStudy = {
@@ -58,8 +58,8 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/v6/cover.png",
-          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components.",
+          src: "/work/bighat-design-system/v6/cover.webp",
+          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. The 46 components are in @bighat/ui; 16 of them and all 233 variables are in the Figma library.",
         },
       ],
     },
