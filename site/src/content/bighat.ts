@@ -186,7 +186,7 @@ export default {
       id: "templates",
       n: "06",
       heading: "Templates",
-      standfirst: "Screens assembled only from library components, each with its loading, empty and error states.",
+      standfirst: "Screens assembled only from library components, each with its loading and error states, and an empty one where the screen can be empty.",
       blocks: [
         {
           kind: "duo",
