@@ -64,7 +64,7 @@ export const bph: CaseStudy = {
             {
               key: "My part",
               value:
-                "The audit of the old modal, the benchmark, the entry point, the card and list concepts, two user stories designed and signed off, and the components the Hub added to FOX.",
+                "The audit of the old modal, the benchmark, the entry point, the card and list concepts, the user stories designed and signed off (two of them shown here), and the components the Hub added to FOX.",
             },
             {
               key: "Decision 1",
@@ -113,7 +113,7 @@ export const bph: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A template lands in a system that is already running a company's processes. Every template has versions, the versions have their own documentation, and a customer may need an older release on purpose. The old modal handled all of that in one table, and the people installing knew where to click.</p><p>So the constraint was set before any layout: reaching the install from the new screen could not cost a single step more than the old modal. A redesign that makes the primary action slower is a regression, however much better it looks.</p>",
+            "<p>A template lands in a system that is already running a company's processes. Every template has versions, the versions have their own documentation, and a customer may need an older release on purpose. The old modal handled all of that in one table.</p><p>The constraint: reaching the install from the new screen could not cost a single step more than the old modal. A redesign that makes the primary action slower is a regression, however much better it looks.</p>",
         },
       ],
     },
@@ -157,7 +157,7 @@ export const bph: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The table had six columns: name, description, installed version, status, available versions and action. Nothing was searchable and nothing was filterable, and the only way to judge whether a template fitted your system was to read the row and know what the dot meant.</p><p>I walked the existing screen action by action and annotated it in place. Then I benchmarked products that solve the same structural problem: a large catalogue, versioned items, and an install step that must not break what is already running. The findings went through reviews with the PM and subject-matter experts before anything was drawn in detail.</p>",
+            "<p>The table had six columns: name, description, installed version, status, available versions and action. Nothing was searchable and nothing was filterable, and the only way to judge whether a template fitted your system was to read the row and know what the dot meant.</p><p>I walked the existing screen action by action and annotated it in place. Then I benchmarked products that solve the same structural problem: a large catalogue, versioned items, and an install step that must not break what is already running. The findings went through reviews with the PM and subject-matter experts.</p>",
         },
         {
           kind: "shot",
@@ -200,14 +200,14 @@ export const bph: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The card carries the decision. Each one shows the available version in a select, the state of that version against the system (up to date, or update available) and a language select that changes which documentation is reachable, because documentation exists per version, not per board.</p><p>In installed boards, “installed and update available” sorts first.</p>",
+            "<p>The entry carries the decision. An installed board shows the state of its version against the system (up to date, or update available), an update menu with the versions it can move to, and the language of its documentation, because documentation exists per version, not per board. An available board shows its version, complexity and process area, and says when it needs a newer APplus release.</p><p>The sort rule from the concept: in installed boards, “installed and update available” sorts first.</p>",
         },
         {
           kind: "shot",
           width: "wall",
           src: `${S}/concept.png`,
           caption:
-            "Installed boards on top, each with its documentation language and state, update available first and the update menu open. Available boards below as cards, marked where a template needs a newer APplus release.",
+            "Installed boards on top, each with its documentation language and state, and the update menu open on one of them. Available boards below as cards, marked where a template needs a newer APplus release.",
         },
       ],
     },
