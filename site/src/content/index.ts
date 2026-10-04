@@ -4,10 +4,8 @@ import { bighat } from "./bighat";
 import { bph } from "./bph";
 import { bydgoszcz } from "./bydgoszcz";
 import { chihuahua } from "./chihuahua";
-import { deloitte } from "./deloitte";
 import { dms } from "./dms";
 import { elly } from "./elly";
-import { energy } from "./energy";
 import { flow } from "./flow";
 import { fox } from "./fox";
 import { futures } from "./futures";
@@ -22,7 +20,9 @@ import type { CaseStudy, Group, Process } from "./types";
 /**
  * Every wall, in the order they appear within their band.
  *
- * Within `product`, the order is deliberate: Analytics leads. Big Hat
+ * Within `product`, the order is deliberate: Analytics leads, then Elly,
+ * Documents and the Best Practice Hub, then Volvo, MojePZU and Flow mode,
+ * with the two short pages, Xecta and Riyad Bank, at the end. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
  * at six-product scale, but its exports belong to Asseco. After those
@@ -32,16 +32,14 @@ import type { CaseStudy, Group, Process } from "./types";
 export const cases: CaseStudy[] = [
   // product
   bi,
-  dms,
   elly,
+  dms,
   bph,
-  flow,
   volvo,
-  xecta,
-  energy,
-  riyad,
   pzu,
-  deloitte,
+  flow,
+  xecta,
+  riyad,
   // practice
   bighat,
   fox,
@@ -107,7 +105,7 @@ export const earlier: EarlierEntry[] = [
   {
     client: "Deloitte",
     what:
-      "Employee health and wellbeing platform, web and mobile. Awarded HR Dream Team for best wellbeing service.",
+      "Employee health and wellbeing platform, web and mobile. Awarded HR Dream Team for best wellbeing service. Redesign of the career site, kariera.deloitte.pl, in September–November 2019, based on 12 in-depth interviews with employees, online surveys and a competitive analysis of the EY, PwC and KPMG career sites.",
     when: "2017–2021",
   },
   {
