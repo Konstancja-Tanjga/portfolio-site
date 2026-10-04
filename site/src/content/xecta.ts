@@ -10,7 +10,7 @@ export const xecta: CaseStudy = {
   title: "Xecta: product and website",
   what: "A production surveillance platform for upstream oil and gas, and the company website",
   lead:
-    "Two projects for Xecta, a Texas company that makes production surveillance and optimisation software for upstream oil and gas. The product is a web application with heavy data visualisation for operators who are not analysts, and a misread chart there has physical consequences. The second is the company website, xecta.com: the same client, with the opposite audience. I documented my product work in Confluence for a distributed US team.",
+    "Two projects for Xecta, a Texas company that makes production surveillance and optimisation software for upstream oil and gas. The product is a web application with heavy data visualisation for operators who are not analysts. The second is the company website, xecta.com. I documented my product work in Confluence for a distributed US team.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -43,7 +43,7 @@ export const xecta: CaseStudy = {
       n: "01",
       heading: "The product",
       maxim:
-        "The people reading these charts are operators, not analysts, and a chart they misread has consequences on a real well.",
+        "The people reading these charts are operators rather than analysts, and the industry has its own language for every number.",
       blocks: [
         {
           kind: "shot",
@@ -89,7 +89,7 @@ export const xecta: CaseStudy = {
       maxim:
         "A site that has to make a data-dense product legible to someone who will never open it.",
       standfirst:
-        "Same client as the product, opposite audience: the product is read by a handful of people who use it daily, the website by hundreds who will never log in.",
+        "Same client as the product, opposite audience: the product is used daily by the people who run the wells, the website is read by people who will never log in.",
       blocks: [
         {
           kind: "shot",

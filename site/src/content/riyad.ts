@@ -29,8 +29,6 @@ export const riyad: CaseStudy = {
       id: "navigation",
       n: "01",
       heading: "The 3D navigation",
-      maxim:
-        "An interactive metaphor is a promise. If it does not make finding things faster, it is decoration you pay to maintain.",
       blocks: [
         {
           kind: "shot",
@@ -59,9 +57,7 @@ export const riyad: CaseStudy = {
           items: [
             { src: "/work/riyad-bank/10.png" },
             { src: "/work/riyad-bank/11.png" },
-            { src: "/work/riyad-bank/12.png" },
             { src: "/work/riyad-bank/13.png" },
-            { src: "/work/riyad-bank/14.png" },
           ],
         },
       ],
