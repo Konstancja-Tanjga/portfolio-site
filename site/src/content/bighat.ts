@@ -23,13 +23,13 @@ export const bighat: CaseStudy = {
     subline: "Big Hat — and this site runs on it",
     stamp: "TOKENS · FIGMA LIBRARY · COMPONENTS · CONTRAST GATE · CODE CONNECT · MIT",
     credit: "Sole author · Big Hat · 2025–2026",
-    shot: { src: "/work/bighat-design-system/cover-ai-chat.png" },
+    shot: { src: "/work/bighat-design-system/cover.png" },
   },
   meta: [
     { label: "Role", value: "Sole author — design, Figma library and code" },
     { label: "Package", value: "@bighat/ui — React, with an Angular sibling" },
     { label: "Scale", value: "46 components, 4 templates, 126 semantic tokens" },
-    { label: "Figma", value: "Team library: 16 components, 230 variables, Code Connect" },
+    { label: "Figma", value: "Team library: all 46 components, 233 variables, Code Connect" },
     { label: "Enforced", value: "124 contrast assertions, 300+ tests in CI" },
     { label: "Licence", value: "MIT — Storybook and source are public" },
   ],
@@ -49,16 +49,16 @@ export const bighat: CaseStudy = {
           kind: "stats",
           items: [
             { value: "46", label: "components" },
-            { value: "230", label: "Figma variables, from the same tokens" },
+            { value: "233", label: "Figma variables, from the same tokens" },
             { value: "124", label: "contrast assertions in CI" },
-            { value: "16", label: "components in the Figma library, with Code Connect" },
+            { value: "46", label: "of them in the Figma library, with Code Connect" },
           ],
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-showcase.png",
-          caption: "Library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components.",
+          src: "/work/bighat-design-system/logo.png",
+          caption: "The logo is the system’s idea. The crown is the primitives, there but never touched; the brim is the semantic layer, wider than what is under it and the only part a product uses. The dot on the i is the brim again.",
         },
       ],
     },
@@ -72,13 +72,13 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-color-roles.png",
+          src: "/work/bighat-design-system/colour-roles.png",
           caption: "Colour roles in Figma, Light and Dark. Each carries its CSS name as code syntax, so Dev Mode answers with var(--bh-action-primary-bg), not a hex.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-primitives.png",
+          src: "/work/bighat-design-system/primitives.png",
           caption: "Primitives: the palette and the space, radius and type scales on a 4px grid. Hidden from every picker, as they are banned from product CSS.",
         },
         {
@@ -99,20 +99,14 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-library.png",
-          caption: "Button in the Figma library. Variant properties take the prop names and values code uses, so the component panel and the props table read the same.",
+          src: "/work/bighat-design-system/library.png",
+          caption: "Button in the Figma library. The header is drawn from the component’s contract, not typed; the variant properties take the prop names and values code uses.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/catalogue.png",
+          src: "/work/bighat-design-system/storybook-button.png",
           caption: "The same component in Storybook: when to use it, what to use instead, and every do/don't rendered live with its reason.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/bighat-design-system/figma-dialog.png",
-          caption: "Dialog, built from library Buttons, on thick glass over a scrim. The buttons name the outcome — never OK and Cancel.",
         },
       ],
     },
@@ -183,7 +177,7 @@ export default {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/template-records-empty.png",
+          src: "/work/bighat-design-system/records-empty.png",
           caption: "“No invoices match these filters” offers a way out of the filter, not “Create invoice” — empty is two different screens.",
         },
       ],
@@ -197,15 +191,15 @@ export default {
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/template-kanban.png", caption: "Kanban — filters as chips; cards move without a pointer" },
-            { src: "/work/bighat-design-system/template-kanban-dark.png", caption: "The same screen in Dark" },
+            { src: "/work/bighat-design-system/kanban.png", caption: "Kanban — filters as chips; cards move without a pointer" },
+            { src: "/work/bighat-design-system/kanban-dark.png", caption: "The same screen in Dark" },
           ],
         },
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/template-records.png", caption: "Records — one quiet actions button per row" },
-            { src: "/work/bighat-design-system/template-ai-chat.png", caption: "AI chat — the prompt is a form, the modes a radio group" },
+            { src: "/work/bighat-design-system/records.png", caption: "Records — one quiet actions button per row" },
+            { src: "/work/bighat-design-system/ai-chat.png", caption: "AI chat — the prompt is a form, the modes a radio group" },
           ],
         },
       ],
@@ -253,7 +247,6 @@ export default {
           kind: "points",
           items: [
             "No screen reader has been run against it; the announcement rules are tested in code, not in NVDA or VoiceOver",
-            "The Figma library covers 16 components; the rest exist in code and Storybook first",
             "Pressed states are not drawn in Figma — the browser draws them",
             "Figma cannot saturate a backdrop, so glass is a little flatter there than in the browser",
           ],
