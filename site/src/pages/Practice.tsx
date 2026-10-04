@@ -22,6 +22,7 @@ export function Practice() {
       </section>
 
       <Band
+        feature
         id="practice"
         label="Practice"
         note="Design systems, methods and personal projects. Each one is a single long page."

@@ -5,8 +5,8 @@ import type { CaseStudy } from "./types";
  * shown in full — including the source. Nothing here is shared with FOX:
  * different employer, different codebase, different decisions.
  *
- * Ordered the way a design system is read: what it is, foundations,
- * components, the design-to-code workflow, quality, templates, governance and
+ * Ordered the way a design system is read: what it is, the logo,
+ * foundations, components, the design-to-code workflow, quality, templates, governance and
  * what it does not claim. Kept short on purpose: the pictures carry it.
  */
 export const bighat: CaseStudy = {
@@ -23,13 +23,14 @@ export const bighat: CaseStudy = {
     subline: "Big Hat — and this site runs on it",
     stamp: "TOKENS · FIGMA LIBRARY · COMPONENTS · CONTRAST GATE · CODE CONNECT · MIT",
     credit: "Sole author · Big Hat · 2025–2026",
-    shot: { src: "/work/bighat-design-system/cover-ai-chat.png" },
+    shot: { src: "/work/bighat-design-system/v6/cover.png" },
   },
   meta: [
     { label: "Role", value: "Sole author — design, Figma library and code" },
     { label: "Package", value: "@bighat/ui — React, with an Angular sibling" },
     { label: "Scale", value: "46 components, 4 templates, 126 semantic tokens" },
-    { label: "Figma", value: "Team library: 16 components, 230 variables, Code Connect" },
+    { label: "Figma", value: "Team library: 16 components, 233 variables, Code Connect" },
+    { label: "Version", value: "6.0, October 2026, with its own logo" },
     { label: "Enforced", value: "124 contrast assertions, 300+ tests in CI" },
     { label: "Licence", value: "MIT — Storybook and source are public" },
   ],
@@ -49,7 +50,7 @@ export const bighat: CaseStudy = {
           kind: "stats",
           items: [
             { value: "46", label: "components" },
-            { value: "230", label: "Figma variables, from the same tokens" },
+            { value: "233", label: "Figma variables, from the same tokens" },
             { value: "124", label: "contrast assertions in CI" },
             { value: "16", label: "components in the Figma library, with Code Connect" },
           ],
@@ -57,14 +58,39 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-showcase.png",
-          caption: "Library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components.",
+          src: "/work/bighat-design-system/v6/cover.webp",
+          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. The 46 components are in @bighat/ui; 16 of them and all 233 variables are in the Figma library.",
+        },
+      ],
+    },
+    {
+      id: "logo",
+      n: "02",
+      heading: "A hat over the product",
+      standfirst: "Version 6.0 gave the system a logo, and the logo says what the system is.",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>Big Hat is two layers of tokens. The crown is the primitives: there, but never touched. The brim is the semantic layer, wider than what is under it, the only layer a product may use, and everything in the product stands in its shade. The gap between them is the boundary the build enforces. The dot on the i is the brim again.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/bighat-design-system/v6/logo.png",
+          caption: "The mark, the horizontal lockup and the stacked lockup, in brand colour and in one colour.",
+        },
+        {
+          kind: "shot",
+          width: "column",
+          src: "/work/bighat-design-system/v6/logo-use.png",
+          caption: "The logo's page in Figma. On a 4px grid, 48 × 32: a 28 × 20 crown, a 4 gap and a 48 × 8 brim. Ink is text.primary and the brim is action.primary.bg, so the logo follows the theme like any component.",
         },
       ],
     },
     {
       id: "foundations",
-      n: "02",
+      n: "03",
       heading: "Foundations: two layers, one API",
       standfirst:
         "Primitives say what a value is; semantic roles say what it means. Product design and product code may use only the roles.",
@@ -91,7 +117,7 @@ export const bighat: CaseStudy = {
     },
     {
       id: "components",
-      n: "03",
+      n: "04",
       heading: "Components: one contract, three surfaces",
       standfirst:
         "Every component starts as a machine-readable contract — purpose, what it is not for, anatomy, states, keyboard, ARIA — and is built from it in Figma, React and Storybook.",
@@ -99,8 +125,14 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-library.png",
-          caption: "Button in the Figma library. Variant properties take the prop names and values code uses, so the component panel and the props table read the same.",
+          src: "/work/bighat-design-system/v6/button-contract.png",
+          caption: "Button's page in the Figma library opens with its contract: what it is, what it is not for, and links to Storybook and the contract file. A script draws this header from spec/components/button.json, so a change is made in the contract and an edit in Figma is overwritten.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/bighat-design-system/v6/button-variants.png",
+          caption: "Button's variants, named after the props code uses: primary, secondary and ghost; sm, md and lg; default, hover and disabled.",
         },
         {
           kind: "shot",
@@ -118,7 +150,7 @@ export const bighat: CaseStudy = {
     },
     {
       id: "workflow",
-      n: "04",
+      n: "05",
       heading: "Design and code, kept in step",
       maxim: "A Figma library and a component library drift apart unless something other than discipline holds them together.",
       blocks: [
@@ -166,7 +198,7 @@ export default {
     },
     {
       id: "quality",
-      n: "05",
+      n: "06",
       heading: "Accessibility and states, held by the build",
       maxim: "A stated accessibility target with no mechanism is a stated target.",
       blocks: [
@@ -190,7 +222,7 @@ export default {
     },
     {
       id: "templates",
-      n: "06",
+      n: "07",
       heading: "Templates",
       standfirst: "Screens assembled only from library components, each with its loading, empty and error states.",
       blocks: [
@@ -212,7 +244,7 @@ export default {
     },
     {
       id: "governance",
-      n: "07",
+      n: "08",
       heading: "Governance: one breaking change, argued in full",
       blocks: [
         {
@@ -246,7 +278,7 @@ export default {
     },
     {
       id: "limits",
-      n: "08",
+      n: "09",
       heading: "What it does not claim",
       blocks: [
         {

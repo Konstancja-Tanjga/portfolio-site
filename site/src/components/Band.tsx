@@ -12,11 +12,14 @@ export function Band({
   label,
   note,
   compact,
+  feature,
 }: {
   id: Group;
   label: string;
   note: string;
   compact?: boolean;
+  /** The first wall in the band is the one to read first: give it the full width. */
+  feature?: boolean;
 }) {
   const items = byGroup(id);
   if (!items.length) return null;
@@ -26,18 +29,26 @@ export function Band({
         {label}
       </h2>
       <p className="band__note">{note}</p>
-      <div className={compact ? "grid grid--compact" : "grid"}>
-        {items.map((c) => (
-          <Card key={c.slug} study={c} compact={compact} />
+      <div className={compact ? "grid grid--compact" : feature ? "grid grid--feature" : "grid"}>
+        {items.map((c, i) => (
+          <Card key={c.slug} study={c} compact={compact} featured={feature && i === 0} />
         ))}
       </div>
     </section>
   );
 }
 
-function Card({ study, compact }: { study: CaseStudy; compact?: boolean }) {
+function Card({
+  study,
+  compact,
+  featured,
+}: {
+  study: CaseStudy;
+  compact?: boolean;
+  featured?: boolean;
+}) {
   return (
-    <Link to={`/work/${study.slug}`} className="card">
+    <Link to={`/work/${study.slug}`} className={featured ? "card card--feature" : "card"}>
       <div className="card__cover">
         {study.cover.shot.src ? (
           <img src={asset(study.cover.shot.src)} alt="" loading="lazy" decoding="async" />
