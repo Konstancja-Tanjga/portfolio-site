@@ -73,7 +73,7 @@ export const flow: CaseStudy = {
             {
               key: "Decision 2",
               value:
-                "An item's details open beside the board, so the column it came from stays in view.",
+                "A new layout for an item's Page details.",
             },
             {
               key: "Decision 3",
@@ -151,19 +151,19 @@ export const flow: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p><strong>The Page details layout.</strong> Opening an item does not take you away from the board. The details open in a panel beside it, with the item's name and status at the top, a “Move to” action, and the order details as a list of labels and values. The column you came from stays in view, so you can open the next item without finding your place again.</p>",
+            "<p><strong>The Page details layout.</strong> I designed a new layout for an item's details. On tablet, an item's details sit in a panel beside the board, with a tag at the top, a “Move to” action, and the order details as a list of labels and values.</p>",
         },
         {
           kind: "shot",
-          width: "wall",
+          width: "column",
           src: `${S}/tablet-details.webp`,
           caption:
-            "Page details on tablet: the selected item is highlighted in the board, and its details are in the panel on the right.",
+            "An item's details in a panel beside the board, on tablet.",
         },
         {
           kind: "passage",
           html:
-            "<p><strong>New components from the gaps.</strong> The new navigation needed patterns that FOX did not have yet. I designed the missing components and added them to FOX, and Flow mode uses them from there. The phone screens below show some of the patterns the navigation relies on: a confirmation after changing tenant, an options sheet, and a notice after an action.</p>",
+            "<p><strong>New components from the gaps.</strong> The new navigation needed patterns that FOX did not have yet. I designed the missing components and added them to FOX, and Flow mode uses them from there.</p>",
         },
       ],
     },
@@ -187,10 +187,10 @@ export const flow: CaseStudy = {
       blocks: [
         {
           kind: "shot",
-          width: "wall",
+          width: "column",
           src: `${S}/tablet-dark.webp`,
           caption:
-            "Page details on tablet in the dark theme, with two board columns and the item panel.",
+            "The same layout in the dark theme, with two board columns and the item panel.",
         },
         {
           kind: "set",
