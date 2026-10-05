@@ -1998,3 +1998,21 @@ img { max-width: 100%; height: auto; }
   .palette__chip { transition: none; }
   .palette__swatch:hover .palette__chip { transform: none; }
 }
+
+/* ---- the featured wall: the first card of a band, given the full width ---- */
+.grid--feature .card--feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--bh-space-5);
+  align-items: end;
+  padding-bottom: var(--bh-space-5);
+  border-bottom: 1px solid var(--bh-border);
+}
+.grid--feature .card--feature .card__cover { aspect-ratio: 2 / 1; }
+.grid--feature .card--feature .card__text { padding-top: 0; }
+.grid--feature .card--feature .card__title { font-size: var(--bh-size-h2); font-weight: 300; }
+.grid--feature .card--feature .card__what { font-size: var(--bh-size-body, 1rem); }
+@media (max-width: 52rem) {
+  .grid--feature .card--feature { grid-template-columns: minmax(0, 1fr); gap: var(--bh-space-3); }
+}
