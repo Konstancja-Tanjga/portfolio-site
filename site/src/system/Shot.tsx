@@ -91,9 +91,10 @@ function ShotFrame({ src, slot, caption }: ShotData) {
     );
   }
 
-  // Every caller prints the caption next to the image (figcaption or
-  // subcaption), so the image and its button stay unnamed here: naming them
-  // too made a screen reader read each caption twice.
+  // When a shot has a caption, every caller prints it next to the image
+  // (figcaption or subcaption), so the image and its button are not named
+  // with it here: that made a screen reader read each caption twice. A shot
+  // without a caption has no accessible name.
   const img = (
     <img className="shot__img" src={asset(src)} alt="" loading="lazy" decoding="async" />
   );
