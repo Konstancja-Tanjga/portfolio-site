@@ -174,7 +174,7 @@ export const volvo: CaseStudy = {
       n: "04",
       heading: "Search and results on one screen",
       maxim:
-        "The search form shows a few fields first. The full set of criteria opens under a toggle, and the results land on the same screen.",
+        "Further search criteria open under a toggle, and the results land on the same screen as the form.",
       blocks: [
         {
           kind: "passage",
