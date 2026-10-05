@@ -29,7 +29,7 @@ export const bighat: CaseStudy = {
     { label: "Role", value: "Sole author — design, Figma library and code" },
     { label: "Package", value: "@bighat/ui — React, with an Angular sibling" },
     { label: "Scale", value: "46 components, 4 templates, 126 semantic tokens" },
-    { label: "Figma", value: "Team library: 16 components, 233 variables, Code Connect" },
+    { label: "Figma", value: "Team library: all 46 components, 233 variables, Code Connect" },
     { label: "Version", value: "6.0, October 2026, with its own logo" },
     { label: "Enforced", value: "124 contrast assertions, 300+ tests in CI" },
     { label: "Licence", value: "MIT — Storybook and source are public" },
@@ -52,14 +52,14 @@ export const bighat: CaseStudy = {
             { value: "46", label: "components in Storybook" },
             { value: "233", label: "Figma variables, from the same tokens" },
             { value: "124", label: "contrast assertions in CI" },
-            { value: "16", label: "components in the Figma library, with Code Connect" },
+            { value: "46", label: "of them in the Figma library, with Code Connect" },
           ],
         },
         {
           kind: "shot",
           width: "wall",
           src: "/work/bighat-design-system/v6/cover.webp",
-          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. The 46 components are in Storybook; the Figma library has 16 of them so far and all 233 variables, and will cover all 46.",
+          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. All 46 components are in Storybook and in the Figma library, with all 233 variables.",
         },
       ],
     },
@@ -98,13 +98,13 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-color-roles.png",
+          src: "/work/bighat-design-system/colour-roles.png",
           caption: "Colour roles in Figma, Light and Dark. Each carries its CSS name as code syntax, so Dev Mode answers with var(--bh-action-primary-bg), not a hex.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/figma-primitives.png",
+          src: "/work/bighat-design-system/primitives.png",
           caption: "Primitives: the palette and the space, radius and type scales on a 4px grid. Hidden from every picker, as they are banned from product CSS.",
         },
         {
@@ -137,14 +137,8 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/catalogue.png",
+          src: "/work/bighat-design-system/storybook-button.png",
           caption: "The same component in Storybook: when to use it, what to use instead, and every do/don't rendered live with its reason.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/bighat-design-system/figma-dialog.png",
-          caption: "Dialog, built from library Buttons, on thick glass over a scrim. The buttons name the outcome — never OK and Cancel.",
         },
       ],
     },
@@ -215,7 +209,7 @@ export default {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/template-records-empty.png",
+          src: "/work/bighat-design-system/records-empty.png",
           caption: "“No invoices match these filters” offers a way out of the filter, not “Create invoice” — empty is two different screens.",
         },
       ],
@@ -224,20 +218,20 @@ export default {
       id: "templates",
       n: "07",
       heading: "Templates",
-      standfirst: "Screens assembled only from library components, each with its loading, empty and error states.",
+      standfirst: "Screens assembled only from library components, each with its loading and error states, and an empty one where the screen can be empty.",
       blocks: [
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/template-kanban.png", caption: "Kanban — filters as chips; cards move without a pointer" },
-            { src: "/work/bighat-design-system/template-kanban-dark.png", caption: "The same screen in Dark" },
+            { src: "/work/bighat-design-system/kanban.png", caption: "Kanban — filters as chips; cards move without a pointer" },
+            { src: "/work/bighat-design-system/kanban-dark.png", caption: "The same screen in Dark" },
           ],
         },
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/template-records.png", caption: "Records — one quiet actions button per row" },
-            { src: "/work/bighat-design-system/template-ai-chat.png", caption: "AI chat — the prompt is a form, the modes a radio group" },
+            { src: "/work/bighat-design-system/records.png", caption: "Records — one quiet actions button per row" },
+            { src: "/work/bighat-design-system/ai-chat.png", caption: "AI chat — the prompt is a form, the modes a radio group" },
           ],
         },
       ],
@@ -285,7 +279,6 @@ export default {
           kind: "points",
           items: [
             "No screen reader has been run against it; the announcement rules are tested in code, not in NVDA or VoiceOver",
-            "The Figma library covers 16 components; the rest exist in code and Storybook first",
             "Pressed states are not drawn in Figma — the browser draws them",
             "Figma cannot saturate a backdrop, so glass is a little flatter there than in the browser",
           ],
