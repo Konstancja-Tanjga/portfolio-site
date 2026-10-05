@@ -11,7 +11,9 @@ import type { CaseStudy } from "./types";
  *   email-before              board 19 (e-mail template, before)
  *   email-after               board 18 (e-mail template, after)
  *
- * Boards with personal data (06, 09, 14, 17) were removed and stay removed.
+ * Boards 06, 14 and 17 (personal data) and 09 (unsupported success figures)
+ * were removed and stay removed. The research method and numbers in
+ * chapter 03 come from board 06.
  * Board 07 (research results) is not shown either: its Maze table lists
  * tester IDs. Its insight titles are quoted as text in chapter 03.
  *
@@ -67,7 +69,7 @@ export const volvo: CaseStudy = {
             {
               key: "Decision 1",
               value:
-                "Search starts from a few fields. The rest of the criteria open under a toggle, and the results table sits on the same screen.",
+                "Partner search keeps further criteria under a toggle, and the results table sits on the same screen as the form.",
             },
             {
               key: "Decision 2",
@@ -170,14 +172,14 @@ export const volvo: CaseStudy = {
     {
       id: "search",
       n: "04",
-      heading: "Search starts small",
+      heading: "Search and results on one screen",
       maxim:
         "The search form shows a few fields first. The full set of criteria opens under a toggle, and the results land on the same screen.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>The old Partner screen was a details page with every field of one partner on it. In the new Partner search the first field is Partner ID, and the other criteria (name, main partner, country, unit, business area, brand, role, portal and more) sit under “show more search options”. The results come back as a table under the form, with Open and Generate Excel above it. On the report list, the search box suggests matching report names as you type.</p>",
+            "<p>The old Partner screen was a details page with every field of one partner on it. In the new Partner search, further criteria open under a toggle; the expanded form shows “Show less search options”. The results come back as a table under the form, with Open and Generate Excel above it. On the report list, the search box suggests matching report names as you type.</p>",
         },
         {
           kind: "duo",
