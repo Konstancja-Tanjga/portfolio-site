@@ -1,104 +1,230 @@
 import type { CaseStudy } from "./types";
 
-/** Images from the Behance gallery, in gallery order. */
+/**
+ * Flow mode shipped in APplus 8, in October 2023, before I joined. This page
+ * describes only the part of it that is mine, as confirmed by me: the new
+ * navigation (from the Futures Thinking workshop), the Page details layout,
+ * the migration to FOX v2.5, the components that migration and the new
+ * navigation needed, and the work alongside implementation, QA and usability
+ * testing. There are no measured results, so the page states none.
+ *
+ * The screens are cut one by one from the Behance boards into screens/.
+ * Dropped on purpose: the moodboard (mostly competitors' products), the
+ * Figma overview of the mobile flows (unreadable at any size on a page), and
+ * the left laptop of the desktop board, whose header reads "Document
+ * Management System" and so is not Flow mode.
+ *
+ * Links to other walls are relative ("futures-thinking"), so they resolve
+ * under whatever base the site is deployed at.
+ */
+const S = "/work/applus-flow/screens";
+
 export const flow: CaseStudy = {
   slug: "applus-flow",
   title: "APplus Flow mode",
-  what: "A logistics module redesigned around status and ownership, desktop to mobile",
+  what: "A new navigation, page layout and FOX v2.5 components for an existing part of APplus ERP",
   lead:
-    "Flow mode is the logistics module inside APplus ERP. Shipments had been managed across several disconnected screens, so nobody could see one trusted status view.",
+    "Flow mode is the board view of APplus ERP: work items sit in columns by status and move from one column to the next. It shipped in APplus 8 in October 2023, before I joined. My part came later: a new navigation, a new Page details layout, the move to FOX v2.5 and the components that move needed.",
   status: { state: "live" },
   group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
     headline: ["Flow mode"],
-    subline: "logistics for APplus ERP",
-    stamp: "DESKTOP · TABLET · MOBILE · SHIPPED NATIVE",
+    subline: "navigation and page layout for APplus ERP",
+    stamp: "NAVIGATION · PAGE DETAILS · FOX v2.5 · DESKTOP TO MOBILE",
     credit: "Lead Product Designer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-flow/00-cover.png" },
   },
   meta: [
     { label: "Role", value: "Lead Product Designer" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Product", value: "APplus ERP — Flow mode, logistics" },
-    { label: "Platforms", value: "Desktop, tablet, mobile — shipped native" },
-    { label: "Recognition", value: "Contributed to ERP System of the Year 2025, UX category" },
+    { label: "Product", value: "APplus ERP — Flow mode, in the product since APplus 8 (October 2023)" },
+    {
+      label: "Design system",
+      value: "FOX, which I own; Flow mode's screens migrated to v2.5",
+      href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
+    },
+    { label: "Platforms", value: "Desktop, tablet, mobile" },
   ],
   chapters: [
     {
-      id: "challenge",
+      id: "in-short",
+      n: "00",
+      heading: "In short",
+      blocks: [
+        {
+          kind: "spec",
+          rows: [
+            {
+              key: "Problem",
+              value:
+                "Flow mode already worked, but it needed a navigation model, and the team could not agree whether people should enter through tasks or through modules.",
+            },
+            {
+              key: "My part",
+              value:
+                "The new navigation, the Page details layout, the migration of Flow mode's screens to FOX v2.5, and the new components that change needed. During the build I worked with the developers, helped with QA and ran usability tests with users.",
+            },
+            {
+              key: "Decision 1",
+              value:
+                "The header always says where you are: the path to the board, the board's name as a switcher, and the tenant you are working in.",
+            },
+            {
+              key: "Decision 2",
+              value:
+                "A new layout for an item's Page details.",
+            },
+            {
+              key: "Decision 3",
+              value:
+                "Where the new navigation needed a pattern FOX did not have, I designed the component and added it to the system.",
+            },
+            {
+              key: "Evidence",
+              value:
+                "Usability tests with users during implementation. There are no measured before-and-after figures.",
+            },
+            { key: "Shipped", value: "Flow mode is live in APplus." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "what-it-is",
       n: "01",
-      heading: "The challenge",
-      maxim:
-        "Several people, sometimes in different companies and different time zones, working on the same object. Status, ownership and the next action have to be obvious.",
+      heading: "What it is",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Shipments were managed across multiple disconnected screens, which meant there was no single trusted status view — and no way to tell, at a glance, whose move it was next.</p>",
+            "<p>Flow mode is a way of working in APplus ERP built around boards. Each board is a set of columns by status, such as Created, Ready for release, Released and Inactive, and each card is one item with its key figures and tags. It has been part of APplus since version 8, released in October 2023. I did not create it.</p><p>What I changed is how people move around it and how an item is shown once they open it. I designed the new navigation and the new Page details layout, moved Flow mode's screens to version 2.5 of FOX, the design system I own, and designed the components that were missing for the new navigation.</p>",
+        },
+        {
+          kind: "shot",
+          width: "column",
+          src: `${S}/desktop-elly.webp`,
+          caption:
+            "A Flow mode board on desktop, with columns by status and the Elly help panel open on the right.",
         },
       ],
     },
     {
-      id: "discovery",
+      id: "navigation-origin",
       n: "02",
-      heading: "Discovery and research",
-      maxim:
-        "People think in terms of where a ticket sits right now and who owns it next — not in terms of which module happens to hold that data.",
+      heading: "Where the navigation came from",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Observing internal operations staff at work. The module boundary was an implementation fact that had leaked into the interface, and the redesign started by refusing it.</p>",
+            "<p>The new navigation came out of a <a href=\"futures-thinking\">Futures Thinking workshop</a> I designed and facilitated. The team had two questions it could not settle by discussion: whether people should enter through tasks or through modules, and how far the interface should adapt to the person using it. The workshop turned those questions into an agreed scope and a navigation concept, and the design work started from that brief.</p><p>The workshop has its own page, with the method, the scenarios and what the room decided.</p>",
         },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/03.png" },
       ],
     },
     {
-      id: "desktop",
+      id: "decisions",
       n: "03",
-      heading: "Desktop",
+      heading: "Decisions",
       standfirst:
-        "A ticketing board grouped by status, an integrated details panel, and an explicit tenant switcher for multi-organisation contexts.",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/applus-flow/07.png" },
-      ],
-    },
-    {
-      id: "tablet",
-      n: "04",
-      heading: "Tablet",
-      standfirst:
-        "The same board structure at adapted density: larger touch targets, sliding panels, usable held or propped.",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/applus-flow/06.png" },
-      ],
-    },
-    {
-      id: "mobile",
-      n: "05",
-      heading: "Mobile",
-      standfirst:
-        "An inbox that surfaces priority items, with inline editing of location, owner, floor, weight and timing.",
-      blocks: [
-        { kind: "shot", width: "wall", src: "/work/applus-flow/04.png" },
-        { kind: "shot", width: "wall", src: "/work/applus-flow/05.png" },
-      ],
-    },
-    {
-      id: "handoff",
-      n: "06",
-      heading: "What it changed",
+        "Three rules, with the screens that show them.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>The module replaced fragmented processes with workflows that match how logistics teams actually think about a shipment. It contributed to ERP System of the Year 2025 in the UX category.</p>",
+            "<p><strong>The new navigation.</strong> The header always tells you where you are. It shows the path to the board, the board's name with a menu to switch to another board, and the tenant you are working in. Changing tenant is done in a dialog that says what it changes: “Your current context defines data access and system behaviour.” On a phone the same jobs move to a bottom bar with Search, Inbox, Filter and More.</p>",
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: `${S}/tablet-tenant.webp`,
+              caption:
+                "The tenant dialog on tablet, opened from the tenant in the header, with the board still visible behind it.",
+            },
+            {
+              src: `${S}/tablet-parameters.webp`,
+              caption:
+                "Board parameters (warehouse, floor, date) shown as chips under the header and edited in a popover.",
+            },
+          ],
         },
         {
           kind: "passage",
           html:
-            "<p>Built in Figma and Figma Make, with design-to-code handoff through Codex and Claude Code.</p>",
+            "<p><strong>The Page details layout.</strong> I designed a new layout for an item's details. On tablet, an item's details sit in a panel beside the board, with a tag at the top, a “Move to” action, and the order details as a list of labels and values.</p>",
+        },
+        {
+          kind: "shot",
+          width: "column",
+          src: `${S}/tablet-details.webp`,
+          caption:
+            "An item's details in a panel beside the board, on tablet.",
+        },
+        {
+          kind: "passage",
+          html:
+            "<p><strong>New components from the gaps.</strong> The new navigation needed patterns that FOX did not have yet. I designed the missing components and added them to FOX, and Flow mode uses them from there.</p>",
+        },
+      ],
+    },
+    {
+      id: "delivery",
+      n: "04",
+      heading: "Delivery",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>I stayed with the work while it was built. I worked with the developers during implementation, and I helped with quality testing. I also ran usability tests with users on the new navigation and layout.</p>",
+        },
+      ],
+    },
+    {
+      id: "screens",
+      n: "05",
+      heading: "Screens",
+      standfirst: "The same boards in the dark theme on tablet, and on a phone.",
+      blocks: [
+        {
+          kind: "shot",
+          width: "column",
+          src: `${S}/tablet-dark.webp`,
+          caption:
+            "The same layout in the dark theme, with two board columns and the item panel.",
+        },
+        {
+          kind: "set",
+          size: "phone",
+          items: [
+            {
+              src: `${S}/mobile-tenant.webp`,
+              caption: "A “Tenant changed” confirmation over the board, with the bottom bar below.",
+            },
+            {
+              src: `${S}/mobile-options.webp`,
+              caption: "The options sheet: Kanban or Focus view, Share, the tenant, Settings and Ask Elly.",
+            },
+            {
+              src: `${S}/mobile-bookmark.webp`,
+              caption: "A notice after an item is added to bookmarks.",
+            },
+            {
+              src: `${S}/mobile-theme.webp`,
+              caption: "The board with board parameters as chips under the header and a background image.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "adds-up",
+      n: "06",
+      heading: "What it adds up to",
+      blocks: [
+        {
+          kind: "passage",
+          html:
+            "<p>I have no measured results for this work, so this page states none. What I can show is the navigation, the Page details layout and the FOX v2.5 components in the screens above, and Flow mode is live in APplus. APplus won Gold in the User Experience ERP category at <a href=\"erp-of-the-year\">ERP-System des Jahres 2025</a>.</p><p>Next I would like to measure how often people change board or tenant from the header, and whether the phone's bottom bar covers what they come to do.</p>",
         },
       ],
     },
