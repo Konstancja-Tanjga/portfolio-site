@@ -123,7 +123,7 @@ export const volvo: CaseStudy = {
             {
               src: `${S}/reports-before.png`,
               caption:
-                "The legacy report list: every report in one column, including names like “Copy of Copy of Copy of Copy of JG_Multi_Retest”, with the actions in a small toolbar above it.",
+                "The legacy report list: every report in one column, including names like “Copy of Copy of DDBasicNewReport61”, with the actions in a small toolbar above it.",
             },
             {
               src: `${S}/report-loading-before.png`,
