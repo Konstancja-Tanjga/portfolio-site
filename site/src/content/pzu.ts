@@ -1,9 +1,8 @@
 import type { CaseStudy } from "./types";
 
 /**
- * Everything on this page comes from two places: the project board that used
- * to be the whole page (02.png, 1440 x 6130, now cut up and deleted) and the
- * owner's confirmation of what the board leaves out: that the portal shipped,
+ * Everything on this page comes from two places: the original project boards
+ * (removed in 144a907, recoverable from history) and the owner's confirmation of what the board leaves out: that the portal shipped,
  * that she was the only designer, and what changed between the prototypes.
  *
  * The board's words are text here. Its images are cropped into
@@ -48,7 +47,7 @@ export const pzu: CaseStudy = {
             {
               key: "Problem",
               value:
-                "Customers saw PZU as an insurer and the portal as a place with few functions. Most of them did not know it also held their medical and financial products.",
+                "Customers saw PZU as an insurer and the portal as a place with few functions. Most were surprised that the portal also offered medical and financial services.",
             },
             {
               key: "My part",
@@ -57,7 +56,7 @@ export const pzu: CaseStudy = {
             },
             {
               key: "Decision 1",
-              value: "The \"Buy\" button that sat on every screen was dropped. Offers stay in one section of the dashboard.",
+              value: "The \"Buy\" button that sat on every screen was dropped. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\".",
             },
             {
               key: "Decision 2",
@@ -65,13 +64,12 @@ export const pzu: CaseStudy = {
             },
             {
               key: "Decision 3",
-              value:
-                "The information architecture and the navigation were rebuilt around what customers do in the portal: pay, report a claim, use medical services, check investments.",
+              value: "The information architecture and the navigation changed between prototypes.",
             },
             {
               key: "Evidence",
               value:
-                "6 workshops with the business. 24 in-depth interviews leading to prototype 1.0, 18 leading to 2.0 and 12 leading to 3.0, all online.",
+                "6 workshops with the business. 24 in-depth interviews leading to prototype 1.0, 18 leading to 2.0 and 12 leading to 3.0.",
             },
             { key: "Shipped", value: "To production, on mojepzu.pl" },
           ],
@@ -153,7 +151,7 @@ export const pzu: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>I worked with a UX researcher. The first round was 24 individual in-depth interviews, held online over Zoom, and it had three aims: to check the hypotheses from the workshop with the business units, to find out which information and functions customers need before they log in and on the dashboard after, and to decide what the dashboard is for. The later rounds, 18 and 12 interviews, were also online.</p>",
+            "<p>I worked with a UX researcher. The first round was 24 individual in-depth interviews, held online over Zoom, and it had three aims: to check the hypotheses from the workshop with the business units, to find out which information and functions customers need before they log in and on the dashboard after, and to decide what the dashboard is for. The later rounds had 18 and 12 interviews.</p>",
         },
         {
           kind: "shot",
@@ -197,8 +195,8 @@ export const pzu: CaseStudy = {
         {
           kind: "spec",
           rows: [
-            { key: "Information architecture", value: "Changed. In the final version the dashboard groups what a customer holds by type: insurance, medical services, investments and savings." },
-            { key: "Navigation", value: "Changed. The final version has a top bar of product areas and a bar of shortcuts on the left." },
+            { key: "Information architecture", value: "Changed between prototypes." },
+            { key: "Navigation", value: "Changed between prototypes." },
             { key: "Screen layout", value: "The content layout of individual screens changed." },
             { key: "\"Buy\" button", value: "Dropped. It had sat on every screen." },
             {
@@ -231,11 +229,11 @@ export const pzu: CaseStudy = {
               title: "Drop the \"Buy\" button from every screen",
               rule: {
                 label: "Rule",
-                body: "Offers live in one section of the dashboard, \"Wybrane dla Ciebie\", and each card there links to the details.",
+                body: "No screen carries a \"Buy\" button. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\" and link to the details.",
               },
               why: {
-                label: "Why",
-                body: "In the first round customers described the portal as their own space and took its name literally: myPORTAL means mine.",
+                label: "Round 1 finding",
+                body: "Customers described the portal as their own space: myPORTAL means mine.",
               },
             },
             {
@@ -246,19 +244,19 @@ export const pzu: CaseStudy = {
                 body: "Buying and managing a policy and booking a doctor's appointment sit in one module. On the dashboard, medical services have their own row of cards under the policies, and booking a visit is a shortcut in the bar on the left.",
               },
               why: {
-                label: "Why",
-                body: "Customers found the portal thin on functions and valued self-service most. Most were surprised to find medical services in the portal at all.",
+                label: "Round 1 findings",
+                body: "Customers said the portal offered few functions and that self-service mattered most. Most did not know it had medical services.",
               },
             },
             {
               n: "03",
-              title: "Build the navigation around what customers came to do",
+              title: "Rework the information architecture and navigation",
               rule: {
                 label: "Rule",
                 body: "The top navigation names tasks and product areas: payments, claims and benefits, medical services, investments and savings. The shortcut bar holds the actions: pay, book a visit or test, report a claim, see offers.",
               },
               why: {
-                label: "Why",
+                label: "Project goal",
                 body: "The second goal of the project was a home page where the customer does not feel lost, in simpler language.",
               },
             },
@@ -280,14 +278,14 @@ export const pzu: CaseStudy = {
         },
         {
           kind: "palette",
-          standfirst: "The colours of the final screens, with where each one appears.",
+          standfirst: "The palette from the project board, with the role of each colour where the final screens show it.",
           items: [
             { hex: "#009DDE", name: "Blue", role: "Buttons, links and the active navigation item" },
             { hex: "#FAFBFD", name: "Off-white", role: "The page background" },
-            { hex: "#234678", name: "Navy", role: "The shortcut bar, the footer and the headings" },
+            { hex: "#234678", name: "Navy", role: "The footer" },
             { hex: "#C4C4C4", name: "Grey", role: "The \"Edytuj skróty\" (edit shortcuts) tile under the shortcut bar" },
             { hex: "#8CC83C", name: "Green", role: "The \"Aktywna\" (active) policy status" },
-            { hex: "#D45F7E", name: "Pink", role: "Status badges that need the customer's attention" },
+            { hex: "#D45F7E", name: "Pink", role: "On the project board; not used on the final screens shown here" },
           ],
         },
       ],
