@@ -49,7 +49,7 @@ export const bighat: CaseStudy = {
         {
           kind: "stats",
           items: [
-            { value: "46", label: "components" },
+            { value: "46", label: "components in Storybook" },
             { value: "233", label: "Figma variables, from the same tokens" },
             { value: "124", label: "contrast assertions in CI" },
             { value: "46", label: "of them in the Figma library, with Code Connect" },
@@ -59,7 +59,7 @@ export const bighat: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/bighat-design-system/v6/cover.webp",
-          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. All 46 components and 233 variables are in the Figma library as well as in @bighat/ui.",
+          caption: "Big Hat 6.0: the new logo, and library components composed into a form and a toolbar, in Light and Dark. Dark is one variable mode, not a second set of components. All 46 components are in Storybook and in the Figma library, with all 233 variables.",
         },
       ],
     },
