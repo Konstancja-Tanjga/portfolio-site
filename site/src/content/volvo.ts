@@ -3,14 +3,16 @@ import type { CaseStudy } from "./types";
 /**
  * There are no clean screen exports from this project. The original
  * documentation is gone and the record is the set of boards once published on
- * Behance. Every image on this page is a crop of one of those boards, cut to
- * the screen itself so the device mock-ups and stock photography fall away:
+ * Behance. Every screen image on this page is a crop of one of those boards,
+ * cut to the screen itself so the device mock-ups and stock photography fall
+ * away. The cover and the component board are used whole:
  *
  *   reports-*, partner-*      board 15 (before and after, search)
  *   report-*                  board 16 (before and after, reports)
  *   email-before              board 19 (e-mail template, before)
  *   email-after               board 18 (e-mail template, after)
- *   reports-share-prototype   board 13 (prototype, the screen without the monitor)
+ *   reports-share-prototype   board 13 (prototype, the screen without the monitor
+ *                             and without the version and release lines)
  *   components                board 12 (the component board, whole)
  *
  * The cover is the original Behance cover (board 00). Boards 01, 05 and 08
