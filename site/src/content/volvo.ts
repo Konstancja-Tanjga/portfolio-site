@@ -10,6 +10,12 @@ import type { CaseStudy } from "./types";
  *   report-*                  board 16 (before and after, reports)
  *   email-before              board 19 (e-mail template, before)
  *   email-after               board 18 (e-mail template, after)
+ *   reports-share-prototype   board 13 (prototype, the screen without the monitor)
+ *   components                board 12 (the component board, whole)
+ *
+ * The cover is the original Behance cover (board 00). Boards 01, 05 and 08
+ * are mood photography and 02, 03, 04 and 11 are text set as images; the text
+ * that matters is on the page, so they stay out.
  *
  * Boards 06, 14 and 17 (personal data) and 09 (unsupported success figures)
  * were removed and stay removed. The research method and numbers in
@@ -38,7 +44,7 @@ export const volvo: CaseStudy = {
     subline: "for Volvo Group",
     stamp: "LEGACY REDESIGN · SEARCH · REPORTS · E-MAIL",
     credit: "Senior UX/UI designer · Volvo Group · 2022–2023",
-    shot: { src: `${S}/report-builder-after.png` },
+    shot: { src: "/work/volvo-erp/00-cover.jpg" },
   },
   meta: [
     { label: "Role", value: "Senior UX/UI designer, contract" },
@@ -233,6 +239,13 @@ export const volvo: CaseStudy = {
             },
           ],
         },
+        {
+          kind: "shot",
+          width: "wall",
+          src: `${S}/reports-share-prototype.png`,
+          caption:
+            "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
+        },
       ],
     },
     {
@@ -275,6 +288,13 @@ export const volvo: CaseStudy = {
           html:
             "<p>What I can show from this project is the research with the administrators and the redesigned screens on this page, documented as before-and-after boards and prototypes.</p>" +
             "<p>I have no record of what was released or when, and nothing was measured after the redesign that I can point to, so this page gives no results figures.</p>",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: `${S}/components.png`,
+          caption:
+            "The component board from the project: cards, menus, a data table with paging, tabs, chips, text inputs and time pickers in the style of the new screens.",
         },
       ],
     },
