@@ -407,7 +407,7 @@ export const bi: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A FOX component, as a developer meets it. Every screen in this case study is assembled from elements like this one: attributes for state, named slots for content, and actions the dialog itself resolves. The object-scope rule (R1 below) ends in exactly this element.</p>",
+            "<p>A FOX component, as a developer meets it. Every screen in this case study is assembled from elements like this one: attributes for state, named slots for content, and actions the dialog itself resolves. The object-scope rule, R1 on the screen architecture folders, ends in exactly this element.</p>",
         },
         {
           kind: "code",
