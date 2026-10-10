@@ -329,6 +329,66 @@ img { max-width: 100%; height: auto; }
   .shot__open:focus-visible .shot__img { transform: none; }
 }
 
+/* A laptop around a product screen. Proportions follow a 14" MacBook Pro:
+   a thin bezel with a camera notch, and a base slightly wider than the lid. */
+.laptop { display: block; padding: 0 3%; }
+.laptop__lid {
+  display: block;
+  position: relative;
+  padding: 2.2% 2.2% 2.6%;
+  background: #16181b;
+  border: 1px solid #3a3d42;
+  border-radius: 14px 14px 4px 4px;
+}
+.laptop__lid::before { /* camera notch */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 9%;
+  height: 2.2%;
+  min-height: 6px;
+  transform: translateX(-50%);
+  background: #16181b;
+  border-radius: 0 0 6px 6px;
+  z-index: 1;
+}
+/* The screen takes the export's own proportions rather than a fixed 16:10,
+   so a tall form is not cropped above its Save button. */
+.laptop__screen { display: block; overflow: hidden; background: #fff; }
+.laptop .shot__img.shot__img { border: 0; } /* beats .shot__set .shot__img */
+.laptop__base {
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 2.6%;
+  margin: 0 -3.2%;
+  background: linear-gradient(#c9ccd1, #9a9ea5);
+  border-radius: 0 0 12px 12px / 0 0 60% 60%;
+}
+.laptop__base::before { /* the thumb scoop on the front edge */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14%;
+  height: 40%;
+  transform: translateX(-50%);
+  background: #8a8e95;
+  border-radius: 0 0 8px 8px;
+}
+.shot__open .laptop .shot__img { transition: none; }
+.shot__open:hover .laptop .shot__img,
+.shot__open:focus-visible .laptop .shot__img { transform: none; box-shadow: none; }
+.shot__open .laptop { transition: transform 160ms ease-out; }
+.shot__open:hover .laptop,
+.shot__open:focus-visible .laptop { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .shot__open .laptop { transition: none; }
+  .shot__open:hover .laptop,
+  .shot__open:focus-visible .laptop { transform: none; }
+}
+
 .shot__caption { margin-top: var(--bh-space-2); font-size: var(--bh-size-small); color: var(--bh-text-quiet); }
 .shot__pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--bh-space-3); }
 .shot__subcaption {

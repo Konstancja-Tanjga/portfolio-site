@@ -8,8 +8,12 @@ import type { CaseStudy } from "./types";
  * The words are text, not pictures of text. The wall used to be thirteen PNG
  * exports with every paragraph typeset inside them, which a reader could not
  * search, select or enlarge on a phone, and a screen reader could not read.
- * Apart from the cover, images are screens and diagrams only, cropped from
- * those frames into /work/applus-documents/screens/.
+ * Apart from the cover, images are screens and diagrams only, in
+ * /work/applus-documents/screens/. Diagrams are cropped from those frames.
+ * The product screens shown in a laptop (device: "laptop") are 2x exports
+ * of the product frames in the DMS design file, flattened on white and
+ * scaled to 2560px; the dossier prototypes, detail-tags, detail-versions
+ * and tablet-versions are still crops from the wall.
  *
  * Every fact on this page is taken from the frames or from the earlier
  * version of this file. Where a frame was vague, the text stays vague.
@@ -108,13 +112,15 @@ export const dms: CaseStudy = {
           items: [
             {
               src: "/work/applus-documents/screens/list.png",
+              device: "laptop",
               caption:
                 "The document list: 346 documents, with document types in the left panel. Each row says where the search matched (author, project code) and which version matched.",
             },
             {
               src: "/work/applus-documents/screens/detail-invoice.png",
+              device: "laptop",
               caption:
-                "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs.",
+                "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs. The tabs are where audit-relevant history lives, so they are part of the template rather than a per-screen choice.",
             },
           ],
         },
@@ -155,6 +161,40 @@ export const dms: CaseStudy = {
           ],
         },
         {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/screens/deleted-document.png",
+              device: "laptop",
+              caption:
+                "Deleted documents sits under Configuration, filtered by type, deletion date range, reason and who deleted it, and DOC-8001 opens there with its format, size, version and checksum intact.",
+            },
+            {
+              src: "/work/applus-documents/screens/retention.png",
+              device: "laptop",
+              caption:
+                "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, status Active, retention started 16.01.2024, cutoff 31.01.2028, end 31.01.2031, then eligible for disposition. The clock starts from a metadata date field, Contract end date.",
+            },
+          ],
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/screens/permission-rule.png",
+              device: "laptop",
+              caption:
+                "A metadata-based permission rule: a role from the identity provider, Grant or Deny, an operation scope of read, upload or logical delete, and predicates on metadata joined with AND.",
+            },
+            {
+              src: "/work/applus-documents/screens/document-type-new.png",
+              device: "laptop",
+              caption:
+                "A document type linked to a retired retention policy. The policy stays visible for historical reference but no longer applies to new documents; a RETIRED badge next to it and a warning below say so. Changing it touches only documents stored after the change.",
+            },
+          ],
+        },
+        {
           kind: "pull",
           text: "The challenge was more than storage. Every document needed a visible status and a clear owner, inside a process where several people, sometimes from different companies, hand documents back and forth without losing track of where things stood.",
         },
@@ -182,6 +222,31 @@ export const dms: CaseStudy = {
         {
           kind: "thesis",
           text: "Those numbers set the whole design problem. At tens of thousands of documents, browsing is not a retrieval strategy; filtering is the only one.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/applus-documents/screens/filters.png",
+          device: "laptop",
+          caption:
+            "Filters over the list: tags, then metadata filters typed by field (string, integer, enum, boolean, date, date and time). All criteria must match, and once every metadata field is in use the panel says so and greys out Add new filter.",
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/screens/document-type.png",
+              device: "laptop",
+              caption:
+                "A document type, CONTRACT_V2: naming rules under the field, allowed file extensions, a metadata schema with data type, protection and mandatory on upload per field, and the assigned retention policy.",
+            },
+            {
+              src: "/work/applus-documents/screens/custom-properties.png",
+              device: "laptop",
+              caption:
+                "Metadata on a single document, in the Custom properties tab: each field with its data type.",
+            },
+          ],
         },
       ],
     },
@@ -280,11 +345,13 @@ export const dms: CaseStudy = {
           items: [
             {
               src: "/work/applus-documents/screens/proto-dossier-list.png",
+              device: "laptop",
               caption:
                 "Dossier plan configuration. Customer, Order and Project are system baselines mapped from APplus; they can be edited and reset to default. Quality Assurance is a custom draft.",
             },
             {
               src: "/work/applus-documents/screens/proto-dossier-general.png",
+              device: "laptop",
               caption: "One dossier definition, in six tabs from General to Change summary. Only active definitions are used at runtime.",
             },
           ],
@@ -294,11 +361,13 @@ export const dms: CaseStudy = {
           items: [
             {
               src: "/work/applus-documents/screens/proto-dossier-governance.png",
+              device: "laptop",
               caption:
                 "Governance and validation: reserved metadata fields the system manages, and three validation rules: a unique dossier name, a document type scope, and identity metadata configured for every document type.",
             },
             {
               src: "/work/applus-documents/screens/proto-dossier-summary.png",
+              device: "laptop",
               caption: "Change summary: everything that will change, reviewed before it is applied as one consistent configuration.",
             },
           ],
@@ -336,39 +405,34 @@ export const dms: CaseStudy = {
         "Each frame carries its requirement text in a documentation band, then a designer sign-off: dated, and marked Approved.",
       blocks: [
         {
+          kind: "shot",
+          width: "wall",
+          src: "/work/applus-documents/screens/list-bulk.png",
+          device: "laptop",
+          caption:
+            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red.",
+        },
+        {
           kind: "duo",
           items: [
             {
-              src: "/work/applus-documents/screens/detail-info.png",
-              caption:
-                "Document info. An identity panel (scope, format, size, created, last modified, version, checksum), then a five-tab band, then the preview. The tabs are where audit-relevant history lives, so they are part of the template rather than a per-screen choice.",
-            },
-            {
               src: "/work/applus-documents/screens/detail-tags.png",
+              device: "laptop",
               caption:
                 "The tag model and its validation rules, enforced in place: up to 20 tags per document, 64 characters at most, letters, numbers, _ and - only, no duplicates.",
+            },
+            {
+              src: "/work/applus-documents/screens/detail-versions.png",
+              device: "laptop",
+              caption: "Version history on a sales order: each version with its author, number and date, and a download on the highlighted row.",
             },
           ],
         },
         {
           kind: "shot",
-          width: "wall",
-          src: "/work/applus-documents/screens/list-favourite.png",
-          caption:
-            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red. The star on a row adds the document to favourites.",
-        },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: "/work/applus-documents/screens/detail-versions.png",
-              caption: "Version history on a sales order: each version with its author, number and date, and a download on the highlighted row.",
-            },
-            {
-              src: "/work/applus-documents/screens/tablet-versions.png",
-              caption: "The same screen on a tablet.",
-            },
-          ],
+          width: "column",
+          src: "/work/applus-documents/screens/tablet-versions.png",
+          caption: "Version history on a tablet.",
         },
       ],
     },
