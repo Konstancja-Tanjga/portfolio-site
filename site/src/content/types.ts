@@ -268,6 +268,13 @@ export type Block =
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
   /**
+   * The summary a reader with thirty seconds gets: context, problem, role
+   * and scope, the decisions, the outcome, the period. Same rows as a
+   * spec, laid out across the whole wall. Rows whose key starts with
+   * "Decision" are set side by side as the three things to remember.
+   */
+  | { kind: "brief"; rows: { key: string; value: string }[] }
+  /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,
    * not evidence. `href` stays optional for sources with no public home.

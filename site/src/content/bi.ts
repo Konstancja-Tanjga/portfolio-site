@@ -55,7 +55,7 @@ export const bi: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
             {
               key: "Context",

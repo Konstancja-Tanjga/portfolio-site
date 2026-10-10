@@ -2,6 +2,7 @@ import type { Block, Chapter } from "../content/types";
 import { useReveal } from "../system/Reveal";
 import {
   AnnotatedSet,
+  Brief,
   Code,
   Duo,
   Evolution,
@@ -62,6 +63,8 @@ function BlockView({ block }: { block: Block }) {
       return <Stack rows={block.rows} caption={block.caption} />;
     case "spec":
       return <Spec rows={block.rows} caption={block.caption} />;
+    case "brief":
+      return <Brief rows={block.rows} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":
