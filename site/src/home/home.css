@@ -429,3 +429,38 @@
   .hm-card--big { grid-template-columns: 1fr; }
   .hm-plates { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* =================================================================
+   The other pages: the skin's display face on every heading, and
+   the skin's mount on every painting, so Work, Practice, About and
+   Watercolours read as the same site as the home page.
+   ================================================================= */
+:root[data-skin] .opening__claim,
+:root[data-skin] .cover__headline,
+:root[data-skin] .chapter__heading,
+:root[data-skin] .portrait__claim,
+:root[data-skin] .next__title,
+:root[data-skin] .series__name,
+:root[data-skin] .card__title {
+  font-family: var(--sk-font-display);
+  font-weight: var(--sk-display-weight);
+  letter-spacing: var(--sk-display-tracking);
+  text-transform: var(--sk-display-transform);
+}
+:root[data-skin="deco"] .opening__claim,
+:root[data-skin="deco"] .portrait__claim { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.15; }
+:root[data-skin="deco"] .cover__headline { letter-spacing: 0.03em; font-size: clamp(2rem, 3.8vw, 3.4rem); line-height: 1.1; }
+:root[data-skin="aquarelle"] .opening__claim,
+:root[data-skin="aquarelle"] .chapter__heading,
+:root[data-skin="aquarelle"] .series__name { font-style: italic; }
+:root[data-skin] .section-label { font-family: var(--sk-font-body); }
+
+/* a painting's mount, per skin */
+:root[data-skin="deco"] .plate__mount { outline: 1px solid var(--sk-accent-2); outline-offset: 6px; background: var(--sk-ground-2); }
+:root[data-skin="blueprint"] .plate__mount { outline: 1.5px solid var(--sk-ink); outline-offset: 4px; }
+:root[data-skin="aquarelle"] .plate__mount {
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(47, 38, 34, 0.12), 0 10px 28px -14px rgba(47, 38, 34, 0.35);
+}
+:root[data-skin="aquarelle"] .plate__caption { font-family: var(--sk-font-note); font-size: 1.1rem; }

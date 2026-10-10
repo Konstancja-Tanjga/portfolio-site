@@ -351,25 +351,46 @@ function Feather({ x, y, len, delay }: { x: number; y: number; len: number; dela
   );
 }
 
-/** Pinnae along a rachis: a fern frond, generated. */
+/** Pinnae along a rachis, alternating and drooping toward the tip: a fern frond. */
 function Frond({ x, y, len, delay }: { x: number; y: number; len: number; delay: number }) {
-  const n = 18;
+  const n = 24;
   const pts = Array.from({ length: n + 1 }, (_, i) => {
     const t = i / n;
-    return { t, px: x + len * t * 0.55, py: y - len * t - 30 * Math.sin(t * Math.PI * 0.5) };
+    return { t, px: x + len * t * 0.5, py: y - len * t - 24 * Math.sin(t * Math.PI * 0.5) };
   });
   const rachis = pts.map((p, i) => `${i ? "L" : "M"}${p.px.toFixed(1)} ${p.py.toFixed(1)}`).join(" ");
   const pinnae = pts.slice(2, n).flatMap((p, i) => {
-    const w = 44 * Math.sin(Math.pow(p.t, 0.8) * Math.PI);
-    const left = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} c ${(-w * 0.4).toFixed(1)} -2 ${(-w * 0.8).toFixed(1)} -6 ${(-w).toFixed(1)} -14 c ${(-w * 0.2).toFixed(1)} 10 ${(-w * 0.5).toFixed(1)} 18 ${(-w * 0.0).toFixed(1)} 16 z`;
-    const right = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} c ${(w * 0.4).toFixed(1)} -2 ${(w * 0.8).toFixed(1)} -8 ${w.toFixed(1)} -16 c ${(w * 0.2).toFixed(1)} 10 ${(w * 0.5).toFixed(1)} 18 ${(w * 0.0).toFixed(1)} 16 z`;
+    const dir: 1 | -1 = i % 2 ? -1 : 1;
+    const w = 50 * Math.sin(Math.pow(p.t, 0.75) * Math.PI);
+    const h = 7 + 5 * Math.sin(p.t * Math.PI);
+    const droop = 4 + 12 * p.t;
+    const tx = p.px + dir * w;
+    const ty = p.py + droop;
+    // a leaflet: an upper and a lower curve meeting at the tip, and a midrib
+    const d = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} Q${(p.px + dir * w * 0.45).toFixed(1)} ${(p.py - h).toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)} Q${(p.px + dir * w * 0.5).toFixed(1)} ${(p.py + h * 0.9 + droop * 0.4).toFixed(1)} ${p.px.toFixed(1)} ${p.py.toFixed(1)} Z`;
+    const mid = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} Q${(p.px + dir * w * 0.5).toFixed(1)} ${(p.py + droop * 0.3).toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`;
+    // veins off the midrib, a few per leaflet
+    const veins = [0.3, 0.5, 0.7].map((u, k) => {
+      const vx = p.px + dir * w * u;
+      const vy = p.py + droop * u * 0.8;
+      return (
+        <path
+          key={`v${i}-${k}`}
+          d={`M${vx.toFixed(1)} ${vy.toFixed(1)} l${(dir * 6).toFixed(1)} ${(-h * 0.6 * (1 - u)).toFixed(1)}`}
+          pathLength={1}
+          strokeOpacity="0.4"
+          style={{ animationDelay: `${delay + 360 + i * 40}ms` }}
+        />
+      );
+    });
     return [
-      <path key={`l${i}`} d={left} pathLength={1} style={{ animationDelay: `${delay + 300 + i * 50}ms` }} />,
-      <path key={`r${i}`} d={right} pathLength={1} style={{ animationDelay: `${delay + 330 + i * 50}ms` }} />,
+      <path key={`p${i}`} d={d} pathLength={1} style={{ animationDelay: `${delay + 300 + i * 40}ms` }} />,
+      <path key={`m${i}`} d={mid} pathLength={1} strokeOpacity="0.55" style={{ animationDelay: `${delay + 330 + i * 40}ms` }} />,
+      ...veins,
     ];
   });
   return (
-    <g className="orn__ink" fill="none" stroke="var(--sk-ink)" strokeWidth="0.9" strokeLinejoin="round">
+    <g className="orn__ink" fill="none" stroke="var(--sk-ink)" strokeWidth="0.8" strokeLinejoin="round">
       <path d={rachis} strokeWidth="1.4" pathLength={1} style={{ animationDelay: `${delay}ms` }} />
       {pinnae}
     </g>
