@@ -3,7 +3,26 @@
 Branch `feat/analytics-lead-standard`, from `main`. Nothing exported or
 recorded yet; this is the checklist the brief asked for before either.
 
-## 0. Findings that change the plan
+## 0. Standing instructions (added 10 October 2026)
+
+- **Language.** Every word on the page follows [docs/STYLE.md](../STYLE.md):
+  NASA SP-7084 grammar, punctuation and capitalisation, applied through its
+  first principles (reader, one takeaway, traceable claims, fewer words).
+  Section 3 below is rewritten against it, and the checklist in STYLE.md
+  section 6 runs before every content commit.
+- **Design system.** Big Hat is not a constraint on this work. Where the
+  site needs a colour, a type or a component the system lacks, it is built
+  in the site layer and listed for a later backfill. The check script's
+  colour rule stays on `tokens.css` only.
+- **Previews.** No localhost previews for review. Every step that produces
+  something to look at lands as PNG in `docs/analytics-rework/` with the
+  commit, and the final report points at those files.
+- **Facts that changed since the brief.** The team is two senior designers
+  led by me, not three. APplus took Gold in User Experience at ERP-System des
+  Jahres 2026 as well as 2025 (5 October 2026, Frankfurt), so the product
+  context row carries both years.
+
+## 1. Findings that change the plan
 
 - **Two frame sizes in Figma.** Nine device frames are 2530 × 1483; HOME
   (`278:26883`), Dashboards (`278:27366`) and Analysis (`278:26387`) are
@@ -26,7 +45,7 @@ recorded yet; this is the checklist the brief asked for before either.
   `bi.ts` plus deleted wall PNGs. This branch starts from `main`; if that
   uncommitted text is newer, it has to be committed first. Question 1.
 
-## 1. Asset inventory (node → file → chapter)
+## 2. Asset inventory (node → file → chapter)
 
 | Node | Screen | Export | Web file | Replaces | Chapters |
 | --- | --- | --- | --- | --- | --- |
@@ -53,11 +72,12 @@ Missing from Figma, kept as flat shot in the CSS device frame and listed in
 the final report: query detail with the Governance panel (if chapter 09
 needs it); anything `278:24948` turns out not to show.
 
-## 2. Content model additions (`types.ts` + `system/`)
+## 3. Content model additions (`types.ts` + `system/`)
 
 1. `frame?: "macbook" | "none"` on `Shot`, rendered by a new `Device.tsx`:
-   screen image inside a CSS bezel, on a tinted backdrop from site tokens
-   (`--bh-well`), both colour modes, explicit `width`/`height`, `srcset`.
+   screen image inside a CSS bezel, on a tinted backdrop, both colour
+   modes, explicit `width`/`height`, `srcset`. The backdrop may state its
+   own colour in the site layer (see standing instructions).
 2. `hero` block: full-bleed device, one kicker line, used once at the top of
    chapter 01.
 3. `compare` block: before/after with labels, for the Lovable prototype beside
@@ -72,12 +92,12 @@ needs it); anything `278:24948` turns out not to show.
 
 All with comments in the existing voice of `types.ts`.
 
-## 3. Copy changes (`bi.ts`)
+## 4. Copy changes (`bi.ts`), written against STYLE.md
 
 - 00 In short → TL;DR rows: Context (dev3 replaced), Problem, My role and
   scope, Three decisions, Outcome, Period/team, Launch (Vision Days 22 Sep
-  2026; GA Oct 2026), Product context (ERP System of the Year 2025 and 2026,
-  UX category).
+  2026; GA Oct 2026), Product context (ERP-System des Jahres, Gold in the
+  User Experience category, 2025 and 2026).
 - 03/04: I audited the PM's prototype; seven questions → seven rules; eight
   SME sessions run by me (no researcher on the team); weak options killed in
   the room. Before/after compare here.
@@ -96,10 +116,24 @@ All with comments in the existing voice of `types.ts`.
   05, 11 and the "Code → product" row.
 - 13: add "What I would do differently", two or three sentences with a real
   trade-off. Keep the measurement plan.
-- Captions: name what is shown and the decision it demonstrates; no
-  "screenshot of"; no marketing adjectives.
+- Captions: name what is shown and the decision it demonstrates, one or two
+  sentences, ending with a period; no "screenshot of"; no marketing
+  adjectives.
+- Language pass over the whole file, against STYLE.md: concrete subject and
+  real verb in every sentence; no *there is* or *it is believed*; no hedges
+  (*tend to*, *appear to*, *may*) unless doubt is meant; pronouns with clear
+  antecedents and no broad *this*; tense by kind of statement (what I did,
+  past; what the product is and why, present; conclusions, present); lists
+  parallel; serial comma; nonrestrictive clauses enclosed; *which* only with
+  commas, *that* without; em dashes rare and paired; en dash in ranges; no
+  slashes outside and/or and per; sentence-style headings; acronyms defined
+  on first use with a lowercase definition; product names as their owners
+  spell them; British spelling; every number with a source.
+- Edit log: `docs/analytics-rework/copy-edit.md` lists each sentence changed
+  for language only (before, after, rule), so the edit is reviewable
+  without a diff of the whole file.
 
-## 4. Clips (only where prototype = mockup)
+## 5. Clips (only where prototype = mockup)
 
 | # | Chapter | Record? | Condition to check first |
 | --- | --- | --- | --- |
@@ -113,19 +147,21 @@ no chrome, one action per 1.5–2 s, 1 s hold at both ends, cropped to the app
 viewport, composed into the same bezel; MP4 H.264 CRF 23 + WebM VP9, 1–3 MB,
 WebP poster from the first frame.
 
-## 5. Verification (before the report)
+## 6. Verification (before the report)
 
-`npm run check`, `npm run build`; serve `dist/` under `/portfolio-site/`;
-Playwright at 390 / 1280 / 1920, light and dark; three lightbox opens at
-full resolution; Lighthouse ≥ 90 performance, 100 accessibility, no CLS;
-keyboard-only pass; reduced-motion check on clips; each clip at 1× and 0.5×
-against its still; 30-second read-through written into the report.
+`npm run check`, `npm run build`; serve the built `dist/` under
+`/portfolio-site/` for the automated checks only; Playwright at 390 / 1280 /
+1920, light and dark, saved as PNG into `docs/analytics-rework/`; three
+lightbox opens at full resolution; Lighthouse ≥ 90 performance, 100
+accessibility, no CLS; keyboard-only pass; reduced-motion check on clips;
+each clip at 1× and 0.5× against its still; STYLE.md checklist over the
+final copy; 30-second read-through written into the report.
 
 ## Questions before I export anything
 
 1. The main checkout has 838 uncommitted lines in `bi.ts` on
    `feat/raptors-big-hat-4-9`. Is that newer than `main`, and should it be
-   committed first so this branch builds on it?
+   committed first so this branch builds on it? (Still open.)
 2. The device frames mix English chat with German table text. Should I wait
    for English variants in Figma, or caption the German data layer as such?
 3. Where does the running prototype live (repo or URL), and does it have the
@@ -134,3 +170,6 @@ against its still; 30-second read-through written into the report.
 4. Chapter 11/12 artefacts: which of the four (PR review comment, QA
    checklist, Storybook + Code Connect pair, reconcile diff) can be shown
    redacted, and where do I find them?
+5. Should the language edit of `bi.ts` happen in this rework, chapter by
+   chapter as each one is touched, or as a separate pass over the whole
+   file once the structure is final? The second is easier to review.
