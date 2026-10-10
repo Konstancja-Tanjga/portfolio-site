@@ -15,12 +15,12 @@ export const ShotViewer = createContext<
 >(null);
 
 /** One image in the wall, or the slot where it will go. */
-export function Shot({ width = "wall", src, slot, caption }: ShotData & { width?: Width }) {
+export function Shot({ width = "wall", src, slot, caption, device }: ShotData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
   return (
     <Lane width={width}>
       <figure ref={ref} className={shown ? "shot is-shown" : "shot"}>
-        <ShotFrame src={src} slot={slot} caption={caption} />
+        <ShotFrame src={src} slot={slot} caption={caption} device={device} />
         {caption && <figcaption className="shot__caption">{caption}</figcaption>}
       </figure>
     </Lane>
@@ -80,7 +80,7 @@ export function ShotSet({
   );
 }
 
-function ShotFrame({ src, slot, caption }: ShotData) {
+function ShotFrame({ src, slot, caption, device }: ShotData) {
   const view = useContext(ShotViewer);
 
   if (!src) {
@@ -99,7 +99,9 @@ function ShotFrame({ src, slot, caption }: ShotData) {
     <img className="shot__img" src={asset(src)} alt="" loading="lazy" decoding="async" />
   );
 
-  if (!view) return img;
+  const framed = device === "laptop" ? <Laptop>{img}</Laptop> : img;
+
+  if (!view) return framed;
 
   return (
     <button
@@ -108,7 +110,23 @@ function ShotFrame({ src, slot, caption }: ShotData) {
       onClick={() => view({ src: asset(src), caption })}
       aria-label="View full size"
     >
-      {img}
+      {framed}
     </button>
+  );
+}
+
+/**
+ * A laptop drawn in CSS rather than a mock-up image, so the screen keeps its
+ * own resolution and the body follows the theme. The lightbox opens the bare
+ * screen.
+ */
+function Laptop({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="laptop">
+      <span className="laptop__lid">
+        <span className="laptop__screen">{children}</span>
+      </span>
+      <span className="laptop__base" />
+    </span>
   );
 }

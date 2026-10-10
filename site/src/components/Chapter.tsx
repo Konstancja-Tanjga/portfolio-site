@@ -32,7 +32,13 @@ function BlockView({ block }: { block: Block }) {
       return <Points items={block.items} />;
     case "shot":
       return (
-        <Shot width={block.width} src={block.src} slot={block.slot} caption={block.caption} />
+        <Shot
+          width={block.width}
+          src={block.src}
+          slot={block.slot}
+          caption={block.caption}
+          device={block.device}
+        />
       );
     case "duo":
       return <Duo items={block.items} caption={block.caption} />;

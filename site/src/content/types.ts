@@ -19,6 +19,12 @@ export type Shot = {
   /** rendered in place of a missing export, so the wall is walkable while empty */
   slot?: string;
   caption?: string;
+  /**
+   * Draws the screen inside a laptop body. For product screens exported
+   * without their surroundings, which read as loose crops when bare.
+   * Diagrams and references stay unframed.
+   */
+  device?: "laptop";
 };
 
 /* ---------- the repeating content components ---------- */
