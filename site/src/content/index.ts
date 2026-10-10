@@ -25,9 +25,9 @@ import type { CaseStudy, Group, Process } from "./types";
  * with the two short pages, Xecta and Riyad Bank, at the end. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
- * at six-product scale, but its exports belong to Asseco. After those
- * two, `practice` runs oldest to newest, so a new practice wall goes at
- * the end of the band.
+ * at six-product scale, but its exports belong to Asseco. Reading the
+ * sky goes before both as the newest wall; after FOX, `practice` runs
+ * oldest to newest.
  */
 export const cases: CaseStudy[] = [
   // product
@@ -41,11 +41,11 @@ export const cases: CaseStudy[] = [
   xecta,
   riyad,
   // practice
+  sky,
   bighat,
   fox,
   futures,
   chihuahua,
-  sky,
   // recognition
   award,
   bydgoszcz,

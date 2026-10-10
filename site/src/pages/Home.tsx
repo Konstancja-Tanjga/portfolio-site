@@ -43,12 +43,12 @@ export function Home() {
           </p>
           <dl className="hm-ledger">
             <div>
-              <dt>ERP System of the Year 2025</dt>
+              <dt>ERP System of the Year, 2025 and 2026</dt>
               <dd>
                 {award ? (
-                  <Link to={`/work/${award.slug}`}>Gold, User Experience category</Link>
+                  <Link to={`/work/${award.slug}`}>Gold in User Experience, two years running</Link>
                 ) : (
-                  "Gold, User Experience category"
+                  "Gold in User Experience, two years running"
                 )}
               </dd>
             </div>

@@ -452,7 +452,7 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "points",
         items: [
-          "<strong>ERP System of the Year 2025</strong>, winner in the User Experience category, for APplus.",
+          "<strong>ERP System of the Year 2025 and 2026</strong>, Gold in the User Experience category both years, for APplus.",
           "<strong>WUD Silesia 10.5</strong> speculative design competition — distinction, <em>Possible Reality</em>.",
           "<strong>Bydgoszcz Design Challenge</strong> — competition entry, distinction.",
           "<strong>HR Dream Team</strong>, Deloitte.",

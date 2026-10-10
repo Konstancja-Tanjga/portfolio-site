@@ -14,7 +14,7 @@ Warsaw, CET · remote only
 
 I design products and lead the implementation of the design system they run on.
 Currently Lead Product Designer for APplus ERP — **ERP System of the Year
-2025, UX category** — where I designed three applications from zero on a design
+2025 and 2026, Gold in User Experience** — where I designed three applications from zero on a design
 system I built from nothing and still develop.
 
 Development receives a working React prototype built from those components, not

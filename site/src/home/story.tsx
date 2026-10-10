@@ -37,6 +37,16 @@ export const practices: { title: string; body: string }[] = [
       "Contrast tokens so a colour decision cannot fail silently; keyboard navigation and focus behaviour at component level; WCAG as a standing review criterion, not a pre-release audit.",
   },
   {
+    title: "Two senior designers with me",
+    body:
+      "I lead a team of three. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the other two have not seen.",
+  },
+  {
+    title: "Desktop, and the shop floor",
+    body:
+      "APplus runs on the planner's two monitors and on a phone at a machine. One navigation and one content model serve both; what changes is the density, the touch targets and what goes into the bottom bar.",
+  },
+  {
     title: "A research rhythm",
     body:
       "Quarterly interviews, journey mapping, usability testing every release. The team's decisions are argued from what users were seen to do, not from what was assumed.",
@@ -48,7 +58,7 @@ export const career: { years: string; org: string; role: string; what: string }[
     years: "2023 –",
     org: "Asseco Solutions DACH",
     role: "Lead Designer, APplus ERP",
-    what: "Team of three. Design system as code, three applications from zero, the platform's first AI assistant. ERP System of the Year 2025, User Experience.",
+    what: "Team of three. Design system as code, three applications from zero, the platform's first AI assistant. ERP System of the Year, Gold in User Experience in 2025 and again in 2026.",
   },
   {
     years: "2022 – 2023",
