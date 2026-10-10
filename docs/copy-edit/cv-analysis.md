@@ -184,7 +184,7 @@ healthcare, legal, industrial energy.
 ### What I own
 
 - **The product model.** The navigation, content and interaction model that
-  every APplus module follows, on desktop and on the shop floor, and the
+  every APplus module follows, on desktop and mobile, and the
   information architecture of each new application.
 - **The design system, as code.** FOX: tokens and component APIs authored in
   Figma, implemented in Angular, React and web components, documented in
