@@ -127,6 +127,18 @@ each, with the proof.
 
 **Information architecture.** The navigation, content and interaction model every APplus module follows, and the analytical model behind Analytics: data models, analyses, saved queries and visualisations, so a report built by one role stays legible to another.
 
+## Answer: "How do you currently integrate AI tools into your design workflow?"
+
+At three points, each with a different job.
+
+Before the design: concepts in Claude Design, several options rather than one, so the team argues about directions instead of a single frame. When a PM arrives with a Lovable prototype, I import it into Figma and audit it screen by screen; the open questions become product rules.
+
+In the design system: Claude Code and Codex in VS Code every day, for component work, refactoring and documentation, with the Figma MCP server reading the library. I write agent skills that encode the system's components and rules, so generated UI comes out on-system rather than plausibly wrong, and I merge the pull requests myself.
+
+In the product: Elly, the platform's first AI assistant, which I designed around the states that decide trust: cited sources, confidence, errors, and handoff to a person when the system should not act alone.
+
+What AI does not do: the interviews, the usability sessions and the sign-off. Those stay with me.
+
 ## What changed against the current profile, and why
 
 | Before | After | Rule |
