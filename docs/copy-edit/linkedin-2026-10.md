@@ -9,7 +9,7 @@ LinkedIn's.
 
 Lead Designer, UX Engineer, AI-fluent · APplus ERP at Asseco Solutions · design systems in code · ERP-System des Jahres, Gold in User Experience, 2025 and 2026
 
-(165 characters)
+(159 characters)
 
 ## About (2 600 characters)
 
@@ -36,7 +36,7 @@ Off screen I paint in watercolour, mostly on location, keep a field list of bird
 Portfolio: konstancja-tanjga.github.io/portfolio-site
 Big Hat, my public design system: konstancja-tanjga.github.io/bighat-design-system
 
-(2 130 characters)
+(2 254 characters)
 
 ## Experience
 
@@ -46,7 +46,7 @@ Own product design for APplus ERP, a multi-module platform used across DACH on d
 
 Four products designed from zero:
 
-APplus Analytics (01/2026 – 09/2026). Customers reported through a third-party BI tool. Designed the in-house replacement, a data warehouse and the analytics application on it: data models, query builder, AI analyst, visualisation. One analytical model so a report built by one role stays legible to another, and nine surface rules that govern every control. Validated with eight moderated sessions and a two-customer beta. Presented at Vision Days on 22 September 2026; generally available from October 2026.
+APplus Analytics (01/2026 – 09/2026). Customers reported through a third-party BI tool. Designed the in-house replacement, a data warehouse and the analytics application on it: data models, query builder, AI analyst, visualisation. One analytical model so a report built by one role stays legible to another. Validated with eight moderated sessions and a two-customer beta; generally available from October 2026.
 
 APplus Documents (10/2025 – 08/2026). Versioning, search, permissions and retention over documents that lived in network drives and mail threads, under German commercial retention law. A three-layer permission model a non-technical administrator can reason about: 17 default-deny system permissions, content permissions by metadata, additive multi-role resolution.
 
@@ -54,9 +54,9 @@ APplus Best Practice Hub (08/2024 – 08/2025). Over 50 field-tested Flowboard t
 
 Elly, the platform's first AI assistant (released with APplus 9, 04/2025). Streaming answers over the documentation with cited sources, confidence and error states, and handoff to a person when the system should not act alone. My study with 13 consultants changed the roadmap: 12 of 13 would use it again, trust scored lowest, so citations shipped; 8 of 13 had never found it, so discovery became a project.
 
-FOX design system. Built from nothing; led the migration to v3 across six products. One token set behind the Figma library and the code, Code Connect on every component, Storybook on Chromatic as the shared reference. I own the component API and the tokens and review every pull request into the library.
+FOX design system. Built from nothing; led the migration to v3 across six products. One token set behind the Figma library and the code, Code Connect on every component. I own the component API and the tokens and review every pull request into the library.
 
-(1 870 characters)
+(2 029 characters)
 
 ### Senior UX/UI Designer · Volvo Group · 08/2022 – 08/2023 · contract, remote
 
