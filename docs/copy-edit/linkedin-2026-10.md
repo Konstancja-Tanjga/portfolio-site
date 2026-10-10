@@ -48,7 +48,7 @@ Four products designed from zero:
 
 APplus Analytics (01/2026 – 09/2026). Customers reported through a third-party BI tool. Designed the in-house replacement, a data warehouse and the analytics application on it: data models, query builder, AI analyst, visualisation. One analytical model so a report built by one role stays legible to another. Validated with eight moderated sessions and a two-customer beta; generally available from October 2026.
 
-APplus Documents (10/2025 – 08/2026). Versioning, search, permissions and retention over documents that lived in network drives and mail threads, under German commercial retention law. A three-layer permission model a non-technical administrator can reason about: 17 default-deny system permissions, content permissions by metadata, additive multi-role resolution.
+APplus Documents (10/2025 – 08/2026). Versioning, search, permissions and retention over documents under German commercial retention law. A three-layer permission model a non-technical administrator can reason about: 17 default-deny system permissions, content permissions by metadata, additive multi-role resolution.
 
 APplus Best Practice Hub (08/2024 – 08/2025). Over 50 field-tested Flowboard templates, offered in a modal table nobody could search or filter. Rebuilt as a catalogue a customer can narrow, judge and install without leaving the screen. After release, questions to consultants fell by about 22 percent.
 
@@ -56,7 +56,7 @@ Elly, the platform's first AI assistant (released with APplus 9, 04/2025). Strea
 
 FOX design system. Built from nothing; led the migration to v3 across six products. One token set behind the Figma library and the code, Code Connect on every component. I own the component API and the tokens and review every pull request into the library.
 
-(2 029 characters)
+(1 982 characters)
 
 ### Senior UX/UI Designer · Volvo Group · 08/2022 – 08/2023 · contract, remote
 
