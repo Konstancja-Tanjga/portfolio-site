@@ -1,4 +1,5 @@
 import type { Video as VideoData, Width } from "../content/types";
+import { track } from "../components/Analytics";
 import { asset } from "./asset";
 import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
@@ -38,6 +39,7 @@ export function Video({
           controls
           playsInline
           preload="none"
+          onPlay={() => track("video", { title })}
           crossOrigin={subtitles ? "anonymous" : undefined}
         >
           {subtitles && (

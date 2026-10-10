@@ -1,3 +1,4 @@
+import { track } from "../components/Analytics";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 /**
@@ -30,7 +31,12 @@ export function useLightbox() {
     };
   }, [open]);
 
-  return { open, show: setOpen, close };
+  const show = useCallback((shot: { src: string; caption?: string } | null) => {
+    if (shot) track("lightbox", { src: shot.src });
+    setOpen(shot);
+  }, []);
+
+  return { open, show, close };
 }
 
 /** 1 is fit-to-stage, not 100% of the file. Below 1 for a wide diagram

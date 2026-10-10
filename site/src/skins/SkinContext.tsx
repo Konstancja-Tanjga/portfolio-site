@@ -1,3 +1,4 @@
+import { track } from "../components/Analytics";
 import {
   createContext,
   useCallback,
@@ -59,6 +60,7 @@ export function SkinProvider({ children }: { children: ReactNode }) {
 
   const setSkin = useCallback((next: Skin) => {
     if (next === skin) return;
+    track("skin", { skin: next });
     try {
       localStorage.setItem(KEY, next);
     } catch {
