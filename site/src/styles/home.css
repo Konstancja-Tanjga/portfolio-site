@@ -370,3 +370,87 @@
   .hm-tile__cover { transform: none; transition: none; }
   .hm-numbers > div { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- motion graphics ----------
+   Borrowed vocabulary: a boot sequence, lines that measure themselves
+   in, a scan across an image when it arrives, brackets on the corners,
+   a recording dot, dust that streaks when the page moves. */
+.hm-hero__dust { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: screen; opacity: 0.9; }
+
+/* status line: types in, then the rec dot blinks */
+.hm-hero__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em 1.4em;
+  margin: 0 0 var(--bh-space-4);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kt-ink-3);
+  animation: mg-in 700ms 80ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hm-hero__status span + span:not(.hm-hero__rec)::before { content: "·"; margin-right: 1.4em; color: var(--kt-line); }
+.hm-hero__rec { width: 0.55em; height: 0.55em; border-radius: 50%; background: #e8553f; box-shadow: 0 0 10px rgba(232, 85, 63, 0.7); animation: mg-rec 1.6s steps(1) infinite; }
+@keyframes mg-rec { 50% { opacity: 0.25; } }
+@keyframes mg-in {
+  from { opacity: 0; transform: translateX(-14px); filter: blur(3px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+.hm-hero__lead { animation-name: mg-in; }
+.hm-chips { animation-name: mg-in; }
+
+/* headings measure themselves in: a ruler with ticks drawn from the left */
+.hm-h2 { position: relative; padding-top: var(--bh-space-3); }
+.hm-h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 7px;
+  background:
+    repeating-linear-gradient(90deg, var(--kt-ink-3) 0 1px, transparent 1px 12px) 0 100% / 0% 7px no-repeat,
+    repeating-linear-gradient(90deg, var(--kt-sand) 0 1px, transparent 1px 60px) 0 100% / 0% 7px no-repeat,
+    linear-gradient(var(--kt-line), var(--kt-line)) 0 100% / 100% 1px no-repeat;
+  background-size: 0% 4px, 0% 7px, 100% 1px;
+  animation: mg-measure 1400ms 200ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes mg-measure { to { background-size: 100% 4px, 100% 7px, 100% 1px; } }
+
+/* tiles: brackets on the corners, a scan when they arrive, a raster on hover */
+.hm-tile__cover::before, .hm-tile__cover::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 400ms, transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hm-tile__cover::before { left: 10px; top: 10px; border-left: 1.5px solid var(--kt-sand); border-top: 1.5px solid var(--kt-sand); transform: translate(-8px, -8px); }
+.hm-tile__cover::after { right: 10px; bottom: 10px; border-right: 1.5px solid var(--kt-sand); border-bottom: 1.5px solid var(--kt-sand); transform: translate(8px, 8px); }
+.hm-tile:hover .hm-tile__cover::before, .hm-tile:hover .hm-tile__cover::after { opacity: 1; transform: none; }
+.hm-tile__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 14%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(241, 237, 228, 0.35), transparent);
+  opacity: 0;
+}
+.hm-tile.is-shown .hm-tile__scan { animation: mg-scan 1100ms 300ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+@keyframes mg-scan { 0% { left: -14%; opacity: 1; } 90% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+.hm-tile:hover .hm-tile__scan { animation: mg-raster 1400ms linear infinite; width: 100%; left: 0; height: 2px; top: 0; bottom: auto; background: linear-gradient(90deg, transparent, rgba(227, 210, 173, 0.6), transparent); opacity: 1; }
+@keyframes mg-raster { from { transform: translateY(0); } to { transform: translateY(var(--tile-h, 40vh)); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-hero__status, .hm-h2::before, .hm-tile.is-shown .hm-tile__scan, .hm-tile:hover .hm-tile__scan { animation: none; }
+  .hm-h2::before { background-size: 100% 4px, 100% 7px, 100% 1px; }
+  .hm-hero__rec { animation: none; }
+  .hm-hero__dust { display: none; }
+}

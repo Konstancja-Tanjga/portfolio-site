@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useReveal } from "../system/Reveal";
 import { useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
+import { Backdrop } from "../system/Backdrop";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
@@ -24,10 +25,18 @@ export function Home() {
     <div className="hm">
       <section className="hm-hero" aria-labelledby="hero-claim">
         <div className="hm-hero__aurora" aria-hidden="true" />
+        <Backdrop />
         <div className="hm-hero__photo" aria-hidden="true">
           <img src={asset("/about/portrait.jpg")} alt="" />
         </div>
         <div className="hm-hero__text">
+          <p className="hm-hero__status" aria-label="Status">
+            <span className="hm-hero__rec" aria-hidden="true" />
+            <span>Lead Designer, UX Engineer</span>
+            <span>Warsaw 52.2°N 21.0°E</span>
+            <span>CET</span>
+            <span>Open to lead and principal roles, remote, B2B</span>
+          </p>
           <h1 id="hero-claim" className="hm-hero__claim">
             <span className="hm-hero__mask"><span className="hm-hero__line">Enterprise software,</span></span>
             <span className="hm-hero__mask"><span className="hm-hero__line">designed from zero</span></span>
@@ -207,6 +216,7 @@ function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number;
         ) : (
           <span className="hm-tile__slot">{study.cover.headline.join(" ")}</span>
         )}
+        <span className="hm-tile__scan" aria-hidden="true" />
         <span className="hm-tile__view" aria-hidden="true">View</span>
       </span>
       <span className="hm-tile__text">
