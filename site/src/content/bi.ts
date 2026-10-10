@@ -550,62 +550,6 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "surface-rules",
-      n: "06b",
-      heading: "Surface rules",
-      maxim: "The surface follows the scope of what is acted on, never the location of the button.",
-      standfirst:
-        "Nine rules, one question each time: what is being acted on? Location is a consequence of scope, which is what makes the rules work for controls that do not exist yet. Each rule was checked against every control in the prototype (PR-07).",
-      blocks: [
-        {
-          kind: "spec",
-          caption: "The scope test: what is being acted on decides the surface, and the surface decides where the control lives. Every row is a real case in the prototype.",
-          rows: [
-            { key: "The whole object the page shows", value: "Modal · in fox-app-bar" },
-            { key: "How the body content is rendered", value: "Right side sheet · in the body view toolbar" },
-            { key: "An object inside the body: a card, a widget", value: "Modal · in that object's overflow menu" },
-            { key: "A short choice with no inputs", value: "Anchored menu · next to its trigger" },
-            { key: "Something destructive", value: "Modal naming the object · wherever the object is" },
-            { key: "An immediate commit or view state", value: "No surface, a toast confirms · in the bar that owns the state" },
-            { key: "An object in another domain", value: "Route to the owning page · the action stays, the surface moves" },
-            { key: "The application's own configuration", value: "Full overlay · from the profile and tenant footer" },
-          ],
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>R1 · Object scope → modal.</strong> An action on the whole object the page shows opens a modal, so it belongs in fox-app-bar. <em>In the prototype:</em> 6 of 6 app-bar actions obey it (share, permissions, edit analysis on four pages, create data model, copy analysis, query create and edit).",
-            "<strong>R2 · Render scope → right side sheet.</strong> Changing how the body is rendered opens the side sheet, without a scrim, from the body toolbar. <em>In the prototype:</em> 6 of 6 panels obey it.",
-            "<strong>R3 · Object inside the body → modal.</strong> A card or a widget is still an object, so its actions open a modal from its own overflow menu. <em>In the prototype:</em> the controls that looked like exceptions (widget settings, card edit, copy, delete, permissions) all pass the scope test.",
-            "<strong>R4 · Short choice → anchored menu.</strong> No inputs, no scrim, closes on an outside click. If it needs a field it is a modal; if it must stay open it is a sheet.",
-            "<strong>R5 · Destructive → modal that names the object.</strong> The trigger may only ask. <em>In the prototype:</em> delete data model (REQ-2764, REQ-2783, REQ-2784), delete analysis (REQ-2290), delete query, author only (REQ-2332).",
-            "<strong>R6 · Immediate commit or view state → no surface.</strong> It acts on click and a toast confirms: save, enlarge, grid/list, the verified toggle. Safe only when the act is cheap to undo; otherwise it is R5.",
-            "<strong>R7 · One entry point per action.</strong> Never the same control in the app bar and the body. The one sanctioned exception is Enlarge, which graph and pivot both delegate up to the page.",
-            "<strong>R8 · Another object's domain → route.</strong> Go to the page that owns it and open its surface there, carrying the intent. <em>In the prototype:</em> query permissions route to /queries with Eligible roles highlighted, because the Queries SRS puts access in that field (REQ-2392, REQ-2399, REQ-2336, REQ-2401).",
-            "<strong>R9 · Application configuration → full overlay.</strong> Settings replaces the page area. It is a place you work in, not a single decision, and it has nothing to do with the page you came from.",
-          ],
-        },
-        {
-          kind: "spec",
-          caption: "Three things the rules changed after they were written.",
-          rows: [
-            {
-              key: "Sort and Smart filter",
-              value: "Sat in the detail app bar. They change how the body renders (R2), so they moved to the body toolbar and open in the side sheet.",
-            },
-            {
-              key: "PDF export",
-              value: "Was added to the Analyses app bar, then removed. Export keeps one entry point, the PNG/PDF menu in the graph toolbar (R7).",
-            },
-            {
-              key: "Settings",
-              value: "The structure frames said “opens as overlay, not side sheet”. R9 is that note generalised: scope wider than the page means a surface wider than the page.",
-            },
-          ],
-        },
-      ],
-    },
-    {
       id: "sign-off",
       n: "07",
       heading: "Design and sign-off",
