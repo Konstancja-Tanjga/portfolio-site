@@ -147,12 +147,20 @@ export const bi: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html:
-            "<p>A number is only as true as the model behind it, the period it covers and the role of the person reading it, and all three are invisible by default. Two people can open the same dashboard and be entitled to different rows. A year-on-year comparison can be wrong because the current year has not finished loading, while the query itself is correct. Each of those is a UI constraint before it is a backend constraint, because the UI is where a user forms a false belief about a number they will then repeat in a meeting.</p>",
+          html: "<p>A number is only as true as three things nobody can see: <strong>the model behind it, the period it covers, and the role of the person reading it.</strong></p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Same dashboard, different rows.</strong> Two people open it and are entitled to different data.",
+            "<strong>A correct query, a wrong comparison.</strong> Year on year looks down because the current year has not finished loading.",
+            "<strong>A UI problem before a backend problem.</strong> The screen is where a false belief about a number is formed, and then repeated in a meeting.",
+            "<strong>Author and defender are different people.</strong> Whoever builds a query is almost never the one who has to defend its number.",
+          ],
         },
         {
           kind: "pull",
-          text: "The work was making authorship, reach and freshness legible on the artefact itself, in a product where the person who builds a query is almost never the person who has to defend the number it produces.",
+          text: "The work: make authorship, reach and freshness legible on the artefact itself.",
         },
       ],
     },
