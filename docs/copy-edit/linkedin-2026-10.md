@@ -112,6 +112,21 @@ Product Design · User Interface Design · Enterprise Software · Artificial Int
 
 Further down the list: Information Architecture · Interaction Design · Figma (Software) · Prototyping · Design Thinking · Front-End Development
 
+## Skill descriptions (LinkedIn asks "how do you use this skill")
+
+The five skills now on the profile, in LinkedIn's order. Short, one claim
+each, with the proof.
+
+**Product design.** Four APplus products designed from zero and shipped: Elly, the Best Practice Hub, Documents, Analytics. I own each one from the first interview to the released screen, and the design system they run on.
+
+**User interface design.** UI built from a design system I own as code: FOX, with tokens and component APIs authored in Figma and implemented in Angular, React and web components. I author and merge the component pull requests myself.
+
+**Enterprise software.** Ten years in data-dense, regulated software: APplus ERP for manufacturers across DACH, Volvo's enterprise ERP, a legal platform at Wolters Kluwer, upstream oil and gas at Xecta, insurance and healthcare at PZU.
+
+**AI in design.** Elly, the platform's first AI assistant, designed around the states that decide trust: cited sources, confidence, errors, handoff to a person. Claude Code and Codex daily; published agent skills that keep generated UI on-system.
+
+**Information architecture.** The navigation, content and interaction model every APplus module follows, and the analytical model behind Analytics: data models, analyses, saved queries and visualisations, so a report built by one role stays legible to another.
+
 ## What changed against the current profile, and why
 
 | Before | After | Rule |
