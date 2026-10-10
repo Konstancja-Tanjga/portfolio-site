@@ -39,7 +39,7 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "Two senior designers with me",
     body:
-      "I lead a team of two. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the other two have not seen.",
+      "I lead a team of two. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the others have not seen.",
   },
   {
     title: "Desktop, and the shop floor",
