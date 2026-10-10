@@ -179,7 +179,32 @@
 /* ---------- text ---------- */
 .passage { color: var(--kt-ink-2); line-height: 1.65; }
 .passage strong { color: var(--kt-ink); }
-.points li { color: var(--kt-ink-2); }
+.points { list-style: none; padding: 0; margin: var(--bh-space-4) 0 0; display: grid; gap: var(--bh-space-2); }
+.points li {
+  position: relative;
+  padding: var(--bh-space-3) 0 var(--bh-space-3) var(--bh-space-5);
+  border-top: 1px solid var(--kt-line);
+  color: var(--kt-ink-2);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 500ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(var(--bh-space-3) + 0.55em);
+  width: 1.4rem;
+  height: 2px;
+  background: var(--kt-sand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.points.is-shown li { opacity: 1; transform: none; }
+.points.is-shown li::before { transform: scaleX(1); }
+.points li strong { color: var(--kt-ink); }
+@media (prefers-reduced-motion: reduce) { .points li, .points li::before { opacity: 1; transform: none; transition: none; } }
 .pull {
   margin: var(--bh-space-6) 0 0;
   padding: 0 0 0 var(--bh-space-4);

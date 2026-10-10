@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
 
 /** Prose at reading measure. */
@@ -10,12 +11,14 @@ export function Passage({ html }: { html: string }) {
   );
 }
 
+/** Bullets that arrive one after another the first time they are seen. */
 export function Points({ items }: { items: string[] }) {
+  const { ref, shown } = useReveal<HTMLUListElement>();
   return (
     <Lane width="column" className="passage">
-      <ul className="points">
-        {items.map((item) => (
-          <li key={item} dangerouslySetInnerHTML={{ __html: item }} />
+      <ul ref={ref} className={shown ? "points is-shown" : "points"}>
+        {items.map((item, i) => (
+          <li key={item} style={{ transitionDelay: `${i * 90}ms` }} dangerouslySetInnerHTML={{ __html: item }} />
         ))}
       </ul>
     </Lane>

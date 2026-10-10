@@ -230,9 +230,17 @@ export const bi: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html:
-            "<p>I did not start by drawing. A working prototype already existed, built in Lovable by the PM, so I imported all of it into Figma and audited it screen by screen: against market practice for BI tools, and against what APplus users already know how to do. I grouped the screens into four clusters (entry and shell, data foundation, discovery and collaboration, insight assets) and pinned each open question to the screen that raised it.</p>" +
-            "<p>The team has no researcher, so I ran the validation myself: eight sessions with subject-matter experts, the PM and the requirements engineer, each walking a prototype flow end to end on real questions from their own work. I dropped the weak options in the room, before anything was designed in detail.</p>",
+          html: "<p>The PM's Lovable prototype was the starting point, not a blank page.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Audited it screen by screen.</strong> The whole prototype imported into Figma and read against market practice for BI tools and against what APplus users already know how to do.",
+            "<strong>Four clusters.</strong> Entry and shell, data foundation, discovery and collaboration, insight assets.",
+            "<strong>Seven questions, pinned to the screens that raised them.</strong> Each one is answered by a rule or a template in chapter 04.",
+            "<strong>Eight validation sessions, run by me.</strong> The team has no researcher. Subject-matter experts, the PM and the requirements engineer each walked a flow end to end on questions from their own work.",
+            "<strong>Weak options dropped in the room</strong>, before anything was designed in detail.",
+          ],
         },
         {
           kind: "stats",
