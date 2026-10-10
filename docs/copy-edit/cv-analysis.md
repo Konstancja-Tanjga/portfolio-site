@@ -339,7 +339,7 @@ them apart in flight; botanical illustration.
 
 ### Languages
 
-Polish, native · English, C2 · German and Spanish, basic
+Polish, native · English, C1 
 
 ## 7. The case-study structure the CV points at
 

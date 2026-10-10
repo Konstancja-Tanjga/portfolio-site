@@ -1,3 +1,4 @@
+
 # Copy edit against STYLE.md: inventory and order of work
 
 Scope, as asked on 10 October 2026: the home page, every case study, About,
