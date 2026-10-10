@@ -119,13 +119,23 @@ export const bi: CaseStudy = {
             "The AI Data Analyst with a detail thread open: one fragment of an answer questioned without touching the main analysis.",
         },
         {
-          kind: "pull",
-          text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
+          kind: "passage",
+          html: "<p><strong>What I owned.</strong> The only designer on the product, from the audit to the review of the build.</p>",
         },
         {
-          kind: "passage",
-          html:
-            "<p><strong>What I owned:</strong> the audit of the existing concept, the shape of the product, its information architecture, personas and user flows, market and competitor analysis, the surface rules the whole application obeys, requirement-level design and sign-off, and design review of every pull request that changes a screen. FOX, the design system it is built on, is mine: its tokens and its component API. I did its migration from v2.3 to v3.0 with one other designer.</p>",
+          kind: "points",
+          items: [
+            "<strong>The audit</strong> of the existing concept, and <strong>the shape of the product</strong> that came out of it.",
+            "<strong>Information architecture</strong>, personas and user flows; <strong>market and competitor analysis</strong>.",
+            "<strong>The nine surface rules</strong> the whole application obeys.",
+            "<strong>Requirement-level design and sign-off</strong>: every frame tied to its REQ number, dated and signed.",
+            "<strong>Design review of every pull request</strong> that changes a screen, on its preview build.",
+            "<strong>FOX, the design system it runs on</strong>: its tokens and its component API are mine. I did its migration from v2.3 to v3.0 with one other designer.",
+          ],
+        },
+        {
+          kind: "pull",
+          text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
         },
       ],
     },
