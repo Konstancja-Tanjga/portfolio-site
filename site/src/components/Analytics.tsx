@@ -160,7 +160,9 @@ export function Analytics() {
     // `search` is dropped on purpose. The only query strings this site uses
     // are the opt-out above and whatever a referrer appends (utm_*, fbclid),
     // and keeping them would split one page across dozens of dashboard rows.
-    const url = pathname;
+    // Pages answers /work/x and /work/x/ with the same file, and the
+    // dashboard was showing them as two rows. One spelling, no slash.
+    const url = pathname.replace(/(.)\/+$/, "$1");
     if (lastSent.current === url) return;
 
     const send = () => {
