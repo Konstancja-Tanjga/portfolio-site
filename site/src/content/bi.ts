@@ -31,20 +31,22 @@ export const bi: CaseStudy = {
     headline: ["Business", "Intelligence"],
     subline: "for APplus ERP",
     stamp: "DASHBOARDS · QUERIES · DATA MODELS · AI ANALYST",
-    credit: "Lead Product Designer · Asseco Solutions · 2026",
+    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-analytics/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
+    { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Product", value: "APplus ERP — Analytics" },
+    { label: "Product", value: "APplus ERP, Analytics" },
     {
       label: "Design system",
-      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
+      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Team", value: "Seven: three developers, a requirements engineer, QA, a PM and me" },
-    { label: "Period", value: "January – September 2026, released September 2026" },
+    { label: "Period", value: "January to September 2026" },
+    { label: "Launch", value: "Presented at Vision Days on 22 September 2026; generally available from October 2026" },
+    { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" },
   ],
   chapters: [
     {
@@ -56,14 +58,19 @@ export const bi: CaseStudy = {
           kind: "spec",
           rows: [
             {
-              key: "Problem",
+              key: "Context",
               value:
-                "APplus customers did their reporting in an external BI tool, outside the ERP. The PM had built a working prototype of an in-house replacement in Lovable, which showed it could be built but left open how people would find, trust and share a number.",
+                "APplus customers already had analytics, through a third-party BI tool outside the ERP. Analytics is the in-house replacement: a data warehouse and the application on top of it, informed by how customers used the old tool and by market practice for BI.",
             },
             {
-              key: "My part",
+              key: "Problem",
               value:
-                "The audit, information architecture, personas and flows, the surface rules, requirement-level design, a clickable React prototype on FOX, and design review of the build.",
+                "The PM had built a working prototype of the replacement in Lovable. It showed the product could be built and left open how people would find, trust and share a number.",
+            },
+            {
+              key: "My role and scope",
+              value:
+                "The only designer on the product. The audit of the prototype, the information architecture, personas and flows, the nine surface rules the whole application obeys, requirement-level design and sign-off, a working prototype on FOX components alongside the Figma file, and design review of every pull request that changes a screen. I ran the eight validation sessions myself; the team has no researcher.",
             },
             {
               key: "Decision 1",
@@ -81,11 +88,15 @@ export const bi: CaseStudy = {
                 "Reach, authorship and join type are printed on the object itself. Nobody has to open a dialog to learn who can see a query.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "7 of 7 audit questions answered. 8 validation sessions with subject-matter experts. Every app-bar action and every render panel in the prototype checked against the rules.",
+                "Shipped. 7 of 7 audit questions answered by a rule or a template; 8 validation sessions with subject-matter experts; every app-bar action and every render panel in the prototype checked against the rules. Presented at Vision Days on 22 September 2026, generally available from October 2026.",
             },
-            { key: "Shipped", value: "September 2026" },
+            {
+              key: "Period and team",
+              value:
+                "January to September 2026. Seven people: three developers, a requirements engineer, QA, a PM and me.",
+            },
           ],
         },
       ],
@@ -109,12 +120,12 @@ export const bi: CaseStudy = {
         },
         {
           kind: "pull",
-          text: "Design and code stay one system. The Figma library and tokens mirror what ships, Code Connect links every component to its implementation, and the spec engineers build from is frozen with the code it describes.",
+          text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
         },
         {
           kind: "passage",
           html:
-            "<p><strong>What I owned:</strong> the audit of the existing concept, the shape of the product, its information architecture, personas and user flows, market and competitor analysis, the surface rules the whole application obeys, requirement-level design and sign-off, and day-to-day work with the developers. FOX, the design system it is built on, is mine to own: its tokens and component API. I did its migration from v2.3 to v3.0 with one other designer.</p>",
+            "<p><strong>What I owned:</strong> the audit of the existing concept, the shape of the product, its information architecture, personas and user flows, market and competitor analysis, the surface rules the whole application obeys, requirement-level design and sign-off, and design review of every pull request that changes a screen. FOX, the design system it is built on, is mine: its tokens and its component API. I did its migration from v2.3 to v3.0 with one other designer.</p>",
         },
       ],
     },
@@ -221,7 +232,7 @@ export const bi: CaseStudy = {
           kind: "passage",
           html:
             "<p>I did not start by drawing. A working prototype already existed, built in Lovable by the PM, so I imported all of it into Figma and audited it screen by screen: against market practice for BI tools, and against what APplus users already know how to do. I grouped the screens into four clusters (entry and shell, data foundation, discovery and collaboration, insight assets) and pinned each open question to the screen that raised it.</p>" +
-            "<p>There is no dedicated researcher on the team, so I ran the validation myself: eight sessions with subject-matter experts, the PM and the requirements engineer, each walking a prototype flow end to end on real questions from their own work. Weak options were dropped in the room, before anything was designed in detail.</p>",
+            "<p>The team has no researcher, so I ran the validation myself: eight sessions with subject-matter experts, the PM and the requirements engineer, each walking a prototype flow end to end on real questions from their own work. I dropped the weak options in the room, before anything was designed in detail.</p>",
         },
         {
           kind: "stats",
@@ -239,7 +250,7 @@ export const bi: CaseStudy = {
       n: "04",
       heading: "What the audit asked",
       standfirst:
-        "The purple notes are the questions as I pinned them on the Lovable screens. The table is what answered each one.",
+        "The purple notes are the seven questions as I pinned them on the Lovable screens. Each one became a product rule or a template; the table is what answered each one.",
       blocks: [
         {
           kind: "duo",
@@ -292,13 +303,13 @@ export const bi: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Before a frame was drawn, a settled requirement went into Codex, and later Claude, and came back as something clickable within hours. Those prototypes were what the SME sessions argued over. I lead the implementation through Claude Code: skills, AGENTS.md, tokens, review and merge, so development starts from running code instead of rebuilding a picture from a spec.</p>",
+            "<p>Before a frame was drawn, a settled requirement went into Codex, and later Claude, and came back as something clickable within hours. Those prototypes were what the SME sessions argued over. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.</p>",
         },
         {
           kind: "shot",
           width: "wall",
           src: `${S}/prototype.png`,
-          caption: "A generated prototype of Settings → Version & updates, with the changelog open before an update is installed.",
+          caption: "A generated prototype of Settings, Version and updates, with the changelog open before an update is installed.",
         },
       ],
     },
@@ -328,7 +339,7 @@ export const bi: CaseStudy = {
               version: "v2.3",
               claim: "The file is bound to the code",
               sourceOfTruth: "Still Figma, but every component is tied to its implementation through Code Connect.",
-              ships: "Figma → Storybook → dev, with code-side work written back into the file over MCP.",
+              ships: "Figma to Storybook to development, with code-side work written back into the file over MCP.",
               costs: "The binding is real, the ownership is not: the file still has to be kept honest by hand every time code moves first.",
             },
             {
@@ -364,7 +375,7 @@ export const bi: CaseStudy = {
   ></fox-button>
 </fox-dialog>`,
           caption:
-            "fox-dialog, the Default story, copied verbatim. FOX components are Lit web components published one package per component, e.g. @assecosolutions/fox-dialog. The public Storybook documents the v1 line; v3.0 stays inside the company.",
+            "fox-dialog, the Default story, copied verbatim. FOX components are Lit web components published one package per component, for example @assecosolutions/fox-dialog. The public Storybook documents the v1 line; v3.0 stays inside the company.",
           source: {
             text: "Source: FOX Storybook, atoms / fox-dialog.",
             href: "https://design-system-v1.assecosolutions.com/?path=/story/atoms-fox-dialog--default-story",
@@ -547,7 +558,7 @@ export const bi: CaseStudy = {
       n: "07",
       heading: "Design and sign-off",
       standfirst:
-        "A frame is tied to its requirement: the SRS it comes from, the REQ number, a date and a status, then design sign-off. For example, REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 03.06.2026 and the status Review.",
+        "A frame is tied to its requirement: the SRS it comes from, the REQ number, a date and a status, then design sign-off. For example, REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 3 June 2026 and the status Review. Design acceptance is part of the definition of done.",
       blocks: [
         {
           kind: "shot",
@@ -622,7 +633,7 @@ export const bi: CaseStudy = {
             id: "UC-01",
             title: "Question a fragment of an analysis without derailing the analysis",
             actor: {
-              name: "02 — The controller",
+              name: "02, the controller",
               body: "Reading an AI-generated analysis, and not yet willing to believe it.",
               note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
             },
@@ -707,7 +718,7 @@ export const bi: CaseStudy = {
             id: "UC-02",
             title: "Publish a query other people can use, and see who can use it",
             actor: {
-              name: "01 — The key user, publishing",
+              name: "01, the key user, publishing",
               body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
               note: "One author, three kinds of reader.",
             },
@@ -838,16 +849,16 @@ export const bi: CaseStudy = {
       heading: "Handoff",
       maxim: "When the system lives in code and the file only consumes it, there is no second copy to forget.",
       standfirst:
-        "What development receives is working FOX code in the repository, reviewed and merged, not a spec sheet to rebuild from.",
+        "What development receives: the Figma file through Dev Mode, every component bound to its implementation by Code Connect, Storybook as the reference, and a working prototype that answers the behaviour questions. The implementation is the developers' code on the FOX package.",
       blocks: [
         {
           kind: "spec",
           caption:
             "The loop. By v3.0 the binding is the distribution model: FOX ships as a versioned package, and six products pick it up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library.",
           rows: [
-            { key: "Figma → code", value: "Code Connect binds each design component to the implementation that ships it." },
-            { key: "Code → Figma", value: "Work done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it." },
-            { key: "Code → product", value: "The working prototype answers behaviour questions; its FOX code goes into the implementation." },
+            { key: "Figma to code", value: "Code Connect binds each design component to the implementation that ships it." },
+            { key: "Code to Figma", value: "Work done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it." },
+            { key: "Prototype to product", value: "The working prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
           ],
         },
         {
@@ -873,7 +884,7 @@ export const bi: CaseStudy = {
       heading: "After development",
       maxim: "A merged pull request is not a finished feature. It is the first time the design exists at all.",
       standfirst:
-        "Handoff delivers FOX code, so what reaches review is already built from the right parts. What is left to check is what a component library cannot guarantee: composition, states, real data, German, and whether the requirement was met.",
+        "The developers build on the FOX package, so what reaches review is already made from the right parts. What is left to check is what a component library cannot guarantee: composition, states, real data, German, and whether the requirement was met.",
       blocks: [
         {
           kind: "steps",
@@ -958,8 +969,13 @@ export const bi: CaseStudy = {
           items: [
             { value: "9", label: "months, January to September 2026" },
             { value: "7", label: "people: three developers, a requirements engineer, QA, a PM and me" },
-            { value: "1", label: "designer: the shape of the product, its rules and the component code it ships on" },
+            { value: "1", label: "designer: the shape of the product, its rules, and the design system it ships on" },
           ],
+        },
+        {
+          kind: "passage",
+          html:
+            "<p><strong>What I would do differently.</strong> I would write the surface rules before the first prototype, not after the audit. Three controls moved after the rules were written, and each move cost a round of review and a frame redrawn. I would also not accept the pivot grid as a native table: fox-table-executor could not express grouped headers, I took the gap to ship on time, and the system now owes the product a component that the next pivot will need too.</p>",
         },
         {
           kind: "passage",
