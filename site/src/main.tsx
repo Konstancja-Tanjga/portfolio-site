@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { SkinProvider } from "./skins/SkinContext";
 
 // The design system, first: it owns the colour, spacing, radius and
 // elevation tokens, plus a dark theme. Everything after this either
@@ -10,11 +11,15 @@ import "@bighatpoland/ui/styles.css";
 
 import "./styles/tokens.css";
 import "./styles/app.css";
+import "./skins/skins.css";
+import "./home/home.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <App />
+      <SkinProvider>
+        <App />
+      </SkinProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

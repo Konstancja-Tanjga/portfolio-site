@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { findCase, listingFor } from "../content";
 import type { ReactNode } from "react";
+import { SkinSwitcher } from "../skins/SkinContext";
 
 import { version as dsVersion } from "@bighatpoland/ui/package.json";
 
@@ -38,6 +39,7 @@ export function Shell({ children }: { children: ReactNode }) {
             <a href="https://github.com/konstancja-tanjga">GitHub</a>
             <a href="https://linkedin.com/in/konstancja-tanjga">LinkedIn</a>
           </nav>
+          <SkinSwitcher />
         </header>
       </div>
       <main>{children}</main>
