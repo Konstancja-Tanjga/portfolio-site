@@ -1,3 +1,5 @@
+import { useId, useState } from "react";
+
 import type { UseCase as UseCaseData } from "../content/types";
 import { Lane } from "./Wall";
 
@@ -9,10 +11,18 @@ import { Lane } from "./Wall";
  * same slots, so a reader who has read one can skim the rest and
  * still land on the reasoning.
  */
+/**
+ * On the surface: who, what sets it off, the rule it sets, and how it
+ * ends. The precondition, the main flow, the postcondition and the
+ * reasoning sit behind one "Show more", so the use case reads in ten
+ * seconds and can still be checked step by step.
+ */
 export function UseCase({ uc }: { uc: UseCaseData }) {
+  const [open, setOpen] = useState(false);
+  const id = useId();
   return (
     <Lane width="wall">
-      <article className="uc">
+      <article className={open ? "uc is-open" : "uc"}>
         <header className="uc__head">
           <span className="uc__id">{uc.id}</span>
           <h3 className="uc__title">{uc.title}</h3>
@@ -27,6 +37,11 @@ export function UseCase({ uc }: { uc: UseCaseData }) {
           <p>{uc.trigger.body}</p>
         </Slot>
 
+        <Slot label="Rule it sets" note={uc.ruleNote} strong>
+          <p>{uc.rule}</p>
+        </Slot>
+
+        <div className="uc__more" id={`${id}-more`} hidden={!open}>
         <Slot label="Precondition" note={uc.precondition.note}>
           <p>{uc.precondition.body}</p>
         </Slot>
@@ -49,7 +64,7 @@ export function UseCase({ uc }: { uc: UseCaseData }) {
 
         {uc.exits?.length ? (
           <Slot
-            label={`Exits — ${uc.exits.length === 2 ? "two" : uc.exits.length}, no third`}
+            label={`Exits: ${uc.exits.length === 2 ? "two" : uc.exits.length}, no third`}
             note={uc.exitsNote}
           >
             <div className="uc__exits">
@@ -70,10 +85,17 @@ export function UseCase({ uc }: { uc: UseCaseData }) {
         <Slot label="Why this shape">
           <p>{uc.why}</p>
         </Slot>
+        </div>
 
-        <Slot label="Rule it sets" note={uc.ruleNote} strong>
-          <p>{uc.rule}</p>
-        </Slot>
+        <button
+          type="button"
+          className="uc__toggle"
+          aria-expanded={open}
+          aria-controls={`${id}-more`}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Show less" : "Show more: the flow, step by step"}
+        </button>
       </article>
     </Lane>
   );

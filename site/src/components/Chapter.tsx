@@ -6,6 +6,7 @@ import {
   Code,
   Duo,
   Evolution,
+  Flow,
   Lane,
   Palette,
   Passage,
@@ -65,6 +66,8 @@ function BlockView({ block }: { block: Block }) {
       return <Spec rows={block.rows} caption={block.caption} />;
     case "brief":
       return <Brief rows={block.rows} />;
+    case "flow":
+      return <Flow stages={block.stages} note={block.note} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":
@@ -92,7 +95,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
     <section className="chapter">
       {(chapter.heading || chapter.maxim || chapter.standfirst) && (
         <Lane width="wall" className={shown ? "chapter__head is-shown" : "chapter__head"} id={chapter.id}>
-          <div ref={ref} className="chapter__inner">
+          <div ref={ref} className="chapter__inner" data-n={chapter.n}>
           {chapter.n && <span className="chapter__n">{chapter.n}</span>}
           {chapter.heading && <h2 className="chapter__heading">{chapter.heading}</h2>}
           {chapter.maxim && <p className="maxim">{chapter.maxim}</p>}

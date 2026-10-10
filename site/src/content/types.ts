@@ -275,6 +275,12 @@ export type Block =
    */
   | { kind: "brief"; rows: { key: string; value: string }[] }
   /**
+   * A short chain of stages, read left to right: what goes in, what comes
+   * out, in three or four cards. For a process that is the point of a
+   * chapter and fits in a sentence each; a longer one is `steps`.
+   */
+  | { kind: "flow"; stages: { title: string; body: string }[]; note?: string }
+  /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,
    * not evidence. `href` stays optional for sources with no public home.

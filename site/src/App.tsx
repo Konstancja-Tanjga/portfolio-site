@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "./components/Analytics";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Shell } from "./components/Shell";
@@ -9,10 +9,14 @@ import { Watercolours } from "./pages/Watercolours";
 import { Practice } from "./pages/Practice";
 
 export default function App() {
+  const { pathname } = useLocation();
   return (
     <Shell>
       <ScrollToTop />
       <Analytics />
+      {/* A new key per route re-runs the entrance, so a page arrives
+          rather than snaps. */}
+      <div className="route" key={pathname}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/practice" element={<Practice />} />
@@ -21,6 +25,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Case />} />
       </Routes>
+      </div>
     </Shell>
   );
 }

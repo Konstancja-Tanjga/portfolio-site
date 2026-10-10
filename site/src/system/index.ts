@@ -12,6 +12,7 @@ export { Video } from "./Video";
 export { Passage, Points, Pull, Thesis, Kicker } from "./Text";
 export { Stats, Spec, MetaStrip } from "./Data";
 export { Brief } from "./Brief";
+export { Flow } from "./Flow";
 export { Stack } from "./Stack";
 export { Code } from "./Code";
 export { Cover } from "./Cover";

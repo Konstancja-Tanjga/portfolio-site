@@ -11,7 +11,7 @@ import { Lane } from "./Wall";
  * in it is printed as is. Under prefers-reduced-motion the final value
  * is shown at once.
  */
-function Counter({ value, run }: { value: string; run: boolean }) {
+export function Counter({ value, run }: { value: string; run: boolean }) {
   const match = value.match(/^(\D*?)(\d[\d\s,.]*)(.*)$/);
   const target = match ? parseFloat(match[2].replace(/[\s,]/g, "")) : NaN;
   const decimals = match && match[2].includes(".") ? match[2].split(".")[1].length : 0;

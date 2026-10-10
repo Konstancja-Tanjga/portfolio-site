@@ -1,6 +1,8 @@
-import { useRef, type MouseEvent } from "react";
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { useReveal } from "../system/Reveal";
+import { useTilt } from "../system/motion";
+import { Counter } from "../system/Data";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
@@ -21,14 +23,15 @@ export function Home() {
   return (
     <div className="hm">
       <section className="hm-hero" aria-labelledby="hero-claim">
+        <div className="hm-hero__aurora" aria-hidden="true" />
         <div className="hm-hero__photo" aria-hidden="true">
           <img src={asset("/about/portrait.jpg")} alt="" />
         </div>
         <div className="hm-hero__text">
           <h1 id="hero-claim" className="hm-hero__claim">
-            <span className="hm-hero__line">Enterprise software,</span>
-            <span className="hm-hero__line">designed from zero</span>
-            <span className="hm-hero__line hm-hero__line--quiet">and built to be used.</span>
+            <span className="hm-hero__mask"><span className="hm-hero__line">Enterprise software,</span></span>
+            <span className="hm-hero__mask"><span className="hm-hero__line">designed from zero</span></span>
+            <span className="hm-hero__mask"><span className="hm-hero__line hm-hero__line--quiet">and built to be used.</span></span>
           </h1>
           <p className="hm-hero__lead">
             I am Konstancja, Lead Designer and UX Engineer for APplus ERP at Asseco
@@ -58,6 +61,18 @@ export function Home() {
         </div>
       </section>
 
+      <div className="hm-marquee" aria-hidden="true">
+        <div className="hm-marquee__track">
+          {[0, 1].map((k) => (
+            <span key={k} className="hm-marquee__run">
+              {["Enterprise software", "Design systems in code", "AI products", "Research every release", "Watercolour", "Birds of prey", "Botanical illustration"].map((w) => (
+                <span key={w} className="hm-marquee__item">{w}</span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
       <section className="page hm-work" aria-labelledby="work-heading">
         <h2 id="work-heading" className="hm-h2">Selected work</h2>
         <p className="hm-note">Shipped products. Each page is the reasoning, the screens and the numbers.</p>
@@ -78,12 +93,7 @@ export function Home() {
           ))}
         </div>
 
-        <dl className="hm-numbers">
-          <div><dd>2</dd><dt>Golds in User Experience, ERP-System des Jahres 2025 and 2026</dt></div>
-          <div><dd>4</dd><dt>products designed from zero at Asseco: Elly, Best Practice Hub, Documents, Analytics</dt></div>
-          <div><dd>6</dd><dt>products that install the FOX design system as a versioned package</dt></div>
-          <div><dd>10</dd><dt>years in ERP, insurance and healthcare, legal, industrial energy</dt></div>
-        </dl>
+        <Numbers />
       </section>
 
       <section className="page hm-about" aria-labelledby="about-heading">
@@ -143,6 +153,26 @@ export function Home() {
   );
 }
 
+function Numbers() {
+  const { ref, shown } = useReveal<HTMLDListElement>();
+  const items: [string, string][] = [
+    ["2", "Golds in User Experience, ERP-System des Jahres 2025 and 2026"],
+    ["4", "products designed from zero at Asseco: Elly, Best Practice Hub, Documents, Analytics"],
+    ["6", "products that install the FOX design system as a versioned package"],
+    ["10", "years in ERP, insurance and healthcare, legal, industrial energy"],
+  ];
+  return (
+    <dl ref={ref} className={shown ? "hm-numbers is-shown" : "hm-numbers"}>
+      {items.map(([v, l], i) => (
+        <div key={l} style={{ transitionDelay: `${i * 100}ms` }}>
+          <dd><Counter value={v} run={shown} /></dd>
+          <dt>{l}</dt>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 /**
  * One work tile. The grid breaks its own rhythm: tiles alternate between
  * wide and narrow and the narrow one sits lower, so two rows never look
@@ -152,7 +182,7 @@ export function Home() {
 function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number; compact?: boolean }) {
   const year = study.cover.credit.match(/\d{4}(?:[–-]\d{4})?/)?.[0];
   const { ref, shown } = useReveal<HTMLAnchorElement>();
-  const cover = useRef<HTMLSpanElement | null>(null);
+  const cover = useTilt<HTMLSpanElement>(3);
 
   const follow = (e: MouseEvent<HTMLAnchorElement>) => {
     const el = cover.current;

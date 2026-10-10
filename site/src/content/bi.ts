@@ -327,9 +327,14 @@ export const bi: CaseStudy = {
         "A generated prototype is cheap enough to throw away. A designed and signed-off screen is not, so the disagreements happen here.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>Before a frame was drawn, a settled requirement went into Codex, and later Claude, and came back as something clickable within hours. Those prototypes were what the SME sessions argued over. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.</p>",
+          kind: "flow",
+          stages: [
+            { title: "A settled requirement", body: "Before a frame was drawn, it went into Codex, and later Claude." },
+            { title: "Clickable within hours", body: "A generated prototype on FOX components: cheap enough to throw away." },
+            { title: "Argued over in the room", body: "The eight SME sessions walked these prototypes, not slides." },
+            { title: "Proven, then handed on", body: "The prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
+          ],
+          note: "On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.",
         },
         {
           kind: "shot",
