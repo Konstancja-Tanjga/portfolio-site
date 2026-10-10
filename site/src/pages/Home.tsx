@@ -1,4 +1,6 @@
+import { useRef, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { useReveal } from "../system/Reveal";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
@@ -60,8 +62,8 @@ export function Home() {
         <h2 id="work-heading" className="hm-h2">Selected work</h2>
         <p className="hm-note">Shipped products. Each page is the reasoning, the screens and the numbers.</p>
         <div className="hm-tiles">
-          {products.map((c) => (
-            <Tile key={c.slug} study={c} />
+          {products.map((c, i) => (
+            <Tile key={c.slug} study={c} index={i} />
           ))}
         </div>
 
@@ -71,8 +73,8 @@ export function Home() {
           <Link className="hm-link" to="/practice">All practice work</Link>
         </p>
         <div className="hm-tiles hm-tiles--practice">
-          {practice.map((c) => (
-            <Tile key={c.slug} study={c} compact />
+          {practice.map((c, i) => (
+            <Tile key={c.slug} study={c} index={i} compact />
           ))}
         </div>
 
@@ -141,16 +143,41 @@ export function Home() {
   );
 }
 
-function Tile({ study, compact }: { study: CaseStudy; compact?: boolean }) {
+/**
+ * One work tile. The grid breaks its own rhythm: tiles alternate between
+ * wide and narrow and the narrow one sits lower, so two rows never look
+ * the same. On hover the cover drifts under the cursor and a "View" pill
+ * follows it; keyboard focus shows the same pill, pinned.
+ */
+function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number; compact?: boolean }) {
   const year = study.cover.credit.match(/\d{4}(?:[–-]\d{4})?/)?.[0];
+  const { ref, shown } = useReveal<HTMLAnchorElement>();
+  const cover = useRef<HTMLSpanElement | null>(null);
+
+  const follow = (e: MouseEvent<HTMLAnchorElement>) => {
+    const el = cover.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${(((e.clientX - r.left) / r.width) * 100).toFixed(1)}%`);
+    el.style.setProperty("--my", `${(((e.clientY - r.top) / r.height) * 100).toFixed(1)}%`);
+  };
+
+  const shape = compact ? "" : index % 4 === 0 || index % 4 === 3 ? " hm-tile--wide" : " hm-tile--narrow";
   return (
-    <Link to={`/work/${study.slug}`} className="hm-tile">
-      <span className="hm-tile__cover">
+    <Link
+      ref={ref}
+      to={`/work/${study.slug}`}
+      className={`hm-tile${shape}${shown ? " is-shown" : ""}`}
+      style={{ transitionDelay: `${(index % 2) * 120}ms` }}
+      onMouseMove={follow}
+    >
+      <span className="hm-tile__cover" ref={cover}>
         {study.cover.shot.src ? (
           <img src={asset(study.cover.shot.src)} alt="" loading="lazy" decoding="async" />
         ) : (
           <span className="hm-tile__slot">{study.cover.headline.join(" ")}</span>
         )}
+        <span className="hm-tile__view" aria-hidden="true">View</span>
       </span>
       <span className="hm-tile__text">
         <span className="hm-tile__title">{study.title}</span>

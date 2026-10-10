@@ -9,6 +9,7 @@ import { ReadingProgress } from "../components/ReadingProgress";
 import { Lightbox, useLightbox } from "../system/Lightbox";
 import { ShotViewer } from "../system/Shot";
 import { Cover, Lane, MetaStrip, Wall } from "../system";
+import { asset } from "../system/asset";
 
 export function Case() {
   const { slug } = useParams();
@@ -63,9 +64,16 @@ export function Case() {
         {next && (
           <Lane width="wall">
             <Link to={`/work/${next.slug}`} className="next">
-              <span className="kicker">Next project</span>
-              <span className="next__title">{next.title}</span>
-              <span className="next__what">{next.what}</span>
+              {next.cover.shot.src && (
+                <span className="next__art" aria-hidden="true">
+                  <img src={asset(next.cover.shot.src)} alt="" loading="lazy" decoding="async" />
+                </span>
+              )}
+              <span className="next__text">
+                <span className="next__kicker">Next project</span>
+                <span className="next__title">{next.title}</span>
+                <span className="next__what">{next.what}</span>
+              </span>
             </Link>
           </Lane>
         )}

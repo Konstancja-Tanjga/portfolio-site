@@ -49,6 +49,12 @@ export type Video = {
   subtitles?: { src: string; label: string; srclang: string };
   /** whose film this is, and where it was published */
   credit?: Attribution;
+  /**
+   * A few seconds of the prototype showing one behaviour a still cannot:
+   * muted, looping, playing by itself while in view. Off, the video is a
+   * film with sound and controls. See Video.tsx for what each one costs.
+   */
+  clip?: boolean;
 };
 
 /** One of the four-up persona cards. Same slots every time. */

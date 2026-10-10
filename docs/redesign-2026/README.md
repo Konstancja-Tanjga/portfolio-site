@@ -23,8 +23,15 @@ What they have in common, and what this direction takes from them:
 - A strip of numbers; a short "how I work"; a large closing line with the
   e-mail.
 - Case studies led by images, with short text sections, metadata, pull
-  quotes and results at the end (next step; the case pages so far only
-  take the new palette and type).
+  quotes and results at the end. The template now: the title very large
+  on the ground, the cover art as one wide image that drifts slower than
+  the page, the lead in display type, chapter heads as label on the left
+  and maxim on the right (after marcuslorenzet.com/glide), images and
+  chapters that reveal on first sight, numbers that count up, clips that
+  play while in view (`clip: true` on a video block), a next-project tile
+  with its cover.
+- The work grid breaks its rhythm: a wide tile and a narrow one that sits
+  lower, sides swapped every row, a "View" pill that follows the cursor.
 
 What was kept from the first pass: the sitemap and robots, the 2026
 award, the Umami events, the writing rules in `docs/STYLE.md`, the CV.
@@ -34,6 +41,7 @@ award, the Umami events, the writing rules in `docs/STYLE.md`, the CV.
 | | |
 | --- | --- |
 | ![Home, hero](home-hero.png) | ![Home, phone](home-mobile.png) |
+| ![Case, intro](case-hero.png) | ![Case, a chapter head](case-chapter.png) |
 
 Full page: [home-full.png](home-full.png). A case cover on the sand
 field: [case-cover.png](case-cover.png).
