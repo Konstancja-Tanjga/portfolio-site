@@ -120,7 +120,7 @@ export const dms: CaseStudy = {
               src: "/work/applus-documents/screens/detail-invoice.png",
               device: "laptop",
               caption:
-                "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs.",
+                "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs. The tabs are where audit-relevant history lives, so they are part of the template rather than a per-screen choice.",
             },
           ],
         },
@@ -167,13 +167,13 @@ export const dms: CaseStudy = {
               src: "/work/applus-documents/screens/deleted-document.png",
               device: "laptop",
               caption:
-                "A deleted document is still a document. Deleted documents sits under Configuration, filtered by type, deletion date range, reason and who deleted it, and DOC-8001 opens there with its format, size, version and checksum intact.",
+                "Deleted documents sits under Configuration, filtered by type, deletion date range, reason and who deleted it, and DOC-8001 opens there with its format, size, version and checksum intact.",
             },
             {
               src: "/work/applus-documents/screens/retention.png",
               device: "laptop",
               caption:
-                "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, active since 16.01.2024, cutoff 31.01.2028, end 31.01.2031, then eligible for disposition. The clock starts from a metadata date field, Contract end date.",
+                "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, status Active, retention started 16.01.2024, cutoff 31.01.2028, end 31.01.2031, then eligible for disposition. The clock starts from a metadata date field, Contract end date.",
             },
           ],
         },
@@ -190,7 +190,7 @@ export const dms: CaseStudy = {
               src: "/work/applus-documents/screens/document-type-new.png",
               device: "laptop",
               caption:
-                "A document type linked to a retired retention policy. The policy stays visible for historical reference but no longer applies to new documents, and the screen says so next to Assign active policy. Changing it touches only documents stored after the change.",
+                "A document type linked to a retired retention policy. The policy stays visible for historical reference but no longer applies to new documents; a RETIRED badge next to it and a warning below say so. Changing it touches only documents stored after the change.",
             },
           ],
         },
@@ -229,7 +229,7 @@ export const dms: CaseStudy = {
           src: "/work/applus-documents/screens/filters.png",
           device: "laptop",
           caption:
-            "Filters over the list: tags, then metadata filters typed by field (string, integer, enum, boolean, date, date and time). All criteria must match, and once every metadata field is in use the panel says so instead of offering another empty row.",
+            "Filters over the list: tags, then metadata filters typed by field (string, integer, enum, boolean, date, date and time). All criteria must match, and once every metadata field is in use the panel says so and greys out Add new filter.",
         },
         {
           kind: "duo",
@@ -405,43 +405,34 @@ export const dms: CaseStudy = {
         "Each frame carries its requirement text in a documentation band, then a designer sign-off: dated, and marked Approved.",
       blocks: [
         {
+          kind: "shot",
+          width: "wall",
+          src: "/work/applus-documents/screens/list-bulk.png",
+          device: "laptop",
+          caption:
+            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red.",
+        },
+        {
           kind: "duo",
           items: [
-            {
-              src: "/work/applus-documents/screens/detail-info.png",
-              device: "laptop",
-              caption:
-                "Document info. An identity panel (scope, format, size, created, last modified, version, checksum), then a five-tab band, then the preview. The tabs are where audit-relevant history lives, so they are part of the template rather than a per-screen choice.",
-            },
             {
               src: "/work/applus-documents/screens/detail-tags.png",
               device: "laptop",
               caption:
                 "The tag model and its validation rules, enforced in place: up to 20 tags per document, 64 characters at most, letters, numbers, _ and - only, no duplicates.",
             },
-          ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/applus-documents/screens/list-bulk.png",
-          device: "laptop",
-          caption:
-            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red and disabled until something is selected.",
-        },
-        {
-          kind: "duo",
-          items: [
             {
               src: "/work/applus-documents/screens/detail-versions.png",
               device: "laptop",
               caption: "Version history on a sales order: each version with its author, number and date, and a download on the highlighted row.",
             },
-            {
-              src: "/work/applus-documents/screens/tablet-versions.png",
-              caption: "The same screen on a tablet.",
-            },
           ],
+        },
+        {
+          kind: "shot",
+          width: "column",
+          src: "/work/applus-documents/screens/tablet-versions.png",
+          caption: "Version history on a tablet.",
         },
       ],
     },

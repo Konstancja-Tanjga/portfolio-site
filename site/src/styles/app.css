@@ -356,13 +356,13 @@ img { max-width: 100%; height: auto; }
 /* The screen takes the export's own proportions rather than a fixed 16:10,
    so a tall form is not cropped above its Save button. */
 .laptop__screen { display: block; overflow: hidden; background: #fff; }
-.laptop .shot__img { border: 0; }
+.laptop .shot__img.shot__img { border: 0; } /* beats .shot__set .shot__img */
 .laptop__base {
   display: block;
   position: relative;
   height: 0;
   padding-bottom: 2.6%;
-  margin: 0 -3.5%;
+  margin: 0 -3.2%;
   background: linear-gradient(#c9ccd1, #9a9ea5);
   border-radius: 0 0 12px 12px / 0 0 60% 60%;
 }

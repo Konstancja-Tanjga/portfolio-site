@@ -117,8 +117,8 @@ function ShotFrame({ src, slot, caption, device }: ShotData) {
 
 /**
  * A laptop drawn in CSS rather than a mock-up image, so the screen keeps its
- * own resolution and the body follows the theme. The lightbox opens the bare
- * screen.
+ * own resolution. The body is a fixed device colour in both themes. The
+ * lightbox opens the bare screen.
  */
 function Laptop({ children }: { children: React.ReactNode }) {
   return (
