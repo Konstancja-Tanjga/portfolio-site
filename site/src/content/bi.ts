@@ -17,6 +17,7 @@ import type { CaseStudy } from "./types";
  * counts, or the author's confirmation. Nothing is rounded up.
  */
 const S = "/work/applus-analytics/screens";
+const D = "/work/applus-analytics/device";
 
 export const bi: CaseStudy = {
   slug: "applus-analytics",
@@ -114,7 +115,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/hero-analyst.png`,
+          src: `${D}/analyst-thread-2400.webp`,
+          frame: "macbook",
           caption:
             "The AI Data Analyst with a detail thread open: one fragment of an answer questioned without touching the main analysis.",
         },
@@ -280,7 +282,25 @@ export const bi: CaseStudy = {
       blocks: [
         {
           kind: "duo",
-          items: [{ src: `${S}/audit-1.png` }, { src: `${S}/audit-2.png` }],
+          items: [
+            {
+              src: `${S}/audit-1.png`,
+              hotspots: [
+                { x: 18, y: 14, text: "Where does this page belong? No breadcrumb, no back." },
+                { x: 52, y: 38, text: "The same screen, rendered without breadcrumbs." },
+                { x: 30, y: 70, text: "What is the correct path, and where does “Visualisierung” come from?" },
+                { x: 72, y: 82, text: "Two searches on one shell." },
+              ],
+            },
+            {
+              src: `${S}/audit-2.png`,
+              hotspots: [
+                { x: 22, y: 22, text: "What should be shown instead of an error?" },
+                { x: 58, y: 52, text: "Third-party or in-house for the designer surface, like Board Designer?" },
+                { x: 40, y: 84, text: "“AI Support”: is that Elly?" },
+              ],
+            },
+          ],
           caption: "The PM's prototype, imported into Figma and annotated screen by screen.",
         },
         {
@@ -339,8 +359,9 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/prototype.png`,
-          caption: "A generated prototype of Settings, Version and updates, with the changelog open before an update is installed.",
+          src: `${D}/models-select-2400.webp`,
+          frame: "macbook",
+          caption: "A generated prototype of the data-model builder: the first query added from the shelf, before any relationship is drawn.",
         },
       ],
     },
@@ -594,7 +615,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/home.png`,
+          src: `${D}/home-2400.webp`,
+          frame: "macbook",
           caption:
             "Home, the landing surface for people who consume rather than author. Ask AI Data Analyst sits on top with four ready-made questions; favourite dashboards and analyses below. Every card shows its role badges, its author and its date.",
         },
@@ -602,12 +624,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/dashboards.png`,
+              src: `${D}/dashboards-2400.webp`,
+          frame: "macbook",
               caption:
                 "Dashboards: the same object as a library, sorted by domain (revenue, pipeline, retention, finance, risk), with all, favourites and shared with me.",
             },
             {
-              src: `${S}/analysis.png`,
+              src: `${D}/analysis-2400.webp`,
+          frame: "macbook",
               caption:
                 "Analyses reuse the card, the badges and the filters of dashboards exactly. What differs is what the object does, not how it is found.",
             },
@@ -616,7 +640,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/analyst-preview.png`,
+          src: `${D}/analyst-chat-2400.webp`,
+          frame: "macbook",
           caption:
             "The AI Data Analyst answers with a live preview instead of a paragraph: detected columns, grouping, chart type, sorting, filter and a match score, plus a warning that the query will be built as a pivot table. Everything it inferred is visible before anything is saved.",
         },
@@ -624,12 +649,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/data-models.png`,
+              src: `${D}/models-relationship-2400.webp`,
+          frame: "macbook",
               caption:
                 "Data models: two queries on the canvas with typed columns, and the join drawn as an object that states its direction and type.",
             },
             {
-              src: `${S}/settings.png`,
+              src: `${D}/settings-2400.webp`,
+          frame: "macbook",
               caption:
                 "Settings: data sources with server, port and authentication, and the admin spine on the left. The New menu is split by intent: build, connect, schedule and share.",
             },
@@ -654,7 +681,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/analyst-thread.png`,
+          src: `${D}/analyst-thread-2400.webp`,
+          frame: "macbook",
           caption:
             "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
         },
@@ -724,7 +752,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/queries-shelf.png`,
+          src: `${D}/queries-shelf-2400.webp`,
+          frame: "macbook",
           caption:
             "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
         },
@@ -732,12 +761,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/queries-card.png`,
+              src: `${D}/queries-card-2400.webp`,
+          frame: "macbook",
               caption:
                 "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
             },
             {
-              src: `${S}/queries-settings.png`,
+              src: `${D}/settings-2400.webp`,
+          frame: "macbook",
               caption:
                 "Settings holds the other half of the same permission model, so the reading screens and the admin screens cannot drift apart.",
             },
@@ -800,12 +831,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/models-select.png`,
+              src: `${D}/models-select-2400.webp`,
+          frame: "macbook",
               caption:
                 "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
             },
             {
-              src: `${S}/models-empty.png`,
+              src: `${D}/models-empty-2400.webp`,
+          frame: "macbook",
               caption:
                 "The empty canvas says what it expects: one validated query, then relationships, then validation. It offers exactly one action, so there is no second path into the flow.",
             },
@@ -814,7 +847,8 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/models-relationship.png`,
+          src: `${D}/models-relationship-2400.webp`,
+          frame: "macbook",
           caption:
             "Define relationships. The join states its direction and type, INNER or LEFT, and the same relationship exists as an editable row in the right panel, so the drawing is a view of the list rather than the only copy of it.",
         },

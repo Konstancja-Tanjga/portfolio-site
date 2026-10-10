@@ -782,3 +782,86 @@
   .folder, .folders.is-shown .folder { opacity: 1; transform: none; transition: none; }
   .folders__panel .anno { animation: none; }
 }
+
+/* ---------- the device ----------
+   The MacBook is in the export. On the ground it needs no frame of its
+   own, only room to breathe and a lift under the cursor. */
+.shot__img--device { border-radius: 0; background: none; }
+.shot__open:has(.shot__img--device) { perspective: 1800px; }
+.shot__open:has(.shot__img--device):hover .shot__img--device { transform: rotateX(1.5deg) translateY(-6px); }
+.shot__img--device { transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+/* ---------- hotspots ----------
+   Pins on an image that surface as speech bubbles while the cursor is
+   over it. Below the image the same notes are a plain list, for keyboard
+   and touch; it is hidden where hover exists. */
+.shot__stage { position: relative; display: block; }
+.pins { position: absolute; inset: 0; pointer-events: none; }
+.pin { position: absolute; transform: translate(-50%, -50%); }
+.pin__dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--kt-sand);
+  box-shadow: 0 0 0 4px rgba(227, 210, 173, 0.25);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 300ms, transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: inherit;
+}
+.pin__bubble {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  min-width: 14rem;
+  max-width: 18rem;
+  padding: 0.6em 0.85em;
+  border-radius: 12px 12px 12px 3px;
+  background: rgba(15, 15, 14, 0.94);
+  border: 1px solid var(--kt-sand);
+  color: var(--kt-ink);
+  font-family: var(--kt-font-body);
+  font-size: var(--bh-size-small);
+  line-height: 1.4;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translate(-6px, -50%) scale(0.96);
+  transition: opacity 300ms, transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: inherit;
+}
+.pin--left .pin__bubble { left: auto; right: 20px; border-radius: 12px 12px 3px 12px; transform: translate(6px, -50%) scale(0.96); }
+.pins.is-live .pin__dot { opacity: 1; transform: scale(1); animation: pin-pulse 2s ease-out infinite; }
+.pins.is-live .pin__bubble { opacity: 1; transform: translate(0, -50%) scale(1); }
+@keyframes pin-pulse {
+  0% { box-shadow: 0 0 0 4px rgba(227, 210, 173, 0.3); }
+  100% { box-shadow: 0 0 0 16px rgba(227, 210, 173, 0); }
+}
+.pins__list { margin: var(--bh-space-3) 0 0; padding-left: 1.2em; color: var(--kt-ink-2); font-size: var(--bh-size-small); display: grid; gap: 0.4em; }
+@media (hover: hover) { .pins__list { display: none; } }
+@media (hover: none) { .pins { display: none; } }
+
+/* ---------- rhythm: half again between blocks ---------- */
+.passage { margin-top: calc(var(--bh-beat-block) * 1.5); }
+.passage p { margin-bottom: calc(var(--bh-space-3) * 1.5); }
+.points { margin-top: calc(var(--bh-space-4) * 1.5); }
+.pull { margin-top: calc(var(--bh-space-6) * 1.5); }
+.shot, .video, .spec, .brief, .flow, .folders, .evo, .personas, .stats, .thesis, .uc, .stack, .pipeline { margin-top: calc(var(--bh-beat-block) * 1.5); }
+.chapter__head { margin-top: calc(var(--bh-space-8) * 1.5); }
+.chapter__inner { gap: calc(var(--bh-space-3) * 1.5) var(--bh-space-6); }
+.uc__slot + .uc__slot { margin-top: calc(var(--bh-space-4) * 1.5); }
+
+/* ---------- every card lifts under the cursor ---------- */
+.persona, .stage, .evo__tab, .flow__stage, .brief__decision, .uc, .thesis, .spec, .anno, .process__stage, .evo__panel, .stack, .folders__panel .anno, .hm-chip, .hm-practice, .plate, .card, .next, .artefact {
+  transition: transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 350ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 300ms;
+}
+.persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .stack:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(227, 210, 173, 0.25);
+}
+@media (prefers-reduced-motion: reduce) {
+  .persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .stack:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover { transform: none; }
+  .pins.is-live .pin__dot { animation: none; }
+  .shot__open:hover .device { transform: none; }
+}

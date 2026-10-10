@@ -19,6 +19,19 @@ export type Shot = {
   /** rendered in place of a missing export, so the wall is walkable while empty */
   slot?: string;
   caption?: string;
+  /**
+   * A MacBook mockup exported from the Figma device frame. The same
+   * image is served at 1600 and 2400 px (`<name>-1600.webp`,
+   * `<name>-2400.webp`) and the lightbox opens `<name>-full.webp`.
+   * Point `src` at the 2400 file; the others are derived from its name.
+   */
+  frame?: "macbook";
+  /**
+   * Notes pinned to places on the image, as a percentage of its width and
+   * height. They surface as speech bubbles while the cursor is over the
+   * image, and as a list under it for keyboard and touch.
+   */
+  hotspots?: { x: number; y: number; text: string }[];
 };
 
 /* ---------- the repeating content components ---------- */
