@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
@@ -79,15 +79,38 @@ export function Spec({
   caption?: string;
 }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
+  const id = useId();
+  // Five or more rows read as a wall. They fold: the keys stay, one
+  // answer shows at a time, the first by default.
+  const folded = rows.length >= 5;
+  const [open, setOpen] = useState<number | null>(0);
   return (
     <Lane width="wall">
-      <div ref={ref} className={shown ? "spec is-shown" : "spec"}>
-        {rows.map((row, i) => (
-          <div className="spec__row" key={row.key} style={{ transitionDelay: `${i * 70}ms` }}>
-            <span className="spec__key">{row.key}</span>
-            <span className="spec__value">{row.value}</span>
-          </div>
-        ))}
+      <div ref={ref} className={[shown ? "spec is-shown" : "spec", folded ? "spec--folded" : ""].join(" ")}>
+        {rows.map((row, i) =>
+          folded ? (
+            <div className={open === i ? "spec__row is-open" : "spec__row"} key={row.key} style={{ transitionDelay: `${i * 50}ms` }}>
+              <button
+                type="button"
+                className="spec__key spec__toggle"
+                aria-expanded={open === i}
+                aria-controls={`${id}-${i}`}
+                onClick={() => setOpen(open === i ? null : i)}
+              >
+                <span>{row.key}</span>
+                <span className="spec__chevron" aria-hidden="true" />
+              </button>
+              <div id={`${id}-${i}`} className="spec__value spec__value--fold" hidden={open !== i}>
+                {row.value}
+              </div>
+            </div>
+          ) : (
+            <div className="spec__row" key={row.key} style={{ transitionDelay: `${i * 70}ms` }}>
+              <span className="spec__key">{row.key}</span>
+              <span className="spec__value">{row.value}</span>
+            </div>
+          ),
+        )}
       </div>
       {caption && <p className="spec__caption">{caption}</p>}
     </Lane>
