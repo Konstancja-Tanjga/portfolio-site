@@ -76,8 +76,7 @@ export function Home() {
           </h2>
           <p className="hm-standfirst">
             Since November 2023 I have led design for APplus, a web ERP for mid-sized
-            manufacturers in Germany, Austria and Switzerland, on desktop and on the shop
-            floor. Two senior designers work with me. Between us we own the product's design
+            manufacturers in Germany, Austria and Switzerland, on desktop and mobile. Two senior designers work with me. Between us we own the product's design
             system as a released thing rather than a Figma file: tokens and component APIs
             authored in Figma, implemented in Angular, React and web components, documented
             in Storybook, regression-tested in Chromatic, and published to Nexus, where six

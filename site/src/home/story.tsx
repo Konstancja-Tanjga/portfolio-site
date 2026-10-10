@@ -29,7 +29,7 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "One model for every module",
     body:
-      "Led the redesigns that gave the platform a single navigation, content and interaction model across all of its modules, on desktop and on mobile.",
+      "Led the redesigns that gave the platform a single navigation, content and interaction model across all of its modules, on desktop and mobile.",
   },
   {
     title: "Accessibility in the primitives",
@@ -42,9 +42,9 @@ export const practices: { title: string; body: string }[] = [
       "I lead a team of two. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the others have not seen.",
   },
   {
-    title: "Desktop, and the shop floor",
+    title: "Desktop, and mobile",
     body:
-      "APplus runs on the planner's two monitors and on a phone at a machine. One navigation and one content model serve both; what changes is the density, the touch targets and what goes into the bottom bar.",
+      "APplus runs on the planner's two monitors and on a phone. One navigation and one content model serve both; what changes is the density, the touch targets and what goes into the bottom bar.",
   },
   {
     title: "A research rhythm",
