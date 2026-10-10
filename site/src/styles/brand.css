@@ -1,0 +1,62 @@
+/* ---------------------------------------------------------------
+   The art direction, October 2026.
+
+   One ground, one ink, one display face. Dark, image-first, the
+   type large and sure of itself; the work carries the colour. This
+   is the one file on the site allowed to state colour: tokens.css
+   stays an alias layer onto the design system, and this file
+   re-points those aliases at the direction.
+
+   Contrast: ink on ground 15.6:1, ink-2 11:1, ink-3 5.4:1.
+   --------------------------------------------------------------- */
+:root {
+  --kt-ground: #0f0f0e;
+  --kt-ground-2: #171715;
+  --kt-ink: #f1ede4;
+  --kt-ink-2: #c9c3b6;
+  --kt-ink-3: #8f8a7f;
+  --kt-line: #2a2a27;
+  --kt-sand: #e3d2ad;
+  --kt-on-sand: #0f0f0e;
+  --kt-font-display: "Bricolage Grotesque", "Inter", sans-serif;
+  --kt-font-body: "Inter", system-ui, sans-serif;
+
+  --bh-surface: var(--kt-ground);
+  --bh-well: var(--kt-ground-2);
+  --bh-text: var(--kt-ink-2);
+  --bh-text-strong: var(--kt-ink);
+  --bh-text-quiet: var(--kt-ink-3);
+  --bh-border: var(--kt-line);
+  --bh-mark: var(--kt-sand);
+  --bh-site-mark: var(--kt-sand);
+  --bh-site-on-mark: var(--kt-on-sand);
+  --bh-focus: var(--kt-sand);
+  --bh-font-body: var(--kt-font-body);
+
+  --bh-surface-base: var(--kt-ground);
+  --bh-surface-sunken: var(--kt-ground-2);
+  --bh-surface-raised: var(--kt-ground-2);
+  --bh-text-primary: var(--kt-ink);
+  --bh-text-secondary: var(--kt-ink-2);
+  --bh-text-muted: var(--kt-ink-3);
+  --bh-border-subtle: var(--kt-line);
+  --bh-border-strong: var(--kt-ink-3);
+  color-scheme: dark;
+}
+
+/* Everything that sits on the sand field reads in its own ink. */
+.cover { --bh-text-strong: var(--kt-on-sand); --bh-text: var(--kt-on-sand); }
+
+/* The display face on every heading the site already has. */
+.opening__claim,
+.cover__headline,
+.chapter__heading,
+.portrait__claim,
+.next__title,
+.series__name,
+.card__title {
+  font-family: var(--kt-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cover__headline { font-weight: 800; letter-spacing: -0.03em; }
