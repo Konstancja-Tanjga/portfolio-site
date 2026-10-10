@@ -104,7 +104,13 @@ Owned design for the employee health and wellbeing platform, web and mobile, and
 
 ## Skills (top five, in this order)
 
-Product design · Design systems · Enterprise software · AI product design · Accessibility
+LinkedIn only accepts skills from its own list, so the names below are
+the ones it offers. If one is missing on the day, pick the nearest it
+suggests.
+
+Product Design · User Interface Design · Enterprise Software · Artificial Intelligence (AI) · Accessibility
+
+Further down the list: Information Architecture · Interaction Design · Figma (Software) · Prototyping · Design Thinking · Front-End Development
 
 ## What changed against the current profile, and why
 
