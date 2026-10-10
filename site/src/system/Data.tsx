@@ -78,11 +78,12 @@ export function Spec({
   rows: { key: string; value: string }[];
   caption?: string;
 }) {
+  const { ref, shown } = useReveal<HTMLDivElement>();
   return (
-    <Lane width="column">
-      <div className="spec">
-        {rows.map((row) => (
-          <div className="spec__row" key={row.key}>
+    <Lane width="wall">
+      <div ref={ref} className={shown ? "spec is-shown" : "spec"}>
+        {rows.map((row, i) => (
+          <div className="spec__row" key={row.key} style={{ transitionDelay: `${i * 70}ms` }}>
             <span className="spec__key">{row.key}</span>
             <span className="spec__value">{row.value}</span>
           </div>
