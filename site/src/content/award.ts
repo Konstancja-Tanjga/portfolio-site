@@ -22,7 +22,7 @@ export const award: CaseStudy = {
     { label: "Awarded", value: "Frankfurt am Main, 13 October 2025 and 5 October 2026" },
     { label: "Product", value: "APplus ERP" },
     { label: "Company", value: "Asseco Solutions AG" },
-    { label: "My role", value: "Lead Designer, team of three" },
+    { label: "My role", value: "Lead Designer, leading a team of two" },
   ],
   chapters: [
     {

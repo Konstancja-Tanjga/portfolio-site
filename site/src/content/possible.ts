@@ -5,7 +5,7 @@ export const possible: CaseStudy = {
   title: "Possible Reality",
   what: "Speculative design — The Wisdom of a Vanishing Adventure, distinction",
   lead:
-    "The Wisdom of a Vanishing Adventure — a speculative design entry by a team of three, awarded a distinction at the WUD Silesia 10.5 competition.",
+    "The Wisdom of a Vanishing Adventure — a speculative design entry by a team of two, awarded a distinction at the WUD Silesia 10.5 competition.",
   status: { state: "live" },
   group: "recognition",
   cover: {

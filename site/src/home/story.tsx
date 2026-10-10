@@ -39,7 +39,7 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "Two senior designers with me",
     body:
-      "I lead a team of three. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the other two have not seen.",
+      "I lead a team of two. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the other two have not seen.",
   },
   {
     title: "Desktop, and the shop floor",
@@ -58,7 +58,7 @@ export const career: { years: string; org: string; role: string; what: string }[
     years: "2023 –",
     org: "Asseco Solutions DACH",
     role: "Lead Designer, APplus ERP",
-    what: "Team of three. Design system as code, three applications from zero, the platform's first AI assistant. ERP System of the Year, Gold in User Experience in 2025 and again in 2026.",
+    what: "Team of two. Design system as code, three applications from zero, the platform's first AI assistant. ERP System of the Year, Gold in User Experience in 2025 and again in 2026.",
   },
   {
     years: "2022 – 2023",

@@ -37,7 +37,7 @@ export function Home() {
             <span className="hm-hero__line hm-hero__line--turn">Then I go out and paint birds.</span>
           </h1>
           <p className="hm-hero__lead">
-            Lead Designer for APplus ERP at Asseco Solutions, where I lead a team of three
+            Lead Designer for APplus ERP at Asseco Solutions, where I lead a team of two
             and own a design system six products install as code. Watercolourist, birder,
             botanical illustrator. Warsaw, working remotely across the DACH region.
           </p>

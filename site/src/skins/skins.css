@@ -156,6 +156,10 @@
 :root[data-skin="deco"],
 :root[data-skin="blueprint"] { color-scheme: dark; }
 
+/* The handwriting is for captions and plate notes. Tables, meta rows and
+   code on the walls stay in a face that can be read at 12px. */
+:root[data-skin="aquarelle"] { --bh-font-id: "Karla", system-ui, sans-serif; }
+
 /* Everything on a field reads in the field's own foreground, including
    the headline app.css sets in the page's strong text. */
 :root[data-skin] .cover { --bh-text-strong: var(--sk-on-field); --bh-text: var(--sk-on-field); }
