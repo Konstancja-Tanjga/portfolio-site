@@ -60,7 +60,7 @@ export function Shell({ children }: { children: ReactNode }) {
             </a>{" "}
             — my own design system, installed as a package. Its tokens drive every
             colour on this page, and its components render the badges and states.
-            Warsaw, CET. Remote only, permanent or B2B.
+            Warsaw, CET. Remote only, B2B only.
           </p>
         </footer>
       </div>

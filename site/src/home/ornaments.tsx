@@ -13,82 +13,113 @@
 
 /* ---------- deco ---------- */
 
+/** One wing: feathers fanned from the shoulder, each a step shorter. */
+function Wing({ side, delay }: { side: 1 | -1; delay: number }) {
+  const n = 10;
+  const feathers = Array.from({ length: n }, (_, i) => {
+    const angle = 30 + i * 8.5; // from raised to the lowest primary, out to the side
+    const len = 250 - i * 8;
+    const w = 26 - i * 1.1;
+    return (
+      <g key={i} transform={`rotate(${angle})`} style={{ animationDelay: `${delay + i * 60}ms` }} className="orn__feather">
+        <rect x={-w / 2} y={-len} width={w} height={len} rx={w / 2} fill="var(--sk-accent)" fillOpacity={i % 2 ? 0.78 : 1} />
+        <rect x={-w / 2} y={-len} width={w} height={w * 0.9} rx={w / 2} fill="var(--sk-ground)" fillOpacity="0.35" />
+      </g>
+    );
+  });
+  return (
+    <g className="orn__wing" transform={`translate(${400 + side * 30} 334) scale(${side} 1)`}>
+      {feathers}
+    </g>
+  );
+}
+
 export function DecoOrnament() {
-  const rays = 17;
   const cx = 400;
-  const cy = 560;
-  const r = 620;
+  const cy = 420;
+  const rays = 28;
+  const R = 700;
+  // the arch: a round top, stepped shoulders, straight sides
+  const arch =
+    "M60 560 V250 Q60 60 400 60 Q740 60 740 250 V560 Z";
   return (
     <svg
       className="orn orn--deco"
       viewBox="0 0 800 560"
-      preserveAspectRatio="xMidYMax meet"
+      preserveAspectRatio="xMidYMid meet"
       aria-hidden="true"
       focusable="false"
     >
       <defs>
+        <clipPath id="deco-arch">
+          <path d={arch} />
+        </clipPath>
         <linearGradient id="deco-ray" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="var(--sk-accent)" stopOpacity="0.55" />
-          <stop offset="1" stopColor="var(--sk-accent)" stopOpacity="0.14" />
-        </linearGradient>
-        <linearGradient id="deco-ray-2" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="var(--sk-tint)" stopOpacity="0.7" />
-          <stop offset="1" stopColor="var(--sk-tint)" stopOpacity="0.18" />
+          <stop offset="0" stopColor="var(--sk-accent)" stopOpacity="0.5" />
+          <stop offset="1" stopColor="var(--sk-accent)" stopOpacity="0.06" />
         </linearGradient>
       </defs>
 
-      {/* the fan */}
-      <g className="orn__rays">
-        {Array.from({ length: rays }, (_, i) => {
-          const a0 = Math.PI + (i / rays) * Math.PI;
-          const a1 = Math.PI + ((i + 1) / rays) * Math.PI;
-          const x0 = cx + r * Math.cos(a0);
-          const y0 = cy + r * Math.sin(a0);
-          const x1 = cx + r * Math.cos(a1);
-          const y1 = cy + r * Math.sin(a1);
-          return (
-            <path
-              key={i}
-              d={`M${cx} ${cy} L${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z`}
-              fill={i % 2 ? "url(#deco-ray-2)" : "url(#deco-ray)"}
-              style={{ animationDelay: `${i * 45}ms` }}
-            />
-          );
-        })}
+      {/* the frame, stepped */}
+      <g fill="none" stroke="var(--sk-accent)" strokeWidth="1.5">
+        <path className="orn__frame-line" d={arch} pathLength={1} />
+        <path className="orn__frame-line" d="M78 560 V256 Q78 78 400 78 Q722 78 722 256 V560" strokeOpacity="0.45" pathLength={1} style={{ animationDelay: "200ms" }} />
       </g>
 
-      {/* stepped arcs */}
-      <g className="orn__arcs" fill="none" stroke="var(--sk-accent)" strokeWidth="1.5">
-        {[120, 170, 230, 300, 380, 470, 560].map((rr, i) => (
-          <path
-            key={rr}
-            d={`M${cx - rr} ${cy} A${rr} ${rr} 0 0 1 ${cx + rr} ${cy}`}
-            strokeOpacity={0.9 - i * 0.1}
-            pathLength={1}
-            style={{ animationDelay: `${300 + i * 90}ms` }}
-          />
+      <g clipPath="url(#deco-arch)">
+        {/* rays behind the bird */}
+        <g className="orn__rays">
+          {Array.from({ length: rays }, (_, i) => {
+            if (i % 2) return null;
+            const a0 = Math.PI + (i / rays) * Math.PI;
+            const a1 = Math.PI + ((i + 1) / rays) * Math.PI;
+            return (
+              <path
+                key={i}
+                d={`M${cx} ${cy} L${(cx + R * Math.cos(a0)).toFixed(1)} ${(cy + R * Math.sin(a0)).toFixed(1)} L${(cx + R * Math.cos(a1)).toFixed(1)} ${(cy + R * Math.sin(a1)).toFixed(1)} Z`}
+                fill="url(#deco-ray)"
+                style={{ animationDelay: `${i * 30}ms` }}
+              />
+            );
+          })}
+        </g>
+        {/* stepped arcs */}
+        <g className="orn__arcs" fill="none" stroke="var(--sk-accent)" strokeWidth="1">
+          {[300, 360, 420, 480].map((rr, i) => (
+            <path
+              key={rr}
+              d={`M${cx - rr} ${cy} A${rr} ${rr} 0 0 1 ${cx + rr} ${cy}`}
+              strokeOpacity={0.55 - i * 0.1}
+              pathLength={1}
+              style={{ animationDelay: `${400 + i * 90}ms` }}
+            />
+          ))}
+        </g>
+        {/* the ground: a stepped plinth */}
+        <g fill="var(--sk-accent)" className="orn__plinth">
+          <rect x="230" y="530" width="340" height="8" />
+          <rect x="270" y="542" width="260" height="6" />
+        </g>
+      </g>
+
+      {/* the falcon */}
+      <Wing side={-1} delay={500} />
+      <Wing side={1} delay={500} />
+      <g className="orn__body" fill="var(--sk-accent)">
+        {/* chest and belly */}
+        <path d="M400 280 C 440 290 452 360 446 420 C 440 470 420 490 400 494 C 380 490 360 470 354 420 C 348 360 360 300 400 290 Z" />
+        {/* banding on the chest, cut into the gold */}
+        {[350, 372, 394, 416, 438].map((y, i) => (
+          <rect key={y} x={400 - (44 - i * 4)} y={y} width={(44 - i * 4) * 2} height="4" fill="var(--sk-ground)" fillOpacity="0.45" />
         ))}
-      </g>
-
-      {/* the keystone */}
-      <g className="orn__key" fill="var(--sk-accent)">
-        <rect x={cx - 6} y={cy - 92} width="12" height="92" />
-        <rect x={cx - 22} y={cy - 64} width="44" height="8" />
-        <rect x={cx - 40} y={cy - 44} width="80" height="8" />
-        <rect x={cx - 60} y={cy - 24} width="120" height="8" />
-      </g>
-
-      {/* chevron columns */}
-      <g className="orn__chev" fill="none" stroke="var(--sk-accent)" strokeOpacity="0.5" strokeWidth="2">
-        {[40, 760].map((x) =>
-          Array.from({ length: 7 }, (_, i) => (
-            <path
-              key={x + i}
-              d={`M${x - 18} ${520 - i * 28} L${x} ${506 - i * 28} L${x + 18} ${520 - i * 28}`}
-              style={{ animationDelay: `${600 + i * 60}ms` }}
-            />
-          )),
-        )}
+        {/* tail, stepped */}
+        <rect x="352" y="488" width="96" height="10" />
+        <rect x="364" y="502" width="72" height="8" />
+        <rect x="376" y="514" width="48" height="6" />
+        {/* head and hooked beak */}
+        <circle cx="400" cy="250" r="34" />
+        <path d="M428 236 L462 250 L436 272 Z" />
+        <circle cx="412" cy="242" r="4.5" fill="var(--sk-ground)" />
       </g>
     </svg>
   );

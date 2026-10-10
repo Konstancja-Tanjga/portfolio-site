@@ -41,31 +41,31 @@ export function Home() {
             and own a design system six products install as code. Watercolourist, birder,
             botanical illustrator. Warsaw, working remotely across the DACH region.
           </p>
-          <dl className="hm-ledger">
-            <div>
-              <dt>ERP System of the Year, 2025 and 2026</dt>
-              <dd>
-                {award ? (
-                  <Link to={`/work/${award.slug}`}>Gold in User Experience, two years running</Link>
-                ) : (
-                  "Gold in User Experience, two years running"
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt>Three applications</dt>
-              <dd>designed from zero and shipped since 2024</dd>
-            </div>
-            <div>
-              <dt>Around eighty components</dt>
-              <dd>in a design system published as a package</dd>
-            </div>
-            <div>
-              <dt>Ten years</dt>
-              <dd>in data-heavy software: ERP, banking, insurance, legal, energy</dd>
-            </div>
-          </dl>
         </div>
+        <dl className="hm-ledger">
+          <div>
+            <dt>ERP System of the Year, 2025 and 2026</dt>
+            <dd>
+              {award ? (
+                <Link to={`/work/${award.slug}`}>Gold in User Experience, two years running</Link>
+              ) : (
+                "Gold in User Experience, two years running"
+              )}
+            </dd>
+          </div>
+          <div>
+            <dt>Three applications</dt>
+            <dd>designed from zero and shipped since 2024</dd>
+          </div>
+          <div>
+            <dt>Around eighty components</dt>
+            <dd>in a design system published as a package</dd>
+          </div>
+          <div>
+            <dt>Ten years</dt>
+            <dd>in data-heavy software: ERP, banking, insurance, legal, energy</dd>
+          </div>
+        </dl>
       </section>
 
       {/* ---------- now ---------- */}
@@ -180,7 +180,7 @@ export function Home() {
           Write to me
         </h2>
         <p className="hm-standfirst">
-          Open to a lead or principal design role, remote, permanent or B2B.
+          Open to a lead or principal design role, remote, B2B only.
         </p>
         <p className="hm-contact__links">
           <a href="mailto:tanjgakonstancja@gmail.com">tanjgakonstancja@gmail.com</a>

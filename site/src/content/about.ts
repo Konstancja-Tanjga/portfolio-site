@@ -24,7 +24,7 @@ export const aboutChapters: Chapter[] = [
           lead: "Ten years in complex, data-rich software — ERP, banking, insurance, legal and regulatory, industrial energy. I run a design-to-code pipeline: shipped components live in code and the Figma library mirrors them, Claude Code implements against a specification I author, Storybook is the contract, and Nexus versions the result so six products can adopt it on their own schedule.",
           facts: [
             { label: "Based", value: "Warsaw, CET" },
-            { label: "Working", value: "Remote only · permanent or B2B" },
+            { label: "Working", value: "Remote only · B2B only" },
             {
               label: "Languages",
               value: "Polish native · English C2 · German, Spanish basic",

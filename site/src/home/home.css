@@ -77,6 +77,8 @@
   gap: var(--bh-space-5) var(--bh-space-6);
   align-items: center;
 }
+/* the facts run under both columns, so the two sides end on one line */
+.hm-hero .hm-ledger { grid-column: 1 / -1; order: 3; margin-top: var(--bh-space-3); }
 .hm-hero__art {
   position: relative;
   aspect-ratio: 800 / 560;
@@ -276,26 +278,25 @@
 :root[data-skin="deco"] .hm-stop__years { color: var(--sk-accent); }
 :root[data-skin="deco"] .hm-plate img { outline: 1px solid var(--sk-accent-2); outline-offset: 6px; }
 :root[data-skin="deco"] .hm-hero__who { letter-spacing: 0.3em; text-transform: uppercase; }
-:root[data-skin="deco"] .hm-hero { align-items: end; }
+:root[data-skin="deco"] .hm-hero__claim { font-size: clamp(2.2rem, 4.6vw, 3.4rem); letter-spacing: 0.05em; line-height: 1.12; }
 
-/* the fan */
+/* the falcon: frame draws, rays grow, wings rise feather by feather */
 .orn--deco path,
 .orn--deco rect { transform-box: fill-box; }
-.orn__rays path {
-  transform-origin: 50% 100%;
-  animation: deco-ray 1400ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
+.orn__frame-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1400ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.orn__rays path { transform-origin: 50% 100%; animation: deco-ray 1200ms 300ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 @keyframes deco-ray {
   from { opacity: 0; transform: scaleY(0.2); }
   to { opacity: 1; transform: none; }
 }
-.orn__arcs path {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 1600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+.orn__arcs path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1400ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+.orn__feather { transform-box: view-box; animation: deco-feather 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes deco-feather {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-.orn__key rect { transform-origin: 50% 100%; animation: deco-ray 900ms 200ms both; }
-.orn__chev path { animation: hm-rise 700ms both; }
+.orn__body,
+.orn__plinth { animation: hm-rise 800ms 400ms both; }
 
 /* =================================================================
    blueprint: the page is a drawing sheet
