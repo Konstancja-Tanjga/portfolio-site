@@ -179,7 +179,16 @@
 /* ---------- text ---------- */
 .passage { color: var(--kt-ink-2); line-height: 1.65; }
 .passage strong { color: var(--kt-ink); }
-.points { list-style: none; padding: 0; margin: var(--bh-space-4) 0 0; display: grid; gap: var(--bh-space-2); }
+.points {
+  list-style: none;
+  padding: 0;
+  margin: var(--bh-space-4) 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--bh-space-6);
+}
+.passage--points { max-width: none; }
+@media (max-width: 56rem) { .points { grid-template-columns: 1fr; } }
 .points li {
   position: relative;
   padding: var(--bh-space-3) 0 var(--bh-space-3) var(--bh-space-5);

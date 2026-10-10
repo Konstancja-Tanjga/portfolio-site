@@ -15,7 +15,7 @@ export function Passage({ html }: { html: string }) {
 export function Points({ items }: { items: string[] }) {
   const { ref, shown } = useReveal<HTMLUListElement>();
   return (
-    <Lane width="column" className="passage">
+    <Lane width="wall" className="passage passage--points">
       <ul ref={ref} className={shown ? "points is-shown" : "points"}>
         {items.map((item, i) => (
           <li key={item} style={{ transitionDelay: `${i * 90}ms` }} dangerouslySetInnerHTML={{ __html: item }} />
