@@ -28,6 +28,9 @@
   --sk-accent: var(--bh-site-mark);
   --sk-accent-2: var(--bh-site-mark-deep);
   --sk-on-accent: var(--bh-site-on-mark);
+  /* the field: the solid block a case cover sits on, and what sits on it */
+  --sk-field: var(--bh-site-mark);
+  --sk-on-field: var(--bh-site-on-mark);
   --sk-font-display: var(--bh-font-body);
   --sk-font-body: var(--bh-font-body);
   --sk-font-note: var(--bh-font-id);
@@ -55,6 +58,8 @@
   --sk-on-accent: #121a17;
   --sk-tint: #2c5a50;
   --sk-tint-2: #7a2e2b;
+  --sk-field: #d2ad5b;
+  --sk-on-field: #121a17;
   --sk-font-display: "Josefin Sans", "Jost", sans-serif;
   --sk-font-body: "Jost", "Josefin Sans", sans-serif;
   --sk-font-note: "Jost", sans-serif;
@@ -81,6 +86,8 @@
   --sk-on-accent: #10357a;
   --sk-tint: #1d4aa0;
   --sk-tint-2: #e8553f;
+  --sk-field: #1d4aa0;
+  --sk-on-field: #ffffff;
   --sk-font-display: "Big Shoulders Display", "Archivo", sans-serif;
   --sk-font-body: "Archivo", sans-serif;
   --sk-font-note: "Archivo", sans-serif;
@@ -107,6 +114,8 @@
   --sk-on-accent: #fbf8f2;
   --sk-tint: #5f8a86;
   --sk-tint-2: #7a9458;
+  --sk-field: #3f6b68;
+  --sk-on-field: #fbf8f2;
   --sk-font-display: "Cormorant Garamond", Georgia, serif;
   --sk-font-body: "Karla", system-ui, sans-serif;
   --sk-font-note: "Caveat", cursive;
@@ -127,9 +136,9 @@
   --bh-text-strong: var(--sk-ink);
   --bh-text-quiet: var(--sk-ink-3);
   --bh-border: var(--sk-line);
-  --bh-mark: var(--sk-accent);
-  --bh-site-mark: var(--sk-accent);
-  --bh-site-on-mark: var(--sk-on-accent);
+  --bh-mark: var(--sk-field);
+  --bh-site-mark: var(--sk-field);
+  --bh-site-on-mark: var(--sk-on-field);
   --bh-font-body: var(--sk-font-body);
   --bh-font-id: var(--sk-font-note);
   --bh-focus: var(--sk-accent);
@@ -146,6 +155,10 @@
 }
 :root[data-skin="deco"],
 :root[data-skin="blueprint"] { color-scheme: dark; }
+
+/* Everything on a field reads in the field's own foreground, including
+   the headline app.css sets in the page's strong text. */
+:root[data-skin] .cover { --bh-text-strong: var(--sk-on-field); --bh-text: var(--sk-on-field); }
 
 :root[data-skin] body { transition: background-color 600ms ease, color 600ms ease; }
 

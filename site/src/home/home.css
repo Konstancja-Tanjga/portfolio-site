@@ -65,25 +65,29 @@
 .hm-contact__links a:hover,
 .hm-ledger a:hover { background: var(--sk-accent); color: var(--sk-on-accent); box-shadow: none; }
 
-/* ---------- hero ---------- */
+/* ---------- hero ----------
+   Two columns: the words, and the skin's drawing beside them. On a
+   narrow screen the drawing sits above, smaller. */
 .hm-hero {
-  position: relative;
-  overflow: hidden;
-  min-height: min(92vh, 60rem);
+  max-width: var(--bh-page);
+  margin: 0 auto;
+  padding: var(--bh-space-6) var(--bh-gutter) var(--bh-space-6);
   display: grid;
-  align-items: end;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: var(--bh-space-5) var(--bh-space-6);
+  align-items: center;
 }
 .hm-hero__art {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  aspect-ratio: 800 / 560;
   pointer-events: none;
+  order: 2;
 }
 .orn { width: 100%; height: 100%; display: block; }
-.hm-hero__text {
-  position: relative;
-  width: 100%;
-  padding-top: var(--bh-space-8);
-  padding-bottom: var(--bh-space-6);
+.hm-hero__text.page { position: relative; width: 100%; padding: 0; margin: 0; }
+@media (max-width: 56rem) {
+  .hm-hero { grid-template-columns: 1fr; }
+  .hm-hero__art { order: 0; max-height: 46vh; margin: 0 auto; max-width: 36rem; width: 100%; }
 }
 .hm-hero__who {
   margin: 0 0 var(--bh-space-3);
@@ -272,6 +276,7 @@
 :root[data-skin="deco"] .hm-stop__years { color: var(--sk-accent); }
 :root[data-skin="deco"] .hm-plate img { outline: 1px solid var(--sk-accent-2); outline-offset: 6px; }
 :root[data-skin="deco"] .hm-hero__who { letter-spacing: 0.3em; text-transform: uppercase; }
+:root[data-skin="deco"] .hm-hero { align-items: end; }
 
 /* the fan */
 .orn--deco path,
@@ -420,8 +425,6 @@
 
 /* ---------- narrow ---------- */
 @media (max-width: 40rem) {
-  .hm-hero { min-height: auto; }
-  .hm-hero__art { opacity: 0.55; }
   .hm-card--big { grid-template-columns: 1fr; }
   .hm-plates { grid-template-columns: repeat(2, 1fr); }
 }

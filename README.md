@@ -26,6 +26,13 @@ a picture of one.
 | **~80** | components in the design system |
 | **6** | products consuming it |
 
+## The redesign, October 2026
+
+The site now has three skins the reader can switch between (Deco, Blueprint,
+Aquarelle) and a home page that makes one argument about the work. The
+process, the decisions and the screens are in
+[docs/redesign-2026](docs/redesign-2026/README.md).
+
 ## How the work runs
 
 <picture>

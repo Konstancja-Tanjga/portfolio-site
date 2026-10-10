@@ -22,18 +22,18 @@ export function DecoOrnament() {
     <svg
       className="orn orn--deco"
       viewBox="0 0 800 560"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMax meet"
       aria-hidden="true"
       focusable="false"
     >
       <defs>
         <linearGradient id="deco-ray" x1="0" y1="1" x2="0" y2="0">
           <stop offset="0" stopColor="var(--sk-accent)" stopOpacity="0.55" />
-          <stop offset="1" stopColor="var(--sk-accent)" stopOpacity="0" />
+          <stop offset="1" stopColor="var(--sk-accent)" stopOpacity="0.14" />
         </linearGradient>
         <linearGradient id="deco-ray-2" x1="0" y1="1" x2="0" y2="0">
           <stop offset="0" stopColor="var(--sk-tint)" stopOpacity="0.7" />
-          <stop offset="1" stopColor="var(--sk-tint)" stopOpacity="0" />
+          <stop offset="1" stopColor="var(--sk-tint)" stopOpacity="0.18" />
         </linearGradient>
       </defs>
 
@@ -59,11 +59,11 @@ export function DecoOrnament() {
 
       {/* stepped arcs */}
       <g className="orn__arcs" fill="none" stroke="var(--sk-accent)" strokeWidth="1.5">
-        {[120, 170, 230, 300, 380, 470].map((rr, i) => (
+        {[120, 170, 230, 300, 380, 470, 560].map((rr, i) => (
           <path
             key={rr}
             d={`M${cx - rr} ${cy} A${rr} ${rr} 0 0 1 ${cx + rr} ${cy}`}
-            strokeOpacity={0.9 - i * 0.12}
+            strokeOpacity={0.9 - i * 0.1}
             pathLength={1}
             style={{ animationDelay: `${300 + i * 90}ms` }}
           />
@@ -155,9 +155,9 @@ export function BlueprintOrnament() {
   // An elevation of the APplus shell, at the numbers the shell is built
   // to: nav rail 56, sub-level panel 248, content 1136 beside a side
   // sheet of 448. Here at 1:4.
-  const ox = 90;
-  const oy = 70;
-  const s = 0.36;
+  const ox = 76;
+  const oy = 84;
+  const s = 0.34;
   const rail = 56 * s;
   const panel = 248 * s;
   const content = 1136 * s;
@@ -260,10 +260,10 @@ export function BlueprintOrnament() {
       {/* red pencil: the one thing being changed */}
       <g className="orn__mark" fill="none" stroke="var(--sk-accent-2)" strokeWidth="2">
         <ellipse cx={ox + rail + panel + content + sheet / 2} cy={oy + bar + 24 + 2 * 50 + 14} rx={sheet / 2 - 6} ry="24" pathLength={1} />
-        <path d={`M${W + 10} ${oy + bar + 140} l 40 -30`} pathLength={1} />
+        <path d={`M${ox + rail + panel + content + sheet / 2} ${oy + bar + 24 + 2 * 50 + 40} L${ox + rail + panel + 200} ${oy + h + 34}`} pathLength={1} />
       </g>
-      <text className="orn__note" x={W + 54} y={oy + bar + 104} fill="var(--sk-accent-2)">
-        rev. B — label above field
+      <text className="orn__note" x={ox + rail + panel + 196} y={oy + h + 50} fill="var(--sk-accent-2)" textAnchor="end">
+        rev. B — the label moves above the field
       </text>
 
       {/* title block */}
@@ -286,7 +286,7 @@ export function BlueprintOrnament() {
 
 /** Barbs along a curved rachis: a primary feather, generated. */
 function Feather({ x, y, len, delay }: { x: number; y: number; len: number; delay: number }) {
-  const n = 46;
+  const n = 96;
   const pts = Array.from({ length: n + 1 }, (_, i) => {
     const t = i / n;
     // the rachis: a gentle S
@@ -296,20 +296,25 @@ function Feather({ x, y, len, delay }: { x: number; y: number; len: number; dela
   });
   const rachis = pts.map((p, i) => `${i ? "L" : "M"}${p.px.toFixed(1)} ${p.py.toFixed(1)}`).join(" ");
   const barbs = pts.slice(4, n - 1).flatMap((p, i) => {
-    const w = 46 * Math.sin(Math.pow(p.t, 0.7) * Math.PI) * (p.t < 0.5 ? 1 : 1 - (p.t - 0.5) * 0.9);
-    const dir = { x: -0.42, y: -1 };
-    const lean = 1;
-    const a = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} q ${(dir.x * w * 0.5 + 8 * lean).toFixed(1)} ${(dir.y * w * 0.5).toFixed(1)} ${(dir.x * w + 16 * lean).toFixed(1)} ${(dir.y * w).toFixed(1)}`;
-    const w2 = w * 0.62;
-    const b = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} q ${(-dir.x * w2 * 0.5 + 8 * lean).toFixed(1)} ${(-dir.y * w2 * 0.5).toFixed(1)} ${(-dir.x * w2 + 16 * lean).toFixed(1)} ${(-dir.y * w2).toFixed(1)}`;
+    // the vane: wide at the base, tapering to the tip; the outer vane
+    // narrower than the inner, as a primary is
+    const env = Math.sin(Math.pow(p.t, 0.6) * Math.PI) * (1 - p.t * 0.35);
+    const w = 52 * env;
+    const w2 = 30 * env;
+    const lean = 14 + 10 * p.t;
+    // barbs sweep toward the tip and curve back slightly at the end
+    const a = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} c ${(lean * 0.4).toFixed(1)} ${(-w * 0.35).toFixed(1)} ${(lean * 0.9).toFixed(1)} ${(-w * 0.75).toFixed(1)} ${(lean + 6).toFixed(1)} ${(-w).toFixed(1)}`;
+    const b = `M${p.px.toFixed(1)} ${p.py.toFixed(1)} c ${(lean * 0.4).toFixed(1)} ${(w2 * 0.35).toFixed(1)} ${(lean * 0.9).toFixed(1)} ${(w2 * 0.75).toFixed(1)} ${(lean + 6).toFixed(1)} ${w2.toFixed(1)}`;
+    // a few barbs split away, as a worn feather's do
+    const gap = i % 23 === 11 || i % 31 === 7;
     return [
-      <path key={`a${i}`} d={a} pathLength={1} style={{ animationDelay: `${delay + 400 + i * 18}ms` }} />,
-      <path key={`b${i}`} d={b} pathLength={1} strokeOpacity="0.8" style={{ animationDelay: `${delay + 420 + i * 18}ms` }} />,
+      <path key={`a${i}`} d={a} pathLength={1} strokeOpacity={gap ? 0.25 : 0.85} style={{ animationDelay: `${delay + 400 + i * 9}ms` }} />,
+      <path key={`b${i}`} d={b} pathLength={1} strokeOpacity={gap ? 0.25 : 0.7} style={{ animationDelay: `${delay + 410 + i * 9}ms` }} />,
     ];
   });
   return (
-    <g className="orn__ink" fill="none" stroke="var(--sk-ink)" strokeWidth="0.9" strokeLinecap="round">
-      <path d={rachis} strokeWidth="1.8" pathLength={1} style={{ animationDelay: `${delay}ms` }} />
+    <g className="orn__ink" fill="none" stroke="var(--sk-ink)" strokeWidth="0.7" strokeLinecap="round">
+      <path d={rachis} strokeWidth="2.2" pathLength={1} style={{ animationDelay: `${delay}ms` }} />
       {barbs}
     </g>
   );
