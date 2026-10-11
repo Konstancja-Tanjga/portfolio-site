@@ -25,6 +25,7 @@ export const elly: CaseStudy = {
     subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · VOICE",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2025",
+    art: { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp" },
     shot: { src: "/work/elly-ai-assistant/01.png" },
   },
   meta: [
