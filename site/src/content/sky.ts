@@ -36,7 +36,6 @@ export const sky: CaseStudy = {
     stamp: "PARAMETRIC SILHOUETTES · LIVE SKY · MORPHS · SPACED REPETITION",
     credit: "Idea, content and direction · Built with Claude · 2026",
     art: { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp" },
-    org: "Personal project",
     shot: { src: "/work/reading-the-sky/00-cover.jpg" },
   },
   meta: [
