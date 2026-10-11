@@ -26,6 +26,7 @@ export const fox: CaseStudy = {
     subline: "for a six-product ERP platform",
     stamp: "TOKENS · COMPONENTS · STORYBOOK · CHROMATIC · VERSIONED PACKAGES",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2023–2026",
+    art: { src: "/work/fox-design-system/device/catalogue-2400.webp" },
     shot: { src: "/work/fox-design-system/colors.png" },
   },
   meta: [

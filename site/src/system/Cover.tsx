@@ -146,7 +146,9 @@ function Chart() {
  */
 export function TypeCover({ cover, device, eager }: { cover: CoverData; device?: string; eager?: boolean }) {
   const parts = cover.credit.split("·").map((x) => x.trim());
-  const org = cover.org ?? (parts.length === 3 ? parts[1] : undefined);
+  const orgRaw = cover.org ?? (parts.length === 3 ? parts[1] : undefined);
+  // "Personal project" already in the kicker is not said twice
+  const org = orgRaw && !cover.kicker.toLowerCase().includes(orgRaw.toLowerCase()) ? orgRaw : undefined;
   // the tile's own title and year sit under the cover, so this is decoration to a reader
   const art = cover.art?.src ?? device;
   const cls = ["tcover", art && "tcover--device", cover.art?.portrait && "tcover--portrait"].filter(Boolean).join(" ");
