@@ -33,7 +33,7 @@ export const flow: CaseStudy = {
     headline: ["Flow mode"],
     subline: "navigation and page layout for APplus ERP",
     stamp: "NAVIGATION · PAGE DETAILS · FOX v2.5 · DESKTOP TO MOBILE",
-    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
+    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2023",
     shot: { src: "/work/applus-flow/00-cover.png" },
   },
   meta: [
@@ -46,7 +46,7 @@ export const flow: CaseStudy = {
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Platforms", value: "Desktop, tablet, mobile" },
-    { label: "Period", value: "2026" },
+    { label: "Period", value: "2023" },
     { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" },
   ],
   chapters: [
@@ -94,7 +94,7 @@ export const flow: CaseStudy = {
             },
             {
               key: "Period and team",
-              value: "2026. The developers and QA of Flow mode, and me.",
+              value: "2023. The developers and QA of Flow mode, and me.",
             },
           ],
         },
@@ -275,7 +275,7 @@ export const flow: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>What I can show is <strong>the navigation, the Page details layout, and the FOX v2.5 components</strong> in the screens above, and Flow mode is live in APplus. APplus won Gold in the User Experience ERP category at <a href=\"erp-of-the-year\">ERP-System des Jahres 2025</a>.</p>",
+            "<p>What I can show is <strong>the navigation, the Page details layout, and the FOX v2.5 components</strong> in the screens above, and Flow mode is live in APplus. APplus won Gold in the User Experience category at <a href=\"erp-of-the-year\">ERP-System des Jahres 2025</a>.</p>",
         },
         {
           kind: "joint",

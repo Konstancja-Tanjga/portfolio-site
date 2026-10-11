@@ -39,3 +39,4 @@ Not changed, and why:
 - No chapter 01a "Why this is a hard brief", no personas, no use cases or `dossier`, no handoff, no `joint`: the board states no constraints, no personas, no use cases and no reflection, and none was invented. Chapter 06 keeps the two sentences on record, including that nothing was measured after launch.
 - The pull quote "The customer expects to be in their world, not ours." (10 words) stays a quote, in its quotation marks, because the board presents it as one; it was not promoted to a maxim.
 - The four greyscale screens (`early-mockup`, `offers-final`, `final-screens`, `insights-board`) are flat crops, not MacBook mockups. No image was created or deleted.
+| credit and Role: "UX and UI designer" | "UI Designer" | settled by her on 11 October 2026 |

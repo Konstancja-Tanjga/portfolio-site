@@ -539,7 +539,7 @@ export const elly: CaseStudy = {
             { value: "13", label: "participants: consultants and solution architects" },
             { value: "8", label: "had never seen Elly before the session" },
             { value: "1", label: "had ever used it hands-on" },
-            { value: "9", label: "moderated sessions, 45 minutes each" },
+            { value: "13", label: "moderated sessions, 45 minutes each" },
           ],
         },
         {

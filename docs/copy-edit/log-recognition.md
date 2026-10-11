@@ -50,3 +50,4 @@ Not changed, and why:
 - `possible.ts` caption names the project page "Circulence" while the entry title everywhere else is "The Wisdom of a Vanishing Adventure". Left as found and flagged: if "Circulence" is the team or project name on the WUD site, the caption should say so.
 - `watercolours.ts` keeps "Untitled" for the three Lisbon paintings that have only a timestamp filename; naming them would invent a title.
 - The uppercase kickers and stamps on the three covers stay as they are, pending the open point in INVENTORY.md.
+| award.ts: "User Experience ERP" (2025 category wording, three places) | "User Experience" | settled by her on 11 October 2026: same category wording for 2025 and 2026 |

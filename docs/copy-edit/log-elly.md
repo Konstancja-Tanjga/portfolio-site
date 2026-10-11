@@ -51,3 +51,4 @@ Not changed, and why:
 - The two shots at the end of chapter 14 (`12.png`, `15.png`) have no captions. Without seeing the frames a caption would be invented, so none was added.
 - The video `title` keeps its em dash: it is the player's accessible name, not prose, and the brief said not to touch video blocks except their captions.
 - No "What would I do differently?" and no "What will I measure?" block: the file contains no such reflection and none was invented. The barriers chapter already carries what participants asked for next.
+| { value: "9", label: "moderated sessions, 45 minutes each" } | { value: "13", label: "moderated sessions, 45 minutes each" } | settled by her on 11 October 2026: thirteen sessions |

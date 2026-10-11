@@ -20,7 +20,7 @@ export const pzu: CaseStudy = {
   title: "MojePZU",
   what: "An insurer's customer portal, redesigned through three rounds of interviews",
   lead:
-    "The redesign of mojepzu.pl, the customer portal of the insurer PZU, before and after logging in. I was the only UX and UI designer on the project. I took the portal through three prototypes, with a round of in-depth interviews feeding each one, and the result shipped to production.",
+    "The redesign of mojepzu.pl, the customer portal of the insurer PZU, before and after logging in. I was the only UI designer on the project. I took the portal through three prototypes, with a round of in-depth interviews feeding each one, and the result shipped to production.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -28,11 +28,11 @@ export const pzu: CaseStudy = {
     headline: ["MojePZU"],
     subline: "the customer portal of an insurer",
     stamp: "RESEARCH · INFORMATION ARCHITECTURE · THREE PROTOTYPES",
-    credit: "UX and UI designer · PZU · 2019",
+    credit: "UI Designer · PZU · 2019",
     shot: { src: "/work/mojepzu/screens/cover.webp" },
   },
   meta: [
-    { label: "Role", value: "UX and UI designer; the only designer on the project, freelance" },
+    { label: "Role", value: "UI Designer; the only designer on the project, freelance" },
     { label: "Company", value: "PZU, Warsaw" },
     { label: "Team", value: "Five: a UX researcher, a strategist, a developer, a service designer, and me" },
     { label: "Platform", value: "mojepzu.pl, on desktop, tablet, and phone" },

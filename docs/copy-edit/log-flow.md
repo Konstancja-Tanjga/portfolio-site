@@ -40,3 +40,5 @@ Unresolved facts, for Konstancja:
 - The award year. Chapter 06 of this file names ERP-System des Jahres 2025 only; the Analytics and Elly strips say 2025 and 2026, and the CV says 2025 only (the inventory's open row). The Product context row follows this file: 2025 only.
 - The title. The role is "Lead Designer, UX Engineer" because the credit says 2026 and the work is at Asseco Solutions. If the work predates 2025 the earlier title applies.
 | { label: "Product context", value: "APplus: ERP-System des Jahres 2025, Gold in the User Experience category" } | { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" } | brief: the award row carried on every APplus study, both years (confirmed fact) |
+| credit, Period, brief: "2026" | "2023" | settled by her on 11 October 2026 (Flow mode shipped with APplus 8, October 2023) |
+| "User Experience ERP category" | "User Experience category" | settled: same wording both years |

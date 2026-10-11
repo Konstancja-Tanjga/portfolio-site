@@ -18,7 +18,7 @@ export const award: CaseStudy = {
   },
   meta: [
     { label: "Award", value: "ERP-System des Jahres 2025 and 2026" },
-    { label: "Category", value: "User Experience ERP, Gold both years" },
+    { label: "Category", value: "User Experience, Gold both years" },
     { label: "Awarded", value: "Frankfurt am Main, 13 October 2025 and 5 October 2026" },
     { label: "Product", value: "APplus ERP" },
     { label: "Company", value: "Asseco Solutions AG" },
@@ -30,13 +30,13 @@ export const award: CaseStudy = {
       n: "01",
       heading: "2025",
       standfirst:
-        "The first Gold. The jury of the Center for Enterprise Research at the University of Potsdam named APplus ERP System of the Year in the User Experience ERP category, citing the Flow mode operating concept and an interface that is ergonomic, visual, and learnable without long training.",
+        "The first Gold. The jury of the Center for Enterprise Research at the University of Potsdam named APplus ERP System of the Year in the User Experience category, citing the Flow mode operating concept and an interface that is ergonomic, visual, and learnable without long training.",
       blocks: [
         {
           kind: "shot",
           width: "wall",
           src: "/work/erp-of-the-year/01.jpg",
-          caption: "The trophy and the certificate: ERP-System des Jahres 2025, Gold in the User Experience ERP category, Asseco Solutions AG.",
+          caption: "The trophy and the certificate: ERP-System des Jahres 2025, Gold in the User Experience category, Asseco Solutions AG.",
         },
       ],
     },

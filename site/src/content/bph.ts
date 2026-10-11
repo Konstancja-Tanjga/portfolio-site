@@ -472,7 +472,7 @@ export const bph: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>APplus was named <strong>ERP System of the Year 2025</strong> and took Gold in the User Experience ERP category, awarded in Frankfurt am Main on 13 October 2025, after this work shipped.</p>",
+            "<p>APplus was named <strong>ERP System of the Year 2025</strong> and took Gold in the User Experience category, awarded in Frankfurt am Main on 13 October 2025, after this work shipped.</p>",
         },
         {
           kind: "joint",
