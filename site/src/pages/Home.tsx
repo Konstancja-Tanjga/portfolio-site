@@ -160,7 +160,7 @@ export function Home() {
 
       <section id="stop-contact" className="page hm-contact" aria-labelledby="contact-heading">
         <h2 id="contact-heading" className="hm-contact__claim">
-          Open to a lead or principal role, remote, B2B.
+          Open to a lead or IC role, remote, B2B.
         </h2>
         <a className="hm-contact__mail" href="mailto:tanjgakonstancja@gmail.com">tanjgakonstancja@gmail.com</a>
         <p className="hm-contact__links">
