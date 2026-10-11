@@ -604,17 +604,17 @@
 .tcover__headline { grid-column: 1 / -1; align-self: end; display: grid; margin-top: var(--bh-space-2); font-family: var(--kt-font-display); font-weight: 700; font-size: clamp(1.25rem, 8.5cqw, 3.1rem); line-height: 0.98; letter-spacing: -0.035em; }
 .tcover__sub { grid-column: 1 / -1; margin-top: 0.35em; font-size: clamp(0.72rem, 3cqw, 1rem); color: var(--kt-ink-2); max-width: 24ch; }
 .tcover--device .tcover__headline, .tcover--device .tcover__sub { max-width: 50%; position: relative; z-index: 1; }
-.hm-tile__cover .tcover--portrait .tcover__device { width: auto; height: 118%; right: -4%; bottom: -30%; transform: rotate(-6deg); transform-origin: 50% 100%; }
-.hm-tile:hover .hm-tile__cover .tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
+.tcover--portrait .tcover__device { width: auto; height: 118%; right: -4%; bottom: -30%; transform: rotate(-6deg); transform-origin: 50% 100%; }
+.hm-tile:hover .tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
 .tcover--portrait .tcover__headline, .tcover--portrait .tcover__sub { max-width: 60%; }
-.hm-tile__cover .tcover__device {
+.tcover .tcover__device {
   position: absolute; right: -16%; bottom: -12%; width: 70%; height: auto; object-fit: contain;
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6));
   transform: rotate(-4deg); transform-origin: 80% 100%;
   transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.hm-tile:hover .hm-tile__cover .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
-.hm-tiles--practice .hm-tile__cover .tcover__device { width: 84%; right: -22%; bottom: -22%; }
+.hm-tile:hover .tcover .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
+.hm-tiles--practice .tcover .tcover__device { width: 84%; right: -22%; bottom: -22%; }
 .hm-tiles--practice .tcover--device .tcover__headline, .hm-tiles--practice .tcover--device .tcover__sub { max-width: 100%; }
 .hm-tiles--practice .tcover__sub { display: none; }
-@media (prefers-reduced-motion: reduce) { .hm-tile__cover .tcover__device, .hm-tile:hover .hm-tile__cover .tcover__device { transition: none; transform: rotate(-4deg); } }
+@media (prefers-reduced-motion: reduce) { .hm-tile__cover .tcover__device, .hm-tile:hover .tcover .tcover__device { transition: none; transform: rotate(-4deg); } }

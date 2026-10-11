@@ -1,3 +1,4 @@
+import { firstDevice } from "../system/Cover";
 import { Link, useParams } from "react-router-dom";
 import { findCase, listingFor, neighbours } from "../content";
 import { ChapterView } from "../components/Chapter";
@@ -40,7 +41,7 @@ export function Case() {
       <ReadingProgress />
       <JumpBar title={study.title} chapters={study.chapters} back={listing} />
       <Wall>
-        <Cover cover={study.cover} />
+        <Cover cover={study.cover} art={firstDevice(study)} />
 
         <Lane width="column" className="wall__lead">
           <p className="lead">{study.lead}</p>
