@@ -712,10 +712,10 @@ export const bi: CaseStudy = {
                 "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
             },
             {
-              src: `${D}/settings-2400.webp`,
-          frame: "macbook",
+              src: `${D}/queries-add-2400.webp`,
+              frame: "macbook",
               caption:
-                "Settings holds the other half of the same permission model, so the reading screens and the admin screens cannot drift apart.",
+                "Add query. A new query is created in a dialog over the shelf (R1: an action on the whole object opens a modal), with its permissions set before it exists.",
             },
           ],
         },
