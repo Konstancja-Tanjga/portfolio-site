@@ -32,6 +32,7 @@ export const chihuahua: CaseStudy = {
     subline: "Designing for a user who cannot read, tap, or be interviewed",
     stamp: "RESEARCH · GUIDELINES · TOKENS · PWA · TESTING",
     credit: "Design, research, and build · Personal project · 2026",
+    art: { src: "/work/tinder-for-chihuahua/cover-art.webp", portrait: true },
     shot: { src: "/work/tinder-for-chihuahua/00-cover.png" },
   },
   meta: [

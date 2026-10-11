@@ -23,6 +23,7 @@ export const futures: CaseStudy = {
     subline: "a workshop framework, for the Flow Hub navigation work",
     stamp: "STEEP · MULTIPLE FUTURES · 2×2 SCENARIOS · JOBS TO BE DONE",
     credit: "Designed and facilitated · APplus ERP · 2025",
+    art: { src: "/work/futures-thinking/cover-art.webp" },
     shot: { src: "/work/futures-thinking/00-cover.png" },
   },
   meta: [

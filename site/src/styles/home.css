@@ -614,7 +614,9 @@
   transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .hm-tile:hover .tcover .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
-.hm-tiles--practice .tcover .tcover__device { width: 84%; right: -22%; bottom: -22%; }
+.hm-tiles--practice .tcover .tcover__device { width: 100%; right: -16%; top: 15%; bottom: auto; transform: rotate(-4deg); transform-origin: 80% 0; }
+.hm-tiles--practice .tcover.tcover--portrait .tcover__device { width: auto; height: 72%; right: -6%; top: 12%; bottom: auto; transform: rotate(-6deg); transform-origin: 50% 0; }
+.hm-tiles--practice .tcover--portrait .tcover__headline { max-width: 58%; }
 .hm-tiles--practice .tcover--device .tcover__headline, .hm-tiles--practice .tcover--device .tcover__sub { max-width: 100%; }
 .hm-tiles--practice .tcover__sub { display: none; }
 @media (prefers-reduced-motion: reduce) { .hm-tile__cover .tcover__device, .hm-tile:hover .tcover .tcover__device { transition: none; transform: rotate(-4deg); } }
