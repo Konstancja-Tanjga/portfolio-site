@@ -109,8 +109,11 @@ export function ScaleJourney() {
       label(x, y - 16, "1 screen · 1920 × 1080 · scope: the whole object (R1)", a);
       dim(x, y + h + 22, x + w, y + h + 22, "1920 px", a);
     };
-    const component = (a: number, t: number) => {
-      // one card component, exploded: shell, media, title, meta, overflow, with dimension lines
+    const component = (a0: number, t: number) => {
+      // one card component, exploded: shell, media, title, meta, overflow, with dimension lines.
+      // It sits over the work grid, so it is drawn at less than half strength: the covers
+      // underneath stay legible and the frame reads as an annotation, not a layer.
+      const a = a0 * 0.4;
       const w = Math.min(W * 0.36, 520), h = w * 0.72;
       const x = W * 0.5 - w * 0.5 + W * 0.2, y = H * 0.5 - h * 0.5;
       ctx.lineWidth = 1;

@@ -19,6 +19,7 @@ export const riyad: CaseStudy = {
     subline: "Digital Insights, for Riyad Bank",
     stamp: "DESIGNED FROM SCRATCH · 3D NAVIGATION · ILLUSTRATION SYSTEM · SHIPPED",
     credit: "UX/UI Designer · Big Hat, via Intellias · Riyad Bank, Saudi Arabia",
+    art: { src: "/work/riyad-bank/cover-art.webp", portrait: true },
     shot: { src: "/work/riyad-bank/00-cover.png" },
   },
   meta: [

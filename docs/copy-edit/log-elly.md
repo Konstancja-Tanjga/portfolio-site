@@ -52,3 +52,4 @@ Not changed, and why:
 - The video `title` keeps its em dash: it is the player's accessible name, not prose, and the brief said not to touch video blocks except their captions.
 - No "What would I do differently?" and no "What will I measure?" block: the file contains no such reflection and none was invented. The barriers chapter already carries what participants asked for next.
 | { value: "9", label: "moderated sessions, 45 minutes each" } | { value: "13", label: "moderated sessions, 45 minutes each" } | settled by her on 11 October 2026: thirteen sessions |
+| headline: ["Smart help", "for an ERP"] | headline: ["AI assistant", "for ERP"] | her wording, 11 October 2026 |

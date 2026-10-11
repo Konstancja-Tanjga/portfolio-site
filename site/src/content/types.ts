@@ -377,8 +377,23 @@ export type Cover = {
   /** "Lead designer · Asseco Solutions · 2026" */
   credit: string;
   /**
-   * The thumbnail on the listing cards (Work and Practice). Not drawn on the intro — see Cover.tsx
-   * for why sixteen projects share one typeset frame instead.
+   * Whose project it is, for the typeset cover on the grid: "Volvo Group",
+   * "Personal project". Without it the middle segment of a three-part
+   * credit is used, which is the company on every product study.
+   */
+  org?: string;
+  /**
+   * The picture on the typeset cover, when the study's first mockup is not
+   * the right one: a keyed export of the product on a device, or a screen
+   * with its own frame. `portrait` lays a phone against the right edge
+   * instead of a laptop across the bottom.
+   */
+  art?: { src: string; portrait?: boolean };
+  /**
+   * The thumbnail on the next-case link and the listing bands. The Work
+   * grid on the home page draws a typeset cover instead (TypeCover). Not
+   * drawn on the intro — see Cover.tsx for why sixteen projects share one
+   * typeset frame instead.
    */
   shot: Shot;
   /**
