@@ -529,3 +529,6 @@
 
 @media (max-width: 64rem) { .ruler, .hm-readout { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ruler__marker { transition: none; } .readout__key::before { animation: none; } }
+
+/* the stage is a backdrop: absolute, under the words, whatever the layering rule above says */
+.hm > .hm-hero > .hm-hero__stage { position: absolute; z-index: 1; }
