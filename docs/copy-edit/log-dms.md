@@ -56,3 +56,6 @@ Not changed, and why:
 - No "What would I do differently?" block: the file contains no such reflection and none was invented.
 - The file does not say whether Documents has been released, so the Outcome row states the evidence and the paper trail and makes no release claim.
 - The results points keep "went into FOX 2.3" as found.
+| spec "What the annotations on this frame say" (Requirements, Development, Content, User flow, Interaction) | removed | her decision, 11 October 2026: the block duplicated the documented frame above it |
+| ref-finance-app in a MacBook frame | flat image | her decision: the reference screenshot is a collage, not one screen |
+| detail-info, detail-tags, detail-versions, tablet-versions as flat crops | MacBook mockups | her decision: the four sign-off screens framed like the rest |

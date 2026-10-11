@@ -297,7 +297,7 @@ export const dms: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/applus-documents/device/ref-finance-app-2400.webp", frame: "macbook",
+          src: "/work/applus-documents/screens/ref-finance-app.png",
           caption: "A finance tool: a dashboard that counts open tasks per company before it offers anything to do, and an inbox table of invoices.",
         },
         {
@@ -388,12 +388,14 @@ export const dms: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: "/work/applus-documents/screens/detail-info.png",
+              src: "/work/applus-documents/device/detail-info-2400.webp",
+              frame: "macbook",
               caption:
                 "Document info. An identity panel (scope, format, size, created, last modified, version, checksum), then a five-tab band, then the preview. The tabs are where audit-relevant history lives, so they are part of the template rather than a per-screen choice.",
             },
             {
-              src: "/work/applus-documents/screens/detail-tags.png",
+              src: "/work/applus-documents/device/detail-tags-2400.webp",
+              frame: "macbook",
               caption:
                 "The tag model and its validation rules, enforced in place: up to 20 tags per document, 64 characters at most, letters, numbers, _ and - only, no duplicates.",
             },
@@ -469,11 +471,13 @@ export const dms: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: "/work/applus-documents/screens/detail-versions.png",
+              src: "/work/applus-documents/device/detail-versions-2400.webp",
+              frame: "macbook",
               caption: "Version history on a sales order: each version with its author, number, and date, and a download on the highlighted row.",
             },
             {
-              src: "/work/applus-documents/screens/tablet-versions.png",
+              src: "/work/applus-documents/device/tablet-versions-2400.webp",
+              frame: "macbook",
               caption: "The same version history on a tablet: the template survives the narrower width.",
             },
           ],
@@ -504,21 +508,6 @@ export const dms: CaseStudy = {
           src: "/work/applus-documents/device/documentation-2400.webp", frame: "macbook",
           caption:
             "A documented frame. On top, the doc band: the Jira link (PX-1774), the acceptance criteria, the designer, and the Approved sign-off. Below, the screens with annotations in five kinds: requirements, development, content, user flow, and interaction.",
-        },
-        {
-          kind: "spec",
-          caption: "What the annotations on this frame say.",
-          rows: [
-            { key: "Requirements", value: "Metadata fields are related to roles." },
-            { key: "Development", value: "The version dropdown displays two list items: All versions, Latest only." },
-            { key: "Content", value: "Title in one line. Height 48px, width 812px." },
-            { key: "User flow", value: "Enabled when nothing is selected. Opacity 40%, component state Disabled." },
-            {
-              key: "Interaction",
-              value:
-                "The match information on a list item is shown only in text search results. It is not role-dependent and appears for both User and Admin. Text search scans document metadata, and when the query matches a metadata value the document is shown with the field that contains the match. The same applies to metadata filters, because text search can be combined with filters.",
-            },
-          ],
         },
       ],
     },
