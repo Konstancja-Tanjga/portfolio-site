@@ -36,6 +36,25 @@ What they have in common, and what this direction takes from them:
 What was kept from the first pass: the sitemap and robots, the 2026
 award, the Umami events, the writing rules in `docs/STYLE.md`, the CV.
 
+## The journey through scales
+
+After michalnawrot.github.io, which travels through powers of ten as the
+reader scrolls, the home page travels through the scales of the work: the
+screen (the hero: the viewport drawn as an app shell), a component (the
+work: one card with its slots and dimensions), a token (how I work: the
+spacing scale and the colour ramp), a pixel (off screen: a magnified grid
+with a few sand pixels lit), and back out to the screen at the contact
+line. One canvas behind the page draws the scenes from lines in the two
+inks; between stops the outgoing scene zooms past and the next resolves
+out of it; dust streaks while the page moves. A ruler on the left edge and
+a readout in the corner say where the reader is, in pixels. Under
+prefers-reduced-motion each stop is a still.
+
+| | |
+| --- | --- |
+| ![Screen](journey-screen.png) | ![Component](journey-component.png) |
+| ![Token](journey-token.png) | ![Pixel](journey-pixel.png) |
+
 ## Screens
 
 | | |

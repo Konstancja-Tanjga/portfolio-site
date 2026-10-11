@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useReveal } from "../system/Reveal";
 import { useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
-import { Backdrop } from "../system/Backdrop";
+import { JourneyReadout, JourneyRuler, ScaleJourney } from "../system/ScaleJourney";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
@@ -23,9 +23,11 @@ export function Home() {
 
   return (
     <div className="hm">
-      <section className="hm-hero" aria-labelledby="hero-claim">
+      <ScaleJourney />
+      <JourneyRuler />
+      <div className="hm-readout"><JourneyReadout /></div>
+      <section id="stop-hero" className="hm-hero" aria-labelledby="hero-claim">
         <div className="hm-hero__aurora" aria-hidden="true" />
-        <Backdrop />
         <div className="hm-hero__photo" aria-hidden="true">
           <img src={asset("/about/portrait.jpg")} alt="" />
         </div>
@@ -82,7 +84,7 @@ export function Home() {
         </div>
       </div>
 
-      <section className="page hm-work" aria-labelledby="work-heading">
+      <section id="stop-work" className="page hm-work" aria-labelledby="work-heading">
         <h2 id="work-heading" className="hm-h2">Selected work</h2>
         <p className="hm-note">Shipped products. Each page is the reasoning, the screens and the numbers.</p>
         <div className="hm-tiles">
@@ -105,7 +107,7 @@ export function Home() {
         <Numbers />
       </section>
 
-      <section className="page hm-about" aria-labelledby="about-heading">
+      <section id="stop-how" className="page hm-about" aria-labelledby="about-heading">
         <div>
           <h2 id="about-heading" className="hm-h2">How I work</h2>
           <p className="hm-about__claim">
@@ -130,7 +132,7 @@ export function Home() {
         </ul>
       </section>
 
-      <section className="page hm-off" aria-labelledby="off-heading">
+      <section id="stop-off" className="page hm-off" aria-labelledby="off-heading">
         <h2 id="off-heading" className="hm-h2">Off screen</h2>
         <p className="hm-note">
           Watercolour, mostly on location. Birds of prey, and a course on telling them
@@ -147,7 +149,7 @@ export function Home() {
         </ul>
       </section>
 
-      <section className="page hm-contact" aria-labelledby="contact-heading">
+      <section id="stop-contact" className="page hm-contact" aria-labelledby="contact-heading">
         <h2 id="contact-heading" className="hm-contact__claim">
           Open to a lead or principal role, remote, B2B.
         </h2>

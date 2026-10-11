@@ -454,3 +454,78 @@
   .hm-hero__rec { animation: none; }
   .hm-hero__dust { display: none; }
 }
+
+/* ---------- the journey through scales ---------- */
+.journey { position: fixed; inset: 0; z-index: 2; width: 100vw; height: 100vh; pointer-events: none; mix-blend-mode: screen; opacity: 0.6; }
+.hm { position: relative; }
+.hm > section { position: relative; z-index: 1; }
+/* the canvas sits over the portrait and the ground, under every word and image */
+.hm > section > :not(.hm-hero__photo):not(.hm-hero__aurora):not(.hm-hero__dust) { position: relative; z-index: 3; }
+.hm-hero__photo, .hm-hero__aurora { position: absolute; z-index: 1; }
+.hm-marquee { position: relative; z-index: 3; }
+.hm-hero__dust { display: none; }
+.hm-hero__aurora { opacity: 0.7; }
+
+.ruler {
+  position: fixed;
+  left: 14px;
+  top: 14vh;
+  height: 72vh;
+  width: 1px;
+  z-index: 3;
+  background: var(--kt-line);
+  pointer-events: none;
+}
+.ruler__marker {
+  position: absolute;
+  left: -5px;
+  width: 11px;
+  height: 1px;
+  background: var(--kt-sand);
+  box-shadow: 0 0 8px rgba(227, 210, 173, 0.8);
+  transition: top 120ms linear;
+}
+.ruler__marker::after { content: ""; position: absolute; left: 14px; top: -4px; border: 4px solid transparent; border-left: 6px solid var(--kt-sand); }
+.ruler__stop {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 0.1em;
+  padding-left: 14px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kt-ink-3);
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: color 300ms;
+}
+.ruler__stop::before { content: ""; position: absolute; left: -3px; top: 50%; width: 7px; height: 1px; background: var(--kt-ink-3); }
+.ruler__stop.is-current { color: var(--kt-sand); }
+.ruler__unit { font-size: 9px; color: var(--kt-ink-3); letter-spacing: 0.04em; text-transform: none; }
+.ruler__stop:hover { color: var(--kt-ink); }
+
+.hm-readout {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 4;
+  padding: 0.6em 1em;
+  border: 1px solid var(--kt-line);
+  border-radius: 999px;
+  background: rgba(15, 15, 14, 0.7);
+  backdrop-filter: blur(6px);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--kt-ink-3);
+  pointer-events: none;
+}
+.readout { display: inline-flex; align-items: baseline; gap: 1em; }
+.readout__key::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 0.6em; border-radius: 50%; background: #e8553f; animation: mg-rec 1.6s steps(1) infinite; }
+.readout__value { font-family: var(--kt-font-display); font-weight: 600; font-size: 14px; letter-spacing: -0.01em; text-transform: none; color: var(--kt-ink); }
+.readout__name { color: var(--kt-sand); }
+
+@media (max-width: 64rem) { .ruler, .hm-readout { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ruler__marker { transition: none; } .readout__key::before { animation: none; } }
