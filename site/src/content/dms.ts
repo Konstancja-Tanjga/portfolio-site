@@ -116,12 +116,14 @@ export const dms: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: "/work/applus-documents/screens/list.png",
+              src: "/work/applus-documents/device/list-2400.webp",
+              frame: "macbook",
               caption:
                 "The document list: 346 documents, with document types in the left panel. Each row says where the search matched (author, project code) and which version matched.",
             },
             {
-              src: "/work/applus-documents/screens/detail-invoice.png",
+              src: "/work/applus-documents/device/detail-invoice-2400.webp",
+              frame: "macbook",
               caption:
                 "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs.",
             },
@@ -399,9 +401,68 @@ export const dms: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/applus-documents/screens/list-favourite.png",
+          src: "/work/applus-documents/device/list-bulk-2400.webp",
+          frame: "macbook",
           caption:
-            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red. The star on a row adds the document to favourites.",
+            "The list with the bulk actions in one toolbar: all versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/applus-documents/device/filters-2400.webp",
+          frame: "macbook",
+          caption:
+            "Filters over the list: tags, then metadata filters typed by field (string, integer, enum, boolean, date, date and time). All criteria must match, and once every metadata field is in use the panel says so and greys out Add new filter.",
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/device/document-type-2400.webp",
+              frame: "macbook",
+              caption:
+                "A document type, CONTRACT_V2: naming rules under the field, allowed file extensions, a metadata schema with data type, protection, and mandatory on upload per field, and the assigned retention policy.",
+            },
+            {
+              src: "/work/applus-documents/device/custom-properties-2400.webp",
+              frame: "macbook",
+              caption: "Metadata on a single document, in the Custom properties tab: each field with its data type.",
+            },
+          ],
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/device/permission-rule-2400.webp",
+              frame: "macbook",
+              caption:
+                "A metadata-based permission rule: a role from the identity provider, Grant or Deny, an operation scope of read, upload, or logical delete, and predicates on metadata joined with AND.",
+            },
+            {
+              src: "/work/applus-documents/device/document-type-new-2400.webp",
+              frame: "macbook",
+              caption:
+                "A document type linked to a retired retention policy. The policy stays visible for historical reference but no longer applies to new documents; a RETIRED badge next to it and a warning below say so. Changing it touches only documents stored after the change.",
+            },
+          ],
+        },
+        {
+          kind: "duo",
+          items: [
+            {
+              src: "/work/applus-documents/device/deleted-document-2400.webp",
+              frame: "macbook",
+              caption:
+                "Deleted documents sits under Configuration, filtered by type, deletion date range, reason, and who deleted it. DOC-8001 opens there with its format, size, version, and checksum intact.",
+            },
+            {
+              src: "/work/applus-documents/device/retention-2400.webp",
+              frame: "macbook",
+              caption:
+                "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, status Active, retention started 16.01.2024, cutoff 31.01.2028, end 31.01.2031, then eligible for disposition. The clock starts from a metadata date field, Contract end date.",
+            },
+          ],
         },
         {
           kind: "duo",
