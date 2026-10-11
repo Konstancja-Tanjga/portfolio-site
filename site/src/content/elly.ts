@@ -24,18 +24,19 @@ export const elly: CaseStudy = {
     headline: ["Smart help", "for an ERP"],
     subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · VOICE",
-    credit: "Lead Product Designer · Asseco Solutions · released with APplus 9, 2025",
+    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2025",
     shot: { src: "/work/elly-ai-assistant/01.png" },
   },
   meta: [
-    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
+    { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Product", value: "APplus ERP — Elly" },
+    { label: "Product", value: "APplus ERP, Elly" },
     { label: "Design system", value: "FOX v2.2", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
-    { label: "Team", value: "A PM, a requirements engineer, developers, QA and me as the sole designer" },
-    { label: "Period", value: "2024 – April 2025" },
+    { label: "Team", value: "A PM, a requirements engineer, developers, QA, and me as the only designer" },
+    { label: "Period", value: "2024 to April 2025" },
     { label: "Released", value: "April 2025, with APplus 9" },
     { label: "Research", value: "13 consultants and solution architects" },
+    { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" },
   ],
   chapters: [
     {
@@ -44,17 +45,22 @@ export const elly: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
+            {
+              key: "Context",
+              value:
+                "APplus is an ERP used by mid-sized and large manufacturers across the DACH region. Elly Smart Help is its first AI assistant, on desktop and mobile, with voice input. It answers questions from the APplus documentation.",
+            },
             {
               key: "Problem",
               value:
                 "APplus documentation is enormous, versioned, and partly out of date at any given moment. An assistant answering from it can be fluent and wrong at the same time, and the interface is the only place a user can find out which.",
             },
             {
-              key: "My part",
+              key: "My role and scope",
               value:
-                "Lead Product Designer and the only designer on the product: the audit of existing assistants, the layout exploration, twelve use cases, a clickable prototype, a moderated study with 13 people, and the design that shipped.",
+                "The only designer on the product, working with a PM, a requirements engineer, developers, and QA: the audit of existing assistants, the layout exploration, twelve use cases, a clickable prototype, a moderated study with 13 people, and the design that shipped.",
             },
             {
               key: "Decision 1",
@@ -69,11 +75,14 @@ export const elly: CaseStudy = {
               value: "Every way an answer can fail has its own designed state and its own recovery path.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "A moderated study with 13 internal consultants and solution architects, 14–25 April 2025, on a prototype with 331 wired interactions.",
+                "Shipped in April 2025 with APplus 9. Before release, a moderated study with 13 internal consultants and solution architects, 14–25 April 2025, on a prototype with 331 wired interactions: 13 of 13 found Elly without prompting, 12 of 13 would use it again, and trust scored lowest of every dimension.",
             },
-            { key: "Shipped", value: "April 2025, with APplus 9" },
+            {
+              key: "Period and team",
+              value: "2024 to April 2025. A PM, a requirements engineer, developers, QA, and me.",
+            },
           ],
         },
       ],
@@ -87,8 +96,15 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Elly Smart Help is the first AI assistant shipped in APplus ERP, on desktop and mobile, with voice input. It answers questions from the APplus documentation, with citations and error states.</p>" +
-            "<p>APplus is an ERP used by mid-sized and large manufacturers across the DACH region. Any assistant demo can answer a question. What matters is the moment after, when a consultant takes the answer into a customer call and repeats it as fact.</p>",
+            "<p>Elly Smart Help is <strong>the first AI assistant shipped in APplus ERP</strong>, on desktop and mobile, with voice input.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>It answers from the documentation.</strong> Every answer comes from the APplus documentation, with citations and error states.",
+            "<strong>The users are manufacturers.</strong> APplus is an ERP used by mid-sized and large companies across the DACH region.",
+            "<strong>The demo is not the test.</strong> Any assistant demo can answer a question; what matters is the moment after, when a consultant takes the answer into a customer call and repeats it as fact.",
+          ],
         },
         {
           kind: "shot",
@@ -100,7 +116,7 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p><strong>What I owned:</strong> the design of the assistant from zero, as lead and sole designer, working with a PM, a requirements engineer, developers and QA, from 2024 until the APplus 9 release in April 2025.</p>",
+            "<p><strong>What I owned:</strong> the design of the assistant from zero, as lead and only designer, working with a PM, a requirements engineer, developers, and QA, from 2024 until the APplus 9 release in April 2025.</p>",
         },
       ],
     },
@@ -114,18 +130,18 @@ export const elly: CaseStudy = {
           kind: "points",
           items: [
             "<strong>An answer assembled from four documents is four claims.</strong> Each has a different level of support, and a paragraph flattens that distinction.",
-            "<strong>Documentation goes stale.</strong> An answer can be correct against a page that describes a screen which no longer exists in the product.",
+            "<strong>Documentation goes stale.</strong> An answer can be correct against a page that describes a screen that no longer exists in the product.",
             "<strong>The first answer decides.</strong> A user who has never seen an assistant inside their ERP does not know what it is for, and will judge the whole thing on the first answer it gives them.",
           ],
         },
         {
           kind: "pull",
-          text: "None of the three is fixed by a better model. Each one is fixed, or not fixed, by what the panel decides to show.",
+          text: "None of the three is fixed by a better model. Each is fixed by what the panel shows.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/09.png",
+          src: "/work/elly-ai-assistant/device/09-2400.webp", frame: "macbook",
           caption:
             "The panel across sizes: a model failure with Try again, voice mode, an answer with numbered sources and a Resources list, and a suggested prompt in the empty panel.",
         },
@@ -142,7 +158,7 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>I catalogued three archetypes rather than collecting inspiration. For each one I noted where it lives, what triggers it, and which job it is actually good at.</p>",
+            "<p>I catalogued three archetypes rather than collecting inspiration. For each one I noted where it lives, what triggers it, and which job it is good at.</p>",
         },
         {
           kind: "spec",
@@ -158,7 +174,7 @@ export const elly: CaseStudy = {
             },
             {
               key: "Collapsible panel",
-              value: "Slides out from the shell on click, keyboard or voice, and can open itself based on behaviour. Suits products where help is secondary and the work is the point.",
+              value: "Slides out from the shell on click, keyboard, or voice, and can open itself based on behaviour. Suits products where help is secondary and the work is the point.",
             },
           ],
         },
@@ -167,7 +183,7 @@ export const elly: CaseStudy = {
           width: "wall",
           src: "/work/elly-ai-assistant/screens/audit-aria.png",
           caption:
-            "The teardown: Opera's Aria assistant on desktop and mobile, annotated for suggestion switching, navigation and the chat entry icon. Bottom right, early Elly drafts set against Aria's question, thinking and answer-with-links states.",
+            "The teardown: Opera's Aria assistant on desktop and mobile, annotated for suggestion switching, navigation, and the chat entry icon. Bottom right, early Elly drafts set against Aria's question, thinking, and answer-with-links states.",
         },
       ],
     },
@@ -177,7 +193,7 @@ export const elly: CaseStudy = {
       heading: "Exploration",
       maxim: "Overlap the work, or make room for it.",
       standfirst:
-        "Entry point, affordance and footprint, each decided explicitly so that users find the assistant.",
+        "Entry point, affordance, and footprint, each decided explicitly so that users find the assistant.",
       blocks: [
         {
           kind: "passage",
@@ -202,9 +218,9 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/exploration-options.png",
+          src: "/work/elly-ai-assistant/device/exploration-options-2400.webp", frame: "macbook",
           caption:
-            "Both options built on a Flow board, with the working notes: space up to 20% of the page, one click from the side menu, a human face at 42px, and the open question of stars or a help bulb for the symbol.",
+            "Both options built on a Flow board, with the working notes: space up to 20 per cent of the page, one click from the side menu, a human face at 42px, and the open question of stars or a help bulb for the symbol.",
         },
         {
           kind: "passage",
@@ -215,7 +231,7 @@ export const elly: CaseStudy = {
           kind: "points",
           items: [
             "One click to Elly, from the side menu",
-            "A visible button — colour and symbol argued out rather than assumed",
+            "A visible button, with colour and symbol argued out rather than assumed",
             "A human face at 42px, against stars and a help bulb",
             "A footprint capped at 20 per cent of the page",
           ],
@@ -223,7 +239,16 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The avatar is a human face rather than a sparkle or a robot, because the panel promises documentation answers. Text and voice are two modes of the same assistant. A short greeting and suggested prompts in a carousel are there for users who would not otherwise know what to ask. Mobile and responsive behaviour went through the same exploration instead of being added afterwards.</p>",
+            "<p>Four smaller decisions followed from <strong>the promise the panel makes: documentation answers</strong>.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>A human face, not a sparkle or a robot.</strong> The avatar matches what the panel promises.",
+            "<strong>Text and voice are two modes of one assistant.</strong> Neither is a separate feature.",
+            "<strong>A greeting and suggested prompts in a carousel.</strong> They exist for users who would not otherwise know what to ask.",
+            "<strong>Mobile and responsive behaviour explored at the same time.</strong> Neither was added afterwards.",
+          ],
         },
       ],
     },
@@ -233,7 +258,7 @@ export const elly: CaseStudy = {
       heading: "Specified as use cases",
       maxim: "A screen set tells you what the assistant looks like. A use case tells you what happens, in order.",
       standfirst:
-        "Twelve numbered use cases, each a full path with every state drawn. Developers, QA and the requirements engineer all worked from them, and each one carries its design decisions on the canvas. Three of them follow, numbered for this page only.",
+        "Twelve numbered use cases, each a full path with every state drawn. Developers, QA, and the requirements engineer all worked from them, and each one carries its design decisions on the canvas. Three of them follow, numbered for this page only.",
       blocks: [
         {
           kind: "points",
@@ -259,11 +284,11 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>One answer was written as product copy and specified as a use case of its own: what Elly says when asked what she is. It sits where users actually ask the question, because an assistant that cannot state its own limits will be trusted for the wrong things.</p>",
+            "<p>One answer was written as product copy and specified as a use case of its own: what Elly says when asked what she is. It sits where users ask the question, because an assistant that cannot state its own limits will be trusted for the wrong things. The copy states the limits in four sentences: the assistant reads only APplus documentation and performs no actions in APplus; it is available exclusively in Flow mode; no chat history is saved, and closing the window erases it; and the Bulb icon at the top of the screen switches back to traditional search.</p>",
         },
         {
           kind: "pull",
-          text: "“Elly accesses only APplus documentation and cannot perform actions in APplus. Available exclusively in Flow mode. No chat history is saved — closing the window erases it. Switch to traditional search by clicking the Bulb icon at the top of the screen.”",
+          text: "“Elly accesses only APplus documentation and cannot perform actions in APplus.”",
         },
       ],
     },
@@ -353,7 +378,7 @@ export const elly: CaseStudy = {
               {
                 n: "1",
                 text: "The panel says “Chats won't be saved” before the user speaks.",
-                note: "The consent moment comes first, while there is still nothing to lose.",
+                note: "The consent moment comes first, while nothing can be lost yet.",
               },
               {
                 n: "2",
@@ -374,7 +399,7 @@ export const elly: CaseStudy = {
             exits: [
               {
                 label: "Finish",
-                text: "Closes voice mode. There is no “new voice chat”, because starting over and leaving are the same intention when nothing is being saved.",
+                text: "Closes voice mode. A “new voice chat” does not exist, because starting over and leaving are the same intention when nothing is being saved.",
               },
             ],
             exitsNote: "Voice mode has one exit, not two.",
@@ -447,7 +472,7 @@ export const elly: CaseStudy = {
             why: "An assistant that goes quiet is worse than one that admits it cannot answer.",
             rule: "Each failure gets its own state and its own recovery path.",
             ruleNote:
-              "By release there were five: retrieval failure, model failure, monthly question limit exceeded, daily limit reached, and limit reached mid-voice-input. Alongside them, a standing disclaimer: Elly reads APplus documentation, and Elly can be wrong.",
+              "Five states shipped by release: retrieval failure, model failure, monthly question limit exceeded, daily limit reached, and limit reached mid-voice-input. Alongside them, a standing disclaimer: Elly reads APplus documentation, and Elly can be wrong.",
           },
         },
       ],
@@ -458,18 +483,25 @@ export const elly: CaseStudy = {
       heading: "The prototype",
       maxim: "You cannot test trust on a static screen.",
       standfirst:
-        "A clickable Figma prototype at full application scale, because the whole research question was about latency, waiting and doubt.",
+        "A clickable Figma prototype at full application scale, because the whole research question was about latency, waiting, and doubt.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>Every demo runs inside a complete 1920×1080 APplus Flow screen: app bar, navigation, content, and the Elly sidebar docked at its real 380px. If the point of the design was that the assistant must not take the screen away from the work, the prototype had to be able to prove it.</p>" +
-            "<p>Demos aimed at the places where trust is won or lost: the default text conversation across nine sequential screens, the three error states and voice mode. Plus iPhone frames for the mobile path. It was built on the sidebar component set rather than duplicated frames, so every state in the prototype is the same variant the design system ships, and a fix in one place fixes it everywhere.</p>",
+            "<p>Every demo runs inside <strong>a complete 1920×1080 APplus Flow screen</strong>: app bar, navigation, content, and the Elly sidebar docked at its real 380px.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Full scale, to prove the claim.</strong> If the point of the design was that the assistant must not take the screen away from the work, the prototype had to be able to show it.",
+            "<strong>Demos aimed where trust is won or lost.</strong> The default text conversation across nine sequential screens, the three error states, and voice mode, plus iPhone frames for the mobile path.",
+            "<strong>Built on the sidebar component set, not duplicated frames.</strong> Every state in the prototype is the same variant the design system ships, so a fix in one place fixes it everywhere.",
+          ],
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/proto-text.png",
+          src: "/work/elly-ai-assistant/device/proto-text-2400.webp", frame: "macbook",
           caption: "The text demo on a full Flow screen: the scope answer, with the close tooltip warning that history won't be saved.",
         },
         {
@@ -483,7 +515,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/proto-voice.png",
+          src: "/work/elly-ai-assistant/device/proto-voice-2400.webp", frame: "macbook",
           caption: "The voice demo: “Chats won't be saved”, the avatar in the centre, Pause and Finish.",
         },
         {
@@ -499,7 +531,7 @@ export const elly: CaseStudy = {
       heading: "The study",
       maxim: "Eight of the thirteen had never seen Elly, and they work inside the company that builds the product.",
       standfirst:
-        "A moderated study with 13 internal consultants and solution architects, 14–25 April 2025, deliberately before the APplus 9 release so findings could still reach launch. Thirteen sessions of 45 minutes, one at a time, on the working prototype.",
+        "A moderated study with 13 internal consultants and solution architects, 14–25 April 2025, deliberately before the APplus 9 release so that findings could still reach launch. Thirteen sessions of 45 minutes, one at a time, on the working prototype.",
       blocks: [
         {
           kind: "stats",
@@ -507,34 +539,50 @@ export const elly: CaseStudy = {
             { value: "13", label: "participants: consultants and solution architects" },
             { value: "8", label: "had never seen Elly before the session" },
             { value: "1", label: "had ever used it hands-on" },
-            { value: "9", label: "moderated sessions, 45 minutes each" },
+            { value: "13", label: "moderated sessions, 45 minutes each" },
           ],
         },
         {
           kind: "passage",
           html:
-            "<p>The first result was not about the interface. Eight of the thirteen had never seen Elly. Five had only heard the name, from Vision Days, a Sales Summit video, a bootcamp or a colleague. One had prior hands-on experience. Participants had been at the company from one year to twenty.</p>" +
-            "<p>The sessions had five objectives: whether people know Elly exists and what she is for, whether they can find her inside Flow mode, how they behave when asked to bring a real work question, what breaks, and whether they see value in it at all. Every participant found the button immediately. Almost every one of them then hit the same wall.</p>",
+            "<p><strong>The first result was not about the interface.</strong> It was about who knew the assistant existed.</p>",
         },
         {
           kind: "points",
           items: [
-            "<strong>“Elly is answering as ‘I'm sure’ but should say ‘I guess / I think’ in this case.”</strong> Senior consultant, 20 years at the company, on an answer drawn from an outdated release note.",
+            "<strong>Eight of the thirteen had never seen Elly.</strong> Five had only heard the name, from Vision Days, a Sales Summit video, a bootcamp, or a colleague. One had prior hands-on experience.",
+            "<strong>Tenure ran from one year to twenty.</strong> The sample was the company's own consultants and solution architects.",
+            "<strong>Five objectives per session.</strong> Whether people know Elly exists and what she is for, whether they can find her inside Flow mode, how they behave when asked to bring a real work question, what breaks, and whether they see value in it at all.",
+            "<strong>Every participant found the button immediately.</strong> Almost every one of them then hit the same wall.",
+          ],
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>“Elly is answering as ‘I'm sure’ but should say ‘I guess’ or ‘I think’ in this case.”</strong> Senior consultant, 20 years at the company, on an answer drawn from an outdated release note.",
             "<strong>“It would be great if Elly recognised the page I'm on and gave concrete answers.”</strong> The same participant, asking for context-awareness unprompted.",
-            "<strong>“I got a lot of texts with hints about where I can find information — for me it is more like an advertisement for how to get my answers in APplus.”</strong> Team lead, purchase, who wanted a number and was handed a route to a document.",
+            "<strong>“I got a lot of texts with hints about where I can find information; for me it is more like an advertisement for how to get my answers in APplus.”</strong> Team lead, purchase, who wanted a number and was handed a route to a document.",
             "<strong>“What I have experienced now won't be helpful.”</strong> The same participant, asked whether he would use it.",
             "<strong>“Normal users would not download the PDF from a link given by Elly.”</strong> Team lead, purchase and sales consultants, six years.",
             "<strong>“It's cold blue but warm, separated from the main view, which I like. I feel welcomed.”</strong> Consultant, sales, five and a half years, on the same panel another participant called too high-contrast.",
-            "<strong>“Moving topics are invisible for me — they are adverts.”</strong> The same participant, on the animated suggestion carousel.",
-            "<strong>“I don't know — is it a stop button?”</strong> Consultant, warehouse and logistics, then positively surprised that it did stop Elly mid-thought.",
+            "<strong>“Moving topics are invisible for me; they are adverts.”</strong> The same participant, on the animated suggestion carousel.",
+            "<strong>“I don't know, is it a stop button?”</strong> Consultant, warehouse and logistics, then positively surprised that it did stop Elly mid-thought.",
             "<strong>“Much better than F1 help, because it is more specific. It is trustworthy.”</strong> Senior consultant, project module, working with ERP since 1995.",
           ],
         },
         {
           kind: "passage",
           html:
-            "<p><strong>How I read it.</strong> The panel worked: discoverability was solved, the layout was read correctly, the conversation flow was understood without instruction, and one of the most experienced people in the room called it trustworthy.</p>" +
-            "<p>What failed was the contract. People asked for numbers and got directions to documentation. They asked about the board in front of them and got a general answer. They were told something confidently that came from an old release note. Three different complaints with one underlying cause: the assistant never said what kind of thing it was able to know.</p>",
+            "<p><strong>How I read it.</strong> The panel worked; what failed was the contract.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Discoverability was solved.</strong> The layout was read correctly, the conversation flow was understood without instruction, and one of the most experienced people in the room called it trustworthy.",
+            "<strong>People asked for numbers and got directions to documentation.</strong> They asked about the board in front of them and got a general answer.",
+            "<strong>One answer came confidently from an old release note.</strong> The interface gave no sign of its age.",
+            "<strong>Three complaints, one cause.</strong> The assistant never said what kind of thing it was able to know.",
+          ],
         },
       ],
     },
@@ -559,18 +607,25 @@ export const elly: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Easy to use clustered at 4–5. Helpful spread across the full range. Trustworthy was the low score, between 2 and 3.5 for five participants.</p>" +
-            "<p>Two causes, both traceable to the interface: sources were not shown, and one answer described a screen from an older version of the product. A usable assistant that is not trusted does not get used twice, so the risk here was verifiability. The citations, the Resources block, the error states and the scope statement Elly gives about herself are the parts of the design that answer it.</p>",
+            "<p><strong>Trustworthy was the low score</strong>, between 2 and 3.5 for five participants, while easy to use clustered at 4 to 5 and helpful spread across the full range.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Two causes, both in the interface.</strong> Sources were not shown, and one answer described a screen from an older version of the product.",
+            "<strong>The risk was verifiability.</strong> A usable assistant that is not trusted does not get used twice.",
+            "<strong>Four parts of the design answer it.</strong> The citations, the Resources block, the error states, and the scope statement Elly gives about herself.",
+          ],
         },
         {
           kind: "duo",
           items: [
             {
-              src: "/work/elly-ai-assistant/screens/answer-desktop.png",
+              src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", frame: "macbook",
               caption: "An answer on a Flow board, with inline markers and the Resources block collapsed.",
             },
             {
-              src: "/work/elly-ai-assistant/screens/resources-desktop.png",
+              src: "/work/elly-ai-assistant/device/resources-desktop-2400.webp", frame: "macbook",
               caption: "Resources expanded: three document identifiers behind markers [1] to [3].",
             },
           ],
@@ -593,7 +648,7 @@ export const elly: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>Context-awareness.</strong> Elly should know which board, module and task the user is currently in, instead of starting from nothing every time.",
+            "<strong>Context-awareness.</strong> Elly should know which board, module, and task the user is currently in, instead of starting from nothing every time.",
             "<strong>Trust and sourcing.</strong> Show the sources. Flag content that may be outdated. Signal how confident the answer is.",
           ],
         },
@@ -638,7 +693,7 @@ export const elly: CaseStudy = {
       n: "14",
       heading: "The live product",
       standfirst:
-        "Elly as it ships in APplus 9 — the screens, not the reasoning. The chapters above are how it got here.",
+        "Elly as it ships in APplus 9: the screens, not the reasoning. The chapters above are how it got here.",
       blocks: [
         {
           kind: "video",
@@ -646,7 +701,7 @@ export const elly: CaseStudy = {
           title: "Elly Help in APplus — Asseco Solutions product film",
           poster: "/work/elly-ai-assistant/video-poster.jpg",
           caption:
-            "Elly Help as APplus ships it — the vendor's own product film, four minutes. Spoken in German; English subtitles are my translation.",
+            "Elly Help as APplus ships it: the vendor's own product film, four minutes. Spoken in German; the English subtitles are my translation.",
           subtitles: {
             src: "/work/elly-ai-assistant/elly-help.en.vtt",
             label: "English",
@@ -687,8 +742,8 @@ export const elly: CaseStudy = {
         {
           kind: "points",
           items: [
-            "The study confirmed what the panel has to show: sources at the claim, a state for each failure, and Elly's own statement of what she can and cannot do.",
-            "Each of the four decisions is something the interface shows or hides: the source, the failure, the limit.",
+            "<strong>The study confirmed what the panel has to show:</strong> sources at the claim, a state for each failure, and Elly's own statement of what she can and cannot do.",
+            "<strong>Each of the four decisions is something the interface shows or hides:</strong> the source, the failure, the limit.",
           ],
         },
       ],

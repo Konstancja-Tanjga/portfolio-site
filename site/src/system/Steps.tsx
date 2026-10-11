@@ -43,13 +43,12 @@ import { Lane } from "./Wall";
  * as its own stage. It is an enhancement in the strict sense: the board is
  * complete without it and the rules are complete without the board.
  *
- * Folding is the reader's choice, not the page's: every stage is open on
- * arrival, and "collapse all" folds them to their heads. That state is worth
- * having rather than tolerating — seven heads, each still showing what the
- * stage takes and what it hands on, is the pipeline as a diagram, on one
- * screen. `<details>` does the work, so it survives with no JavaScript, obeys
- * the keyboard, and announces itself as expanded or collapsed without a
- * hand-rolled aria-expanded to get wrong.
+ * Every stage arrives folded to its head, which still shows what the stage
+ * takes and what it hands on: seven heads are the pipeline as a diagram, on
+ * one screen. A click opens the one the reader wants, and "expand all" opens
+ * them all. `<details>` does the work, so it survives with no JavaScript,
+ * obeys the keyboard, and announces itself as expanded or collapsed without
+ * a hand-rolled aria-expanded to get wrong.
  */
 export function Steps({
   items,
@@ -60,16 +59,16 @@ export function Steps({
 }) {
   const { ref, shown } = useReveal<HTMLOListElement>();
   const [current, setCurrent] = useState(items[0]?.n ?? "");
-  const [closed, setClosed] = useState<ReadonlySet<string>>(new Set());
+  const [opened, setOpened] = useState<ReadonlySet<string>>(new Set());
   const stageRefs = useRef(new Map<string, HTMLLIElement>());
-  const allClosed = items.length > 0 && closed.size === items.length;
+  const allOpen = items.length > 0 && opened.size === items.length;
 
   const setOpen = useCallback((n: string, open: boolean) => {
-    setClosed((previous) => {
-      if (open === !previous.has(n)) return previous;
+    setOpened((previous) => {
+      if (open === previous.has(n)) return previous;
       const next = new Set(previous);
-      if (open) next.delete(n);
-      else next.add(n);
+      if (open) next.add(n);
+      else next.delete(n);
       return next;
     });
   }, []);
@@ -125,10 +124,10 @@ export function Steps({
             type="button"
             className="rail__fold"
             onClick={() =>
-              setClosed(allClosed ? new Set() : new Set(items.map((s) => s.n)))
+              setOpened(allOpen ? new Set() : new Set(items.map((s) => s.n)))
             }
           >
-            {allClosed ? "Expand all" : "Collapse all"}
+            {allOpen ? "Collapse all" : "Expand all"}
           </button>
         </nav>
 
@@ -151,7 +150,7 @@ export function Steps({
             >
               <details
                 className="stage__fold"
-                open={!closed.has(s.n)}
+                open={opened.has(s.n)}
                 onToggle={(event) => setOpen(s.n, event.currentTarget.open)}
               >
                 <summary className="stage__head">

@@ -20,11 +20,25 @@ export type Shot = {
   slot?: string;
   caption?: string;
   /**
-   * Draws the screen inside a laptop body. For product screens exported
-   * without their surroundings, which read as loose crops when bare.
-   * Diagrams and references stay unframed.
+   * A MacBook mockup exported from the Figma device frame. The same
+   * image is served at 1600 and 2400 px (`<name>-1600.webp`,
+   * `<name>-2400.webp`) and the lightbox opens `<name>-full.webp`.
+   * Point `src` at the 2400 file; the others are derived from its name.
    */
-  device?: "laptop";
+  frame?: "macbook";
+  /**
+   * A diagram or a board that is reference rather than evidence: shown
+   * as a closed drawer with a thumbnail strip and its caption as the
+   * title, opened on a click. The reader who wants it gets it; the one
+   * skimming is not stopped by it.
+   */
+  folded?: boolean;
+  /**
+   * Notes pinned to places on the image, as a percentage of its width and
+   * height. They surface as speech bubbles while the cursor is over the
+   * image, and as a list under it for keyboard and touch.
+   */
+  hotspots?: { x: number; y: number; text: string }[];
 };
 
 /* ---------- the repeating content components ---------- */
@@ -55,6 +69,12 @@ export type Video = {
   subtitles?: { src: string; label: string; srclang: string };
   /** whose film this is, and where it was published */
   credit?: Attribution;
+  /**
+   * A few seconds of the prototype showing one behaviour a still cannot:
+   * muted, looping, playing by itself while in view. Off, the video is a
+   * film with sound and controls. See Video.tsx for what each one costs.
+   */
+  clip?: boolean;
 };
 
 /** One of the four-up persona cards. Same slots every time. */
@@ -268,6 +288,32 @@ export type Block =
   | { kind: "thesis"; label?: string; text: string }
   | { kind: "spec"; caption?: string; rows: { key: string; value: string }[] }
   /**
+   * The summary a reader with thirty seconds gets: context, problem, role
+   * and scope, the decisions, the outcome, the period. Same rows as a
+   * spec, laid out across the whole wall. Rows whose key starts with
+   * "Decision" are set side by side as the three things to remember.
+   */
+  | { kind: "brief"; rows: { key: string; value: string }[] }
+  /**
+   * A short chain of stages, read left to right: what goes in, what comes
+   * out, in three or four cards. For a process that is the point of a
+   * chapter and fits in a sentence each; a longer one is `steps`.
+   */
+  | { kind: "flow"; stages: { title: string; body: string }[]; note?: string }
+  /**
+   * A question set large, joined to its answers by a drawn connector,
+   * the way a relationship joins two tiles on the data-model canvas.
+   * One answer or several; each is a card on the right.
+   */
+  | { kind: "joint"; question: string; answers: string[] }
+  /**
+   * Every part of an application, one screen at a time: a carousel the
+   * reader steps through, or that steps itself slowly while in view.
+   * Each slide is a mockup with the name of the part and one line on
+   * what it is for.
+   */
+  | { kind: "carousel"; items: { src: string; title: string; body?: string; frame?: "macbook" }[] }
+  /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,
    * not evidence. `href` stays optional for sources with no public home.
@@ -281,7 +327,25 @@ export type Block =
   | { kind: "process"; process: Process }
   | { kind: "usecase"; uc: UseCase }
   | { kind: "evolution"; items: Version[] }
-  | { kind: "annotated"; items: Annotated[] };
+  | { kind: "annotated"; items: Annotated[] }
+  /**
+   * Several use cases behind one row of tiles. A tile names the area and
+   * its maxim; opening it unfolds that use case to the right, one panel
+   * per block, so the wall stays short and the detail is read sideways.
+   */
+  | { kind: "dossier"; items: Dossier[] };
+
+/** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
+export type Dossier = {
+  /** used in the URL hash */
+  id: string;
+  n: string;
+  title: string;
+  maxim: string;
+  standfirst: string;
+  cover: { src: string; frame?: "macbook" };
+  blocks: Block[];
+};
 
 /** A named stretch of the wall. Chapters drive the jump bar. */
 export type Chapter = {
@@ -317,6 +381,14 @@ export type Cover = {
    * for why sixteen projects share one typeset frame instead.
    */
   shot: Shot;
+  /**
+   * The art at the top of the wall, when it is not the thumbnail: several
+   * screens of the product that blend into one another, so the intro says
+   * what the product is before a word is read. Each layer is a mockup; the
+   * intro stacks them in depth, cycles their opacity, and draws a chart in
+   * sand over the top. Without it, the intro shows `shot`.
+   */
+  layers?: { src: string; label: string }[];
 };
 
 /**

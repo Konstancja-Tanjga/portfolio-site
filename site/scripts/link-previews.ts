@@ -43,7 +43,7 @@ function clip(s: string, max = 200) {
 
 function pages(defaultDescription: string): Page[] {
   return [
-    { path: "", title: `${NAME} — Lead Product Designer`, description: defaultDescription },
+    { path: "", title: `Konstancja Tanjga — Portfolio · Lead Designer, UX Engineer`, description: defaultDescription },
     { path: "about", title: `About — ${NAME}`, description: defaultDescription },
     {
       path: "practice",
@@ -102,7 +102,21 @@ export function linkPreviews(): Plugin {
       // render() would print &amp;amp;.
       const fallback = (template.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "")
         .replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
-      for (const page of pages(fallback)) {
+      const all = pages(fallback);
+      // A sitemap, so a search engine has the list of routes instead of
+      // having to discover them by running the router. Only with an
+      // origin: a sitemap of relative URLs is not one.
+      if (origin) {
+        const today = new Date().toISOString().slice(0, 10);
+        const urls = all
+          .map((p) => `  <url><loc>${origin}${base}${p.path}</loc><lastmod>${today}</lastmod></url>`)
+          .join("\n");
+        writeFileSync(
+          resolve(outDir, "sitemap.xml"),
+          `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+        );
+      }
+      for (const page of all) {
         const html = render(template, page, base, origin);
         const targets = page.path
           ? [`${page.path}.html`, `${page.path}/index.html`]

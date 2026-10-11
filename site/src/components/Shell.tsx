@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { findCase, listingFor } from "../content";
 import type { ReactNode } from "react";
+import { useMagnetic } from "../system/motion";
 
 import { version as dsVersion } from "@bighatpoland/ui/package.json";
 
 export function Shell({ children }: { children: ReactNode }) {
+  const talk = useMagnetic<HTMLAnchorElement>();
   // A listing is the current page on its own page ("page"), and the current
   // location on every wall it lists ("true"), so a reader deep in a practice
   // wall still sees where they are without a screen reader calling the
@@ -28,6 +30,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <div className="page">
         <header className="masthead">
           <Link to="/" className="masthead__name">
+            <span className="masthead__dot" aria-hidden="true" />
             Konstancja Tanjga-Nawrot
           </Link>
           <nav className="masthead__nav" aria-label="Sections">
@@ -37,10 +40,14 @@ export function Shell({ children }: { children: ReactNode }) {
             <Link to="/about" {...current("/about")}>About</Link>
             <a href="https://github.com/konstancja-tanjga">GitHub</a>
             <a href="https://linkedin.com/in/konstancja-tanjga">LinkedIn</a>
+            <a ref={talk} className="masthead__talk" href="mailto:tanjgakonstancja@gmail.com">Let's talk</a>
           </nav>
         </header>
       </div>
       <main>{children}</main>
+      <div className="footer__mark" aria-hidden="true">
+        <span>Konstancja</span>
+      </div>
       <div className="page">
         <footer className="footer">
           <div className="footer__links">
@@ -56,9 +63,9 @@ export function Shell({ children }: { children: ReactNode }) {
             <a href="https://konstancja-tanjga.github.io/bighat-design-system/">
               @bighatpoland/ui v{dsVersion}
             </a>{" "}
-            — my own design system, installed as a package. Its tokens drive every
-            colour on this page, and its components render the badges and states.
-            Warsaw, CET. Remote only, permanent or B2B.
+            installed as a package. The design system is my own: its tokens drive
+            every colour on this page, and its components render the badges and states.
+            Warsaw, CET. Remote only, B2B only.
           </p>
         </footer>
       </div>

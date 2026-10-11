@@ -1,9 +1,15 @@
 import type { Block, Chapter } from "../content/types";
+import { useReveal } from "../system/Reveal";
 import {
   AnnotatedSet,
+  Brief,
+  Carousel,
   Code,
+  Dossier,
   Duo,
   Evolution,
+  Flow,
+  Joint,
   Lane,
   Palette,
   Passage,
@@ -32,13 +38,7 @@ function BlockView({ block }: { block: Block }) {
       return <Points items={block.items} />;
     case "shot":
       return (
-        <Shot
-          width={block.width}
-          src={block.src}
-          slot={block.slot}
-          caption={block.caption}
-          device={block.device}
-        />
+        <Shot width={block.width} src={block.src} slot={block.slot} caption={block.caption} frame={block.frame} hotspots={block.hotspots} folded={block.folded} />
       );
     case "duo":
       return <Duo items={block.items} caption={block.caption} />;
@@ -53,6 +53,7 @@ function BlockView({ block }: { block: Block }) {
           caption={block.caption}
           subtitles={block.subtitles}
           credit={block.credit}
+          clip={block.clip}
           width={block.width}
         />
       );
@@ -66,6 +67,14 @@ function BlockView({ block }: { block: Block }) {
       return <Stack rows={block.rows} caption={block.caption} />;
     case "spec":
       return <Spec rows={block.rows} caption={block.caption} />;
+    case "brief":
+      return <Brief rows={block.rows} />;
+    case "flow":
+      return <Flow stages={block.stages} note={block.note} />;
+    case "joint":
+      return <Joint question={block.question} answers={block.answers} />;
+    case "carousel":
+      return <Carousel items={block.items} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":
@@ -84,18 +93,23 @@ function BlockView({ block }: { block: Block }) {
       return <Evolution items={block.items} />;
     case "annotated":
       return <AnnotatedSet items={block.items} />;
+    case "dossier":
+      return <Dossier items={block.items} render={(b) => <BlockView block={b} />} />;
   }
 }
 
 export function ChapterView({ chapter }: { chapter: Chapter }) {
+  const { ref, shown } = useReveal<HTMLDivElement>();
   return (
     <section className="chapter">
       {(chapter.heading || chapter.maxim || chapter.standfirst) && (
-        <Lane width="wall" className="chapter__head" id={chapter.id}>
+        <Lane width="wall" className={shown ? "chapter__head is-shown" : "chapter__head"} id={chapter.id}>
+          <div ref={ref} className="chapter__inner" data-n={chapter.n}>
           {chapter.n && <span className="chapter__n">{chapter.n}</span>}
           {chapter.heading && <h2 className="chapter__heading">{chapter.heading}</h2>}
           {chapter.maxim && <p className="maxim">{chapter.maxim}</p>}
           {chapter.standfirst && <p className="standfirst">{chapter.standfirst}</p>}
+          </div>
         </Lane>
       )}
       {chapter.blocks.map((block, i) => (

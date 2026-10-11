@@ -1,0 +1,50 @@
+# Edit log: Big Hat design system (`site/src/content/bighat.ts`)
+
+First pass, 11 October 2026, against `docs/case-study-kit/RULES.md` and `docs/STYLE.md`: an "In short" `brief` added as chapter 00, the overview and logo passages turned into a lead sentence plus `points`, the three templates folded into a `dossier`, every bullet led by a bold claim, cover `layers` from the device mockups that already exist, and the mechanical rules (em dashes, serial comma, bullets as sentences). Big Hat is a practice study: no personas, use cases, audit, or handoff chapter exist for it, and none was written. The chapter ids and numbers 01 to 09 are unchanged, so every deep link still resolves. The six-stage `process` block in chapter 05 was kept rather than converted to a `flow`, because `flow` is documented for three or four cards and carries no kicker (the file path of each stage) and no "underneath" note; converting it would drop facts. No fact, number, date, or result was added. The role stays "Sole author": Big Hat is my own, not Asseco Solutions, so the Asseco title does not apply.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| header comment: "shown in full — including the source" | "shown in full, including the source" | 3.6 em dash |
+| header comment: "quality, templates, governance and what it does not claim" | "quality, templates, governance, and what it does not claim" | serial comma |
+| (paths written out in every block) | `const D = ".../device"; const V = ".../v6";` | TEMPLATE.ts: one constant per image folder |
+| what: "My own design system, in code and in Figma — and the site you are reading is built on it" | "My own design system, in code and in Figma, and the site you are reading is built on it" | 3.6 em dash |
+| subline: "Big Hat — and this site runs on it" | "Big Hat, and this site runs on it" | 3.6 em dash |
+| (no layers) | layers: kanban, records, ai-chat, storybook-button, from `device/*-2400.webp` | RULES 4: a hero cover is four to six screens cycling |
+| { label: "Role", value: "Sole author — design, Figma library and code" } | { label: "Role", value: "Sole author: design, Figma library, and code" } | 3.6 em dash; 3.4 colon; serial comma |
+| { label: "Package", value: "@bighat/ui — React, with an Angular sibling" } | { label: "Package", value: "@bighat/ui, React, with an Angular sibling" } | 3.6 em dash |
+| { label: "Licence", value: "MIT — Storybook and source are public" } | { label: "Licence", value: "MIT; Storybook and source are public" } | 3.6 em dash; 3.15 semicolon |
+| (no Period row) | { label: "Period", value: "2025 to 2026" } | RULES 6: period on every study; the years are the cover credit's |
+| (no chapter 00) | chapter "in-short", `brief` with Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team | RULES 2: the 30-second read. Context from the lead and About; Problem is the chapter 05 maxim; Decisions from chapters 03, 04, and 05; Outcome from the meta strip and chapter 09; Period from the credit |
+| "<p>Small on purpose: not every surface an enterprise product needs, but each decision legible — why it was made, and what it cost. It is what this site, Docu Manager and World of Raptors are built with. Storybook · source.</p>" | "<p><strong>Small on purpose</strong>: … each decision legible, why it was made and what it cost. Storybook · source.</p>" + points: Three things run on it; One set of tokens feeds both sides; Dark is one variable mode; Storybook and source are public | RULES 2, chapter 01 is `points`; 3.6 em dash; serial comma |
+| "<p>Big Hat is two layers of tokens. The crown is the primitives: there, but never touched. The brim is the semantic layer … The dot on the i is the brim again.</p>" (62 words) | "<p>The logo draws <strong>the two layers of tokens</strong>, and the gap between them.</p>" + points: The crown is the primitives; The brim is the semantic layer; The gap between them is the boundary; The dot on the i is the brim again | RULES 6: over 60 words becomes a lead sentence plus points |
+| caption: "The mark, the horizontal lockup and the stacked lockup, in brand colour and in one colour." | "The mark, the horizontal lockup, and the stacked lockup, in brand colour and in one colour." | serial comma |
+| caption: "a 28 × 20 crown, a 4 gap and a 48 × 8 brim" | "a 28 × 20 crown, a 4 gap, and a 48 × 8 brim" | serial comma |
+| caption: "the palette and the space, radius and type scales on a 4px grid. Hidden from every picker, as they are banned from product CSS." | "the palette and the space, radius, and type scales on a 4px grid. Hidden from every picker, because they are banned from product CSS." | serial comma; 1.8 *as* only where it cannot be read as time |
+| standfirst: "Every component starts as a machine-readable contract — purpose, what it is not for, anatomy, states, keyboard, ARIA — and is built from it in Figma, React and Storybook." | "Every component starts as a machine-readable contract (purpose, what it is not for, anatomy, states, keyboard, ARIA) and is built from it in Figma, React, and Storybook." | 3.6 em dash; 3.10 parentheses for the aside; serial comma |
+| caption: "primary, secondary and ghost; sm, md and lg; default, hover and disabled." | "primary, secondary, and ghost; sm, md, and lg; default, hover, and disabled." | serial comma |
+| caption: "every do/don't rendered live with its reason" | "every do and don't rendered live with its reason" | 3.16 no slash to join alternatives |
+| process stage 3: "Tokens only — a literal fails the build." | "Tokens only; a literal fails the build." | 3.6 em dash; 3.15 semicolon |
+| points: "Contrast is a build error: every text and non-text pair is asserted … — 124 assertions" and four more bullets without a lead claim | "<strong>Contrast is a build error.</strong> Every text and non-text pair is asserted …: 124 assertions." and four bullets, each led by a bold claim and ending with a period | RULES 6: a bold claim leads each bullet; 3.6 em dash; 3.11 list items that are sentences take a period |
+| "Empty, loading and error are one component with three announcement strategies" | "<strong>Empty, loading, and error are one component</strong>, with three announcement strategies." | serial comma; bold claim |
+| caption: "“No invoices match these filters” offers a way out of the filter, not “Create invoice” — empty is two different screens." | "… not “Create invoice”. Empty is two different screens." | 3.6 em dash |
+| chapter 07: standfirst "Screens assembled only from library components, each with its loading and error states, and an empty one where the screen can be empty." + two `duo` blocks with one-line captions ("Kanban — filters as chips; cards move without a pointer") | maxim "A template is assembled only from library components, with its loading and error states drawn." + standfirst "Three of the four templates, one tile each…" + `dossier` of three tiles (tpl-kanban, tpl-records, tpl-ai-chat), each with the caption's rule as its maxim, a standfirst, a cover, and the screens | RULES 2: two or more areas each with screens and a rule fold into a dossier; 3.6 em dash; every caption says what to look at |
+| caption: "Kanban — filters as chips; cards move without a pointer" | "Kanban in Light: filters as chips above the columns; cards move without a pointer." | 3.6 em dash; caption ends with a period |
+| caption: "The same screen in Dark" | "The same screen in Dark, from the same components and one variable mode." | caption says what to look at; the fact is the chapter 01 caption's |
+| caption: "Records — one quiet actions button per row" | "Records: one quiet actions button at the end of each row, and nothing else competing with the data." | 3.6 em dash; caption says what to look at |
+| caption: "AI chat — the prompt is a form, the modes a radio group" | "AI chat: the prompt is a form and the modes are a radio group, so the screen inherits the library's keyboard and ARIA behaviour." | 3.6 em dash; the reason is the chapter 04 contract (keyboard, ARIA) |
+| limits: "No screen reader has been run against it; the announcement rules are tested in code, not in NVDA or VoiceOver" and two more | "<strong>No screen reader has been run against it.</strong> The announcement rules are tested in code, not in NVDA or VoiceOver." and two more, each led by a bold claim | RULES 6: a bold claim leads each bullet |
+| "Pressed states are not drawn in Figma — the browser draws them" | "<strong>Pressed states are not drawn in Figma.</strong> The browser draws them." | 3.6 em dash |
+
+Not changed, and why:
+
+- The credit "Sole author · Big Hat · 2025–2026" keeps its en dash: 3.7 allows an en dash for an inclusive date range, and the credit is a label, not prose. The Period row in the meta strip says "2025 to 2026" as the Elly and Analytics strips do.
+- The `evolution` block keeps "variant: primary · secondary · ghost · link · danger." and "variant (weight) × tone (consequence)": these are the API as written, not prose.
+- The `code` block and the `process` kickers keep their file paths and arrows: code and rule ids are exempt.
+- The stats row "46 of them in the Figma library, with Code Connect" repeats the first stat's number. It is the file's own count, and it was left as found.
+
+Unresolved facts, for Konstancja:
+
+- The period "2025 to 2026" is taken from the cover credit; no other place on the site dates when Big Hat was started. The CV says "Big Hat (Poland), my own company, 10/2018 – present", which is the company, not the design system.
+- The meta strip says 126 semantic tokens and 233 Figma variables; the CV analysis (`cv-analysis.md`) says 39 components where the page says 46. The page's numbers were kept; the CV is the older count.
+- "Docu Manager" is named as one of three things built on Big Hat; the site calls that study "APplus Documents" elsewhere. Left as found.
+- Chapter 07 says "Three of the four templates" because the meta strip counts four and the file shows three; the fourth is not named anywhere in the file.
