@@ -18,7 +18,6 @@ import { Lane } from "./Wall";
  */
 export function Cover({ cover }: { cover: CoverData }) {
   const art = useRef<HTMLDivElement | null>(null);
-  const tilt = useTilt<HTMLDivElement>(3);
 
   useEffect(() => {
     const el = art.current;
@@ -73,15 +72,7 @@ export function Cover({ cover }: { cover: CoverData }) {
       {cover.layers?.length ? (
         <Lane width="bleed">
           <div className="cover__art cover__art--layers" ref={art} aria-hidden="true" style={{ "--layers": cover.layers.length } as React.CSSProperties}>
-            <div className="layers" ref={tilt}>
-              {cover.layers.map((l, i) => (
-                <figure className="layers__item" key={l.src} style={{ "--i": i } as React.CSSProperties}>
-                  <img src={asset(l.src)} alt="" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
-                  <figcaption className="layers__label">{l.label}</figcaption>
-                </figure>
-              ))}
-              <Chart />
-            </div>
+            <Layers layers={cover.layers} />
           </div>
         </Lane>
       ) : (
@@ -97,6 +88,22 @@ export function Cover({ cover }: { cover: CoverData }) {
   );
 }
 
+
+/** Several screens of a product stacked in depth, surfacing in turn. */
+export function Layers({ layers }: { layers: { src: string; label: string }[] }) {
+  const tilt = useTilt<HTMLDivElement>(3);
+  return (
+    <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
+      {layers.map((l, i) => (
+        <figure className="layers__item" key={l.src} style={{ "--i": i } as React.CSSProperties}>
+          <img src={asset(l.src)} alt="" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+          <figcaption className="layers__label">{l.label}</figcaption>
+        </figure>
+      ))}
+      <Chart />
+    </div>
+  );
+}
 
 /**
  * A chart drawn in sand over the layers: bars that rise, a line that draws

@@ -4,6 +4,7 @@ import { useReveal } from "../system/Reveal";
 import { useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
 import { JourneyReadout, JourneyRuler, ScaleJourney } from "../system/ScaleJourney";
+import { Layers } from "../system/Cover";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
@@ -28,8 +29,16 @@ export function Home() {
       <div className="hm-readout"><JourneyReadout /></div>
       <section id="stop-hero" className="hm-hero" aria-labelledby="hero-claim">
         <div className="hm-hero__aurora" aria-hidden="true" />
-        <div className="hm-hero__photo" aria-hidden="true">
-          <img src={asset("/about/portrait.jpg")} alt="" />
+        <div className="hm-hero__stage" aria-hidden="true">
+          <Layers
+            layers={[
+              { src: "/work/applus-analytics/device/dashboards-2400.webp", label: "APplus Analytics" },
+              { src: "/work/elly-ai-assistant/device/09-2400.webp", label: "Elly, the AI assistant" },
+              { src: "/work/applus-analytics/device/analyst-chat-2400.webp", label: "AI Data Analyst" },
+              { src: "/work/applus-best-practice-hub/device/grid-2400.webp", label: "Best Practice Hub" },
+              { src: "/work/bighat-design-system/device/kanban-2400.webp", label: "Big Hat design system" },
+            ]}
+          />
         </div>
         <div className="hm-hero__text">
           <p className="hm-hero__status" aria-label="Status">

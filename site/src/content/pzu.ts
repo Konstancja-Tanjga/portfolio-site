@@ -156,7 +156,7 @@ export const pzu: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/prototype-review.webp`,
+          src: "/work/mojepzu/device/prototype-review-2400.webp", frame: "macbook",
           caption:
             "The first-round analysis board: the portal's screens laid out one by one, each with a column of interview notes beside it.",
         },

@@ -14,6 +14,7 @@ export { Stats, Spec, MetaStrip } from "./Data";
 export { Brief } from "./Brief";
 export { Flow } from "./Flow";
 export { Joint } from "./Joint";
+export { Carousel } from "./Carousel";
 export { Stack } from "./Stack";
 export { Code } from "./Code";
 export { Cover } from "./Cover";

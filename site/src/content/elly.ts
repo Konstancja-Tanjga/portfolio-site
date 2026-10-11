@@ -125,7 +125,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/09.png",
+          src: "/work/elly-ai-assistant/device/09-2400.webp", frame: "macbook",
           caption:
             "The panel across sizes: a model failure with Try again, voice mode, an answer with numbered sources and a Resources list, and a suggested prompt in the empty panel.",
         },
@@ -202,7 +202,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/exploration-options.png",
+          src: "/work/elly-ai-assistant/device/exploration-options-2400.webp", frame: "macbook",
           caption:
             "Both options built on a Flow board, with the working notes: space up to 20% of the page, one click from the side menu, a human face at 42px, and the open question of stars or a help bulb for the symbol.",
         },
@@ -469,7 +469,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/proto-text.png",
+          src: "/work/elly-ai-assistant/device/proto-text-2400.webp", frame: "macbook",
           caption: "The text demo on a full Flow screen: the scope answer, with the close tooltip warning that history won't be saved.",
         },
         {
@@ -483,7 +483,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/screens/proto-voice.png",
+          src: "/work/elly-ai-assistant/device/proto-voice-2400.webp", frame: "macbook",
           caption: "The voice demo: “Chats won't be saved”, the avatar in the centre, Pause and Finish.",
         },
         {
@@ -566,11 +566,11 @@ export const elly: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: "/work/elly-ai-assistant/screens/answer-desktop.png",
+              src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", frame: "macbook",
               caption: "An answer on a Flow board, with inline markers and the Resources block collapsed.",
             },
             {
-              src: "/work/elly-ai-assistant/screens/resources-desktop.png",
+              src: "/work/elly-ai-assistant/device/resources-desktop-2400.webp", frame: "macbook",
               caption: "Resources expanded: three document identifiers behind markers [1] to [3].",
             },
           ],

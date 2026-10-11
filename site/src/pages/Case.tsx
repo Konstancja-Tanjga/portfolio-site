@@ -10,6 +10,7 @@ import { Lightbox, useLightbox } from "../system/Lightbox";
 import { ShotViewer } from "../system/Shot";
 import { Cover, Lane, MetaStrip, Wall } from "../system";
 import { asset } from "../system/asset";
+import { Dust } from "../system/Dust";
 
 export function Case() {
   const { slug } = useParams();
@@ -34,6 +35,7 @@ export function Case() {
 
   return (
     <ShotViewer.Provider value={lightbox.show}>
+      <Dust density={0.8} />
       <article>
       <ReadingProgress />
       <JumpBar title={study.title} chapters={study.chapters} back={listing} />

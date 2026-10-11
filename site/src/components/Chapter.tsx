@@ -3,6 +3,7 @@ import { useReveal } from "../system/Reveal";
 import {
   AnnotatedSet,
   Brief,
+  Carousel,
   Code,
   Duo,
   Evolution,
@@ -71,6 +72,8 @@ function BlockView({ block }: { block: Block }) {
       return <Flow stages={block.stages} note={block.note} />;
     case "joint":
       return <Joint question={block.question} answers={block.answers} />;
+    case "carousel":
+      return <Carousel items={block.items} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":

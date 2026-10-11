@@ -98,7 +98,7 @@ export const bph: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/grid.png`,
+          src: "/work/applus-best-practice-hub/device/grid-2400.webp", frame: "macbook",
           caption:
             "The Hub as a catalogue: every template is a card with its process area, complexity, a short description and an install action.",
         },
@@ -250,7 +250,7 @@ export const bph: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/detail.png`,
+          src: "/work/applus-best-practice-hub/device/detail-2400.webp", frame: "macbook",
           caption:
             "The detail view: the latest version and one install button side by side, what the template includes, documentation in German and English, and the previous versions underneath.",
         },

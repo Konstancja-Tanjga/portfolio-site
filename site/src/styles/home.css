@@ -456,15 +456,15 @@
 }
 
 /* ---------- the journey through scales ---------- */
-.journey { position: fixed; inset: 0; z-index: 2; width: 100vw; height: 100vh; pointer-events: none; mix-blend-mode: screen; opacity: 0.6; }
+.journey { position: fixed; inset: 0; z-index: 2; width: 100vw; height: 100vh; pointer-events: none; mix-blend-mode: screen; opacity: 0.85; }
 .hm { position: relative; }
 .hm > section { position: relative; z-index: 1; }
 /* the canvas sits over the portrait and the ground, under every word and image */
-.hm > section > :not(.hm-hero__photo):not(.hm-hero__aurora):not(.hm-hero__dust) { position: relative; z-index: 3; }
+.hm > section > :not(.hm-hero__photo):not(.hm-hero__aurora):not(.hm-hero__dust):not(.hm-hero__stage) { position: relative; z-index: 3; }
 .hm-hero__photo, .hm-hero__aurora { position: absolute; z-index: 1; }
 .hm-marquee { position: relative; z-index: 3; }
 .hm-hero__dust { display: none; }
-.hm-hero__aurora { opacity: 0.7; }
+.hm-hero__aurora { opacity: 1; }
 
 .ruler {
   position: fixed;

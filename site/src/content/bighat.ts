@@ -98,13 +98,13 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/colour-roles.png",
+          src: "/work/bighat-design-system/device/colour-roles-2400.webp", frame: "macbook",
           caption: "Colour roles in Figma, Light and Dark. Each carries its CSS name as code syntax, so Dev Mode answers with var(--bh-action-primary-bg), not a hex.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/primitives.png",
+          src: "/work/bighat-design-system/device/primitives-2400.webp", frame: "macbook",
           caption: "Primitives: the palette and the space, radius and type scales on a 4px grid. Hidden from every picker, as they are banned from product CSS.",
         },
         {
@@ -137,7 +137,7 @@ export const bighat: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/storybook-button.png",
+          src: "/work/bighat-design-system/device/storybook-button-2400.webp", frame: "macbook",
           caption: "The same component in Storybook: when to use it, what to use instead, and every do/don't rendered live with its reason.",
         },
       ],
@@ -209,7 +209,7 @@ export default {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/bighat-design-system/records-empty.png",
+          src: "/work/bighat-design-system/device/records-empty-2400.webp", frame: "macbook",
           caption: "“No invoices match these filters” offers a way out of the filter, not “Create invoice” — empty is two different screens.",
         },
       ],
@@ -223,15 +223,15 @@ export default {
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/kanban.png", caption: "Kanban — filters as chips; cards move without a pointer" },
-            { src: "/work/bighat-design-system/kanban-dark.png", caption: "The same screen in Dark" },
+            { src: "/work/bighat-design-system/device/kanban-2400.webp", frame: "macbook", caption: "Kanban — filters as chips; cards move without a pointer" },
+            { src: "/work/bighat-design-system/device/kanban-dark-2400.webp", frame: "macbook", caption: "The same screen in Dark" },
           ],
         },
         {
           kind: "duo",
           items: [
-            { src: "/work/bighat-design-system/records.png", caption: "Records — one quiet actions button per row" },
-            { src: "/work/bighat-design-system/ai-chat.png", caption: "AI chat — the prompt is a form, the modes a radio group" },
+            { src: "/work/bighat-design-system/device/records-2400.webp", frame: "macbook", caption: "Records — one quiet actions button per row" },
+            { src: "/work/bighat-design-system/device/ai-chat-2400.webp", frame: "macbook", caption: "AI chat — the prompt is a form, the modes a radio group" },
           ],
         },
       ],

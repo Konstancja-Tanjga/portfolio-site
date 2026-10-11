@@ -253,13 +253,13 @@ export const dms: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/applus-documents/screens/ref-finance-app.png",
+          src: "/work/applus-documents/device/ref-finance-app-2400.webp", frame: "macbook",
           caption: "A finance tool: a dashboard that counts open tasks per company before it offers anything to do, and an inbox table of invoices.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/applus-documents/screens/ref-xentral.png",
+          src: "/work/applus-documents/device/ref-xentral-2400.webp", frame: "macbook",
           caption: "xentral: a purchase suggestion opened as a panel over the purchase order list.",
         },
       ],
@@ -385,7 +385,7 @@ export const dms: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/applus-documents/screens/documentation.png",
+          src: "/work/applus-documents/device/documentation-2400.webp", frame: "macbook",
           caption:
             "A documented frame. On top, the doc band: the Jira link (PX-1774), the acceptance criteria, the designer and the Approved sign-off. Below, the screens with annotations in five kinds: requirements, development, content, user flow and interaction.",
         },

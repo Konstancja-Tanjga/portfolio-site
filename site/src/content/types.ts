@@ -307,6 +307,13 @@ export type Block =
    */
   | { kind: "joint"; question: string; answers: string[] }
   /**
+   * Every part of an application, one screen at a time: a carousel the
+   * reader steps through, or that steps itself slowly while in view.
+   * Each slide is a mockup with the name of the part and one line on
+   * what it is for.
+   */
+  | { kind: "carousel"; items: { src: string; title: string; body?: string; frame?: "macbook" }[] }
+  /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,
    * not evidence. `href` stays optional for sources with no public home.

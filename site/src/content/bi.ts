@@ -119,12 +119,20 @@ export const bi: CaseStudy = {
             "<p>Analytics is the new business intelligence module inside APplus ERP. It turns the data a company already has into numbers it can act on, and it does that on the data the ERP is already producing.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/analyst-thread-2400.webp`,
-          frame: "macbook",
-          caption:
-            "The AI Data Analyst with a detail thread open: one fragment of an answer questioned without touching the main analysis.",
+          kind: "carousel",
+          items: [
+            { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: Ask AI Data Analyst on top, favourite dashboards and analyses below." },
+            { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library, sorted by domain, with all, favourites and shared with me." },
+            { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "Graph, pivot and table are views of one analysis, switched in its view toolbar." },
+            { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "Answers with a live preview instead of a paragraph: columns, grouping, chart type and a match score before anything is saved." },
+            { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
+            { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Applied", body: "The correction returned to the main analysis as one step, with its reason attached: EMEA revenue, week 9." },
+            { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with the system it came from and how many fields it has." },
+            { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Its SQL, a result preview and a Governance panel: who can use it is part of the query." },
+            { src: `${D}/models-select-2400.webp`, frame: "macbook", title: "Data models", body: "Saved models, and the New menu split by intent: build, connect, schedule and share." },
+            { src: `${D}/models-relationship-2400.webp`, frame: "macbook", title: "Relationships", body: "The join states its direction and type on the canvas, and exists as a row in the panel." },
+            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Data sources, connections, users and permissions, and the admin spine on the left." },
+          ],
         },
         {
           kind: "passage",

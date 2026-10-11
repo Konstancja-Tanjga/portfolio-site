@@ -55,6 +55,31 @@ prefers-reduced-motion each stop is a still.
 | ![Screen](journey-screen.png) | ![Component](journey-component.png) |
 | ![Token](journey-token.png) | ![Pixel](journey-pixel.png) |
 
+## 11 October: the walls
+
+- Every desktop screen on every case study sits in a MacBook: the
+  Analytics screens from Konstancja's own device frames in Figma, the
+  other seven case studies composited into one bezel template (lid, base,
+  shadow) from their flat exports. Diagrams, phones and photographs stay
+  as they are.
+- The Analytics intro is four screens of the product blending into one
+  another in depth, with a chart that draws itself in sand; the same stack,
+  with five products, is the home page cover. "What it is" is a carousel
+  through every part of the application. Diagrams and code are drawers
+  that open on request; long tables fold to their keys; use cases show the
+  actor, trigger, rule and exits and keep the step-by-step behind "Show
+  more"; the closing questions are joined to their answers by a drawn
+  connector, after the data-model canvas.
+- Depth on every page: a dust canvas and two slow washes of light, a
+  faint drawing-sheet grid behind the walls, dust that streaks with the
+  scroll. Motion is varied by what an image is: a scan crosses a mockup
+  once as it arrives and then it breathes; a diagram develops from blur;
+  a pair slides in from both sides; a set arrives cell by cell.
+
+| | |
+| --- | --- |
+| ![Carousel](case-carousel.png) | ![Joint](case-joint.png) |
+
 ## Screens
 
 | | |

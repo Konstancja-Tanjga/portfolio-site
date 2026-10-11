@@ -94,7 +94,7 @@ export const xecta: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/xecta/website-01.png",
+          src: "/work/xecta/device/website-01-2400.webp", frame: "macbook",
           caption:
             "From the website board: my role was the website's UX and UI and working with the developers. The team was one more UI designer and two developers.",
         },

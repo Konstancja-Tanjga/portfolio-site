@@ -198,7 +198,7 @@ export const volvo: CaseStudy = {
                 "Before: Partner Details, one partner per page, with its fields, business areas, roles and address tabs stacked in one form.",
             },
             {
-              src: `${S}/partner-after.png`,
+              src: "/work/volvo-erp/device/partner-after-2400.webp", frame: "macbook",
               caption:
                 "After: Partner search with the extra options open (“Show less search options” closes them), Search and Clear search fields at the top, and the results table below.",
             },
@@ -207,7 +207,7 @@ export const volvo: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/reports-after.png`,
+          src: "/work/volvo-erp/device/reports-after-2400.webp", frame: "macbook",
           caption:
             "My reports in the new layout: the search box suggests report names and highlights the typed letters, and the actions for a selected report (Modify, View, Copy, Delete, Run report) sit in one bar.",
         },
@@ -235,7 +235,7 @@ export const volvo: CaseStudy = {
                 "Before: a new report as a form, with report information at the top and criteria entered row by row in tables below.",
             },
             {
-              src: `${S}/report-builder-after.png`,
+              src: "/work/volvo-erp/device/report-builder-after-2400.webp", frame: "macbook",
               caption:
                 "After: Selected criteria and Selected layout side by side, with Save, Run report and Cancel at the top and the Unit criteria open underneath.",
             },
@@ -244,7 +244,7 @@ export const volvo: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/reports-share-prototype.png`,
+          src: "/work/volvo-erp/device/reports-share-prototype-2400.webp", frame: "macbook",
           caption:
             "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
         },
@@ -294,7 +294,7 @@ export const volvo: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/components.png`,
+          src: "/work/volvo-erp/device/components-2400.webp", frame: "macbook",
           caption:
             "The component board from the project: cards, menus, a data table with paging, tabs, chips, text inputs and time pickers in the style of the new screens.",
         },
