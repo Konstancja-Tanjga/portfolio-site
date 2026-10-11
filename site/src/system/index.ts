@@ -17,7 +17,7 @@ export { Joint } from "./Joint";
 export { Carousel } from "./Carousel";
 export { Stack } from "./Stack";
 export { Code } from "./Code";
-export { Cover } from "./Cover";
+export { Cover, TypeCover } from "./Cover";
 export { Portrait } from "./Portrait";
 export { Personas } from "./Personas";
 export { Palette } from "./Palette";

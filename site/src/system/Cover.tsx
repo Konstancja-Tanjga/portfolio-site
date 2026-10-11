@@ -135,3 +135,32 @@ function Chart() {
     </svg>
   );
 }
+
+
+/**
+ * The cover as type, for the work grid. The old thumbnails were Figma
+ * boards in the product's yellow, which said nothing about the project
+ * and fought the page. This one says what the project is and whose it is,
+ * in the site's own type, and lets the first mockup of the study lean out
+ * of the corner. `device` is a MacBook WebP the study already owns; without
+ * one the cover is type alone.
+ */
+export function TypeCover({ cover, device }: { cover: CoverData; device?: string }) {
+  const parts = cover.credit.split("·").map((x) => x.trim());
+  const org = parts.length >= 3 ? parts[1] : parts[parts.length - 1];
+  const year = cover.credit.match(/\d{4}(?:[–-]\d{4})?/)?.[0];
+  return (
+    <span className={device ? "tcover tcover--device" : "tcover"}>
+      <span className="tcover__kicker">{cover.kicker}</span>
+      <span className="tcover__org">{org}</span>
+      <span className="tcover__headline">
+        {cover.headline.map((line) => (
+          <span key={line}>{line}</span>
+        ))}
+      </span>
+      <span className="tcover__sub">{cover.subline}</span>
+      {year && <span className="tcover__year">{year}</span>}
+      {device && <img className="tcover__device" src={asset(device)} alt="" loading="lazy" decoding="async" />}
+    </span>
+  );
+}

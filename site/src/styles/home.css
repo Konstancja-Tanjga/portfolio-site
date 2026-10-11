@@ -589,3 +589,31 @@
 .hm > .hm-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
 .hm > .hm-hero > .hm-hero__stage { align-self: center; margin-top: var(--bh-space-6); }
 .hm-hero__claim { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+
+/* ---------- typeset covers on the grid ---------- */
+.hm-tile__cover { container-type: inline-size; }
+.tcover {
+  position: absolute; inset: 0; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto auto; gap: 0 var(--bh-space-3);
+  padding: clamp(0.9rem, 5cqw, 1.6rem); color: var(--kt-ink);
+  background:
+    radial-gradient(120% 90% at 100% 110%, rgba(227, 210, 173, 0.16), transparent 55%),
+    linear-gradient(160deg, #1a1a18, var(--kt-ground-2) 60%, #0f0f0e);
+}
+.tcover__kicker, .tcover__org, .tcover__year { font-family: var(--bh-font-id, "IBM Plex Mono", monospace); font-size: clamp(0.55rem, 2.4cqw, 0.72rem); letter-spacing: 0.12em; text-transform: uppercase; }
+.tcover__kicker { grid-column: 1; color: var(--kt-ink-3); }
+.tcover__org { grid-column: 2; justify-self: end; color: var(--kt-sand); white-space: nowrap; }
+.tcover__headline { grid-column: 1 / -1; align-self: end; display: grid; margin-top: var(--bh-space-2); font-family: var(--kt-font-display); font-weight: 700; font-size: clamp(1.25rem, 8.5cqw, 3.1rem); line-height: 0.98; letter-spacing: -0.035em; }
+.tcover__sub { grid-column: 1 / -1; margin-top: 0.35em; font-size: clamp(0.72rem, 3cqw, 1rem); color: var(--kt-ink-2); max-width: 24ch; }
+.tcover__year { grid-column: 1 / -1; margin-top: var(--bh-space-2); color: var(--kt-ink-3); }
+.tcover--device .tcover__headline, .tcover--device .tcover__sub { max-width: 58%; position: relative; z-index: 1; }
+.hm-tile__cover .tcover__device {
+  position: absolute; right: -12%; bottom: -14%; width: 58%; height: auto; object-fit: contain;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6));
+  transform: rotate(-4deg); transform-origin: 80% 100%;
+  transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hm-tile:hover .hm-tile__cover .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
+.hm-tiles--practice .hm-tile__cover .tcover__device { width: 74%; right: -20%; bottom: -20%; }
+.hm-tiles--practice .tcover--device .tcover__headline, .hm-tiles--practice .tcover--device .tcover__sub { max-width: 100%; }
+.hm-tiles--practice .tcover__sub { display: none; }
+@media (prefers-reduced-motion: reduce) { .tcover__device, .hm-tile:hover .hm-tile__cover .tcover__device { transition: none; transform: rotate(-4deg); } }

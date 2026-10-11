@@ -4,9 +4,9 @@ import { useReveal } from "../system/Reveal";
 import { useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
 import { JourneyReadout, JourneyRuler, ScaleJourney } from "../system/ScaleJourney";
-import { Layers } from "../system/Cover";
+import { Layers, TypeCover } from "../system/Cover";
 import { byGroup, findCase } from "../content";
-import type { CaseStudy } from "../content/types";
+import type { Block, CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
 import { offScreen, practices } from "../home/story";
 
@@ -193,6 +193,30 @@ function Numbers() {
   );
 }
 
+/** The first MacBook mockup a study owns, for its cover on the grid. */
+function firstDevice(study: CaseStudy): string | undefined {
+  if (study.cover.layers?.[0]) return study.cover.layers[0].src;
+  const fromBlock = (b: Block): string | undefined => {
+    switch (b.kind) {
+      case "shot":
+        return b.frame === "macbook" ? b.src : undefined;
+      case "duo":
+      case "set":
+        return b.items.find((i) => i.frame === "macbook")?.src;
+      case "carousel":
+        return b.items.find((i) => i.frame === "macbook")?.src;
+      case "dossier":
+        return b.items.find((i) => i.cover.frame === "macbook")?.cover.src;
+      case "annotated":
+        return b.items.find((i) => i.shot.frame === "macbook")?.shot.src;
+      default:
+        return undefined;
+    }
+  };
+  for (const c of study.chapters) for (const b of c.blocks) { const d = fromBlock(b); if (d) return d; }
+  return undefined;
+}
+
 /**
  * One work tile. The grid breaks its own rhythm: tiles alternate between
  * wide and narrow and the narrow one sits lower, so two rows never look
@@ -222,11 +246,7 @@ function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number;
       onMouseMove={follow}
     >
       <span className="hm-tile__cover" ref={cover}>
-        {study.cover.shot.src ? (
-          <img src={asset(study.cover.shot.src)} alt="" loading="lazy" decoding="async" />
-        ) : (
-          <span className="hm-tile__slot">{study.cover.headline.join(" ")}</span>
-        )}
+        <TypeCover cover={study.cover} device={firstDevice(study)} />
         <span className="hm-tile__scan" aria-hidden="true" />
         <span className="hm-tile__view" aria-hidden="true">View</span>
       </span>
