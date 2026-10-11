@@ -26,3 +26,4 @@ export { Steps } from "./Steps";
 export { UseCase } from "./UseCase";
 export { Evolution } from "./Evolution";
 export { AnnotatedSet } from "./Annotated";
+export { Dossier } from "./Dossier";

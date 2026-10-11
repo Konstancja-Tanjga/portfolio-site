@@ -83,6 +83,9 @@ body::after {
   100% { transform: translate(0, 0); }
 }
 html { scrollbar-color: var(--kt-line) var(--kt-ground); }
+/* Tilted mockups, 3D carousel slides and the aurora reach past the edge;
+   clip, not hidden, so sticky bars and the fixed journey keep working. */
+html, body { overflow-x: clip; }
 
 /* Opacity only: a transform here, even an identity one left by the
    fill, would turn this wrapper into the containing block for every

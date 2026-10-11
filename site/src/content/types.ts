@@ -327,7 +327,25 @@ export type Block =
   | { kind: "process"; process: Process }
   | { kind: "usecase"; uc: UseCase }
   | { kind: "evolution"; items: Version[] }
-  | { kind: "annotated"; items: Annotated[] };
+  | { kind: "annotated"; items: Annotated[] }
+  /**
+   * Several use cases behind one row of tiles. A tile names the area and
+   * its maxim; opening it unfolds that use case to the right, one panel
+   * per block, so the wall stays short and the detail is read sideways.
+   */
+  | { kind: "dossier"; items: Dossier[] };
+
+/** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
+export type Dossier = {
+  /** used in the URL hash */
+  id: string;
+  n: string;
+  title: string;
+  maxim: string;
+  standfirst: string;
+  cover: { src: string; frame?: "macbook" };
+  blocks: Block[];
+};
 
 /** A named stretch of the wall. Chapters drive the jump bar. */
 export type Chapter = {

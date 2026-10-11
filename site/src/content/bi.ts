@@ -18,6 +18,9 @@ import type { CaseStudy } from "./types";
  */
 const S = "/work/applus-analytics/screens";
 const D = "/work/applus-analytics/device";
+const C = "/work/applus-analytics/clips";
+/** the prototype route, under the deployment base */
+const P = ((import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/").replace(/\/$/, "") + "/prototype/analytics";
 
 export const bi: CaseStudy = {
   slug: "applus-analytics",
@@ -117,6 +120,10 @@ export const bi: CaseStudy = {
           kind: "passage",
           html:
             "<p>Analytics is the new business intelligence module inside APplus ERP. It turns the data a company already has into numbers it can act on, and it does that on the data the ERP is already producing.</p>",
+        },
+        {
+          kind: "passage",
+          html: `<p><strong>A working prototype</strong> of the application, built on Big Hat components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
         },
         {
           kind: "carousel",
@@ -476,6 +483,24 @@ export const bi: CaseStudy = {
           ],
         },
         {
+          kind: "video",
+          clip: true,
+          width: "wall",
+          src: `${C}/r2-side-sheet.mp4`,
+          poster: `${C}/r2-side-sheet.webp`,
+          title: "The side sheet opens and the chart reflows beside it",
+          caption: "R2 in the prototype: Configure opens the side sheet without a scrim, and the chart type and grouping change live while the sheet stays open.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          width: "wall",
+          src: `${C}/enlarge-restore.mp4`,
+          poster: `${C}/enlarge-restore.webp`,
+          title: "Enlarge and restore the workspace",
+          caption: "R6 in the prototype: Enlarge maximises the body inside the content layer, the rail and app bar stay, and the same button restores it.",
+        },
+        {
           kind: "annotated",
           items: [
             {
@@ -650,246 +675,282 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "uc-ai-analyst",
+      id: "use-cases",
       n: "08",
-      heading: "AI Data Analyst",
-      maxim: "A follow-up question is a branch, not a turn.",
+      heading: "Three use cases",
+      maxim: "Each one makes the thing that could mislead you legible before it does.",
       standfirst:
-        "Goal: question a fragment of an analysis without derailing the analysis. The branch is anchored to the fragment that provoked it and ends in exactly one of two ways, applied or discarded.",
+        "One per area: the AI Data Analyst, Queries and Data models. Open a tile and the use case unfolds to the right, one panel at a time: screens, the template, the rule it sets.",
       blocks: [
         {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/thread-diagram.png`,
-          folded: true,
-          caption: "The thread model: main analysis on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/analyst-thread-2400.webp`,
-          frame: "macbook",
-          caption:
-            "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
-        },
-        {
-          kind: "usecase",
-          uc: {
-            id: "UC-01",
-            title: "Question a fragment of an analysis without derailing the analysis",
-            actor: {
-              name: "02, the controller",
-              body: "Reading an AI-generated analysis, and not yet willing to believe it.",
-              note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
-            },
-            trigger: {
-              body: "One phrase in the answer looks wrong: “overall revenue for the years 2024 and 2025”. 2025 is lower, and the reader cannot tell whether that is a fact or an artefact.",
-              note: "The trigger is doubt, not a task.",
-            },
-            precondition: {
-              body: "An analysis exists in the main thread as a live preview: chart, measure, grouping and filters visible before anything is saved.",
-            },
-            flow: [
-              { n: "1", text: "Select the fragment inside the answer." },
-              {
-                n: "2",
-                text: "A detail thread opens beside the analysis, headed with what it is scoped to: one fragment, and the main chat stays untouched.",
-                note: "The user is told what will and will not be affected before they type.",
-              },
-              {
-                n: "3",
-                text: "The panel restates the selection verbatim and pins the context that produced it as chips: measure revenue, group by product category, filter booking date 2024–2025.",
-                note: "The chips make the branch reproducible. Without them it is a question about nothing in particular.",
-              },
-              { n: "4", text: "The follow-up is asked inside the panel: why is 2025 lower than 2024 here?" },
-              {
-                n: "5",
-                text: "The answer names the cause instead of restating the number: 2025 is not a full year, bookings load only to 30 November, so the comparison is not like-for-like.",
-              },
-              {
-                n: "6",
-                text: "An evidence card carries the same-period figures for both years with the delta, and the answer can be verified: Show SQL · Open as pivot · Copy.",
-                note: "A controller will be asked where the number came from. “The assistant said so” cannot be repeated to an auditor.",
-              },
-            ],
-            exits: [
-              { label: "Apply to main analysis", text: "The correction enters the main thread as a new step, with the reason attached to it." },
-              { label: "Discard", text: "The branch closes and nothing propagates. The main analysis is exactly what it was." },
-            ],
-            exitsNote: "A branch that can end ambiguously is not a branch.",
-            postcondition: {
-              body: "Either the main analysis gained one step that names its own reason, or it gained nothing. It never gains a transcript of the investigation.",
-            },
-            why: "Rejected: a plain threaded reply. It can carry the question, but it cannot carry a decision back, and the analysis drifts while nobody is watching.",
-            rule: "An action on a fragment opens a surface scoped to that fragment, and returns exactly one thing to its parent: a change, or nothing.",
-            ruleNote: "The same rule governs widget settings inside a dashboard.",
-          },
-        },
-      ],
-    },
-    {
-      id: "uc-queries",
-      n: "09",
-      heading: "Queries",
-      maxim: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-      standfirst:
-        "Goal: publish a query other people can use, and let everyone see who else can use it without opening a permissions dialog.",
-      blocks: [
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/queries-shelf-2400.webp`,
-          frame: "macbook",
-          caption:
-            "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
-        },
-        {
-          kind: "duo",
+          kind: "dossier",
           items: [
             {
-              src: `${D}/queries-card-2400.webp`,
-          frame: "macbook",
-              caption:
-                "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
-            },
-            {
-              src: `${D}/queries-add-2400.webp`,
-              frame: "macbook",
-              caption:
-                "Add query. A new query is created in a dialog over the shelf (R1: an action on the whole object opens a modal), with its permissions set before it exists.",
-            },
-          ],
-        },
-        {
-          kind: "usecase",
-          uc: {
-            id: "UC-02",
-            title: "Publish a query other people can use, and see who can use it",
-            actor: {
-              name: "01, the key user, publishing",
-              body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
-              note: "One author, three kinds of reader.",
-            },
-            trigger: {
-              body: "A query built for one department turns out to be useful to three. Its reach starts growing before anyone decides that it should.",
-              note: "Success is the trigger, which is exactly when exposure grows without a decision behind it.",
-            },
-            precondition: {
-              body: "The query runs against a named data model, and roles exist in the system, so “who can see this” is already an answerable question.",
-            },
-            flow: [
-              { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
-              {
-                n: "2",
-                text: "Each card states on its face who it reaches, who made it, when, and what it reads: Administrator, Moderator, Users; data model, author, date.",
-                note: "Exposure is visible at rest.",
-              },
-              {
-                n: "3",
-                text: "Settings is organised by what an admin owns: system configuration (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
-              },
-              {
-                n: "4",
-                text: "Column links are configured against a template, /customers/{value}, and tested in place with a column name and a test value before they are saved.",
-                note: "Configuration you can verify where you write it does not become a support ticket next month.",
-              },
-              { n: "5", text: "Translations, versions and update policy live in the same shell." },
-            ],
-            postcondition: {
-              body: "Reach is a property of the artefact, visible wherever the artefact is. Nobody has to open a permissions dialog to find out who can see their work.",
-            },
-            why: "The dangerous failure in BI on an ERP is a query that quietly reaches further than its author thought. Rejected: permissions behind a per-item dialog. Fewer pixels, but exposure becomes something you have to go and check.",
-            rule: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-            ruleNote: "Both use cases make the thing that could mislead you legible before it does.",
-          },
-        },
-      ],
-    },
-    {
-      id: "uc-data-models",
-      n: "10",
-      heading: "Data models",
-      maxim: "Anything that changes the number a model produces is stated on the canvas, in words, before it is committed.",
-      standfirst:
-        "Goal: build a model other people's numbers can rest on. The same two queries joined two different ways produce two different numbers, and in a settings dialog that difference stays hidden until two people bring incompatible figures to the same meeting.",
-      blocks: [
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${D}/models-select-2400.webp`,
-          frame: "macbook",
-              caption:
-                "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
-            },
-            {
-              src: `${D}/models-empty-2400.webp`,
-          frame: "macbook",
-              caption:
-                "The empty canvas says what it expects: one validated query, then relationships, then validation. It offers exactly one action, so there is no second path into the flow.",
-            },
-          ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/models-relationship-2400.webp`,
-          frame: "macbook",
-          caption:
-            "Define relationships. The join states its direction and type, INNER or LEFT, and the same relationship exists as an editable row in the right panel, so the drawing is a view of the list rather than the only copy of it.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/models-anatomy.png`,
-          folded: true,
-          caption:
-            "One relationship. Provenance rides on the tile, the column type is visible before the link is made, and joining a STRING to a FLOAT is refused at the endpoint, not at run time.",
-        },
-        {
-          kind: "steps",
-          standfirst:
-            "Building a model is a sequence of gates, not a form with a save button. Each gate refuses something, and only the last one changes what other people see.",
-          items: [
-            {
+              id: "uc-ai-analyst",
               n: "01",
-              stage: "Select query",
-              title: "The unit is a query, not a table",
-              rule: {
-                label: "Rule",
-                body: "Everything on the shelf was already written and validated upstream, and each card carries its source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields.",
-              },
+              cover: { src: `${D}/analyst-thread-2400.webp`, frame: "macbook" },
+              title: "AI Data Analyst",
+              maxim: "A follow-up question is a branch, not a turn.",
+              standfirst:
+                "Goal: question a fragment of an analysis without derailing the analysis. The branch is anchored to the fragment that provoked it and ends in exactly one of two ways, applied or discarded.",
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${S}/thread-diagram.png`,
+                  folded: true,
+                  caption: "The thread model: main analysis on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/analyst-thread-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
+                },
+                {
+                  kind: "video",
+                  clip: true,
+                  width: "wall",
+                  src: `${C}/uc01-detail-thread.mp4`,
+                  poster: `${C}/uc01-detail-thread.webp`,
+                  title: "A fragment questioned, answered, and applied to the main analysis",
+                  caption: "UC-01 in the prototype: select the fragment, ask why, read the evidence card, Apply. The main analysis gains one step with its reason.",
+                },
+                {
+                  kind: "usecase",
+                  uc: {
+                    id: "UC-01",
+                    title: "Question a fragment of an analysis without derailing the analysis",
+                    actor: {
+                      name: "02, the controller",
+                      body: "Reading an AI-generated analysis, and not yet willing to believe it.",
+                      note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
+                    },
+                    trigger: {
+                      body: "One phrase in the answer looks wrong: “overall revenue for the years 2024 and 2025”. 2025 is lower, and the reader cannot tell whether that is a fact or an artefact.",
+                      note: "The trigger is doubt, not a task.",
+                    },
+                    precondition: {
+                      body: "An analysis exists in the main thread as a live preview: chart, measure, grouping and filters visible before anything is saved.",
+                    },
+                    flow: [
+                      { n: "1", text: "Select the fragment inside the answer." },
+                      {
+                        n: "2",
+                        text: "A detail thread opens beside the analysis, headed with what it is scoped to: one fragment, and the main chat stays untouched.",
+                        note: "The user is told what will and will not be affected before they type.",
+                      },
+                      {
+                        n: "3",
+                        text: "The panel restates the selection verbatim and pins the context that produced it as chips: measure revenue, group by product category, filter booking date 2024–2025.",
+                        note: "The chips make the branch reproducible. Without them it is a question about nothing in particular.",
+                      },
+                      { n: "4", text: "The follow-up is asked inside the panel: why is 2025 lower than 2024 here?" },
+                      {
+                        n: "5",
+                        text: "The answer names the cause instead of restating the number: 2025 is not a full year, bookings load only to 30 November, so the comparison is not like-for-like.",
+                      },
+                      {
+                        n: "6",
+                        text: "An evidence card carries the same-period figures for both years with the delta, and the answer can be verified: Show SQL · Open as pivot · Copy.",
+                        note: "A controller will be asked where the number came from. “The assistant said so” cannot be repeated to an auditor.",
+                      },
+                    ],
+                    exits: [
+                      { label: "Apply to main analysis", text: "The correction enters the main thread as a new step, with the reason attached to it." },
+                      { label: "Discard", text: "The branch closes and nothing propagates. The main analysis is exactly what it was." },
+                    ],
+                    exitsNote: "A branch that can end ambiguously is not a branch.",
+                    postcondition: {
+                      body: "Either the main analysis gained one step that names its own reason, or it gained nothing. It never gains a transcript of the investigation.",
+                    },
+                    why: "Rejected: a plain threaded reply. It can carry the question, but it cannot carry a decision back, and the analysis drifts while nobody is watching.",
+                    rule: "An action on a fragment opens a surface scoped to that fragment, and returns exactly one thing to its parent: a change, or nothing.",
+                    ruleNote: "The same rule governs widget settings inside a dashboard.",
+                  },
+                },
+              ],
             },
             {
+              id: "uc-queries",
               n: "02",
-              stage: "Define relationships",
-              title: "The join is an object, not a line",
-              rule: {
-                label: "Rule",
-                body: "It states its direction and type on the canvas, and its endpoints are drawn valid or invalid before you commit them.",
-              },
-              why: {
-                label: "Why",
-                body: "Hiding the join type in a settings dialog hides the discrepancy until somebody argues about it in a meeting.",
-              },
+              cover: { src: `${D}/queries-shelf-2400.webp`, frame: "macbook" },
+              title: "Queries",
+              maxim: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
+              standfirst:
+                "Goal: publish a query other people can use, and let everyone see who else can use it without opening a permissions dialog.",
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/queries-shelf-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
+                },
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${D}/queries-card-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
+                    },
+                    {
+                      src: `${D}/queries-add-2400.webp`,
+                      frame: "macbook",
+                      caption:
+                        "Add query. A new query is created in a dialog over the shelf (R1: an action on the whole object opens a modal), with its permissions set before it exists.",
+                    },
+                  ],
+                },
+                {
+                  kind: "usecase",
+                  uc: {
+                    id: "UC-02",
+                    title: "Publish a query other people can use, and see who can use it",
+                    actor: {
+                      name: "01, the key user, publishing",
+                      body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
+                      note: "One author, three kinds of reader.",
+                    },
+                    trigger: {
+                      body: "A query built for one department turns out to be useful to three. Its reach starts growing before anyone decides that it should.",
+                      note: "Success is the trigger, which is exactly when exposure grows without a decision behind it.",
+                    },
+                    precondition: {
+                      body: "The query runs against a named data model, and roles exist in the system, so “who can see this” is already an answerable question.",
+                    },
+                    flow: [
+                      { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
+                      {
+                        n: "2",
+                        text: "Each card states on its face who it reaches, who made it, when, and what it reads: Administrator, Moderator, Users; data model, author, date.",
+                        note: "Exposure is visible at rest.",
+                      },
+                      {
+                        n: "3",
+                        text: "Settings is organised by what an admin owns: system configuration (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
+                      },
+                      {
+                        n: "4",
+                        text: "Column links are configured against a template, /customers/{value}, and tested in place with a column name and a test value before they are saved.",
+                        note: "Configuration you can verify where you write it does not become a support ticket next month.",
+                      },
+                      { n: "5", text: "Translations, versions and update policy live in the same shell." },
+                    ],
+                    postcondition: {
+                      body: "Reach is a property of the artefact, visible wherever the artefact is. Nobody has to open a permissions dialog to find out who can see their work.",
+                    },
+                    why: "The dangerous failure in BI on an ERP is a query that quietly reaches further than its author thought. Rejected: permissions behind a per-item dialog. Fewer pixels, but exposure becomes something you have to go and check.",
+                    rule: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
+                    ruleNote: "Both use cases make the thing that could mislead you legible before it does.",
+                  },
+                },
+              ],
             },
             {
+              id: "uc-data-models",
               n: "03",
-              stage: "Validate model",
-              title: "A step, not a checkbox",
-              rule: {
-                label: "Rule",
-                body: "Readiness is checked while the model is still private. A model can be finished and still not be publishable, and the interface says so.",
-              },
-            },
-            {
-              n: "04",
-              stage: "Publish",
-              title: "The only irreversible audience change",
-              rule: {
-                label: "Rule",
-                body: "Everything before this point affects one person. Publishing affects everyone who will later open a dashboard built on the model, so it is a separate act from saving, with its own affordance.",
-              },
+              cover: { src: `${D}/models-relationship-2400.webp`, frame: "macbook" },
+              title: "Data models",
+              maxim: "Anything that changes the number a model produces is stated on the canvas, in words, before it is committed.",
+              standfirst:
+                "Goal: build a model other people's numbers can rest on. The same two queries joined two different ways produce two different numbers, and in a settings dialog that difference stays hidden until two people bring incompatible figures to the same meeting.",
+              blocks: [
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${D}/models-select-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
+                    },
+                    {
+                      src: `${D}/models-empty-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "The empty canvas says what it expects: one validated query, then relationships, then validation. It offers exactly one action, so there is no second path into the flow.",
+                    },
+                  ],
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/models-relationship-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "Define relationships. The join states its direction and type, INNER or LEFT, and the same relationship exists as an editable row in the right panel, so the drawing is a view of the list rather than the only copy of it.",
+                },
+                {
+                  kind: "video",
+                  clip: true,
+                  width: "wall",
+                  src: `${C}/models-join.mp4`,
+                  poster: `${C}/models-join.webp`,
+                  title: "A join refused, then a join accepted",
+                  caption: "In the prototype: a STRING dragged onto a FLOAT is refused at the endpoint; customer_id onto customer_id draws the join, states INNER, and lists it in the panel.",
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${S}/models-anatomy.png`,
+                  folded: true,
+                  caption:
+                    "One relationship. Provenance rides on the tile, the column type is visible before the link is made, and joining a STRING to a FLOAT is refused at the endpoint, not at run time.",
+                },
+                {
+                  kind: "steps",
+                  standfirst:
+                    "Building a model is a sequence of gates, not a form with a save button. Each gate refuses something, and only the last one changes what other people see.",
+                  items: [
+                    {
+                      n: "01",
+                      stage: "Select query",
+                      title: "The unit is a query, not a table",
+                      rule: {
+                        label: "Rule",
+                        body: "Everything on the shelf was already written and validated upstream, and each card carries its source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields.",
+                      },
+                    },
+                    {
+                      n: "02",
+                      stage: "Define relationships",
+                      title: "The join is an object, not a line",
+                      rule: {
+                        label: "Rule",
+                        body: "It states its direction and type on the canvas, and its endpoints are drawn valid or invalid before you commit them.",
+                      },
+                      why: {
+                        label: "Why",
+                        body: "Hiding the join type in a settings dialog hides the discrepancy until somebody argues about it in a meeting.",
+                      },
+                    },
+                    {
+                      n: "03",
+                      stage: "Validate model",
+                      title: "A step, not a checkbox",
+                      rule: {
+                        label: "Rule",
+                        body: "Readiness is checked while the model is still private. A model can be finished and still not be publishable, and the interface says so.",
+                      },
+                    },
+                    {
+                      n: "04",
+                      stage: "Publish",
+                      title: "The only irreversible audience change",
+                      rule: {
+                        label: "Rule",
+                        body: "Everything before this point affects one person. Publishing affects everyone who will later open a dashboard built on the model, so it is a separate act from saving, with its own affordance.",
+                      },
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
@@ -897,7 +958,7 @@ export const bi: CaseStudy = {
     },
     {
       id: "handoff",
-      n: "11",
+      n: "09",
       heading: "Handoff",
       maxim: "When the system lives in code and the file only consumes it, there is no second copy to forget.",
       standfirst:
@@ -932,7 +993,7 @@ export const bi: CaseStudy = {
     },
     {
       id: "after-development",
-      n: "12",
+      n: "10",
       heading: "After development",
       maxim: "A merged pull request is not a finished feature. It is the first time the design exists at all.",
       standfirst:
@@ -1002,7 +1063,7 @@ export const bi: CaseStudy = {
     },
     {
       id: "results",
-      n: "13",
+      n: "11",
       heading: "What it adds up to",
       standfirst:
         "Analytics shipped in September 2026, so these are the results that exist at release. The screens will be redrawn; the parts that can be checked are the ones that last.",

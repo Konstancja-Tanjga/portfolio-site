@@ -5,6 +5,7 @@ import {
   Brief,
   Carousel,
   Code,
+  Dossier,
   Duo,
   Evolution,
   Flow,
@@ -92,6 +93,8 @@ function BlockView({ block }: { block: Block }) {
       return <Evolution items={block.items} />;
     case "annotated":
       return <AnnotatedSet items={block.items} />;
+    case "dossier":
+      return <Dossier items={block.items} render={(b) => <BlockView block={b} />} />;
   }
 }
 
