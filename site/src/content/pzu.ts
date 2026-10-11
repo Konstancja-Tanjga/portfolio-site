@@ -29,6 +29,7 @@ export const pzu: CaseStudy = {
     subline: "the customer portal of an insurer",
     stamp: "RESEARCH · INFORMATION ARCHITECTURE · THREE PROTOTYPES",
     credit: "UI Designer · PZU · 2019",
+    art: { src: "/work/mojepzu/cover-art.webp" },
     shot: { src: "/work/mojepzu/screens/cover.webp" },
   },
   meta: [

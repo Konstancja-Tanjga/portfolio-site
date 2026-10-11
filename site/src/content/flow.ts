@@ -34,6 +34,7 @@ export const flow: CaseStudy = {
     subline: "navigation and page layout for APplus ERP",
     stamp: "NAVIGATION · PAGE DETAILS · FOX v2.5 · DESKTOP TO MOBILE",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2023",
+    art: { src: "/work/applus-flow/screens/tablet-dark.webp" },
     shot: { src: "/work/applus-flow/00-cover.png" },
   },
   meta: [

@@ -383,6 +383,13 @@ export type Cover = {
    */
   org?: string;
   /**
+   * The picture on the typeset cover, when the study's first mockup is not
+   * the right one: a keyed export of the product on a device, or a screen
+   * with its own frame. `portrait` lays a phone against the right edge
+   * instead of a laptop across the bottom.
+   */
+  art?: { src: string; portrait?: boolean };
+  /**
    * The thumbnail on the next-case link and the listing bands. The Work
    * grid on the home page draws a typeset cover instead (TypeCover). Not
    * drawn on the intro — see Cover.tsx for why sixteen projects share one

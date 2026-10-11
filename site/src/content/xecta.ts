@@ -27,6 +27,7 @@ export const xecta: CaseStudy = {
     subline: "and optimisation for upstream oil and gas, and the company website",
     stamp: "DATA-DENSE · HEAVY VISUALISATION · CORPORATE SITE",
     credit: "Senior UX & UI designer · Xecta · 2020–2021 and 2022",
+    art: { src: "/work/xecta/cover-art.webp" },
     shot: { src: `${W}/00-cover.png` },
   },
   meta: [

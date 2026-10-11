@@ -31,6 +31,7 @@ export const dms: CaseStudy = {
     subline: "for APplus ERP",
     stamp: "VERSIONING · METADATA · SEARCH · PERMISSIONS · RETENTION",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
+    art: { src: "/work/applus-documents/cover-art.webp" },
     shot: { src: "/work/applus-documents/00-cover.png" },
   },
   meta: [
