@@ -357,6 +357,7 @@
 }
 .next__art { display: block; position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 10px; background: var(--kt-ground-2); container-type: inline-size; }
 .next:hover .next__art .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
+.next:hover .next__art .tcover.tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
 .next__art img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1); }
 .next:hover .next__art img { transform: scale(1.04); }
 .next__text { display: grid; gap: var(--bh-space-2); }
@@ -384,6 +385,7 @@
 .section-label { border-bottom-color: var(--kt-line); color: var(--kt-ink-3); font-family: var(--kt-font-body); letter-spacing: 0.06em; }
 .card__cover { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--kt-ground-2); container-type: inline-size; }
 .card:hover .card__cover .tcover__device { transform: rotate(-2deg) translate(-3%, -3%) scale(1.03); }
+.card:hover .card__cover .tcover.tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
 .card__cover img { transition: transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1); }
 .card:hover .card__cover img { transform: scale(1.03); }
 .card:hover .card__title { color: var(--kt-sand); box-shadow: none; }
@@ -393,6 +395,8 @@
   .cover__art img { transform: none; }
   .chapter__inner, .shot, .video { opacity: 1; transform: none; transition: none; }
   .shot__open, .next__art img, .card__cover img, .persona, .stage, .evo__step, .process__stage { transition: none; }
+  .next__art .tcover__device, .card__cover .tcover__device, .next:hover .next__art .tcover__device, .card:hover .card__cover .tcover__device { transition: none; transform: rotate(-4deg); }
+  .next__art .tcover.tcover--portrait .tcover__device, .card__cover .tcover.tcover--portrait .tcover__device, .next:hover .next__art .tcover.tcover--portrait .tcover__device, .card:hover .card__cover .tcover.tcover--portrait .tcover__device { transform: rotate(-6deg); }
 }
 
 /* ---------- personas: a horizontal stack ----------

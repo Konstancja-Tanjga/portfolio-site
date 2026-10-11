@@ -401,7 +401,7 @@ export type Cover = {
    * screens of the product that blend into one another, so the intro says
    * what the product is before a word is read. Each layer is a mockup; the
    * intro stacks them in depth, cycles their opacity, and draws a chart in
-   * sand over the top. Without it, the intro shows `shot`.
+   * sand over the top. Without it, the intro shows the typeset cover.
    */
   layers?: { src: string; label: string }[];
 };
