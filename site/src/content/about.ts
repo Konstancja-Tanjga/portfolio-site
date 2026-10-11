@@ -1,7 +1,7 @@
 import type { Chapter } from "./types";
 
 /**
- * The About wall, as data — same model as every project page.
+ * The About wall, as data, on the same model as every project page.
  *
  * It is a wall and not a prose page on purpose: if the site's claim is
  * that a closed block set can carry any argument, the page describing
@@ -18,21 +18,21 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "portrait",
         portrait: {
-          kicker: "Lead Product Designer",
+          kicker: "Lead Designer, UX Engineer",
           claim:
-            "Design, the design system and the code that proves it are one job on my desk.",
-          lead: "Ten years in complex, data-rich software — ERP, banking, insurance, legal and regulatory, industrial energy. I run a design-to-code pipeline: shipped components live in code and the Figma library mirrors them, Claude Code implements against a specification I author, Storybook is the contract, and Nexus versions the result so six products can adopt it on their own schedule.",
+            "Design, the design system, and the code that proves it are one job on my desk.",
+          lead: "Ten years in complex, data-rich software: ERP, banking, insurance, legal and regulatory, and industrial energy. I run a design-to-code pipeline: shipped components live in code and the Figma library mirrors them, Claude Code implements against a specification I author, Storybook is the contract, and Nexus versions the result so that six products can adopt it on their own schedule.",
           facts: [
             { label: "Based", value: "Warsaw, CET" },
             { label: "Working", value: "Remote only · B2B only" },
             {
               label: "Languages",
-              value: "Polish native · English C2 · German, Spanish basic",
+              value: "Polish native · English C1",
             },
           ],
           shot: {
             src: "/about/portrait.jpg",
-            slot: "portrait — public/about/portrait.jpg",
+            slot: "portrait, public/about/portrait.jpg",
             caption: "Konstancja Tanjga-Nawrot",
           },
         },
@@ -47,7 +47,7 @@ export const aboutChapters: Chapter[] = [
     maxim:
       "A screenshot is not a specification, and a designer who hands one over has already lost the parity argument.",
     standfirst:
-      "The shape is the design-to-code workflow documented in the Claude Code Ultimate Guide: Figma as the source of truth, read through the Figma MCP server, implemented by Claude Code against a written specification. I run it with two additions the guide does not cover — Storybook as the acceptance contract, and Nexus for storing and versioning the design system as a package.",
+      "The shape is the design-to-code workflow documented in the Claude Code Ultimate Guide: Figma as the source of truth, read through the Figma MCP server, implemented by Claude Code against a written specification. I run it with four additions the guide does not cover: Storybook as the acceptance contract, Chromatic for visual regression, my own merge as the review gate, and Nexus for storing and versioning the design system as a package.",
     blocks: [
       {
         kind: "process",
@@ -58,14 +58,14 @@ export const aboutChapters: Chapter[] = [
             {
               n: "01",
               title: "The idea",
-              kicker: "Requirement engineer & PM",
-              body: "The starting point, talked through with the requirement engineer and the PM.",
+              kicker: "Requirements engineer and PM",
+              body: "The starting point, talked through with the requirements engineer and the PM.",
             },
             {
               n: "02",
               title: "Ideation in Claude Design",
               kicker: "Several options, iterated",
-              body: "I iterate ideations in Claude Design, and put up several options rather than one.",
+              body: "I iterate in Claude Design and put up several options rather than one.",
               note: {
                 label: "Alongside",
                 body: "Architecture and security discussed with our specialists.",
@@ -92,8 +92,8 @@ export const aboutChapters: Chapter[] = [
             {
               n: "06",
               title: "Specs and walkthrough",
-              kicker: "Stakeholders & AI Harvester",
-              body: "Specs and a walkthrough travel with the element \u2014 for the stakeholders, and for the AI Harvester.",
+              kicker: "Stakeholders and AI Harvester",
+              body: "Specs and a walkthrough travel with the element, for the stakeholders and for the AI Harvester.",
             },
             {
               n: "07",
@@ -115,7 +115,7 @@ export const aboutChapters: Chapter[] = [
               "bighat-design-system skill",
               "handoff-readiness skill",
             ],
-            body: "Two skills, both living in the design system repository: one states the rules a type-checking, lint-passing component can still break, the other runs them as ten gates over a branch and returns one verdict each with the evidence. Built on Anthropic\u2019s skill-creator, updated once a quarter \u2014 so the stages above are governed by something written down, not by whoever is at the keyboard.",
+            body: "Two skills: one lives with the design system and states the rules a type-checking, lint-passing component can still break; the other lives in its own repository and runs them as ten gates over a branch, one verdict each, with the evidence. Both are built on Anthropic\u2019s skill-creator and updated once a quarter, so the stages above are governed by something written down, not by whoever is at the keyboard.",
           },
         },
       },
@@ -130,11 +130,11 @@ export const aboutChapters: Chapter[] = [
             title: "The Figma library is the source of truth",
             rule: {
               label: "Rule",
-              body: "Variables and styles, Auto Layout, no detached layers, and tokens in three tiers — base primitives, composite patterns, semantic aliases. A value that is not a variable does not exist.",
+              body: "Variables and styles, Auto Layout, no detached layers, and tokens in three tiers (base primitives, composite patterns, semantic aliases). A value that is not a variable does not exist.",
             },
             why: {
               label: "Why it isn't decoration",
-              body: "An agent extracts structured data, not intent. A hard-coded fill reads out as a hex string with no name, and whatever gets generated from it is a magic number the moment the brand shifts by five degrees. The discipline has to sit upstream of the codegen, which means it sits with me.",
+              body: "An agent extracts structured data, not intent. A hard-coded fill reads out as a hex string with no name, and whatever gets generated from it is a magic number the moment the brand shifts by five degrees. The discipline has to sit upstream of the codegen, so it sits with me.",
             },
             contrast: {
               does: "A value that is not a variable does not exist.",
@@ -149,7 +149,7 @@ export const aboutChapters: Chapter[] = [
             title: "Claude Code reads the frame, nobody transcribes it",
             rule: {
               label: "Rule",
-              body: "The frame goes over as a Figma URL and Claude Code reads it through the Figma MCP server in Dev Mode — exact spacing, variants, constraints, referenced variables, Code Connect annotations where they exist.",
+              body: "The frame goes over as a Figma URL and Claude Code reads it through the Figma MCP server in Dev Mode: exact spacing, variants, constraints, referenced variables, and Code Connect annotations where they exist.",
             },
             why: {
               label: "Why it isn't decoration",
@@ -172,7 +172,7 @@ export const aboutChapters: Chapter[] = [
             title: "I write the specification, not the prompt",
             rule: {
               label: "Rule",
-              body: "Component API, token contract, states, keyboard behaviour and accessibility criteria are authored as skills and a project constitution that govern how the agent operates — standing rules in the repository, not instructions retyped per session.",
+              body: "Component API, token contract, states, keyboard behaviour, and accessibility criteria are authored as skills and a project constitution that govern how the agent operates: standing rules in the repository, not instructions retyped per session.",
             },
             why: {
               label: "Why it isn't decoration",
@@ -205,11 +205,11 @@ export const aboutChapters: Chapter[] = [
             title: "Storybook is the contract",
             rule: {
               label: "Rule",
-              body: "A component is not done until every variant and every state is a story — including empty, loading, error, disabled and long-content — with the accessibility checks running on the story set. Chromatic takes the visual baseline and diffs it on every pull request.",
+              body: "A component is not done until every variant and every state is a story (empty, loading, error, disabled, and long content included), with the accessibility checks running on the story set. Chromatic takes the visual baseline and diffs it on every pull request.",
             },
             why: {
               label: "Why it isn't decoration",
-              body: "This is my substitution for the guide's Playwright screenshot loop. Stories make the states enumerable, so the story set is the acceptance criteria rather than a description of it: a state nobody wrote a story for is a state nobody designed, and the gap is visible before review rather than in production.",
+              body: "The story set replaces the guide's Playwright screenshot loop. Stories make the states enumerable, so the story set is the acceptance criteria rather than a description of it: a state nobody wrote a story for is a state nobody designed, and the gap is visible before review rather than in production.",
             },
             contrast: {
               does: "Every variant and state is a story, checked on the set.",
@@ -228,11 +228,11 @@ export const aboutChapters: Chapter[] = [
             title: "I review and merge the pull request",
             rule: {
               label: "Rule",
-              body: "Every component pull request into the library comes to me, across Angular, React and web components. I check token use, API shape, states and contrast, then merge.",
+              body: "Every component pull request into the library comes to me, across Angular, React, and web components. I check token use, API shape, states, and contrast, then merge.",
             },
             why: {
               label: "Why it isn't decoration",
-              body: "The guide splits it designer designs → agent codes → developer reviews, and lists a designer writing code as an anti-pattern. That division assumes the designer cannot read the diff. Here the person who set the token contract is the person who enforces it, so intent is never translated twice.",
+              body: "The guide splits the work three ways: the designer designs, the agent codes, the developer reviews. It lists a designer writing code as an anti-pattern. That division assumes the designer cannot read the diff. Here the person who set the token contract is the person who enforces it, so intent is never translated twice.",
             },
             contrast: {
               does: "The person who set the token contract enforces it.",
@@ -263,7 +263,7 @@ export const aboutChapters: Chapter[] = [
             },
             why: {
               label: "Why it isn't decoration",
-              body: "The guide's stack ends at production, and this is the gap it leaves. A design system nobody can pin is not a system, it is a folder that changed under you. Versioning turns adoption into a decision each product makes on its own release schedule — which is how a v3 migration reaches six product lines without stopping any of them.",
+              body: "The guide's stack ends at production; versioning is the gap it leaves. A design system nobody can pin is not a system; it is a folder that changed under you. Versioning turns adoption into a decision each product makes on its own release schedule, and a v3 migration therefore reaches six product lines without stopping any of them.",
             },
             contrast: {
               does: "A pinned version, with a migration note when it breaks.",
@@ -282,7 +282,7 @@ export const aboutChapters: Chapter[] = [
             title: "Development receives a prototype, not a picture",
             rule: {
               label: "Rule",
-              body: "The handoff is a working React prototype assembled from the published package — real components, real tokens, real states, at the version the product is on.",
+              body: "The handoff is a working prototype alongside the Figma file, assembled from the published package: real components, real tokens, real states, at the version the product is on.",
             },
             why: {
               label: "Why it isn't decoration",
@@ -309,15 +309,15 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "stack",
         caption:
-          "The stack, stage by stage. The four marked stages are not in the documented workflow — they are what I added to it.",
+          "The stack, stage by stage. The four marked stages are not in the documented workflow; I added them.",
         rows: [
           {
             key: "Source of truth",
-            value: "Figma — variables, styles, Auto Layout, Code Connect",
+            value: "Figma: variables, styles, Auto Layout, Code Connect",
           },
           {
             key: "Token model",
-            value: "Three tiers: base → composite → semantic",
+            value: "Three tiers: base, composite, semantic",
           },
           { key: "Read path", value: "Figma MCP server, Dev Mode, read-only" },
           {
@@ -328,7 +328,7 @@ export const aboutChapters: Chapter[] = [
           {
             key: "Contract",
             value:
-              "Storybook — every variant and state as a story, a11y checks on the set",
+              "Storybook: every variant and state as a story, accessibility checks on the set",
             mine: true,
           },
           {
@@ -338,7 +338,7 @@ export const aboutChapters: Chapter[] = [
           },
           {
             key: "Review gate",
-            value: "My merge — Angular, React, web components",
+            value: "My merge: Angular, React, web components",
             mine: true,
           },
           {
@@ -354,7 +354,7 @@ export const aboutChapters: Chapter[] = [
       },
       {
         kind: "passage",
-        html: '<p>The shape comes from <a href="https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/design-to-code.md">design-to-code with Figma MCP</a>, in Florian Bruniaux&rsquo;s Claude Code Ultimate Guide. Mine adds the specification layer, the Storybook contract and the Nexus versioning.</p>',
+        html: '<p>The shape comes from <a href="https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/design-to-code.md">design-to-code with Figma MCP</a>, in Florian Bruniaux&rsquo;s Claude Code Ultimate Guide. Mine adds the specification layer, the Storybook contract, the Chromatic diff, the merge gate, and the Nexus versioning.</p>',
       },
     ],
   },
@@ -366,9 +366,15 @@ export const aboutChapters: Chapter[] = [
     blocks: [
       {
         kind: "passage",
-        html:
-          "<p><strong>FOX is Asseco's.</strong> I own it there &mdash; the tokens, the component API, the review gate &mdash; and the products I designed for that platform are built on it. Its artefacts stay inside the company.</p>" +
-          "<p><strong>Big Hat is mine.</strong> I built it from nothing for my own projects, it shares no code with FOX, and it is public under MIT &mdash; so it is the one where the tokens, the contrast gate, the migration and the source can all be read in full. This site is built on it.</p>",
+        html: "<p>I work on <strong>two design systems that share no code</strong>.</p>",
+      },
+      {
+        kind: "points",
+        items: [
+          "<strong>FOX is Asseco's.</strong> I own it there: the tokens, the component API, the review gate. The products I designed for that platform are built on it, and its artefacts stay inside the company.",
+          "<strong>Big Hat is mine.</strong> I built it from nothing for my own projects and published it under MIT, so the tokens, the contrast gate, the migration, and the source can all be read in full.",
+          "<strong>This site is built on Big Hat.</strong> The footer prints the installed version.",
+        ],
       },
     ],
   },
@@ -378,7 +384,7 @@ export const aboutChapters: Chapter[] = [
     n: "03",
     heading: "Research",
     maxim:
-      "There is no dedicated researcher on the team, so I field it myself.",
+      "The team has no dedicated researcher, so I field the research myself.",
     blocks: [
       {
         kind: "stats",
@@ -391,7 +397,7 @@ export const aboutChapters: Chapter[] = [
       },
       {
         kind: "passage",
-        html: "<p>In-depth interviews, contextual observation of real workflows, moderated and unmoderated usability testing, survey and analytics synthesis — plus quarterly interviews with power users, which is the part that catches the things a survey cannot ask about.</p>",
+        html: "<p>In-depth interviews, contextual observation of real workflows, moderated and unmoderated usability testing, and survey and analytics synthesis, plus quarterly interviews with power users. The interviews catch the things a survey cannot ask about.</p>",
       },
     ],
   },
@@ -405,19 +411,19 @@ export const aboutChapters: Chapter[] = [
         kind: "spec",
         rows: [
           {
-            key: "Research & discovery",
+            key: "Research and discovery",
             value:
-              "Interviews, contextual observation, usability testing, survey and analytics synthesis",
+              "Interviews, contextual observation, usability testing, and survey and analytics synthesis",
           },
           {
-            key: "Structure & mapping",
+            key: "Structure and mapping",
             value:
-              "Information architecture, navigation models and taxonomy for large multi-module systems; journeys, personas",
+              "Information architecture, navigation models, and taxonomy for large multi-module systems; journeys, personas",
           },
           {
             key: "Craft",
             value:
-              "Figma — design systems, variants, variables and tokens, advanced prototyping, developer handoff; interaction and motion, data visualisation, UX writing, HTML/CSS",
+              "Figma: design systems, variants, variables and tokens, advanced prototyping, developer handoff; interaction and motion, data visualisation, UX writing, HTML and CSS",
           },
           {
             key: "Design system stack",
@@ -452,11 +458,11 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "points",
         items: [
-          "<strong>ERP System of the Year 2025 and 2026</strong>, Gold in the User Experience category both years, for APplus.",
-          "<strong>WUD Silesia 10.5</strong> speculative design competition — distinction, <em>Possible Reality</em>.",
-          "<strong>Bydgoszcz Design Challenge</strong> — competition entry, distinction.",
+          "<strong>ERP-System des Jahres</strong>, Gold in the User Experience category, 2025 and 2026, for APplus.",
+          "<strong>WUD Silesia 10.5</strong> speculative design competition, distinction for <em>Possible Reality</em>.",
+          "<strong>Bydgoszcz Design Challenge 2022</strong>, distinction.",
           "<strong>HR Dream Team</strong>, Deloitte.",
-          "<strong>MA English Philology, BA Management of Organisations</strong>, University of Białystok. Interaction Design (UC San Diego), Creativity &amp; A.I. (Parsons), Google UX Design, Graphic Design and UI/UX Design (CalArts).",
+          "<strong>MA English Philology, BA Management of Organisations</strong>, University of Białystok. Interaction Design (UC San Diego), Creativity and AI (Parsons), Google UX Design, Graphic Design and UI/UX Design (CalArts).",
         ],
       },
     ],

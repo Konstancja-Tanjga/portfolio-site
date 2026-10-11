@@ -9,17 +9,17 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "The design system is code",
     body:
-      "Component APIs and tokens are authored in Figma, implemented as code, documented in Storybook, regression-tested in Chromatic and published to Nexus as versioned packages. Product teams install them; nobody redraws them.",
+      "Component APIs and tokens are authored in Figma, implemented as code, documented in Storybook, regression-tested in Chromatic, and published to Nexus as versioned packages. Product teams install them; nobody redraws them.",
   },
   {
     title: "I merge the pull requests",
     body:
-      "Across Angular, React and web components. I take part in code review and check Chromatic snapshots against the design intent myself. Prototypes are running applications built from production components.",
+      "Across Angular, React, and web components. I take part in code review and check Chromatic snapshots against the design intent myself. The handoff is a working prototype alongside the Figma file, built from the design components in code.",
   },
   {
     title: "AI, used agentically",
     body:
-      "Claude and Codex in VS Code every day for component work, refactoring and documentation. I write reusable agent skills that encode the system's components and rules, so generated UI comes out on-system rather than plausibly wrong.",
+      "Claude and Codex in VS Code every day for component work, refactoring, and documentation. I write reusable agent skills that encode the system's components and rules, so that generated UI comes out on-system rather than plausibly wrong.",
   },
   {
     title: "AI as a product",
@@ -29,7 +29,7 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "One model for every module",
     body:
-      "Led the redesigns that gave the platform a single navigation, content and interaction model across all of its modules, on desktop and mobile.",
+      "Led the redesigns that gave the platform a single navigation, content, and interaction model across all of its modules, on desktop and mobile.",
   },
   {
     title: "Accessibility in the primitives",
@@ -39,12 +39,12 @@ export const practices: { title: string; body: string }[] = [
   {
     title: "Two senior designers with me",
     body:
-      "I lead a team of two. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the others have not seen.",
+      "I lead a team of two senior designers. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the others have not seen.",
   },
   {
     title: "Desktop, and mobile",
     body:
-      "APplus runs on the planner's two monitors and on a phone. One navigation and one content model serve both; what changes is the density, the touch targets and what goes into the bottom bar.",
+      "APplus runs on the planner's two monitors and on a phone. One navigation and one content model serve both; what changes is the density, the touch targets, and what goes into the bottom bar.",
   },
   {
     title: "A research rhythm",
@@ -57,14 +57,14 @@ export const career: { years: string; org: string; role: string; what: string }[
   {
     years: "2023 –",
     org: "Asseco Solutions DACH",
-    role: "Lead Designer, APplus ERP",
-    what: "Team of two. Design system as code, three applications from zero, the platform's first AI assistant. ERP System of the Year, Gold in User Experience in 2025 and again in 2026.",
+    role: "Lead Designer, UX Engineer",
+    what: "APplus ERP. Team of two senior designers. Design system as code, four products from zero, the platform's first AI assistant. ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026.",
   },
   {
     years: "2022 – 2023",
     org: "Volvo Group",
     role: "Senior UX/UI Designer",
-    what: "Enterprise ERP for core operations: end-to-end flows, information architecture and interaction models across interconnected modules.",
+    what: "Enterprise ERP for core operations: end-to-end flows, information architecture, and interaction models across interconnected modules.",
   },
   {
     years: "2021 – 2022",
@@ -73,7 +73,7 @@ export const career: { years: string; org: string; role: string; what: string }[
     what: "wolterskluwer-online.de, an expert platform for German lawyers, within the global Digital eXperience Group.",
   },
   {
-    years: "2021 – 2022",
+    years: "2020 – 2021",
     org: "Xecta",
     role: "Senior UX & UI Designer",
     what: "Network optimisation products for the energy industry: dense data visualisation in the vocabulary of drilling engineers.",
@@ -87,14 +87,14 @@ export const career: { years: string; org: string; role: string; what: string }[
   {
     years: "2017 – 2021",
     org: "Deloitte",
-    role: "Project Manager, regional coordinator",
+    role: "Project Manager, CoE Regional Coordinator",
     what: "Centre of Expertise coordination for Central Europe; an employee wellbeing platform awarded HR Dream Team.",
   },
   {
     years: "2018 –",
     org: "Big Hat",
     role: "Freelance, and my own design system",
-    what: "A collective of freelancers. Bydgoszcz Design Challenge, Gdynia Design Days, an award at WUD Silesia for speculative design. @bighatpoland/ui, MIT.",
+    what: "A collective of freelancers. Bydgoszcz Design Challenge 2022, distinction; Gdynia Design Days; a distinction at WUD Silesia for speculative design. @bighatpoland/ui, MIT.",
   },
 ];
 

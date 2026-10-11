@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/readme/banner-dark.svg">
-  <img src=".github/readme/banner-light.svg" alt="Konstancja Tanjga-Nawrot — Lead Product Designer">
+  <img src=".github/readme/banner-light.svg" alt="Konstancja Tanjga-Nawrot, Lead Designer, UX Engineer">
 </picture>
 
 **[konstancja-tanjga.github.io/portfolio-site](https://konstancja-tanjga.github.io/portfolio-site/)**
@@ -13,12 +13,12 @@ Warsaw, CET · remote only
 ---
 
 I design products and lead the implementation of the design system they run on.
-Currently Lead Product Designer for APplus ERP — **ERP System of the Year
-2025 and 2026, Gold in User Experience** — where I designed three applications from zero on a design
-system I built from nothing and still develop.
+Currently Lead Designer, UX Engineer for APplus ERP (**ERP-System des Jahres,
+Gold in the User Experience category, 2025 and 2026**), where I designed four
+products from zero on a design system I built from nothing and still develop.
 
-Development receives a working React prototype built from those components, not
-a picture of one.
+Development receives a working prototype alongside the Figma file, built from
+the design components in code, not a picture of one.
 
 |  |  |
 |---|---|
@@ -30,8 +30,15 @@ a picture of one.
 
 The site now has three skins the reader can switch between (Deco, Blueprint,
 Aquarelle) and a home page that makes one argument about the work. The
-process, the decisions and the screens are in
+process, the decisions, and the screens are in
 [docs/redesign-2026](docs/redesign-2026/README.md).
+
+Every case study is written to [docs/case-study-kit](docs/case-study-kit/RULES.md):
+the rules, a template, and the checklist a study passes before it is published.
+
+Every piece of copy is edited against [docs/STYLE.md](docs/STYLE.md), and each
+edit is logged in [docs/copy-edit](docs/copy-edit/INVENTORY.md): the inventory,
+the settled facts, and one log per piece with before, after, and the rule.
 
 ## How the work runs
 
@@ -47,7 +54,7 @@ and versioning the system.
 
 ## Skills
 
-Two Claude Code skills govern the stages above, so the process is enforced by
+Two Claude Code skills govern the stages above, so that the process is enforced by
 something written down rather than by whoever is at the keyboard. One states the
 rules and lives with the design system that owns them; the other runs them as
 gates and lives on its own, because most of what it checks has nothing to do with
@@ -58,7 +65,7 @@ any design system.
 | Skill | What it does |
 | --- | --- |
 | [`bighat-design-system`](https://github.com/Konstancja-Tanjga/bighat-design-system/blob/main/agent/SKILL.md) | Thirteen rules a correct-looking, type-checking, lint-passing component can still break: primitives, the scale, `StateBlock`, labels, focus, colour, drag. The rules the libraries cannot enforce at the type level. |
-| [`handoff-readiness`](https://github.com/Konstancja-Tanjga/claude-skills) | Runs those rules as ten gates over a branch before it becomes a pull request — build, design-system alignment, requirements, a real click-through of the running prototype, states, accessibility, themes, widths, copy, closeout — and returns one verdict per gate with the evidence behind it. It reports: it does not edit code, open the pull request, or declare the work done. |
+| [`handoff-readiness`](https://github.com/Konstancja-Tanjga/claude-skills) | Runs those rules as ten gates over a branch before it becomes a pull request (build, design-system alignment, requirements, a real click-through of the running prototype, states, accessibility, themes, widths, copy, closeout) and returns one verdict per gate with the evidence behind it. It reports: it does not edit code, open the pull request, or declare the work done. |
 
 `handoff-readiness` carries its own
 [tests](https://github.com/Konstancja-Tanjga/claude-skills/tree/main/plugins/handoff-readiness/skills/handoff-readiness/tests):
@@ -66,17 +73,17 @@ the trigger phrases it has to fire on in both working languages, a branch with
 one seeded defect per gate, and the criteria it is measured against. A checker
 that is never checked is a claim like any other.
 
-This repository keeps only [`.claude/handoff.json`](.claude/handoff.json) — the
-config naming what this project is made of, which is the part that cannot live
-in the design system because it describes a consumer of it.
+This repository keeps only [`.claude/handoff.json`](.claude/handoff.json), the
+config that names what this project is made of. That part cannot live in the
+design system because it describes a consumer of it.
 
 ### Borrowed
 
-Anthropic's, not mine — linked rather than copied in.
+Anthropic's, not mine, linked rather than copied in.
 
 | Skill | Used for |
 | --- | --- |
-| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Drafting, evaluating and benchmarking the skills above |
+| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Drafting, evaluating, and benchmarking the skills above |
 | [`mcp-builder`](https://github.com/anthropics/skills/tree/main/skills/mcp-builder) | Building MCP servers |
 
 ## What is on the site
@@ -87,8 +94,8 @@ Anthropic's, not mine — linked rather than copied in.
 | **Practice** | 5 walls | Big Hat design system · FOX design system · Futures Thinking · Tinder for Chihuahua · Reading the sky |
 | **Recognition** | 3 short pages | ERP of the Year · Bydgoszcz · Possible Reality |
 
-Plus **Watercolours** — architecture, birds, animals, people. Deliberately off
-the work page.
+Plus **Watercolours**: architecture, birds, animals, people. Kept off the work
+page on purpose.
 
 ## The site is the artefact
 
@@ -96,11 +103,11 @@ The point of building this rather than posting to Behance: it is a real consumer
 of my own published design system, not a description of one.
 [`@bighatpoland/ui`](https://github.com/bighatpoland/bighat-design-system) is
 installed as a dependency, its tokens drive every colour, and the footer prints
-the installed version — so the claim is checkable rather than asserted.
+the installed version, so the claim is checkable rather than asserted.
 
 ```
 site/src/
-  content/    the walls, as data — never markup
+  content/    the walls, as data, never markup
   system/     the closed set of components every page renders with
   components/ masthead, chapter renderer, jump bar
   pages/      Home · Case · Watercolours · About
