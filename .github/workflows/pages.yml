@@ -53,6 +53,9 @@ jobs:
           # the statistics private is the Umami account, not this string.
           # Unset, the build simply omits the counter.
           VITE_UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
+          # Google Apps Script web app that mails a daily digest of visits;
+          # see docs/visitor-mail. Unset, the site sends no beacon.
+          VITE_NOTIFY_URL: ${{ vars.NOTIFY_URL }}
         run: npm run build
 
       - name: Add SPA fallback and disable Jekyll

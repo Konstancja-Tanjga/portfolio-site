@@ -10,6 +10,9 @@ import "@bighatpoland/ui/styles.css";
 
 import "./styles/tokens.css";
 import "./styles/app.css";
+import "./styles/brand.css";
+import "./styles/home.css";
+import "./styles/case.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

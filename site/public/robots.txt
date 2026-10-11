@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://konstancja-tanjga.github.io/portfolio-site/sitemap.xml

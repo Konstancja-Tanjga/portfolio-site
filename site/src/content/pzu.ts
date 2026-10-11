@@ -8,15 +8,19 @@ import type { CaseStudy } from "./types";
  * The board's words are text here. Its images are cropped into
  * /work/mojepzu/screens/, with the addresses, policy numbers and number plate
  * on the policy cards blurred: they are mock data, but they look real.
+ *
+ * Image paths are literal strings so that scripts/check-content.mjs sees them.
+ * Chapter numbers were written for this page; the project has no Figma wall.
+ * The stack follows docs/case-study-kit/RULES.md, with the chapters the board
+ * has no facts for (personas, use cases, handoff, reflection) left out.
  */
-const S = "/work/mojepzu/screens";
 
 export const pzu: CaseStudy = {
   slug: "mojepzu",
   title: "MojePZU",
   what: "An insurer's customer portal, redesigned through three rounds of interviews",
   lead:
-    "The redesign of mojepzu.pl, the customer portal of the insurer PZU, before and after logging in. I was the only UX/UI designer on the project. I took the portal through three prototypes, with a round of in-depth interviews feeding each one, and the result shipped to production.",
+    "The redesign of mojepzu.pl, the customer portal of the insurer PZU, before and after logging in. I was the only UI designer on the project. I took the portal through three prototypes, with a round of in-depth interviews feeding each one, and the result shipped to production.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -24,16 +28,17 @@ export const pzu: CaseStudy = {
     headline: ["MojePZU"],
     subline: "the customer portal of an insurer",
     stamp: "RESEARCH · INFORMATION ARCHITECTURE · THREE PROTOTYPES",
-    credit: "UX/UI designer · PZU · 2019",
+    credit: "UI Designer · PZU · 2019",
     shot: { src: "/work/mojepzu/screens/cover.webp" },
   },
   meta: [
-    { label: "Role", value: "UX/UI designer, the only designer on the project, freelance" },
+    { label: "Role", value: "UI Designer; the only designer on the project, freelance" },
     { label: "Company", value: "PZU, Warsaw" },
-    { label: "Team", value: "A UX researcher, a strategist, a developer, a service designer and me" },
-    { label: "Platform", value: "mojepzu.pl, on desktop, tablet and phone" },
+    { label: "Team", value: "Five: a UX researcher, a strategist, a developer, a service designer, and me" },
+    { label: "Platform", value: "mojepzu.pl, on desktop, tablet, and phone" },
     { label: "Research", value: "6 workshops with the business, 54 in-depth interviews over three rounds" },
-    { label: "Period", value: "January – December 2019, shipped to production" },
+    { label: "Period", value: "January to December 2019" },
+    { label: "Launch", value: "Shipped to production on mojepzu.pl" },
   ],
   chapters: [
     {
@@ -42,17 +47,22 @@ export const pzu: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
+            {
+              key: "Context",
+              value:
+                "mojepzu.pl is where PZU customers manage what they hold with the company: insurance policies, medical services, investments, and savings. The redesign covered the portal before and after logging in.",
+            },
             {
               key: "Problem",
               value:
                 "Customers saw PZU as an insurer and the portal as a place with few functions. Most were surprised that the portal also offered medical and financial services.",
             },
             {
-              key: "My part",
+              key: "My role and scope",
               value:
-                "Workshops with the business, which I co-designed and ran, a competitor audit, a qualitative benchmark with recommendations, lo-fi mockups tested with users, analysis of the interviews, and the high-fidelity clickable prototype.",
+                "The only designer on the project, working with a UX researcher, a strategist, a developer, and a service designer: workshops with the business, which I co-designed and ran, a competitor audit, a qualitative benchmark with recommendations, lo-fi mockups tested with users, analysis of the interviews, and the high-fidelity clickable prototype.",
             },
             {
               key: "Decision 1",
@@ -67,11 +77,15 @@ export const pzu: CaseStudy = {
               value: "The information architecture and the navigation changed between prototypes.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "6 workshops with the business. 24 in-depth interviews leading to prototype 1.0, 18 leading to 2.0 and 12 leading to 3.0.",
+                "Shipped to production on mojepzu.pl, after 54 in-depth interviews in three rounds fed three prototypes. Not measured after launch: usage, self-service rates, and support contacts, so none is claimed.",
             },
-            { key: "Shipped", value: "To production, on mojepzu.pl" },
+            {
+              key: "Period and team",
+              value:
+                "January to December 2019. Five people: a UX researcher, a strategist, a developer, a service designer, and me.",
+            },
           ],
         },
       ],
@@ -80,34 +94,32 @@ export const pzu: CaseStudy = {
       id: "what-it-is",
       n: "01",
       heading: "What it is",
+      standfirst:
+        "The portal before and after login, and the two goals the project set for it.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>mojepzu.pl is where PZU customers manage what they hold with the company: insurance policies, medical services, investments and savings. The redesign covered the portal before and after logging in.</p>" +
-            "<p>We worked on the customer perspective and the business perspective in parallel. The project had two goals, and each came with its own questions.</p>",
+            "<p>mojepzu.pl is where PZU customers manage what they hold with the company: insurance policies, medical services, investments, and savings. The redesign covered the portal before and after logging in.</p>",
         },
         {
-          kind: "spec",
-          rows: [
-            {
-              key: "Goal 1",
-              value:
-                "Make the communication of the offer more coherent. How do we present the offer the same way before and after login? What should a customer see first? How do we weigh what the organisation needs against what the customer needs when we prioritise content?",
-            },
-            {
-              key: "Goal 2",
-              value:
-                "Make the portal more intuitive and easier to use. How should the home page be structured, before and after login, so that the customer does not feel lost? What should the main pages do? How do we simplify the language so that it is easier to find your way?",
-            },
+          kind: "passage",
+          html:
+            "<p>We worked on the customer perspective and the business perspective in parallel. <strong>The project had two goals</strong>, and each came with its own questions.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Make the communication of the offer more coherent.</strong> How do we present the offer the same way before and after login? What should a customer see first? How do we weigh what the organisation needs against what the customer needs when we prioritise content?",
+            "<strong>Make the portal easier to use.</strong> How should the home page be structured, before and after login, so that the customer does not feel lost? What should the main pages do? How do we simplify the language so that it is easier to find your way?",
           ],
         },
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/dashboard.webp`,
+          src: "/work/mojepzu/screens/dashboard.webp",
           caption:
-            "The logged-in dashboard: insurance policies and medical services as cards, the shortcut bar on the left and the latest updates top right. Addresses and policy numbers are blurred.",
+            "The logged-in dashboard: insurance policies and medical services as cards, the shortcut bar on the left, and the latest updates top right. Addresses and policy numbers are blurred.",
         },
       ],
     },
@@ -128,35 +140,41 @@ export const pzu: CaseStudy = {
           ],
         },
         {
-          kind: "spec",
-          caption: "The process in three streams, as the project board lays it out.",
-          rows: [
+          kind: "flow",
+          stages: [
             {
-              key: "Strategic stream",
-              value:
-                "6 workshops with the business, a redesign strategy workshop, expert analysis, a competitor audit, a qualitative benchmark, research hypotheses.",
+              title: "Strategic stream",
+              body: "6 workshops with the business, a redesign strategy workshop, expert analysis, a competitor audit, a qualitative benchmark, and research hypotheses.",
             },
             {
-              key: "Research and design stream 1",
-              value:
-                "24 in-depth interviews. Workshops with the business on empathy, ideation and prioritisation. Prototype 1.0.",
+              title: "Research and design stream 1",
+              body: "24 in-depth interviews, workshops with the business on empathy, ideation, and prioritisation, then prototype 1.0.",
             },
             {
-              key: "Research and design stream 2",
-              value:
-                "18 in-depth interviews, then a workshop with the business on improvements and prototype 2.0. 12 in-depth interviews, then prototype 3.0.",
+              title: "Research and design stream 2",
+              body: "18 in-depth interviews, a workshop with the business on improvements, prototype 2.0; then 12 in-depth interviews and prototype 3.0.",
             },
           ],
+          note: "The process in three streams, as the project board lays it out.",
         },
         {
           kind: "passage",
           html:
-            "<p>I worked with a UX researcher. The first round was 24 individual in-depth interviews, held online over Zoom, and it had three aims: to check the hypotheses from the workshop with the business units, to find out which information and functions customers need before they log in and on the dashboard after, and to decide what the dashboard is for. The later rounds had 18 and 12 interviews.</p>",
+            "<p>I worked with a UX researcher. The first round was <strong>24 individual in-depth interviews</strong>, held online over Zoom, with three aims.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Check the hypotheses</strong> from the workshop with the business units.",
+            "<strong>Find out which information and functions customers need</strong> before they log in, and on the dashboard after.",
+            "<strong>Decide what the dashboard is for.</strong> The later rounds had 18 and 12 interviews.",
+          ],
         },
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/prototype-review.webp`,
+          src: "/work/mojepzu/device/prototype-review-2400.webp",
+          frame: "macbook",
           caption:
             "The first-round analysis board: the portal's screens laid out one by one, each with a column of interview notes beside it.",
         },
@@ -167,10 +185,10 @@ export const pzu: CaseStudy = {
         {
           kind: "points",
           items: [
-            "Customers said the portal offered few functions, so it was not very attractive to them.",
-            "They identified the company with insurance. Most were surprised to learn the portal also had other products, such as medical and financial services.",
-            "Self-service was the function that mattered most to them.",
-            "They treated the portal as their own space and took the name literally: myPORTAL means mine.",
+            "<strong>The portal offered few functions</strong>, customers said, so it did not attract them.",
+            "<strong>PZU meant insurance.</strong> Most were surprised to learn the portal also had other products, such as medical and financial services.",
+            "<strong>Self-service was the function that mattered most</strong> to them.",
+            "<strong>The portal was their own space.</strong> They took the name literally: myPORTAL means mine.",
           ],
         },
         {
@@ -180,7 +198,7 @@ export const pzu: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/insights-board.webp`,
+          src: "/work/mojepzu/screens/insights-board.webp",
           caption:
             "The synthesis board from the first round. Each area of the portal has rows for the screen, the observations and conclusions, the challenges, and the ideas.",
         },
@@ -190,29 +208,32 @@ export const pzu: CaseStudy = {
       id: "prototypes",
       n: "03",
       heading: "What changed between prototypes",
-      standfirst: "Between prototypes 1.0, 2.0 and 3.0, five things changed.",
+      standfirst: "Between prototypes 1.0, 2.0, and 3.0, five things changed.",
       blocks: [
         {
-          kind: "spec",
-          rows: [
-            { key: "Information architecture", value: "Changed between prototypes." },
-            { key: "Navigation", value: "Changed between prototypes." },
-            { key: "Screen layout", value: "The content layout of individual screens changed." },
-            { key: "\"Buy\" button", value: "Dropped. It had sat on every screen." },
-            {
-              key: "New module",
-              value: "Added, for buying and managing policies and for booking doctor's appointments.",
-            },
+          kind: "points",
+          items: [
+            "<strong>Information architecture.</strong> Changed between prototypes.",
+            "<strong>Navigation.</strong> Changed between prototypes.",
+            "<strong>Screen layout.</strong> The content layout of individual screens changed.",
+            "<strong>The \"Buy\" button.</strong> Dropped. It had sat on every screen.",
+            "<strong>A new module.</strong> Added, for buying and managing policies and for booking doctor's appointments.",
           ],
         },
         {
           kind: "duo",
           items: [
-            { src: `${S}/early-mockup.webp` },
-            { src: `${S}/offers-final.webp` },
+            {
+              src: "/work/mojepzu/screens/early-mockup.webp",
+              caption:
+                "An early greyscale mockup of the logged-in home page: the offer cards under \"Wybrane dla Ciebie\" (selected for you) carry a \"KUP\" (buy) button.",
+            },
+            {
+              src: "/work/mojepzu/screens/offers-final.webp",
+              caption:
+                "The same section in the final version, where each offer ends in \"Dowiedz się więcej\" (find out more).",
+            },
           ],
-          caption:
-            "First, an early greyscale mockup of the logged-in home page: the offer cards under \"Wybrane dla Ciebie\" (selected for you) carry a \"KUP\" (buy) button. Second, the same section in the final version, where each offer ends in \"Dowiedz się więcej\" (find out more).",
         },
       ],
     },
@@ -253,7 +274,7 @@ export const pzu: CaseStudy = {
               title: "Rework the information architecture and navigation",
               rule: {
                 label: "Rule",
-                body: "The top navigation names tasks and product areas: payments, claims and benefits, medical services, investments and savings. The shortcut bar holds the actions: pay, book a visit or test, report a claim, see offers.",
+                body: "The top navigation names tasks and product areas: payments, claims and benefits, medical services, investments, and savings. The shortcut bar holds the actions: pay, book a visit or test, report a claim, and see offers.",
               },
               why: {
                 label: "Project goal",
@@ -272,15 +293,15 @@ export const pzu: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/final-screens.webp`,
+          src: "/work/mojepzu/screens/final-screens.webp",
           caption:
-            "The final screens on desktop, tablet and phone. The tablet and phone show the dashboard further down, with investments and savings and the \"Wybrane dla Ciebie\" offers. Personal details are blurred.",
+            "The final screens on desktop, tablet, and phone. The tablet and phone show the dashboard further down, with investments and savings and the \"Wybrane dla Ciebie\" offers. Personal details are blurred.",
         },
         {
           kind: "palette",
           standfirst: "The palette from the project board, with the role of each colour where the final screens show it.",
           items: [
-            { hex: "#009DDE", name: "Blue", role: "Buttons, links and the active navigation item" },
+            { hex: "#009DDE", name: "Blue", role: "Buttons, links, and the active navigation item" },
             { hex: "#FAFBFD", name: "Off-white", role: "The page background" },
             { hex: "#234678", name: "Navy", role: "The footer" },
             { hex: "#C4C4C4", name: "Grey", role: "The \"Edytuj skróty\" (edit shortcuts) tile under the shortcut bar" },
@@ -298,8 +319,8 @@ export const pzu: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The redesign shipped to production on mojepzu.pl. Before it did, 54 in-depth interviews in three rounds fed three prototypes, and between them the structure, the navigation and the screens changed.</p>" +
-            "<p>I have no measurements from after the launch, such as usage, self-service rates or support contacts, so this page does not claim any.</p>",
+            "<p>The redesign <strong>shipped to production on mojepzu.pl</strong>. Before it did, 54 in-depth interviews in three rounds fed three prototypes, and between them the structure, the navigation, and the screens changed.</p>" +
+            "<p>I have no measurements from after the launch, such as usage, self-service rates, or support contacts, so this page does not claim any.</p>",
         },
       ],
     },

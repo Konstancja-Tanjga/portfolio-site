@@ -1,47 +1,137 @@
+import { useEffect, useRef } from "react";
+
 import type { Cover as CoverData } from "../content/types";
 import { asset } from "./asset";
+import { useTilt } from "./motion";
 import { Lane } from "./Wall";
 
 /**
- * The intro. One frame every project opens on: the mark as a full field, the
- * kicker, headline, subline, stamp and credit typeset by the site, and a
- * fragment of the project's cover art running off the right edge.
+ * The intro. The title first, set very large on the ground, with the
+ * kicker above it and the subline, the stamp as a row of tags and the
+ * credit under it. Then the cover art as one wide image that drifts a
+ * little slower than the page (parallax, a few pixels, off under
+ * prefers-reduced-motion).
  *
- * The fragment is anchored right on purpose. Every cover artboard is laid out
- * the same way — type on the left, the product bleeding off the right — so
- * cropping to the right edge shows the product and never the artboard's own
- * type. Setting the whole artboard here printed the credit line twice.
- *
- * Sixteen identical intros is what makes sixteen projects read as one body of
- * work rather than a folder of files.
+ * Every cover artboard carries its own type, so it is shown whole below
+ * the title rather than behind it: two titles on top of each other was
+ * the one thing the old intro could not do.
  */
 export function Cover({ cover }: { cover: CoverData }) {
+  const art = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = art.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const move = () => {
+      frame = 0;
+      const r = el.getBoundingClientRect();
+      // The image travels at 85% of the page's speed, a few pixels either way.
+      const y = Math.max(-r.height, Math.min(r.height, r.top)) * -0.15;
+      el.style.setProperty("--cover-shift", `${y.toFixed(1)}px`);
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(move);
+    };
+    move();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const tags = cover.stamp.split(/\s*[·•]\s*/).filter(Boolean);
+
   return (
-    <Lane width="bleed">
-      <div className="cover">
-        <div className="cover__text">
-          <p className="kicker">{cover.kicker}</p>
+    <>
+      <Lane width="wall">
+        <header className="cover">
+          <p className="cover__kicker">{cover.kicker}</p>
           <h1 className="cover__headline">
-            {/* The space keeps the lines apart for a screen reader, which would
-                otherwise read "World ofRaptors". */}
             {cover.headline.map((line, i) => (
-              <span key={line}>
+              <span className="cover__line" key={line} style={{ animationDelay: `${120 + i * 110}ms` }}>
                 {i > 0 && " "}
                 {line}
               </span>
             ))}
           </h1>
           <p className="cover__subline">{cover.subline}</p>
-          <p className="kicker cover__stamp">{cover.stamp}</p>
-          <p className="cover__credit">{cover.credit}</p>
-        </div>
-
-        {cover.shot.src && (
-          <div className="cover__shot" aria-hidden="true">
-            <img src={asset(cover.shot.src)} alt="" />
+          <div className="cover__row">
+            <ul className="cover__tags" aria-label="What the project covers">
+              {tags.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+            <p className="cover__credit">{cover.credit}</p>
           </div>
-        )}
-      </div>
-    </Lane>
+        </header>
+      </Lane>
+      {cover.layers?.length ? (
+        <Lane width="bleed">
+          <div className="cover__art cover__art--layers" ref={art} aria-hidden="true" style={{ "--layers": cover.layers.length } as React.CSSProperties}>
+            <Layers layers={cover.layers} />
+          </div>
+        </Lane>
+      ) : (
+        cover.shot.src && (
+          <Lane width="bleed">
+            <div className="cover__art" ref={art} aria-hidden="true">
+              <img src={asset(cover.shot.src)} alt="" />
+            </div>
+          </Lane>
+        )
+      )}
+    </>
+  );
+}
+
+
+/** Several screens of a product stacked in depth, surfacing in turn. */
+export function Layers({ layers }: { layers: { src: string; label: string }[] }) {
+  const tilt = useTilt<HTMLDivElement>(3);
+  return (
+    <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
+      {layers.map((l, i) => (
+        <figure className="layers__item" key={l.src} style={{ "--i": i } as React.CSSProperties}>
+          <img src={asset(l.src)} alt="" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+          <figcaption className="layers__label">{l.label}</figcaption>
+        </figure>
+      ))}
+      <Chart />
+    </div>
+  );
+}
+
+/**
+ * A chart drawn in sand over the layers: bars that rise, a line that draws
+ * itself, a few data points that light up. Procedural, so the numbers
+ * mean nothing and claim nothing.
+ */
+function Chart() {
+  const bars = [34, 52, 41, 68, 58, 80, 72, 91];
+  const pts = bars.map((v, i) => [40 + i * 60, 180 - v * 1.5] as const);
+  const d = pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
+  return (
+    <svg className="layers__chart" viewBox="0 0 520 200" preserveAspectRatio="none">
+      <g className="chart__grid" stroke="rgba(241,237,228,0.18)" strokeWidth="1">
+        {[40, 80, 120, 160].map((y) => (
+          <line key={y} x1="20" x2="500" y1={y} y2={y} />
+        ))}
+      </g>
+      <g className="chart__bars" fill="rgba(227,210,173,0.55)">
+        {bars.map((v, i) => (
+          <rect key={i} x={24 + i * 60} y={180 - v * 1.5} width="32" height={v * 1.5} rx="3" style={{ animationDelay: `${600 + i * 90}ms` }} />
+        ))}
+      </g>
+      <path className="chart__line" d={d} fill="none" stroke="#e3d2ad" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" pathLength={1} />
+      <g className="chart__dots" fill="#0f0f0e" stroke="#e3d2ad" strokeWidth="2">
+        {pts.map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="4.5" style={{ animationDelay: `${1500 + i * 110}ms` }} />
+        ))}
+      </g>
+    </svg>
   );
 }

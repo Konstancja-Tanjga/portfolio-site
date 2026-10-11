@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useId, useState } from "react";
 
 import type { Shot as ShotData, Width } from "../content/types";
 import { asset } from "./asset";
@@ -15,12 +15,31 @@ export const ShotViewer = createContext<
 >(null);
 
 /** One image in the wall, or the slot where it will go. */
-export function Shot({ width = "wall", src, slot, caption }: ShotData & { width?: Width }) {
+export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded }: ShotData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  if (folded) {
+    return (
+      <Lane width={width}>
+        <div ref={ref as React.RefObject<HTMLDivElement>} className={[shown ? "drawer is-shown" : "drawer", open ? "is-open" : ""].join(" ")}>
+          <button type="button" className="drawer__head" aria-expanded={open} aria-controls={`${id}-body`} onClick={() => setOpen((v) => !v)}>
+            {src && <span className="drawer__thumb" aria-hidden="true"><img src={asset(src)} alt="" loading="lazy" decoding="async" /></span>}
+            <span className="drawer__title">{caption ?? slot ?? "Diagram"}</span>
+            <span className="drawer__hint" aria-hidden="true">{open ? "Close" : "Open the diagram"}</span>
+            <span className="drawer__chevron" aria-hidden="true" />
+          </button>
+          <figure id={`${id}-body`} className="shot is-shown drawer__body" hidden={!open}>
+            <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
+          </figure>
+        </div>
+      </Lane>
+    );
+  }
   return (
     <Lane width={width}>
       <figure ref={ref} className={shown ? "shot is-shown" : "shot"}>
-        <ShotFrame src={src} slot={slot} caption={caption} />
+        <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
         {caption && <figcaption className="shot__caption">{caption}</figcaption>}
       </figure>
     </Lane>
@@ -80,8 +99,18 @@ export function ShotSet({
   );
 }
 
-function ShotFrame({ src, slot, caption }: ShotData) {
+/** `/x/name-2400.webp` → the 1600, 2400 and full variants of the same screen. */
+function variants(src: string) {
+  const m = src.match(/^(.*?)-(?:1600|2400|full)\.webp$/);
+  const base = m ? m[1] : null;
+  return base
+    ? { small: `${base}-1600.webp`, large: `${base}-2400.webp`, full: `${base}-full.webp` }
+    : { small: src, large: src, full: src };
+}
+
+function ShotFrame({ src, slot, caption, frame, hotspots }: ShotData) {
   const view = useContext(ShotViewer);
+  const [hover, setHover] = useState(false);
 
   if (!src) {
     return (
@@ -91,24 +120,72 @@ function ShotFrame({ src, slot, caption }: ShotData) {
     );
   }
 
+  const v = variants(src);
   // When a shot has a caption, every caller prints it next to the image
   // (figcaption or subcaption), so the image and its button are not named
   // with it here: that made a screen reader read each caption twice. A shot
   // without a caption has no accessible name.
-  const img = (
-    <img className="shot__img" src={asset(src)} alt="" loading="lazy" decoding="async" />
-  );
+  // A device export from Figma: the MacBook is in the picture, so the
+  // image is the whole mockup, served at two page sizes and opened full.
+  const img =
+    frame === "macbook" ? (
+      <img
+        className="shot__img shot__img--device"
+        src={asset(v.large)}
+        srcSet={`${asset(v.small)} 1600w, ${asset(v.large)} 2400w`}
+        sizes="(max-width: 48rem) 100vw, 72rem"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        width={2530}
+        height={1583}
+      />
+    ) : (
+      <img className="shot__img" src={asset(src)} alt="" loading="lazy" decoding="async" />
+    );
 
-  if (!view) return img;
+  const pins = hotspots?.length ? (
+    <>
+      <span className={hover ? "pins is-live" : "pins"} aria-hidden="true">
+        {hotspots.map((h, i) => (
+          <span
+            key={i}
+            className={`pin${h.x > 60 ? " pin--left" : ""}`}
+            style={{ left: `${h.x}%`, top: `${h.y}%`, transitionDelay: `${i * 60}ms` }}
+          >
+            <span className="pin__dot" />
+            <span className="pin__bubble">{h.text}</span>
+          </span>
+        ))}
+      </span>
+      <ul className="pins__list">
+        {hotspots.map((h, i) => (
+          <li key={i}>{h.text}</li>
+        ))}
+      </ul>
+    </>
+  ) : null;
+
+  if (!view) {
+    return (
+      <span className="shot__stage" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        {img}
+        {pins}
+      </span>
+    );
+  }
 
   return (
-    <button
-      type="button"
-      className="shot__open"
-      onClick={() => view({ src: asset(src), caption })}
-      aria-label="View full size"
-    >
-      {img}
-    </button>
+    <span className="shot__stage" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <button
+        type="button"
+        className="shot__open"
+        onClick={() => view({ src: asset(v.full), caption })}
+        aria-label="View full size"
+      >
+        {img}
+      </button>
+      {pins}
+    </span>
   );
 }

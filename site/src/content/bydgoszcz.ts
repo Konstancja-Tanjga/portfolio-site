@@ -5,13 +5,13 @@ export const bydgoszcz: CaseStudy = {
   title: "Bydgoszcz Design Challenge",
   what: "A competition entry on promoting Polish design, awarded a distinction",
   lead:
-    "Our solution for the Bydgoszcz Design Challenge 2022, on how to promote Polish design. It was awarded a distinction.",
+    "Our team's entry for the Bydgoszcz Design Challenge 2022, on how to promote Polish design, was awarded a distinction.",
   status: { state: "live" },
   group: "recognition",
   cover: {
     kicker: "RECOGNITION · COMPETITION",
     headline: ["Bydgoszcz", "Design Challenge"],
-    subline: "our solution — distinction",
+    subline: "a team entry, awarded a distinction",
     stamp: "COMPETITION · PROMOTING POLISH DESIGN · DISTINCTION",
     credit: "Team entry · distinction · 2022",
     shot: { src: "/work/bydgoszcz/01.png" },
@@ -31,7 +31,7 @@ export const bydgoszcz: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The Bydgoszcz Design Challenge was a three-day competition, held on 14–16 October 2022, in which teams used the design thinking process to solve one challenge with help from mentors. The theme was how to promote Polish design. Our team chose tourists as the target group and started from the paper dolls Jan Kurzatkowski made for the Ład cooperative. We made a paper prototype, painted it digitally in regional patterns from Kurpie, Kashubia, Masuria and Podlasie, and turned it into a series of regional dolls meant as holiday souvenirs. The entry was awarded a distinction.</p>",
+            "<p>The Bydgoszcz Design Challenge was a three-day competition, held on 14–16 October 2022, in which teams used the design thinking process to solve one challenge with help from mentors. The theme was how to promote Polish design. Our team chose tourists as the target group and started from the paper dolls Jan Kurzatkowski made for the Ład cooperative. We made a paper prototype, painted it digitally in regional patterns from Kurpie, Kashubia, Masuria, and Podlasie, and turned it into a series of regional dolls meant as holiday souvenirs. The entry was awarded a distinction.</p>",
         },
         {
           kind: "shot",
@@ -52,7 +52,7 @@ export const bydgoszcz: CaseStudy = {
           width: "wall",
           src: "/work/bydgoszcz/06.png",
           caption:
-            "The three regional dolls as souvenirs: a Kashubian, a Masurian and a Kurpie doll.",
+            "The three regional dolls as souvenirs: a Kashubian, a Masurian, and a Kurpie doll.",
         },
       ],
     },

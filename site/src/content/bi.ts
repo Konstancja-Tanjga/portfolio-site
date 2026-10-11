@@ -17,6 +17,10 @@ import type { CaseStudy } from "./types";
  * counts, or the author's confirmation. Nothing is rounded up.
  */
 const S = "/work/applus-analytics/screens";
+const D = "/work/applus-analytics/device";
+const C = "/work/applus-analytics/clips";
+/** the prototype route, under the deployment base */
+const P = ((import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/").replace(/\/$/, "") + "/prototype/analytics";
 
 export const bi: CaseStudy = {
   slug: "applus-analytics",
@@ -31,20 +35,28 @@ export const bi: CaseStudy = {
     headline: ["Business", "Intelligence"],
     subline: "for APplus ERP",
     stamp: "DASHBOARDS · QUERIES · DATA MODELS · AI ANALYST",
-    credit: "Lead Product Designer · Asseco Solutions · 2026",
+    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-analytics/00-cover.png" },
+    layers: [
+      { src: "/work/applus-analytics/device/dashboards-2400.webp", label: "Dashboards" },
+      { src: "/work/applus-analytics/device/analyst-chat-2400.webp", label: "AI Data Analyst" },
+      { src: "/work/applus-analytics/device/models-relationship-2400.webp", label: "Data models" },
+      { src: "/work/applus-analytics/device/home-2400.webp", label: "Home" },
+    ],
   },
   meta: [
-    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
+    { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Product", value: "APplus ERP — Analytics" },
+    { label: "Product", value: "APplus ERP, Analytics" },
     {
       label: "Design system",
-      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
+      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Team", value: "Seven: three developers, a requirements engineer, QA, a PM and me" },
-    { label: "Period", value: "January – September 2026, released September 2026" },
+    { label: "Period", value: "January to September 2026" },
+    { label: "Launch", value: "Presented at Vision Days on 22 September 2026; generally available from October 2026" },
+    { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" },
   ],
   chapters: [
     {
@@ -53,17 +65,22 @@ export const bi: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
+            {
+              key: "Context",
+              value:
+                "APplus customers already had analytics, through a third-party BI tool outside the ERP. Analytics is the in-house replacement: a data warehouse and the application on top of it, informed by how customers used the old tool and by market practice for BI.",
+            },
             {
               key: "Problem",
               value:
-                "APplus customers did their reporting in an external BI tool, outside the ERP. The PM had built a working prototype of an in-house replacement in Lovable, which showed it could be built but left open how people would find, trust and share a number.",
+                "The PM had built a working prototype of the replacement in Lovable. It showed the product could be built and left open how people would find, trust and share a number.",
             },
             {
-              key: "My part",
+              key: "My role and scope",
               value:
-                "The audit, information architecture, personas and flows, the surface rules, requirement-level design, a clickable React prototype on FOX, and design review of the build.",
+                "The only designer on the product. The audit of the prototype, the information architecture, personas and flows, the nine surface rules the whole application obeys, requirement-level design and sign-off, a working prototype on FOX components alongside the Figma file, and design review of every pull request that changes a screen. I ran the eight validation sessions myself; the team has no researcher.",
             },
             {
               key: "Decision 1",
@@ -81,11 +98,15 @@ export const bi: CaseStudy = {
                 "Reach, authorship and join type are printed on the object itself. Nobody has to open a dialog to learn who can see a query.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "7 of 7 audit questions answered. 8 validation sessions with subject-matter experts. Every app-bar action and every render panel in the prototype checked against the rules.",
+                "Shipped. 7 of 7 audit questions answered by a rule or a template; 8 validation sessions with subject-matter experts; every app-bar action and every render panel in the prototype checked against the rules. Presented at Vision Days on 22 September 2026, generally available from October 2026.",
             },
-            { key: "Shipped", value: "September 2026" },
+            {
+              key: "Period and team",
+              value:
+                "January to September 2026. Seven people: three developers, a requirements engineer, QA, a PM and me.",
+            },
           ],
         },
       ],
@@ -101,20 +122,46 @@ export const bi: CaseStudy = {
             "<p>Analytics is the new business intelligence module inside APplus ERP. It turns the data a company already has into numbers it can act on, and it does that on the data the ERP is already producing.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/hero-analyst.png`,
-          caption:
-            "The AI Data Analyst with a detail thread open: one fragment of an answer questioned without touching the main analysis.",
+          kind: "passage",
+          html: `<p><strong>A working prototype</strong> of the application, built on Big Hat components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
         },
         {
-          kind: "pull",
-          text: "Design and code stay one system. The Figma library and tokens mirror what ships, Code Connect links every component to its implementation, and the spec engineers build from is frozen with the code it describes.",
+          kind: "carousel",
+          items: [
+            { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: Ask AI Data Analyst on top, favourite dashboards and analyses below." },
+            { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library, sorted by domain, with all, favourites and shared with me." },
+            { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "Graph, pivot and table are views of one analysis, switched in its view toolbar." },
+            { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
+            { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "Fields on the left, the grid on the right, row and total sums in the toolbar." },
+            { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Type, granularity, owner and last update on top; the SQL definition and a preview below." },
+            { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "Answers with a live preview instead of a paragraph: columns, grouping, chart type and a match score before anything is saved." },
+            { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
+            { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Applied", body: "The correction returned to the main analysis as one step, with its reason attached: EMEA revenue, week 9." },
+            { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with the system it came from and how many fields it has." },
+            { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Its SQL, a result preview and a Governance panel: who can use it is part of the query." },
+            { src: `${D}/models-select-2400.webp`, frame: "macbook", title: "Data models", body: "Saved models, and the New menu split by intent: build, connect, schedule and share." },
+            { src: `${D}/models-relationship-2400.webp`, frame: "macbook", title: "Relationships", body: "The join states its direction and type on the canvas, and exists as a row in the panel." },
+            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Data sources, connections, users and permissions, and the admin spine on the left." },
+          ],
         },
         {
           kind: "passage",
-          html:
-            "<p><strong>What I owned:</strong> the audit of the existing concept, the shape of the product, its information architecture, personas and user flows, market and competitor analysis, the surface rules the whole application obeys, requirement-level design and sign-off, and day-to-day work with the developers. FOX, the design system it is built on, is mine to own: its tokens and component API. I did its migration from v2.3 to v3.0 with one other designer.</p>",
+          html: "<p><strong>What I owned.</strong> The only designer on the product, from the audit to the review of the build.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>The audit</strong> of the existing concept, and <strong>the shape of the product</strong> that came out of it.",
+            "<strong>Information architecture</strong>, personas and user flows; <strong>market and competitor analysis</strong>.",
+            "<strong>The nine surface rules</strong> the whole application obeys.",
+            "<strong>Requirement-level design and sign-off</strong>: every frame tied to its REQ number, dated and signed.",
+            "<strong>Design review of every pull request</strong> that changes a screen, on its preview build.",
+            "<strong>FOX, the design system it runs on</strong>: its tokens and its component API are mine. I did its migration from v2.3 to v3.0 with one other designer.",
+          ],
+        },
+        {
+          kind: "pull",
+          text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
         },
       ],
     },
@@ -126,12 +173,20 @@ export const bi: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html:
-            "<p>A number is only as true as the model behind it, the period it covers and the role of the person reading it, and all three are invisible by default. Two people can open the same dashboard and be entitled to different rows. A year-on-year comparison can be wrong because the current year has not finished loading, while the query itself is correct. Each of those is a UI constraint before it is a backend constraint, because the UI is where a user forms a false belief about a number they will then repeat in a meeting.</p>",
+          html: "<p>A number is only as true as three things nobody can see: <strong>the model behind it, the period it covers, and the role of the person reading it.</strong></p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Same dashboard, different rows.</strong> Two people open it and are entitled to different data.",
+            "<strong>A correct query, a wrong comparison.</strong> Year on year looks down because the current year has not finished loading.",
+            "<strong>A UI problem before a backend problem.</strong> The screen is where a false belief about a number is formed, and then repeated in a meeting.",
+            "<strong>Author and defender are different people.</strong> Whoever builds a query is almost never the one who has to defend its number.",
+          ],
         },
         {
           kind: "pull",
-          text: "The work was making authorship, reach and freshness legible on the artefact itself, in a product where the person who builds a query is almost never the person who has to defend the number it produces.",
+          text: "The work: make authorship, reach and freshness legible on the artefact itself.",
         },
       ],
     },
@@ -219,9 +274,17 @@ export const bi: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html:
-            "<p>I did not start by drawing. A working prototype already existed, built in Lovable by the PM, so I imported all of it into Figma and audited it screen by screen: against market practice for BI tools, and against what APplus users already know how to do. I grouped the screens into four clusters (entry and shell, data foundation, discovery and collaboration, insight assets) and pinned each open question to the screen that raised it.</p>" +
-            "<p>There is no dedicated researcher on the team, so I ran the validation myself: eight sessions with subject-matter experts, the PM and the requirements engineer, each walking a prototype flow end to end on real questions from their own work. Weak options were dropped in the room, before anything was designed in detail.</p>",
+          html: "<p>The PM's Lovable prototype was the starting point, not a blank page.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Audited it screen by screen.</strong> The whole prototype imported into Figma and read against market practice for BI tools and against what APplus users already know how to do.",
+            "<strong>Four clusters.</strong> Entry and shell, data foundation, discovery and collaboration, insight assets.",
+            "<strong>Seven questions, pinned to the screens that raised them.</strong> Each one is answered by a rule or a template in chapter 04.",
+            "<strong>Eight validation sessions, run by me.</strong> The team has no researcher. Subject-matter experts, the PM and the requirements engineer each walked a flow end to end on questions from their own work.",
+            "<strong>Weak options dropped in the room</strong>, before anything was designed in detail.",
+          ],
         },
         {
           kind: "stats",
@@ -239,11 +302,29 @@ export const bi: CaseStudy = {
       n: "04",
       heading: "What the audit asked",
       standfirst:
-        "The purple notes are the questions as I pinned them on the Lovable screens. The table is what answered each one.",
+        "The purple notes are the seven questions as I pinned them on the Lovable screens. Each one became a product rule or a template; the table is what answered each one.",
       blocks: [
         {
           kind: "duo",
-          items: [{ src: `${S}/audit-1.png` }, { src: `${S}/audit-2.png` }],
+          items: [
+            {
+              src: `${S}/audit-1.png`,
+              hotspots: [
+                { x: 18, y: 14, text: "Where does this page belong? No breadcrumb, no back." },
+                { x: 52, y: 38, text: "The same screen, rendered without breadcrumbs." },
+                { x: 30, y: 70, text: "What is the correct path, and where does “Visualisierung” come from?" },
+                { x: 72, y: 82, text: "Two searches on one shell." },
+              ],
+            },
+            {
+              src: `${S}/audit-2.png`,
+              hotspots: [
+                { x: 22, y: 22, text: "What should be shown instead of an error?" },
+                { x: 58, y: 52, text: "Third-party or in-house for the designer surface, like Board Designer?" },
+                { x: 40, y: 84, text: "“AI Support”: is that Elly?" },
+              ],
+            },
+          ],
           caption: "The PM's prototype, imported into Figma and annotated screen by screen.",
         },
         {
@@ -290,15 +371,22 @@ export const bi: CaseStudy = {
         "A generated prototype is cheap enough to throw away. A designed and signed-off screen is not, so the disagreements happen here.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>Before a frame was drawn, a settled requirement went into Codex, and later Claude, and came back as something clickable within hours. Those prototypes were what the SME sessions argued over. I lead the implementation through Claude Code: skills, AGENTS.md, tokens, review and merge, so development starts from running code instead of rebuilding a picture from a spec.</p>",
+          kind: "flow",
+          stages: [
+            { title: "A settled requirement", body: "Before a frame was drawn, it went into Codex, and later Claude." },
+            { title: "Clickable within hours", body: "A generated prototype on FOX components: cheap enough to throw away." },
+            { title: "Argued over in the room", body: "The eight SME sessions walked these prototypes, not slides." },
+            { title: "Proven, then handed on", body: "The prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
+          ],
+          note: "On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/prototype.png`,
-          caption: "A generated prototype of Settings → Version & updates, with the changelog open before an update is installed.",
+          src: `${D}/models-select-2400.webp`,
+              frame: "macbook",
+              caption:
+                "Saved data models, and the New menu split by intent: build, connect, schedule and share. A data model is one of the things you connect, not something you draw from nothing.",
         },
       ],
     },
@@ -328,7 +416,7 @@ export const bi: CaseStudy = {
               version: "v2.3",
               claim: "The file is bound to the code",
               sourceOfTruth: "Still Figma, but every component is tied to its implementation through Code Connect.",
-              ships: "Figma → Storybook → dev, with code-side work written back into the file over MCP.",
+              ships: "Figma to Storybook to development, with code-side work written back into the file over MCP.",
               costs: "The binding is real, the ownership is not: the file still has to be kept honest by hand every time code moves first.",
             },
             {
@@ -344,7 +432,7 @@ export const bi: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A FOX component, as a developer meets it. Every screen in this case study is assembled from elements like this one: attributes for state, named slots for content, and actions the dialog itself resolves. The object-scope rule (R1 below) ends in exactly this element.</p>",
+            "<p>A FOX component, as a developer meets it. Every screen in this case study is assembled from elements like this one: attributes for state, named slots for content, and actions the dialog itself resolves. The object-scope rule, R1 on the screen architecture folders, ends in exactly this element.</p>",
         },
         {
           kind: "code",
@@ -364,7 +452,7 @@ export const bi: CaseStudy = {
   ></fox-button>
 </fox-dialog>`,
           caption:
-            "fox-dialog, the Default story, copied verbatim. FOX components are Lit web components published one package per component, e.g. @assecosolutions/fox-dialog. The public Storybook documents the v1 line; v3.0 stays inside the company.",
+            "fox-dialog, the Default story, copied verbatim. FOX components are Lit web components published one package per component, for example @assecosolutions/fox-dialog. The public Storybook documents the v1 line; v3.0 stays inside the company.",
           source: {
             text: "Source: FOX Storybook, atoms / fox-dialog.",
             href: "https://design-system-v1.assecosolutions.com/?path=/story/atoms-fox-dialog--default-story",
@@ -379,6 +467,39 @@ export const bi: CaseStudy = {
       standfirst:
         "Every screen in the product is one of five layouts with different content in the same zones. That is what made the layout arguments reusable instead of per-screen. Zone map from the Analytics prototype; one rectangle is one real container, and sizes are the values in code.",
       blocks: [
+        {
+          kind: "duo",
+          items: [
+            {
+              src: `${D}/analysis-sheet-2400.webp`,
+              frame: "macbook",
+              caption: "Graph view with the side sheet open. Changing how the body renders (R2) opens the sheet from the view toolbar, without a scrim, and the chart reflows beside it.",
+            },
+            {
+              src: `${D}/analysis-pivot-2400.webp`,
+              frame: "macbook",
+              caption: "Pivot view: available fields on the left, the result grid on the right, and the view toolbar that travels with the workspace (R6, R7).",
+            },
+          ],
+        },
+        {
+          kind: "video",
+          clip: true,
+          width: "wall",
+          src: `${C}/r2-side-sheet.mp4`,
+          poster: `${C}/r2-side-sheet.webp`,
+          title: "The side sheet opens and the chart reflows beside it",
+          caption: "R2 in the prototype: Configure opens the side sheet without a scrim, and the chart type and grouping change live while the sheet stays open.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          width: "wall",
+          src: `${C}/enlarge-restore.mp4`,
+          poster: `${C}/enlarge-restore.webp`,
+          title: "Enlarge and restore the workspace",
+          caption: "R6 in the prototype: Enlarge maximises the body inside the content layer, the rail and app bar stay, and the same button restores it.",
+        },
         {
           kind: "annotated",
           items: [
@@ -487,72 +608,17 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "surface-rules",
-      n: "06b",
-      heading: "Surface rules",
-      maxim: "The surface follows the scope of what is acted on, never the location of the button.",
-      standfirst:
-        "Nine rules, one question each time: what is being acted on? Location is a consequence of scope, which is what makes the rules work for controls that do not exist yet. Each rule was checked against every control in the prototype (PR-07).",
-      blocks: [
-        {
-          kind: "spec",
-          caption: "The scope test: what is being acted on decides the surface, and the surface decides where the control lives. Every row is a real case in the prototype.",
-          rows: [
-            { key: "The whole object the page shows", value: "Modal · in fox-app-bar" },
-            { key: "How the body content is rendered", value: "Right side sheet · in the body view toolbar" },
-            { key: "An object inside the body: a card, a widget", value: "Modal · in that object's overflow menu" },
-            { key: "A short choice with no inputs", value: "Anchored menu · next to its trigger" },
-            { key: "Something destructive", value: "Modal naming the object · wherever the object is" },
-            { key: "An immediate commit or view state", value: "No surface, a toast confirms · in the bar that owns the state" },
-            { key: "An object in another domain", value: "Route to the owning page · the action stays, the surface moves" },
-            { key: "The application's own configuration", value: "Full overlay · from the profile and tenant footer" },
-          ],
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>R1 · Object scope → modal.</strong> An action on the whole object the page shows opens a modal, so it belongs in fox-app-bar. <em>In the prototype:</em> 6 of 6 app-bar actions obey it (share, permissions, edit analysis on four pages, create data model, copy analysis, query create and edit).",
-            "<strong>R2 · Render scope → right side sheet.</strong> Changing how the body is rendered opens the side sheet, without a scrim, from the body toolbar. <em>In the prototype:</em> 6 of 6 panels obey it.",
-            "<strong>R3 · Object inside the body → modal.</strong> A card or a widget is still an object, so its actions open a modal from its own overflow menu. <em>In the prototype:</em> the controls that looked like exceptions (widget settings, card edit, copy, delete, permissions) all pass the scope test.",
-            "<strong>R4 · Short choice → anchored menu.</strong> No inputs, no scrim, closes on an outside click. If it needs a field it is a modal; if it must stay open it is a sheet.",
-            "<strong>R5 · Destructive → modal that names the object.</strong> The trigger may only ask. <em>In the prototype:</em> delete data model (REQ-2764, REQ-2783, REQ-2784), delete analysis (REQ-2290), delete query, author only (REQ-2332).",
-            "<strong>R6 · Immediate commit or view state → no surface.</strong> It acts on click and a toast confirms: save, enlarge, grid/list, the verified toggle. Safe only when the act is cheap to undo; otherwise it is R5.",
-            "<strong>R7 · One entry point per action.</strong> Never the same control in the app bar and the body. The one sanctioned exception is Enlarge, which graph and pivot both delegate up to the page.",
-            "<strong>R8 · Another object's domain → route.</strong> Go to the page that owns it and open its surface there, carrying the intent. <em>In the prototype:</em> query permissions route to /queries with Eligible roles highlighted, because the Queries SRS puts access in that field (REQ-2392, REQ-2399, REQ-2336, REQ-2401).",
-            "<strong>R9 · Application configuration → full overlay.</strong> Settings replaces the page area. It is a place you work in, not a single decision, and it has nothing to do with the page you came from.",
-          ],
-        },
-        {
-          kind: "spec",
-          caption: "Three things the rules changed after they were written.",
-          rows: [
-            {
-              key: "Sort and Smart filter",
-              value: "Sat in the detail app bar. They change how the body renders (R2), so they moved to the body toolbar and open in the side sheet.",
-            },
-            {
-              key: "PDF export",
-              value: "Was added to the Analyses app bar, then removed. Export keeps one entry point, the PNG/PDF menu in the graph toolbar (R7).",
-            },
-            {
-              key: "Settings",
-              value: "The structure frames said “opens as overlay, not side sheet”. R9 is that note generalised: scope wider than the page means a surface wider than the page.",
-            },
-          ],
-        },
-      ],
-    },
-    {
       id: "sign-off",
       n: "07",
       heading: "Design and sign-off",
       standfirst:
-        "A frame is tied to its requirement: the SRS it comes from, the REQ number, a date and a status, then design sign-off. For example, REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 03.06.2026 and the status Review.",
+        "A frame is tied to its requirement: the SRS it comes from, the REQ number, a date and a status, then design sign-off. For example, REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 3 June 2026 and the status Review. Design acceptance is part of the definition of done.",
       blocks: [
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/home.png`,
+          src: `${D}/home-2400.webp`,
+          frame: "macbook",
           caption:
             "Home, the landing surface for people who consume rather than author. Ask AI Data Analyst sits on top with four ready-made questions; favourite dashboards and analyses below. Every card shows its role badges, its author and its date.",
         },
@@ -560,12 +626,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/dashboards.png`,
+              src: `${D}/dashboards-2400.webp`,
+          frame: "macbook",
               caption:
                 "Dashboards: the same object as a library, sorted by domain (revenue, pipeline, retention, finance, risk), with all, favourites and shared with me.",
             },
             {
-              src: `${S}/analysis.png`,
+              src: `${D}/analysis-2400.webp`,
+          frame: "macbook",
               caption:
                 "Analyses reuse the card, the badges and the filters of dashboards exactly. What differs is what the object does, not how it is found.",
             },
@@ -574,7 +642,16 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${S}/analyst-preview.png`,
+          src: `${D}/dashboard-detail-2400.webp`,
+          frame: "macbook",
+          caption:
+            "A dashboard opened: object type, granularity, owner and last update printed at the top, the SQL definition under them, and a result preview that waits to be run. Authorship and reach on the artefact itself.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: `${D}/analyst-chat-2400.webp`,
+          frame: "macbook",
           caption:
             "The AI Data Analyst answers with a live preview instead of a paragraph: detected columns, grouping, chart type, sorting, filter and a match score, plus a warning that the query will be built as a pivot table. Everything it inferred is visible before anything is saved.",
         },
@@ -582,12 +659,14 @@ export const bi: CaseStudy = {
           kind: "duo",
           items: [
             {
-              src: `${S}/data-models.png`,
+              src: `${D}/models-relationship-2400.webp`,
+          frame: "macbook",
               caption:
                 "Data models: two queries on the canvas with typed columns, and the join drawn as an object that states its direction and type.",
             },
             {
-              src: `${S}/settings.png`,
+              src: `${D}/settings-2400.webp`,
+          frame: "macbook",
               caption:
                 "Settings: data sources with server, port and authentication, and the admin spine on the left. The New menu is split by intent: build, connect, schedule and share.",
             },
@@ -596,237 +675,282 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "uc-ai-analyst",
+      id: "use-cases",
       n: "08",
-      heading: "AI Data Analyst",
-      maxim: "A follow-up question is a branch, not a turn.",
+      heading: "Three use cases",
+      maxim: "Each one makes the thing that could mislead you legible before it does.",
       standfirst:
-        "Goal: question a fragment of an analysis without derailing the analysis. The branch is anchored to the fragment that provoked it and ends in exactly one of two ways, applied or discarded.",
+        "One per area: the AI Data Analyst, Queries and Data models. Open a tile and the use case unfolds to the right, one panel at a time: screens, the template, the rule it sets.",
       blocks: [
         {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/thread-diagram.png`,
-          caption: "Main analysis thread on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/analyst-thread.png`,
-          caption:
-            "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
-        },
-        {
-          kind: "usecase",
-          uc: {
-            id: "UC-01",
-            title: "Question a fragment of an analysis without derailing the analysis",
-            actor: {
-              name: "02 — The controller",
-              body: "Reading an AI-generated analysis, and not yet willing to believe it.",
-              note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
-            },
-            trigger: {
-              body: "One phrase in the answer looks wrong: “overall revenue for the years 2024 and 2025”. 2025 is lower, and the reader cannot tell whether that is a fact or an artefact.",
-              note: "The trigger is doubt, not a task.",
-            },
-            precondition: {
-              body: "An analysis exists in the main thread as a live preview: chart, measure, grouping and filters visible before anything is saved.",
-            },
-            flow: [
-              { n: "1", text: "Select the fragment inside the answer." },
-              {
-                n: "2",
-                text: "A detail thread opens beside the analysis, headed with what it is scoped to: one fragment, and the main chat stays untouched.",
-                note: "The user is told what will and will not be affected before they type.",
-              },
-              {
-                n: "3",
-                text: "The panel restates the selection verbatim and pins the context that produced it as chips: measure revenue, group by product category, filter booking date 2024–2025.",
-                note: "The chips make the branch reproducible. Without them it is a question about nothing in particular.",
-              },
-              { n: "4", text: "The follow-up is asked inside the panel: why is 2025 lower than 2024 here?" },
-              {
-                n: "5",
-                text: "The answer names the cause instead of restating the number: 2025 is not a full year, bookings load only to 30 November, so the comparison is not like-for-like.",
-              },
-              {
-                n: "6",
-                text: "An evidence card carries the same-period figures for both years with the delta, and the answer can be verified: Show SQL · Open as pivot · Copy.",
-                note: "A controller will be asked where the number came from. “The assistant said so” cannot be repeated to an auditor.",
-              },
-            ],
-            exits: [
-              { label: "Apply to main analysis", text: "The correction enters the main thread as a new step, with the reason attached to it." },
-              { label: "Discard", text: "The branch closes and nothing propagates. The main analysis is exactly what it was." },
-            ],
-            exitsNote: "A branch that can end ambiguously is not a branch.",
-            postcondition: {
-              body: "Either the main analysis gained one step that names its own reason, or it gained nothing. It never gains a transcript of the investigation.",
-            },
-            why: "Rejected: a plain threaded reply. It can carry the question, but it cannot carry a decision back, and the analysis drifts while nobody is watching.",
-            rule: "An action on a fragment opens a surface scoped to that fragment, and returns exactly one thing to its parent: a change, or nothing.",
-            ruleNote: "The same rule governs widget settings inside a dashboard.",
-          },
-        },
-      ],
-    },
-    {
-      id: "uc-queries",
-      n: "09",
-      heading: "Queries",
-      maxim: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-      standfirst:
-        "Goal: publish a query other people can use, and let everyone see who else can use it without opening a permissions dialog.",
-      blocks: [
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/queries-shelf.png`,
-          caption:
-            "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
-        },
-        {
-          kind: "duo",
+          kind: "dossier",
           items: [
             {
-              src: `${S}/queries-card.png`,
-              caption:
-                "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
-            },
-            {
-              src: `${S}/queries-settings.png`,
-              caption:
-                "Settings holds the other half of the same permission model, so the reading screens and the admin screens cannot drift apart.",
-            },
-          ],
-        },
-        {
-          kind: "usecase",
-          uc: {
-            id: "UC-02",
-            title: "Publish a query other people can use, and see who can use it",
-            actor: {
-              name: "01 — The key user, publishing",
-              body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
-              note: "One author, three kinds of reader.",
-            },
-            trigger: {
-              body: "A query built for one department turns out to be useful to three. Its reach starts growing before anyone decides that it should.",
-              note: "Success is the trigger, which is exactly when exposure grows without a decision behind it.",
-            },
-            precondition: {
-              body: "The query runs against a named data model, and roles exist in the system, so “who can see this” is already an answerable question.",
-            },
-            flow: [
-              { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
-              {
-                n: "2",
-                text: "Each card states on its face who it reaches, who made it, when, and what it reads: Administrator, Moderator, Users; data model, author, date.",
-                note: "Exposure is visible at rest.",
-              },
-              {
-                n: "3",
-                text: "Settings is organised by what an admin owns: system configuration (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
-              },
-              {
-                n: "4",
-                text: "Column links are configured against a template, /customers/{value}, and tested in place with a column name and a test value before they are saved.",
-                note: "Configuration you can verify where you write it does not become a support ticket next month.",
-              },
-              { n: "5", text: "Translations, versions and update policy live in the same shell." },
-            ],
-            postcondition: {
-              body: "Reach is a property of the artefact, visible wherever the artefact is. Nobody has to open a permissions dialog to find out who can see their work.",
-            },
-            why: "The dangerous failure in BI on an ERP is a query that quietly reaches further than its author thought. Rejected: permissions behind a per-item dialog. Fewer pixels, but exposure becomes something you have to go and check.",
-            rule: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-            ruleNote: "Both use cases make the thing that could mislead you legible before it does.",
-          },
-        },
-      ],
-    },
-    {
-      id: "uc-data-models",
-      n: "10",
-      heading: "Data models",
-      maxim: "Anything that changes the number a model produces is stated on the canvas, in words, before it is committed.",
-      standfirst:
-        "Goal: build a model other people's numbers can rest on. The same two queries joined two different ways produce two different numbers, and in a settings dialog that difference stays hidden until two people bring incompatible figures to the same meeting.",
-      blocks: [
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${S}/models-select.png`,
-              caption:
-                "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
-            },
-            {
-              src: `${S}/models-empty.png`,
-              caption:
-                "The empty canvas says what it expects: one validated query, then relationships, then validation. It offers exactly one action, so there is no second path into the flow.",
-            },
-          ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/models-relationship.png`,
-          caption:
-            "Define relationships. The join states its direction and type, INNER or LEFT, and the same relationship exists as an editable row in the right panel, so the drawing is a view of the list rather than the only copy of it.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/models-anatomy.png`,
-          caption:
-            "One relationship. Provenance rides on the tile, the column type is visible before the link is made, and joining a STRING to a FLOAT is refused at the endpoint, not at run time.",
-        },
-        {
-          kind: "steps",
-          standfirst:
-            "Building a model is a sequence of gates, not a form with a save button. Each gate refuses something, and only the last one changes what other people see.",
-          items: [
-            {
+              id: "uc-ai-analyst",
               n: "01",
-              stage: "Select query",
-              title: "The unit is a query, not a table",
-              rule: {
-                label: "Rule",
-                body: "Everything on the shelf was already written and validated upstream, and each card carries its source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields.",
-              },
+              cover: { src: `${D}/analyst-thread-2400.webp`, frame: "macbook" },
+              title: "AI Data Analyst",
+              maxim: "A follow-up question is a branch, not a turn.",
+              standfirst:
+                "Goal: question a fragment of an analysis without derailing the analysis. The branch is anchored to the fragment that provoked it and ends in exactly one of two ways, applied or discarded.",
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${S}/thread-diagram.png`,
+                  folded: true,
+                  caption: "The thread model: main analysis on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/analyst-thread-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
+                },
+                {
+                  kind: "video",
+                  clip: true,
+                  width: "wall",
+                  src: `${C}/uc01-detail-thread.mp4`,
+                  poster: `${C}/uc01-detail-thread.webp`,
+                  title: "A fragment questioned, answered, and applied to the main analysis",
+                  caption: "UC-01 in the prototype: select the fragment, ask why, read the evidence card, Apply. The main analysis gains one step with its reason.",
+                },
+                {
+                  kind: "usecase",
+                  uc: {
+                    id: "UC-01",
+                    title: "Question a fragment of an analysis without derailing the analysis",
+                    actor: {
+                      name: "02, the controller",
+                      body: "Reading an AI-generated analysis, and not yet willing to believe it.",
+                      note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
+                    },
+                    trigger: {
+                      body: "One phrase in the answer looks wrong: “overall revenue for the years 2024 and 2025”. 2025 is lower, and the reader cannot tell whether that is a fact or an artefact.",
+                      note: "The trigger is doubt, not a task.",
+                    },
+                    precondition: {
+                      body: "An analysis exists in the main thread as a live preview: chart, measure, grouping and filters visible before anything is saved.",
+                    },
+                    flow: [
+                      { n: "1", text: "Select the fragment inside the answer." },
+                      {
+                        n: "2",
+                        text: "A detail thread opens beside the analysis, headed with what it is scoped to: one fragment, and the main chat stays untouched.",
+                        note: "The user is told what will and will not be affected before they type.",
+                      },
+                      {
+                        n: "3",
+                        text: "The panel restates the selection verbatim and pins the context that produced it as chips: measure revenue, group by product category, filter booking date 2024–2025.",
+                        note: "The chips make the branch reproducible. Without them it is a question about nothing in particular.",
+                      },
+                      { n: "4", text: "The follow-up is asked inside the panel: why is 2025 lower than 2024 here?" },
+                      {
+                        n: "5",
+                        text: "The answer names the cause instead of restating the number: 2025 is not a full year, bookings load only to 30 November, so the comparison is not like-for-like.",
+                      },
+                      {
+                        n: "6",
+                        text: "An evidence card carries the same-period figures for both years with the delta, and the answer can be verified: Show SQL · Open as pivot · Copy.",
+                        note: "A controller will be asked where the number came from. “The assistant said so” cannot be repeated to an auditor.",
+                      },
+                    ],
+                    exits: [
+                      { label: "Apply to main analysis", text: "The correction enters the main thread as a new step, with the reason attached to it." },
+                      { label: "Discard", text: "The branch closes and nothing propagates. The main analysis is exactly what it was." },
+                    ],
+                    exitsNote: "A branch that can end ambiguously is not a branch.",
+                    postcondition: {
+                      body: "Either the main analysis gained one step that names its own reason, or it gained nothing. It never gains a transcript of the investigation.",
+                    },
+                    why: "Rejected: a plain threaded reply. It can carry the question, but it cannot carry a decision back, and the analysis drifts while nobody is watching.",
+                    rule: "An action on a fragment opens a surface scoped to that fragment, and returns exactly one thing to its parent: a change, or nothing.",
+                    ruleNote: "The same rule governs widget settings inside a dashboard.",
+                  },
+                },
+              ],
             },
             {
+              id: "uc-queries",
               n: "02",
-              stage: "Define relationships",
-              title: "The join is an object, not a line",
-              rule: {
-                label: "Rule",
-                body: "It states its direction and type on the canvas, and its endpoints are drawn valid or invalid before you commit them.",
-              },
-              why: {
-                label: "Why",
-                body: "Hiding the join type in a settings dialog hides the discrepancy until somebody argues about it in a meeting.",
-              },
+              cover: { src: `${D}/queries-shelf-2400.webp`, frame: "macbook" },
+              title: "Queries",
+              maxim: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
+              standfirst:
+                "Goal: publish a query other people can use, and let everyone see who else can use it without opening a permissions dialog.",
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/queries-shelf-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
+                },
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${D}/queries-card-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
+                    },
+                    {
+                      src: `${D}/queries-add-2400.webp`,
+                      frame: "macbook",
+                      caption:
+                        "Add query. A new query is created in a dialog over the shelf (R1: an action on the whole object opens a modal), with its permissions set before it exists.",
+                    },
+                  ],
+                },
+                {
+                  kind: "usecase",
+                  uc: {
+                    id: "UC-02",
+                    title: "Publish a query other people can use, and see who can use it",
+                    actor: {
+                      name: "01, the key user, publishing",
+                      body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
+                      note: "One author, three kinds of reader.",
+                    },
+                    trigger: {
+                      body: "A query built for one department turns out to be useful to three. Its reach starts growing before anyone decides that it should.",
+                      note: "Success is the trigger, which is exactly when exposure grows without a decision behind it.",
+                    },
+                    precondition: {
+                      body: "The query runs against a named data model, and roles exist in the system, so “who can see this” is already an answerable question.",
+                    },
+                    flow: [
+                      { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
+                      {
+                        n: "2",
+                        text: "Each card states on its face who it reaches, who made it, when, and what it reads: Administrator, Moderator, Users; data model, author, date.",
+                        note: "Exposure is visible at rest.",
+                      },
+                      {
+                        n: "3",
+                        text: "Settings is organised by what an admin owns: system configuration (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
+                      },
+                      {
+                        n: "4",
+                        text: "Column links are configured against a template, /customers/{value}, and tested in place with a column name and a test value before they are saved.",
+                        note: "Configuration you can verify where you write it does not become a support ticket next month.",
+                      },
+                      { n: "5", text: "Translations, versions and update policy live in the same shell." },
+                    ],
+                    postcondition: {
+                      body: "Reach is a property of the artefact, visible wherever the artefact is. Nobody has to open a permissions dialog to find out who can see their work.",
+                    },
+                    why: "The dangerous failure in BI on an ERP is a query that quietly reaches further than its author thought. Rejected: permissions behind a per-item dialog. Fewer pixels, but exposure becomes something you have to go and check.",
+                    rule: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
+                    ruleNote: "Both use cases make the thing that could mislead you legible before it does.",
+                  },
+                },
+              ],
             },
             {
+              id: "uc-data-models",
               n: "03",
-              stage: "Validate model",
-              title: "A step, not a checkbox",
-              rule: {
-                label: "Rule",
-                body: "Readiness is checked while the model is still private. A model can be finished and still not be publishable, and the interface says so.",
-              },
-            },
-            {
-              n: "04",
-              stage: "Publish",
-              title: "The only irreversible audience change",
-              rule: {
-                label: "Rule",
-                body: "Everything before this point affects one person. Publishing affects everyone who will later open a dashboard built on the model, so it is a separate act from saving, with its own affordance.",
-              },
+              cover: { src: `${D}/models-relationship-2400.webp`, frame: "macbook" },
+              title: "Data models",
+              maxim: "Anything that changes the number a model produces is stated on the canvas, in words, before it is committed.",
+              standfirst:
+                "Goal: build a model other people's numbers can rest on. The same two queries joined two different ways produce two different numbers, and in a settings dialog that difference stays hidden until two people bring incompatible figures to the same meeting.",
+              blocks: [
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${D}/models-select-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
+                    },
+                    {
+                      src: `${D}/models-empty-2400.webp`,
+                  frame: "macbook",
+                      caption:
+                        "The empty canvas says what it expects: one validated query, then relationships, then validation. It offers exactly one action, so there is no second path into the flow.",
+                    },
+                  ],
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/models-relationship-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "Define relationships. The join states its direction and type, INNER or LEFT, and the same relationship exists as an editable row in the right panel, so the drawing is a view of the list rather than the only copy of it.",
+                },
+                {
+                  kind: "video",
+                  clip: true,
+                  width: "wall",
+                  src: `${C}/models-join.mp4`,
+                  poster: `${C}/models-join.webp`,
+                  title: "A join refused, then a join accepted",
+                  caption: "In the prototype: a STRING dragged onto a FLOAT is refused at the endpoint; customer_id onto customer_id draws the join, states INNER, and lists it in the panel.",
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${S}/models-anatomy.png`,
+                  folded: true,
+                  caption:
+                    "One relationship. Provenance rides on the tile, the column type is visible before the link is made, and joining a STRING to a FLOAT is refused at the endpoint, not at run time.",
+                },
+                {
+                  kind: "steps",
+                  standfirst:
+                    "Building a model is a sequence of gates, not a form with a save button. Each gate refuses something, and only the last one changes what other people see.",
+                  items: [
+                    {
+                      n: "01",
+                      stage: "Select query",
+                      title: "The unit is a query, not a table",
+                      rule: {
+                        label: "Rule",
+                        body: "Everything on the shelf was already written and validated upstream, and each card carries its source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields.",
+                      },
+                    },
+                    {
+                      n: "02",
+                      stage: "Define relationships",
+                      title: "The join is an object, not a line",
+                      rule: {
+                        label: "Rule",
+                        body: "It states its direction and type on the canvas, and its endpoints are drawn valid or invalid before you commit them.",
+                      },
+                      why: {
+                        label: "Why",
+                        body: "Hiding the join type in a settings dialog hides the discrepancy until somebody argues about it in a meeting.",
+                      },
+                    },
+                    {
+                      n: "03",
+                      stage: "Validate model",
+                      title: "A step, not a checkbox",
+                      rule: {
+                        label: "Rule",
+                        body: "Readiness is checked while the model is still private. A model can be finished and still not be publishable, and the interface says so.",
+                      },
+                    },
+                    {
+                      n: "04",
+                      stage: "Publish",
+                      title: "The only irreversible audience change",
+                      rule: {
+                        label: "Rule",
+                        body: "Everything before this point affects one person. Publishing affects everyone who will later open a dashboard built on the model, so it is a separate act from saving, with its own affordance.",
+                      },
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
@@ -834,20 +958,20 @@ export const bi: CaseStudy = {
     },
     {
       id: "handoff",
-      n: "11",
+      n: "09",
       heading: "Handoff",
       maxim: "When the system lives in code and the file only consumes it, there is no second copy to forget.",
       standfirst:
-        "What development receives is working FOX code in the repository, reviewed and merged, not a spec sheet to rebuild from.",
+        "What development receives: the Figma file through Dev Mode, every component bound to its implementation by Code Connect, Storybook as the reference, and a working prototype that answers the behaviour questions. The implementation is the developers' code on the FOX package.",
       blocks: [
         {
           kind: "spec",
           caption:
             "The loop. By v3.0 the binding is the distribution model: FOX ships as a versioned package, and six products pick it up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library.",
           rows: [
-            { key: "Figma → code", value: "Code Connect binds each design component to the implementation that ships it." },
-            { key: "Code → Figma", value: "Work done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it." },
-            { key: "Code → product", value: "The working prototype answers behaviour questions; its FOX code goes into the implementation." },
+            { key: "Figma to code", value: "Code Connect binds each design component to the implementation that ships it." },
+            { key: "Code to Figma", value: "Work done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it." },
+            { key: "Prototype to product", value: "The working prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
           ],
         },
         {
@@ -869,11 +993,11 @@ export const bi: CaseStudy = {
     },
     {
       id: "after-development",
-      n: "12",
+      n: "10",
       heading: "After development",
       maxim: "A merged pull request is not a finished feature. It is the first time the design exists at all.",
       standfirst:
-        "Handoff delivers FOX code, so what reaches review is already built from the right parts. What is left to check is what a component library cannot guarantee: composition, states, real data, German, and whether the requirement was met.",
+        "The developers build on the FOX package, so what reaches review is already made from the right parts. What is left to check is what a component library cannot guarantee: composition, states, real data, German, and whether the requirement was met.",
       blocks: [
         {
           kind: "steps",
@@ -939,7 +1063,7 @@ export const bi: CaseStudy = {
     },
     {
       id: "results",
-      n: "13",
+      n: "11",
       heading: "What it adds up to",
       standfirst:
         "Analytics shipped in September 2026, so these are the results that exist at release. The screens will be redrawn; the parts that can be checked are the ones that last.",
@@ -958,16 +1082,21 @@ export const bi: CaseStudy = {
           items: [
             { value: "9", label: "months, January to September 2026" },
             { value: "7", label: "people: three developers, a requirements engineer, QA, a PM and me" },
-            { value: "1", label: "designer: the shape of the product, its rules and the component code it ships on" },
+            { value: "1", label: "designer: the shape of the product, its rules, and the design system it ships on" },
           ],
         },
         {
-          kind: "passage",
-          html: "<p><strong>What I will measure after release, and how.</strong> Each measure tests whether one rule on this page holds up with real users.</p>",
+          kind: "joint",
+          question: "What would I do differently?",
+          answers: [
+            "<strong>Write the surface rules before the first prototype</strong>, not after the audit. Three controls moved after the rules were written, and each move cost a round of review and a frame redrawn.",
+            "<strong>Not accept the pivot grid as a native table.</strong> fox-table-executor could not express grouped headers, I took the gap to ship on time, and the system now owes the product a component that the next pivot will need too.",
+          ],
         },
         {
-          kind: "points",
-          items: [
+          kind: "joint",
+          question: "What will I measure after release, and how?",
+          answers: [
             "<strong>Whether controllers verify the AI analyst.</strong> How often a detail thread ends in Apply versus Discard, and how often Show SQL is opened before Apply.",
             "<strong>Whether reach stays visible.</strong> How many published queries are reused outside the department that built them, set against the permission questions that reach support.",
             "<strong>Whether drill-down left Excel.</strong> Exports per controller during the monthly close, before and after rollout, from the export logs.",

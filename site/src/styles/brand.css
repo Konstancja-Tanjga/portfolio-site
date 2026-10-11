@@ -1,0 +1,163 @@
+/* ---------------------------------------------------------------
+   The art direction, October 2026.
+
+   One ground, one ink, one display face. Dark, image-first, the
+   type large and sure of itself; the work carries the colour. This
+   is the one file on the site allowed to state colour: tokens.css
+   stays an alias layer onto the design system, and this file
+   re-points those aliases at the direction.
+
+   Contrast: ink on ground 15.6:1, ink-2 11:1, ink-3 5.4:1.
+   --------------------------------------------------------------- */
+:root {
+  --kt-ground: #0f0f0e;
+  --kt-ground-2: #171715;
+  --kt-ink: #f1ede4;
+  --kt-ink-2: #c9c3b6;
+  --kt-ink-3: #8f8a7f;
+  --kt-line: #2a2a27;
+  --kt-sand: #e3d2ad;
+  --kt-on-sand: #0f0f0e;
+  --kt-font-display: "Bricolage Grotesque", "Inter", sans-serif;
+  --kt-font-body: "Inter", system-ui, sans-serif;
+
+  --bh-surface: var(--kt-ground);
+  --bh-well: var(--kt-ground-2);
+  --bh-text: var(--kt-ink-2);
+  --bh-text-strong: var(--kt-ink);
+  --bh-text-quiet: var(--kt-ink-3);
+  --bh-border: var(--kt-line);
+  --bh-mark: var(--kt-sand);
+  --bh-site-mark: var(--kt-sand);
+  --bh-site-on-mark: var(--kt-on-sand);
+  --bh-focus: var(--kt-sand);
+  --bh-font-body: var(--kt-font-body);
+
+  --bh-surface-base: var(--kt-ground);
+  --bh-surface-sunken: var(--kt-ground-2);
+  --bh-surface-raised: var(--kt-ground-2);
+  --bh-text-primary: var(--kt-ink);
+  --bh-text-secondary: var(--kt-ink-2);
+  --bh-text-muted: var(--kt-ink-3);
+  --bh-border-subtle: var(--kt-line);
+  --bh-border-strong: var(--kt-ink-3);
+  color-scheme: dark;
+}
+
+/* Everything that sits on the sand field reads in its own ink. */
+.cover { --bh-text-strong: var(--kt-on-sand); --bh-text: var(--kt-on-sand); }
+
+/* The display face on every heading the site already has. */
+.opening__claim,
+.cover__headline,
+.chapter__heading,
+.portrait__claim,
+.next__title,
+.series__name,
+.card__title {
+  font-family: var(--kt-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cover__headline { font-weight: 800; letter-spacing: -0.03em; }
+
+/* ---------- the finish ----------
+   Film grain over everything, so the ground is paper rather than a
+   hex value; a scrollbar that belongs to the page; a page that arrives. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -5%); }
+  60% { transform: translate(-2%, 6%); }
+  80% { transform: translate(5%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+html { scrollbar-color: var(--kt-line) var(--kt-ground); }
+/* Tilted mockups, 3D carousel slides and the aurora reach past the edge;
+   clip, not hidden, so sticky bars and the fixed journey keep working. */
+html, body { overflow-x: clip; }
+
+/* Opacity only: a transform here, even an identity one left by the
+   fill, would turn this wrapper into the containing block for every
+   position: fixed element inside it (the journey canvas, the ruler). */
+.route { animation: route-in 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes route-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* masthead: a live dot, links that underline from the left, a button that leans */
+.masthead__name { display: inline-flex; align-items: center; gap: 0.5em; }
+.masthead__dot {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--kt-sand);
+  box-shadow: 0 0 0 0 rgba(227, 210, 173, 0.6);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(227, 210, 173, 0.55); }
+  70% { box-shadow: 0 0 0 0.6em rgba(227, 210, 173, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(227, 210, 173, 0); }
+}
+.masthead__nav a:not(.masthead__talk) { position: relative; padding-bottom: 0.15em; }
+.masthead__nav a:not(.masthead__talk)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--kt-sand);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.masthead__nav a:not(.masthead__talk):hover::after,
+.masthead__nav a[aria-current]::after { transform: scaleX(1); transform-origin: left; }
+.masthead__talk { transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1), background 200ms; will-change: transform; }
+
+/* progress and back to top */
+.progress__bar { background: var(--kt-sand) !important; box-shadow: 0 0 12px rgba(227, 210, 173, 0.6); }
+.to-top { border-color: var(--kt-line); background: rgba(15, 15, 14, 0.8); color: var(--kt-ink); backdrop-filter: blur(6px); }
+.to-top:hover { background: var(--kt-sand); border-color: var(--kt-sand); color: var(--kt-ground); }
+
+/* the wordmark above the footer */
+.footer__mark {
+  overflow: hidden;
+  margin-top: var(--bh-space-8);
+  padding: 0 var(--bh-gutter);
+  line-height: 0.8;
+  text-align: center;
+  user-select: none;
+}
+.footer__mark span {
+  display: inline-block;
+  font-family: var(--kt-font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 19vw, 19rem);
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--kt-line);
+  transform: translateY(0.12em);
+  transition: color 600ms, -webkit-text-stroke-color 600ms;
+}
+.footer__mark:hover span { color: var(--kt-ground-2); -webkit-text-stroke-color: var(--kt-ink-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+  .route { animation: none; }
+  .masthead__dot { animation: none; }
+  .masthead__talk { transition: none; }
+}
