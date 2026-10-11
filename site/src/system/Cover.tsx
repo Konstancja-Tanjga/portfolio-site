@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import type { Cover as CoverData } from "../content/types";
+import type { Block, CaseStudy, Cover as CoverData } from "../content/types";
 import { asset } from "./asset";
 import { useTilt } from "./motion";
 import { Lane } from "./Wall";
@@ -12,11 +12,11 @@ import { Lane } from "./Wall";
  * little slower than the page (parallax, a few pixels, off under
  * prefers-reduced-motion).
  *
- * Every cover artboard carries its own type, so it is shown whole below
- * the title rather than behind it: two titles on top of each other was
- * the one thing the old intro could not do.
+ * Below the title: the product's screens blending through (`layers`), or
+ * the same typeset cover the work grid shows, with the study's first
+ * mockup (`art`), so the intro and the tile that led here are one image.
  */
-export function Cover({ cover }: { cover: CoverData }) {
+export function Cover({ cover, art: device }: { cover: CoverData; art?: string }) {
   const art = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -76,13 +76,11 @@ export function Cover({ cover }: { cover: CoverData }) {
           </div>
         </Lane>
       ) : (
-        cover.shot.src && (
-          <Lane width="bleed">
-            <div className="cover__art" ref={art} aria-hidden="true">
-              <img src={asset(cover.shot.src)} alt="" />
-            </div>
-          </Lane>
-        )
+        <Lane width="bleed">
+          <div className="cover__art cover__art--type" ref={art} aria-hidden="true">
+            <TypeCover cover={cover} device={device} eager />
+          </div>
+        </Lane>
       )}
     </>
   );
@@ -138,7 +136,7 @@ function Chart() {
 
 
 /**
- * The cover as type, for the work grid. The old thumbnails were Figma
+ * The cover as type, for the work grid and the case-page hero. The old thumbnails were Figma
  * boards in the product's yellow, which said nothing about the project
  * and fought the page. This one says what the project is and whose it is,
  * in the site's own type, and lets the first mockup of the study lean out
@@ -146,7 +144,7 @@ function Chart() {
  * `cover.art` overrides it; without either the cover is type alone. The tile names and dates the link in text
  * below the cover, so the cover is hidden from assistive technology.
  */
-export function TypeCover({ cover, device }: { cover: CoverData; device?: string }) {
+export function TypeCover({ cover, device, eager }: { cover: CoverData; device?: string; eager?: boolean }) {
   const parts = cover.credit.split("·").map((x) => x.trim());
   const org = cover.org ?? (parts.length === 3 ? parts[1] : undefined);
   // the tile's own title and year sit under the cover, so this is decoration to a reader
@@ -162,7 +160,32 @@ export function TypeCover({ cover, device }: { cover: CoverData; device?: string
         ))}
       </span>
       <span className="tcover__sub">{cover.subline}</span>
-      {art && <img className="tcover__device" src={asset(art)} alt="" loading="lazy" decoding="async" />}
+      {art && <img className="tcover__device" src={asset(art)} alt="" loading={eager ? "eager" : "lazy"} decoding="async" />}
     </span>
   );
+}
+
+
+/** The first MacBook mockup a study owns, for its typeset cover. */
+export function firstDevice(study: CaseStudy): string | undefined {
+  if (study.cover.layers?.[0]) return study.cover.layers[0].src;
+  const fromBlock = (b: Block): string | undefined => {
+    switch (b.kind) {
+      case "shot":
+        return b.frame === "macbook" ? b.src : undefined;
+      case "duo":
+      case "set":
+        return b.items.find((i) => i.frame === "macbook")?.src;
+      case "carousel":
+        return b.items.find((i) => i.frame === "macbook")?.src;
+      case "dossier":
+        return b.items.find((i) => i.cover.frame === "macbook")?.cover.src;
+      case "annotated":
+        return b.items.find((i) => i.shot.frame === "macbook")?.shot.src;
+      default:
+        return undefined;
+    }
+  };
+  for (const c of study.chapters) for (const b of c.blocks) { const d = fromBlock(b); if (d) return d; }
+  return undefined;
 }
