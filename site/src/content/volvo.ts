@@ -37,7 +37,7 @@ export const volvo: CaseStudy = {
   title: "Volvo Group ERP",
   what: "A legacy ERP redesign: search, reports and the e-mails administrators send",
   lead:
-    "Baldo is an ERP application in the Volvo Group that handles user authorization for more than 500 applications and works as a master-data hub. I researched how its key users work and redesigned three parts of it: search, reports and the e-mails sent to new users.",
+    "Baldo is an ERP application in the Volvo Group that handles user authorisation for more than 500 applications and works as a master-data hub. I researched how its key users work and redesigned three parts of it: search, reports, and the e-mails sent to new users.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -45,14 +45,14 @@ export const volvo: CaseStudy = {
     headline: ["Enterprise", "Resource Planning"],
     subline: "for Volvo Group",
     stamp: "LEGACY REDESIGN · SEARCH · REPORTS · E-MAIL",
-    credit: "Senior UX/UI designer · Volvo Group · 2022–2023",
+    credit: "Senior UX/UI Designer · Volvo Group · 2022–2023",
     shot: { src: "/work/volvo-erp/00-cover.jpg" },
   },
   meta: [
-    { label: "Role", value: "Senior UX/UI designer, contract" },
+    { label: "Role", value: "Senior UX/UI Designer, contract" },
     { label: "Company", value: "Volvo Group, Baldo" },
-    { label: "Team", value: "Angular developers, a business analyst, a product owner, a project manager and me" },
-    { label: "Scope", value: "User authorization and master data across the group" },
+    { label: "Team", value: "Angular developers, a business analyst, a product owner, a project manager, and me" },
+    { label: "Scope", value: "User authorisation and master data across the group" },
     { label: "Period", value: "2022–2023" },
   ],
   chapters: [
@@ -62,17 +62,22 @@ export const volvo: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
+            {
+              key: "Context",
+              value:
+                "Baldo is an internal Volvo Group platform: it authorises users for more than 500 applications and, as a master-data hub, feeds hundreds of subscribers with data.",
+            },
             {
               key: "Problem",
               value:
                 "Administrators decide in Baldo which of more than 500 applications each user can reach. The screens they did it on were dense tables under a row of tabs, and reports were assembled field by field in forms.",
             },
             {
-              key: "My part",
+              key: "My role and scope",
               value:
-                "User research with the administrators, and the redesign of search, reports and the e-mail template, from wireframes to prototypes.",
+                "Senior UX/UI Designer, on contract. User research with the administrators, and the redesign of search, reports, and the e-mail template, from wireframes to prototypes.",
             },
             {
               key: "Decision 1",
@@ -90,14 +95,14 @@ export const volvo: CaseStudy = {
                 "The administrator writes the e-mail inside the layout the user receives, with subject, body and signature as separate fields.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "Card sorting with 15 administrators in Dovetail, 45-minute semi-structured interviews, prototype and navigation tests on Usability Hub, and Maze tests with 5 testers.",
+                "Before-and-after boards and prototypes for search, reports, and the e-mail template, grounded in card sorting with 15 administrators in Dovetail, 45-minute semi-structured interviews, prototype and navigation tests on Usability Hub, and Maze tests with 5 testers. The material does not record what was released or when, so this page gives no results figures.",
             },
             {
-              key: "State",
+              key: "Period and team",
               value:
-                "The material I have shows these designs as before-and-after boards and prototypes. It does not record what was released or when.",
+                "2022 to 2023. Angular developers, a business analyst, a product owner, a project manager, and me.",
             },
           ],
         },
@@ -111,8 +116,15 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Baldo is an internal Volvo Group platform. It plays a central part in authorizing users for more than five hundred applications: administrators decide which applications a user should have access to. It also gives users and their organizations a business context, and as a master-data hub it feeds hundreds of subscribers with data through its Publish/Subscribe service.</p>" +
-            "<p>The people I designed for are those administrators. The screens on this page are the ones they use to look up partners, build reports and write to users about their accounts.</p>",
+            "<p>Baldo is an internal Volvo Group platform that <strong>decides which applications a user may reach</strong>.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Authorisation for more than five hundred applications.</strong> Administrators decide which applications a user should have access to.",
+            "<strong>A master-data hub.</strong> It gives users and their organisations a business context and feeds hundreds of subscribers with data through its Publish/Subscribe service.",
+            "<strong>The people I designed for are those administrators.</strong> The screens on this page are the ones they use to look up partners, build reports, and write to users about their accounts.",
+          ],
         },
       ],
     },
@@ -125,7 +137,15 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>Every part of the application sat behind one row of tabs: User, Partner, Unit, Maintenance, Forms, Reports and the rest. The report list was one long column of names, with copies of copies next to the originals and no search box on the screen. Building a report meant filling in tables of criteria and layout fields further down the page, and opening one could stop the screen with a loading message.</p>",
+            "<p>Every part of the application sat behind <strong>one row of tabs</strong>: User, Partner, Unit, Maintenance, Forms, Reports, and the rest.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>The report list was one long column of names,</strong> with copies of copies next to the originals and no search box on the screen.",
+            "<strong>Building a report meant filling in tables</strong> of criteria and layout fields further down the page.",
+            "<strong>Opening a report could stop the screen</strong> with a loading message.",
+          ],
         },
         {
           kind: "duo",
@@ -187,7 +207,15 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>The old Partner screen was a details page with every field of one partner on it. In the new Partner search, further criteria open under a toggle; the expanded form shows “Show less search options”. The results come back as a table under the form, with Open and Generate Excel above it. On the report list, the search box suggests matching report names as you type.</p>",
+            "<p>The old Partner screen was a details page with every field of one partner on it; the new one is <strong>a search with its results on the same screen</strong>.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Further criteria open under a toggle;</strong> the expanded form shows “Show less search options”.",
+            "<strong>The results come back as a table under the form,</strong> with Open and Generate Excel above it.",
+            "<strong>On the report list, the search box suggests matching report names</strong> as you type.",
+          ],
         },
         {
           kind: "duo",
@@ -223,8 +251,16 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>In the old screen the criteria and the layout were tables on a long form, reached through Criteria and Layout tabs at the bottom. In the new one the report has a name and a Private or Public setting at the top, then two columns: Selected criteria and Selected layout. Each item has a handle to move it and a button to delete it. Below them the criteria are grouped in sections such as Unit, which open and close one by one or all at once.</p>" +
-            "<p>A report template can also be sent to someone by their ID number. The dialog tells the sender that the recipient can view or copy the template but will not see the report data.</p>",
+            "<p>A report is <strong>two lists side by side</strong>: what it filters on and what it shows.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Before, the criteria and the layout were tables on a long form,</strong> reached through Criteria and Layout tabs at the bottom.",
+            "<strong>Now the report has a name and a Private or Public setting at the top,</strong> then two columns: Selected criteria and Selected layout.",
+            "<strong>Each item has a handle to move it and a button to delete it.</strong> Below them the criteria are grouped in sections such as Unit, which open and close one by one or all at once.",
+            "<strong>A report template can be sent to someone by their ID number.</strong> The dialog tells the sender that the recipient can view or copy the template but will not see the report data.",
+          ],
         },
         {
           kind: "duo",
@@ -260,8 +296,16 @@ export const volvo: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>I designed a new template from scratch for the administrators, and the design of the e-mails users receive. In the old tool an administrator filled in Head, Message head, Message Body and Foot fields and checked the result in a preview next to them. In the new template subject, body and signature are fields inside the e-mail itself, between the Baldo header and the Volvo footer, with Cancel, Save as draft and Send at the bottom.</p>" +
-            "<p>The new-account message says what was created (user name, user ID, date), that the password comes in a separate e-mail, and that an account not used for 14 months is deleted automatically. Internal users are told to sign in with their Windows credentials instead.</p>",
+            "<p>I designed a new template from scratch for the administrators, and the e-mails users receive, so that <strong>the message is written inside the layout the user gets</strong>.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>Before, four fields and a preview.</strong> An administrator filled in Head, Message head, Message Body, and Foot and checked the result in a preview next to them.",
+            "<strong>Now subject, body, and signature are fields inside the e-mail itself,</strong> between the Baldo header and the Volvo footer, with Cancel, Save as draft, and Send at the bottom.",
+            "<strong>The new-account message says what was created</strong> (user name, user ID, date), that the password comes in a separate e-mail, and that an account not used for 14 months is deleted automatically.",
+            "<strong>Internal users are told to sign in with their Windows credentials</strong> instead.",
+          ],
         },
         {
           kind: "duo",

@@ -22,7 +22,7 @@ export const dms: CaseStudy = {
   title: "APplus Documents",
   what: "Document management for the same platform, designed from zero",
   lead:
-    "Versioning, metadata, search, permissions and retention over documents that lived in network drives and mail threads — under German commercial retention law, where a deleted document is not gone.",
+    "Versioning, metadata, search, permissions, and retention over documents that lived in network drives and mail threads, under German commercial retention law, where a deleted document is not gone.",
   status: { state: "live" },
   group: "product",
   cover: {
@@ -30,23 +30,24 @@ export const dms: CaseStudy = {
     headline: ["Document", "Management"],
     subline: "for APplus ERP",
     stamp: "VERSIONING · METADATA · SEARCH · PERMISSIONS · RETENTION",
-    credit: "Lead Product Designer · Asseco Solutions · 2026",
+    credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-documents/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "Lead Product Designer, sole designer on the product" },
+    { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
     { label: "Company", value: "Asseco Solutions" },
-    { label: "Product", value: "APplus ERP — Documents" },
+    { label: "Product", value: "APplus ERP, Documents" },
     {
       label: "Design system",
-      value: "FOX, which I own; the v2.3 → v3.0 migration done with one other designer",
+      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
       label: "Team",
-      value: "3 developers, a requirements engineer, a researcher, QA, a PM and one designer",
+      value: "Eight: three developers, a requirements engineer, a researcher, QA, a PM, and me",
     },
-    { label: "Period", value: "October 2025 – August 2026, eleven months" },
+    { label: "Period", value: "October 2025 to August 2026, eleven months" },
+    { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" },
   ],
   chapters: [
     {
@@ -55,17 +56,22 @@ export const dms: CaseStudy = {
       heading: "In short",
       blocks: [
         {
-          kind: "spec",
+          kind: "brief",
           rows: [
+            {
+              key: "Context",
+              value:
+                "Documents is the document management module inside APplus ERP, for the several hundred mid-sized and large manufacturers that run APplus across Germany, Italy, and Austria. A typical customer keeps tens of thousands of documents, around 22 document types, and about 10 custom metadata fields, read by warehouse, finance, compliance, and audit roles.",
+            },
             {
               key: "Problem",
               value:
                 "Documents lived in network drives and mail threads. APplus needed a document management module inside the ERP that also satisfies German commercial retention law (GoBD), where a deleted document is not gone and an audit trail is append-only.",
             },
             {
-              key: "My part",
+              key: "My role and scope",
               value:
-                "The shape of the product, the user flows, the competitive analysis, prototypes in Figma Make, the low-fidelity work, requirement-level design and sign-off, and day-to-day work with the developers. FOX, the design system it is built on, is mine to own; I did its migration from v2.3 to v3.0 with one other designer.",
+                "The only designer on the product: the shape of the product, the user flows, the competitive analysis, prototypes in Figma Make, the low-fidelity work, requirement-level design and sign-off, and day-to-day work with the developers. FOX, the design system it is built on, is mine to own; I did its migration from v2.3 to v3.0 with one other designer.",
             },
             {
               key: "Decision 1",
@@ -80,14 +86,17 @@ export const dms: CaseStudy = {
             {
               key: "Decision 3",
               value:
-                "Every frame carries a REQ identifier, its requirement text and a dated sign-off, so from any frame you can name its requirement, and from any requirement you can find the frame and the signature.",
+                "Every frame carries a REQ identifier, its requirement text, and a dated sign-off, so from any frame you can name its requirement, and from any requirement you can find the frame and the signature.",
             },
             {
-              key: "Evidence",
+              key: "Outcome",
               value:
-                "6 sessions with internal SMEs before specification. A competitor's administration screens annotated screen by screen. Prototypes in Figma Make walked through with the PM, the requirements engineer and the SMEs.",
+                "A paper trail an auditor can walk in either direction, from a frame to its requirement and back. 6 sessions with internal SMEs before specification; a competitor's administration screens annotated screen by screen; prototypes in Figma Make walked through with the PM, the requirements engineer, and the SMEs. The patterns this product needed went into FOX and came back at a pinned version.",
             },
-            { key: "Period", value: "October 2025 – August 2026" },
+            {
+              key: "Period and team",
+              value: "October 2025 to August 2026, eleven months. Eight people: three developers, a requirements engineer, a researcher, QA, a PM, and me.",
+            },
           ],
         },
       ],
@@ -101,7 +110,7 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>DMS is a document management module inside APplus ERP. It holds the documents an ERP produces and receives, from invoices and purchase orders to goods receipt notes and customs declarations, with their versions, metadata, tags, permissions and retention.</p>",
+          html: "<p>DMS is a document management module inside APplus ERP. It holds the documents an ERP produces and receives, from invoices and purchase orders to goods receipt notes and customs declarations, with their versions, metadata, tags, permissions, and retention.</p>",
         },
         {
           kind: "duo",
@@ -120,7 +129,18 @@ export const dms: CaseStudy = {
         },
         {
           kind: "passage",
-          html: "<p><strong>What I owned:</strong> the shape of the product, the user flows, the competitive analysis, the early prototypes in Figma Make that I used to test ideas and settle open questions with the PM, the requirements engineer and a group of SMEs, the low-fidelity work, and direct day-to-day work with the developers. FOX 2.3, the design system this is built on, I built with one other designer.</p>",
+          html: "<p><strong>What I owned.</strong> The only designer on the product, from the first requirement to the developers' daily questions.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>The shape of the product</strong> and its user flows.",
+            "<strong>The competitive analysis</strong>, one action and one menu at a time.",
+            "<strong>The early prototypes in Figma Make</strong>, used to test ideas and settle open questions with the PM, the requirements engineer, and a group of SMEs.",
+            "<strong>The low-fidelity work</strong> and requirement-level design with sign-off.",
+            "<strong>Day-to-day work with the developers</strong>, through to review of the build.",
+            "<strong>FOX, the design system it is built on.</strong> It is mine to own; I did its migration from v2.3 to v3.0 with one other designer.",
+          ],
         },
         {
           kind: "points",
@@ -155,8 +175,12 @@ export const dms: CaseStudy = {
           ],
         },
         {
+          kind: "passage",
+          html: "<p>Storage was the smaller half of the brief. Several people, sometimes from different companies, hand documents back and forth, and nobody may lose track of where things stand.</p>",
+        },
+        {
           kind: "pull",
-          text: "The challenge was more than storage. Every document needed a visible status and a clear owner, inside a process where several people, sometimes from different companies, hand documents back and forth without losing track of where things stood.",
+          text: "Every document needs a visible status and a clear owner.",
         },
       ],
     },
@@ -165,11 +189,11 @@ export const dms: CaseStudy = {
       n: "03",
       heading: "Who it is for",
       standfirst:
-        "Several hundred mid-sized and large manufacturers across Germany, Italy and Austria.",
+        "Several hundred mid-sized and large manufacturers across Germany, Italy, and Austria.",
       blocks: [
         {
           kind: "passage",
-          html: "<p>A typical customer runs an archive in the tens of thousands of documents, configures around 22 document types and about 10 custom metadata fields, and has users in warehouse, finance, compliance and audit roles: four audiences with different jobs against the same archive.</p>",
+          html: "<p>A typical customer runs an archive in the tens of thousands of documents, configures around 22 document types and about 10 custom metadata fields, and has users in warehouse, finance, compliance, and audit roles: four audiences with different jobs against the same archive.</p>",
         },
         {
           kind: "stats",
@@ -193,7 +217,7 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>I started from the business requirements gathered directly from stakeholders, and from three questions about them. Then came six sessions with internal subject-matter experts on which features were actually needed and how the user flows should run.</p>",
+          html: "<p>I started from the business requirements gathered directly from stakeholders, and from three questions about them. Then came six sessions with internal subject-matter experts on which features were needed and how the user flows should run.</p>",
         },
         {
           kind: "points",
@@ -217,7 +241,15 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>I walked a competitor's document and user administration screen by screen and annotated it in place: every action, every menu and every modal marked up on the screenshot rather than summarised afterwards.</p><p>What that produces is a map of decisions somebody else already made: where they put user actions, what they hid behind an overflow menu, how many clicks they spend before a document is reachable, and which of those choices a compliance-bound product cannot copy.</p>",
+          html: "<p>I walked a competitor's document and user administration screen by screen and <strong>annotated it in place</strong>: every action, every menu, and every modal marked up on the screen rather than summarised afterwards.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>A map of decisions somebody else already made.</strong> Where they put user actions, and what they hid behind an overflow menu.",
+            "<strong>The cost of reaching a document.</strong> How many clicks they spend before a document is reachable.",
+            "<strong>What a compliance-bound product cannot copy.</strong> Which of those choices break under retention law.",
+          ],
         },
       ],
     },
@@ -248,7 +280,16 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>I looked at products that solve the same structural problem (dense business data, many roles, long lists that have to stay navigable) and took decisions from them rather than styling.</p><p>What came back: how a landing surface can summarise state before it offers actions, how a table stays readable at a few hundred rows, where a detail panel beats a detail page, and how much of a record you can put on screen before it stops being a record and becomes a form.</p>",
+          html: "<p>I looked at products that solve the same structural problem (dense business data, many roles, long lists that have to stay navigable) and <strong>took decisions from them rather than styling</strong>.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>A landing surface summarises state before it offers actions.</strong> Counts first, then the things to do.",
+            "<strong>A table stays readable at a few hundred rows.</strong> Density is set for the archive, not the demo.",
+            "<strong>A detail panel beats a detail page</strong> where the user needs the list beside the record.",
+            "<strong>A record has a limit.</strong> Past a certain amount on screen it stops being a record and becomes a form.",
+          ],
         },
         {
           kind: "shot",
@@ -272,8 +313,13 @@ export const dms: CaseStudy = {
         "A generated prototype is cheap enough to throw away. A designed and signed-off screen is not, so the disagreements happen here, one step before REQ identifiers and sign-off make them expensive.",
       blocks: [
         {
-          kind: "passage",
-          html: "<p>Before a single frame was drawn, a settled requirement went into Figma Make and came back as something clickable in hours. Those prototypes were the argument in the room with the PM, the requirements engineer and the SMEs: flows walked through end to end, weak options dropped on the spot. The example below is dossier plans, which define how documents are grouped into dossiers at runtime.</p>",
+          kind: "flow",
+          stages: [
+            { title: "A settled requirement", body: "Before a single frame was drawn, it went into Figma Make." },
+            { title: "Clickable in hours", body: "It came back as something the PM, the requirements engineer, and the SMEs could walk through end to end." },
+            { title: "Argued over in the room", body: "Those prototypes were the argument: weak options dropped on the spot, before anything was designed in detail." },
+          ],
+          note: "The example below is dossier plans, which define how documents are grouped into dossiers at runtime.",
         },
         {
           kind: "duo",
@@ -281,7 +327,7 @@ export const dms: CaseStudy = {
             {
               src: "/work/applus-documents/screens/proto-dossier-list.png",
               caption:
-                "Dossier plan configuration. Customer, Order and Project are system baselines mapped from APplus; they can be edited and reset to default. Quality Assurance is a custom draft.",
+                "Dossier plan configuration. Customer, Order, and Project are system baselines mapped from APplus; they can be edited and reset to default. Quality Assurance is a custom draft.",
             },
             {
               src: "/work/applus-documents/screens/proto-dossier-general.png",
@@ -317,14 +363,14 @@ export const dms: CaseStudy = {
           width: "wall",
           src: "/work/applus-documents/screens/fox-update.png",
           caption:
-            "The update process. Solid line: a composition invented to solve one screen is reviewed, named and versioned into FOX rather than left local. Dashed: the product consumes the system back at a pinned version, so a promotion never arrives as a surprise mid-release. Colour modes and accessibility sit underneath both, in the primitives.",
+            "The update process. Solid line: a composition invented to solve one screen is reviewed, named, and versioned into FOX rather than left local. Dashed: the product consumes the system back at a pinned version, so a promotion never arrives as a surprise mid-release. Colour modes and accessibility sit underneath both, in the primitives.",
         },
         {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/fox-docs.png",
           caption:
-            "FOX documentation for one molecule, the secondary app bar: its status, owner, reviewer and last update, the components it uses, its variant in each application (Document Management System among them), and the demo in light, dark and client colour.",
+            "FOX documentation for one molecule, the secondary app bar: its status, owner, reviewer, and last update, the components it uses, its variant in each application (Document Management System among them), and the demo in light, dark, and client colour.",
         },
       ],
     },
@@ -362,11 +408,11 @@ export const dms: CaseStudy = {
           items: [
             {
               src: "/work/applus-documents/screens/detail-versions.png",
-              caption: "Version history on a sales order: each version with its author, number and date, and a download on the highlighted row.",
+              caption: "Version history on a sales order: each version with its author, number, and date, and a download on the highlighted row.",
             },
             {
               src: "/work/applus-documents/screens/tablet-versions.png",
-              caption: "The same screen on a tablet.",
+              caption: "The same version history on a tablet: the template survives the narrower width.",
             },
           ],
         },
@@ -380,14 +426,22 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>Every screen ships with its documentation attached: what the screen is for, what each zone does, and the annotations that explain the rules a static image cannot show, such as what happens on empty, what a role without permission sees, and which action is destructive.</p><p>The point is that a developer, a tester and an auditor all read the same artefact, and none of them has to ask a designer what was meant.</p>",
+          html: "<p>Every screen ships with <strong>its documentation attached</strong>, so that a developer, a tester, and an auditor all read the same artefact, and none of them has to ask a designer what was meant.</p>",
+        },
+        {
+          kind: "points",
+          items: [
+            "<strong>What the screen is for</strong>, stated on the frame.",
+            "<strong>What each zone does</strong>, zone by zone.",
+            "<strong>The rules a static image cannot show</strong>: what happens on empty, what a role without permission sees, and which action is destructive.",
+          ],
         },
         {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/device/documentation-2400.webp", frame: "macbook",
           caption:
-            "A documented frame. On top, the doc band: the Jira link (PX-1774), the acceptance criteria, the designer and the Approved sign-off. Below, the screens with annotations in five kinds: requirements, development, content, user flow and interaction.",
+            "A documented frame. On top, the doc band: the Jira link (PX-1774), the acceptance criteria, the designer, and the Approved sign-off. Below, the screens with annotations in five kinds: requirements, development, content, user flow, and interaction.",
         },
         {
           kind: "spec",
@@ -412,14 +466,14 @@ export const dms: CaseStudy = {
       heading: "Handoff",
       maxim: "On a team this size, alignment enforced by tooling is the only kind that survives eleven months.",
       standfirst:
-        "Design and code were kept in sync by tooling. Handoff ran Figma → Storybook → dev with Code Connect in play, so FOX components in the design file are tied to their implementations instead of described in a spec sheet.",
+        "Concepts in Figma Make, the design in Figma, the handoff through Dev Mode, Code Connect, and Storybook. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. I own the component API and the tokens, and I review every pull request into the library.",
       blocks: [
         {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/handoff-loop.png",
           caption:
-            "The handoff loop. Solid line: Code Connect binds each design component to its implementation. Dashed: the loop also runs the other way, Codex → Figma over MCP, so code-side work is reflected back into the design file rather than drifting from it. Some questions were settled as working prototypes in code, because behaviour is not something a static mockup can decide.",
+            "The handoff loop. Solid line: Code Connect binds each design component to its implementation. Dashed: the loop also runs the other way, from Codex to Figma over MCP, so code-side work is reflected back into the design file rather than drifting from it. Some questions were settled as working prototypes in code, because behaviour is not something a static mockup can decide.",
         },
         {
           kind: "spec",
@@ -428,7 +482,7 @@ export const dms: CaseStudy = {
             { key: "Accessibility", value: "WCAG AA was the target from the first frame." },
             {
               key: "Colour modes",
-              value: "Light, dark and high contrast were must-haves, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour.",
+              value: "Light, dark, and high contrast were must-haves, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour.",
             },
             {
               key: "Language",
@@ -448,7 +502,7 @@ export const dms: CaseStudy = {
       heading: "After development",
       maxim: "In a document system, a screen that looks right can still tell the user something false. Review is where that gets caught.",
       standfirst:
-        "Handoff delivers FOX code and annotated frames, so what reaches review is built from the right parts and documented. What is left to check is what neither can guarantee: that every state tells the truth about the document behind it — deleted, restored, hidden, versioned. Seven stages, from preview build to the next iteration.",
+        "The developers build on the FOX package and work from annotated frames, so what reaches review is made from the right parts and documented. What is left to check is what neither can guarantee: that every state tells the truth about the document behind it, whether deleted, restored, hidden, or versioned. Seven stages, from preview build to the next iteration.",
       blocks: [
         {
           kind: "steps",
@@ -460,11 +514,11 @@ export const dms: CaseStudy = {
               title: "I review the running build against the annotated frame",
               rule: {
                 label: "Rule",
-                body: "Every pull request that changes a screen is reviewed by design on its preview build, beside the frame and its annotations — requirements, interaction, user flow, content, development. Comments go on the pull request and quote the annotation they check against.",
+                body: "Every pull request that changes a screen is reviewed by design on its preview build, beside the frame and its annotations: requirements, interaction, user flow, content, and development. Comments go on the pull request and quote the annotation they check against.",
               },
               why: {
                 label: "Why it isn't decoration",
-                body: "The annotations exist so nobody has to ask what was meant. Reviewing against them keeps that promise after development: a comment that cites the frame’s own rule is a check, not a matter of taste, and it lands before merge, where it costs a comment instead of a release.",
+                body: "The annotations exist so that nobody has to ask what was meant. Reviewing against them keeps that promise after development: a comment that cites the frame’s own rule is a check, not a matter of taste, and it lands before merge, where it costs a comment instead of a release.",
               },
               contrast: {
                 does: "Each comment cites the annotation it checks.",
@@ -479,7 +533,7 @@ export const dms: CaseStudy = {
               title: "Design QA runs against the requirement and every role",
               rule: {
                 label: "Rule",
-                body: "The REQ on the frame is the REQ on the ticket, so design QA walks its acceptance criteria one by one — then repeats the walk as each role, because in this product the same screen is a different screen for a user who is not cleared to see a field.",
+                body: "The REQ on the frame is the REQ on the ticket, so design QA walks its acceptance criteria one by one, then repeats the walk as each role, because in this product the same screen is a different screen for a user who is not cleared to see a field.",
               },
               why: {
                 label: "Why it isn't decoration",
@@ -511,7 +565,7 @@ export const dms: CaseStudy = {
               title: "I walk every destructive flow the way an auditor would",
               rule: {
                 label: "Rule",
-                body: "Delete, restore, replace and retention flows get a separate pass, end to end, reading only what the interface says. Every message has to match what the system actually did — and the audit trail has to show it, append-only, with nothing on screen that suggests it could be edited.",
+                body: "Delete, restore, replace, and retention flows get a separate pass, end to end, reading only what the interface says. Every message has to match what the system did, and the audit trail has to show it, append-only, with nothing on screen that suggests it could be edited.",
               },
               why: {
                 label: "Why it isn't decoration",
@@ -543,7 +597,7 @@ export const dms: CaseStudy = {
               },
               why: {
                 label: "Why it isn't decoration",
-                body: "A designer who flags everything as critical stops being read. Three levels make the trade-off explicit — and a fixed rule for compliance findings means the one class of defect that cannot ship is never up for negotiation in a release meeting.",
+                body: "A designer who flags everything as critical stops being read. Three levels make the trade-off explicit, and a fixed rule for compliance findings means the one class of defect that cannot ship is never up for negotiation in a release meeting.",
               },
               contrast: {
                 does: "Compliance findings block by rule.",
@@ -557,11 +611,11 @@ export const dms: CaseStudy = {
               title: "When the code is right and the file is wrong, the file changes",
               rule: {
                 label: "Rule",
-                body: "Development surfaces what design did not see: a search index that cannot filter by a field in time, a lock that needs a timeout, a better order of metadata. Each deviation is rejected as a defect or accepted — and an accepted one is written back into the frame and its annotations, over MCP, the same week.",
+                body: "Development surfaces what design did not see: a search index that cannot filter by a field in time, a lock that needs a timeout, a better order of metadata. Each deviation is rejected as a defect or accepted, and an accepted one is written back into the frame and its annotations, over MCP, the same week.",
               },
               why: {
                 label: "Why it isn't decoration",
-                body: "The annotated frame is what a developer, a tester and an auditor all read. If it describes what was designed instead of what shipped, all three are reading the wrong artefact — and the auditor is the one who will not ask.",
+                body: "The annotated frame is what a developer, a tester, and an auditor all read. If it describes what was designed instead of what shipped, all three are reading the wrong artefact, and the auditor is the one who will not ask.",
               },
               contrast: {
                 does: "Accepted deviations are merged back into the file.",
@@ -572,14 +626,14 @@ export const dms: CaseStudy = {
               n: "06",
               stage: "Acceptance",
               flow: { from: "A fixed build", to: "Design accepted, on the ticket" },
-              title: "Design acceptance is part of the Definition of Done",
+              title: "Design acceptance is part of the definition of done",
               rule: {
                 label: "Rule",
-                body: "A ticket that changes a screen does not close on QA alone. Design acceptance is a dated status on it — the build counterpart of the sign-off each frame carries — recorded next to functional QA, not instead of it.",
+                body: "A ticket that changes a screen does not close on QA alone. Design acceptance is a dated status on it, the build counterpart of the sign-off each frame carries, recorded next to functional QA, not instead of it.",
               },
               why: {
                 label: "Why it isn't decoration",
-                body: "Frame sign-off approves an intention. Build acceptance approves what a customer — and an auditor — will actually meet. Two dated approvals, one on each side of development, are part of the same paper trail this product exists to keep.",
+                body: "Frame sign-off approves an intention. Build acceptance approves what a customer, and an auditor, will meet. Two dated approvals, one on each side of development, are part of the same paper trail this product exists to keep.",
               },
               contrast: {
                 does: "Two sign-offs: on the frame, and on the build.",
@@ -597,7 +651,7 @@ export const dms: CaseStudy = {
               },
               why: {
                 label: "Why it isn't decoration",
-                body: "The product exists to pull documents out of drives and inboxes. Whether it does is only visible after release — in what people still do outside it. A process that stops at the merge never finds out.",
+                body: "The product exists to pull documents out of drives and inboxes. Whether it does is visible only after release, in what people still do outside it. A process that stops at the merge never finds out.",
               },
               contrast: {
                 does: "Post-release findings feed the backlog as requirements.",
@@ -629,8 +683,17 @@ export const dms: CaseStudy = {
           items: [
             "<strong>Retrieval by filter.</strong> Text search and metadata filters say which field matched, so a user can see why a document was found.",
             "<strong>History in the template.</strong> Version history and retention are tabs on every document, not features a screen may or may not have.",
-            "<strong>Traceable frames.</strong> Every frame carries its REQ, its requirement text and a dated sign-off.",
+            "<strong>Traceable frames.</strong> Every frame carries its REQ, its requirement text, and a dated sign-off.",
             "<strong>One system loop.</strong> Patterns this product needed went into FOX 2.3 and came back at a pinned version, for every other product to reuse.",
+          ],
+        },
+        {
+          kind: "joint",
+          question: "What will I measure after release, and how?",
+          answers: [
+            "<strong>Whether documents left the drives.</strong> With the researcher, back to the people from discovery: where documents still end up in network drives and mail threads.",
+            "<strong>Whether retrieval works.</strong> Which searches return nothing.",
+            "<strong>Whether hand-offs hold.</strong> Where hand-offs between companies stall. Findings go into the backlog with the same REQ structure.",
           ],
         },
       ],
