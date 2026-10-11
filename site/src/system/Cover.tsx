@@ -78,7 +78,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
       ) : (
         <Lane width="bleed">
           <div className="cover__art cover__art--type" ref={art} aria-hidden="true">
-            <TypeCover cover={cover} device={device} />
+            <TypeCover cover={cover} device={device} eager />
           </div>
         </Lane>
       )}
@@ -136,7 +136,7 @@ function Chart() {
 
 
 /**
- * The cover as type, for the work grid. The old thumbnails were Figma
+ * The cover as type, for the work grid and the case-page hero. The old thumbnails were Figma
  * boards in the product's yellow, which said nothing about the project
  * and fought the page. This one says what the project is and whose it is,
  * in the site's own type, and lets the first mockup of the study lean out
@@ -144,7 +144,7 @@ function Chart() {
  * `cover.art` overrides it; without either the cover is type alone. The tile names and dates the link in text
  * below the cover, so the cover is hidden from assistive technology.
  */
-export function TypeCover({ cover, device }: { cover: CoverData; device?: string }) {
+export function TypeCover({ cover, device, eager }: { cover: CoverData; device?: string; eager?: boolean }) {
   const parts = cover.credit.split("·").map((x) => x.trim());
   const org = cover.org ?? (parts.length === 3 ? parts[1] : undefined);
   // the tile's own title and year sit under the cover, so this is decoration to a reader
@@ -160,7 +160,7 @@ export function TypeCover({ cover, device }: { cover: CoverData; device?: string
         ))}
       </span>
       <span className="tcover__sub">{cover.subline}</span>
-      {art && <img className="tcover__device" src={asset(art)} alt="" loading="lazy" decoding="async" />}
+      {art && <img className="tcover__device" src={asset(art)} alt="" loading={eager ? "eager" : "lazy"} decoding="async" />}
     </span>
   );
 }

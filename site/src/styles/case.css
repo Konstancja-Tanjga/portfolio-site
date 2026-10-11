@@ -79,8 +79,8 @@
 .cover__art--type .tcover__headline { font-size: clamp(2rem, 6.5cqw, 5.4rem); }
 .cover__art--type .tcover__sub { font-size: clamp(1rem, 1.8cqw, 1.4rem); max-width: 30ch; }
 .cover__art--type .tcover__kicker, .cover__art--type .tcover__org { font-size: clamp(0.7rem, 1.1cqw, 0.9rem); }
-.cover__art--type .tcover--portrait .tcover__device { height: 150%; bottom: auto; top: 6%; right: 10%; transform: rotate(-6deg); transform-origin: 50% 0; }
-.cover__art img {
+.cover__art--type .tcover.tcover--portrait .tcover__device { width: auto; height: 150%; bottom: auto; top: 6%; right: 10%; transform: rotate(-6deg); transform-origin: 50% 0; }
+.cover__art:not(.cover__art--type) img {
   display: block;
   width: 100%;
   height: auto;

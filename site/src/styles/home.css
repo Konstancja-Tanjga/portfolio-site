@@ -604,8 +604,8 @@
 .tcover__headline { grid-column: 1 / -1; align-self: end; display: grid; margin-top: var(--bh-space-2); font-family: var(--kt-font-display); font-weight: 700; font-size: clamp(1.25rem, 8.5cqw, 3.1rem); line-height: 0.98; letter-spacing: -0.035em; }
 .tcover__sub { grid-column: 1 / -1; margin-top: 0.35em; font-size: clamp(0.72rem, 3cqw, 1rem); color: var(--kt-ink-2); max-width: 24ch; }
 .tcover--device .tcover__headline, .tcover--device .tcover__sub { max-width: 50%; position: relative; z-index: 1; }
-.tcover--portrait .tcover__device { width: auto; height: 118%; right: -4%; bottom: -30%; transform: rotate(-6deg); transform-origin: 50% 100%; }
-.hm-tile:hover .tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
+.tcover.tcover--portrait .tcover__device { width: auto; height: 118%; right: -4%; bottom: -30%; transform: rotate(-6deg); transform-origin: 50% 100%; }
+.hm-tile:hover .tcover.tcover--portrait .tcover__device { transform: rotate(-3deg) translateY(-3%); }
 .tcover--portrait .tcover__headline, .tcover--portrait .tcover__sub { max-width: 60%; }
 .tcover .tcover__device {
   position: absolute; right: -16%; bottom: -12%; width: 70%; height: auto; object-fit: contain;
