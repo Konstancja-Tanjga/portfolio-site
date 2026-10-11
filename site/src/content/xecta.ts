@@ -119,7 +119,7 @@ export const xecta: CaseStudy = {
             { src: `${W}/03.png`, title: "Dashboard", body: "One group of wells: the production summary chart, the largest deferrals, and today's opportunities traced from lift type to cash flow." },
             { src: `${W}/04.png`, title: "Well Performance", body: "A table of wells with setpoint and workover opportunities; one row opened on its setpoint chart and valve pressure traverse." },
             { src: `${W}/06.png`, title: "Artificial Lift Timing Selection", body: "Lift scenarios for one well compared by NPV, with the IPR and VLP curves for each." },
-            { src: `${W}/device/website-01-2400.webp`, frame: "macbook", title: "xecta.com", body: "The home page, with the Drilling menu open on its three product lines." },
+            { src: `${W}/website-01.png`, title: "xecta.com", body: "The home page, with the Drilling menu open on its three product lines." },
             { src: `${W}/website-03.png`, title: "A product page", body: "Well Performance Analysis on desktop, beside the offices block on a phone." },
           ],
         },
@@ -210,13 +210,12 @@ export const xecta: CaseStudy = {
               maxim: "A site that makes a data-dense product legible to someone who will never open it.",
               standfirst:
                 "Goal: tell a reader what Xecta's products do, and get them to the contact form, on desktop, tablet, and phone.",
-              cover: { src: `${W}/device/website-01-2400.webp`, frame: "macbook" },
+              cover: { src: `${W}/website-01.png` },
               blocks: [
                 {
                   kind: "shot",
                   width: "wall",
-                  src: `${W}/device/website-01-2400.webp`,
-                  frame: "macbook",
+                  src: `${W}/website-01.png`,
                   caption:
                     "From the website board: my role was the UX and UI of the website and the work with the developers. The team was one more UI designer and two developers. The home page with the Drilling menu open.",
                 },
