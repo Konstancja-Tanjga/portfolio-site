@@ -360,8 +360,9 @@ export const bi: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: `${D}/models-select-2400.webp`,
-          frame: "macbook",
-          caption: "A generated prototype of the data-model builder: the first query added from the shelf, before any relationship is drawn.",
+              frame: "macbook",
+              caption:
+                "Saved data models, and the New menu split by intent: build, connect, schedule and share. A data model is one of the things you connect, not something you draw from nothing.",
         },
       ],
     },
