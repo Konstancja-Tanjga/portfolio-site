@@ -7,6 +7,7 @@ import {
   Duo,
   Evolution,
   Flow,
+  Joint,
   Lane,
   Palette,
   Passage,
@@ -68,6 +69,8 @@ function BlockView({ block }: { block: Block }) {
       return <Brief rows={block.rows} />;
     case "flow":
       return <Flow stages={block.stages} note={block.note} />;
+    case "joint":
+      return <Joint question={block.question} answers={block.answers} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":

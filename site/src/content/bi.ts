@@ -985,17 +985,17 @@ export const bi: CaseStudy = {
           ],
         },
         {
-          kind: "passage",
-          html:
-            "<p><strong>What I would do differently.</strong> I would write the surface rules before the first prototype, not after the audit. Three controls moved after the rules were written, and each move cost a round of review and a frame redrawn. I would also not accept the pivot grid as a native table: fox-table-executor could not express grouped headers, I took the gap to ship on time, and the system now owes the product a component that the next pivot will need too.</p>",
+          kind: "joint",
+          question: "What would I do differently?",
+          answers: [
+            "<strong>Write the surface rules before the first prototype</strong>, not after the audit. Three controls moved after the rules were written, and each move cost a round of review and a frame redrawn.",
+            "<strong>Not accept the pivot grid as a native table.</strong> fox-table-executor could not express grouped headers, I took the gap to ship on time, and the system now owes the product a component that the next pivot will need too.",
+          ],
         },
         {
-          kind: "passage",
-          html: "<p><strong>What I will measure after release, and how.</strong> Each measure tests whether one rule on this page holds up with real users.</p>",
-        },
-        {
-          kind: "points",
-          items: [
+          kind: "joint",
+          question: "What will I measure after release, and how?",
+          answers: [
             "<strong>Whether controllers verify the AI analyst.</strong> How often a detail thread ends in Apply versus Discard, and how often Show SQL is opened before Apply.",
             "<strong>Whether reach stays visible.</strong> How many published queries are reused outside the department that built them, set against the permission questions that reach support.",
             "<strong>Whether drill-down left Excel.</strong> Exports per controller during the monthly close, before and after rollout, from the export logs.",

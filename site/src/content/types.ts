@@ -301,6 +301,12 @@ export type Block =
    */
   | { kind: "flow"; stages: { title: string; body: string }[]; note?: string }
   /**
+   * A question set large, joined to its answers by a drawn connector,
+   * the way a relationship joins two tiles on the data-model canvas.
+   * One answer or several; each is a card on the right.
+   */
+  | { kind: "joint"; question: string; answers: string[] }
+  /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,
    * not evidence. `href` stays optional for sources with no public home.
