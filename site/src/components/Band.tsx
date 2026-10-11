@@ -1,7 +1,7 @@
+import { TypeCover, firstDevice } from "../system/Cover";
 import { Link } from "react-router-dom";
 import { byGroup } from "../content";
 import type { CaseStudy, Group } from "../content/types";
-import { asset } from "../system/asset";
 
 /**
  * One band of a listing page: a label, a line on what is in it, and its cards.
@@ -50,14 +50,7 @@ function Card({
   return (
     <Link to={`/work/${study.slug}`} className={featured ? "card card--feature" : "card"}>
       <div className="card__cover">
-        {study.cover.shot.src ? (
-          <img src={asset(study.cover.shot.src)} alt="" loading="lazy" decoding="async" />
-        ) : (
-          <div className="card__slot">
-            <span className="kicker">{study.cover.kicker}</span>
-            <span className="card__slot-title">{study.cover.headline.join(" ")}</span>
-          </div>
-        )}
+        <TypeCover cover={study.cover} device={firstDevice(study)} />
       </div>
       <div className="card__text">
         <h3 className="card__title">{study.title}</h3>
