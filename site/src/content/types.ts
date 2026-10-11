@@ -356,6 +356,14 @@ export type Cover = {
    * for why sixteen projects share one typeset frame instead.
    */
   shot: Shot;
+  /**
+   * The art at the top of the wall, when it is not the thumbnail: several
+   * screens of the product that blend into one another, so the intro says
+   * what the product is before a word is read. Each layer is a mockup; the
+   * intro stacks them in depth, cycles their opacity, and draws a chart in
+   * sand over the top. Without it, the intro shows `shot`.
+   */
+  layers?: { src: string; label: string }[];
 };
 
 /**

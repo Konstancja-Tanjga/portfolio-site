@@ -1171,3 +1171,83 @@
 @media (prefers-reduced-motion: reduce) {
   .joint__port, .joint__rail::before, .joint__rail::after, .joint__answer { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- cover: layers that blend ----------
+   Four mockups stacked in depth; each one surfaces in turn and sinks
+   back, so the intro says "dashboards, an analyst, a model" before a
+   word is read. The pointer tilts the stack; a chart in sand draws
+   itself over the top. */
+.cover__art--layers { perspective: 1800px; }
+.layers {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.layers__item {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04));
+  opacity: 0.12;
+  animation: layer-cycle calc(var(--layers) * 5s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: calc(var(--i) * 5s);
+  will-change: opacity, transform;
+}
+.layers__item img { width: 92%; height: auto; display: block; filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.7)); }
+.layers__label {
+  position: absolute;
+  left: 6%;
+  bottom: 4%;
+  padding: 0.4em 0.9em;
+  border: 1px solid rgba(227, 210, 173, 0.6);
+  border-radius: 999px;
+  background: rgba(15, 15, 14, 0.75);
+  color: var(--kt-sand);
+  font-size: var(--bh-size-id);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+@keyframes layer-cycle {
+  0% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+  6% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  22% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  30% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+  100% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+}
+/* the label rides with its layer's surfacing */
+.layers__item { --label: 0; }
+.layers__item .layers__label { animation: label-cycle calc(var(--layers) * 5s) steps(1) infinite; animation-delay: calc(var(--i) * 5s); }
+@keyframes label-cycle { 0% { opacity: 0; } 6% { opacity: 1; } 24% { opacity: 0; } 100% { opacity: 0; } }
+
+.layers__chart {
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  width: 38%;
+  height: auto;
+  aspect-ratio: 520 / 200;
+  transform: translateZ(80px);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  mix-blend-mode: screen;
+}
+.chart__bars rect { transform-box: fill-box; transform-origin: 50% 100%; animation: chart-bar 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes chart-bar { from { transform: scaleY(0); opacity: 0; } to { transform: none; opacity: 1; } }
+.chart__line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1600ms 1100ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.chart__dots circle { opacity: 0; animation: chart-dot 400ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes chart-dot { from { opacity: 0; r: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .layers__item { animation: none; opacity: 0.12; }
+  .layers__item:first-child { opacity: 1; transform: none; }
+  .layers__item:first-child .layers__label { animation: none; opacity: 1; }
+  .layers__item .layers__label { animation: none; }
+  .chart__bars rect, .chart__line, .chart__dots circle { animation: none; opacity: 1; stroke-dashoffset: 0; transform: none; }
+  .layers { transform: none; transition: none; }
+}

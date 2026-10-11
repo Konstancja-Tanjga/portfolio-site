@@ -34,6 +34,12 @@ export const bi: CaseStudy = {
     stamp: "DASHBOARDS · QUERIES · DATA MODELS · AI ANALYST",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     shot: { src: "/work/applus-analytics/00-cover.png" },
+    layers: [
+      { src: "/work/applus-analytics/device/dashboards-2400.webp", label: "Dashboards" },
+      { src: "/work/applus-analytics/device/analyst-chat-2400.webp", label: "AI Data Analyst" },
+      { src: "/work/applus-analytics/device/models-relationship-2400.webp", label: "Data models" },
+      { src: "/work/applus-analytics/device/home-2400.webp", label: "Home" },
+    ],
   },
   meta: [
     { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
