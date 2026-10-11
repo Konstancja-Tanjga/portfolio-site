@@ -478,7 +478,7 @@ export const dms: CaseStudy = {
             {
               src: "/work/applus-documents/device/tablet-versions-2400.webp",
               frame: "macbook",
-              caption: "The same version history on a tablet: the template survives the narrower width.",
+              caption: "The same version history at a narrower width: the template holds without a second layout.",
             },
           ],
         },
