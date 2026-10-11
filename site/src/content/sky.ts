@@ -35,6 +35,7 @@ export const sky: CaseStudy = {
     subline: "World of Raptors, redesigned with Claude",
     stamp: "PARAMETRIC SILHOUETTES · LIVE SKY · MORPHS · SPACED REPETITION",
     credit: "Idea, content and direction · Built with Claude · 2026",
+    org: "Personal project",
     shot: { src: "/work/reading-the-sky/00-cover.jpg" },
   },
   meta: [

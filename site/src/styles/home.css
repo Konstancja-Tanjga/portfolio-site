@@ -182,7 +182,6 @@
 }
 .hm-tile:hover .hm-tile__view { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .hm-tile:focus-visible .hm-tile__view { opacity: 1; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(1); }
-.hm-tile__slot { display: grid; place-items: center; height: 100%; padding: var(--bh-space-4); color: var(--kt-ink-3); }
 .hm-tile__text { display: grid; grid-template-columns: 1fr auto; gap: 0.2em var(--bh-space-4); align-items: baseline; }
 .hm-tile__title {
   font-family: var(--kt-font-display);
@@ -593,18 +592,17 @@
 /* ---------- typeset covers on the grid ---------- */
 .hm-tile__cover { container-type: inline-size; }
 .tcover {
-  position: absolute; inset: 0; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto auto; gap: 0 var(--bh-space-3);
+  position: absolute; inset: 0; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; gap: 0 var(--bh-space-3);
   padding: clamp(0.9rem, 5cqw, 1.6rem); color: var(--kt-ink);
   background:
-    radial-gradient(120% 90% at 100% 110%, rgba(227, 210, 173, 0.16), transparent 55%),
-    linear-gradient(160deg, #1a1a18, var(--kt-ground-2) 60%, #0f0f0e);
+    radial-gradient(120% 90% at 100% 110%, color-mix(in srgb, var(--kt-sand) 16%, transparent), transparent 55%),
+    linear-gradient(160deg, color-mix(in srgb, var(--kt-ground-2) 80%, var(--kt-sand)), var(--kt-ground-2) 60%, var(--kt-ground));
 }
-.tcover__kicker, .tcover__org, .tcover__year { font-family: var(--bh-font-id, "IBM Plex Mono", monospace); font-size: clamp(0.55rem, 2.4cqw, 0.72rem); letter-spacing: 0.12em; text-transform: uppercase; }
+.tcover__kicker, .tcover__org { font-family: var(--bh-font-id, "IBM Plex Mono", monospace); font-size: clamp(0.55rem, 2.4cqw, 0.72rem); letter-spacing: 0.12em; text-transform: uppercase; }
 .tcover__kicker { grid-column: 1; color: var(--kt-ink-3); }
 .tcover__org { grid-column: 2; justify-self: end; color: var(--kt-sand); white-space: nowrap; }
 .tcover__headline { grid-column: 1 / -1; align-self: end; display: grid; margin-top: var(--bh-space-2); font-family: var(--kt-font-display); font-weight: 700; font-size: clamp(1.25rem, 8.5cqw, 3.1rem); line-height: 0.98; letter-spacing: -0.035em; }
 .tcover__sub { grid-column: 1 / -1; margin-top: 0.35em; font-size: clamp(0.72rem, 3cqw, 1rem); color: var(--kt-ink-2); max-width: 24ch; }
-.tcover__year { grid-column: 1 / -1; margin-top: var(--bh-space-2); color: var(--kt-ink-3); }
 .tcover--device .tcover__headline, .tcover--device .tcover__sub { max-width: 58%; position: relative; z-index: 1; }
 .hm-tile__cover .tcover__device {
   position: absolute; right: -12%; bottom: -14%; width: 58%; height: auto; object-fit: contain;
@@ -616,4 +614,4 @@
 .hm-tiles--practice .hm-tile__cover .tcover__device { width: 74%; right: -20%; bottom: -20%; }
 .hm-tiles--practice .tcover--device .tcover__headline, .hm-tiles--practice .tcover--device .tcover__sub { max-width: 100%; }
 .hm-tiles--practice .tcover__sub { display: none; }
-@media (prefers-reduced-motion: reduce) { .tcover__device, .hm-tile:hover .hm-tile__cover .tcover__device { transition: none; transform: rotate(-4deg); } }
+@media (prefers-reduced-motion: reduce) { .hm-tile__cover .tcover__device, .hm-tile:hover .hm-tile__cover .tcover__device { transition: none; transform: rotate(-4deg); } }
