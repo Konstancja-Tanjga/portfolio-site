@@ -46,7 +46,7 @@ export function Home() {
             <span>Lead Designer, UX Engineer</span>
             <span>Warsaw 52.2°N 21.0°E</span>
             <span>CET</span>
-            <span>Open to lead and principal roles, remote, B2B</span>
+            <span>Open to lead and IC roles, remote, B2B</span>
           </p>
           <h1 id="hero-claim" className="hm-hero__claim">
             <span className="hm-hero__mask"><span className="hm-hero__line">Enterprise software,</span></span>
