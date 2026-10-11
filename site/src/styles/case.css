@@ -1385,3 +1385,17 @@ article { position: relative; z-index: 1; }
 .car__dot-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 @media (max-width: 48rem) { .car__bar { grid-template-columns: 1fr; } .car__arrow { opacity: 1; } .car__arrow--prev { left: 0.5rem; } .car__arrow--next { right: 0.5rem; } }
 @media (prefers-reduced-motion: reduce) { .car, .car__slide, .car__text { transition: none; animation: none; } .car { opacity: 1; transform: none; } }
+.spec__more {
+  margin-top: var(--bh-space-3);
+  padding: 0.55em 1.1em;
+  border: 1px solid var(--kt-line);
+  border-radius: 999px;
+  background: none;
+  color: var(--kt-ink);
+  font: inherit;
+  font-size: var(--bh-size-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 200ms, background 200ms, color 200ms;
+}
+.spec__more:hover { border-color: var(--kt-sand); background: var(--kt-sand); color: var(--kt-ground); }

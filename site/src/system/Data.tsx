@@ -84,10 +84,13 @@ export function Spec({
   // answer shows at a time, the first by default.
   const folded = rows.length >= 5;
   const [open, setOpen] = useState<number | null>(0);
+  // Folded tables also hide everything after the first row until asked.
+  const [more, setMore] = useState(false);
+  const visible = folded && !more ? rows.slice(0, 1) : rows;
   return (
     <Lane width="wall">
       <div ref={ref} className={[shown ? "spec is-shown" : "spec", folded ? "spec--folded" : ""].join(" ")}>
-        {rows.map((row, i) =>
+        {visible.map((row, i) =>
           folded ? (
             <div className={open === i ? "spec__row is-open" : "spec__row"} key={row.key} style={{ transitionDelay: `${i * 50}ms` }}>
               <button
@@ -112,6 +115,11 @@ export function Spec({
           ),
         )}
       </div>
+      {folded && rows.length > 1 && (
+        <button type="button" className="spec__more" aria-expanded={more} onClick={() => setMore((v) => !v)}>
+          {more ? "Show less" : `Show more: ${rows.length - 1} more`}
+        </button>
+      )}
       {caption && <p className="spec__caption">{caption}</p>}
     </Lane>
   );
