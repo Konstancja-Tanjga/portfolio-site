@@ -532,3 +532,60 @@
 
 /* the stage is a backdrop: absolute, under the words, whatever the layering rule above says */
 .hm > .hm-hero > .hm-hero__stage { position: absolute; z-index: 1; }
+
+/* the stage: the product screens blending, behind and to the right of the claim */
+.hm > .hm-hero > .hm-hero__stage {
+  top: 3%;
+  right: -4%;
+  width: 64%;
+  pointer-events: none;
+  opacity: 0.95;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%);
+  mask-image: linear-gradient(90deg, transparent, #000 22%);
+}
+.hm-hero__stage .layers { aspect-ratio: 16 / 10; }
+.hm-hero__stage .layers__chart { right: 8%; bottom: 10%; }
+.hm-hero__text { max-width: 60%; }
+@media (max-width: 56rem) {
+  .hm > .hm-hero > .hm-hero__stage { position: relative; width: 100%; right: 0; top: 0; mask-image: none; -webkit-mask-image: none; margin: 0 auto var(--bh-space-4); }
+  .hm-hero__text { max-width: none; }
+}
+
+/* ---------- hero as two columns: the claim beside the stage ---------- */
+.hm > .hm-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: var(--bh-space-5) var(--bh-space-5);
+  align-items: center;
+  min-height: min(88vh, 54rem);
+  max-width: var(--bh-page);
+  margin: 0 auto;
+  padding: var(--bh-space-6) var(--bh-gutter) var(--bh-space-5);
+  overflow: visible;
+}
+.hm > .hm-hero > .hm-hero__stage {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 1;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.hm > .hm-hero > .hm-hero__text { grid-column: 1; grid-row: 1; max-width: none; padding: 0; }
+.hm, .hm > .hm-hero { overflow-x: clip; }
+.hm > .hm-hero > .hm-ledger { grid-column: 1 / -1; grid-row: 2; order: 0; margin-top: 0; }
+.hm-hero__claim { font-size: clamp(2.6rem, 5.6vw, 5rem); max-width: 10em; }
+.hm-hero__lead { max-width: 30rem; }
+.hm-hero__status { font-size: 10px; }
+@media (max-width: 56rem) {
+  .hm > .hm-hero { grid-template-columns: 1fr; padding-top: var(--bh-space-4); }
+  .hm > .hm-hero > .hm-hero__stage { grid-column: 1; grid-row: 1; margin: 0; }
+  .hm > .hm-hero > .hm-hero__text { grid-row: 2; }
+  .hm > .hm-hero > .hm-ledger { grid-row: 3; }
+  .journey { display: none; }
+}
+.hm > .hm-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
+.hm > .hm-hero > .hm-hero__stage { align-self: center; margin-top: var(--bh-space-6); }
+.hm-hero__claim { font-size: clamp(2.4rem, 5vw, 4.4rem); }
