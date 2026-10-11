@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 
 import type { Block, Dossier as DossierData } from "../content/types";
+import { asset } from "./asset";
 import { useReveal } from "./Reveal";
 import { Lane } from "./Wall";
 
@@ -78,7 +79,7 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
               onClick={() => (open === i ? setOpen(null) : choose(i))}
             >
               <span className="dossier__cover" aria-hidden="true">
-                <img src={d.cover.src} alt="" loading="lazy" decoding="async" />
+                <img src={asset(d.cover.src)} alt="" loading="lazy" decoding="async" />
               </span>
               <span className="dossier__n">{d.n}</span>
               <span className="dossier__title">{d.title}</span>

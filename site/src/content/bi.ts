@@ -482,24 +482,7 @@ export const bi: CaseStudy = {
             },
           ],
         },
-        {
-          kind: "video",
-          clip: true,
-          width: "wall",
-          src: `${C}/r2-side-sheet.mp4`,
-          poster: `${C}/r2-side-sheet.webp`,
-          title: "The side sheet opens and the chart reflows beside it",
-          caption: "R2 in the prototype: Configure opens the side sheet without a scrim, and the chart type and grouping change live while the sheet stays open.",
-        },
-        {
-          kind: "video",
-          clip: true,
-          width: "wall",
-          src: `${C}/enlarge-restore.mp4`,
-          poster: `${C}/enlarge-restore.webp`,
-          title: "Enlarge and restore the workspace",
-          caption: "R6 in the prototype: Enlarge maximises the body inside the content layer, the rail and app bar stay, and the same button restores it.",
-        },
+
         {
           kind: "annotated",
           items: [
