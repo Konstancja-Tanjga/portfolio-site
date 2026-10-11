@@ -141,7 +141,7 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/device/09-2400.webp", frame: "macbook",
+          src: "/work/elly-ai-assistant/09.png",
           caption:
             "The panel across sizes: a model failure with Try again, voice mode, an answer with numbered sources and a Resources list, and a suggested prompt in the empty panel.",
         },
