@@ -124,6 +124,9 @@ export const bi: CaseStudy = {
             { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: Ask AI Data Analyst on top, favourite dashboards and analyses below." },
             { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library, sorted by domain, with all, favourites and shared with me." },
             { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "Graph, pivot and table are views of one analysis, switched in its view toolbar." },
+            { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
+            { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "Fields on the left, the grid on the right, row and total sums in the toolbar." },
+            { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Type, granularity, owner and last update on top; the SQL definition and a preview below." },
             { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "Answers with a live preview instead of a paragraph: columns, grouping, chart type and a match score before anything is saved." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
             { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Applied", body: "The correction returned to the main analysis as one step, with its reason attached: EMEA revenue, week 9." },
@@ -458,6 +461,21 @@ export const bi: CaseStudy = {
         "Every screen in the product is one of five layouts with different content in the same zones. That is what made the layout arguments reusable instead of per-screen. Zone map from the Analytics prototype; one rectangle is one real container, and sizes are the values in code.",
       blocks: [
         {
+          kind: "duo",
+          items: [
+            {
+              src: `${D}/analysis-sheet-2400.webp`,
+              frame: "macbook",
+              caption: "Graph view with the side sheet open. Changing how the body renders (R2) opens the sheet from the view toolbar, without a scrim, and the chart reflows beside it.",
+            },
+            {
+              src: `${D}/analysis-pivot-2400.webp`,
+              frame: "macbook",
+              caption: "Pivot view: available fields on the left, the result grid on the right, and the view toolbar that travels with the workspace (R6, R7).",
+            },
+          ],
+        },
+        {
           kind: "annotated",
           items: [
             {
@@ -595,6 +613,14 @@ export const bi: CaseStudy = {
                 "Analyses reuse the card, the badges and the filters of dashboards exactly. What differs is what the object does, not how it is found.",
             },
           ],
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: `${D}/dashboard-detail-2400.webp`,
+          frame: "macbook",
+          caption:
+            "A dashboard opened: object type, granularity, owner and last update printed at the top, the SQL definition under them, and a result preview that waits to be run. Authorship and reach on the artefact itself.",
         },
         {
           kind: "shot",
