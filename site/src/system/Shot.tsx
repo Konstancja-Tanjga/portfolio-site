@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useId, useState } from "react";
 
 import type { Shot as ShotData, Width } from "../content/types";
 import { asset } from "./asset";
@@ -15,12 +15,31 @@ export const ShotViewer = createContext<
 >(null);
 
 /** One image in the wall, or the slot where it will go. */
-export function Shot({ width = "wall", src, slot, caption }: ShotData & { width?: Width }) {
+export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded }: ShotData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  if (folded) {
+    return (
+      <Lane width={width}>
+        <div ref={ref as React.RefObject<HTMLDivElement>} className={[shown ? "drawer is-shown" : "drawer", open ? "is-open" : ""].join(" ")}>
+          <button type="button" className="drawer__head" aria-expanded={open} aria-controls={`${id}-body`} onClick={() => setOpen((v) => !v)}>
+            {src && <span className="drawer__thumb" aria-hidden="true"><img src={asset(src)} alt="" loading="lazy" decoding="async" /></span>}
+            <span className="drawer__title">{caption ?? slot ?? "Diagram"}</span>
+            <span className="drawer__hint" aria-hidden="true">{open ? "Close" : "Open the diagram"}</span>
+            <span className="drawer__chevron" aria-hidden="true" />
+          </button>
+          <figure id={`${id}-body`} className="shot is-shown drawer__body" hidden={!open}>
+            <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
+          </figure>
+        </div>
+      </Lane>
+    );
+  }
   return (
     <Lane width={width}>
       <figure ref={ref} className={shown ? "shot is-shown" : "shot"}>
-        <ShotFrame src={src} slot={slot} caption={caption} />
+        <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
         {caption && <figcaption className="shot__caption">{caption}</figcaption>}
       </figure>
     </Lane>

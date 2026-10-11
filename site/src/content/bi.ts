@@ -620,7 +620,8 @@ export const bi: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: `${S}/thread-diagram.png`,
-          caption: "Main analysis thread on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
+          folded: true,
+          caption: "The thread model: main analysis on the left, the detail thread on the right. Apply returns one step with its reason; discard returns nothing.",
         },
         {
           kind: "shot",
@@ -800,6 +801,7 @@ export const bi: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: `${S}/models-anatomy.png`,
+          folded: true,
           caption:
             "One relationship. Provenance rides on the tile, the column type is visible before the link is made, and joining a STRING to a FLOAT is refused at the endpoint, not at run time.",
         },

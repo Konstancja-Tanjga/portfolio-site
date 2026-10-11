@@ -27,6 +27,13 @@ export type Shot = {
    */
   frame?: "macbook";
   /**
+   * A diagram or a board that is reference rather than evidence: shown
+   * as a closed drawer with a thumbnail strip and its caption as the
+   * title, opened on a click. The reader who wants it gets it; the one
+   * skimming is not stopped by it.
+   */
+  folded?: boolean;
+  /**
    * Notes pinned to places on the image, as a percentage of its width and
    * height. They surface as speech bubbles while the cursor is over the
    * image, and as a list under it for keyboard and touch.
