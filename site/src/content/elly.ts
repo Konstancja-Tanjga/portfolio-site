@@ -21,7 +21,7 @@ export const elly: CaseStudy = {
   group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · AI IN PRODUCTION",
-    headline: ["Smart help", "for an ERP"],
+    headline: ["AI assistant", "for ERP"],
     subline: "Elly, for APplus ERP",
     stamp: "STREAMING · CITATIONS · ERROR STATES · VOICE",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2025",
