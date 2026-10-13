@@ -282,14 +282,6 @@ export const volvo: CaseStudy = {
                     },
                   ],
                 },
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/reports-after-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "My reports in the new layout: the search box suggests report names and highlights the typed letters, and the actions for a selected report (Modify, View, Copy, Delete, Run report) sit in one bar.",
-                },
               ],
             },
             {
