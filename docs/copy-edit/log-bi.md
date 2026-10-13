@@ -59,3 +59,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | dashboard-detail: v2 "Product rollout snapshot" definition page | the opened "Regional sales review" with two widgets, a frame from her dashboard recording with the toast and cursor painted out | the only v3 picture of an opened dashboard |
 | Video.tsx: clips served as MP4 only | WebM first, MP4 fallback | WebM is about half the size |
 | three clip captions | "in the prototype"; two widgets; empty state as it is; no summary claim; queries "added and given an alias" | review: say only what the clip shows |
+| "built on Big Hat components" | "built on FOX design system components" | her wording, 13 October 2026 |

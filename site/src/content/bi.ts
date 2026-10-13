@@ -123,7 +123,7 @@ export const bi: CaseStudy = {
         },
         {
           kind: "passage",
-          html: `<p><strong>A working prototype</strong> of the application, built on Big Hat components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
+          html: `<p><strong>A working prototype</strong> of the application, built on FOX design system components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
         },
         {
           kind: "carousel",
