@@ -27,3 +27,4 @@ export { UseCase } from "./UseCase";
 export { Evolution } from "./Evolution";
 export { AnnotatedSet } from "./Annotated";
 export { Dossier } from "./Dossier";
+export { Loop } from "./Loop";

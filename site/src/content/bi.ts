@@ -931,29 +931,29 @@ export const bi: CaseStudy = {
         "What development receives: the Figma file through Dev Mode, every component bound to its implementation by Code Connect, Storybook as the reference, and a working prototype that answers the behaviour questions. The implementation is the developers' code on the FOX package.",
       blocks: [
         {
-          kind: "spec",
-          caption:
-            "The loop. By v3.0 the binding is the distribution model: FOX ships as a versioned package, and six products pick it up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library.",
-          rows: [
-            { key: "Figma to code", value: "Code Connect binds each design component to the implementation that ships it." },
-            { key: "Code to Figma", value: "Work done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it." },
-            { key: "Prototype to product", value: "The working prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
+          kind: "loop",
+          centre: "One system, no second copy",
+          stations: [
+            { label: "Figma", title: "The file", body: "Every component bound to the implementation that ships it, through Code Connect. Dev Mode is what development opens." },
+            { label: "Code", title: "The FOX package", body: "By v3.0 the binding is the distribution model: a versioned package six products pick up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library." },
+            { label: "Prototype", title: "The running prototype", body: "Composed on the package, it answers the behaviour questions and proves the composition. The implementation is the developers' code on the same package." },
           ],
+          edges: [
+            { label: "Code Connect" },
+            { label: "Composed on the package" },
+            { label: "Written back over MCP" },
+          ],
+          caption:
+            "The loop. The file binds to the code through Code Connect; the prototype is composed on that code; what is done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it.",
         },
         {
-          kind: "spec",
-          caption: "Three requirements that were in the tokens and templates from the start, not added in review.",
-          rows: [
-            { key: "Accessibility", value: "WCAG AA was the target from the start, not a review step at the end." },
-            {
-              key: "Colour modes",
-              value: "Light, dark and high contrast, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour.",
-            },
-            {
-              key: "Language",
-              value: "German is the default, English second. Layouts were tested against German compound words, where a layout that survives English quietly breaks. The screens on this page are the English variant.",
-            },
+          kind: "flow",
+          stages: [
+            { title: "Accessibility", body: "WCAG AA was the target from the start, not a review step at the end." },
+            { title: "Colour modes", body: "Light, dark and high contrast, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour." },
+            { title: "Language", body: "German is the default, English second. Layouts were tested against German compound words, where a layout that survives English quietly breaks. The screens on this page are the English variant." },
           ],
+          note: "Three requirements that were in the tokens and templates from the start, not added in review.",
         },
       ],
     },
