@@ -619,12 +619,15 @@ export const bi: CaseStudy = {
           caption: "New analysis, in the prototype: query, columns, formatting, save. The saved query and its SQL are shown before a column is picked, and nothing exists until the last step.",
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/analyst-chat-2400.webp`,
+          kind: "video",
+          clip: true,
           frame: "macbook",
+          width: "wall",
+          src: `${C}/ai-analyst.mp4`,
+          poster: `${C}/ai-analyst.webp`,
+          title: "The AI Data Analyst, from question to applied correction",
           caption:
-            "The AI Data Analyst names the cause with the number: up 8.2 per cent, but most of it is price. Under the chart, the provenance line says what it stands on: the query, the run time, the tables joined, when the data was refreshed, and Show SQL.",
+            "The AI Data Analyst, in the prototype: a suggested question asked, the answer that names the cause with the number and the chart under it, one phrase selected, the detail thread beside the analysis with its chips and evidence card, and the correction applied back into the main thread as one step.",
         },
         {
           kind: "duo",

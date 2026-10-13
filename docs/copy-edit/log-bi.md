@@ -68,3 +68,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | models-select mockup from the 918 px tall device frame, white band under the screen | the full-height 1920 by 1330 frame from the Data models section, composited into the standard MacBook | her report, 13 October 2026: the screen was cut off |
 | Discovery: still "Saved data models, and the New menu split by intent" | the new-data-model clip in a MacBook frame, caption keeps the last sentence | her request, 13 October 2026 |
 | clips as bare video | every clip inside the MacBook frame (`frame: "macbook"` on video), like the stills | her request |
+| sign-off still "The AI Data Analyst names the cause with the number" | her AI Data Analyst recording (62 s) in a MacBook frame: question, answer, fragment, detail thread, Apply | her request, 13 October 2026 |
