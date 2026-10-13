@@ -75,6 +75,8 @@ export type Video = {
    * film with sound and controls. See Video.tsx for what each one costs.
    */
   clip?: boolean;
+  /** the clip inside a MacBook, like the stills around it */
+  frame?: "macbook";
 };
 
 /** One of the four-up persona cards. Same slots every time. */

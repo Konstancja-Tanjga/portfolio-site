@@ -274,6 +274,12 @@
   transition: opacity 200ms;
 }
 .video__frame:hover .video__toggle, .video__toggle:focus-visible { opacity: 1; }
+/* a clip inside the MacBook the stills use: the frame is a transparent-screen
+   image laid over the player, and the player is sized to the screen rect */
+.video--device .video__frame { aspect-ratio: 5060 / 3165; border-radius: 0; overflow: visible; background: none; }
+.video--device .video__device { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.video--device .video__player { position: absolute; left: 11.818%; top: 4.866%; width: 75.889%; height: 79.684%; object-fit: cover; background: #fff; }
+.video--device .video__toggle { z-index: 2; right: 14%; bottom: 20%; }
 
 /* ---------- numbers ---------- */
 .stats { border-top: 1px solid var(--kt-line); border-bottom: 1px solid var(--kt-line); }

@@ -66,3 +66,5 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | UC-01 clip from the Big Hat prototype | removed; the v3 detail-thread still carries the use case until a v3 recording exists | her decision, 13 October 2026: the frame was outdated |
 | Handoff: two spec tables | a `loop` ring (file, FOX package, prototype) with arcs that draw and flow, and the three baked-in requirements as `flow` cards | her request, 13 October 2026: less text, graphics and depth in the portfolio style |
 | models-select mockup from the 918 px tall device frame, white band under the screen | the full-height 1920 by 1330 frame from the Data models section, composited into the standard MacBook | her report, 13 October 2026: the screen was cut off |
+| Discovery: still "Saved data models, and the New menu split by intent" | the new-data-model clip in a MacBook frame, caption keeps the last sentence | her request, 13 October 2026 |
+| clips as bare video | every clip inside the MacBook frame (`frame: "macbook"` on video), like the stills | her request |

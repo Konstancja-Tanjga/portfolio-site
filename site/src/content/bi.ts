@@ -354,12 +354,15 @@ export const bi: CaseStudy = {
           note: "On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.",
         },
         {
-          kind: "shot",
+          kind: "video",
+          clip: true,
+          frame: "macbook",
           width: "wall",
-          src: `${D}/models-select-2400.webp`,
-              frame: "macbook",
-              caption:
-                "Saved data models, and the New menu split by intent: build an analysis or a dashboard, connect a query or a data model. A data model is one of the things you connect, not something you draw from nothing.",
+          src: `${C}/new-data-model.mp4`,
+          poster: `${C}/new-data-model.webp`,
+          title: "A data model built from two queries",
+          caption:
+            "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows. A model is composed from queries that already exist; nothing in it is drawn from nothing.",
         },
       ],
     },
@@ -598,6 +601,7 @@ export const bi: CaseStudy = {
         {
           kind: "video",
           clip: true,
+          frame: "macbook",
           width: "wall",
           src: `${C}/new-dashboard.mp4`,
           poster: `${C}/new-dashboard.webp`,
@@ -607,6 +611,7 @@ export const bi: CaseStudy = {
         {
           kind: "video",
           clip: true,
+          frame: "macbook",
           width: "wall",
           src: `${C}/new-analysis.mp4`,
           poster: `${C}/new-analysis.webp`,
@@ -846,20 +851,12 @@ export const bi: CaseStudy = {
                 {
                   kind: "video",
                   clip: true,
+                  frame: "macbook",
                   width: "wall",
                   src: `${C}/models-join.mp4`,
                   poster: `${C}/models-join.webp`,
                   title: "A join refused, then a join accepted",
                   caption: "In the prototype: a STRING dragged onto a FLOAT is refused at the endpoint; customer_id onto customer_id draws the join, states INNER, and lists it in the panel.",
-                },
-                {
-                  kind: "video",
-                  clip: true,
-                  width: "wall",
-                  src: `${C}/new-data-model.mp4`,
-                  poster: `${C}/new-data-model.webp`,
-                  title: "A data model built from two queries",
-                  caption: "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows.",
                 },
                 {
                   kind: "shot",

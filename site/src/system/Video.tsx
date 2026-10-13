@@ -32,6 +32,7 @@ export function Video({
   subtitles,
   credit,
   clip,
+  frame,
   width = "wall",
 }: VideoData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
@@ -65,8 +66,9 @@ export function Video({
 
   return (
     <Lane width={width}>
-      <figure ref={ref} className={[shown ? "video is-shown" : "video", clip ? "video--clip" : ""].join(" ")}>
+      <figure ref={ref} className={[shown ? "video is-shown" : "video", clip ? "video--clip" : "", frame ? "video--device" : ""].join(" ")}>
         <div className="video__frame">
+          {frame && <img className="video__device" src={asset("/work/frames/macbook.webp")} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
           <video
             ref={player}
             className="video__player"
