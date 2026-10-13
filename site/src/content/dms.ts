@@ -314,17 +314,6 @@ export const dms: CaseStudy = {
           ],
           caption: "A finance tool: a dashboard that counts open tasks per company before it offers anything to do, and an inbox table of invoices.",
         },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/applus-documents/device/ref-xentral-2400.webp", frame: "macbook",
-          hotspots: [
-            { x: 35, y: 47, text: "The purchase order list stays in view beside the record." },
-            { x: 57, y: 22, text: "A detail panel beats a detail page where the user needs the list beside the record." },
-            { x: 68, y: 64, text: "A record has a limit. Past a certain amount on screen it stops being a record and becomes a form." },
-          ],
-          caption: "xentral: a purchase suggestion opened as a panel over the purchase order list.",
-        },
       ],
     },
     {

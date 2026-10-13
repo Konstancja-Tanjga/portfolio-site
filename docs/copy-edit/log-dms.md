@@ -91,3 +91,4 @@ Not done, and why:
 - fox-docs.png and the documentation mockup are not folded: they show a real page of the system and a real frame, so they are evidence, not explanation.
 - The tablet-versions mockup is not a carousel slide: it is a width variant of version history, not a part of the application.
 - The checklist lines in the After development steps keep their em dashes and the `v3 → v4` arrow, as decided on 11 October: code, not prose.
+| chapter 07 reference: the xentral screen with its caption and hotspots | removed, with its files | her decision, 13 October 2026 |
