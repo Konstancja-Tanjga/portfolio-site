@@ -27,6 +27,12 @@ export const elly: CaseStudy = {
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2025",
     art: { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp" },
     shot: { src: "/work/elly-ai-assistant/01.png" },
+    layers: [
+      { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", label: "An answer with citations" },
+      { src: "/work/elly-ai-assistant/device/resources-desktop-2400.webp", label: "Resources" },
+      { src: "/work/elly-ai-assistant/device/proto-text-2400.webp", label: "The scope answer" },
+      { src: "/work/elly-ai-assistant/device/proto-voice-2400.webp", label: "Voice mode" },
+    ],
   },
   meta: [
     { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
@@ -108,6 +114,15 @@ export const elly: CaseStudy = {
           ],
         },
         {
+          kind: "carousel",
+          items: [
+            { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", frame: "macbook", title: "An answer", body: "On a Flow board, with inline markers at each claim and the Resources block collapsed." },
+            { src: "/work/elly-ai-assistant/device/resources-desktop-2400.webp", frame: "macbook", title: "Resources", body: "Expanded: three document identifiers behind markers [1] to [3], in the customer's own documentation namespace." },
+            { src: "/work/elly-ai-assistant/device/proto-text-2400.webp", frame: "macbook", title: "The scope answer", body: "What Elly says when asked what she is, with the close tooltip warning that history won't be saved." },
+            { src: "/work/elly-ai-assistant/device/proto-voice-2400.webp", frame: "macbook", title: "Voice mode", body: "“Chats won't be saved”, the avatar in the centre of the panel, Pause and Finish." },
+          ],
+        },
+        {
           kind: "shot",
           width: "wall",
           src: "/work/elly-ai-assistant/screens/devices.png",
@@ -183,6 +198,13 @@ export const elly: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/elly-ai-assistant/screens/audit-aria.png",
+          hotspots: [
+            { x: 14, y: 23, text: "Switching between suggestions." },
+            { x: 15, y: 50, text: "The chat entry icon on desktop." },
+            { x: 76, y: 35, text: "Navigation on mobile." },
+            { x: 86, y: 30, text: "The chat entry icon on mobile." },
+            { x: 60, y: 86, text: "Early Elly drafts set against Aria's question, thinking, and answer-with-links states." },
+          ],
           caption:
             "The teardown: Opera's Aria assistant on desktop and mobile, annotated for suggestion switching, navigation, and the chat entry icon. Bottom right, early Elly drafts set against Aria's question, thinking, and answer-with-links states.",
         },
@@ -220,6 +242,14 @@ export const elly: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/elly-ai-assistant/device/exploration-options-2400.webp", frame: "macbook",
+          hotspots: [
+            { x: 24, y: 17, text: "Space: up to 20 per cent of the page." },
+            { x: 19, y: 40, text: "One click to Elly, from the side menu." },
+            { x: 46, y: 15, text: "A human face at 42px." },
+            { x: 51, y: 29, text: "Option 1: the panel overlaps the page and covers the data the question is about." },
+            { x: 71, y: 29, text: "Option 2: pinned beside the page, and the content reflows to make room." },
+            { x: 46, y: 43, text: "Stars or a help bulb for the symbol? Still open on the board." },
+          ],
           caption:
             "Both options built on a Flow board, with the working notes: space up to 20 per cent of the page, one click from the side menu, a human face at 42px, and the open question of stars or a help bulb for the symbol.",
         },
@@ -713,8 +743,18 @@ export const elly: CaseStudy = {
             href: "https://www.youtube.com/watch?v=eFn6maci6mA",
           },
         },
-        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/12.png" },
-        { kind: "shot", width: "wall", src: "/work/elly-ai-assistant/15.png" },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/elly-ai-assistant/12.png",
+          caption: "As shipped, across devices: the scope answer docked beside a Flow board on desktop and on a tablet, and the greeting on a phone. The footer on every screen says that Elly accesses APplus documentation and can make mistakes.",
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/elly-ai-assistant/15.png",
+          caption: "A German answer on the phone with markers [1] to [3] and the Resources list under it; on the tablet and the desktop, the suggested prompt carousel, Ask precise questions.",
+        },
       ],
     },
     {

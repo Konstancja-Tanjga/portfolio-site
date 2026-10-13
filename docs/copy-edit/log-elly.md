@@ -53,3 +53,26 @@ Not changed, and why:
 - No "What would I do differently?" and no "What will I measure?" block: the file contains no such reflection and none was invented. The barriers chapter already carries what participants asked for next.
 | { value: "9", label: "moderated sessions, 45 minutes each" } | { value: "13", label: "moderated sessions, 45 minutes each" } | settled by her on 11 October 2026: thirteen sessions |
 | headline: ["Smart help", "for an ERP"] | headline: ["AI assistant", "for ERP"] | her wording, 11 October 2026 |
+
+## Layout pass, 13 October 2026
+
+Bringing the page up to the layout, microinteractions, and motion of the Analytics study: cover layers, a carousel of the parts of the application, hotspots on the audit and exploration boards, and captions on the two live-product shots now that the frames have been looked at. No fact, number, persona, quote, or screen was added; every hotspot and caption repeats what the existing caption or chapter text already said, or names what is visibly on the frame. No mockup was composited: every flat desktop screen in `screens/` already has a MacBook export in `device/`, and `09.png`, `12.png`, and `15.png` are device collages, not single screens.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| cover: `art` only; the intro showed the typeset cover | cover: `layers` of four mockups, answer-desktop, resources-desktop, proto-text, proto-voice, labelled An answer with citations, Resources, The scope answer, Voice mode | RULES 4: a hero cover is `layers`, four to six screens of the product |
+| chapter 01: `points` then the devices collage | chapter 01: `points`, then a `carousel` of four slides (An answer, Resources, The scope answer, Voice mode), then the devices collage | RULES 2: chapter 01 is `points` + `carousel`, one screen per part; bodies taken from the captions in chapters 09 and 11 |
+| audit-aria.png: a flat shot with a caption | the same shot with five `hotspots`: switching between suggestions, the chat entry icon on desktop, navigation on mobile, the chat entry icon on mobile, the early Elly drafts set against Aria's states | RULES 4: audit screens carry hotspots; text from the existing caption |
+| exploration-options mockup: caption only | the same mockup with six `hotspots` on the board's own notes: space up to 20 per cent, one click from the side menu, a human face at 42px, option 1 overlapping, option 2 pinned, stars or a help bulb | RULES 4; text from the caption and the two options in the spec above it; x and y computed from the note positions on the board inside the frame |
+| `{ kind: "shot", src: ".../12.png" }` with no caption | caption: "As shipped, across devices: the scope answer docked beside a Flow board on desktop and on a tablet, and the greeting on a phone. The footer on every screen says that Elly accesses APplus documentation and can make mistakes." | RULES 9.5: every image has a caption; what is on the frame |
+| `{ kind: "shot", src: ".../15.png" }` with no caption | caption: "A German answer on the phone with markers [1] to [3] and the Resources list under it; on the tablet and the desktop, the suggested prompt carousel, Ask precise questions." | RULES 9.5; what is on the frame |
+
+Not done, and why:
+
+- No `joint`: the file still has no "what I would do differently" and no "what I will measure" content, and none was invented. The barriers chapter carries what participants asked for next.
+- No `loop`: Elly ran on FOX v2.2, before Code Connect, and the file describes no file, code, and prototype cycle.
+- No `flow`: the only sequences on the page are the use-case flows, which already live in their `usecase` blocks; the twelve use-case groups in chapter 05 are a list, not stages.
+- No clip: the only video is the vendor's product film, in German with subtitles, which stays a film.
+- The exploration board is not `folded`: it is the one image in chapter 04 and the chapter is about it, so hiding it would hide the evidence; it carries hotspots instead.
+- `stats` already exist in chapters 10, 11, 12, and 15; nothing new to add with a source.
+- The video `title` keeps its em dash, as decided on 11 October: it is the player's accessible name, not prose.
