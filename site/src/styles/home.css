@@ -578,16 +578,22 @@
 .hm-hero__claim { font-size: clamp(2.6rem, 5.6vw, 5rem); max-width: 10em; }
 .hm-hero__lead { max-width: 30rem; }
 .hm-hero__status { font-size: 10px; }
-@media (max-width: 56rem) {
-  .hm > .hm-hero { grid-template-columns: 1fr; padding-top: var(--bh-space-4); }
-  .hm > .hm-hero > .hm-hero__stage { grid-column: 1; grid-row: 1; margin: 0; }
-  .hm > .hm-hero > .hm-hero__text { grid-row: 2; }
-  .hm > .hm-hero > .hm-ledger { grid-row: 3; }
-  .journey { display: none; }
-}
 .hm > .hm-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
 .hm > .hm-hero > .hm-hero__stage { align-self: center; margin-top: var(--bh-space-6); }
 .hm-hero__claim { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+/* one column on a phone: the words first, the screens under them, full width.
+   Kept after the two-column rules so it wins. */
+@media (max-width: 56rem) {
+  .hm > .hm-hero { grid-template-columns: minmax(0, 1fr); padding-top: var(--bh-space-4); gap: var(--bh-space-5); }
+  .hm > .hm-hero > .hm-hero__text { grid-column: 1; grid-row: 1; max-width: none; }
+  .hm > .hm-hero > .hm-hero__stage { grid-column: 1; grid-row: 2; width: 100%; margin: 0; align-self: start; }
+  .hm > .hm-hero > .hm-ledger { grid-column: 1; grid-row: 3; }
+  .hm-hero__claim { font-size: clamp(2.6rem, 12vw, 4rem); max-width: none; }
+  .hm-hero__lead { max-width: none; }
+  .hm-hero__stage .layers__label { left: 4%; bottom: auto; top: 2%; }
+  .hm-hero__stage .layers__chart { display: none; }
+  .journey { display: none; }
+}
 
 /* ---------- typeset covers on the grid ---------- */
 .hm-tile__cover { container-type: inline-size; }
