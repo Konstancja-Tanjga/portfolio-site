@@ -204,6 +204,13 @@ export const chihuahua: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch02-research.png",
+          hotspots: [
+            { x: 48, y: 17, text: "Two hues, and that is the entire palette. Red and green do not exist for this user." },
+            { x: 48, y: 25, text: "Everything roughly four times bigger: 20/75 against 20/20, a factor of 3.75." },
+            { x: 48, y: 33, text: "The finding that named the handset, and the one I drew the wrong conclusion from. See chapter 12." },
+            { x: 48, y: 41, text: "The native gesture is a drag, not a tap. The single most consequential finding in the set." },
+            { x: 48, y: 83, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
+          ],
           caption:
             "Ten findings, each paired with the requirement it forces. The numbers are not illustrative; they are the numbers the app compiles against.",
         },
@@ -417,6 +424,14 @@ export const chihuahua: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch07-benchmark.png",
+          hotspots: [
+            { x: 60, y: 23, text: "The human operates; the dog is profile content, not a user." },
+            { x: 20, y: 28, text: "The dog operates, nose or paw, and produces nothing that outlives the session." },
+            { x: 30, y: 41, text: "The big, full-screen button I had derived from gesture research, already validated commercially." },
+            { x: 20, y: 62, text: "Undo is core here, not premium: a wet nose will misfire regularly." },
+            { x: 60, y: 72, text: "Fewer, better, more considered signals: hence a deck ceiling of 6 to 12." },
+            { x: 50, y: 87, text: "A swipe onto a “maybe later” pile saves no work. It relocates the decision." },
+          ],
           caption:
             "Part one: the two families and the empty space between them. Part two: what dating and recruitment already paid to find out, and what this project takes from each.",
         },
@@ -529,6 +544,7 @@ export const chihuahua: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch09-cig.png",
+          folded: true,
           caption:
             "The laws, their groups, and the split of responsibility between CIG and HIG. This panel is generated, so the numbers on it cannot disagree with the app.",
         },
@@ -557,6 +573,7 @@ export const chihuahua: CaseStudy = {
               blocks: [
                 {
                   kind: "video",
+                  clip: true,
                   width: "column",
                   src: "/work/tinder-for-chihuahua/showcase-sesja.mp4",
                   poster: "/work/tinder-for-chihuahua/showcase-poster.png",
@@ -672,6 +689,7 @@ export const chihuahua: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch12-test.png",
+          folded: true,
           caption:
             "The ladder, with the state of play rather than the plan, including rung 2, which failed on refresh rate.",
         },

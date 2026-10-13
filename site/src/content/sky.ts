@@ -38,6 +38,12 @@ export const sky: CaseStudy = {
     org: "Personal project",
     art: { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp" },
     shot: { src: "/work/reading-the-sky/00-cover.jpg" },
+    layers: [
+      { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp", label: "Home by day" },
+      { src: "/work/reading-the-sky/device/08-species-2400.webp", label: "A species page" },
+      { src: "/work/reading-the-sky/device/02-sky-night-2400.webp", label: "Home at night" },
+      { src: "/work/reading-the-sky/device/11-credits-2400.webp", label: "The About page" },
+    ],
   },
   meta: [
     { label: "Role", value: "Idea, course content, and direction. Design, motion, and code made with Claude" },
@@ -115,13 +121,34 @@ export const sky: CaseStudy = {
           ],
         },
         {
+          kind: "carousel",
+          items: [
+            { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp", frame: "macbook", title: "Home by day", body: "The sky above Warsaw at this hour, with a kettle of soaring migrants circling in a thermal." },
+            { src: "/work/reading-the-sky/device/02-sky-dawn-2400.webp", frame: "macbook", title: "Home at dawn", body: "The same opening at dawn. The line over the title changes with the light." },
+            { src: "/work/reading-the-sky/device/02-sky-dusk-2400.webp", frame: "macbook", title: "Home at dusk", body: "The sky after sunset, whose colours dark mode takes for the whole app." },
+            { src: "/work/reading-the-sky/device/02-sky-night-2400.webp", frame: "macbook", title: "Home at night", body: "Stars and the moon, and now and then an owl crosses it. At night the line says the sky belongs to the owls." },
+            { src: "/work/reading-the-sky/device/08-species-2400.webp", frame: "macbook", title: "A species page", body: "The red kite's page opens on the bird itself, with the navigation turning light over the dark scene." },
+            { src: "/work/reading-the-sky/device/11-credits-2400.webp", frame: "macbook", title: "The About page", body: "The opening of the About page, which carries the same credit to both makers as this page." },
+          ],
+        },
+        {
           kind: "video",
+          clip: true,
           width: "wall",
           src: "/work/reading-the-sky/01-kettle.mp4",
           poster: "/work/reading-the-sky/01-kettle-poster.webp",
           title: "The home page by day: a kettle of raptors circling a thermal",
           caption:
             "Fourteen seconds of the home page by day. The birds in the kettle are the soaring migrants of the Strait: honey buzzards, black kites, booted eagles, short-toed eagles, griffon vultures, buzzards, and Egyptian vultures.",
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "42", label: "species, each drawn from about twenty numbers" },
+            { value: "282", label: "flashcards, scheduled by FSRS" },
+            { value: "82", label: "reference photographs, each with a focal point" },
+            { value: "60", label: "lessons in twelve modules" },
+          ],
         },
         {
           kind: "thesis",
@@ -234,6 +261,7 @@ export const sky: CaseStudy = {
         },
         {
           kind: "video",
+          clip: true,
           width: "wall",
           src: "/work/reading-the-sky/04-groups.mp4",
           poster: "/work/reading-the-sky/04-groups-poster.webp",
@@ -243,6 +271,7 @@ export const sky: CaseStudy = {
         },
         {
           kind: "video",
+          clip: true,
           width: "wall",
           src: "/work/reading-the-sky/04-pair.mp4",
           poster: "/work/reading-the-sky/04-pair-poster.webp",
@@ -277,6 +306,7 @@ export const sky: CaseStudy = {
         },
         {
           kind: "video",
+          clip: true,
           width: "column",
           src: "/work/reading-the-sky/05-kestrel.mp4",
           poster: "/work/reading-the-sky/05-kestrel-poster.webp",

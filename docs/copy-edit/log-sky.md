@@ -24,3 +24,25 @@ One pass, 11 October 2026, against `docs/STYLE.md` and the standard set for APpl
 | value: "No accounts: progress, the checklist, flashcards and my photographs stay in the browser" | value: "No accounts: progress, the checklist, flashcards, and my photographs stay in the browser" | 3.5 serial comma |
 | { kind: "passage", html: "<p>The idea, the plan of the course and all of its content are mine. The redesign was made with Claude, Anthropic's AI model, in Cl… | { kind: "passage", html: "<p>The idea, the plan of the course, and all of its content are mine; <strong>the redesign was made with Claude</strong>, Anthropic… | 2.3.2 itemisation; the About-page credit fact kept from the chapter 01 thesis |
 | caption: "The opening of the About page in the app." | caption: "The opening of the About page in the app, which carries the same credit to both makers as this page." | caption names what is shown and the decision |
+
+## Layout pass, 13 October 2026
+
+Against `docs/case-study-kit/RULES.md` sections 4 and 5, with `site/src/content/bi.ts` as the reference. The five full browser screens on record (home at dawn, dusk, and night, the red kite's page, the About page) were composited into the MacBook template used for every other mockup on the site, with the shot set at the top of the screen and the rest of the screen in the shot's own bottom colour, as the kettle poster already was; they are in `public/work/reading-the-sky/device/`. The four MP4 recordings are 16:9 (1600 by 900 and 894 by 502, ratio 1.78), not the 1.52 of a MacBook screen, so they play as unframed clips. Each got a WebM twin, because the player asks for one first. No fact, number, or screen was added; every carousel line is a caption that already existed.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| `cover: { … shot: { src: "/work/reading-the-sky/00-cover.jpg" } }` | `layers` of four mockups: home by day, a species page, home at night, the About page | RULES 4: a hero cover is `layers`, four to six screens of the product |
+| chapter 01: `points`, then the kettle film | `points`, then a `carousel` of six mockups (home by day, dawn, dusk, night; the red kite's page; the About page), each with a title and one line from an existing caption | RULES 2, chapter 01: every part of the application, one screen per slide |
+| chapter 01: the kettle film, then the thesis | the kettle film, then `stats`: 42 species, 282 flashcards, 82 photographs, 60 lessons in twelve modules | RULES 2, `stats`; the numbers are the Outcome row's, with their sources in the file header |
+| `{ kind: "video", width: "wall", src: ".../01-kettle.mp4" … }` | `clip: true` added; the same on 04-groups, 04-pair, and 05-kestrel | RULES 7: clips of the prototype play by themselves, muted, while in view; 16:9, so no MacBook frame |
+| no `.webm` beside the four MP4s | `01-kettle.webm`, `04-groups.webm`, `04-pair.webm`, `05-kestrel.webm`, VP9, no audio track | Video.tsx asks for the WebM first and falls back to the MP4 |
+| no `device/` export for the home, species, and About screens | `02-sky-dawn`, `02-sky-dusk`, `02-sky-night`, `08-species`, `11-credits`, each at 1600, 2400, and full | RULES 4: every product screen is a MacBook mockup |
+
+Not done, and why:
+
+- No `joint`: the file holds no "what I would do differently" and no "what I will measure", as the first pass already recorded.
+- No `hotspots`: no audit, benchmark, or research screen exists for this study.
+- No `folded` shot: the labelled plate (03) and the scale view (08-scale) are each the picture of their chapter, not reference behind it.
+- No `dossier` or `flow`: no use case and no staged process is on record.
+- The night chorus (06), the scale view (08-scale), the flashcard pair (07), and the About page's type (09) stay flat: they are sections of a page, not full screens, so a MacBook frame would claim a viewport they do not fill.
+- The 04-groups clip runs 26 seconds; it loops muted like the others. If that is too long for a clip, it goes back to a film with controls by removing `clip: true`.

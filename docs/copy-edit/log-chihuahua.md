@@ -98,3 +98,24 @@ Not changed, and why:
 - The wall panel `ch03-personas.png` is in `public/` and was not referenced before this pass; it is still not referenced. Adding it needs a caption from the panel, which was not read.
 - The kicker, stamp, and persona badges keep their capitals and middle dots, pending the open point in INVENTORY.md.
 - Chapter 12 "Testing" and chapter 13 "What it cost" keep their numbers and order; the fixed stack puts evidence at 10 and reflection at 11, but the Figma numbering wins (RULES 2) and the two sit after the pipeline chapter as before.
+
+## Layout pass, 13 October 2026
+
+Against `docs/case-study-kit/RULES.md` sections 4 and 5, with `site/src/content/bi.ts` as the reference. A phone app, so no MacBook mockup and no cover `layers`. The research sheet and the benchmark board carry `hotspots`, each one a finding already in the chapter's text, placed on the row of the board that provoked it; the two reference panels (the laws, the test ladder) are folded; the session recording plays as a clip, because it is silent (ffmpeg measures its audio track at minus 91 dB), and got a WebM twin without the empty track. No fact, number, quote, or screen was added.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| `src: ".../wall/ch02-research.png"` | five `hotspots` on findings 01, 02, 03, 04, and 10: the two hues, the acuity factor, the flicker finding that named the handset, the drag, and the one unsourced claim | RULES 4: research screens carry the finding in a bubble where it was found; the texts are the chapter 02 bullets and the chapter 14 caveat |
+| `src: ".../wall/ch07-benchmark.png"` | six `hotspots` on the two families, the App for Dog note, undo, the deck ceiling, and the "maybe later" quote | RULES 4: audit and benchmark screens carry hotspots; the texts are the chapter's spec rows, bullets, and pull quote |
+| `src: ".../wall/ch09-cig.png"` | `folded: true` | RULES 4: a generated list of laws is reference, opened on demand; the palette, the stats, and the five laws above it stay on the surface |
+| `src: ".../wall/ch12-test.png"` | `folded: true` | RULES 4: the ladder explains rather than shows, and every result on it is already in the chapter's text |
+| `{ kind: "video", width: "column", src: ".../showcase-sesja.mp4" … }` | `clip: true` | RULES 7: a silent recording of the running app plays by itself, muted, while in view; a phone recording, so no frame |
+| no `.webm` beside the MP4 | `showcase-sesja.webm`, VP9, no audio track | Video.tsx asks for the WebM first and falls back to the MP4 |
+
+Not done, and why:
+
+- No `carousel`: the nine screens exist only as two boards (D1 to D5 on `ch10-dog-mode.png`, H1 to H4 on `ch11-human-mode.png`), and the carousel's stage is drawn for landscape slides. Cropping the boards into single phone screens is possible; flagged for Konstancja rather than done, since it makes nine new files from one.
+- No cover `layers`: a phone app, and no desktop screen exists.
+- No `flow`: the two journeys list their steps only on the panels, as the first pass found, and the pipeline of chapter 12a is already a `stack` with seven rows.
+- The journeys (04, 05), the blueprint (06), the directions (08), and the two mode boards stay visible: each is the picture of its chapter.
+- `ch03-personas.png` is still unreferenced, as before.

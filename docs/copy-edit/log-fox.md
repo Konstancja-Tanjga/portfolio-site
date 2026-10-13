@@ -35,3 +35,20 @@ Not changed, and why:
 - No personas, no `dossier` or `usecase`, no `joint`: a design system has no persona on record here, and the file holds no use case and no reflection. None was invented.
 - Chapter 03 "Token architecture" stays a two-row `spec`: the rows are facts, not passages, and under 60 words.
 - Chapter 06 "What it changed" keeps its stats; none of them is a measured result, and the chapter claims none.
+
+## Layout pass, 13 October 2026
+
+Against `docs/case-study-kit/RULES.md` sections 4 and 5, with `site/src/content/bi.ts` as the reference. One change: the catalogue in chapter 01 is shown in the MacBook mockup that already existed under `device/` and served as the cover art, because RULES 8 says not to use a flat screenshot where a mockup exists. Nothing else in the layout stack applies to the material on record, and no mockup was composited.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| `{ kind: "shot", width: "wall", src: "/work/fox-design-system/catalogue.png" … }` | `src: "/work/fox-design-system/device/catalogue-2400.webp", frame: "macbook"` | RULES 8: do not use a flat screenshot where a mockup exists |
+| file header: "not device mockups" | header says the catalogue is in the mockup under `device/` and the button API stays flat | the comment matches the file |
+
+Not done, and why:
+
+- No cover `layers`: `layers` need four mockups, and only one single desktop screen exists. `button-api.png` (2400 by 2800) and `colors.png` (2400 by 3200) are scrolling captures of a Storybook page, not single screens; set into a 1.52 MacBook screen they would be bars of white around a strip of page.
+- No `carousel`: four screens are needed and one exists.
+- No `hotspots`, no `folded` shot: no audit, benchmark, or research screen and no diagram is on record.
+- No `joint`, `loop`, `dossier`: the file holds no reflection, no use case, and no handoff cycle; the pipeline is already a `flow` in chapter 02.
+- The button API page stays a flat shot, as a scrolling Storybook page is.

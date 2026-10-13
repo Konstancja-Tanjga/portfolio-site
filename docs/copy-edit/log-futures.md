@@ -29,3 +29,20 @@ Not changed, and why:
 - "Participants: 5" is kept as found. Whether the five include the facilitator is not on record, so the Period and team row says "Five participants; I designed and facilitated" and claims no total.
 - The six groups in chapter 04 against five participants: the panel is the only source, and the caption repeats the heading without explaining the count.
 - No month for the programme is on record; the Period row and the brief say 2025 only.
+
+## Layout pass, 13 October 2026
+
+Against `docs/case-study-kit/RULES.md` sections 4 and 5, with `site/src/content/bi.ts` as the reference. A workshop, so no MacBook mockup and no cover `layers`. The first pass added no `flow` because the file named the three stages without saying what each did; the structure board (`ch02.png`) does say it, block by block with its minutes, so a `flow` of three stages is now written from the board, and a `stats` row from the meta strip opens chapter 09. No fact, number, or screen was added that is not on the board or in the meta strip.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 02: the structure board alone | a `flow` of three stages before the board: Stage 1 online, framing, 220 minutes; Stage 2 online, scenarios, about 150 minutes; Stage 3 off-site, one day, feature map, MVP, and back-cast roadmap, with a note that each participant wrote a scenario as homework between the sessions | RULES 2, chapter 05: a short chain of stages, one sentence each; every line is read off the board |
+| chapter 09: the output board alone | `stats` before it: 3 stages, 5 participants, 6 matrices with one chosen, 2 open arguments closed | RULES 2, chapter 10: what was counted; the values are the meta strip's and the Outcome row's |
+
+Not done, and why:
+
+- No `carousel`: the ten boards are portrait (1801 by 2154 up to 1801 by 5217), and the carousel's stage is drawn for landscape slides.
+- No `folded` shot: every board is the only picture of its chapter.
+- No `hotspots`: no audit or benchmark screen exists.
+- No `joint`: the file holds no reflection.
+- Two facts on the structure board could settle open points from the first pass, and were not written into the brief: the board dates stage 1 to 11 June 2025 (the Period row says 2025 only), and it says "five participants plus me as facilitator", which answers whether the five include the facilitator. The board also says the second session started from twelve submissions, against five participants; left off the page until Konstancja confirms the count.
