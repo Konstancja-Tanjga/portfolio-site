@@ -128,20 +128,20 @@ export const bi: CaseStudy = {
         {
           kind: "carousel",
           items: [
-            { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: Ask AI Data Analyst on top, favourite dashboards and analyses below." },
-            { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library, sorted by domain, with all, favourites and shared with me." },
+            { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: the biggest forecast change of the week on top, recent dashboards below." },
+            { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library: all, continue where you left off, favourites, shared with you, popular." },
             { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "Graph, pivot and table are views of one analysis, switched in its view toolbar." },
             { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
-            { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "Fields on the left, the grid on the right, row and total sums in the toolbar." },
+            { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "The grid with a total row, and the view toolbar that stays with the workspace." },
             { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Type, granularity, owner and last update on top; the SQL definition and a preview below." },
-            { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "Answers with a live preview instead of a paragraph: columns, grouping, chart type and a match score before anything is saved." },
+            { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "An answer that names its cause, the chart under it, and where the number came from: the query, the run time, the tables joined, Show SQL." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
-            { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Applied", body: "The correction returned to the main analysis as one step, with its reason attached: EMEA revenue, week 9." },
-            { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with the system it came from and how many fields it has." },
-            { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Its SQL, a result preview and a Governance panel: who can use it is part of the query." },
-            { src: `${D}/models-select-2400.webp`, frame: "macbook", title: "Data models", body: "Saved models, and the New menu split by intent: build, connect, schedule and share." },
+            { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Next questions", body: "Every answer ends with the follow-ups the analyst suggests, so the next step is one click, not a blank prompt." },
+            { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with its reach, the system it reads, its author and its date." },
+            { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Access, data model, owner and eligible roles on top, the SQL under them, a result preview below. Who can use it is part of the query." },
+            { src: `${D}/models-select-2400.webp`, frame: "macbook", title: "Data models", body: "Saved models with their role badges, and the New menu split by intent: build an analysis or a dashboard, connect a query or a data model." },
             { src: `${D}/models-relationship-2400.webp`, frame: "macbook", title: "Relationships", body: "The join states its direction and type on the canvas, and exists as a row in the panel." },
-            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Data sources, connections, users and permissions, and the admin spine on the left." },
+            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Master data sources as a table, and the admin spine on the left: translations, data sources, users and permissions, system." },
           ],
         },
         {
@@ -386,7 +386,7 @@ export const bi: CaseStudy = {
           src: `${D}/models-select-2400.webp`,
               frame: "macbook",
               caption:
-                "Saved data models, and the New menu split by intent: build, connect, schedule and share. A data model is one of the things you connect, not something you draw from nothing.",
+                "Saved data models, and the New menu split by intent: build an analysis or a dashboard, connect a query or a data model. A data model is one of the things you connect, not something you draw from nothing.",
         },
       ],
     },
@@ -478,7 +478,7 @@ export const bi: CaseStudy = {
             {
               src: `${D}/analysis-pivot-2400.webp`,
               frame: "macbook",
-              caption: "Pivot view: available fields on the left, the result grid on the right, and the view toolbar that travels with the workspace (R6, R7).",
+              caption: "Pivot view: the grid with its total row, and the view toolbar that travels with the workspace (R6, R7).",
             },
           ],
         },
@@ -603,7 +603,7 @@ export const bi: CaseStudy = {
           src: `${D}/home-2400.webp`,
           frame: "macbook",
           caption:
-            "Home, the landing surface for people who consume rather than author. Ask AI Data Analyst sits on top with four ready-made questions; favourite dashboards and analyses below. Every card shows its role badges, its author and its date.",
+            "Home, the landing surface for people who consume rather than author. The biggest forecast change of the week sits on top, with Read analysis, Save and Ask AI Data Analyst about this; recent dashboards below, each with its author and its last opened date.",
         },
         {
           kind: "duo",
@@ -612,7 +612,7 @@ export const bi: CaseStudy = {
               src: `${D}/dashboards-2400.webp`,
           frame: "macbook",
               caption:
-                "Dashboards: the same object as a library, sorted by domain (revenue, pipeline, retention, finance, risk), with all, favourites and shared with me.",
+                "Dashboards: the same object as a library, with all, continue where you left off, favourites, shared with you and popular. Each card carries its reach, its key figure, its author and its date.",
             },
             {
               src: `${D}/analysis-2400.webp`,
@@ -636,7 +636,7 @@ export const bi: CaseStudy = {
           src: `${D}/analyst-chat-2400.webp`,
           frame: "macbook",
           caption:
-            "The AI Data Analyst answers with a live preview instead of a paragraph: detected columns, grouping, chart type, sorting, filter and a match score, plus a warning that the query will be built as a pivot table. Everything it inferred is visible before anything is saved.",
+            "The AI Data Analyst names the cause before the number: up 8.2 per cent, but most of it is price. Under the chart, the provenance line says what it stands on: the query, the run time, the tables joined, when the data was refreshed, and Show SQL.",
         },
         {
           kind: "duo",
@@ -651,7 +651,7 @@ export const bi: CaseStudy = {
               src: `${D}/settings-2400.webp`,
           frame: "macbook",
               caption:
-                "Settings: data sources with server, port and authentication, and the admin spine on the left. The New menu is split by intent: build, connect, schedule and share.",
+                "Settings: master data sources as a table with their type, columns and filter, and the admin spine on the left: translations, data sources, users and permissions, system.",
             },
           ],
         },
@@ -771,7 +771,7 @@ export const bi: CaseStudy = {
                   src: `${D}/queries-shelf-2400.webp`,
                   frame: "macbook",
                   caption:
-                    "The shelf. A query arrives with the system it came from and how many fields it has, so anyone reusing it can see what they are standing on before they build.",
+                    "The shelf. A query arrives with its reach, the system it reads, its author and its date, so anyone reusing it can see what they are standing on before they build.",
                 },
                 {
                   kind: "duo",
@@ -780,13 +780,13 @@ export const bi: CaseStudy = {
                       src: `${D}/queries-card-2400.webp`,
                   frame: "macbook",
                       caption:
-                        "The query itself: its SQL, a result preview, and a Governance panel with permissions, tags, lineage and validation next to it. Who can use it is part of the query, not a separate screen.",
+                        "The query itself: access, data model, owner and eligible roles on top, the SQL definition under them, and a result preview below. Who can use it is part of the query, not a separate screen.",
                     },
                     {
                       src: `${D}/queries-add-2400.webp`,
                       frame: "macbook",
                       caption:
-                        "Add query. A new query is created in a dialog over the shelf (R1: an action on the whole object opens a modal), with its permissions set before it exists.",
+                        "Edit query. Name, data source and eligible roles are one form, and the roles sit beside the query, not behind a permissions dialog. A query with no eligible role is visible only to its author.",
                     },
                   ],
                 },
@@ -811,7 +811,7 @@ export const bi: CaseStudy = {
                       { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
                       {
                         n: "2",
-                        text: "Each card states on its face who it reaches, who made it, when, and what it reads: Administrator, Moderator, Users; data model, author, date.",
+                        text: "Each card states on its face who it reaches, who made it, when, and what it reads: Public or Private; data source, author, date.",
                         note: "Exposure is visible at rest.",
                       },
                       {
@@ -851,7 +851,7 @@ export const bi: CaseStudy = {
                       src: `${D}/models-select-2400.webp`,
                   frame: "macbook",
                       caption:
-                        "Select query. The unit is a query, not a table: everything on the shelf was validated upstream. The builder composes what exists; it does not invent data.",
+                        "The data models shelf. Every model carries the roles that can read it, so reach is visible before anyone opens it. A new model is built from queries that were validated upstream; the builder composes what exists.",
                     },
                     {
                       src: `${D}/models-empty-2400.webp`,
