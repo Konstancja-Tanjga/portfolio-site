@@ -130,18 +130,17 @@ export const bi: CaseStudy = {
           items: [
             { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: the biggest forecast change of the week on top, recent dashboards below." },
             { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library: all, continue where you left off, favourites, shared with you, popular." },
-            { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "Graph, pivot and table are views of one analysis, switched in its view toolbar." },
+            { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "The same library as dashboards: all, continue where you left off, favourites, shared with you and popular, each card with its reach and its run count." },
             { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
             { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "The grid with a total row, and the view toolbar that stays with the workspace." },
             { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Type, granularity, owner and last update on top; the SQL definition and a preview below." },
             { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "An answer that names its cause, the chart under it, and where the number came from: the query, the run time, the tables joined, Show SQL." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
-            { src: `${D}/analyst-applied-2400.webp`, frame: "macbook", title: "Next questions", body: "Every answer ends with the follow-ups the analyst suggests, so the next step is one click, not a blank prompt." },
             { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with its reach, the system it reads, its author and its date." },
             { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Access, data model, owner and eligible roles on top, the SQL under them, a result preview below. Who can use it is part of the query." },
             { src: `${D}/models-select-2400.webp`, frame: "macbook", title: "Data models", body: "Saved models with their role badges, and the New menu split by intent: build an analysis or a dashboard, connect a query or a data model." },
             { src: `${D}/models-relationship-2400.webp`, frame: "macbook", title: "Relationships", body: "The join states its direction and type on the canvas, and exists as a row in the panel." },
-            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Master data sources as a table, and the admin spine on the left: translations, data sources, users and permissions, system." },
+            { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Master data sources as a table, and the admin spine on the left: translations, data sources, AI and analytics, users and permissions, system." },
           ],
         },
         {
@@ -636,7 +635,7 @@ export const bi: CaseStudy = {
           src: `${D}/analyst-chat-2400.webp`,
           frame: "macbook",
           caption:
-            "The AI Data Analyst names the cause before the number: up 8.2 per cent, but most of it is price. Under the chart, the provenance line says what it stands on: the query, the run time, the tables joined, when the data was refreshed, and Show SQL.",
+            "The AI Data Analyst names the cause with the number: up 8.2 per cent, but most of it is price. Under the chart, the provenance line says what it stands on: the query, the run time, the tables joined, when the data was refreshed, and Show SQL.",
         },
         {
           kind: "duo",
@@ -651,7 +650,7 @@ export const bi: CaseStudy = {
               src: `${D}/settings-2400.webp`,
           frame: "macbook",
               caption:
-                "Settings: master data sources as a table with their type, columns and filter, and the admin spine on the left: translations, data sources, users and permissions, system.",
+                "Settings: master data sources as a table with their type, columns and filter, and the admin spine on the left: translations, data sources, AI and analytics, users and permissions, system.",
             },
           ],
         },
@@ -712,7 +711,7 @@ export const bi: CaseStudy = {
                       note: "The state of mind is the requirement. Everything below exists to serve someone who is unconvinced.",
                     },
                     trigger: {
-                      body: "One phrase in the answer looks wrong: “overall revenue for the years 2024 and 2025”. 2025 is lower, and the reader cannot tell whether that is a fact or an artefact.",
+                      body: "One phrase in the answer looks wrong: “the DACH region contributes almost all of it, while the rest of EMEA was flat”. Flat is a strong word, and the reader cannot tell whether that is a fact or an artefact.",
                       note: "The trigger is doubt, not a task.",
                     },
                     precondition: {
@@ -727,17 +726,17 @@ export const bi: CaseStudy = {
                       },
                       {
                         n: "3",
-                        text: "The panel restates the selection verbatim and pins the context that produced it as chips: measure revenue, group by product category, filter booking date 2024–2025.",
+                        text: "The panel restates the selection verbatim and pins the context that produced it as chips: invoiced revenue, last 12 months; measure, invoiced quantity; group by, region; source, FV_RECHNUNG.",
                         note: "The chips make the branch reproducible. Without them it is a question about nothing in particular.",
                       },
-                      { n: "4", text: "The follow-up is asked inside the panel: why is 2025 lower than 2024 here?" },
+                      { n: "4", text: "The follow-up is asked inside the panel: why is the rest of EMEA flat while DACH grew 14 per cent?" },
                       {
                         n: "5",
-                        text: "The answer names the cause instead of restating the number: 2025 is not a full year, bookings load only to 30 November, so the comparison is not like-for-like.",
+                        text: "The answer names the cause instead of restating the number: Benelux orders shifted from Q3 to Q4, so the quarter looks flat while the half-year is not.",
                       },
                       {
                         n: "6",
-                        text: "An evidence card carries the same-period figures for both years with the delta, and the answer can be verified: Show SQL · Open as pivot · Copy.",
+                        text: "An evidence card carries Q3 against Q4 aligned, 2.05 to 2.11 million euro, plus 3.1 per cent, and the answer can be verified: Show SQL · Open as pivot · Copy.",
                         note: "A controller will be asked where the number came from. “The assistant said so” cannot be repeated to an auditor.",
                       },
                     ],
@@ -816,7 +815,7 @@ export const bi: CaseStudy = {
                       },
                       {
                         n: "3",
-                        text: "Settings is organised by what an admin owns: system configuration (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
+                        text: "Settings is organised by what an admin owns: data sources (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
                       },
                       {
                         n: "4",
@@ -851,7 +850,7 @@ export const bi: CaseStudy = {
                       src: `${D}/models-select-2400.webp`,
                   frame: "macbook",
                       caption:
-                        "The data models shelf. Every model carries the roles that can read it, so reach is visible before anyone opens it. A new model is built from queries that were validated upstream; the builder composes what exists.",
+                        "The data models shelf. A model carries the roles that can read it on its face, so reach is visible before anyone opens it; one with no roles is the author's alone.",
                     },
                     {
                       src: `${D}/models-empty-2400.webp`,
@@ -897,7 +896,7 @@ export const bi: CaseStudy = {
                       title: "The unit is a query, not a table",
                       rule: {
                         label: "Rule",
-                        body: "Everything on the shelf was already written and validated upstream, and each card carries its source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields.",
+                        body: "Everything on the shelf was already written and validated upstream, and each card carries its source system: SQL Server, Oracle, PostgreSQL, Supabase.",
                       },
                     },
                     {
