@@ -18,7 +18,7 @@ import { Lane } from "./Wall";
  * Two kinds of film. A film (the default) has sound, controls and
  * `preload="none"`: it is fetched on play, not on scroll, because an 11MB
  * download for every visitor who never presses the button would be the
- * wrong trade. A `clip` is a few seconds of the prototype showing one
+ * wrong trade. A `clip` is a stretch of the prototype, seconds to a minute, showing one
  * behaviour: muted, looping, playing by itself while it is in view and
  * paused when it leaves, with one visible pause button for keyboard
  * users. Under prefers-reduced-motion a clip shows its poster and waits
@@ -70,7 +70,7 @@ export function Video({
           <video
             ref={player}
             className="video__player"
-            src={asset(src)}
+            src={clip ? undefined : asset(src)}
             poster={poster ? asset(poster) : undefined}
             title={title}
             controls={!clip}
@@ -85,6 +85,14 @@ export function Video({
             }}
             onPause={() => setPlaying(false)}
           >
+            {clip && (
+              /* A clip ships as WebM and MP4; the WebM is usually smaller, so it
+                 goes first and the MP4 is the fallback. */
+              <>
+                <source src={asset(src.replace(/\.mp4$/, ".webm"))} type='video/webm; codecs="vp9"' />
+                <source src={asset(src)} type="video/mp4" />
+              </>
+            )}
             {subtitles && (
               /* `default` so the track is on without anyone hunting for the
                  CC menu — the film is in German and the page is not. */

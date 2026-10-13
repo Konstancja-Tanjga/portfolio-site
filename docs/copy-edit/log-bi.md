@@ -55,3 +55,7 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | "Every model carries the roles that can read it" | "A model carries the roles that can read it on its face ... one with no roles is the author's alone" | Customer Master has no badges on the picture |
 | Select query step: "source system and field count: mssql, oracle, bigquery; 18, 25, 12 fields" | "source system: SQL Server, Oracle, PostgreSQL, Supabase" | no field counts on v3 |
 | Settings spine lists | add "AI and analytics"; UC-02 step 3 says "data sources" not "system configuration" | the v3 rail labels |
+| (no clip) | three clips from the design file: new dashboard and new analysis in chapter 07, new data model in the Data models dossier | her GIFs of 13 October 2026, re-encoded to MP4 and WebM at 12 fps |
+| dashboard-detail: v2 "Product rollout snapshot" definition page | the opened "Regional sales review" with two widgets, a frame from her dashboard recording with the toast and cursor painted out | the only v3 picture of an opened dashboard |
+| Video.tsx: clips served as MP4 only | WebM first, MP4 fallback | WebM is about half the size |
+| three clip captions | "in the prototype"; two widgets; empty state as it is; no summary claim; queries "added and given an alias" | review: say only what the clip shows |
