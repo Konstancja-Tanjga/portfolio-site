@@ -7,9 +7,11 @@ import type { CaseStudy } from "./types";
  * reflection are on record here, so none is written. Chapter numbers were
  * written for this page.
  *
- * The three images are flat exports of the live Storybook, not device
- * mockups: colors.png on the card, catalogue.png and button-api.png on the
- * wall. Paths are literal strings so that scripts/check-content.mjs sees them.
+ * The three images are flat exports of the live Storybook: colors.png on
+ * the card, catalogue.png in the MacBook mockup under device/ (on the cover
+ * and on the wall), and button-api.png flat on the wall, as a scrolling
+ * Storybook page is. Paths are literal strings so that
+ * scripts/check-content.mjs sees them.
  */
 
 export const fox: CaseStudy = {
@@ -110,7 +112,8 @@ export const fox: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/fox-design-system/catalogue.png",
+          src: "/work/fox-design-system/device/catalogue-2400.webp",
+          frame: "macbook",
           caption: "Atoms, molecules, and organisms in one navigation, published on Chromatic: the end of the pipeline the case study describes.",
         },
       ],

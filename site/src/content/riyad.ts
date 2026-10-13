@@ -85,33 +85,42 @@ export const riyad: CaseStudy = {
           ],
         },
         {
+          kind: "flow",
+          stages: [
+            { title: "A circle forms", body: "On the dark background, small stars are spinning, with haptic feedback." },
+            { title: "The blob spins", body: "A see-through menu appears in the centre; magnify with two fingers." },
+            { title: "The bottom menu turns glassy", body: "Video, podcast, and text icons come from the top right corner under the finger when pressed." },
+            { title: "Pressed", body: "Haptic feedback on the pressed state." },
+          ],
+          note: "The four stages as written on the sketches below. Still to be discussed on them: a tag menu, animation as an interactive menu for tags, and AR.",
+        },
+        {
           kind: "shot",
           width: "wall",
           src: "/work/riyad-bank/03.png",
+          hotspots: [
+            { x: 5, y: 6, text: "Dark background, spinning circles." },
+            { x: 12, y: 44, text: "Circle shape is formed. Small stars are spinning. Haptic." },
+            { x: 22, y: 44, text: "Blob in centre is spinning. See-through menu appears. Magnify with two fingers." },
+            { x: 45, y: 30, text: "Glassy icons: video, podcast, text." },
+            { x: 36, y: 55, text: "Bottom menu becomes glassy but visible. Icons go from the top right corner under the finger when pressed. Haptic." },
+            { x: 6, y: 80, text: "Add login with Face ID." },
+            { x: 66, y: 70, text: "To be discussed: tag menu, haptic for the icon pressed state, animation as an interactive menu for tags, AR." },
+          ],
           caption:
             "Paper sketches of the 3D navigation: spinning circles on a dark background, a blob in the centre, glassy video, podcast, and text icons that come under the finger when pressed, and haptic feedback.",
         },
         {
-          kind: "set",
-          size: "phone",
-          caption:
-            "The home screen, a topic opened into its CEO interview, report, and case study, Favourites, and the podcast player.",
+          kind: "carousel",
+          shape: "portrait",
           items: [
-            { src: "/work/riyad-bank/06.png" },
-            { src: "/work/riyad-bank/07.png" },
-            { src: "/work/riyad-bank/08.png" },
-            { src: "/work/riyad-bank/09.png" },
-          ],
-        },
-        {
-          kind: "set",
-          size: "phone",
-          caption:
-            "The video player with its article text, then the home screen and the topic view in the steps of the transition between them.",
-          items: [
-            { src: "/work/riyad-bank/10.png" },
-            { src: "/work/riyad-bank/11.png" },
-            { src: "/work/riyad-bank/13.png" },
+            { src: "/work/riyad-bank/06.png", title: "Home", body: "The topics as a feed, the 3D navigation underneath." },
+            { src: "/work/riyad-bank/07.png", title: "A topic", body: "Opened into its CEO interview, report, and case study." },
+            { src: "/work/riyad-bank/08.png", title: "Favourites", body: "What the reader kept." },
+            { src: "/work/riyad-bank/09.png", title: "Podcast player", body: "The audio for a topic, with its chapters." },
+            { src: "/work/riyad-bank/10.png", title: "Video player", body: "The video with its article text under it." },
+            { src: "/work/riyad-bank/11.png", title: "Transition, step one", body: "Home, as the topic starts to open." },
+            { src: "/work/riyad-bank/13.png", title: "Transition, step two", body: "The topic view, arrived at from home." },
           ],
         },
       ],

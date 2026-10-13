@@ -10,8 +10,16 @@ import type { CaseStudy } from "./types";
  * #product and #website still open the right place. No chapter was
  * written for a slot the boards have nothing for: no personas, no
  * research, no handoff, no measured result.
+ *
+ * The three product screens (boards 03, 04 and 06) are each one desktop
+ * screen set in a photograph. The application rectangle is cropped out of
+ * each into /work/xecta/screens/ and composited into a MacBook frame in
+ * /work/xecta/device/, so the cover, the carousel and the dossier show the
+ * product the way every other study does. The boards with typeset text
+ * (02 and 05) are folded and open on demand.
  */
 const W = "/work/xecta";
+const D = "/work/xecta/device";
 
 export const xecta: CaseStudy = {
   slug: "xecta",
@@ -29,6 +37,12 @@ export const xecta: CaseStudy = {
     credit: "Senior UX & UI designer · Xecta · 2020–2021 and 2022",
     art: { src: "/work/xecta/cover-art.webp" },
     shot: { src: `${W}/00-cover.png` },
+    layers: [
+      { src: "/work/xecta/device/dashboard-2400.webp", label: "Dashboard" },
+      { src: "/work/xecta/device/well-performance-2400.webp", label: "Well Performance" },
+      { src: "/work/xecta/device/lift-timing-2400.webp", label: "Artificial Lift Timing Selection" },
+      { src: "/work/xecta/device/website-01-2400.webp", label: "xecta.com" },
+    ],
   },
   meta: [
     { label: "Role", value: "Senior UX & UI designer, freelance" },
@@ -117,9 +131,9 @@ export const xecta: CaseStudy = {
         {
           kind: "carousel",
           items: [
-            { src: `${W}/03.png`, title: "Dashboard", body: "One group of wells: the production summary chart, the largest deferrals, and today's opportunities traced from lift type to cash flow." },
-            { src: `${W}/04.png`, title: "Well Performance", body: "A table of wells with setpoint and workover opportunities; one row opened on its setpoint chart and valve pressure traverse." },
-            { src: `${W}/06.png`, title: "Artificial Lift Timing Selection", body: "Lift scenarios for one well compared by NPV, with the IPR and VLP curves for each." },
+            { src: `${D}/dashboard-2400.webp`, frame: "macbook", title: "Dashboard", body: "One group of wells: the production summary chart, the largest deferrals, and today's opportunities traced from lift type to cash flow." },
+            { src: `${D}/well-performance-2400.webp`, frame: "macbook", title: "Well Performance", body: "A table of wells with setpoint and workover opportunities; one row opened on its setpoint chart and valve pressure traverse." },
+            { src: `${D}/lift-timing-2400.webp`, frame: "macbook", title: "Artificial Lift Timing Selection", body: "Lift scenarios for one well compared by NPV, with the IPR and VLP curves for each." },
             { src: `${W}/website-01.png`, title: "xecta.com", body: "The home page, with the Drilling menu open on its three product lines." },
             { src: `${W}/website-03.png`, title: "A product page", body: "Well Performance Analysis on desktop, beside the offices block on a phone." },
           ],
@@ -149,6 +163,7 @@ export const xecta: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: `${W}/05.png`,
+          folded: true,
           caption:
             "From the project board: my manager on how fast I learned the industry's nomenclature. Below it, the Opportunities list with a row opened on its recommendation, and the Insights screen with a liquid-loading chart.",
         },
@@ -172,33 +187,37 @@ export const xecta: CaseStudy = {
               maxim: "Operators, not analysts, read these charts, so every number keeps the name the industry gives it.",
               standfirst:
                 "Goal: show an operator what a group of wells is doing today and which action on which well is worth the most.",
-              cover: { src: `${W}/03.png` },
+              cover: { src: `${D}/dashboard-2400.webp`, frame: "macbook" },
               blocks: [
                 {
                   kind: "shot",
                   width: "wall",
                   src: `${W}/02.png`,
+                  folded: true,
                   caption:
                     "From the project board: an AI company in the energy and drilling industry. My tasks were mockups and clickable prototypes, with a UX designer and a researcher. Below, three screens: Insights for one well, Insights with a liquid-loading chart, and the Well Performance map.",
                 },
                 {
                   kind: "shot",
                   width: "wall",
-                  src: `${W}/03.png`,
+                  src: `${D}/dashboard-2400.webp`,
+                  frame: "macbook",
                   caption:
                     "Dashboard for one group of wells. The production summary chart on top; the largest deferrals on the right; today's opportunities below, traced from lift type through opportunity and action to cash flow.",
                 },
                 {
                   kind: "shot",
                   width: "wall",
-                  src: `${W}/04.png`,
+                  src: `${D}/well-performance-2400.webp`,
+                  frame: "macbook",
                   caption:
                     "Well Performance: a table of wells with setpoint and workover opportunities. One row is opened on its setpoint chart, with the current setpoint marked, and its valve pressure traverse.",
                 },
                 {
                   kind: "shot",
                   width: "wall",
-                  src: `${W}/06.png`,
+                  src: `${D}/lift-timing-2400.webp`,
+                  frame: "macbook",
                   caption:
                     "Artificial Lift Timing Selection for one well. Lift scenarios are compared by NPV in the table on the left; the IPR and VLP curves for each are drawn on the right.",
                 },

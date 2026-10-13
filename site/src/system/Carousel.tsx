@@ -10,9 +10,10 @@ type Item = { src: string; title: string; body?: string; frame?: "macbook" };
  * One screen at a time, with the part of the application it shows named
  * beside it. Arrows and dots move it; it also moves itself every few
  * seconds while in view, and stops while the pointer is over it or when
- * the reader has taken the wheel. Keyboard: left and right.
+ * the reader has taken the wheel. Keyboard: left and right. `portrait`
+ * gives phone screens and tall boards a taller stage, fitted by height.
  */
-export function Carousel({ items }: { items: Item[] }) {
+export function Carousel({ items, shape }: { items: Item[]; shape?: "portrait" }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
   const [i, setI] = useState(0);
   const [manual, setManual] = useState(false);
@@ -36,7 +37,7 @@ export function Carousel({ items }: { items: Item[] }) {
     <Lane width="wall">
       <div
         ref={ref}
-        className={shown ? "car is-shown" : "car"}
+        className={[shown ? "car is-shown" : "car", shape === "portrait" ? "car--portrait" : ""].filter(Boolean).join(" ")}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onKeyDown={(e) => { if (e.key === "ArrowRight") go(i + 1); if (e.key === "ArrowLeft") go(i - 1); }}

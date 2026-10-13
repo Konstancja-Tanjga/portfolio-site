@@ -9,6 +9,11 @@ import type { CaseStudy } from "./types";
  * /work/mojepzu/screens/, with the addresses, policy numbers and number plate
  * on the policy cards blurred: they are mock data, but they look real.
  *
+ * The two research boards in chapter 02 are folded, opened on demand, and
+ * carry hotspots that repeat their captions at the place on the board. No
+ * cover layers and no carousel: the project has one device mockup, and the
+ * other screens are rendered device composites or crops, not flat desktop
+ * screens a mockup could be made from.
  * Image paths are literal strings so that scripts/check-content.mjs sees them.
  * Chapter numbers were written for this page; the project has no Figma wall.
  * The stack follows docs/case-study-kit/RULES.md, with the chapters the board
@@ -176,8 +181,13 @@ export const pzu: CaseStudy = {
           width: "wall",
           src: "/work/mojepzu/device/prototype-review-2400.webp",
           frame: "macbook",
+          folded: true,
           caption:
             "The first-round analysis board: the portal's screens laid out one by one, each with a column of interview notes beside it.",
+          hotspots: [
+            { x: 19, y: 23, text: "Each screen of the portal, laid out one by one." },
+            { x: 63, y: 20, text: "A column of interview notes beside each screen." },
+          ],
         },
         {
           kind: "passage",
@@ -200,8 +210,16 @@ export const pzu: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/mojepzu/screens/insights-board.webp",
+          folded: true,
           caption:
             "The synthesis board from the first round. Each area of the portal has rows for the screen, the observations and conclusions, the challenges, and the ideas.",
+          hotspots: [
+            { x: 62, y: 17, text: "One column per area of the portal." },
+            { x: 28, y: 22, text: "The screen, as it was." },
+            { x: 50, y: 34, text: "The observations and conclusions from the interviews." },
+            { x: 20, y: 47, text: "The challenges." },
+            { x: 20, y: 79, text: "The ideas." },
+          ],
         },
       ],
     },

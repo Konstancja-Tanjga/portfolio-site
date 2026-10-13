@@ -127,6 +127,19 @@ export const bighat: CaseStudy = {
           ],
         },
         {
+          kind: "carousel",
+          items: [
+            { src: `${D}/kanban-2400.webp`, frame: "macbook", title: "Kanban template", body: "Filters as chips above the columns; cards move without a pointer." },
+            { src: `${D}/kanban-dark-2400.webp`, frame: "macbook", title: "Kanban in Dark", body: "The same screen in Dark, from the same components and one variable mode." },
+            { src: `${D}/records-2400.webp`, frame: "macbook", title: "Records template", body: "One quiet actions button at the end of each row, and nothing else competing with the data." },
+            { src: `${D}/records-empty-2400.webp`, frame: "macbook", title: "Records, empty", body: "“No invoices match these filters” offers a way out of the filter, not “Create invoice”." },
+            { src: `${D}/ai-chat-2400.webp`, frame: "macbook", title: "AI chat template", body: "The prompt is a form and the modes are a radio group, so keyboard and ARIA come from the library." },
+            { src: `${D}/storybook-button-2400.webp`, frame: "macbook", title: "Button in Storybook", body: "When to use it, what to use instead, and every do and don't rendered live with its reason." },
+            { src: `${D}/colour-roles-2400.webp`, frame: "macbook", title: "Colour roles in Figma", body: "Light and Dark. Each role carries its CSS name as code syntax, so Dev Mode answers with a variable, not a hex." },
+            { src: `${D}/primitives-2400.webp`, frame: "macbook", title: "Primitives", body: "The palette and the space, radius, and type scales on a 4px grid, hidden from every picker." },
+          ],
+        },
+        {
           kind: "shot",
           width: "wall",
           src: `${V}/cover.webp`,
@@ -164,6 +177,7 @@ export const bighat: CaseStudy = {
           kind: "shot",
           width: "column",
           src: `${V}/logo-use.png`,
+          folded: true,
           caption:
             "The logo's page in Figma. On a 4px grid, 48 × 32: a 28 × 20 crown, a 4 gap, and a 48 × 8 brim. Ink is text.primary and the brim is action.primary.bg, so the logo follows the theme like any component.",
         },
@@ -275,6 +289,22 @@ export default {
           label: "A decision that started in Figma",
           text:
             "Radius and the smallest type sizes moved onto a 4px grid in the library first, then reached the tokens through pull requests. Table cells stayed at 12px: at 10px, figures stop being readable.",
+        },
+        {
+          kind: "loop",
+          centre: "When they disagree, the code wins",
+          stations: [
+            { label: "Tokens", title: "The token files", body: "tokens/*.tokens.json. One set of tokens feeds both sides, and a decision is done only when it reaches them." },
+            { label: "Figma", title: "The library", body: "Generated from the token files by an agent through Figma's MCP server, not redrawn: 233 variables, and every value in a component bound to one." },
+            { label: "Code", title: "The React package", body: "Tokens only; a literal fails the build. Through Code Connect, Dev Mode shows the component a developer would write." },
+          ],
+          edges: [
+            { label: "Generated over MCP" },
+            { label: "Code Connect" },
+            { label: "Pull requests" },
+          ],
+          caption:
+            "The loop. The library is generated from the tokens, Code Connect binds it to the package, and a decision that starts in Figma, such as the 4px grid for radius and the smallest type sizes, reaches the tokens through pull requests.",
         },
       ],
     },

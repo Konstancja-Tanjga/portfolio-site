@@ -29,8 +29,17 @@ import type { CaseStudy } from "./types";
  * sources disagree on are left out on purpose rather than picked: how many
  * developers were on the team, the month the project ended, and how old the
  * application was.
+ *
+ * The five "after" screens are also composited into a MacBook frame under
+ * /work/volvo-erp/device/ for the cover layers, the carousel and the dossier.
+ * The three redesigned parts (search, reports, e-mail) sit in one dossier,
+ * one tile each, so the deep links #search, #reports and #email still open
+ * the right place. The hotspots on the legacy screens repeat what the
+ * captions and bullets of the same chapter say, pinned to the place on the
+ * screen that says it.
  */
 const S = "/work/volvo-erp/screens";
+const D = "/work/volvo-erp/device";
 
 export const volvo: CaseStudy = {
   slug: "volvo-erp",
@@ -47,6 +56,13 @@ export const volvo: CaseStudy = {
     stamp: "LEGACY REDESIGN · SEARCH · REPORTS · E-MAIL",
     credit: "Senior UX/UI Designer · Volvo Group · 2022–2023",
     shot: { src: "/work/volvo-erp/00-cover.jpg" },
+    layers: [
+      { src: "/work/volvo-erp/device/partner-after-2400.webp", label: "Partner search" },
+      { src: "/work/volvo-erp/device/reports-after-2400.webp", label: "My reports" },
+      { src: "/work/volvo-erp/device/report-builder-after-2400.webp", label: "Report builder" },
+      { src: "/work/volvo-erp/device/reports-share-prototype-2400.webp", label: "Send a report template" },
+      { src: "/work/volvo-erp/device/components-2400.webp", label: "Components" },
+    ],
   },
   meta: [
     { label: "Role", value: "Senior UX/UI Designer, contract" },
@@ -112,6 +128,7 @@ export const volvo: CaseStudy = {
       id: "what-it-is",
       n: "01",
       heading: "What it is",
+      standfirst: "What Baldo does, who I designed for, and the four redesigned screens, one per slide.",
       blocks: [
         {
           kind: "passage",
@@ -124,6 +141,15 @@ export const volvo: CaseStudy = {
             "<strong>Authorisation for more than five hundred applications.</strong> Administrators decide which applications a user should have access to.",
             "<strong>A master-data hub.</strong> It gives users and their organisations a business context and feeds hundreds of subscribers with data through its Publish/Subscribe service.",
             "<strong>The people I designed for are those administrators.</strong> The screens on this page are the ones they use to look up partners, build reports, and write to users about their accounts.",
+          ],
+        },
+        {
+          kind: "carousel",
+          items: [
+            { src: `${D}/partner-after-2400.webp`, frame: "macbook", title: "Partner search", body: "The search form with the extra options open, Search and Clear search fields at the top, and the results table below." },
+            { src: `${D}/reports-after-2400.webp`, frame: "macbook", title: "My reports", body: "The search box suggests report names and highlights the typed letters; the actions for a selected report sit in one bar." },
+            { src: `${D}/report-builder-after-2400.webp`, frame: "macbook", title: "Report builder", body: "Selected criteria and Selected layout side by side, with Save, Run report and Cancel at the top." },
+            { src: `${D}/reports-share-prototype-2400.webp`, frame: "macbook", title: "Send a report template", body: "The Send link dialog over My reports: the template goes to an ID number, and the recipient cannot see the report data." },
           ],
         },
       ],
@@ -154,11 +180,21 @@ export const volvo: CaseStudy = {
               src: `${S}/reports-before.png`,
               caption:
                 "The legacy report list: every report in one column, including names like “Copy of Copy of DDBasicNewReport61”, with the actions in a small toolbar above it.",
+              hotspots: [
+                { x: 74, y: 12, text: "One row of tabs for every part of the application: User, Partner, Unit, Maintenance, Forms, Reports, and the rest." },
+                { x: 22, y: 41, text: "Copies of copies next to the originals, “Copy of Copy of DDBasicNewReport61”, and no search box to find one." },
+                { x: 14, y: 82, text: "One long column of names, DBBasicReportNew1 to 18 and on." },
+              ],
             },
             {
               src: `${S}/report-loading-before.png`,
               caption:
                 "A legacy report screen with “Please wait while page is loading” over the criteria and layout tables.",
+              hotspots: [
+                { x: 64, y: 55, text: "“Please wait while page is loading” can stop the screen while a report opens." },
+                { x: 18, y: 36, text: "Criteria entered row by row in a table." },
+                { x: 10, y: 76, text: "Criteria and Layout as tabs at the bottom of a long form." },
+              ],
             },
           ],
         },
@@ -198,127 +234,151 @@ export const volvo: CaseStudy = {
       ],
     },
     {
-      id: "search",
+      id: "redesign",
       n: "04",
-      heading: "Search and results on one screen",
-      maxim:
-        "Further search criteria open under a toggle, and the results land on the same screen as the form.",
+      heading: "Three parts, redesigned",
+      maxim: "Search, reports, and the e-mail each got one rule, and the screen that follows it.",
+      standfirst:
+        "One tile per part. Open a tile and the part unfolds to the right: the rule, the legacy screen with what was wrong pinned on it, and the screen that replaced it.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>The old Partner screen was a details page with every field of one partner on it; the new one is <strong>a search with its results on the same screen</strong>.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Further criteria open under a toggle;</strong> the expanded form shows “Show less search options”.",
-            "<strong>The results come back as a table under the form,</strong> with Open and Generate Excel above it.",
-            "<strong>On the report list, the search box suggests matching report names</strong> as you type.",
-          ],
-        },
-        {
-          kind: "duo",
+          kind: "dossier",
           items: [
             {
-              src: `${S}/partner-before.png`,
-              caption:
-                "Before: Partner Details, one partner per page, with its fields, business areas, roles and address tabs stacked in one form.",
+              id: "search",
+              n: "01",
+              title: "Search and results on one screen",
+              maxim: "Further search criteria open under a toggle, and the results land on the same screen as the form.",
+              standfirst:
+                "The old Partner screen was a details page with every field of one partner on it; the new one is a search with its results on the same screen.",
+              cover: { src: `${D}/partner-after-2400.webp`, frame: "macbook" },
+              blocks: [
+                {
+                  kind: "points",
+                  items: [
+                    "<strong>Further criteria open under a toggle;</strong> the expanded form shows “Show less search options”.",
+                    "<strong>The results come back as a table under the form,</strong> with Open and Generate Excel above it.",
+                    "<strong>On the report list, the search box suggests matching report names</strong> as you type.",
+                  ],
+                },
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${S}/partner-before.png`,
+                      caption:
+                        "Before: Partner Details, one partner per page, with its fields, business areas, roles and address tabs stacked in one form.",
+                      hotspots: [
+                        { x: 30, y: 18, text: "One partner per page: every field of the partner on a details page." },
+                        { x: 50, y: 37, text: "Business areas as a table in the middle of the form." },
+                        { x: 26, y: 63, text: "Roles and address as tabs stacked lower in the same form." },
+                      ],
+                    },
+                    {
+                      src: `${D}/partner-after-2400.webp`,
+                      frame: "macbook",
+                      caption:
+                        "After: Partner search with the extra options open (“Show less search options” closes them), Search and Clear search fields at the top, and the results table below.",
+                    },
+                  ],
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/reports-after-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "My reports in the new layout: the search box suggests report names and highlights the typed letters, and the actions for a selected report (Modify, View, Copy, Delete, Run report) sit in one bar.",
+                },
+              ],
             },
             {
-              src: "/work/volvo-erp/device/partner-after-2400.webp", frame: "macbook",
-              caption:
-                "After: Partner search with the extra options open (“Show less search options” closes them), Search and Clear search fields at the top, and the results table below.",
-            },
-          ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/volvo-erp/device/reports-after-2400.webp", frame: "macbook",
-          caption:
-            "My reports in the new layout: the search box suggests report names and highlights the typed letters, and the actions for a selected report (Modify, View, Copy, Delete, Run report) sit in one bar.",
-        },
-      ],
-    },
-    {
-      id: "reports",
-      n: "05",
-      heading: "A report is criteria and layout",
-      maxim:
-        "What a report filters on and what it shows are two lists, side by side, and both are visible while it is being built.",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>A report is <strong>two lists side by side</strong>: what it filters on and what it shows.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Before, the criteria and the layout were tables on a long form,</strong> reached through Criteria and Layout tabs at the bottom.",
-            "<strong>Now the report has a name and a Private or Public setting at the top,</strong> then two columns: Selected criteria and Selected layout.",
-            "<strong>Each item has a handle to move it and a button to delete it.</strong> Below them the criteria are grouped in sections such as Unit, which open and close one by one or all at once.",
-            "<strong>A report template can be sent to someone by their ID number.</strong> The dialog tells the sender that the recipient can view or copy the template but will not see the report data.",
-          ],
-        },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${S}/report-builder-before.png`,
-              caption:
-                "Before: a new report as a form, with report information at the top and criteria entered row by row in tables below.",
-            },
-            {
-              src: "/work/volvo-erp/device/report-builder-after-2400.webp", frame: "macbook",
-              caption:
-                "After: Selected criteria and Selected layout side by side, with Save, Run report and Cancel at the top and the Unit criteria open underneath.",
-            },
-          ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/volvo-erp/device/reports-share-prototype-2400.webp", frame: "macbook",
-          caption:
-            "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
-        },
-      ],
-    },
-    {
-      id: "email",
-      n: "06",
-      heading: "The e-mail looks like what it sends",
-      maxim:
-        "Administrators write the message inside the layout the user will receive.",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>I designed a new template from scratch for the administrators, and the e-mails users receive, so that <strong>the message is written inside the layout the user gets</strong>.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Before, four fields and a preview.</strong> An administrator filled in Head, Message head, Message Body, and Foot and checked the result in a preview next to them.",
-            "<strong>Now subject, body, and signature are fields inside the e-mail itself,</strong> between the Baldo header and the Volvo footer, with Cancel, Save as draft, and Send at the bottom.",
-            "<strong>The new-account message says what was created</strong> (user name, user ID, date), that the password comes in a separate e-mail, and that an account not used for 14 months is deleted automatically.",
-            "<strong>Internal users are told to sign in with their Windows credentials</strong> instead.",
-          ],
-        },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${S}/email-before.png`,
-              caption:
-                "Before: New user email, with the form on the left and a preview on the right, signed “produced by Volvo Group’s Baldo User Administration tool”.",
+              id: "reports",
+              n: "02",
+              title: "A report is criteria and layout",
+              maxim: "What a report filters on and what it shows are two lists, side by side, and both are visible while it is being built.",
+              standfirst: "A report is two lists side by side: what it filters on and what it shows.",
+              cover: { src: `${D}/report-builder-after-2400.webp`, frame: "macbook" },
+              blocks: [
+                {
+                  kind: "points",
+                  items: [
+                    "<strong>Before, the criteria and the layout were tables on a long form,</strong> reached through Criteria and Layout tabs at the bottom.",
+                    "<strong>Now the report has a name and a Private or Public setting at the top,</strong> then two columns: Selected criteria and Selected layout.",
+                    "<strong>Each item has a handle to move it and a button to delete it.</strong> Below them the criteria are grouped in sections such as Unit, which open and close one by one or all at once.",
+                    "<strong>A report template can be sent to someone by their ID number.</strong> The dialog tells the sender that the recipient can view or copy the template but will not see the report data.",
+                  ],
+                },
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${S}/report-builder-before.png`,
+                      caption:
+                        "Before: a new report as a form, with report information at the top and criteria entered row by row in tables below.",
+                      hotspots: [
+                        { x: 16, y: 15, text: "Report information at the top, then Chosen criteria and Chosen layout as two tables, one under the other." },
+                        { x: 10, y: 42, text: "Criteria and Layout tabs, then the Unit criteria entered row by row." },
+                        { x: 10, y: 86, text: "A second section, Partner, further down the page." },
+                      ],
+                    },
+                    {
+                      src: `${D}/report-builder-after-2400.webp`,
+                      frame: "macbook",
+                      caption:
+                        "After: Selected criteria and Selected layout side by side, with Save, Run report and Cancel at the top and the Unit criteria open underneath.",
+                    },
+                  ],
+                },
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${D}/reports-share-prototype-2400.webp`,
+                  frame: "macbook",
+                  caption:
+                    "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
+                },
+              ],
             },
             {
-              src: `${S}/email-after.png`,
-              caption:
-                "After: the template administrators edit, with Subject, Body and Signature inside the e-mail layout and Save as draft next to Send.",
+              id: "email",
+              n: "03",
+              title: "The e-mail looks like what it sends",
+              maxim: "Administrators write the message inside the layout the user will receive.",
+              standfirst:
+                "A new template for the administrators, and for the e-mails users receive, so that the message is written inside the layout the user gets.",
+              cover: { src: `${S}/email-after.png` },
+              blocks: [
+                {
+                  kind: "points",
+                  items: [
+                    "<strong>Before, four fields and a preview.</strong> An administrator filled in Head, Message head, Message Body, and Foot and checked the result in a preview next to them.",
+                    "<strong>Now subject, body, and signature are fields inside the e-mail itself,</strong> between the Baldo header and the Volvo footer, with Cancel, Save as draft, and Send at the bottom.",
+                    "<strong>The new-account message says what was created</strong> (user name, user ID, date), that the password comes in a separate e-mail, and that an account not used for 14 months is deleted automatically.",
+                    "<strong>Internal users are told to sign in with their Windows credentials</strong> instead.",
+                  ],
+                },
+                {
+                  kind: "duo",
+                  items: [
+                    {
+                      src: `${S}/email-before.png`,
+                      caption:
+                        "Before: New user email, with the form on the left and a preview on the right, signed “produced by Volvo Group’s Baldo User Administration tool”.",
+                      hotspots: [
+                        { x: 26, y: 25, text: "Four fields: Head, Message head, Message Body, and Foot." },
+                        { x: 85, y: 50, text: "The result checked in a preview next to the form, signed “produced by Volvo Group’s Baldo User Administration tool”." },
+                        { x: 78, y: 88, text: "Send, Don't send, and Cancel at the bottom." },
+                      ],
+                    },
+                    {
+                      src: `${S}/email-after.png`,
+                      caption:
+                        "After: the template administrators edit, with Subject, Body and Signature inside the e-mail layout and Save as draft next to Send.",
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
@@ -326,7 +386,7 @@ export const volvo: CaseStudy = {
     },
     {
       id: "outcome",
-      n: "07",
+      n: "05",
       heading: "What it adds up to",
       blocks: [
         {
@@ -338,7 +398,9 @@ export const volvo: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/volvo-erp/device/components-2400.webp", frame: "macbook",
+          src: `${D}/components-2400.webp`,
+          frame: "macbook",
+          folded: true,
           caption:
             "The component board from the project: cards, menus, a data table with paging, tabs, chips, text inputs and time pickers in the style of the new screens.",
         },

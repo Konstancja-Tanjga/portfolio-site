@@ -100,6 +100,15 @@ export const futures: CaseStudy = {
       heading: "Structure",
       blocks: [
         {
+          kind: "flow",
+          stages: [
+            { title: "Stage 1, online: framing", body: "Vision, constraints, and user groups; the STEEP trend analysis; the central challenge framed as a group; the 2×2 matrix explained on a worked example. 220 minutes." },
+            { title: "Stage 2, online: scenarios", body: "A gallery walk of the scenarios, breakout teams on implications and options, a synthesis of common themes and divergent risks, and a vote on the tensions to resolve at the off-site. About 150 minutes." },
+            { title: "Stage 3, off-site: one day", body: "The three priority matrices confirmed, four quadrant stories drafted per matrix and cross-reviewed, then feature extraction, an MVP, and a back-cast roadmap, with an owner and a date for every next step." },
+          ],
+          note: "Two online sessions build the material and the off-site spends it. Each participant wrote their own scenario as homework between the sessions, so the second session did not start from a blank canvas.",
+        },
+        {
           kind: "shot",
           width: "wall",
           src: "/work/futures-thinking/ch02.png",
@@ -190,6 +199,15 @@ export const futures: CaseStudy = {
       n: "09",
       heading: "What it produced",
       blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "3", label: "stages: two online sessions and a one-day off-site" },
+            { value: "5", label: "participants, every block timeboxed" },
+            { value: "6", label: "scenario matrices, one chosen" },
+            { value: "2", label: "open arguments closed, with an owner on every step" },
+          ],
+        },
         {
           kind: "shot",
           width: "wall",

@@ -40,3 +40,22 @@ Not changed, and why:
 - The pull quote "The customer expects to be in their world, not ours." (10 words) stays a quote, in its quotation marks, because the board presents it as one; it was not promoted to a maxim.
 - The four greyscale screens (`early-mockup`, `offers-final`, `final-screens`, `insights-board`) are flat crops, not MacBook mockups. No image was created or deleted.
 | credit and Role: "UX and UI designer" | "UI Designer" | settled by her on 11 October 2026 |
+
+## Layout pass, 13 October 2026
+
+Against the blocks the APplus Analytics study uses (`docs/case-study-kit/RULES.md`, sections 2, 4 and 5). The study has one device mockup (the first-round analysis board) and no flat single-desktop screen: `dashboard.webp` and `cover.webp` are rendered laptop-and-tablet composites, `final-screens.webp` is a three-device collage, and `early-mockup.webp` and `offers-final.webp` are crops. So no mockup was composited, and the cover and chapter 01 stay as they were. The change is to the two research boards.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 02: `prototype-review` as an open framed `shot` | `folded: true`, with two `hotspots`: "Each screen of the portal, laid out one by one." and "A column of interview notes beside each screen." | 4: a board that explains rather than shows is folded; the hotspot text is the caption, pinned to a screen and to its notes column |
+| chapter 02: `insights-board` as an open `shot` | `folded: true`, with five `hotspots` on the board's rows, staggered across the columns so the bubbles do not cover one another: one column per area; the screen; the observations and conclusions; the challenges; the ideas | 4: research boards carry the finding at the place on the board; the text is the caption's list of rows |
+| header comment | + a note on the folded boards and on why there are no cover layers and no carousel | the file says what it leaves out |
+
+Not done, and why:
+
+- No cover `layers`: one device mockup exists, and the kit asks for four to six. The other screens are rendered composites, a collage, and crops, none of which is a flat desktop screen a mockup could be made from.
+- No `carousel`: the same reason. The screens on record are not one mockup per part of the portal.
+- The four first-round findings are not pinned on the synthesis board. The stickies are not legible at the board's resolution, so a finding cannot be placed where it was written without guessing; the hotspots name the rows instead, which the caption already describes.
+- No `joint`: chapter 06 says what was not measured after launch. A question joined to "nothing" would be a slot filled, not a reflection on record.
+- No `dossier`: the three decisions in chapter 04 share one set of screens; they are not areas each with their own screens and rule.
+- `stats` and `flow` already existed from the 11 October pass and are unchanged.

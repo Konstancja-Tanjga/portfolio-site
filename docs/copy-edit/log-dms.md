@@ -66,3 +66,28 @@ Her decisions on the Documents page, after the first pass shipped.
 | spec "What the annotations on this frame say" (Requirements, Development, Content, User flow, Interaction) | removed | her decision, 11 October 2026: the block duplicated the documented frame above it |
 | ref-finance-app in a MacBook frame | flat image | her decision: the reference screenshot is a collage, not one screen |
 | detail-info, detail-tags, detail-versions, tablet-versions as flat crops | MacBook mockups; the tablet caption now says "at a narrower width" | her decision: the four sign-off screens framed like the rest |
+
+## Layout pass, 13 October 2026
+
+Bringing the page up to the layout, microinteractions, and motion of the Analytics study: cover layers, a carousel of every part of the application, hotspots on the reference screens, folded diagrams, and the handoff drawn as the `loop` and `flow` the text already describes. No fact, number, persona, quote, or screen was added; every carousel body, hotspot, and loop station repeats a caption, a point, or the handoff standfirst already on the page. No mockup was composited: all sixteen desktop screens already have MacBook exports in `device/`, and the remaining flat files are diagrams, prototype crops at 640px, or a collage.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| cover: `art` only; the intro showed the typeset cover | cover: `layers` of six mockups, list, detail-invoice, filters, document-type, retention, permission-rule, labelled Documents, A document, Filters, Document types, Retention, Permission rules | RULES 4: a hero cover is `layers`, four to six screens of the product |
+| chapter 01: a `duo` of list and detail-invoice | chapter 01: a `carousel` of twelve slides, Documents, Filters, Bulk actions, A document, Document info, Version history, Custom properties, Tags, Retention, Document types, Permission rules, Deleted documents; the duo removed because both its screens are slides | RULES 2: chapter 01 is `points` + `carousel`, every part of the application one screen per slide; bodies from the chapter 10 captions |
+| ref-finance-app.png: caption only | three `hotspots`: open tasks counted per company before anything to do; a landing surface summarises state before it offers actions; a table stays readable at a few hundred rows | RULES 4: reference screens carry the finding they provoked; text from the caption and the chapter 07 points |
+| ref-xentral mockup: caption only | three `hotspots`: the list stays in view beside the record; a detail panel beats a detail page; a record has a limit | RULES 4; text from the caption and the chapter 07 points; x and y computed from the screen's position inside the frame |
+| traceability.png, open on the wall | `folded: true` | RULES 4: a diagram that explains rather than shows opens on demand |
+| fox-update.png, open on the wall | `folded: true` | RULES 4 |
+| handoff-loop.png, open, with the full caption | a `loop` of three stations, Figma (The file), Code (The FOX package), Prototype (Prototypes in code), edges Code Connect, Built on the package, From Codex to Figma over MCP, centre "Alignment enforced by tooling"; the PNG kept below as `folded: true` with a shortened caption | RULES 2, chapter 09: the handoff drawn as the cycle it is; stations from the standfirst and the old caption; the centre from the chapter maxim |
+| `spec` "Three requirements that were in the tokens and templates from the start" | `flow` of three stages, Accessibility, Colour modes, Language, same text, the caption as the `note` | RULES 2, chapter 09: the requirements baked in from the start as `flow` cards; same shape as Analytics |
+
+Not done, and why:
+
+- Chapter 05, Competition analysis, has no image on the page, so the competitor's annotated screens cannot carry hotspots. If the annotated export exists in the Figma file, it belongs here as the `duo` with hotspots that RULES 2 asks for.
+- The six-stage process list in chapter 01 (gathering requirements to handoff) stays as `points`: `flow` is documented for three or four cards, and at six the perspective fade leaves the last card at 30 per cent opacity.
+- No "what I would do differently" `joint`: the file contains no such reflection and none was invented. The "what I will measure" `joint` from the first pass stays.
+- No clip: the study has no screen recording.
+- fox-docs.png and the documentation mockup are not folded: they show a real page of the system and a real frame, so they are evidence, not explanation.
+- The tablet-versions mockup is not a carousel slide: it is a width variant of version history, not a part of the application.
+- The checklist lines in the After development steps keep their em dashes and the `v3 → v4` arrow, as decided on 11 October: code, not prose.

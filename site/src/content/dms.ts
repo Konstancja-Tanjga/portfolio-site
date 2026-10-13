@@ -33,6 +33,14 @@ export const dms: CaseStudy = {
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     art: { src: "/work/applus-documents/cover-art.webp" },
     shot: { src: "/work/applus-documents/00-cover.png" },
+    layers: [
+      { src: "/work/applus-documents/device/list-2400.webp", label: "Documents" },
+      { src: "/work/applus-documents/device/detail-invoice-2400.webp", label: "A document" },
+      { src: "/work/applus-documents/device/filters-2400.webp", label: "Filters" },
+      { src: "/work/applus-documents/device/document-type-2400.webp", label: "Document types" },
+      { src: "/work/applus-documents/device/retention-2400.webp", label: "Retention" },
+      { src: "/work/applus-documents/device/permission-rule-2400.webp", label: "Permission rules" },
+    ],
   },
   meta: [
     { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
@@ -114,20 +122,20 @@ export const dms: CaseStudy = {
           html: "<p>DMS is a document management module inside APplus ERP. It holds the documents an ERP produces and receives, from invoices and purchase orders to goods receipt notes and customs declarations, with their versions, metadata, tags, permissions, and retention.</p>",
         },
         {
-          kind: "duo",
+          kind: "carousel",
           items: [
-            {
-              src: "/work/applus-documents/device/list-2400.webp",
-              frame: "macbook",
-              caption:
-                "The document list: 346 documents, with document types in the left panel. Each row says where the search matched (author, project code) and which version matched.",
-            },
-            {
-              src: "/work/applus-documents/device/detail-invoice-2400.webp",
-              frame: "macbook",
-              caption:
-                "A single document: general information on top, with Export audit package and Download, and the document details below it in five tabs.",
-            },
+            { src: "/work/applus-documents/device/list-2400.webp", frame: "macbook", title: "Documents", body: "346 documents, with document types in the left panel. Each row says where the search matched (author, project code) and which version matched." },
+            { src: "/work/applus-documents/device/filters-2400.webp", frame: "macbook", title: "Filters", body: "Tags, then metadata filters typed by field: string, integer, enum, boolean, date, date and time. All criteria must match." },
+            { src: "/work/applus-documents/device/list-bulk-2400.webp", frame: "macbook", title: "Bulk actions", body: "All versions or latest only, select and deselect all, download ZIP, export metadata, tag documents, and delete selected set apart in red." },
+            { src: "/work/applus-documents/device/detail-invoice-2400.webp", frame: "macbook", title: "A document", body: "General information on top, with Export audit package and Download, and the document details below it in five tabs." },
+            { src: "/work/applus-documents/device/detail-info-2400.webp", frame: "macbook", title: "Document info", body: "The identity panel: scope, format, size, created, last modified, version, checksum. Then the five-tab band and the preview." },
+            { src: "/work/applus-documents/device/detail-versions-2400.webp", frame: "macbook", title: "Version history", body: "Each version with its author, number, and date, and a download on the highlighted row." },
+            { src: "/work/applus-documents/device/custom-properties-2400.webp", frame: "macbook", title: "Custom properties", body: "Metadata on a single document, each field with its data type." },
+            { src: "/work/applus-documents/device/detail-tags-2400.webp", frame: "macbook", title: "Tags", body: "Up to 20 tags per document, 64 characters at most, letters, numbers, _ and - only, no duplicates, enforced in place." },
+            { src: "/work/applus-documents/device/retention-2400.webp", frame: "macbook", title: "Retention", body: "Policy FINANCE_INVOICE_7Y on a proforma invoice: retention started, cutoff, end, then eligible for disposition. The clock starts from a metadata date field." },
+            { src: "/work/applus-documents/device/document-type-2400.webp", frame: "macbook", title: "Document types", body: "CONTRACT_V2: naming rules, allowed file extensions, a metadata schema per field, and the assigned retention policy." },
+            { src: "/work/applus-documents/device/permission-rule-2400.webp", frame: "macbook", title: "Permission rules", body: "A role from the identity provider, Grant or Deny, an operation scope of read, upload, or logical delete, and predicates on metadata joined with AND." },
+            { src: "/work/applus-documents/device/deleted-document-2400.webp", frame: "macbook", title: "Deleted documents", body: "Under Configuration, filtered by type, deletion date range, reason, and who deleted it. A deleted document opens with its format, size, version, and checksum intact." },
           ],
         },
         {
@@ -270,6 +278,7 @@ export const dms: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/traceability.png",
+          folded: true,
           caption:
             "The traceability chain: product specification in Confluence, requirement (REQ-984), Jira task (PX-1774), Figma frame with the requirement text in a doc band, and a sign-off dated and named. The dashed return is the part that pays off in an audit: from any frame you can name its requirement, and from any requirement you can find the frame and the signature.",
         },
@@ -298,12 +307,22 @@ export const dms: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/ref-finance-app.png",
+          hotspots: [
+            { x: 19, y: 18, text: "Open tasks counted per company before anything is offered to do." },
+            { x: 63, y: 25, text: "A landing surface summarises state before it offers actions. Counts first, then the things to do." },
+            { x: 67, y: 72, text: "A table stays readable at a few hundred rows. Density is set for the archive, not the demo." },
+          ],
           caption: "A finance tool: a dashboard that counts open tasks per company before it offers anything to do, and an inbox table of invoices.",
         },
         {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/device/ref-xentral-2400.webp", frame: "macbook",
+          hotspots: [
+            { x: 35, y: 47, text: "The purchase order list stays in view beside the record." },
+            { x: 57, y: 22, text: "A detail panel beats a detail page where the user needs the list beside the record." },
+            { x: 68, y: 64, text: "A record has a limit. Past a certain amount on screen it stops being a record and becomes a form." },
+          ],
           caption: "xentral: a purchase suggestion opened as a panel over the purchase order list.",
         },
       ],
@@ -365,6 +384,7 @@ export const dms: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/fox-update.png",
+          folded: true,
           caption:
             "The update process. Solid line: a composition invented to solve one screen is reviewed, named, and versioned into FOX rather than left local. Dashed: the product consumes the system back at a pinned version, so a promotion never arrives as a surprise mid-release. Colour modes and accessibility sit underneath both, in the primitives.",
         },
@@ -520,26 +540,37 @@ export const dms: CaseStudy = {
         "Concepts in Figma Make, the design in Figma, the handoff through Dev Mode, Code Connect, and Storybook. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. I own the component API and the tokens, and I review every pull request into the library.",
       blocks: [
         {
+          kind: "loop",
+          centre: "Alignment enforced by tooling",
+          stations: [
+            { label: "Figma", title: "The file", body: "Code Connect binds each design component to its implementation. Dev Mode is what development opens, with Storybook as the reference." },
+            { label: "Code", title: "The FOX package", body: "The implementation is the developers' code on the FOX package. I own the component API and the tokens, and I review every pull request into the library." },
+            { label: "Prototype", title: "Prototypes in code", body: "A prototype answers the behaviour questions and proves the composition. Some questions were settled as working prototypes in code, because behaviour is not something a static mockup can decide." },
+          ],
+          edges: [
+            { label: "Code Connect" },
+            { label: "Built on the package" },
+            { label: "From Codex to Figma over MCP" },
+          ],
+          caption:
+            "The handoff loop. Code Connect binds each design component to its implementation; prototypes are built on the same package; and the loop runs the other way too, from Codex to Figma over MCP, so code-side work is reflected back into the design file rather than drifting from it.",
+        },
+        {
           kind: "shot",
           width: "wall",
           src: "/work/applus-documents/screens/handoff-loop.png",
+          folded: true,
           caption:
-            "The handoff loop. Solid line: Code Connect binds each design component to its implementation. Dashed: the loop also runs the other way, from Codex to Figma over MCP, so code-side work is reflected back into the design file rather than drifting from it. Some questions were settled as working prototypes in code, because behaviour is not something a static mockup can decide.",
+            "The handoff loop as drawn on the wall. Solid line: Code Connect binds each design component to its implementation. Dashed: the loop also runs the other way, from Codex to Figma over MCP.",
         },
         {
-          kind: "spec",
-          caption: "Three requirements that were in the tokens and templates from the start.",
-          rows: [
-            { key: "Accessibility", value: "WCAG AA was the target from the first frame." },
-            {
-              key: "Colour modes",
-              value: "Light, dark, and high contrast were must-haves, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour.",
-            },
-            {
-              key: "Language",
-              value: "German is the default, English second. Layouts were tested against German compound words, where a layout that survives English quietly breaks. The screens on this page are the English variants.",
-            },
+          kind: "flow",
+          stages: [
+            { title: "Accessibility", body: "WCAG AA was the target from the first frame." },
+            { title: "Colour modes", body: "Light, dark, and high contrast were must-haves, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour." },
+            { title: "Language", body: "German is the default, English second. Layouts were tested against German compound words, where a layout that survives English quietly breaks. The screens on this page are the English variants." },
           ],
+          note: "Three requirements that were in the tokens and templates from the start.",
         },
       ],
     },

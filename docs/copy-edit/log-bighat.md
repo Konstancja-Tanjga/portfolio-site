@@ -48,3 +48,21 @@ Unresolved facts, for Konstancja:
 - The meta strip says 126 semantic tokens and 233 Figma variables; the CV analysis (`cv-analysis.md`) says 39 components where the page says 46. The page's numbers were kept; the CV is the older count.
 - "Docu Manager" is named as one of three things built on Big Hat; the site calls that study "APplus Documents" elsewhere. Left as found.
 - Chapter 07 says "Three of the four templates" because the meta strip counts four and the file shows three; the fourth is not named anywhere in the file.
+
+## Layout pass, 13 October 2026
+
+Against `docs/case-study-kit/RULES.md` sections 4 and 5, with `site/src/content/bi.ts` as the reference. Big Hat already had cover `layers`, an `evolution` block, a `dossier` of templates, and `stats`; this pass adds the chapter 01 carousel of every mockup on record, a `loop` for the cycle chapter 05 describes in prose, and folds the logo's spec page. No mockup was composited: all eight already existed under `device/`. No fact, number, or screen was added.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 01: `stats`, then the 6.0 cover shot | `stats`, then a `carousel` of the eight mockups (Kanban, Kanban in Dark, Records, Records empty, AI chat, Button in Storybook, colour roles, primitives), each titled with one line from its existing caption | RULES 2, chapter 01: every part of the application, one screen per slide |
+| `{ kind: "shot", width: "column", src: \`${V}/logo-use.png\` … }` | `folded: true` | RULES 4: a page that explains (the 4px grid, the sizes, the token names) rather than shows is folded |
+| chapter 05: `process`, `code`, `thesis` | the same, then a `loop` of three stations, tokens, the Figma library, the React package, with the edges "Generated over MCP", "Code Connect", and "Pull requests", and the centre "When they disagree, the code wins" | RULES 2, chapter 09: a cycle with no first step is drawn as a ring; every sentence in it is from the process block, the Decision 3 row, and the thesis beside it |
+
+Not done, and why:
+
+- No `hotspots`: no audit or benchmark screen exists for this study.
+- No `flow` in place of the six-stage `process`: the first pass already kept it, because a flow would drop the kickers.
+- No `joint`: the file holds no reflection, only the "What it does not claim" points, which are limits rather than lessons.
+- No clips: nothing is recorded for this study.
+- The `v6/` exports (the 6.0 cover, the logo, the button contract and variants) stay flat: they are Figma pages and a lockup sheet, not product screens.

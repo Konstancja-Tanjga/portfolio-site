@@ -203,10 +203,25 @@ export const bph: CaseStudy = {
           ],
         },
         {
+          kind: "stats",
+          items: [
+            { value: "6", label: "columns in the old table: name, description, installed version, status, available versions, and action" },
+            { value: "5", label: "audit findings, each answered by a rule in chapter 04" },
+            { value: "1", label: "product benchmarked step by step: the Adobe Creative Cloud desktop app" },
+            { value: "9", label: "process-area tags, taken from the product itself" },
+          ],
+        },
+        {
           kind: "shot",
           width: "wall",
           src: `${S}/benchmark.webp`,
           folded: true,
+          hotspots: [
+            { x: 76, y: 10, text: "The catalogue: one card per app, with its state and one action." },
+            { x: 62, y: 40, text: "Updates announced as a list, each with what changed." },
+            { x: 62, y: 62, text: "An update runs after a confirmation dialog with its options." },
+            { x: 56, y: 92, text: "Progress shown in place, with Cancel." },
+          ],
           caption:
             "Benchmark, step by step: how the Adobe Creative Cloud desktop app lists its catalogue, announces updates, and runs an update with a confirmation dialog.",
         },
@@ -290,6 +305,26 @@ export const bph: CaseStudy = {
             "<strong>Three pieces are the Hub's own:</strong> BPH Card, card grid BPH, and secondary app bar BPH.",
             "<strong>The rest is FOX:</strong> the menu, the select, and the tooltip.",
             "<strong>Library first, product second.</strong> Anything the Hub needed that 3.0 did not have yet was proposed, built, and published in the library before the product used it.",
+          ],
+        },
+        {
+          kind: "evolution",
+          items: [
+            {
+              version: "v2.3",
+              claim: "The file is bound to the code",
+              sourceOfTruth: "Still Figma, but every component is tied to its implementation through Code Connect.",
+              ships: "Figma to Storybook to development, with code-side work written back into the file over MCP.",
+              costs: "The binding is real, the ownership is not: the file still has to be kept honest by hand every time code moves first.",
+            },
+            {
+              version: "v3.0",
+              claim: "The code is the system",
+              sourceOfTruth: "Storybook. The library is authored, reviewed and versioned as code and published as a package through Nexus.",
+              ships: "A component is changed where it runs. Products pick it up by moving a version, not by copying a frame.",
+              costs: "Design loses the comfort of the file. Reviewing the system means reading a story, not opening a page.",
+              moved: "What moved was the authority: from the file that describes the system to the code that is the system. The Hub's three pieces were published in 3.0 before the product used them.",
+            },
           ],
         },
         {

@@ -1367,8 +1367,17 @@ article { position: relative; z-index: 1; }
 .car__slide.is-current { opacity: 1; transform: none; z-index: 2; }
 .car__slide.is-next { opacity: 0.18; transform: translateX(12%) scale(0.88) rotateY(-8deg); z-index: 1; }
 .car__slide.is-prev { opacity: 0.18; transform: translateX(-12%) scale(0.88) rotateY(8deg); z-index: 1; }
-.car__img { width: 100%; height: auto; display: block; }
+.car__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 100%; }
+/* a definite row, so a tall slide's max-height has something to resolve against */
+.car__slide { grid-template-rows: 100%; overflow: hidden; }
 .car__img--device { filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.7)); }
+/* phone screens and tall boards: a taller stage, each slide fitted by height */
+.car--portrait .car__stage { aspect-ratio: 16 / 10; }
+.car--portrait .car__img { height: 100%; border-radius: 14px; box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.8); }
+.car--portrait .car__slide { padding: 2% 0; }
+.car--portrait .car__slide.is-next { transform: translateX(36%) scale(0.86) rotateY(-10deg); }
+.car--portrait .car__slide.is-prev { transform: translateX(-36%) scale(0.86) rotateY(10deg); }
+@media (max-width: 48rem) { .car--portrait .car__stage { aspect-ratio: 3 / 4; } .car--portrait .car__slide.is-next, .car--portrait .car__slide.is-prev { opacity: 0; } }
 .car__arrow {
   position: absolute;
   top: 50%;
@@ -1543,3 +1552,17 @@ article { position: relative; z-index: 1; }
   .loop__draw { stroke-dashoffset: 0; } .loop__dash, .loop__label, .loop__centre, .loop__orbit { opacity: 1; } .loop__dash { opacity: 0.55; }
   .loop__station { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+/* ---------- beside: prose with a phone clip that keeps pace ---------- */
+.beside { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--bh-space-6); align-items: center; margin-top: calc(var(--bh-beat-block) * 1.5); opacity: 0; transform: translateY(24px); transition: opacity 800ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.beside.is-shown { opacity: 1; transform: none; }
+.beside__text { max-width: 60ch; color: var(--kt-ink-2); line-height: 1.6; }
+.beside__text p { margin: 0 0 1em; }
+.beside__text strong { color: var(--kt-ink); }
+.beside__text ul, .beside__text ol { margin: 0 0 1em; padding-left: 1.2em; }
+.beside__text li { margin: 0.35em 0; }
+.beside__media { position: sticky; top: 5rem; margin: 0; display: grid; gap: var(--bh-space-2); justify-items: center; }
+.beside__player { display: block; width: auto; height: min(78vh, 42rem); max-width: 19rem; aspect-ratio: 634 / 1800; border-radius: 22px; border: 1px solid var(--kt-line); background: var(--kt-ground-2); box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.9); object-fit: cover; }
+.beside__caption { font-size: var(--bh-size-small); color: var(--kt-ink-3); text-align: center; }
+@media (max-width: 56rem) { .beside { grid-template-columns: 1fr; } .beside__media { position: static; } .beside__player { max-width: 16rem; } }
+@media (prefers-reduced-motion: reduce) { .beside { opacity: 1; transform: none; transition: none; } }

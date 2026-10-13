@@ -2,6 +2,7 @@ import type { Block, Chapter } from "../content/types";
 import { useReveal } from "../system/Reveal";
 import {
   AnnotatedSet,
+  Beside,
   Brief,
   Carousel,
   Code,
@@ -76,7 +77,7 @@ function BlockView({ block }: { block: Block }) {
     case "joint":
       return <Joint question={block.question} answers={block.answers} />;
     case "carousel":
-      return <Carousel items={block.items} />;
+      return <Carousel items={block.items} shape={block.shape} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":
@@ -95,6 +96,8 @@ function BlockView({ block }: { block: Block }) {
       return <Evolution items={block.items} />;
     case "annotated":
       return <AnnotatedSet items={block.items} />;
+    case "beside":
+      return <Beside html={block.html} video={block.video} caption={block.caption} />;
     case "loop":
       return <Loop stations={block.stations} edges={block.edges} centre={block.centre} caption={block.caption} />;
     case "dossier":

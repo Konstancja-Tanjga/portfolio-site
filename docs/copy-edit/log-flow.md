@@ -42,3 +42,20 @@ Unresolved facts, for Konstancja:
 | { label: "Product context", value: "APplus: ERP-System des Jahres 2025, Gold in the User Experience category" } | { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" } | brief: the award row carried on every APplus study, both years (confirmed fact) |
 | credit, Period, brief: "2026" | "2023" | settled by her on 11 October 2026 (Flow mode shipped with APplus 8, October 2023) |
 | "User Experience ERP category" | "User Experience category" | settled: same wording both years |
+
+## Layout pass, 13 October 2026
+
+Against the layout, microinteractions, and motion of `bi.ts`: a `carousel` of the parts of Flow mode in chapter 01, without a frame, because the screens are tablet cuts and one desktop cut. Titles and bodies are the existing captions. No image file was created or deleted.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 01: one `shot` of the desktop board | `carousel` of five: a board on desktop, the tenant dialog, board parameters, Page details, the dark theme | stack 01: every part of the application, one screen per slide; bodies from the captions in chapters 03 and 05 |
+
+Not done, and why:
+
+- No cover `layers` and no `frame` on any slide: the screens are tablet and phone cuts from the Behance boards, not MacBook mockups, and the kit's layers are MacBook mockups.
+- The four phone screens are not in the carousel: the carousel stage has a fixed 2530 by 1600 aspect and a slide is the image at full width, so a 442 by 942 phone screen would overflow it. They stay a `set` in chapter 05. A carousel that takes a phone needs a change in the block.
+- No `hotspots`: the study has no audit, benchmark, or old-version screen.
+- No `folded` shot: no diagram or board on the page.
+- No `stats`: the study has no number with a source.
+- The tablet cuts are 930 px wide and the carousel draws them at up to 72 rem, so they will be soft on a large screen. Larger exports would fix this; none exist.

@@ -38,6 +38,7 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 | 06 | Design system | `evolution` | One tab per version. What changed, who owned it. |
 | 06a | Screen architecture | `duo` + `annotated` | The two or three screens that set the rules, then folders of screens with their rule ids. |
 | 07 | Design and sign-off | `set` or `carousel` | The screens as signed off. |
+| 07a | A flow best watched | `beside` | Prose beside a phone-sized clip that stays in view while the text scrolls, for a flow such as voice mode. |
 | 08 | Use cases | `dossier` of `usecase` | One tile per area. Each unfolds to the right: screens, the use-case template, the rule it sets. |
 | 09 | Handoff | `loop` + `flow` | What development receives and in what form, drawn as the cycle it is: file, code and prototype feeding one another. The requirements baked in from the start as `flow` cards. |
 | 10 | Evidence | `stats` + `video` clips | What was measured, what was recorded. A result that was not measured is not stated. |
