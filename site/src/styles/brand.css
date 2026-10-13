@@ -161,3 +161,8 @@ html, body { overflow-x: clip; }
   .masthead__dot { animation: none; }
   .masthead__talk { transition: none; }
 }
+.qnav__btn { border-color: var(--kt-line); background: rgba(15, 15, 14, 0.85); color: var(--kt-ink); backdrop-filter: blur(6px); }
+.qnav__btn:hover, .qnav__btn[aria-expanded="true"] { background: var(--kt-sand); border-color: var(--kt-sand); color: var(--kt-ground); }
+.qnav__sheet { border-color: var(--kt-line); background: rgba(15, 15, 14, 0.94); backdrop-filter: blur(10px); }
+.qnav__stop { color: var(--kt-ink-2); }
+.qnav__stop.is-current { background: var(--kt-sand); color: var(--kt-ground); }

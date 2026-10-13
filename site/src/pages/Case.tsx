@@ -6,6 +6,7 @@ import { JumpBar } from "../components/JumpBar";
 import { Badge } from "@bighatpoland/ui";
 
 import { BackToTop } from "../components/BackToTop";
+import { QuickNav } from "../components/QuickNav";
 import { ReadingProgress } from "../components/ReadingProgress";
 import { Lightbox, useLightbox } from "../system/Lightbox";
 import { ShotViewer } from "../system/Shot";
@@ -86,6 +87,7 @@ export function Case() {
       </Wall>
       </article>
       <BackToTop />
+      <QuickNav stops={study.chapters.filter((c) => c.heading).map((c) => ({ id: c.id, label: c.heading as string }))} />
       {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
     </ShotViewer.Provider>
   );
