@@ -62,3 +62,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | "built on Big Hat components" | "built on FOX design system components" | her wording, 13 October 2026 |
 | chapter 01a "Why this is a hard brief" | removed | her decision, 13 October 2026 |
 | Discovery bullet "Weak options dropped in the room, before anything was designed in detail." | removed | her decision, 13 October 2026 |
+| sign-off shot "A dashboard opened" | removed; the carousel keeps the opened dashboard as "A dashboard"; file renamed to dashboard-open-* so browser caches cannot serve the v2 picture | her decision, 13 October 2026 |

@@ -133,7 +133,7 @@ export const bi: CaseStudy = {
             { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "The same library as dashboards: all, continue where you left off, favourites, shared with you and popular, each card with its reach and its run count." },
             { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
             { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "The grid with a total row, and the view toolbar that stays with the workspace." },
-            { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Regional sales review, opened: two widgets from saved analyses on the canvas, and the view toolbar with Edit on the right." },
+            { src: `${D}/dashboard-open-2400.webp`, frame: "macbook", title: "A dashboard", body: "Regional sales review, opened: two widgets from saved analyses on the canvas, and the view toolbar with Edit on the right." },
             { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "An answer that names its cause, the chart under it, and where the number came from: the query, the run time, the tables joined, Show SQL." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
             { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with its reach, the system it reads, its author and its date." },
@@ -612,14 +612,6 @@ export const bi: CaseStudy = {
           poster: `${C}/new-analysis.webp`,
           title: "A new analysis in four steps",
           caption: "New analysis, in the prototype: query, columns, formatting, save. The saved query and its SQL are shown before a column is picked, and nothing exists until the last step.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/dashboard-detail-2400.webp`,
-          frame: "macbook",
-          caption:
-            "A dashboard opened: Regional sales review with two widgets, each a saved analysis placed on the canvas. Share, export and Edit sit in the view toolbar, so the dashboard is read and changed in the same place.",
         },
         {
           kind: "shot",
