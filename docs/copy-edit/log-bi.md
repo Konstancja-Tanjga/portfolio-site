@@ -69,3 +69,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | Discovery: still "Saved data models, and the New menu split by intent" | the new-data-model clip in a MacBook frame, caption keeps the last sentence | her request, 13 October 2026 |
 | clips as bare video | every clip inside the MacBook frame (`frame: "macbook"` on video), like the stills | her request |
 | sign-off still "The AI Data Analyst names the cause with the number" | her AI Data Analyst recording (62 s) in a MacBook frame: question, answer, fragment, detail thread, Apply | her request, 13 October 2026 |
+| (no clip) | her Build new query recording (46 s) in a MacBook frame, First prototypes, after the data model clip | her request, 13 October 2026 |
