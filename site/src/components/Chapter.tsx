@@ -55,6 +55,7 @@ function BlockView({ block }: { block: Block }) {
           subtitles={block.subtitles}
           credit={block.credit}
           clip={block.clip}
+          frame={block.frame}
           width={block.width}
         />
       );
