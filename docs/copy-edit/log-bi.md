@@ -61,3 +61,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | three clip captions | "in the prototype"; two widgets; empty state as it is; no summary claim; queries "added and given an alias" | review: say only what the clip shows |
 | "built on Big Hat components" | "built on FOX design system components" | her wording, 13 October 2026 |
 | chapter 01a "Why this is a hard brief" | removed | her decision, 13 October 2026 |
+| Discovery bullet "Weak options dropped in the room, before anything was designed in detail." | removed | her decision, 13 October 2026 |

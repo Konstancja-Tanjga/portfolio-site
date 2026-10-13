@@ -257,7 +257,6 @@ export const bi: CaseStudy = {
             "<strong>Four clusters.</strong> Entry and shell, data foundation, discovery and collaboration, insight assets.",
             "<strong>Seven questions, pinned to the screens that raised them.</strong> Each one is answered by a rule or a template in chapter 04.",
             "<strong>Eight validation sessions, run by me.</strong> The team has no researcher. Subject-matter experts, the PM and the requirements engineer each walked a flow end to end on questions from their own work.",
-            "<strong>Weak options dropped in the room</strong>, before anything was designed in detail.",
           ],
         },
         {
