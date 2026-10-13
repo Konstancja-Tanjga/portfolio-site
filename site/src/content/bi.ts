@@ -364,6 +364,17 @@ export const bi: CaseStudy = {
           caption:
             "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows. A model is composed from queries that already exist; nothing in it is drawn from nothing.",
         },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: `${C}/new-query.mp4`,
+          poster: `${C}/new-query.webp`,
+          title: "A new query built, run, and created",
+          caption:
+            "New query, in the prototype: name and description, the data source, the SQL typed in, Run query with the result preview under it, the AI context panel that confirms what each returned column means, and Create. The query exists only after it has run.",
+        },
       ],
     },
     {
