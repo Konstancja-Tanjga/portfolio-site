@@ -935,16 +935,16 @@ export const bi: CaseStudy = {
           centre: "One system, no second copy",
           stations: [
             { label: "Figma", title: "The file", body: "Every component bound to the implementation that ships it, through Code Connect. Dev Mode is what development opens." },
-            { label: "Code", title: "The FOX package", body: "A versioned package six products pick up by moving a version. I own the component API and the tokens, and I review and merge every pull request." },
-            { label: "Prototype", title: "The running prototype", body: "Answers the behaviour questions and proves the composition. The implementation is the developers' code on the package." },
+            { label: "Code", title: "The FOX package", body: "By v3.0 the binding is the distribution model: a versioned package six products pick up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library." },
+            { label: "Prototype", title: "The running prototype", body: "Composed on the package, it answers the behaviour questions and proves the composition. The implementation is the developers' code on the same package." },
           ],
           edges: [
             { label: "Code Connect" },
+            { label: "Composed on the package" },
             { label: "Written back over MCP" },
-            { label: "Behaviour, proven" },
           ],
           caption:
-            "The loop. Figma to code through Code Connect; code back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it; the prototype proves what the code must do.",
+            "The loop. The file binds to the code through Code Connect; the prototype is composed on that code; what is done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it.",
         },
         {
           kind: "flow",

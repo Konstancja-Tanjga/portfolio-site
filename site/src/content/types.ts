@@ -333,7 +333,14 @@ export type Block =
    * its maxim; opening it unfolds that use case to the right, one panel
    * per block, so the wall stays short and the detail is read sideways.
    */
-  | { kind: "dossier"; items: Dossier[] };
+  | { kind: "dossier"; items: Dossier[] }
+  /**
+   * A cycle drawn as a ring: three or four stations, each a card, joined
+   * by connectors that draw themselves on first sight and keep flowing.
+   * For a loop that has no first step, such as file, code and prototype
+   * feeding one another. Where an order matters, use `flow`.
+   */
+  | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
 export type Dossier = {
