@@ -27,3 +27,20 @@ Not changed, and why:
 - The stamp says "ILLUSTRATION SYSTEM" and nothing else in the file describes one, so the brief has no third decision. Flagged for Konstancja: a line on the illustration system would make Decision 3.
 - The phone screens (06 to 13) and store images (23, 26) are flat PNGs; no `device/*-2400.webp` exports exist for this study, so no MacBook frame is used.
 - The kicker and stamp keep their capitals and middle dots, pending the open point in INVENTORY.md.
+
+## Layout pass, 13 October 2026
+
+Against the layout, microinteractions, and motion of `bi.ts`: a `flow` of the four stages of the 3D navigation as the sketches write them, and `hotspots` on the sketches that transcribe the handwritten notes at their places, so the sketch can be read by a screen reader and without zooming. Positions were checked by rendering the pins on the image. No image file was created or deleted.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 01: points, then the sketch | points, `flow` of four stages (a circle forms; the blob spins; the bottom menu turns glassy; pressed), then the sketch | a sequence of stages is a flow; every stage is a note on the sketch |
+| sketch `shot` without hotspots | seven `hotspots`: dark background and spinning circles; circle shape is formed; blob in centre; glassy icons; bottom menu; Face ID login; to be discussed | section 4: the notes pinned where they are written; text transcribed from the sketch, nothing added |
+
+Not done, and why:
+
+- No `carousel` of the seven phone screens: the carousel stage has a fixed 2530 by 1600 aspect and draws each slide at full width, so a 360 by 800 phone screen would overflow it. The screens stay in the two `set` rows. A carousel that takes a phone needs a change in the block.
+- No cover `layers`, no `frame`: a phone app, no MacBook mockups.
+- No `folded` shot: the sketch is the evidence for the navigation, not a diagram that explains it.
+- No `stats`, `joint`, or `dossier`: no number with a source, no reflection, and one area, as in the first log.
+- No `evolution`: no design system versions on record.

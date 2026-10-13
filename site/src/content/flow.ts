@@ -121,10 +121,14 @@ export const flow: CaseStudy = {
           ],
         },
         {
-          kind: "shot",
-          width: "column",
-          src: `${S}/desktop-elly.webp`,
-          caption: "A Flow mode board on desktop, with columns by status and the Elly help panel open on the right.",
+          kind: "carousel",
+          items: [
+            { src: `${S}/desktop-elly.webp`, title: "A board on desktop", body: "Columns by status, each card one item with its key figures and tags, and the Elly help panel open on the right." },
+            { src: `${S}/tablet-tenant.webp`, title: "The tenant dialog", body: "Opened from the tenant in the header, with the board still visible behind it." },
+            { src: `${S}/tablet-parameters.webp`, title: "Board parameters", body: "Warehouse, floor, and date as chips under the header, edited in a popover." },
+            { src: `${S}/tablet-details.webp`, title: "Page details", body: "An item's details in a panel beside the board: the tag at the top, Move to, and the order details as labels and values." },
+            { src: `${S}/tablet-dark.webp`, title: "The dark theme", body: "The same layout in the dark theme, with two board columns and the item panel." },
+          ],
         },
       ],
     },

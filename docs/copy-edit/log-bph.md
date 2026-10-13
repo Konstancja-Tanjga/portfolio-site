@@ -48,3 +48,20 @@ Unresolved facts, for Konstancja:
 - "Over 50 field-tested Flowboard templates" and "30 years of APplus in the ERP market" are product figures from applus-erp.de and cobus-concept.de, per the file header. Not re-verified here.
 - The benchmark caption now names Adobe Creative Cloud, because the product is legible in the image. If the benchmark covered more products than that one board, the caption understates it.
 | { label: "Product context", value: "APplus: ERP System of the Year 2025, Gold in the User Experience ERP category" } | { label: "Product context", value: "APplus: ERP-System des Jahres, Gold in the User Experience category, 2025 and 2026" } | brief: the award row carried on every APplus study, both years (confirmed fact) |
+
+## Layout pass, 13 October 2026
+
+Against the layout, microinteractions, and motion of `bi.ts`: a `stats` row and hotspots on the benchmark in chapter 03, and an `evolution` of the two FOX versions the project ran on in chapter 06. The four hotspots on the old modal were checked by rendering them on the image: each sits on the control it names. No image file was created or deleted.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| chapter 03: points, then the folded benchmark | `stats` between them: 6 columns in the old table; 5 audit findings, each answered in chapter 04; 1 product benchmarked; 9 process-area tags | stack 03 as in bi.ts: numbers with a source; the four come from the chapter's own points, the chapter 04 spec, and the chapter 05 note |
+| benchmark `folded`, no hotspots | benchmark `folded` with four `hotspots`: the catalogue, the updates list, the confirmation dialog, progress in place | section 4: findings pinned where the sheet shows them; the text is the caption's, split per step |
+| chapter 06: points + tools spec | points + `evolution` (v2.3 "The file is bound to the code", v3.0 "The code is the system") + tools spec | stack 06: one tab per version. The two entries are the FOX v2.3 and v3.0 tabs from bi.ts, the same system and the same facts; the v3.0 `moved` line adds the Hub's own fact from chapter 06 |
+
+Not done, and why:
+
+- No cover `layers`. Two MacBook mockups exist (`grid`, `detail`); the other desktop screens are `concept.png` (near-square, a prototype board) and `old-modal.webp` (a 2.5:1 crop of the legacy screen), neither of which fits a 3840 by 2522 screen without white bands. `grid-flat.png` and `detail-flat.png` are the same two screens as the mockups. Four distinct desktop screens would be needed; none was composited.
+- The chapter 01 carousel stays at three slides (catalogue, template, installed boards): there is no fourth part of the Hub on record.
+- `concept.png` stays unfolded: it shows the installed and available boards rather than explaining them.
+- The two audiences stay a `spec`, not `personas`, for the reason in the first log.

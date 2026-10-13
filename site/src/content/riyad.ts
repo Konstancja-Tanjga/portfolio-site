@@ -85,9 +85,28 @@ export const riyad: CaseStudy = {
           ],
         },
         {
+          kind: "flow",
+          stages: [
+            { title: "A circle forms", body: "On the dark background, small stars are spinning, with haptic feedback." },
+            { title: "The blob spins", body: "A see-through menu appears in the centre; magnify with two fingers." },
+            { title: "The bottom menu turns glassy", body: "Video, podcast, and text icons come from the top right corner under the finger when pressed." },
+            { title: "Pressed", body: "Haptic feedback on the pressed state." },
+          ],
+          note: "The four stages as written on the sketches below. Still to be discussed on them: a tag menu, animation as an interactive menu for tags, and AR.",
+        },
+        {
           kind: "shot",
           width: "wall",
           src: "/work/riyad-bank/03.png",
+          hotspots: [
+            { x: 5, y: 6, text: "Dark background, spinning circles." },
+            { x: 12, y: 44, text: "Circle shape is formed. Small stars are spinning. Haptic." },
+            { x: 22, y: 44, text: "Blob in centre is spinning. See-through menu appears. Magnify with two fingers." },
+            { x: 45, y: 30, text: "Glassy icons: video, podcast, text." },
+            { x: 36, y: 55, text: "Bottom menu becomes glassy but visible. Icons go from the top right corner under the finger when pressed. Haptic." },
+            { x: 6, y: 80, text: "Add login with Face ID." },
+            { x: 66, y: 70, text: "To be discussed: tag menu, haptic for the icon pressed state, animation as an interactive menu for tags, AR." },
+          ],
           caption:
             "Paper sketches of the 3D navigation: spinning circles on a dark background, a blob in the centre, glassy video, podcast, and text icons that come under the finger when pressed, and haptic feedback.",
         },
