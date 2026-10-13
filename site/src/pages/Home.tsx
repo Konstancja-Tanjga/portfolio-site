@@ -9,6 +9,7 @@ import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
 import { offScreen, practices } from "../home/story";
+import { QuickNav } from "../components/QuickNav";
 
 /**
  * The home page.
@@ -169,6 +170,7 @@ export function Home() {
           <a href="https://konstancja-tanjga.github.io/bighat-design-system/">Design system in Storybook</a>
         </p>
       </section>
+      <QuickNav stops={[{ id: "stop-work", label: "Selected work" }, { id: "stop-how", label: "How I work" }, { id: "stop-off", label: "Off screen" }, { id: "stop-contact", label: "Contact" }]} />
     </div>
   );
 }
