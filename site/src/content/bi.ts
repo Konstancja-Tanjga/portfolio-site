@@ -362,7 +362,7 @@ export const bi: CaseStudy = {
           poster: `${C}/new-data-model.webp`,
           title: "A data model built from two queries",
           caption:
-            "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows. A data model is one of the things you connect, not something you draw from nothing.",
+            "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows. A model is composed from queries that already exist; nothing in it is drawn from nothing.",
         },
       ],
     },
@@ -857,16 +857,6 @@ export const bi: CaseStudy = {
                   poster: `${C}/models-join.webp`,
                   title: "A join refused, then a join accepted",
                   caption: "In the prototype: a STRING dragged onto a FLOAT is refused at the endpoint; customer_id onto customer_id draws the join, states INNER, and lists it in the panel.",
-                },
-                {
-                  kind: "video",
-                  clip: true,
-                  frame: "macbook",
-                  width: "wall",
-                  src: `${C}/new-data-model.mp4`,
-                  poster: `${C}/new-data-model.webp`,
-                  title: "A data model built from two queries",
-                  caption: "New data model, in the prototype: name and description, then the empty canvas that says what to add first, two queries added and given an alias, a relationship drawn between their key columns, and a live preview of the joined rows.",
                 },
                 {
                   kind: "shot",
