@@ -165,31 +165,6 @@ export const bi: CaseStudy = {
       ],
     },
     {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      maxim: "Most BI interfaces optimise one thing: drawing the chart. Here the chart is the last problem.",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>A number is only as true as three things nobody can see: <strong>the model behind it, the period it covers, and the role of the person reading it.</strong></p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Same dashboard, different rows.</strong> Two people open it and are entitled to different data.",
-            "<strong>A correct query, a wrong comparison.</strong> Year on year looks down because the current year has not finished loading.",
-            "<strong>A UI problem before a backend problem.</strong> The screen is where a false belief about a number is formed, and then repeated in a meeting.",
-            "<strong>Author and defender are different people.</strong> Whoever builds a query is almost never the one who has to defend its number.",
-          ],
-        },
-        {
-          kind: "pull",
-          text: "The work: make authorship, reach and freshness legible on the artefact itself.",
-        },
-      ],
-    },
-    {
       id: "who-for",
       n: "02",
       heading: "Who it is for",
