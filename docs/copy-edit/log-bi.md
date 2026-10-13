@@ -64,3 +64,4 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | Discovery bullet "Weak options dropped in the room, before anything was designed in detail." | removed | her decision, 13 October 2026 |
 | sign-off shot "A dashboard opened" | removed; the carousel keeps the opened dashboard as "A dashboard"; file renamed to dashboard-open-* so browser caches cannot serve the v2 picture | her decision, 13 October 2026 |
 | UC-01 clip from the Big Hat prototype | removed; the v3 detail-thread still carries the use case until a v3 recording exists | her decision, 13 October 2026: the frame was outdated |
+| Handoff: two spec tables | a `loop` ring (file, FOX package, prototype) with arcs that draw and flow, and the three baked-in requirements as `flow` cards | her request, 13 October 2026: less text, graphics and depth in the portfolio style |

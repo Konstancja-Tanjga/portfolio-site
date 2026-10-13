@@ -39,7 +39,7 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 | 06a | Screen architecture | `duo` + `annotated` | The two or three screens that set the rules, then folders of screens with their rule ids. |
 | 07 | Design and sign-off | `set` or `carousel` | The screens as signed off. |
 | 08 | Use cases | `dossier` of `usecase` | One tile per area. Each unfolds to the right: screens, the use-case template, the rule it sets. |
-| 09 | Handoff | `steps` or `process` | What development receives and in what form. Prototype beside the Figma file, components in code. |
+| 09 | Handoff | `loop` + `flow` | What development receives and in what form, drawn as the cycle it is: file, code and prototype feeding one another. The requirements baked in from the start as `flow` cards. |
 | 10 | Evidence | `stats` + `video` clips | What was measured, what was recorded. A result that was not measured is not stated. |
 | 11 | What I would do differently | `joint` | A question set large, joined to its answers. A second `joint` for "What I will measure". |
 

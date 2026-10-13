@@ -11,6 +11,7 @@ import {
   Flow,
   Joint,
   Lane,
+  Loop,
   Palette,
   Passage,
   Personas,
@@ -93,6 +94,8 @@ function BlockView({ block }: { block: Block }) {
       return <Evolution items={block.items} />;
     case "annotated":
       return <AnnotatedSet items={block.items} />;
+    case "loop":
+      return <Loop stations={block.stations} edges={block.edges} centre={block.centre} caption={block.caption} />;
     case "dossier":
       return <Dossier items={block.items} render={(b) => <BlockView block={b} />} />;
   }
