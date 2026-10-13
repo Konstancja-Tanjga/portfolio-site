@@ -676,15 +676,6 @@ export const bi: CaseStudy = {
                     "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
                 },
                 {
-                  kind: "video",
-                  clip: true,
-                  width: "wall",
-                  src: `${C}/uc01-detail-thread.mp4`,
-                  poster: `${C}/uc01-detail-thread.webp`,
-                  title: "A fragment questioned, answered, and applied to the main analysis",
-                  caption: "UC-01 in the prototype: select the fragment, ask why, read the evidence card, Apply. The main analysis gains one step with its reason.",
-                },
-                {
                   kind: "usecase",
                   uc: {
                     id: "UC-01",
