@@ -282,14 +282,6 @@ export const volvo: CaseStudy = {
                     },
                   ],
                 },
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/reports-after-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "My reports in the new layout: the search box suggests report names and highlights the typed letters, and the actions for a selected report (Modify, View, Copy, Delete, Run report) sit in one bar.",
-                },
               ],
             },
             {
@@ -329,14 +321,6 @@ export const volvo: CaseStudy = {
                         "After: Selected criteria and Selected layout side by side, with Save, Run report and Cancel at the top and the Unit criteria open underneath.",
                     },
                   ],
-                },
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/reports-share-prototype-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
                 },
               ],
             },
