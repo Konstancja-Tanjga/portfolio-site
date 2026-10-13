@@ -37,3 +37,23 @@ Unresolved facts, for Konstancja:
 - The board quote is attributed to "Stephen, my manager" on `05.png`. The pull quote carries no name, because the surname and role are not on record outside the board.
 - The website board says "My task: to design application (web, iOS, Android) for Xecta company as well as a website service." The file claims only the web application and the website; the iOS and Android claim was not added because nothing else on record supports it.
 - Board 02 says "Several-month project"; the meta says fifteen months (April 2020 to July 2021). One of them is loose. Left as found.
+
+## Layout pass, 13 October 2026
+
+Against the blocks the APplus Analytics study uses (`docs/case-study-kit/RULES.md`, sections 2, 4 and 5). Boards 03, 04 and 06 are each one desktop screen of the product set in a photograph. The application rectangle was cropped out of each (`screens/dashboard.png`, 1397 by 716; `screens/well-performance.png`, 1402 by 715; `screens/lift-timing.png`, 1405 by 721) and composited into the MacBook frame with the scratchpad pipeline, giving `device/dashboard-*.webp`, `device/well-performance-*.webp` and `device/lift-timing-*.webp` at 1600, 2400 and full width. No pixel of the application was changed; the photograph around it fell away, as the Volvo crops did.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| cover: `art` + `shot` only | + `layers` of four mockups: Dashboard, Well Performance, Artificial Lift Timing Selection, xecta.com | 4: a hero cover is four to six screens of the product cycling with opacity |
+| chapter 01 `carousel`: `03.png`, `04.png`, `06.png` as flat boards with the photograph around the screen | the three device mockups with `frame: "macbook"`; the two website slides unchanged | 4: a product screen is a MacBook mockup, a flat image is for boards |
+| chapter 01a: board `05.png` as an open `shot` | `folded: true`, opened on demand; the pull quote above it stays on the surface | 4: a board with typeset text explains rather than shows |
+| dossier `product`: cover `03.png`, then `02.png`, `03.png`, `04.png`, `06.png` as flat shots | cover `device/dashboard-2400.webp` framed; `02.png` folded; the three screens as framed mockups, captions unchanged | 4: one mockup per claim; the board that explains is folded |
+| header comment | + the crop and composite, and which boards are folded | the file says where its images come from |
+
+Not done, and why:
+
+- The fourth cover layer is the existing `device/website-01-2400.webp`, which is the website board inside a MacBook, not a page of xecta.com. The website boards (`website-01` to `website-05`) show every page inside a laptop, tablet or phone bezel or in a collage; the only flat desktop pages, in `website-02.png`, are about 1100 pixels wide and would be blurred at mockup size. A page export of xecta.com would replace this layer.
+- No `hotspots`: the study has no legacy, audit or research screen. The product screens are the designed screens, and pinning claims on them would be captions in bubbles.
+- No `joint`, `flow`, `stats`, `evolution`, `loop` or `video`: the boards record no reflection, no sequence of stages, no measured number, no system versions, no handoff and no clips, as the 11 October pass noted.
+- `website-02.png` to `website-05.png` stay as open flat shots: they show screens rather than explain, so folding them would hide the website.
+- The carousel keeps `website-01.png` and `website-03.png` flat: they are boards of several devices, not single screens, so a MacBook around them would be a frame around frames.

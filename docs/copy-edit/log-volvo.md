@@ -16,3 +16,28 @@ One pass, 11 October 2026, against `docs/STYLE.md` and the standard set for APpl
 | { kind: "passage", html: "<p>The old Partner screen was a details page with every field of one partner on it. In the new Partner search, further criteria ope… | { kind: "passage", html: "<p>The old Partner screen was a details page with every field of one partner on it; the new one is <strong>a search with its result… | 2.3.2 itemisation; 2.6 emphasis |
 | { kind: "passage", html: "<p>In the old screen the criteria and the layout were tables on a long form, reached through Criteria and Layout tabs at the bottom… | { kind: "passage", html: "<p>A report is <strong>two lists side by side</strong>: what it filters on and what it shows.</p>", }, { kind: "points", items: [ "… | 2.3.2 itemisation; 2.6 emphasis |
 | { kind: "passage", html: "<p>I designed a new template from scratch for the administrators, and the design of the e-mails users receive. In the old tool an a… | { kind: "passage", html: "<p>I designed a new template from scratch for the administrators, and the e-mails users receive, so that <strong>the message is wri… | 2.3.2 itemisation; 3.5 serial comma |
+
+## Layout pass, 13 October 2026
+
+Against the blocks the APplus Analytics study uses (`docs/case-study-kit/RULES.md`, sections 2, 4 and 5). The five device mockups already in `public/work/volvo-erp/device/` carry the cover, the carousel and the dossier tiles; no new mockup was composited. The three redesign chapters (04 search, 05 reports, 06 e-mail) became one dossier with three tiles whose ids are the old chapter ids, so `#search`, `#reports` and `#email` still open the right place. Every hotspot repeats a fact from the caption or the bullets of the same chapter, pinned where the screen shows it; nothing was added that the boards do not state.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| cover: `shot` only (the Behance cover) | cover: `layers` of five mockups: Partner search, My reports, Report builder, Send a report template, Components | 4: a hero cover is four to six screens of the product cycling with opacity |
+| chapter 01: `passage` + `points`, no screens | + `carousel` of four slides, one per redesigned screen, each with a title and one line taken from its caption | 2: chapter 01 ends with every part of the application, one screen per slide |
+| chapter 01: no standfirst | standfirst: "What Baldo does, who I designed for, and the four redesigned screens, one per slide." | a standfirst says what is on the page |
+| chapter 02 `duo`: `reports-before`, `report-loading-before` with captions only | the same two with `hotspots` (three and three): the tab row; copies of copies and no search box; the long column; the loading message; criteria row by row; Criteria and Layout tabs | 4: legacy screens carry the finding in a speech bubble at the place that provoked it |
+| chapters 04, 05, 06: three chapters, each `passage` + `points` + `duo` + `shot` | chapter 04 "Three parts, redesigned": one `dossier` with tiles `search`, `reports`, `email`; each tile keeps its maxim as the rule, its passage as the standfirst, and its `points`, `duo` and `shot` as panels | 5: a dossier where two or more areas each have screens and a rule; dossier ids keep the deep links |
+| `partner-before`, `report-builder-before`, `email-before`: captions only | `hotspots` (three each) with the facts the bullets of the same tile state: one partner per page, business areas in the middle, roles and address as tabs; report information and the two tables one under the other, Criteria and Layout tabs, a second Partner section; the four fields, the preview with its signature line, Send, Don't send and Cancel | 4: hotspots on legacy screens, text from the chapter |
+| chapter 07 "What it adds up to", n 07 | n 05, after the dossier | chapter numbers follow the page order |
+| component board as an open `shot` | `folded: true`: a drawer with the caption as its title, opened on demand | 4: a board that explains rather than shows is folded |
+
+Not done, and why:
+
+- No `flow` for the research. The passage names the card sort, the interviews, the Usability Hub tests and the Maze tests, but the boards do not state their order, and a flow draws an order. Left as a passage.
+- No `joint`. The closing passage says what is not on record; it is not a reflection with answers or a list of what will be measured, and neither was invented.
+- No `stats` beyond the three in chapter 03, which already carry their source (board 06). No release or usage figure exists.
+- No `evolution`, `loop` or `video`: the project has no design-system versions, no handoff cycle and no clips on record.
+- No new mockup. The e-mail template (`email-after.png`, 478 by 970) is a portrait e-mail, not a desktop screen, so its dossier tile shows the flat image as its cover.
+- Three pins per legacy screen, not more. A bubble is centred on its pin and about a fifth of the image tall, so on these small crops a fourth pin overlapped its neighbour; the dropped text was folded into the pin beside it, not lost.
+- Cover layer five is the component board, not a screen of the application; it is the fifth mockup the study has and the kit asks for four to six. Drop it if a board on the cover reads wrong.
