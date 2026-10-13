@@ -42,3 +42,4 @@ Not done, and why:
 - Three pins per legacy screen, not more. A bubble is centred on its pin and about a fifth of the image tall, so on these small crops a fourth pin overlapped its neighbour; the dropped text was folded into the pin beside it, not lost.
 - Cover layer five is the component board, not a screen of the application; it is the fifth mockup the study has and the kit asks for four to six. Drop it if a board on the cover reads wrong.
 | reports dossier: "My reports in the new layout" shot | removed; the mockup stays in the cover layers and the carousel | her decision, 13 October 2026 |
+| reports dossier: "Prototype: My reports with the Send link dialog open" shot | removed; the mockup stays in the cover layers and the carousel | her decision, 13 October 2026 |

@@ -322,14 +322,6 @@ export const volvo: CaseStudy = {
                     },
                   ],
                 },
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/reports-share-prototype-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "Prototype: My reports with the Send link dialog open. The template goes to an ID number; the recipient can view or copy it but not see the report data.",
-                },
               ],
             },
             {
