@@ -383,12 +383,15 @@ export const elly: CaseStudy = {
       maxim: "The user should never have to remember which mode they are in. The layout says it.",
       blocks: [
         {
-          kind: "set",
-          size: "phone",
-          items: [
-            { src: "/work/elly-ai-assistant/screens/uc-voice-consent.png", caption: "Before speaking: chats won't be saved." },
-            { src: "/work/elly-ai-assistant/screens/sidebar-voice.png", caption: "Voice mode: the avatar in the centre, Pause and Finish." },
-          ],
+          kind: "beside",
+          html:
+            "<p><strong>Voice is the same assistant, not a second one.</strong> It opens from the microphone beside the message field, and the panel changes shape so the mode is never in doubt.</p><ul><li><strong>Consent first.</strong> Before anything is spoken, the panel says that voice chats are not saved. The user decides while nothing can be lost yet.</li><li><strong>The avatar becomes the panel.</strong> In text mode it sits in the top bar; in voice mode it fills the centre, with Pause and Finish under it.</li><li><strong>One exit.</strong> Finish closes voice mode. A new voice chat does not exist, because starting over and leaving are the same intention.</li></ul>",
+          video: {
+            src: "/work/elly-ai-assistant/voice-mode.mp4",
+            poster: "/work/elly-ai-assistant/voice-mode.webp",
+            title: "Elly voice mode on a phone, from the greeting to Finish",
+          },
+          caption: "Voice mode on the phone, in the prototype.",
         },
         {
           kind: "usecase",

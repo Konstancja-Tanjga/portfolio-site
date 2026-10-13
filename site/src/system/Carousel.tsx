@@ -37,7 +37,7 @@ export function Carousel({ items, shape }: { items: Item[]; shape?: "portrait" }
     <Lane width="wall">
       <div
         ref={ref}
-        className={[shown ? "car is-shown" : "car", shape === "portrait" ? "car--portrait" : ""].join(" ")}
+        className={[shown ? "car is-shown" : "car", shape === "portrait" ? "car--portrait" : ""].filter(Boolean).join(" ")}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onKeyDown={(e) => { if (e.key === "ArrowRight") go(i + 1); if (e.key === "ArrowLeft") go(i - 1); }}

@@ -347,6 +347,13 @@ export type Block =
    * For a loop that has no first step, such as file, code and prototype
    * feeding one another. Where an order matters, use `flow`.
    */
+  /**
+   * Text beside a clip, so the reader can read and watch at once: the
+   * prose on the left, a phone-sized recording on the right that stays in
+   * view while the text scrolls. For a flow that is best explained while
+   * it plays, such as voice mode.
+   */
+  | { kind: "beside"; html: string; video: { src: string; poster?: string; title: string }; caption?: string }
   | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
