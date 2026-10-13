@@ -123,7 +123,7 @@ export const bi: CaseStudy = {
         },
         {
           kind: "passage",
-          html: `<p><strong>A working prototype</strong> of the application, built on Big Hat components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
+          html: `<p><strong>A working prototype</strong> of the application, built on FOX design system components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
         },
         {
           kind: "carousel",
@@ -133,7 +133,7 @@ export const bi: CaseStudy = {
             { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "The same library as dashboards: all, continue where you left off, favourites, shared with you and popular, each card with its reach and its run count." },
             { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
             { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "The grid with a total row, and the view toolbar that stays with the workspace." },
-            { src: `${D}/dashboard-detail-2400.webp`, frame: "macbook", title: "A dashboard", body: "Regional sales review, opened: two widgets from saved analyses on the canvas, and the view toolbar with Edit on the right." },
+            { src: `${D}/dashboard-open-2400.webp`, frame: "macbook", title: "A dashboard", body: "Regional sales review, opened: two widgets from saved analyses on the canvas, and the view toolbar with Edit on the right." },
             { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "An answer that names its cause, the chart under it, and where the number came from: the query, the run time, the tables joined, Show SQL." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
             { src: `${D}/queries-shelf-2400.webp`, frame: "macbook", title: "Queries", body: "The shelf: every query arrives with its reach, the system it reads, its author and its date." },
@@ -161,31 +161,6 @@ export const bi: CaseStudy = {
         {
           kind: "pull",
           text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
-        },
-      ],
-    },
-    {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      maxim: "Most BI interfaces optimise one thing: drawing the chart. Here the chart is the last problem.",
-      blocks: [
-        {
-          kind: "passage",
-          html: "<p>A number is only as true as three things nobody can see: <strong>the model behind it, the period it covers, and the role of the person reading it.</strong></p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Same dashboard, different rows.</strong> Two people open it and are entitled to different data.",
-            "<strong>A correct query, a wrong comparison.</strong> Year on year looks down because the current year has not finished loading.",
-            "<strong>A UI problem before a backend problem.</strong> The screen is where a false belief about a number is formed, and then repeated in a meeting.",
-            "<strong>Author and defender are different people.</strong> Whoever builds a query is almost never the one who has to defend its number.",
-          ],
-        },
-        {
-          kind: "pull",
-          text: "The work: make authorship, reach and freshness legible on the artefact itself.",
         },
       ],
     },
@@ -282,7 +257,6 @@ export const bi: CaseStudy = {
             "<strong>Four clusters.</strong> Entry and shell, data foundation, discovery and collaboration, insight assets.",
             "<strong>Seven questions, pinned to the screens that raised them.</strong> Each one is answered by a rule or a template in chapter 04.",
             "<strong>Eight validation sessions, run by me.</strong> The team has no researcher. Subject-matter experts, the PM and the requirements engineer each walked a flow end to end on questions from their own work.",
-            "<strong>Weak options dropped in the room</strong>, before anything was designed in detail.",
           ],
         },
         {
@@ -642,14 +616,6 @@ export const bi: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: `${D}/dashboard-detail-2400.webp`,
-          frame: "macbook",
-          caption:
-            "A dashboard opened: Regional sales review with two widgets, each a saved analysis placed on the canvas. Share, export and Edit sit in the view toolbar, so the dashboard is read and changed in the same place.",
-        },
-        {
-          kind: "shot",
-          width: "wall",
           src: `${D}/analyst-chat-2400.webp`,
           frame: "macbook",
           caption:
@@ -708,15 +674,6 @@ export const bi: CaseStudy = {
                   frame: "macbook",
                   caption:
                     "The detail thread in the product: the selection restated, its context as chips, the evidence card with Show SQL, and Apply or Discard at the bottom.",
-                },
-                {
-                  kind: "video",
-                  clip: true,
-                  width: "wall",
-                  src: `${C}/uc01-detail-thread.mp4`,
-                  poster: `${C}/uc01-detail-thread.webp`,
-                  title: "A fragment questioned, answered, and applied to the main analysis",
-                  caption: "UC-01 in the prototype: select the fragment, ask why, read the evidence card, Apply. The main analysis gains one step with its reason.",
                 },
                 {
                   kind: "usecase",
