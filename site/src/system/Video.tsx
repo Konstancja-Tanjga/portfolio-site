@@ -86,10 +86,10 @@ export function Video({
             onPause={() => setPlaying(false)}
           >
             {clip && (
-              /* A clip ships as WebM and MP4; the WebM is about half the size,
-                 so it goes first and the MP4 is the fallback. */
+              /* A clip ships as WebM and MP4; the WebM is usually smaller, so it
+                 goes first and the MP4 is the fallback. */
               <>
-                <source src={asset(src.replace(/\.mp4$/, ".webm"))} type="video/webm" />
+                <source src={asset(src.replace(/\.mp4$/, ".webm"))} type='video/webm; codecs="vp9"' />
                 <source src={asset(src)} type="video/mp4" />
               </>
             )}
