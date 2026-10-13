@@ -23,9 +23,11 @@ export function Loop({ stations, edges, centre, caption }: { stations: Station[]
   const n = stations.length;
   const R = 50;
   const C = 50;
+  // stations sit a little inside the ring on the horizontal axis, so the
+  // side cards keep clear of the viewport edge on a narrow desktop
   const pos = (i: number) => {
     const a = -Math.PI / 2 + (i / n) * Math.PI * 2;
-    return { x: C + Math.cos(a) * R, y: C + Math.sin(a) * R, a };
+    return { x: C + Math.cos(a) * R * 0.88, y: C + Math.sin(a) * R, a };
   };
   // the arc from station i to the next: a sweep on the same circle, trimmed
   // so it starts and ends outside each card
