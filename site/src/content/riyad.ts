@@ -111,26 +111,16 @@ export const riyad: CaseStudy = {
             "Paper sketches of the 3D navigation: spinning circles on a dark background, a blob in the centre, glassy video, podcast, and text icons that come under the finger when pressed, and haptic feedback.",
         },
         {
-          kind: "set",
-          size: "phone",
-          caption:
-            "The home screen, a topic opened into its CEO interview, report, and case study, Favourites, and the podcast player.",
+          kind: "carousel",
+          shape: "portrait",
           items: [
-            { src: "/work/riyad-bank/06.png" },
-            { src: "/work/riyad-bank/07.png" },
-            { src: "/work/riyad-bank/08.png" },
-            { src: "/work/riyad-bank/09.png" },
-          ],
-        },
-        {
-          kind: "set",
-          size: "phone",
-          caption:
-            "The video player with its article text, then the home screen and the topic view in the steps of the transition between them.",
-          items: [
-            { src: "/work/riyad-bank/10.png" },
-            { src: "/work/riyad-bank/11.png" },
-            { src: "/work/riyad-bank/13.png" },
+            { src: "/work/riyad-bank/06.png", title: "Home", body: "The topics as a feed, the 3D navigation underneath." },
+            { src: "/work/riyad-bank/07.png", title: "A topic", body: "Opened into its CEO interview, report, and case study." },
+            { src: "/work/riyad-bank/08.png", title: "Favourites", body: "What the reader kept." },
+            { src: "/work/riyad-bank/09.png", title: "Podcast player", body: "The audio for a topic, with its chapters." },
+            { src: "/work/riyad-bank/10.png", title: "Video player", body: "The video with its article text under it." },
+            { src: "/work/riyad-bank/11.png", title: "Transition, step one", body: "Home, as the topic starts to open." },
+            { src: "/work/riyad-bank/13.png", title: "Transition, step two", body: "The topic view, arrived at from home." },
           ],
         },
       ],

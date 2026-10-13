@@ -314,7 +314,12 @@ export type Block =
    * Each slide is a mockup with the name of the part and one line on
    * what it is for.
    */
-  | { kind: "carousel"; items: { src: string; title: string; body?: string; frame?: "macbook" }[] }
+  | {
+      kind: "carousel";
+      /** "portrait" for phone screens and tall boards: a taller stage, slides fit by height */
+      shape?: "portrait";
+      items: { src: string; title: string; body?: string; frame?: "macbook" }[];
+    }
   /**
    * Source code, copied verbatim from where it lives. `source` says where,
    * and is required: a snippet a reader cannot trace is an illustration,

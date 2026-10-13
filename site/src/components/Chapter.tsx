@@ -76,7 +76,7 @@ function BlockView({ block }: { block: Block }) {
     case "joint":
       return <Joint question={block.question} answers={block.answers} />;
     case "carousel":
-      return <Carousel items={block.items} />;
+      return <Carousel items={block.items} shape={block.shape} />;
     case "code":
       return <Code code={block.code} caption={block.caption} source={block.source} />;
     case "portrait":

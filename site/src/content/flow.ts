@@ -248,25 +248,13 @@ export const flow: CaseStudy = {
           caption: "The same layout in the dark theme, with two board columns and the item panel.",
         },
         {
-          kind: "set",
-          size: "phone",
+          kind: "carousel",
+          shape: "portrait",
           items: [
-            {
-              src: `${S}/mobile-tenant.webp`,
-              caption: "A “Tenant changed” confirmation over the board, with the bottom bar below.",
-            },
-            {
-              src: `${S}/mobile-options.webp`,
-              caption: "The options sheet: Kanban or Focus view, Share, the tenant, Settings, and Ask Elly.",
-            },
-            {
-              src: `${S}/mobile-bookmark.webp`,
-              caption: "A notice after an item is added to bookmarks.",
-            },
-            {
-              src: `${S}/mobile-theme.webp`,
-              caption: "The board with board parameters as chips under the header and a background image.",
-            },
+            { src: `${S}/mobile-tenant.webp`, title: "Tenant changed", body: "A confirmation over the board, with the bottom bar below." },
+            { src: `${S}/mobile-options.webp`, title: "Options sheet", body: "Kanban or Focus view, Share, the tenant, Settings, and Ask Elly." },
+            { src: `${S}/mobile-bookmark.webp`, title: "Bookmarked", body: "A notice after an item is added to bookmarks." },
+            { src: `${S}/mobile-theme.webp`, title: "Board parameters", body: "Chips under the header, and a background image." },
           ],
         },
       ],

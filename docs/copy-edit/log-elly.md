@@ -76,3 +76,4 @@ Not done, and why:
 - The exploration board is not `folded`: it is the one image in chapter 04 and the chapter is about it, so hiding it would hide the evidence; it carries hotspots instead.
 - `stats` already exist in chapters 10, 11, 12, and 15; nothing new to add with a source.
 - The video `title` keeps its em dash, as decided on 11 October: it is the player's accessible name, not prose.
+| exploration board in a MacBook frame with hotspots | flat board, hotspots remapped to the board | her request, 13 October 2026: a board of six screens is not one screen |

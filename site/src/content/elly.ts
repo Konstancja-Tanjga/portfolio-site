@@ -241,14 +241,14 @@ export const elly: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/elly-ai-assistant/device/exploration-options-2400.webp", frame: "macbook",
+          src: "/work/elly-ai-assistant/screens/exploration-options.png",
           hotspots: [
-            { x: 24, y: 17, text: "Space: up to 20 per cent of the page." },
-            { x: 19, y: 40, text: "One click to Elly, from the side menu." },
-            { x: 46, y: 15, text: "A human face at 42px." },
-            { x: 51, y: 29, text: "Option 1: the panel overlaps the page and covers the data the question is about." },
-            { x: 71, y: 29, text: "Option 2: pinned beside the page, and the content reflows to make room." },
-            { x: 46, y: 43, text: "Stars or a help bulb for the symbol? Still open on the board." },
+            { x: 14, y: 15, text: "Space: up to 20 per cent of the page." },
+            { x: 7, y: 44, text: "One click to Elly, from the side menu." },
+            { x: 45, y: 13, text: "A human face at 42px." },
+            { x: 52, y: 30, text: "Option 1: the panel overlaps the page and covers the data the question is about." },
+            { x: 79, y: 30, text: "Option 2: pinned beside the page, and the content reflows to make room." },
+            { x: 45, y: 48, text: "Stars or a help bulb for the symbol? Still open on the board." },
           ],
           caption:
             "Both options built on a Flow board, with the working notes: space up to 20 per cent of the page, one click from the side menu, a human face at 42px, and the open question of stars or a help bulb for the symbol.",

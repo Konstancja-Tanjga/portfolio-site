@@ -1369,6 +1369,13 @@ article { position: relative; z-index: 1; }
 .car__slide.is-prev { opacity: 0.18; transform: translateX(-12%) scale(0.88) rotateY(8deg); z-index: 1; }
 .car__img { width: 100%; height: auto; display: block; }
 .car__img--device { filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.7)); }
+/* phone screens and tall boards: a taller stage, each slide fitted by height */
+.car--portrait .car__stage { aspect-ratio: 16 / 10; }
+.car--portrait .car__img { width: auto; max-width: 100%; height: 100%; max-height: 100%; border-radius: 14px; box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.8); }
+.car--portrait .car__slide { padding: 2% 0; }
+.car--portrait .car__slide.is-next { transform: translateX(36%) scale(0.86) rotateY(-10deg); }
+.car--portrait .car__slide.is-prev { transform: translateX(-36%) scale(0.86) rotateY(10deg); }
+@media (max-width: 48rem) { .car--portrait .car__stage { aspect-ratio: 3 / 4; } .car--portrait .car__slide.is-next, .car--portrait .car__slide.is-prev { opacity: 0; } }
 .car__arrow {
   position: absolute;
   top: 50%;
