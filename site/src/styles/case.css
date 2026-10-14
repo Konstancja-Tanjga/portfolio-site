@@ -1210,7 +1210,7 @@
   display: grid;
   place-items: center;
   transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04));
-  opacity: 0.12;
+  opacity: 0;
   animation: layer-cycle calc(var(--layers) * 5s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: calc(var(--i) * 5s);
   will-change: opacity, transform;
@@ -1231,12 +1231,14 @@
   opacity: 0;
   transition: opacity 400ms;
 }
+/* The waiting screens rest fully hidden: at any opacity they showed as grey
+   slabs beside and behind the laptop. They still come forward from depth. */
 @keyframes layer-cycle {
-  0% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+  0% { opacity: 0; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
   6% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
   22% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-  30% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
-  100% { opacity: 0.12; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+  30% { opacity: 0; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
+  100% { opacity: 0; transform: translate3d(calc(var(--i) * 2.5%), calc(var(--i) * -2%), calc(var(--i) * -120px)) scale(calc(1 - var(--i) * 0.04)); }
 }
 /* the label rides with its layer's surfacing */
 .layers__item { --label: 0; }
@@ -1262,7 +1264,7 @@
 @keyframes chart-dot { from { opacity: 0; r: 0; } to { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .layers__item { animation: none; opacity: 0.12; }
+  .layers__item { animation: none; opacity: 0; }
   .layers__item:first-child { opacity: 1; transform: none; }
   .layers__item:first-child .layers__label { animation: none; opacity: 1; }
   .layers__item .layers__label { animation: none; }
