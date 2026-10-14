@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import { aboutChapters } from "../content/about";
-import { BackToTop } from "../components/BackToTop";
 import { QuickNav } from "../components/QuickNav";
 import { ChapterView } from "../components/Chapter";
 import { JumpBar } from "../components/JumpBar";
@@ -39,7 +38,6 @@ export function About() {
           </Lane>
         </Wall>
       </article>
-      <BackToTop />
       <QuickNav stops={aboutChapters.filter((c) => c.heading).map((c) => ({ id: c.id, label: c.heading as string }))} />
       {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
     </ShotViewer.Provider>
