@@ -77,7 +77,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
       {cover.layers?.length ? (
         <Lane width="bleed">
           <div className="cover__art cover__art--layers" ref={art} aria-hidden="true" style={{ "--layers": cover.layers.length } as React.CSSProperties}>
-            <Layers layers={cover.layers} />
+            <Layers layers={cover.layers} overlay={cover.overlay} />
           </div>
         </Lane>
       ) : (
@@ -93,7 +93,13 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
 
 
 /** Several screens of a product stacked in depth, surfacing in turn. */
-export function Layers({ layers }: { layers: { src: string; label: string }[] }) {
+export function Layers({
+  layers,
+  overlay = "chart",
+}: {
+  layers: { src: string; label: string }[];
+  overlay?: "chart" | "quantifiers";
+}) {
   const tilt = useTilt<HTMLDivElement>(3);
   return (
     <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
@@ -103,8 +109,34 @@ export function Layers({ layers }: { layers: { src: string; label: string }[] })
           <figcaption className="layers__label">{l.label}</figcaption>
         </figure>
       ))}
-      <Chart />
+      {overlay === "quantifiers" ? <QuantifierOutline /> : <Chart />}
     </div>
+  );
+}
+
+/**
+ * ∀∃ in outline over the layers, for the Ogólnopolska Strefa Talentu wall:
+ * the outline draws itself, then a faint fill comes up behind it, and the
+ * student's bar stands apart in coral, as in the mark. The geometry is the
+ * programme's grid (brand book page 05): stroke 12, gap 8, bar 56.
+ */
+function QuantifierOutline() {
+  return (
+    <svg className="layers__quant" viewBox="-6 0 176 100">
+      <path
+        className="quant__shape"
+        fillRule="evenodd"
+        pathLength={1}
+        d="M2 14 L15 14 L23 30 L53 30 L61 14 L74 14 L66 30 L76 30 L76 42 L60 42 L38 86 L16 42 L0 42 L0 30 L10 30 Z M29 42 L47 42 L38 60 Z"
+      />
+      <path
+        className="quant__shape"
+        pathLength={1}
+        transform="translate(88 0)"
+        d="M64 6 L76 6 L76 94 L64 94 L64 86 L24 86 L24 74 L64 74 L64 26 L24 26 L24 14 L64 14 Z"
+      />
+      <rect className="quant__bar" x="88" y="44" width="56" height="12" pathLength={1} />
+    </svg>
   );
 }
 

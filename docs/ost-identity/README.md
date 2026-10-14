@@ -29,3 +29,5 @@ them again.
 - `case-top.png`: cover, metadata and "In short" at 1440 px.
 - `case-04-05.png`: chapters 03 to 05, with the hotspots and the three concepts.
 - `home-band.png`: the new "Visual identity" band on the home page.
+
+The tile diagram (`scripts/diagram.js`) and the composed layers (`scripts/compose.py`: desktop and phone, the three posts, the brand book page) are built from the same sources.

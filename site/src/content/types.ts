@@ -425,6 +425,13 @@ export type Cover = {
    * sand over the top. Without it, the intro shows the typeset cover.
    */
   layers?: { src: string; label: string }[];
+  /**
+   * What is drawn over the layers. "chart" (the default) is the procedural
+   * chart in sand, which suits a data product. "quantifiers" is the pair ∀∃
+   * in outline, for a wall whose subject is that mark: a bar chart over a
+   * visual identity would say the study is about numbers.
+   */
+  overlay?: "chart" | "quantifiers";
 };
 
 /**

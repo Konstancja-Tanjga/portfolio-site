@@ -1,0 +1,17 @@
+const {chromium}=require('playwright');
+const s=2.6, W='#F4EFE6', C='#FF5A36', G='#8B8FA8';
+const forall=(x,y,col)=>`<g transform="translate(${x} ${y}) scale(${s}) translate(0 -14)"><polygon points="2,14 15,14 38,60 61,14 74,14 38,86" fill="${col}"/><rect x="0" y="30" width="76" height="12" fill="${col}"/></g>`;
+const exists=(x,y,col,bar)=>`<g transform="translate(${x} ${y}) scale(${s}) translate(0 -6)"><rect x="64" y="6" width="12" height="88" fill="${col}"/><rect x="24" y="14" width="52" height="12" fill="${col}"/><rect x="24" y="74" width="52" height="12" fill="${col}"/><rect x="0" y="44" width="56" height="12" fill="${bar}"/></g>`;
+const y0=200, g=198;
+let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1500" viewBox="0 0 2400 1500">`;
+svg+=`<g opacity="0.55">${exists(430,y0-21,G,G)}${forall(430+g+30,y0,G)}</g>`;
+svg+=`<g stroke="${C}" stroke-width="14" fill="none" stroke-linecap="square"><line x1="900" y1="${y0+94}" x2="1020" y2="${y0+94}"/><polyline points="985,${y0+60} 1025,${y0+94} 985,${y0+128}"/></g>`;
+svg+=forall(1080,y0,W)+exists(1080+g+31,y0-21,W,C);
+const xs=[560,785,1010,1235,1460], perm=[2,0,4,1,3], top=720, bot=1110;
+svg+=`<g stroke="${W}" stroke-width="7" opacity="0.85">`+xs.map((x,i)=>`<line x1="${x}" y1="${top}" x2="${xs[perm[i]]}" y2="${bot}"/>`).join('')+`</g>`;
+svg+=xs.map(x=>`<circle cx="${x}" cy="${top}" r="24" fill="${W}"/>`).join('')+xs.map(x=>`<circle cx="${x}" cy="${bot}" r="30" fill="${C}"/>`).join('');
+svg+=`</svg>`;
+require('fs').writeFileSync('diagram.svg',svg);
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:2400,height:1500}});
+await p.setContent(`<html><body style="margin:0;background:transparent">${svg}</body></html>`);
+await p.screenshot({path:'diagram.png',omitBackground:true});await b.close();})();

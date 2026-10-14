@@ -49,3 +49,14 @@ each claim and the drafts that were cut because no source carried them.
 | "For every / student, a talent" | "∀ For every student, / ∃ there exists a talent" | Konstancja: the title must show the two quantifiers, because they carry the sentence. Standard English reading of ∀x ∃y is "for every x there exists a y"; "there" is required in English, which her draft "exists a talent" dropped |
 | ∀ and ∃ set as characters | drawn from the programme's glyph files (`system/Quantifiers.tsx`) | Bricolage Grotesque has neither glyph and fell back to a thin system font; the brand book p. 26 sets formulas from glyph files at cap height, in the text colour |
 | cover art: brand book cover board | story 1 of 4 (portrait); intro: four MacBook layers | the landscape board covered the headline on the tile and in the intro |
+
+## Covers, layers and facts, 14 October 2026 (second round)
+
+| Before | After | Why |
+| --- | --- | --- |
+| tile art: story 1 of 4 | `screens/cover-diagram.webp`: ∃∀ → ∀∃ and five lines, each to its own coral point, drawn transparent from the programme's glyphs | Konstancja: the tile shows the diagram and the title |
+| intro layers: the live site and three generator views | brand book p. 04 (the name as a formula), the website design desktop and mobile, three recruitment posts, the ambassador generator, the live site | Konstancja: more of the website design, three posts, a brand book slide that explains the mark |
+| chart in sand over the layers | ∀∃ in outline (`cover.overlay: "quantifiers"`); other walls keep the chart | Konstancja: no bar chart on this wall |
+| 126 medals not used | "Pupils of prof. Szubartowski won 126 medals at international olympiads" (chapter 03, website board) | Konstancja confirmed 126 |
+| www.ost.edu.pl, no author named | "built by the programme's own team" | Konstancja: the programme built the site |
+| website design only as a board in the carousel | also as a MacBook and phone mockup opening chapter 07 | Konstancja: show more of the website design |

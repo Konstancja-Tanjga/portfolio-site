@@ -1269,7 +1269,24 @@
 .chart__dots circle { opacity: 0; animation: chart-dot 400ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 @keyframes chart-dot { from { opacity: 0; r: 0; } to { opacity: 1; } }
 
+/* ∀∃ in outline in place of the chart (Cover.tsx, QuantifierOutline) */
+.layers__quant {
+  position: absolute;
+  right: 0;
+  bottom: -2%;
+  width: 19%;
+  height: auto;
+  aspect-ratio: 176 / 100;
+  transform: translateZ(80px);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  overflow: visible;
+}
+.quant__shape { fill: rgba(241, 237, 228, 0.1); stroke: #e3d2ad; stroke-width: 1.2; stroke-linejoin: miter; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1800ms 500ms cubic-bezier(0.4, 0, 0.2, 1) both, quant-fill 900ms 2000ms ease-out both; }
+.quant__bar { fill: rgba(255, 90, 54, 0.35); stroke: #ff5a36; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 900ms 1700ms cubic-bezier(0.4, 0, 0.2, 1) both, quant-fill 900ms 2000ms ease-out both; }
+@keyframes quant-fill { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+
 @media (prefers-reduced-motion: reduce) {
+  .quant__shape, .quant__bar { animation: none; stroke-dashoffset: 0; }
   .layers__item { animation: none; opacity: 0.12; }
   .layers__item:first-child { opacity: 1; transform: none; }
   .layers__item:first-child .layers__label { animation: none; opacity: 1; }
