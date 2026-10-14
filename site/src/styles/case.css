@@ -37,6 +37,14 @@
   max-width: 10em;
 }
 .cover__line { display: inline; animation: case-rise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+/* a line that opens with ∀ or ∃ is a clause of the formula: it starts on its own line */
+.cover__line--own::before { content: ""; display: block; }
+
+/* ∀ and ∃ drawn from the programme's glyph files (Quantifiers.tsx). ∀ is cap
+   height (72 units); ∃ is 88, its stem overshooting by 8 above and below. */
+.q { display: inline-block; background: currentColor; -webkit-mask: no-repeat center / contain; mask: no-repeat center / contain; }
+.q--forall { width: 0.76em; height: 0.72em; }
+.q--exists { width: 0.76em; height: 0.88em; vertical-align: -0.08em; }
 .cover__subline {
   margin: var(--bh-space-3) 0 0;
   font-family: var(--kt-font-display);

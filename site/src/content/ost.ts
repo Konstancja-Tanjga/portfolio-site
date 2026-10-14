@@ -36,13 +36,19 @@ export const ost: CaseStudy = {
   group: "identity",
   cover: {
     kicker: "VISUAL IDENTITY · EDUCATION",
-    headline: ["For every", "student, a talent"],
+    headline: ["∀ For every student,", "∃ there exists a talent"],
     subline: "Ogólnopolska Strefa Talentu",
     stamp: "MARK · BRAND BOOK · PRINT · SOCIAL · GENERATORS",
     credit: "Idea and visual identity · Stowarzyszenie Talent · 2026",
     org: "Stowarzyszenie Talent",
-    art: { src: `${S}/book-cover.webp` },
+    art: { src: `${S}/social-10-13_start_story.webp`, portrait: true },
     shot: { src: "/work/ogolnopolska-strefa-talentu/00-cover.jpg" },
+    layers: [
+      { src: `${D}/site-home-2400.webp`, label: "www.ost.edu.pl" },
+      { src: `${D}/generator-ambassador-2400.webp`, label: "Ambassador generator" },
+      { src: `${D}/generator-support-story-2400.webp`, label: "Support generator" },
+      { src: `${D}/generator-original-colour-2400.webp`, label: "Original colours" },
+    ],
   },
   meta: [
     { label: "Role", value: "Idea, visual identity, brand book, applications, and the ambassador generators" },

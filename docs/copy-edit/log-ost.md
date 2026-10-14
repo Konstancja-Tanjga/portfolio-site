@@ -41,3 +41,11 @@ each claim and the drafts that were cut because no source carried them.
 | "Write the plain reading next to every formula from the first draft" | removed from chapter 11 | not a lesson on record |
 | "There is never more coral than navy" | "Coral never outweighs navy" | STYLE 2.2, no indirect opening |
 | cover headline "For every student / there exists a talent" | "For every / student, a talent" | the long lines ran under the board on the typeset cover |
+
+## Title, 14 October 2026
+
+| Before | After | Why |
+| --- | --- | --- |
+| "For every / student, a talent" | "∀ For every student, / ∃ there exists a talent" | Konstancja: the title must show the two quantifiers, because they carry the sentence. Standard English reading of ∀x ∃y is "for every x there exists a y"; "there" is required in English, which her draft "exists a talent" dropped |
+| ∀ and ∃ set as characters | drawn from the programme's glyph files (`system/Quantifiers.tsx`) | Bricolage Grotesque has neither glyph and fell back to a thin system font; the brand book p. 26 sets formulas from glyph files at cap height, in the text colour |
+| cover art: brand book cover board | story 1 of 4 (portrait); intro: four MacBook layers | the landscape board covered the headline on the tile and in the intro |

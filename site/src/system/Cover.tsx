@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { opensWithQuantifier, withQuantifiers } from "./Quantifiers";
 
 import type { Block, CaseStudy, Cover as CoverData } from "../content/types";
 import { asset } from "./asset";
@@ -52,9 +53,13 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
           <p className="cover__kicker">{cover.kicker}</p>
           <h1 className="cover__headline">
             {cover.headline.map((line, i) => (
-              <span className="cover__line" key={line} style={{ animationDelay: `${120 + i * 110}ms` }}>
+              <span
+                className={opensWithQuantifier(line) ? "cover__line cover__line--own" : "cover__line"}
+                key={line}
+                style={{ animationDelay: `${120 + i * 110}ms` }}
+              >
                 {i > 0 && " "}
-                {line}
+                {withQuantifiers(line)}
               </span>
             ))}
           </h1>
@@ -158,7 +163,7 @@ export function TypeCover({ cover, device, eager }: { cover: CoverData; device?:
       {org && <span className="tcover__org">{org}</span>}
       <span className="tcover__headline">
         {cover.headline.map((line) => (
-          <span key={line}>{line}</span>
+          <span key={line}>{withQuantifiers(line)}</span>
         ))}
       </span>
       <span className="tcover__sub">{cover.subline}</span>
