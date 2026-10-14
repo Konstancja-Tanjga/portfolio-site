@@ -5,6 +5,7 @@ import type { Block, CaseStudy, Cover as CoverData } from "../content/types";
 import { asset } from "./asset";
 import { useTilt } from "./motion";
 import { Lane } from "./Wall";
+import { Motif, type MotifName } from "./Motif";
 
 /**
  * The intro. The title first, set very large on the ground, with the
@@ -77,7 +78,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
       {cover.layers?.length ? (
         <Lane width="bleed">
           <div className="cover__art cover__art--layers" ref={art} aria-hidden="true" style={{ "--layers": cover.layers.length } as React.CSSProperties}>
-            <Layers layers={cover.layers} overlay={cover.overlay} />
+            <Layers layers={cover.layers} motif={cover.motif} />
           </div>
         </Lane>
       ) : (
@@ -93,13 +94,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
 
 
 /** Several images of the work stacked in depth, surfacing in turn. */
-export function Layers({
-  layers,
-  overlay = "chart",
-}: {
-  layers: { src: string; label: string }[];
-  overlay?: CoverData["overlay"];
-}) {
+export function Layers({ layers, motif }: { layers: { src: string; label: string }[]; motif?: MotifName }) {
   const tilt = useTilt<HTMLDivElement>(3);
   return (
     <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
@@ -109,68 +104,10 @@ export function Layers({
           <figcaption className="layers__label">{l.label}</figcaption>
         </figure>
       ))}
-      {overlay === "quantifiers" ? <QuantifierOutline /> : <Chart />}
+      <Motif name={motif} />
     </div>
   );
 }
-
-/**
- * ∀∃ in outline over the layers, for the Ogólnopolska Strefa Talentu wall:
- * the outline draws itself, then a faint fill comes up behind it, and the
- * student's bar stands apart in coral, as in the mark. The geometry is the
- * programme's grid (brand book page 05): stroke 12, gap 8, bar 56.
- */
-function QuantifierOutline() {
-  return (
-    <svg className="layers__quant" viewBox="-6 0 176 100">
-      <path
-        className="quant__shape"
-        fillRule="evenodd"
-        pathLength={1}
-        d="M2 14 L15 14 L23 30 L53 30 L61 14 L74 14 L66 30 L76 30 L76 42 L60 42 L38 86 L16 42 L0 42 L0 30 L10 30 Z M29 42 L47 42 L38 60 Z"
-      />
-      <path
-        className="quant__shape"
-        pathLength={1}
-        transform="translate(88 0)"
-        d="M64 6 L76 6 L76 94 L64 94 L64 86 L24 86 L24 74 L64 74 L64 26 L24 26 L24 14 L64 14 Z"
-      />
-      <rect className="quant__bar" x="88" y="44" width="56" height="12" pathLength={1} />
-    </svg>
-  );
-}
-
-/**
- * A chart drawn in sand over the layers: bars that rise, a line that draws
- * itself, a few data points that light up. Procedural, so the numbers
- * mean nothing and claim nothing.
- */
-function Chart() {
-  const bars = [34, 52, 41, 68, 58, 80, 72, 91];
-  const pts = bars.map((v, i) => [40 + i * 60, 180 - v * 1.5] as const);
-  const d = pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
-  return (
-    <svg className="layers__chart" viewBox="0 0 520 200" preserveAspectRatio="none">
-      <g className="chart__grid" stroke="rgba(241,237,228,0.18)" strokeWidth="1">
-        {[40, 80, 120, 160].map((y) => (
-          <line key={y} x1="20" x2="500" y1={y} y2={y} />
-        ))}
-      </g>
-      <g className="chart__bars" fill="rgba(227,210,173,0.55)">
-        {bars.map((v, i) => (
-          <rect key={i} x={24 + i * 60} y={180 - v * 1.5} width="32" height={v * 1.5} rx="3" style={{ animationDelay: `${600 + i * 90}ms` }} />
-        ))}
-      </g>
-      <path className="chart__line" d={d} fill="none" stroke="#e3d2ad" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" pathLength={1} />
-      <g className="chart__dots" fill="#0f0f0e" stroke="#e3d2ad" strokeWidth="2">
-        {pts.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="4.5" style={{ animationDelay: `${1500 + i * 110}ms` }} />
-        ))}
-      </g>
-    </svg>
-  );
-}
-
 
 /**
  * The cover as type, for the work grid and the case-page hero. The old thumbnails were Figma

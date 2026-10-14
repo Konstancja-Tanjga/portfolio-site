@@ -1,7 +1,8 @@
-import type { MouseEvent } from "react";
-import { Link } from "react-router-dom";
+import type { MouseEvent, RefObject } from "react";
+import { flushSync } from "react-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useReveal } from "../system/Reveal";
-import { useTilt } from "../system/motion";
+import { reduced, useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
 import { JourneyReadout, JourneyRuler, ScaleJourney } from "../system/ScaleJourney";
 import { Layers, TypeCover, firstDevice } from "../system/Cover";
@@ -10,11 +11,14 @@ import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
 import { offScreen, practices } from "../home/story";
 import { QuickNav } from "../components/QuickNav";
+import { Exploded } from "../system/Exploded";
+import { analyticsExploded } from "../home/exploded";
 
 /**
  * The home page.
  *
- * Image first: the portrait under the claim, then the work as large tiles
+ * Image first: the product screens beside the claim, then one screen
+ * taken apart into its layers, then the work as large tiles
  * that carry the colour, then the numbers, then who she is and how she
  * works, then a way to write. Every section is readable by its heading.
  */
@@ -82,6 +86,8 @@ export function Home() {
           </ul>
         </div>
       </section>
+
+      <Exploded screen={analyticsExploded} />
 
       <div className="hm-marquee" aria-hidden="true">
         <div className="hm-marquee__track">
@@ -210,6 +216,40 @@ function Numbers() {
 
 
 /**
+ * Carries the cover into the case: where the browser has view
+ * transitions, the cover and the case hero share a name, so the cover
+ * grows into the hero, image and all, while the page behind falls back.
+ * Elsewhere, and with a modifier key or reduced motion, the link
+ * navigates as any link does.
+ */
+function useCoverTransition(to: string, cover: RefObject<HTMLElement>) {
+  const navigate = useNavigate();
+  return (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!("startViewTransition" in document) || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (reduced()) return;
+    const el = cover.current;
+    if (!el) return;
+    e.preventDefault();
+    el.style.setProperty("view-transition-name", "case-cover");
+    // Relies on BrowserRouter applying the location update synchronously
+    // (no v7_startTransition), so flushSync puts the case page in place
+    // before the browser takes the new snapshot.
+    const update = () => {
+      flushSync(() => navigate(to));
+      // the transition carries the entrance; the page's own must not play as well
+      document.querySelectorAll<HTMLElement>(".route, .cover__art").forEach((n) => { n.style.animation = "none"; });
+    };
+    try {
+      document.startViewTransition(update).finished.finally(() => el.style.removeProperty("view-transition-name"));
+    } catch (err) {
+      el.style.removeProperty("view-transition-name");
+      console.error(err);
+      navigate(to);
+    }
+  };
+}
+
+/**
  * One work tile. The grid breaks its own rhythm: tiles alternate between
  * wide and narrow and the narrow one sits lower, so two rows never look
  * the same. On hover the cover drifts under the cursor and a "View" pill
@@ -219,6 +259,7 @@ function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number;
   const year = study.cover.credit.match(/\d{4}(?:[–-]\d{4})?/)?.[0];
   const { ref, shown } = useReveal<HTMLAnchorElement>();
   const cover = useTilt<HTMLSpanElement>(3);
+  const carry = useCoverTransition(`/work/${study.slug}`, cover);
 
   const follow = (e: MouseEvent<HTMLAnchorElement>) => {
     const el = cover.current;
@@ -236,6 +277,7 @@ function Tile({ study, index = 0, compact }: { study: CaseStudy; index?: number;
       className={`hm-tile${shape}${shown ? " is-shown" : ""}`}
       style={{ transitionDelay: `${(index % 2) * 120}ms` }}
       onMouseMove={follow}
+      onClick={carry}
     >
       <span className="hm-tile__cover" ref={cover}>
         <TypeCover cover={study.cover} device={firstDevice(study)} />

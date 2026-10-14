@@ -59,7 +59,7 @@ export const ost: CaseStudy = {
       { src: `${D}/generator-ambassador-2400.webp`, label: "Ambassador generator" },
       { src: `${D}/site-home-2400.webp`, label: "www.ost.edu.pl" },
     ],
-    overlay: "quantifiers",
+    motif: "quantifiers",
   },
   meta: [
     { label: "Role", value: "Idea, visual identity, brand book, applications, and the ambassador generators" },

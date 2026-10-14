@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:transparent}svg{display:block}text{font-family:"IBM Plex Mono",monospace;letter-spacing:.14em}</style></head><body>
+<svg id="cone" width="2400" height="1500" viewBox="0 0 2400 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#e3d2ad" stop-opacity=".02"/><stop offset="1" stop-color="#e3d2ad" stop-opacity=".16"/></linearGradient>
+  </defs>
+  <!-- apex = now -->
+  <g fill="none" stroke-linecap="round">
+    <!-- possible: widest -->
+    <path d="M260 760 L2060 170 A150 590 0 0 1 2060 1350 Z" fill="url(#fade)" stroke="#e3d2ad" stroke-opacity=".55" stroke-width="3"/>
+    <ellipse cx="2060" cy="760" rx="150" ry="590" stroke="#e3d2ad" stroke-opacity=".55" stroke-width="3"/>
+    <!-- plausible -->
+    <path d="M260 760 L2060 380 A95 380 0 0 1 2060 1140 Z" fill="#e3d2ad" fill-opacity=".07" stroke="#e3d2ad" stroke-opacity=".75" stroke-width="3"/>
+    <ellipse cx="2060" cy="760" rx="95" ry="380" stroke="#e3d2ad" stroke-opacity=".75" stroke-width="3"/>
+    <!-- probable -->
+    <path d="M260 760 L2060 590 A45 170 0 0 1 2060 930 Z" fill="#e3d2ad" fill-opacity=".16" stroke="#e3d2ad" stroke-width="3"/>
+    <ellipse cx="2060" cy="760" rx="45" ry="170" stroke="#e3d2ad" stroke-width="3"/>
+    <!-- time slices through the widest cone -->
+    <g stroke="#e3d2ad" stroke-opacity=".28" stroke-width="2" stroke-dasharray="2 12">
+      <ellipse cx="860" cy="760" rx="50" ry="197"/>
+      <ellipse cx="1460" cy="760" rx="100" ry="393"/>
+    </g>
+    <!-- preferable: tilted up, dashed ink -->
+    <path d="M260 760 L1980 300 A70 250 -8 0 1 2050 790 Z" stroke="#f1ede4" stroke-width="3" stroke-dasharray="18 14" fill="#f1ede4" fill-opacity=".05"/>
+    <ellipse cx="2015" cy="545" rx="70" ry="250" transform="rotate(-8 2015 545)" stroke="#f1ede4" stroke-width="3" stroke-dasharray="18 14"/>
+    <!-- projected: straight line through the middle -->
+    <line x1="260" y1="760" x2="2060" y2="760" stroke="#f1ede4" stroke-opacity=".5" stroke-width="2"/>
+  </g>
+  <!-- now -->
+  <circle cx="260" cy="760" r="16" fill="#e3d2ad"/>
+  <circle cx="260" cy="760" r="34" fill="none" stroke="#e3d2ad" stroke-opacity=".45" stroke-width="2"/>
+  <g font-size="46" font-weight="500">
+    <text x="260" y="860" text-anchor="middle" fill="#e3d2ad">NOW</text>
+    <text x="1560" y="312" fill="#c9c3b6">POSSIBLE</text>
+    <text x="1560" y="455" fill="#f1ede4">PREFERABLE</text>
+    <text x="1560" y="975" fill="#e3d2ad">PROBABLE</text>
+    <text x="1560" y="1110" fill="#e3d2ad">PLAUSIBLE</text>
+  </g>
+  <!-- time axis -->
+  <g stroke="#8f8a7f" stroke-width="2"><line x1="260" y1="1420" x2="2100" y2="1420"/><path d="M2080 1406 L2104 1420 L2080 1434" fill="none"/></g>
+  <text x="2100" y="1395" text-anchor="end" font-size="32" fill="#8f8a7f">TIME</text>
+</svg></body></html>

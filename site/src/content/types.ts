@@ -1,3 +1,4 @@
+import type { MotifName } from "../system/Motif";
 /* ---------------------------------------------------------------
    The content model.
 
@@ -426,13 +427,13 @@ export type Cover = {
    */
   layers?: { src: string; label: string }[];
   /**
-   * What is drawn over the layers; ignored without `layers`. "chart" (the
-   * default) is the procedural chart in sand, which suits a data product.
+   * What is drawn over the layers, matched to the subject (system/Motif.tsx);
+   * ignored without `layers`. Default: the chart, which suits a data product.
    * "quantifiers" is one fixed mark, the Ogólnopolska Strefa Talentu ∀∃ in
    * outline with its coral bar, for that wall only: a bar chart over a visual
    * identity would say the study is about numbers.
    */
-  overlay?: "chart" | "quantifiers";
+  motif?: MotifName;
 };
 
 /**
