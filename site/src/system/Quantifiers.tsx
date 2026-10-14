@@ -1,22 +1,24 @@
-import type { CSSProperties, ReactNode } from "react";
+import { Fragment, type CSSProperties, type ReactNode } from "react";
 import { asset } from "./asset";
 
 /**
  * ∀ and ∃ in a headline, drawn as glyphs instead of set as characters.
  *
- * The display face has neither symbol, so the browser falls back to a thin
- * system font and the two words that carry the Ogólnopolska Strefa Talentu
- * headline look borrowed. The programme's brand book solves the same problem
- * the same way (page 26): the quantifiers come from glyph files, at cap
- * height, in the colour of the text. The files are the programme's own
- * glyphs; they are used as a mask so the colour follows the skin.
+ * Bricolage Grotesque, the display face, has neither symbol, so the browser
+ * falls back to a thin system font and the two symbols that carry the
+ * Ogólnopolska Strefa Talentu headline look borrowed. The programme's brand
+ * book solves the same problem the same way (page 26): the quantifiers come
+ * from glyph files, at cap height, in the colour of the text. The files are
+ * the programme's own glyphs, used as a mask over `currentColor`, so the
+ * glyph takes the colour of the text around it.
  *
- * The character stays in the accessible name, so a screen reader still reads
- * "for all" and "there exists".
+ * The drawn glyph is hidden from assistive technology and the character sits
+ * beside it, visually hidden. A screen reader reads the symbol once, as it
+ * would in plain text, and copy or find-in-page still finds ∀ and ∃.
  */
-const GLYPHS: Record<string, { file: string; name: string; cls: string }> = {
-  "∀": { file: "/work/ogolnopolska-strefa-talentu/glyph-forall.svg", name: "for all", cls: "q q--forall" },
-  "∃": { file: "/work/ogolnopolska-strefa-talentu/glyph-exists.svg", name: "there exists", cls: "q q--exists" },
+const GLYPHS: Record<string, { file: string; cls: string }> = {
+  "∀": { file: "/work/ogolnopolska-strefa-talentu/glyph-forall.svg", cls: "q q--forall" },
+  "∃": { file: "/work/ogolnopolska-strefa-talentu/glyph-exists.svg", cls: "q q--exists" },
 };
 
 export function withQuantifiers(text: string): ReactNode {
@@ -26,13 +28,10 @@ export function withQuantifiers(text: string): ReactNode {
     if (!g) return part;
     const url = `url("${asset(g.file)}")`;
     return (
-      <span
-        key={i}
-        className={g.cls}
-        role="img"
-        aria-label={`${part}, ${g.name}`}
-        style={{ WebkitMaskImage: url, maskImage: url } as CSSProperties}
-      />
+      <Fragment key={i}>
+        <span className={g.cls} aria-hidden="true" style={{ WebkitMaskImage: url, maskImage: url } as CSSProperties} />
+        <span className="sr-only">{part}</span>
+      </Fragment>
     );
   });
 }

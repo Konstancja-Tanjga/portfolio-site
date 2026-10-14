@@ -426,10 +426,11 @@ export type Cover = {
    */
   layers?: { src: string; label: string }[];
   /**
-   * What is drawn over the layers. "chart" (the default) is the procedural
-   * chart in sand, which suits a data product. "quantifiers" is the pair ∀∃
-   * in outline, for a wall whose subject is that mark: a bar chart over a
-   * visual identity would say the study is about numbers.
+   * What is drawn over the layers; ignored without `layers`. "chart" (the
+   * default) is the procedural chart in sand, which suits a data product.
+   * "quantifiers" is one fixed mark, the Ogólnopolska Strefa Talentu ∀∃ in
+   * outline with its coral bar, for that wall only: a bar chart over a visual
+   * identity would say the study is about numbers.
    */
   overlay?: "chart" | "quantifiers";
 };
@@ -443,9 +444,10 @@ export type Status =
   { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
- * Which band a wall sits in, and so which listing: product, identity and
- * recognition are on the home (Work) page, practice has its own page at /practice
- * (see listingFor).
+ * Which band a wall sits in, and so which listing: product and identity are
+ * listed on the home (Work) page, practice as compact tiles on Home and in
+ * full at /practice, and recognition has no band (Home links the ERP award
+ * from its opening text). Back links follow `listingFor`.
  *
  * product      — the shipped products. The main grid.
  * practice     — how I work: design systems, methods, and personal projects that test them.
@@ -455,20 +457,25 @@ export type Status =
  */
 export type Group = "product" | "practice" | "recognition" | "identity";
 
+/**
+ * One phrase of the lead set in the project's own accent colour, when the
+ * project's identity is the subject: the hex is a fact about that project,
+ * like a palette swatch, so it lives in the content and not in the
+ * stylesheet. `text` must occur in `lead` verbatim; content/index.ts throws in
+ * development when it does not, and only the first occurrence is coloured.
+ * The lead sits on --kt-ground (#0f0f0e), which has no light variant, so the
+ * colour must pass 4.5:1 on that ground.
+ */
+export type LeadAccent = { text: string; hex: `#${string}` };
+
 export type CaseStudy = {
   slug: string;
   title: string;
   /** one line, on the card */
   what: string;
   lead: string;
-  /**
-   * One phrase of the lead set in the project's own accent colour, when the
-   * project's identity is the subject: the hex is a fact about that project,
-   * like a palette swatch, which is why it lives here and not in the
-   * stylesheet. `text` must occur in `lead` verbatim. The page is dark in
-   * every theme, so the colour must pass 4.5:1 on it.
-   */
-  leadAccent?: { text: string; hex: string };
+  /** One phrase of the lead in the project's own colour. See `LeadAccent`. */
+  leadAccent?: LeadAccent;
   status: Status;
   group: Group;
   cover: Cover;

@@ -30,7 +30,7 @@ for name,src in flat.items(): webp(src, f'{S}/{name}.webp')
 for f in os.listdir('social/eksport-social/wariant-B'):
     n=f.replace('OST_2026-','social-').replace('.png','')
     webp(f'social/eksport-social/wariant-B/{f}', f'{S}/{n}.webp', maxw=1200)
-# site mobile and full
+# site mobile
 webp('shots/site-mobile.png', f'{S}/site-mobile.webp', maxw=1170)
 # macbook mockups: screen hole x284-2103, y73-1268
 frame=Image.open(FRAME).convert('RGBA')

@@ -92,13 +92,13 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
 }
 
 
-/** Several screens of a product stacked in depth, surfacing in turn. */
+/** Several images of the work stacked in depth, surfacing in turn. */
 export function Layers({
   layers,
   overlay = "chart",
 }: {
   layers: { src: string; label: string }[];
-  overlay?: "chart" | "quantifiers";
+  overlay?: CoverData["overlay"];
 }) {
   const tilt = useTilt<HTMLDivElement>(3);
   return (

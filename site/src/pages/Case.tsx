@@ -1,3 +1,4 @@
+import type { LeadAccent } from "../content/types";
 import { TypeCover, firstDevice } from "../system/Cover";
 import { Link, useParams } from "react-router-dom";
 import { findCase, listingFor, neighbours } from "../content";
@@ -96,8 +97,12 @@ export function Case() {
 }
 
 
-/** The lead, with its one accented phrase when the study names one. */
-function Lead({ text, accent }: { text: string; accent?: { text: string; hex: string } }) {
+/**
+ * The lead, with its one accented phrase when the study names one. Only the
+ * first occurrence is coloured; a missing phrase renders the lead plain, and
+ * content/index.ts stops development when that happens.
+ */
+function Lead({ text, accent }: { text: string; accent?: LeadAccent }) {
   const at = accent ? text.indexOf(accent.text) : -1;
   if (!accent || at === -1) return <>{text}</>;
   return (

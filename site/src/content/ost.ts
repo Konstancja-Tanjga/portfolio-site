@@ -5,18 +5,25 @@ import type { CaseStudy } from "./types";
  * education programme run by Stowarzyszenie Talent. Built to the case-study
  * kit (docs/case-study-kit); the plan behind it is docs/ost-identity/KONCEPCJA.md.
  *
- * Chapter numbers keep the kit's stack. Two headings are fitted to a mark
- * rather than a product, with the author's agreement: 04 is "What the mark
- * had to answer" (there was no audit of an existing product) and 06a is "Mark
- * architecture" (there are no screens to architect).
+ * Chapter numbers keep the kit's stack. 01a (Why this is a hard brief) is
+ * dropped, as the kit allows; its facts moved to "In short", chapter 03 and
+ * UC-02. Two headings are fitted to a mark rather than a product, with the
+ * author's agreement: 04 is "What the mark had to answer" (there was no audit
+ * of an existing product) and 06a is "Mark architecture" (there are no
+ * screens to architect).
  *
  * Sources. The three concept decks (26 September 2026), the brand book 1.0
  * (October 2026, 33 pages), the print and social boards, the CRM requirements
  * of the programme for the two recruitment targets, and the generators in
- * github.com/Konstancja-Tanjga/ost-ambasador. Every board on this page is a
- * page of those PDFs, rendered at 3x; the MacBook shots and the two clips
- * were taken from the live generators on 14 October 2026, with the author's
- * own portrait as the sample photo. The concept was chosen by a
+ * github.com/Konstancja-Tanjga/ost-ambasador. The brand book and concept
+ * boards are pages of those PDFs rendered at 3x, the print, web and social
+ * boards at 2x; a few are crops or padded pages. The four stories are the
+ * programme's PNG exports, and the tile diagram is drawn from its glyphs
+ * (docs/ost-identity/scripts). The MacBook shots of the two generators and of
+ * www.ost.edu.pl, and the two clips, were taken from the live pages on 14
+ * October 2026, with the author's own portrait as the sample photo; the
+ * website design in the MacBook is the PDF board set into the frame. The
+ * concept was chosen by a
  * representative of the programme; his reason is paraphrased, not quoted,
  * because his words were not written down. The test of the mark with parents
  * and pupils of grades 4 to 6 took place; its results belong to the
@@ -31,9 +38,9 @@ export const ost: CaseStudy = {
   title: "Ogólnopolska Strefa Talentu",
   what: "A visual identity that reads as a formula: ∀∃, for every student there exists a talent",
   lead:
-    "Ogólnopolska Strefa Talentu is a national programme of Stowarzyszenie Talent that brings prof. Ryszard Szubartowski's method into Polish schools. I wrote its idea as two symbols from logic, ∀∃: for every student there exists a talent. Then I drew the mark, wrote the brand book, designed every application from the letterhead to the roll-up, and built two generators that let the programme's ambassadors make their own posts.",
-  /* coral on the page ground #0F0F0E: 6.2:1, and the brand book allows coral text on dark grounds (C1) */
-  leadAccent: { text: "prof. Ryszard Szubartowski's method", hex: "#FF5A36" },
+    "Ogólnopolska Strefa Talentu is a national programme of Stowarzyszenie Talent that brings Prof. Ryszard Szubartowski's method into Polish schools. I wrote its idea as two symbols from logic, ∀∃: for every student there exists a talent. Then I drew the mark, wrote the brand book, designed every application from the letterhead to the roll-up, and built two generators that let the programme's ambassadors make their own posts.",
+  /* coral on the page ground #0F0F0E: 6.2:1. The brand book allows coral text on navy for headings and highlights (C1, page 18); the page ground is darker than navy, so the same use holds */
+  leadAccent: { text: "Prof. Ryszard Szubartowski's method", hex: "#FF5A36" },
   status: { state: "live" },
   group: "identity",
   cover: {
@@ -77,12 +84,12 @@ export const ost: CaseStudy = {
             {
               key: "Context",
               value:
-                "Stowarzyszenie Talent started a pilot that brings prof. Szubartowski's method to teachers of pupils from grade 6 to secondary school, across Poland and free of charge.",
+                "Stowarzyszenie Talent started a pilot that brings Prof. Szubartowski's method to teachers of pupils from grade 6 to secondary school, across Poland and free of charge.",
             },
             {
               key: "Problem",
               value:
-                "The programme had a name and no picture. One mark had to speak to teachers, pupils and parents, and work from a pin of 15 mm to a roll-up of 2 m.",
+                "The programme had a name and no picture. One mark had to speak to teachers, pupils, and parents, and work from a pin of 15 mm to a roll-up of 2 m.",
             },
             {
               key: "My role and scope",
@@ -193,7 +200,7 @@ export const ost: CaseStudy = {
               n: "02",
               name: "The pupil",
               badge: "ASKS · AGED 12 TO 19",
-              quote: "There is only one like you.",
+              quote: "Only one like you exists.",
               context: "Meets the programme on a school noticeboard or in a story, and decides in a second whether it is for them.",
               goals: ["Feel addressed, not assessed", "Know what to do next: ask the teacher"],
               breaks: "Most school posters look like another lesson.",
@@ -239,9 +246,9 @@ export const ost: CaseStudy = {
           items: [
             "<strong>The method starts from one conviction.</strong> Every pupil has a talent of their own, and the teacher's job is to set the conditions for finding it. The pupil does the thinking.",
             "<strong>The usual school order is the opposite.</strong> One pattern for the whole class, every pupil measured against it. Written in logic, that is ∃∀: there exists one pattern for all.",
-            "<strong>Swapping the two symbols states the method.</strong> ∀∃, for every pupil there exists their own. The order of the quantifiers carries the whole idea, which became the teachers' slogan: order matters.",
+            "<strong>Swapping the two symbols states the method.</strong> ∀∃, for every pupil there exists their own. The order of the quantifiers carries the whole idea, and the order became the teachers' slogan: order matters.",
             "<strong>The founder taught informatics.</strong> Symbols from logic belong to his subject and to mathematics, so they read as the method's own language rather than a borrowed one.",
-            "<strong>The method has a record.</strong> Pupils of prof. Szubartowski won 126 medals at international olympiads, the proof the parents' poster and the website carry.",
+            "<strong>The method has a record.</strong> Pupils of Prof. Szubartowski won 126 medals at international olympiads, the proof the parents' poster and the website carry.",
             "<strong>Pupils already have a phrase for going beyond the syllabus.</strong> \"Zadanie z gwiazdką\", the starred problem in a Polish textbook, became the first concept.",
           ],
         },
@@ -320,8 +327,8 @@ export const ost: CaseStudy = {
           stages: [
             { title: "The starred problem", body: "Every pupil deserves the problem beyond the syllabus; each pupil and school gets a unique asterisk from a generator." },
             { title: "Your turn", body: "My own risk table named the flaw: strong with pupils, average with parents, and read as informatics only." },
-            { title: "For every, there exists", body: "Strong with teachers and with parents; risky only because the symbols are unfamiliar, which a fixed tagline answers." },
-            { title: "The choice", body: "A representative of the programme chose ∀∃. It matched his picture of the programme and of prof. Szubartowski, who taught informatics." },
+            { title: "For every, there exists", body: "Strong with teachers and with parents; risky only because the symbols are unfamiliar; a fixed tagline answers that risk." },
+            { title: "The choice", body: "A representative of the programme chose ∀∃. It matched his picture of the programme and of Prof. Szubartowski, who taught informatics." },
             { title: "The drawing", body: "A bar joined to the frame against a bar with a gap. The gap won, because the joined bar vanishes in black." },
           ],
           note: "The mark was tested with parents and pupils of grades 4 to 6. The results belong to the programme and are not stated here.",
@@ -330,7 +337,7 @@ export const ost: CaseStudy = {
           kind: "duo",
           items: [
             { src: `${S}/concept-cursor-risks.webp`, caption: "Strengths and risks of \"Your turn\": the main risk is a link with informatics alone." },
-            { src: `${S}/concept-forall-drawing.webp`, caption: "One stroke, one logic: the joined bar against the gap, which was chosen (M1, M2)." },
+            { src: `${S}/concept-forall-drawing.webp`, caption: "One stroke, one logic: the joined bar against the gap; the gap was chosen (M1, M2)." },
           ],
         },
       ],
@@ -368,9 +375,9 @@ export const ost: CaseStudy = {
           kind: "palette",
           standfirst: "Four colours, plus plain white and black. The share is for the whole set of materials, not for each page.",
           items: [
-            { hex: "#1B1F3B", name: "Navy", role: "Mark, name, and text. 45% of the set", note: "15.7:1 on white, 13.7:1 on warm white. Pantone 5255 C" },
-            { hex: "#FF5A36", name: "Coral", role: "The student's bar and large shapes. 5%", note: "2.7:1 on warm white, so never text there; 5.1:1 on navy, so headings on navy may use it. Pantone 171 C" },
-            { hex: "#D8411F", name: "Dark coral", role: "The student's bar below 25 mm. 3%", note: "4.5:1 on white. Pantone 173 C" },
+            { hex: "#1B1F3B", name: "Navy", role: "Mark, name, and text. 45% of the set", note: "16.1:1 on white, 14.0:1 on warm white. Pantone 5255 C" },
+            { hex: "#FF5A36", name: "Coral", role: "The student's bar and large shapes. 5%", note: "2.7:1 on warm white, so never text there; 5.2:1 on navy, so headings on navy may use it. Pantone 171 C" },
+            { hex: "#D8411F", name: "Dark coral", role: "The student's bar below 25 mm. 3%", note: "4.47:1 on white, just under the 4.5:1 text needs, so the bar only, never text. Pantone 173 C" },
             { hex: "#F4EFE6", name: "Warm white", role: "Background. 35%", note: "Plain white takes the other 12%. Pantone 9224 C" },
           ],
           caption: "Contrast measured to WCAG 2.2: text needs 4.5:1, large graphic elements 3:1 (C1, C3).",
@@ -380,7 +387,7 @@ export const ost: CaseStudy = {
           caption: "Both typefaces are free under the SIL Open Font License, so the programme office can install them (T1).",
           rows: [
             { key: "Archivo ExtraBold", value: "Width 78 on the variable axis, capitals only, leading 0.9. The name in the logo, slogans, headings, large numbers. Never running text." },
-            { key: "Outfit", value: "Regular for text and captions, Medium for leads, the tagline and footers, SemiBold for labels. No italic: emphasis is weight." },
+            { key: "Outfit", value: "Regular for text and captions, Medium for leads, the tagline, and footers, SemiBold for labels. No italic: emphasis is weight." },
             { key: "∀ and ∃ in text", value: "Set from glyph files at cap height, in the colour of the text, because neither typeface has them." },
           ],
         },
@@ -434,7 +441,7 @@ export const ost: CaseStudy = {
               ],
               notes: [
                 { label: "Rejected", body: "The width of ∃ as the unit: it gave a clear space more than three times larger, too much for footers and partner strips." },
-                { label: "Where 72 mm comes from", body: "The tagline may not go below 6 pt, so one unit is 0.179 mm, and the logo is 398 units wide." },
+                { label: "Where 72 mm comes from", body: "The tagline may not go below 6 pt, so one unit is 0.179 mm; the logo is 398 units wide, 71.2 mm, rounded up to 72." },
               ],
             },
             {
@@ -539,7 +546,7 @@ export const ost: CaseStudy = {
                       { n: "2", text: "Choose the slogan: \"Jestem ambasadorką\" or \"Jestem ambasadorem\", or on the support page \"Wspieram\", \"Kibicuję\", \"Popieram\".", note: "Grammatical gender is a choice, not a guess." },
                       { n: "3", text: "Choose post 4:5 or story 9:16.", note: "The two formats people actually publish." },
                       { n: "4", text: "Drag the photo to set the crop; the slider zooms.", note: "Arrow keys and plus and minus do the same from the keyboard." },
-                      { n: "5", text: "Keep the duotone in navy and warm white, or switch to the original colours.", note: "A dozen photos from phones, gardens and staff rooms then look like one campaign." },
+                      { n: "5", text: "Keep the duotone in navy and warm white, or switch to the original colours.", note: "A dozen photos from phones, gardens, and staff rooms then look like one campaign." },
                       { n: "6", text: "Download the PNG.", note: "Made on the device, saved to Downloads." },
                     ],
                     exits: [
@@ -580,24 +587,24 @@ export const ost: CaseStudy = {
                     id: "UC-02",
                     title: "Invite a teacher from a small town who does not teach informatics",
                     actor: { name: "01, the teacher", body: "Teaches Polish, history, biology, PE, or art, in a school far from a big city.", note: "Assumes a programme for talent is about olympiads in maths and informatics, and not for them." },
-                    trigger: { body: "The first week of recruitment.", note: "Two targets: at least 60% of teachers outside informatics, at least 50% from places under 25 000 inhabitants." },
+                    trigger: { body: "The first week of recruitment.", note: "Two targets: at least 60% of teachers outside informatics, at least 50% from places under 25 000 inhabitants." },
                     precondition: { body: "The application form is open at www.ost.edu.pl." },
                     flow: [
-                      { n: "1", text: "Post 1 announces the programme and its idea.", note: "The graphic shows ∃∀ turning into ∀∃, which explains the mark once, for everybody." },
+                      { n: "1", text: "Post 1 announces the programme and its idea.", note: "The graphic shows ∃∀ turning into ∀∃ and so explains the mark once, for everybody." },
                       { n: "2", text: "Post 2 invites schools from small towns and villages.", note: "Points scattered in the shape of Poland, without its outline, each with a line to its own coral point." },
                       { n: "3", text: "Post 3 lists subjects: Polish, history, biology, maths, art, PE.", note: "Each subject ends in an ∃ and a coral point: for every subject there exists a talent." },
-                      { n: "4", text: "Post 4 asks teachers to apply as a team.", note: "Three teachers join in one school, which branches out to eight pupils." },
+                      { n: "4", text: "Post 4 asks teachers to apply as a team.", note: "Three teachers join in one school, and the diagram branches out to eight pupils." },
                       { n: "5", text: "The teacher taps the coral button and lands on the form.", note: "Every post ends the same way: the button, the address, \"Bezpłatny udział\" (free of charge)." },
                     ],
                     exits: [
                       { label: "Slogan A", text: "The literal reading, for example \"Talent nie zależy od wielkości miejscowości\" (talent does not depend on the size of the town)." },
                       { label: "Slogan B", text: "The shorter, livelier line, for example \"Dla każdego, także daleko od dużych miast\"." },
                     ],
-                    exitsNote: "The programme publishes one of the two; captions, hashtags and alt text are written for both.",
+                    exitsNote: "The programme publishes one of the two; captions, hashtags, and alt text are written for both.",
                     postcondition: { body: "Four posts in three formats, each with captions for Instagram and Facebook, a longer one for LinkedIn, and alt text describing the graphic." },
                     why: "Rejected: one general launch post. It speaks to everybody and therefore to nobody the targets count.",
                     rule: "S1: every post shares one foot, the coral button on navy, the address, and \"free of charge\".",
-                    ruleNote: "The roll-up, the website and the folder end with the same call to action and a QR to the same form.",
+                    ruleNote: "The roll-up, the website, and the folder end with the same call to action and a QR to the same form.",
                   },
                 },
               ],
@@ -624,7 +631,7 @@ export const ost: CaseStudy = {
                     title: "Write a letter to a head teacher without a designer",
                     actor: { name: "The project assistant", body: "Runs the day-to-day correspondence of the programme.", note: "Has Word or Google Docs, and no InDesign." },
                     trigger: { body: "A school has to be invited, or an applicant answered." },
-                    precondition: { body: "Outfit installed, which is free; the template saved once as a Word template." },
+                    precondition: { body: "Outfit installed, free of charge; the template saved once as a Word template." },
                     flow: [
                       { n: "1", text: "Open a new letter from the template.", note: "Header and footer are ready: the full logo on page 1, the ∃ alone and a page number after it." },
                       { n: "2", text: "Write with the styles OST Adresat, OST Data, OST Temat, OST Podpis.", note: "Recipient, date, subject, and signature never need formatting by hand." },
@@ -710,7 +717,7 @@ export const ost: CaseStudy = {
           kind: "stats",
           items: [
             { value: "8 mm", label: "Smallest printed mark, the ∃ alone; 16 px on screen. Brand book pages 14 and 15" },
-            { value: "15.7:1", label: "Navy on white. Coral on warm white is 2.7:1, which is why coral never carries text there" },
+            { value: "16.1:1", label: "Navy on white. Coral on warm white is 2.7:1, so coral never carries text there" },
             { value: "24", label: "Logo files: six versions in four colourways, of 28 files in the handoff" },
             { value: "12", label: "Social graphics: four posts in three formats" },
           ],
@@ -730,7 +737,7 @@ export const ost: CaseStudy = {
           frame: "macbook",
           src: `${C}/generator-story.mp4`,
           poster: `${C}/generator-story.webp`,
-          title: "The support generator: three slogans, post and story",
+          title: "The support generator: three slogans, a post, and a story",
           caption: "The support page: three slogans, then the same photo as a story of 9:16 and back to a post of 4:5.",
         },
       ],
@@ -754,7 +761,7 @@ export const ost: CaseStudy = {
           kind: "joint",
           question: "What will I measure, and how?",
           answers: [
-            "<strong>The two recruitment targets.</strong> The share of teachers whose lead subject is not informatics, and the share from places under 25 000 inhabitants, from the programme's own records at the end of recruitment.",
+            "<strong>The two recruitment targets.</strong> The share of teachers whose lead subject is not informatics, and the share from places under 25 000 inhabitants, from the programme's own records at the end of recruitment.",
             "<strong>Whether ambassadors post.</strong> The generators collect nothing, by design, so the count comes from posts tagged #OgólnopolskaStrefaTalentu.",
           ],
         },
