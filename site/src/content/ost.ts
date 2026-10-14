@@ -478,8 +478,8 @@ export const ost: CaseStudy = {
           kind: "carousel",
           shape: "portrait",
           items: [
-            { src: `${S}/letter.webp`, title: "Letter to a head teacher", body: "Logo with tagline top left, the ∃ alone from page 2, contact details in the footer." },
-            { src: `${S}/card.webp`, title: "Business card", body: "90 by 50 mm, two fronts on navy and one with the slogan, a shared back." },
+            { src: `${S}/social-pupils.webp`, title: "A post for pupils", body: "For older pupils the formula itself, ∀x ∈ Uczniowie ∃t ∈ Talenty: x ma t (every pupil has a talent); for younger ones a story with the plain slogan." },
+            { src: `${S}/posters-a3.webp`, title: "A3 posters", body: "One slogan, one image, one action for each group: teachers, pupils, and parents and partners, each with a QR to the form." },
             { src: `${S}/folder.webp`, title: "Folder", body: "220 by 310 mm with a spine of 4 mm; the key visual on the cover, a pocket with slits for a card." },
             { src: `${S}/rollup.webp`, title: "Roll-up", body: "85 by 200 cm. The slogan fills the eye zone, 100 to 180 cm above the floor; a QR of 22 cm scans from about 2 m." },
             { src: `${S}/website-design.webp`, title: "Website design", body: "The whole page at 1280 and 390: the promise, three groups, 126 medals as proof, and a way to join by the QR from the posters." },
@@ -608,7 +608,7 @@ export const ost: CaseStudy = {
               title: "Programme office",
               maxim: "The identity works without its designer.",
               standfirst: "Goal: the office writes to a head teacher in its own tools.",
-              cover: { src: `${S}/letter.webp` },
+              cover: { src: `${S}/letterhead.webp` },
               blocks: [
                 {
                   kind: "duo",
