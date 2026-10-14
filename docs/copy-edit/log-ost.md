@@ -62,3 +62,12 @@ each claim and the drafts that were cut because no source carried them.
 | website design only as a board in the carousel | also as a MacBook and phone mockup opening chapter 07 | Konstancja: show more of the website design |
 | lead in one colour | "prof. Ryszard Szubartowski's method" in coral #FF5A36 (`leadAccent`) | Konstancja; 6.2:1 on the page ground #0F0F0E, and brand book C1 allows coral text on dark grounds |
 | chapter 01 carousel ended with the ambassador generator in a MacBook | removed; the carousel is boards only | Konstancja: no MacBook in this carousel; the generator stays in the intro layers, chapter 08 and the clips |
+
+## Third round, 14 October 2026
+
+| Before | After | Why |
+| --- | --- | --- |
+| a grey strip and side wedges under every MacBook base, left by the background key | removed from `frames/macbook.webp` and from every mockup on the site (198 files, all studies) | Konstancja: remove them everywhere; `docs/ost-identity/scripts/unbar.py` plus a pass for the five Analytics frames of 2400 × 1512 |
+| chapter 01 carousel: 7 boards | 17: brand book pages 01, 03, 04, 05, 07, 09, 10, 16, 19, 24, 26, 28, 29, 30, 31, the key visual, the social series | Konstancja: show the process and the artefacts |
+| no duration | "Five days of work" in chapter 01, the period row of "In short", and the metadata | Konstancja: the work took five days |
+| UC-01 "Ambassadors" | "Ambassadors and supporters", with the challenge (no Photoshop, simple and accessible) and "designed, built, and deployed by me on Vercel" as its own panel | Konstancja: the generator is a use case worth stating |

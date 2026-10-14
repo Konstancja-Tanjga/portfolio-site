@@ -58,10 +58,11 @@ export const ost: CaseStudy = {
     { label: "Role", value: "Idea, visual identity, brand book, applications, and the ambassador generators" },
     { label: "Client", value: "Stowarzyszenie Talent, for its programme Ogólnopolska Strefa Talentu" },
     { label: "Team", value: "Just me. A representative of the programme chose the concept" },
-    { label: "Period", value: "September to October 2026" },
+    { label: "Period", value: "Five days of work, September to October 2026" },
     { label: "Delivered", value: "Brand book 1.0 of 33 pages, the mark in 24 SVG files, print files, a Word template, 12 social graphics, two generators" },
     { label: "Live", value: "www.ost.edu.pl", href: "https://www.ost.edu.pl" },
-    { label: "Generators", value: "ost-ambasador.vercel.app, source public", href: "https://github.com/Konstancja-Tanjga/ost-ambasador" },
+    { label: "Generators", value: "Designed, built, and deployed by me on Vercel: ost-ambasador.vercel.app", href: "https://ost-ambasador.vercel.app" },
+    { label: "Source", value: "Public on GitHub", href: "https://github.com/Konstancja-Tanjga/ost-ambasador" },
   ],
   chapters: [
     /* ---------------------------------------------------------------- 00 */
@@ -110,7 +111,7 @@ export const ost: CaseStudy = {
             },
             {
               key: "Period and team",
-              value: "September to October 2026. I worked alone; a representative of the programme chose the concept.",
+              value: "Five days of work between September and October 2026. I worked alone; a representative of the programme chose the concept.",
             },
           ],
         },
@@ -123,7 +124,7 @@ export const ost: CaseStudy = {
       n: "01",
       heading: "What it is",
       maxim: "The name of the programme became a formula a pupil can read.",
-      standfirst: "What I delivered, then every part of the system, one board at a time.",
+      standfirst: "What I delivered in five days of work, then the brand book and its artefacts, one board at a time.",
       blocks: [
         {
           kind: "points",
@@ -132,19 +133,30 @@ export const ost: CaseStudy = {
             "<strong>The mark.</strong> Both symbols drawn on one grid with one stroke, and a coral bar for the student that never touches the frame around it.",
             "<strong>The brand book.</strong> 33 pages: construction, versions, clear space, minimum sizes, colour with contrast ratios, type, slogans, and errors.",
             "<strong>The applications.</strong> Letterhead with a Word template, business card, folder, roll-up, a one-page website, and a series of four posts in three formats.",
-            "<strong>Two generators.</strong> Ambassadors upload a photo and download a finished post. No server, no account, no graphics program.",
+            "<strong>Five days.</strong> From the three concepts to the brand book and every application on this page.",
+            "<strong>Two generators, designed and deployed by me on Vercel.</strong> Ambassadors and supporters upload a photo, choose a slogan, and download a finished post. No server, no account, no Photoshop.",
           ],
         },
         {
           kind: "carousel",
           items: [
             { src: `${S}/book-cover.webp`, title: "The mark", body: "Horizontal logo with the tagline \"Dla każdego ucznia istnieje talent.\" (For every student there exists a talent.)" },
+            { src: `${S}/book-origin.webp`, title: "From the method to the mark", body: "∃∀ is one pattern for everybody; ∀∃ is a talent of one's own. Order matters." },
             { src: `${S}/book-formula.webp`, title: "The name as a formula", body: "∀ stands for \"Ogólnopolska\", every pupil in the country; ∃ stands for \"Talentu\", a talent of one's own." },
-            { src: `${S}/concept-forall-keyvisual.webp`, title: "Key visual", body: "∃∀, one pattern for every pupil, against ∀∃, every pupil to a point of their own." },
+            { src: `${S}/book-grid.webp`, title: "The grid", body: "164 by 88 units, one stroke of 12, a gap of 8 between the coral bar and the frame (M1, M2)." },
+            { src: `${S}/book-not-ve.webp`, title: "Not \"VE\", not \"AE\"", body: "Four details that keep the pair from reading as letters (M4)." },
+            { src: `${S}/book-versions.webp`, title: "Which version when", body: "Horizontal, vertical, with the words \"uczeń\" and \"talent\", the pair alone, the ∃ alone: each with the job it is for." },
+            { src: `${S}/book-mono.webp`, title: "Black and white", body: "Stamp, engraving, fax, foil: in one colour the student keeps the gap." },
+            { src: `${S}/book-grounds.webp`, title: "Which version on which ground", body: "Every colourway against every background, the forbidden pairs crossed out." },
             { src: `${S}/book-palette.webp`, title: "Colour", body: "Navy, coral, dark coral, and warm white, each with HEX, RGB, two CMYK profiles, and Pantone." },
+            { src: `${S}/book-hierarchy.webp`, title: "Hierarchy", body: "Slogan, lead, text, caption, footer: typeface, size for print and screen, leading, tracking." },
             { src: `${S}/book-slogans.webp`, title: "Three groups, three slogans", body: "Teachers, pupils, and parents each get one sentence that solves the mark for them." },
+            { src: `${S}/book-media.webp`, title: "Print and screen", body: "Letter, poster, and website header, each with where the logo sits and which version." },
+            { src: `${S}/book-social.webp`, title: "Social media and gadgets", body: "Avatar, post, story, a pin of 25 mm, and a sticker that leaves a line for the pupil's own talent." },
+            { src: `${S}/book-engraving.webp`, title: "Engraving, stamp, photographs", body: "One-colour versions for the stamp and the engraving, and where the logo may sit on a photo (G1)." },
+            { src: `${S}/book-animation.webp`, title: "Four seconds", body: "The mark animated frame by frame: lines from one point, then each to its own point, then ∀∃." },
+            { src: `${S}/concept-forall-keyvisual.webp`, title: "Key visual", body: "∃∀, one pattern for every pupil, against ∀∃, every pupil to a point of their own." },
             { src: `${S}/social-series.webp`, title: "Social series", body: "Four posts for the first week of recruitment, each in three formats." },
-            { src: `${S}/book-social.webp`, title: "Avatar, pin, and sticker", body: "The ∃ alone works at small sizes; the sticker leaves a line for the pupil's own talent." },
           ],
         },
       ],
@@ -516,11 +528,16 @@ export const ost: CaseStudy = {
             {
               id: "uc-ambassadors",
               n: "01",
-              title: "Ambassadors",
-              maxim: "Nothing in the brand covers a face.",
-              standfirst: "Goal: a supporter posts a branded photo of themselves in minutes.",
+              title: "Ambassadors and supporters",
+              maxim: "A supporter should need a photo and a browser, nothing else.",
+              standfirst: "Goal: anyone who supports the programme posts their own photo in its frame, with a slogan, on the channel they choose.",
               cover: { src: `${D}/generator-ambassador-2400.webp`, frame: "macbook" },
               blocks: [
+                {
+                  kind: "passage",
+                  html:
+                    "<p><strong>The challenge.</strong> A dozen supporters had to post their own photo in the programme's look, with a slogan, on Instagram, Facebook, or LinkedIn.</p><ul><li><strong>Not everybody has Photoshop.</strong> A template file would have needed a graphics program and a designer on call, so the tool had to be a web page.</li><li><strong>Simple and accessible.</strong> Five steps, keyboard control for the crop, slogans in both grammatical genders, and nothing to install.</li><li><strong>Designed, built, and deployed by me.</strong> Two pages of plain HTML on Vercel, at ost-ambasador.vercel.app: one for ambassadors, one for supporters.</li></ul>",
+                },
                 {
                   kind: "duo",
                   items: [
@@ -532,7 +549,7 @@ export const ost: CaseStudy = {
                   kind: "usecase",
                   uc: {
                     id: "UC-01",
-                    title: "Show that I support the programme without a graphics program",
+                    title: "Post my own photo in the programme's frame, without Photoshop",
                     actor: { name: "04, the ambassador", body: "A teacher or a friend of the programme.", note: "Willing to help, unwilling to learn software for one post." },
                     trigger: { body: "The programme asks a dozen people to post about the launch of recruitment.", note: "The first question back was: can I have a frame for my photo?" },
                     precondition: { body: "A photo on the phone or the laptop, ideally upright with the face in the upper part." },
