@@ -1398,7 +1398,7 @@ article { position: relative; z-index: 1; }
 .car__img--device { filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.7)); }
 /* phone screens and tall boards: a taller stage, each slide fitted by height */
 .car--portrait .car__stage { aspect-ratio: 16 / 10; }
-.car--portrait .car__img { height: 100%; border-radius: 14px; box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.8); }
+.car--portrait .car__img { height: 100%; object-fit: contain; border-radius: 14px; box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.8); }
 .car--portrait .car__slide { padding: 2% 0; }
 .car--portrait .car__slide.is-next { transform: translateX(36%) scale(0.86) rotateY(-10deg); }
 .car--portrait .car__slide.is-prev { transform: translateX(-36%) scale(0.86) rotateY(10deg); }
