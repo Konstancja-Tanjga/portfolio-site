@@ -436,15 +436,17 @@ export type Status =
   { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
- * Which band a wall sits in, and so which listing: product and recognition
- * are on the home (Work) page, practice has its own page at /practice
+ * Which band a wall sits in, and so which listing: product, identity and
+ * recognition are on the home (Work) page, practice has its own page at /practice
  * (see listingFor).
  *
  * product      — the shipped products. The main grid.
  * practice     — how I work: design systems, methods, and personal projects that test them.
  * recognition  — awards and competition entries. Short, not case studies.
+ * identity     — visual identities: a mark, its brand book and its applications.
+ *                Listed on the home (Work) page under its own heading.
  */
-export type Group = "product" | "practice" | "recognition";
+export type Group = "product" | "practice" | "recognition" | "identity";
 
 export type CaseStudy = {
   slug: string;

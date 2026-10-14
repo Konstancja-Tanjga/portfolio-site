@@ -9,6 +9,7 @@ import { elly } from "./elly";
 import { flow } from "./flow";
 import { fox } from "./fox";
 import { futures } from "./futures";
+import { ost } from "./ost";
 import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { riyad } from "./riyad";
@@ -22,7 +23,8 @@ import type { CaseStudy, Group, Process } from "./types";
  *
  * Within `product`, the order is deliberate: Analytics leads, then Elly,
  * Documents and the Best Practice Hub, then Volvo, MojePZU and Flow mode,
- * with the two short pages, Xecta and Riyad Bank, at the end. Big Hat
+ * with the two short pages, Xecta and Riyad Bank, at the end. `identity`
+ * has one wall so far, Ogólnopolska Strefa Talentu. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
  * at six-product scale, but its exports belong to Asseco. Reading the
@@ -40,6 +42,8 @@ export const cases: CaseStudy[] = [
   flow,
   xecta,
   riyad,
+  // identity
+  ost,
   // practice
   sky,
   bighat,
@@ -83,7 +87,8 @@ export const listingFor = (study?: CaseStudy): { to: string; label: string; all:
 export function neighbours(slug: string) {
   const current = findCase(slug);
   const list = current ? byGroup(current.group) : published;
-  const pool = list.length ? list : published;
+  // a band of one would hand the reader the page they are on
+  const pool = list.length > 1 ? list : published;
   const i = pool.findIndex((c) => c.slug === slug);
   if (i === -1) return { previous: undefined, next: pool[0] };
   return {
