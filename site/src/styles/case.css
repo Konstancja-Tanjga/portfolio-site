@@ -1566,3 +1566,14 @@ article { position: relative; z-index: 1; }
 .beside__caption { font-size: var(--bh-size-small); color: var(--kt-ink-3); text-align: center; }
 @media (max-width: 56rem) { .beside { grid-template-columns: 1fr; } .beside__media { position: static; } .beside__player { max-width: 16rem; } }
 @media (prefers-reduced-motion: reduce) { .beside { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- the cover carried into the case (Home: useCoverTransition) ----------
+   The home tile takes this name only for the length of the transition; the
+   case hero always has it, so the cover, image and all, grows into the hero
+   while the page it left falls back. */
+.cover__art { view-transition-name: case-cover; }
+::view-transition-group(case-cover) { animation-duration: 760ms; animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1); }
+::view-transition-old(root) { animation: vt-fall 460ms cubic-bezier(0.7, 0, 0.2, 1) both; }
+::view-transition-new(root) { animation: vt-rise 520ms 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes vt-fall { to { opacity: 0; transform: scale(0.94); } }
+@keyframes vt-rise { from { opacity: 0; } }

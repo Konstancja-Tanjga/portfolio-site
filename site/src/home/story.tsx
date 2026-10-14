@@ -100,18 +100,18 @@ export const career: { years: string; org: string; role: string; what: string }[
 
 export const offScreen: { src: string; alt: string; caption: string }[] = [
   {
-    src: "/watercolours/birds/02-gaviota-i-monstera-copy-thumb.jpg",
-    alt: "Watercolour of a gull holding a red berry, framed, between two monstera plants",
-    caption: "Gull, Cádiz",
+    src: "/watercolours/architecture/france/03-chanonceau-thumb.jpg",
+    alt: "Watercolour and ink of the Château de Chenonceau over the Cher, two red balloons above, lettered and dated May 2026",
+    caption: "Chenonceau, May 2026",
   },
   {
-    src: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy-thumb.jpg",
-    alt: "Watercolour of a flamingo with spattered paint, in a wooden frame on a chair",
-    caption: "Flamingo",
+    src: "/watercolours/architecture/france/02-chambord-thumb.jpg",
+    alt: "Sketchbook spread: the double staircase of Chambord, two riders with banners, and the château across the water, dated May 2026",
+    caption: "Chambord, May 2026",
   },
   {
-    src: "/watercolours/architecture/new-york/02-guggenheim-museum-new-york-ramka-thumb.jpg",
-    alt: "Ink and wash sketch of the Guggenheim Museum in New York, in a white frame",
-    caption: "Guggenheim, on location",
+    src: "/watercolours/architecture/france/01-cedre-noir-thumb.jpg",
+    alt: "Watercolour of a horse leaping over a rider in green, titled Grace of Le Cèdre Noir in hand lettering",
+    caption: "Le Cèdre Noir",
   },
 ];
