@@ -52,3 +52,65 @@ Not done, and why:
 - No `hotspots`, no `folded` shot: no audit, benchmark, or research screen and no diagram is on record.
 - No `joint`, `loop`, `dossier`: the file holds no reflection, no use case, and no handoff cycle; the pipeline is already a `flow` in chapter 02.
 - The button API page stays a flat shot, as a scrolling Storybook page is.
+
+## AI-ready pass, 14 October 2026
+
+The study now says what the inventory and the other studies already record: FOX is built for agents as well as people. No number, date, or result was added.
+
+| Change | Source |
+| --- | --- |
+| New chapter 02a "Built for agents": points, a `loop`, the new-query clip, and rule 1 of the Big Hat agent skill as a `code` block | AGENTS.md, skills, Code Connect, MCP write-back, and review of every component change: `bi.ts` chapters 05, 06 and 09, `dms.ts` handoff loop. Four documentation layers and the Markdown pattern catalogue: inventory, September 2026. The clip is already published in `bi.ts`. The code block is copied verbatim from the public Big Hat repository |
+| New chapter 02b "Finding the drift" | The Figma to Storybook mapping, naming fixes, and the code-only, design-only, and noise classes: inventory, October 2026. No count is stated, because none is on record |
+| "In short": Problem, role, and Decision 1 to 3 rewritten to 25 words or fewer; Decision 3 is now "Built for agents"; the former Decision 3 merged into Decision 2 | RULES 2: each row at most 25 words |
+| Chapter 01: a fifth point; standfirst says five things | Same sources as 02a |
+| Chapter 01a: a fourth constraint, "Agents build UI too" | Stated as a constraint of the brief, not as an incident |
+| Chapter 04: the fox-dialog `code` block | Copied from `bi.ts`, with its source |
+| Meta: an "AI tooling" row; the Storybook row says the public link is the v1 line and v3.0 is internal | `bi.ts` code caption |
+| what, lead, subline, stamp | Name the agent work on the surface the skimmer reads |
+
+Open for Konstancja: v3.0 Storybook screenshots to replace the v1 exports; counts from the drift audit, with their source; an AGENTS.md excerpt, if the company allows it to be published.
+
+## 14 October 2026, later
+
+Chapter 01a "Why this is a hard brief" (id `hard-brief`) removed at Konstancja's request. Its points were the v2.0 costs, which the evolution block in chapter 05 still states, and the agent constraint, which the Problem row in "In short" still states. The hash `#hard-brief` no longer opens a chapter.
+
+## v3.0 screens and drift audit, 14 October 2026
+
+Six v3.0 screenshots supplied by Konstancja (`screenshots/fox-v3/`, the Nexus one with identifying values already blurred) replace the v1 exports, set into the MacBook mockup under `device/` at 1600, 2400, and full width, each cropped from the right to the screen's proportions. The drift figures are hers. No other fact, number, or date was added.
+
+| Change | Source |
+| --- | --- |
+| Chapter 01: the catalogue mockup replaced by `v3-get-started`; the passage says the screens are the v3.0 Storybook, internal, and the public link is the v1 line; caption rewritten to what the screen shows | `fox-v3-get-started.png` |
+| Cover `art` is `v3-get-started`; cover `shot` is `v3-colors` | The same screenshots |
+| Chapter 02a: `v3-button-docs` after the points, caption on the Purpose, Use when, Avoid when, Common pairings, and Important limitations structure. Not cropped to hide "Key events:": the label sits inside the description line, and cutting it would cut Important limitations | `fox-v3-button-docs.png` |
+| Chapter 02b: points name the six categories; a passage with the totals; a `stats` row with the six counts; a `spec` with the definitions and the source in its caption. "Behavior" spelt "behaviour" (British spelling). The "34 closed" line is not added, because it is not confirmed | Konstancja's FOX audit, July 2026 (the second of two, March and July). Year 2026 assumed from context; to be confirmed |
+| Chapter 03: `v3-colors` after the spec; called scales, not semantic tokens | `fox-v3-colors.png` |
+| Chapter 04: `button-api.png` replaced by `v3-list-extended-api`; the v1 fox-dialog code replaced by the v3.0 Default story, transcribed verbatim; source without a link; standfirst rewritten | `fox-v3-list-extended-api.png`, `fox-v3-dialog-code.png` |
+| Chapter 05: `v3-nexus-versions` after the evolution block | `fox-v3-nexus-versions.png` |
+| Removed: `colors.png`, `catalogue.png`, `button-api.png`, `device/catalogue-1600.webp`, `-2400.webp`, `-full.webp` | Replaced by the v3.0 images above |
+| v1 links labelled: the "Design system" meta in `bi.ts`, `dms.ts`, `bph.ts`, `flow.ts`, `elly.ts` now ends "the link opens the public v1 Storybook"; the `bi.ts` fox-dialog source says "(public v1 line)". No v3 URL anywhere | Konstancja: v3.0 is internal and must not be linked |
+
+Not done: AGENTS.md (step 5, skipped at Konstancja's request; the FOX agent rules stay internal).
+
+### Review pass, 14 October 2026
+
+A fact and style review of the branch. Fixed without new facts: "In short" rows Problem, Decision 1, Decision 3, and Outcome are one sentence each and under 25 words; "every change" narrowed to "every component change" in Decision 3, chapter 02a, and the loop, as the source says; "so the file does not drift from it" became "so the file follows the code", because 02b reports drift; chapter 01 says the Storybook screens are v3.0, not every screen; colons after labels in six captions became sentences; serial comma in the AI tooling row; nested series take semicolons; the 02b spec rows are parallel noun phrases; "5 that are noise" became "were"; the chapter 04 standfirst names both components; the Nexus caption says the side panel belongs to another package; the v1 Storybook labels end in a sentence of their own. The AI-ready pass row above that says "No count is stated" for 02b is superseded by the drift audit section.
+
+Open for Konstancja: the audit year (2026 assumed); whether the July audit compared the Figma library with Storybook or the products with the library, since component and behaviour drift describe the products; the "four layers" bullet and Codex reading over MCP in 02a, which come from the first patch and are not on record in the repository.
+
+### Konstancja's answers, 14 October 2026
+
+| Question | Answer | Change |
+| --- | --- | --- |
+| Audit year | 2026 | None; "March and July 2026" and the source line stand |
+| What the July audit compared | The Figma library against Storybook, and against the APplus Analytics product | 02b passage names both |
+| "Documentation in four layers" | Keep | None |
+| Codex reading over MCP | Codex first, then Claude Code; both statements hold | 02a point, the loop station, and the AI tooling meta give the order: Codex first, Claude Code now |
+
+Nothing is open.
+
+### 14 October 2026, Nexus point
+
+| Change | Source |
+| --- | --- |
+| Chapter 02 "Source of truth": a fourth point, "Nexus holds every release, one versioned package per component in the internal npm registry, and the products install FOX from there." | Konstancja's request. The Pipeline row and the Nexus stage of the chapter 02 flow; `fox-v3-nexus-versions.png` (npm-internal, one package per release); `fox-v3-get-started.png` (install with npm or yarn) |
