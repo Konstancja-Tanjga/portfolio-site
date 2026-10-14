@@ -97,3 +97,14 @@ Not done: AGENTS.md (step 5, skipped at Konstancja's request; the FOX agent rule
 A fact and style review of the branch. Fixed without new facts: "In short" rows Problem, Decision 1, Decision 3, and Outcome are one sentence each and under 25 words; "every change" narrowed to "every component change" in Decision 3, chapter 02a, and the loop, as the source says; "so the file does not drift from it" became "so the file follows the code", because 02b reports drift; chapter 01 says the Storybook screens are v3.0, not every screen; colons after labels in six captions became sentences; serial comma in the AI tooling row; nested series take semicolons; the 02b spec rows are parallel noun phrases; "5 that are noise" became "were"; the chapter 04 standfirst names both components; the Nexus caption says the side panel belongs to another package; the v1 Storybook labels end in a sentence of their own. The AI-ready pass row above that says "No count is stated" for 02b is superseded by the drift audit section.
 
 Open for Konstancja: the audit year (2026 assumed); whether the July audit compared the Figma library with Storybook or the products with the library, since component and behaviour drift describe the products; the "four layers" bullet and Codex reading over MCP in 02a, which come from the first patch and are not on record in the repository.
+
+### Konstancja's answers, 14 October 2026
+
+| Question | Answer | Change |
+| --- | --- | --- |
+| Audit year | 2026 | None; "March and July 2026" and the source line stand |
+| What the July audit compared | The Figma library against Storybook, and against the APplus Analytics product | 02b passage names both |
+| "Documentation in four layers" | Keep | None |
+| Codex reading over MCP | Codex first, then Claude Code; both statements hold | 02a point, the loop station, and the AI tooling meta give the order: Codex first, Claude Code now |
+
+Nothing is open.

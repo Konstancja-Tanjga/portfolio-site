@@ -44,7 +44,7 @@ export const fox: CaseStudy = {
     { label: "Scale", value: "Around 80 components, 6 consuming products" },
     { label: "Frameworks", value: "Angular, React, web components" },
     { label: "Pipeline", value: "Figma to Storybook to Chromatic to Nexus" },
-    { label: "AI tooling", value: "Code Connect, Figma MCP server, Claude Code, Codex, AGENTS.md, and skills" },
+    { label: "AI tooling", value: "Code Connect, Figma MCP server, Codex and then Claude Code, AGENTS.md, and skills" },
     { label: "Period", value: "November 2023 to present" },
     { label: "Storybook", value: "Public v1 line, design-system-v1.assecosolutions.com. The v3.0 Storybook is internal", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
   ],
@@ -162,7 +162,7 @@ export const fox: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>Agents get the contract engineers get.</strong> Code Connect binds every Figma component to its implementation, and the Figma MCP server hands that context to Claude Code and Codex.",
+            "<strong>Agents get the contract engineers get.</strong> Code Connect binds every Figma component to its implementation, and the Figma MCP server hands that context to the agent: Codex first, Claude Code now.",
             "<strong>The rules are written down, not assumed.</strong> An AGENTS.md and a set of skills, which I own, keep generated UI on the system.",
             "<strong>Documentation in four layers.</strong> The layers are tokens, components, patterns, and templates, and the pattern catalogue is Markdown that a person and an agent read alike.",
             "<strong>A person merges every component change.</strong> Generated code arrives as a pull request, and I review and merge it.",
@@ -183,7 +183,7 @@ export const fox: CaseStudy = {
           stations: [
             { label: "Figma", title: "The file", body: "Every component bound to the implementation that ships it, through Code Connect." },
             { label: "Code", title: "The FOX package", body: "What engineers and agents both build on, one versioned package per component." },
-            { label: "Agent", title: "Claude Code and Codex", body: "The agents, reading the component context over MCP under AGENTS.md and the skills. Every component change is a pull request I review." },
+            { label: "Agent", title: "Codex, then Claude Code", body: "The agents, reading the component context over MCP under AGENTS.md and the skills. Every component change is a pull request I review." },
           ],
           edges: [
             { label: "Code Connect" },
@@ -248,7 +248,7 @@ hand-roll, and what the hand-rolled version does worse.`,
         },
         {
           kind: "passage",
-          html: "<p>I audited the Figma library against Storybook twice, in March and July 2026. <strong>The July audit found 115 differences: 110 real gaps and 5 that were noise.</strong></p>",
+          html: "<p>I audited the Figma library against Storybook and against the APplus Analytics product twice, in March and July 2026. <strong>The July audit found 115 differences: 110 real gaps and 5 that were noise.</strong></p>",
         },
         {
           kind: "stats",
