@@ -61,3 +61,4 @@ each claim and the drafts that were cut because no source carried them.
 | www.ost.edu.pl, no author named | "built by the programme's own team" | Konstancja: the programme built the site |
 | website design only as a board in the carousel | also as a MacBook and phone mockup opening chapter 07 | Konstancja: show more of the website design |
 | lead in one colour | "prof. Ryszard Szubartowski's method" in coral #FF5A36 (`leadAccent`) | Konstancja; 6.2:1 on the page ground #0F0F0E, and brand book C1 allows coral text on dark grounds |
+| chapter 01 carousel ended with the ambassador generator in a MacBook | removed; the carousel is boards only | Konstancja: no MacBook in this carousel; the generator stays in the intro layers, chapter 08 and the clips |

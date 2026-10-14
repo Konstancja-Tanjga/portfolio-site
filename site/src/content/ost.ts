@@ -145,7 +145,6 @@ export const ost: CaseStudy = {
             { src: `${S}/book-slogans.webp`, title: "Three groups, three slogans", body: "Teachers, pupils, and parents each get one sentence that solves the mark for them." },
             { src: `${S}/social-series.webp`, title: "Social series", body: "Four posts for the first week of recruitment, each in three formats." },
             { src: `${S}/book-social.webp`, title: "Avatar, pin, and sticker", body: "The ∃ alone works at small sizes; the sticker leaves a line for the pupil's own talent." },
-            { src: `${D}/generator-ambassador-2400.webp`, frame: "macbook", title: "Ambassador generator", body: "Photo, slogan, format, crop, download." },
           ],
         },
       ],
