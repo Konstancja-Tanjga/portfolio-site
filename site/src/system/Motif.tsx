@@ -10,7 +10,7 @@
  * (pathLength 1), `chart__dots` circles light up, each staggered by
  * inline delay. Drawn in a 520 × 200 box, like the chart.
  */
-export type MotifName = "chart" | "documents" | "chat" | "tokens" | "network" | "kettle" | "report";
+export type MotifName = "chart" | "documents" | "chat" | "tokens" | "network" | "kettle" | "report" | "quantifiers";
 
 const SAND = "#e3d2ad";
 const FILL = "rgba(227,210,173,0.55)";
@@ -19,6 +19,7 @@ const GRID = "rgba(241,237,228,0.18)";
 const ms = (n: number) => ({ animationDelay: `${n}ms` });
 
 export function Motif({ name = "chart" }: { name?: MotifName }) {
+  if (name === "quantifiers") return <QuantifierOutline />;
   const Draw = MOTIFS[name];
   // The chart is screen-blended and reaches past the laptop onto the dark
   // ground. The others sit mostly over light app screens, where a screen
@@ -32,7 +33,7 @@ export function Motif({ name = "chart" }: { name?: MotifName }) {
   );
 }
 
-const MOTIFS: Record<MotifName, () => JSX.Element> = {
+const MOTIFS: Record<Exclude<MotifName, "quantifiers">, () => JSX.Element> = {
   /** Analytics: bars that rise, a line that draws, points that light up. */
   chart() {
     const bars = [34, 52, 41, 68, 58, 80, 72, 91];
@@ -202,3 +203,31 @@ const MOTIFS: Record<MotifName, () => JSX.Element> = {
     );
   },
 };
+
+/**
+ * ∀∃ in outline over the layers, for the Ogólnopolska Strefa Talentu wall:
+ * the outline draws itself, then a faint fill comes up behind it, and the
+ * student's bar stands apart in coral, as in the mark. The geometry is the
+ * programme's grid (brand book page 05): stroke 12, gap 8, bar 56. It has
+ * its own box and classes (layers__quant, quant__*): it is a fixed mark, not
+ * a sign drawn for the subject, so it keeps the mark's proportions.
+ */
+function QuantifierOutline() {
+  return (
+    <svg className="layers__quant" viewBox="-6 0 176 100">
+      <path
+        className="quant__shape"
+        fillRule="evenodd"
+        pathLength={1}
+        d="M2 14 L15 14 L23 30 L53 30 L61 14 L74 14 L66 30 L76 30 L76 42 L60 42 L38 86 L16 42 L0 42 L0 30 L10 30 Z M29 42 L47 42 L38 60 Z"
+      />
+      <path
+        className="quant__shape"
+        pathLength={1}
+        transform="translate(88 0)"
+        d="M64 6 L76 6 L76 94 L64 94 L64 86 L24 86 L24 74 L64 74 L64 26 L24 26 L24 14 L64 14 Z"
+      />
+      <rect className="quant__bar" x="88" y="44" width="56" height="12" pathLength={1} />
+    </svg>
+  );
+}

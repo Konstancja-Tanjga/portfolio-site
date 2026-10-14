@@ -34,6 +34,12 @@ def clean(path, dry=False):
     L = lum(a[..., :3].astype(np.float32))
     changed = 0
 
+    # Only a mockup: its top corners are transparent, around the lid. A
+    # flat screen in a device folder (some studies keep one as "-full")
+    # is opaque there and must be left alone.
+    if alpha[2, 2] > 0 or alpha[2, W - 3] > 0:
+        return 0
+
     # 1. The base: the first row in the lower fifth that is opaque from edge
     #    to edge (only the aluminium base spans the whole width).
     col = int(W * 0.3)

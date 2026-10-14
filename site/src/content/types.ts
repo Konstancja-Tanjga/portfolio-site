@@ -426,7 +426,13 @@ export type Cover = {
    * sand over the top. Without it, the intro shows the typeset cover.
    */
   layers?: { src: string; label: string }[];
-  /** The sign drawn in sand over the layers, matched to the subject. Default: a chart. */
+  /**
+   * What is drawn over the layers, matched to the subject (system/Motif.tsx);
+   * ignored without `layers`. Default: the chart, which suits a data product.
+   * "quantifiers" is one fixed mark, the Ogólnopolska Strefa Talentu ∀∃ in
+   * outline with its coral bar, for that wall only: a bar chart over a visual
+   * identity would say the study is about numbers.
+   */
   motif?: MotifName;
 };
 
@@ -439,15 +445,29 @@ export type Status =
   { state: "live" } | { state: "held"; until: string; why: string };
 
 /**
- * Which band a wall sits in, and so which listing: product and recognition
- * are on the home (Work) page, practice has its own page at /practice
- * (see listingFor).
+ * Which band a wall sits in, and so which listing: product and identity are
+ * listed on the home (Work) page, practice as compact tiles on Home and in
+ * full at /practice, and recognition has no band (Home links the ERP award
+ * from its opening text). Back links follow `listingFor`.
  *
  * product      — the shipped products. The main grid.
  * practice     — how I work: design systems, methods, and personal projects that test them.
  * recognition  — awards and competition entries. Short, not case studies.
+ * identity     — visual identities: a mark, its brand book and its applications.
+ *                Listed on the home (Work) page under its own heading.
  */
-export type Group = "product" | "practice" | "recognition";
+export type Group = "product" | "practice" | "recognition" | "identity";
+
+/**
+ * One phrase of the lead set in the project's own accent colour, when the
+ * project's identity is the subject: the hex is a fact about that project,
+ * like a palette swatch, so it lives in the content and not in the
+ * stylesheet. `text` must occur in `lead` verbatim; content/index.ts throws in
+ * development when it does not, and only the first occurrence is coloured.
+ * The lead sits on --kt-ground (#0f0f0e), which has no light variant, so the
+ * colour must pass 4.5:1 on that ground.
+ */
+export type LeadAccent = { text: string; hex: `#${string}` };
 
 export type CaseStudy = {
   slug: string;
@@ -455,6 +475,8 @@ export type CaseStudy = {
   /** one line, on the card */
   what: string;
   lead: string;
+  /** One phrase of the lead in the project's own colour. See `LeadAccent`. */
+  leadAccent?: LeadAccent;
   status: Status;
   group: Group;
   cover: Cover;

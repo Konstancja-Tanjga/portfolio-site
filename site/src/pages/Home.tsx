@@ -25,6 +25,7 @@ import { analyticsExploded } from "../home/exploded";
 export function Home() {
   const products = byGroup("product");
   const practice = byGroup("practice");
+  const identity = byGroup("identity");
   const award = findCase("erp-of-the-year");
 
   return (
@@ -108,6 +109,18 @@ export function Home() {
             <Tile key={c.slug} study={c} index={i} />
           ))}
         </div>
+
+        {identity.length > 0 && (
+          <>
+            <h2 className="hm-h2" style={{ marginTop: "var(--bh-space-8)" }}>Visual identity</h2>
+            <p className="hm-note">A mark, its brand book, and everything printed and posted with it.</p>
+            <div className="hm-tiles">
+              {identity.map((c, i) => (
+                <Tile key={c.slug} study={c} index={i} />
+              ))}
+            </div>
+          </>
+        )}
 
         <h2 className="hm-h2" style={{ marginTop: "var(--bh-space-8)" }}>Practice</h2>
         <p className="hm-note">

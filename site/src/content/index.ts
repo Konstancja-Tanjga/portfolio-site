@@ -9,6 +9,7 @@ import { elly } from "./elly";
 import { flow } from "./flow";
 import { fox } from "./fox";
 import { futures } from "./futures";
+import { ost } from "./ost";
 import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { riyad } from "./riyad";
@@ -22,7 +23,8 @@ import type { CaseStudy, Group, Process } from "./types";
  *
  * Within `product`, the order is deliberate: Analytics leads, then Elly,
  * Documents and the Best Practice Hub, then Volvo, MojePZU and Flow mode,
- * with the two short pages, Xecta and Riyad Bank, at the end. Big Hat
+ * with the two short pages, Xecta and Riyad Bank, at the end. `identity`
+ * holds Ogólnopolska Strefa Talentu. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
  * at six-product scale, but its exports belong to Asseco. Reading the
@@ -40,6 +42,8 @@ export const cases: CaseStudy[] = [
   flow,
   xecta,
   riyad,
+  // identity
+  ost,
   // practice
   sky,
   bighat,
@@ -59,6 +63,18 @@ export const cases: CaseStudy[] = [
  */
 export const published: CaseStudy[] = cases.filter((c) => c.status.state === "live");
 
+/* A lead accent whose text is missing from the lead would vanish without a
+   word (see LeadAccent in types.ts), so development refuses to start with one.
+   Guarded like bi.ts: vite.config.ts loads this file in Node, where
+   import.meta.env does not exist. */
+if ((import.meta as { env?: { DEV?: boolean } }).env?.DEV) {
+  for (const c of cases) {
+    if (c.leadAccent && !c.lead.includes(c.leadAccent.text)) {
+      throw new Error(`${c.slug}: leadAccent.text is not in lead`);
+    }
+  }
+}
+
 export const byGroup = (group: Group): CaseStudy[] =>
   published.filter((c) => c.group === group);
 
@@ -77,13 +93,20 @@ export const listingFor = (study?: CaseStudy): { to: string; label: string; all:
     : { to: "/", label: "Work", all: "All work" };
 
 /**
- * Previous and next, for the foot of a wall. Stays inside the band, so
- * a product case study never hands the reader a competition entry.
+ * Previous and next, for the foot of a wall. Stays inside the band when the
+ * band has two or more walls, so a product case study never hands the reader
+ * a competition entry. A band of one, such as `identity`, draws from the walls
+ * on the same listing instead (product and identity share Work), so the
+ * reader is never moved from Work to Practice.
  */
 export function neighbours(slug: string) {
   const current = findCase(slug);
   const list = current ? byGroup(current.group) : published;
-  const pool = list.length ? list : published;
+  // a band of one would hand the reader the page they are on
+  const pool =
+    list.length > 1
+      ? list
+      : published.filter((c) => c.group !== "recognition" && listingFor(c).to === listingFor(current).to);
   const i = pool.findIndex((c) => c.slug === slug);
   if (i === -1) return { previous: undefined, next: pool[0] };
   return {
