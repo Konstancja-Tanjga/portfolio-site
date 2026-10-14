@@ -1,4 +1,5 @@
 import type { CaseStudy } from "./types";
+import { documentsExploded } from "./exploded";
 
 /**
  * Chapter numbers are this page's own, 00–14, in the same skeleton as
@@ -407,6 +408,7 @@ export const dms: CaseStudy = {
       standfirst:
         "I own FOX, so on this product I was both a consumer of the system and its owner. That is why the update process is worth showing: the loop took days.",
       blocks: [
+        { kind: "exploded", screen: documentsExploded, title: "One screen, taken apart" },
         {
           kind: "shot",
           width: "wall",

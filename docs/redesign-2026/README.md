@@ -113,6 +113,19 @@ screen built back up.
 
 Off screen on scans: [off-screen-scans.png](off-screen-scans.png).
 
+### Documents and Best Practice Hub, taken apart
+
+The same 3D view as the home page, now a case-study block (`kind: "exploded"`),
+in each study's "Design system" chapter. Built from Konstancja's Figma frames
+(Documents node 634:19568, Hub node 632:31992), exported at 2x; every part
+sits at its layer's position from the Figma file, named after the layer or,
+for the Hub, after the components its study names. Data in
+`site/src/content/exploded.ts`.
+
+| | |
+| --- | --- |
+| ![Documents](exploded-documents.png) | ![Best Practice Hub](exploded-hub.png) |
+
 ## Screens
 
 | | |

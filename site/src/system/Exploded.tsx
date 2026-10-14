@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import type { CSSProperties } from "react";
 import { asset } from "./asset";
 import { reduced } from "./motion";
@@ -74,7 +74,21 @@ const place = ([x, y, w, h]: Rect): CSSProperties => ({ left: x, top: y, width: 
  * prefers-reduced-motion the section does not pin and shows the stack
  * apart, as a still.
  */
-export function Exploded({ screen: s, id }: { screen: ExplodedScreen; id?: string }) {
+export function Exploded({
+  screen: s,
+  id,
+  title = "One screen, taken apart",
+  level = 2,
+}: {
+  screen: ExplodedScreen;
+  id?: string;
+  /** The heading over the stage. */
+  title?: string;
+  /** 2 on the home page, where it is a section; 3 inside a case-study chapter. */
+  level?: 2 | 3;
+}) {
+  const headingId = useId();
+  const Heading = level === 3 ? "h3" : "h2";
   const track = useRef<HTMLDivElement | null>(null);
   const stage = useRef<HTMLDivElement | null>(null);
   const rig = useRef<HTMLDivElement | null>(null);
@@ -167,11 +181,11 @@ export function Exploded({ screen: s, id }: { screen: ExplodedScreen; id?: strin
   const steps = s.spacing;
 
   return (
-    <section className="xp" id={id} aria-labelledby="xp-heading">
+    <section className={level === 3 ? "xp xp--block" : "xp"} id={id} aria-labelledby={headingId}>
       <div className="xp__track" ref={track}>
         <div className="xp__pin">
           <div className="xp__head">
-            <h2 id="xp-heading" className="xp__title">One screen, taken apart</h2>
+            <Heading id={headingId} className="xp__title">{title}</Heading>
             <p className="xp__steps" aria-hidden="true">
               <span>Screen</span><span>Layout</span><span>Component</span><span>Token</span><span>Pixel 1 px</span>
             </p>

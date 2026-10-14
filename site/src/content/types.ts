@@ -1,4 +1,5 @@
 import type { MotifName } from "../system/Motif";
+import type { ExplodedScreen } from "../system/Exploded";
 /* ---------------------------------------------------------------
    The content model.
 
@@ -355,6 +356,13 @@ export type Block =
    * it plays, such as voice mode.
    */
   | { kind: "beside"; html: string; video: { src: string; poster?: string; title: string }; caption?: string }
+  /**
+   * One screen of the product taken apart in 3D on scroll: layout,
+   * components, tokens, one pixel (system/Exploded.tsx). Built from a
+   * Figma frame exported at 2x, with every part at its Figma coordinates.
+   * Full width and pinned while it plays, so at most one per chapter.
+   */
+  | { kind: "exploded"; screen: ExplodedScreen; title?: string }
   | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
