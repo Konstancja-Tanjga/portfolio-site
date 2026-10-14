@@ -31,6 +31,7 @@ export const bighat: CaseStudy = {
     // the tiles: one component set in two themes, drawn like the futures cone
     // (source in scripts/art/bighat-components.html); the case hero keeps the screens
     art: { src: "/work/bighat-design-system/cover-art.webp" },
+    motif: "tokens",
     layers: [
       { src: `${D}/kanban-2400.webp`, label: "Kanban template" },
       { src: `${D}/records-2400.webp`, label: "Records template" },

@@ -38,6 +38,7 @@ export const sky: CaseStudy = {
     org: "Personal project",
     art: { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp" },
     shot: { src: "/work/reading-the-sky/00-cover.jpg" },
+    motif: "kettle",
     layers: [
       { src: "/work/reading-the-sky/device/01-kettle-poster-2400.webp", label: "Home by day" },
       { src: "/work/reading-the-sky/device/08-species-2400.webp", label: "A species page" },

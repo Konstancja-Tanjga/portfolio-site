@@ -56,6 +56,7 @@ export const volvo: CaseStudy = {
     stamp: "LEGACY REDESIGN · SEARCH · REPORTS · E-MAIL",
     credit: "Senior UX/UI Designer · Volvo Group · 2022–2023",
     shot: { src: "/work/volvo-erp/00-cover.jpg" },
+    motif: "report",
     layers: [
       { src: "/work/volvo-erp/device/partner-after-2400.webp", label: "Partner search" },
       { src: "/work/volvo-erp/device/reports-after-2400.webp", label: "My reports" },

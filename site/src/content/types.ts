@@ -1,3 +1,4 @@
+import type { MotifName } from "../system/Motif";
 /* ---------------------------------------------------------------
    The content model.
 
@@ -425,6 +426,8 @@ export type Cover = {
    * sand over the top. Without it, the intro shows the typeset cover.
    */
   layers?: { src: string; label: string }[];
+  /** The sign drawn in sand over the layers, matched to the subject. Default: a chart. */
+  motif?: MotifName;
 };
 
 /**

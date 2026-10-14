@@ -4,6 +4,7 @@ import type { Block, CaseStudy, Cover as CoverData } from "../content/types";
 import { asset } from "./asset";
 import { useTilt } from "./motion";
 import { Lane } from "./Wall";
+import { Motif, type MotifName } from "./Motif";
 
 /**
  * The intro. The title first, set very large on the ground, with the
@@ -72,7 +73,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
       {cover.layers?.length ? (
         <Lane width="bleed">
           <div className="cover__art cover__art--layers" ref={art} aria-hidden="true" style={{ "--layers": cover.layers.length } as React.CSSProperties}>
-            <Layers layers={cover.layers} />
+            <Layers layers={cover.layers} motif={cover.motif} />
           </div>
         </Lane>
       ) : (
@@ -88,7 +89,7 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
 
 
 /** Several screens of a product stacked in depth, surfacing in turn. */
-export function Layers({ layers }: { layers: { src: string; label: string }[] }) {
+export function Layers({ layers, motif }: { layers: { src: string; label: string }[]; motif?: MotifName }) {
   const tilt = useTilt<HTMLDivElement>(3);
   return (
     <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
@@ -98,42 +99,10 @@ export function Layers({ layers }: { layers: { src: string; label: string }[] })
           <figcaption className="layers__label">{l.label}</figcaption>
         </figure>
       ))}
-      <Chart />
+      <Motif name={motif} />
     </div>
   );
 }
-
-/**
- * A chart drawn in sand over the layers: bars that rise, a line that draws
- * itself, a few data points that light up. Procedural, so the numbers
- * mean nothing and claim nothing.
- */
-function Chart() {
-  const bars = [34, 52, 41, 68, 58, 80, 72, 91];
-  const pts = bars.map((v, i) => [40 + i * 60, 180 - v * 1.5] as const);
-  const d = pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
-  return (
-    <svg className="layers__chart" viewBox="0 0 520 200" preserveAspectRatio="none">
-      <g className="chart__grid" stroke="rgba(241,237,228,0.18)" strokeWidth="1">
-        {[40, 80, 120, 160].map((y) => (
-          <line key={y} x1="20" x2="500" y1={y} y2={y} />
-        ))}
-      </g>
-      <g className="chart__bars" fill="rgba(227,210,173,0.55)">
-        {bars.map((v, i) => (
-          <rect key={i} x={24 + i * 60} y={180 - v * 1.5} width="32" height={v * 1.5} rx="3" style={{ animationDelay: `${600 + i * 90}ms` }} />
-        ))}
-      </g>
-      <path className="chart__line" d={d} fill="none" stroke="#e3d2ad" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" pathLength={1} />
-      <g className="chart__dots" fill="#0f0f0e" stroke="#e3d2ad" strokeWidth="2">
-        {pts.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="4.5" style={{ animationDelay: `${1500 + i * 110}ms` }} />
-        ))}
-      </g>
-    </svg>
-  );
-}
-
 
 /**
  * The cover as type, for the work grid and the case-page hero. The old thumbnails were Figma

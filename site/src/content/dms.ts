@@ -33,6 +33,7 @@ export const dms: CaseStudy = {
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
     art: { src: "/work/applus-documents/cover-art.webp" },
     shot: { src: "/work/applus-documents/00-cover.png" },
+    motif: "documents",
     layers: [
       { src: "/work/applus-documents/device/list-2400.webp", label: "Documents" },
       { src: "/work/applus-documents/device/detail-invoice-2400.webp", label: "A document" },
