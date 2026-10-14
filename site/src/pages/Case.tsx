@@ -44,7 +44,9 @@ export function Case() {
         <Cover cover={study.cover} art={firstDevice(study)} />
 
         <Lane width="column" className="wall__lead">
-          <p className="lead">{study.lead}</p>
+          <p className="lead">
+            <Lead text={study.lead} accent={study.leadAccent} />
+          </p>
         </Lane>
 
         <MetaStrip items={study.meta} />
@@ -90,5 +92,19 @@ export function Case() {
       <QuickNav stops={study.chapters.filter((c) => c.heading).map((c) => ({ id: c.id, label: c.heading as string }))} />
       {lightbox.open && <Lightbox shot={lightbox.open} onClose={lightbox.close} />}
     </ShotViewer.Provider>
+  );
+}
+
+
+/** The lead, with its one accented phrase when the study names one. */
+function Lead({ text, accent }: { text: string; accent?: { text: string; hex: string } }) {
+  const at = accent ? text.indexOf(accent.text) : -1;
+  if (!accent || at === -1) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, at)}
+      <span className="lead__accent" style={{ color: accent.hex }}>{accent.text}</span>
+      {text.slice(at + accent.text.length)}
+    </>
   );
 }

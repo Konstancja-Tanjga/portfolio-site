@@ -461,6 +461,14 @@ export type CaseStudy = {
   /** one line, on the card */
   what: string;
   lead: string;
+  /**
+   * One phrase of the lead set in the project's own accent colour, when the
+   * project's identity is the subject: the hex is a fact about that project,
+   * like a palette swatch, which is why it lives here and not in the
+   * stylesheet. `text` must occur in `lead` verbatim. The page is dark in
+   * every theme, so the colour must pass 4.5:1 on it.
+   */
+  leadAccent?: { text: string; hex: string };
   status: Status;
   group: Group;
   cover: Cover;

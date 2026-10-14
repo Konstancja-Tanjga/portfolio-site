@@ -32,6 +32,8 @@ export const ost: CaseStudy = {
   what: "A visual identity that reads as a formula: ∀∃, for every student there exists a talent",
   lead:
     "Ogólnopolska Strefa Talentu is a national programme of Stowarzyszenie Talent that brings prof. Ryszard Szubartowski's method into Polish schools. I wrote its idea as two symbols from logic, ∀∃: for every student there exists a talent. Then I drew the mark, wrote the brand book, designed every application from the letterhead to the roll-up, and built two generators that let the programme's ambassadors make their own posts.",
+  /* coral on the page ground #0F0F0E: 6.2:1, and the brand book allows coral text on dark grounds (C1) */
+  leadAccent: { text: "prof. Ryszard Szubartowski's method", hex: "#FF5A36" },
   status: { state: "live" },
   group: "identity",
   cover: {

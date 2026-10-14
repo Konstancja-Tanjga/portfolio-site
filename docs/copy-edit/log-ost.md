@@ -60,3 +60,4 @@ each claim and the drafts that were cut because no source carried them.
 | 126 medals not used | "Pupils of prof. Szubartowski won 126 medals at international olympiads" (chapter 03, website board) | Konstancja confirmed 126 |
 | www.ost.edu.pl, no author named | "built by the programme's own team" | Konstancja: the programme built the site |
 | website design only as a board in the carousel | also as a MacBook and phone mockup opening chapter 07 | Konstancja: show more of the website design |
+| lead in one colour | "prof. Ryszard Szubartowski's method" in coral #FF5A36 (`leadAccent`) | Konstancja; 6.2:1 on the page ground #0F0F0E, and brand book C1 allows coral text on dark grounds |
