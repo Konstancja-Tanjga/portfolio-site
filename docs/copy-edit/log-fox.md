@@ -69,3 +69,7 @@ The study now says what the inventory and the other studies already record: FOX 
 | what, lead, subline, stamp | Name the agent work on the surface the skimmer reads |
 
 Open for Konstancja: v3.0 Storybook screenshots to replace the v1 exports; counts from the drift audit, with their source; an AGENTS.md excerpt, if the company allows it to be published.
+
+## 14 October 2026, later
+
+Chapter 01a "Why this is a hard brief" (id `hard-brief`) removed at Konstancja's request. Its points were the v2.0 costs, which the evolution block in chapter 05 still states, and the agent constraint, which the Problem row in "In short" still states. The hash `#hard-brief` no longer opens a chapter.

@@ -127,22 +127,6 @@ export const fox: CaseStudy = {
       ],
     },
     {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>Six products, three frameworks.</strong> Angular, React, and web components all have to read one system.",
-            "<strong>Two artefacts claimed to be the component.</strong> With Figma as the source of truth, the file and the product disagreed within a sprint.",
-            "<strong>A change meant asking six teams.</strong> A designer changed the component, then asked six teams to match it.",
-            "<strong>Agents build UI too.</strong> Generated screens stay on the system only if the system is something a tool can read and is told to follow.",
-          ],
-        },
-      ],
-    },
-    {
       id: "source-of-truth",
       n: "02",
       heading: "Source of truth",
