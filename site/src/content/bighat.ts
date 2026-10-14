@@ -28,6 +28,10 @@ export const bighat: CaseStudy = {
     stamp: "TOKENS · FIGMA LIBRARY · COMPONENTS · CONTRAST GATE · CODE CONNECT · MIT",
     credit: "Sole author · Big Hat · 2025–2026",
     shot: { src: `${V}/cover.png` },
+    // the tiles: one component set in two themes, drawn like the futures cone
+    // (source in scripts/art/bighat-components.html); the case hero keeps the screens
+    art: { src: "/work/bighat-design-system/cover-art.webp" },
+    motif: "tokens",
     layers: [
       { src: `${D}/kanban-2400.webp`, label: "Kanban template" },
       { src: `${D}/records-2400.webp`, label: "Records template" },

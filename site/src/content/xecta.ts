@@ -37,6 +37,7 @@ export const xecta: CaseStudy = {
     credit: "Senior UX & UI designer · Xecta · 2020–2021 and 2022",
     art: { src: "/work/xecta/cover-art.webp" },
     shot: { src: `${W}/00-cover.png` },
+    motif: "network",
     layers: [
       { src: "/work/xecta/device/dashboard-2400.webp", label: "Dashboard" },
       { src: "/work/xecta/device/well-performance-2400.webp", label: "Well Performance" },

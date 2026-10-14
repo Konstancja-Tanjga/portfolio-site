@@ -2037,5 +2037,30 @@ img { max-width: 100%; height: auto; }
 .qnav__stop.is-current { background: var(--bh-mark); color: var(--bh-site-on-mark); font-weight: 600; }
 /* phones only: the desktop has the sticky jump bar and its own Top */
 @media (min-width: 56.01rem) { .qnav { display: none; } }
-@media (max-width: 56rem) { .to-top { display: none; } }
+@media (max-width: 56rem) { body:has(.qnav) .to-top { display: none; } }
 @media (prefers-reduced-motion: reduce) { .qnav, .qnav__sheet { animation: none; } }
+
+/* ---------- the app bar: the masthead, back when scrolling up ----------
+   Shell shows it once the reader is past the first screen and heading up;
+   a wall's jump bar moves down under it for as long as it is there. */
+:root { --appbar-h: 3.5rem; }
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+  height: var(--appbar-h);
+  background: color-mix(in srgb, var(--bh-surface) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bh-border);
+  transform: translateY(-100%);
+  visibility: hidden;
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s 240ms;
+}
+.appbar.is-shown { transform: none; visibility: visible; transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.appbar__inner { height: 100%; max-width: var(--bh-page); margin: 0 auto; padding: 0 var(--bh-gutter); display: flex; align-items: center; justify-content: space-between; gap: var(--bh-space-4); }
+.appbar .masthead__nav { flex-wrap: nowrap; align-items: center; white-space: nowrap; }
+.has-appbar .jump { top: var(--appbar-h); }
+@media (max-width: 40rem) {
+  .appbar .masthead__name { display: none; }
+  .appbar__inner { justify-content: flex-start; }
+  .appbar .masthead__nav { overflow-x: auto; scrollbar-width: none; }
+}
+@media (prefers-reduced-motion: reduce) { .appbar, .appbar.is-shown { transition: none; } }

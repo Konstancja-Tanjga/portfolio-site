@@ -1,11 +1,12 @@
 import { scrollToTop, useScroll } from "../system/useScroll";
 
 /**
- * Back to the top of the wall.
+ * Back to the top of the page, on every page (mounted once, in Shell).
  *
- * A project page runs to thirty screens, and the two ways out — the jump bar
- * and the link at the foot — are both a long way from wherever the reader
- * happens to be. This one is always within reach.
+ * A project page runs to thirty screens, and the home page to a dozen; the
+ * ways out are a long way from wherever the reader happens to be. This one
+ * is always within reach. On a phone it gives way to QuickNav where a page
+ * has one, which carries its own Top.
  *
  * `hidden` rather than opacity when it is not wanted: an invisible button that
  * is still in the tab order is worse than no button.

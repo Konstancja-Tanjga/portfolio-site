@@ -27,6 +27,7 @@ export const elly: CaseStudy = {
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2025",
     art: { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp" },
     shot: { src: "/work/elly-ai-assistant/01.png" },
+    motif: "chat",
     layers: [
       { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", label: "An answer with citations" },
       { src: "/work/elly-ai-assistant/device/resources-desktop-2400.webp", label: "Resources" },
