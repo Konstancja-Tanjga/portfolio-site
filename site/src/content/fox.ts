@@ -13,11 +13,12 @@ import type { CaseStudy } from "./types";
  * reflection are on record here, so none is written. Chapter numbers were
  * written for this page.
  *
- * The three images are flat exports of the live Storybook: colors.png on
- * the card, catalogue.png in the MacBook mockup under device/ (on the cover
- * and on the wall), and button-api.png flat on the wall, as a scrolling
- * Storybook page is. Paths are literal strings so that
- * scripts/check-content.mjs sees them.
+ * The images are the v3.0 Storybook and the Nexus registry, captured by
+ * Konstancja in October 2026 (screenshots/fox-v3/ in the repository root)
+ * and set into the MacBook mockup under device/, cropped from the right
+ * to the screen's proportions. v3.0 is internal, so no image links to it;
+ * the public link is the v1 line and says so. Paths are literal strings so
+ * that scripts/check-content.mjs sees them.
  */
 
 export const fox: CaseStudy = {
@@ -34,8 +35,8 @@ export const fox: CaseStudy = {
     subline: "for a six-product ERP platform, ready for agents",
     stamp: "TOKENS · COMPONENTS · STORYBOOK · CHROMATIC · CODE CONNECT · MCP · AGENTS.MD",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2023–2026",
-    art: { src: "/work/fox-design-system/device/catalogue-2400.webp" },
-    shot: { src: "/work/fox-design-system/colors.png" },
+    art: { src: "/work/fox-design-system/device/v3-get-started-2400.webp" },
+    shot: { src: "/work/fox-design-system/device/v3-colors-2400.webp" },
   },
   meta: [
     { label: "Role", value: "Lead Designer, UX Engineer; owner of the design system. I review and merge the component pull requests" },
@@ -105,7 +106,7 @@ export const fox: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>FOX is Asseco's, and it is public: <strong>the catalogue below is the live library</strong>, not a mockup of it. <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
+            "<p>FOX is Asseco's. <strong>The screens on this page are the v3.0 Storybook</strong>, which stays inside the company; the public Storybook documents the v1 line, at <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
         },
         {
           kind: "points",
@@ -120,9 +121,9 @@ export const fox: CaseStudy = {
         {
           kind: "shot",
           width: "wall",
-          src: "/work/fox-design-system/device/catalogue-2400.webp",
+          src: "/work/fox-design-system/device/v3-get-started-2400.webp",
           frame: "macbook",
-          caption: "Atoms, molecules, and organisms in one navigation, published on Chromatic: the end of the pipeline the case study describes.",
+          caption: "Get started in the v3.0 Storybook: install fox-common-styles with npm or yarn, import its styles, and add its assets to the Angular config. Products take FOX as packages; utilities, atoms, molecules, organisms, and templates sit in one navigation, published on Chromatic.",
         },
       ],
     },
@@ -167,6 +168,14 @@ export const fox: CaseStudy = {
             "<strong>A person merges every change.</strong> Generated code arrives as a pull request, and I review and merge every component change.",
             "<strong>The file follows the code.</strong> What is done in code is written back into Figma over MCP, so the file does not drift from it.",
           ],
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/device/v3-button-docs-2400.webp",
+          frame: "macbook",
+          caption:
+            "fox-button in the v3.0 Storybook. The description is written in fixed parts, Purpose, Use when, Avoid when, Common pairings, and Important limitations, above the live example and the props table, so a person and an agent read the same guidance.",
         },
         {
           kind: "loop",
@@ -233,8 +242,35 @@ hand-roll, and what the hand-rolled version does worse.`,
           kind: "points",
           items: [
             "<strong>Every component mapped.</strong> I mapped each FOX component between the Figma library and Storybook and resolved the naming mismatches.",
-            "<strong>Every remaining gap classified</strong> as code-only, design-only, or noise, so the list of work replaced opinions.",
+            "<strong>Every remaining gap classified</strong> as token, component, state, behaviour, or documentation drift, or as noise, so the list of work replaced opinions.",
             "<strong>One reference for review.</strong> Storybook on Chromatic is what design and engineering check a component against.",
+          ],
+        },
+        {
+          kind: "passage",
+          html: "<p>I audited the Figma library against Storybook twice, in March and July 2026. <strong>The July audit found 115 differences: 110 real gaps and 5 that are noise.</strong></p>",
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "18", label: "token drift" },
+            { value: "44", label: "component drift" },
+            { value: "29", label: "state drift" },
+            { value: "7", label: "behaviour drift" },
+            { value: "12", label: "documentation drift" },
+            { value: "5", label: "noise" },
+          ],
+        },
+        {
+          kind: "spec",
+          caption: "What each category means. Source: my FOX audit, July 2026.",
+          rows: [
+            { key: "token drift", value: "Values that no longer match the tokens" },
+            { key: "component drift", value: "Components built outside the library, or variants improvised in code" },
+            { key: "state drift", value: "Loading, empty, error, hover, focus, and disabled states that differ between design and code" },
+            { key: "behaviour drift", value: "The same component behaves differently on different screens" },
+            { key: "documentation drift", value: "The docs say one thing and the code does another" },
+            { key: "noise", value: "Differences that do not affect users, recorded and left alone" },
           ],
         },
       ],
@@ -254,6 +290,14 @@ hand-roll, and what the hand-rolled version does worse.`,
             { key: "consumers", value: "6 products, 3 frameworks" },
           ],
         },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/device/v3-colors-2400.webp",
+          frame: "macbook",
+          caption:
+            "Colours in the v3.0 Storybook: one token applied three ways, as a CSS variable, a text class, and a background class, then the scales it comes from: primary, primary opacity and highlight, brand, and secondary.",
+        },
       ],
     },
     {
@@ -261,37 +305,41 @@ hand-roll, and what the hand-rolled version does worse.`,
       n: "04",
       heading: "One component's API",
       standfirst:
-        "The button's public API in Storybook: the page a developer reads before using it.",
+        "A component's public contract in the v3.0 Storybook, and the code a developer copies from it.",
       blocks: [
         {
           kind: "shot",
           width: "wall",
-          src: "/work/fox-design-system/button-api.png",
-          caption: "fox-button as a consuming developer meets it: every prop with its default, and controls that change the rendered component rather than a picture of it.",
+          src: "/work/fox-design-system/device/v3-list-extended-api-2400.webp",
+          frame: "macbook",
+          caption:
+            "fox-list-extended, one of the templates in the v3.0 Storybook: its attributes with type, default, and a live control, the list-item-clicked event, and the listItemTemplate slot. The whole contract on one page.",
         },
         {
           kind: "code",
-          code: `<fox-dialog heading="Dialog Default Header" id="dialog">
-  <div>Dialog Default Content</div>
-  <fox-button
-    label="Cancel"
-    slot="secondaryAction"
-    dialogAction="cancel"
-  ></fox-button>
-  <fox-button
-    slot="primaryAction"
-    dialogAction="save"
-    primary
-    raised
-    label="save"
-  ></fox-button>
+          code: `<fox-button label="Trigger Dialog"></fox-button>
+
+<fox-dialog heading="HeaderText" id="dialog">
+  <div slot="leftAction">
+    <fox-icon icon="warning" large=""></fox-icon>
+  </div>
+  <div slot="rightAction">
+    <fox-icon-button icon="close" action="close"></fox-icon-button>
+  </div>
+  <div slot="subline">subline of the dialog</div>
+  <div class="content">
+    <p>This is the content of the dialog.</p>
+  </div>
+
+  <div slot="actions">
+    <fox-button action="close" label="Text button" class="mr-auto"></fox-button>
+    <fox-button action="close" filled="" label="Secondary"></fox-button>
+    <fox-button action="confirm" primary="" filled="" label="Primary"></fox-button>
+  </div>
 </fox-dialog>`,
           caption:
-            "fox-dialog, the Default story, copied verbatim: attributes for state, named slots for content, and actions the dialog resolves. The contract a developer and an agent both read.",
-          source: {
-            text: "Source: FOX Storybook (public v1 line), atoms / fox-dialog.",
-            href: "https://design-system-v1.assecosolutions.com/?path=/story/atoms-fox-dialog--default-story",
-          },
+            "fox-dialog in the v3.0 Storybook, the Default story, copied verbatim: a heading attribute, named slots for the side actions, the subline, and the actions, and buttons that close or confirm the dialog. The contract a developer and an agent both read.",
+          source: { text: "Source: FOX Storybook v3.0 (internal), organisms / fox-dialog, Default story." },
         },
       ],
     },
@@ -326,6 +374,14 @@ hand-roll, and what the hand-rolled version does worse.`,
               costs: "Breaking changes need a deprecation window and a migration path.",
             },
           ],
+        },
+        {
+          kind: "shot",
+          width: "wall",
+          src: "/work/fox-design-system/device/v3-nexus-versions-2400.webp",
+          frame: "macbook",
+          caption:
+            "fox-dialog in the internal npm registry on Nexus: one versioned package per release, from 1.13.8 through the 2.2 and 2.3 lines to 3.0.5, the v3.0 line. Identifying values in the side panel are blurred.",
         },
       ],
     },

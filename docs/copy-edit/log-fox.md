@@ -73,3 +73,21 @@ Open for Konstancja: v3.0 Storybook screenshots to replace the v1 exports; count
 ## 14 October 2026, later
 
 Chapter 01a "Why this is a hard brief" (id `hard-brief`) removed at Konstancja's request. Its points were the v2.0 costs, which the evolution block in chapter 05 still states, and the agent constraint, which the Problem row in "In short" still states. The hash `#hard-brief` no longer opens a chapter.
+
+## v3.0 screens and drift audit, 14 October 2026
+
+Six v3.0 screenshots supplied by Konstancja (`screenshots/fox-v3/`, the Nexus one with identifying values already blurred) replace the v1 exports, set into the MacBook mockup under `device/` at 1600, 2400, and full width, each cropped from the right to the screen's proportions. The drift figures are hers. No other fact, number, or date was added.
+
+| Change | Source |
+| --- | --- |
+| Chapter 01: the catalogue mockup replaced by `v3-get-started`; the passage says the screens are the v3.0 Storybook, internal, and the public link is the v1 line; caption rewritten to what the screen shows | `fox-v3-get-started.png` |
+| Cover `art` is `v3-get-started`; cover `shot` is `v3-colors` | The same screenshots |
+| Chapter 02a: `v3-button-docs` after the points, caption on the Purpose, Use when, Avoid when, Common pairings, and Important limitations structure. Not cropped to hide "Key events:": the label sits inside the description line, and cutting it would cut Important limitations | `fox-v3-button-docs.png` |
+| Chapter 02b: points name the six categories; a passage with the totals; a `stats` row with the six counts; a `spec` with the definitions and the source in its caption. "Behavior" spelt "behaviour" (British spelling). The "34 closed" line is not added, because it is not confirmed | Konstancja's FOX audit, July 2026 (the second of two, March and July). Year 2026 assumed from context; to be confirmed |
+| Chapter 03: `v3-colors` after the spec; called scales, not semantic tokens | `fox-v3-colors.png` |
+| Chapter 04: `button-api.png` replaced by `v3-list-extended-api`; the v1 fox-dialog code replaced by the v3.0 Default story, transcribed verbatim; source without a link; standfirst rewritten | `fox-v3-list-extended-api.png`, `fox-v3-dialog-code.png` |
+| Chapter 05: `v3-nexus-versions` after the evolution block | `fox-v3-nexus-versions.png` |
+| Removed: `colors.png`, `catalogue.png`, `button-api.png`, `device/catalogue-1600.webp`, `-2400.webp`, `-full.webp` | Replaced by the v3.0 images above |
+| v1 links labelled: the "Design system" meta in `bi.ts`, `dms.ts`, `bph.ts`, `flow.ts`, `elly.ts` now ends "the link opens the public v1 Storybook"; the `bi.ts` fox-dialog source says "(public v1 line)". No v3 URL anywhere | Konstancja: v3.0 is internal and must not be linked |
+
+Not done: AGENTS.md (step 5, skipped at Konstancja's request; the FOX agent rules stay internal).

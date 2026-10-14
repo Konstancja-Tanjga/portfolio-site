@@ -43,7 +43,7 @@ export const flow: CaseStudy = {
     { label: "Product", value: "APplus ERP, Flow mode, in the product since APplus 8 (October 2023)" },
     {
       label: "Design system",
-      value: "FOX, which I own; Flow mode's screens migrated to v2.5",
+      value: "FOX, which I own; Flow mode's screens migrated to v2.5. The link opens the public v1 Storybook",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Platforms", value: "Desktop, tablet, mobile" },
