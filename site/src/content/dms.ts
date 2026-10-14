@@ -330,7 +330,7 @@ export const dms: CaseStudy = {
             { title: "Clickable in hours", body: "It came back as something the PM, the requirements engineer, and the SMEs could walk through end to end." },
             { title: "Argued over in the room", body: "Those prototypes were the argument: weak options dropped on the spot, before anything was designed in detail." },
           ],
-          note: "The example below is dossier plans, which define how documents are grouped into dossiers at runtime.",
+          note: "The example below is dossier plans, which define how documents are grouped into dossiers at runtime, and then the runtime itself.",
         },
         {
           kind: "duo",
@@ -359,6 +359,43 @@ export const dms: CaseStudy = {
               caption: "Change summary: everything that will change, reviewed before it is applied as one consistent configuration.",
             },
           ],
+        },
+        {
+          kind: "passage",
+          html: "<p>The other side of a dossier plan is what a user meets at runtime. Three walks through the prototype, each starting from the four dossier types.</p>",
+        },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: "/work/applus-documents/clips/dossier-details.mp4",
+          poster: "/work/applus-documents/clips/dossier-details.webp",
+          title: "A dossier and what defines it",
+          caption:
+            "Dossier details, in the prototype: from the four dossier types into Company, then Company – CompanyID: 466 and its details panel. The identity property comes first, CompanyID, which also names the dossier. Below it the three non-grouping properties, where Project reference is searched from 30 values down to PRJ-2026-0027, then the 16 document types the dossier accepts and its sub-dossier types.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: "/work/applus-documents/clips/dossier-to-document.mp4",
+          poster: "/work/applus-documents/clips/dossier-to-document.webp",
+          title: "From a dossier down to a document, and back up",
+          caption:
+            "Down the hierarchy, in the prototype: Company 466, its Sales Files dossier for customer 111, a Customer Invoice File, and its four documents. Invoice CI-2026-008874 opens with its PDF preview and metadata, and its Dossiers tab lists the five dossiers that hold it: the company, the sales files, the invoice file, Finance DE-01, and Customer Accounts / Receivables. One document sits in several dossiers at once, and the list says which.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: "/work/applus-documents/clips/dossier-search-nested.mp4",
+          poster: "/work/applus-documents/clips/dossier-search-nested.webp",
+          title: "Search and filters across nested dossiers",
+          caption:
+            "Search and filters, in the prototype: inside Company 466 the scope switches from Direct to Nested, so a search for Northwind reaches the sub-dossiers. Four dossiers match, and each says which property matched. A metadata filter, BillingCountry equals DE, narrows them to one, and the filter stays on as a chip when its documents open.",
         },
       ],
     },
