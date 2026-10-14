@@ -64,8 +64,10 @@ export const cases: CaseStudy[] = [
 export const published: CaseStudy[] = cases.filter((c) => c.status.state === "live");
 
 /* A lead accent whose text is missing from the lead would vanish without a
-   word (see LeadAccent in types.ts), so development refuses to start with one. */
-if (import.meta.env.DEV) {
+   word (see LeadAccent in types.ts), so development refuses to start with one.
+   Guarded like bi.ts: vite.config.ts loads this file in Node, where
+   import.meta.env does not exist. */
+if ((import.meta as { env?: { DEV?: boolean } }).env?.DEV) {
   for (const c of cases) {
     if (c.leadAccent && !c.lead.includes(c.leadAccent.text)) {
       throw new Error(`${c.slug}: leadAccent.text is not in lead`);
