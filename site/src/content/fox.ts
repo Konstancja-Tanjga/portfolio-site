@@ -139,6 +139,7 @@ export const fox: CaseStudy = {
             "<strong>Shipped components live in code</strong>, as versioned packages.",
             "<strong>The Figma library mirrors them</strong> through variables and Code Connect.",
             "<strong>Storybook on Chromatic is the reference</strong> both design and engineering check against.",
+            "<strong>Nexus holds every release</strong>, one versioned package per component in the internal npm registry, and the products install FOX from there.",
           ],
         },
         {

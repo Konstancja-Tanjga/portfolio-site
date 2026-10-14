@@ -108,3 +108,9 @@ Open for Konstancja: the audit year (2026 assumed); whether the July audit compa
 | Codex reading over MCP | Codex first, then Claude Code; both statements hold | 02a point, the loop station, and the AI tooling meta give the order: Codex first, Claude Code now |
 
 Nothing is open.
+
+### 14 October 2026, Nexus point
+
+| Change | Source |
+| --- | --- |
+| Chapter 02 "Source of truth": a fourth point, "Nexus holds every release, one versioned package per component in the internal npm registry, and the products install FOX from there." | Konstancja's request. The Pipeline row and the Nexus stage of the chapter 02 flow; `fox-v3-nexus-versions.png` (npm-internal, one package per release); `fox-v3-get-started.png` (install with npm or yarn) |
