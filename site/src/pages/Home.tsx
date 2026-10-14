@@ -2,7 +2,7 @@ import type { MouseEvent, RefObject } from "react";
 import { flushSync } from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { useReveal } from "../system/Reveal";
-import { useTilt } from "../system/motion";
+import { reduced, useTilt } from "../system/motion";
 import { Counter } from "../system/Data";
 import { JourneyReadout, JourneyRuler, ScaleJourney } from "../system/ScaleJourney";
 import { Layers, TypeCover, firstDevice } from "../system/Cover";
@@ -17,7 +17,8 @@ import { analyticsExploded } from "../home/exploded";
 /**
  * The home page.
  *
- * Image first: the portrait under the claim, then the work as large tiles
+ * Image first: the product screens beside the claim, then one screen
+ * taken apart into its layers, then the work as large tiles
  * that carry the colour, then the numbers, then who she is and how she
  * works, then a way to write. Every section is readable by its heading.
  */
@@ -211,21 +212,27 @@ function Numbers() {
 function useCoverTransition(to: string, cover: RefObject<HTMLElement>) {
   const navigate = useNavigate();
   return (e: MouseEvent<HTMLAnchorElement>) => {
-    const doc = document as Document & { startViewTransition?: (cb: () => void) => { finished: Promise<void> } };
-    if (!doc.startViewTransition || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!("startViewTransition" in document) || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (reduced()) return;
     const el = cover.current;
     if (!el) return;
     e.preventDefault();
     el.style.setProperty("view-transition-name", "case-cover");
-    document.documentElement.classList.add("is-vt");
-    const t = doc.startViewTransition(() => flushSync(() => navigate(to)));
-    t.finished.finally(() => {
-      el.style.removeProperty("view-transition-name");
-      // the entrances were held for the transition; they must not replay now
+    // Relies on BrowserRouter applying the location update synchronously
+    // (no v7_startTransition), so flushSync puts the case page in place
+    // before the browser takes the new snapshot.
+    const update = () => {
+      flushSync(() => navigate(to));
+      // the transition carries the entrance; the page's own must not play as well
       document.querySelectorAll<HTMLElement>(".route, .cover__art").forEach((n) => { n.style.animation = "none"; });
-      document.documentElement.classList.remove("is-vt");
-    });
+    };
+    try {
+      document.startViewTransition(update).finished.finally(() => el.style.removeProperty("view-transition-name"));
+    } catch (err) {
+      el.style.removeProperty("view-transition-name");
+      console.error(err);
+      navigate(to);
+    }
   };
 }
 

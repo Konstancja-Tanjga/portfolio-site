@@ -578,9 +578,10 @@
 .hm-hero__claim { font-size: clamp(2.6rem, 5.6vw, 5rem); max-width: 10em; }
 .hm-hero__lead { max-width: 30rem; }
 .hm-hero__status { font-size: 10px; }
-.hm > .hm-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
-.hm > .hm-hero > .hm-hero__stage { align-self: center; margin-top: var(--bh-space-6); }
-.hm-hero__claim { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+.hm > .hm-hero { grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.5fr); gap: var(--bh-space-4); align-items: start; }
+/* the screens take the larger column and run past the gutter, to the edge the page clips */
+.hm > .hm-hero > .hm-hero__stage { align-self: center; width: calc(100% + var(--bh-gutter) + 3vw); margin-left: -2vw; }
+.hm-hero__claim { font-size: clamp(2rem, 3.7vw, 3.5rem); }
 /* one column on a phone: the words first, the screens under them, full width.
    Kept after the two-column rules so it wins. */
 @media (max-width: 56rem) {
@@ -627,13 +628,8 @@
 .hm-tiles--practice .tcover__sub { display: none; }
 @media (prefers-reduced-motion: reduce) { .hm-tile__cover .tcover__device, .hm-tile:hover .tcover .tcover__device { transition: none; transform: rotate(-4deg); } }
 
-/* ---------- the hero, image first: the screens take the larger column ---------- */
-@media (min-width: 56.01rem) {
-  .hm > .hm-hero { grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.5fr); gap: var(--bh-space-4); }
-  .hm > .hm-hero > .hm-hero__stage { width: calc(100% + var(--bh-gutter) + 5vw); margin: 0 calc(-1 * (var(--bh-gutter) + 5vw)) 0 -2vw; align-self: center; }
-  .hm-hero__claim { font-size: clamp(2rem, 3.7vw, 3.5rem); }
-  .hm-hero__lead { font-size: 1.05rem; }
-}
+/* the hero's lead, a step smaller beside the larger screens */
+@media (min-width: 56.01rem) { .hm-hero__lead { font-size: 1.05rem; } }
 
 /* ---------- one screen, taken apart (system/Exploded.tsx) ---------- */
 .xp__track { height: 280vh; }
