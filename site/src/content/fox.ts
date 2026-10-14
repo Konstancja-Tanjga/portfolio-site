@@ -3,8 +3,8 @@ import type { CaseStudy } from "./types";
 /**
  * October 2026, second pass: the study now says that FOX is built for
  * agents as well as people (chapter 02a), and how the design-code gap was
- * found (02b). Every claim in them is already on record in bi.ts, dms.ts,
- * or the inventory; no number was added. The FOX agent rules are internal,
+ * found (02b). The agent claims are on record in bi.ts, dms.ts, or the
+ * inventory; the 02b counts are Konstancja's July audit. The FOX agent rules are internal,
  * so the method is shown verbatim on the public Big Hat skill instead.
  *
  * A practice study, not a product one: the stack from
@@ -44,7 +44,7 @@ export const fox: CaseStudy = {
     { label: "Scale", value: "Around 80 components, 6 consuming products" },
     { label: "Frameworks", value: "Angular, React, web components" },
     { label: "Pipeline", value: "Figma to Storybook to Chromatic to Nexus" },
-    { label: "AI tooling", value: "Code Connect, Figma MCP server, Claude Code, Codex, AGENTS.md and skills" },
+    { label: "AI tooling", value: "Code Connect, Figma MCP server, Claude Code, Codex, AGENTS.md, and skills" },
     { label: "Period", value: "November 2023 to present" },
     { label: "Storybook", value: "Public v1 line, design-system-v1.assecosolutions.com. The v3.0 Storybook is internal", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
   ],
@@ -65,16 +65,16 @@ export const fox: CaseStudy = {
             {
               key: "Problem",
               value:
-                "The Figma library and the product disagreed, and nobody knew which was right. Agents now build UI too, and they read the same sources.",
+                "The Figma library and the product disagreed, nobody knew which was right, and agents now build UI from the same sources.",
             },
             {
               key: "My role and scope",
               value:
-                "I built FOX from nothing, own its tokens, component API, and agent rules, and review and merge every component pull request.",
+                "I built FOX from nothing; own its tokens, component API, and agent rules; and review and merge every component pull request.",
             },
             {
               key: "Decision 1",
-              value: "One token set behind the Figma library and the code. One build emits CSS custom properties and TS types for every framework.",
+              value: "One token set behind the Figma library and the code, built once into CSS custom properties and TS types for every framework.",
             },
             {
               key: "Decision 2",
@@ -82,12 +82,12 @@ export const fox: CaseStudy = {
             },
             {
               key: "Decision 3",
-              value: "Built for agents: Code Connect and the Figma MCP server give AI tools the real components; AGENTS.md sets the rules; I merge every change.",
+              value: "Code Connect and the Figma MCP server give AI tools the real components, AGENTS.md sets the rules, and I merge every component change.",
             },
             {
               key: "Outcome",
               value:
-                "Around 80 components and six products on one system, migrated to v3. Handoff specs are generated from the design and pulled into Jira.",
+                "Around 80 components and six products on one system, migrated to v3, with handoff specs generated from the design and pulled into Jira.",
             },
             {
               key: "Period and team",
@@ -106,7 +106,7 @@ export const fox: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>FOX is Asseco's. <strong>The screens on this page are the v3.0 Storybook</strong>, which stays inside the company; the public Storybook documents the v1 line, at <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
+            "<p>FOX is Asseco's. <strong>The Storybook screens on this page are v3.0</strong>, which stays inside the company; the public Storybook documents the v1 line, at <a href=\"https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs\">design-system-v1.assecosolutions.com</a>.</p>",
         },
         {
           kind: "points",
@@ -115,7 +115,7 @@ export const fox: CaseStudy = {
             "<strong>Every component mapped</strong> between Figma and code through Code Connect.",
             "<strong>Storybook on Chromatic</strong> as the reference designers and engineers both check against.",
             "<strong>Handoff specs generated</strong> from the design and pulled into Jira, instead of written by hand.",
-            "<strong>Built for agents</strong>: Code Connect, the Figma MCP server, and written rules give AI tools the contract engineers get.",
+            "<strong>The same contract for AI tools</strong> through Code Connect, the Figma MCP server, and written rules.",
           ],
         },
         {
@@ -123,7 +123,7 @@ export const fox: CaseStudy = {
           width: "wall",
           src: "/work/fox-design-system/device/v3-get-started-2400.webp",
           frame: "macbook",
-          caption: "Get started in the v3.0 Storybook: install fox-common-styles with npm or yarn, import its styles, and add its assets to the Angular config. Products take FOX as packages; utilities, atoms, molecules, organisms, and templates sit in one navigation, published on Chromatic.",
+          caption: "Get started in the v3.0 Storybook. A product installs fox-common-styles with npm or yarn, imports its styles, and adds its assets to the Angular config, so FOX arrives as packages. Utilities, atoms, molecules, organisms, and templates sit in one navigation, published on Chromatic.",
         },
       ],
     },
@@ -164,9 +164,9 @@ export const fox: CaseStudy = {
           items: [
             "<strong>Agents get the contract engineers get.</strong> Code Connect binds every Figma component to its implementation, and the Figma MCP server hands that context to Claude Code and Codex.",
             "<strong>The rules are written down, not assumed.</strong> An AGENTS.md and a set of skills, which I own, keep generated UI on the system.",
-            "<strong>Documentation in four layers.</strong> Tokens, components, patterns, and templates; the pattern catalogue is Markdown that a person and an agent read alike.",
-            "<strong>A person merges every change.</strong> Generated code arrives as a pull request, and I review and merge every component change.",
-            "<strong>The file follows the code.</strong> What is done in code is written back into Figma over MCP, so the file does not drift from it.",
+            "<strong>Documentation in four layers.</strong> The layers are tokens, components, patterns, and templates, and the pattern catalogue is Markdown that a person and an agent read alike.",
+            "<strong>A person merges every component change.</strong> Generated code arrives as a pull request, and I review and merge it.",
+            "<strong>The file follows the code.</strong> What is done in code is written back into Figma over MCP, so the file follows the code.",
           ],
         },
         {
@@ -175,7 +175,7 @@ export const fox: CaseStudy = {
           src: "/work/fox-design-system/device/v3-button-docs-2400.webp",
           frame: "macbook",
           caption:
-            "fox-button in the v3.0 Storybook. The description is written in fixed parts, Purpose, Use when, Avoid when, Common pairings, and Important limitations, above the live example and the props table, so a person and an agent read the same guidance.",
+            "fox-button in the v3.0 Storybook. The description is written in labelled parts (Purpose, Use when, Avoid when, Common pairings, and Important limitations) above the live example and the props table, so a person and an agent read the same guidance.",
         },
         {
           kind: "loop",
@@ -183,7 +183,7 @@ export const fox: CaseStudy = {
           stations: [
             { label: "Figma", title: "The file", body: "Every component bound to the implementation that ships it, through Code Connect." },
             { label: "Code", title: "The FOX package", body: "What engineers and agents both build on, one versioned package per component." },
-            { label: "Agent", title: "Claude Code and Codex", body: "Read the component context over MCP and follow AGENTS.md and the skills. Every change is a pull request I review." },
+            { label: "Agent", title: "Claude Code and Codex", body: "The agents, reading the component context over MCP under AGENTS.md and the skills. Every component change is a pull request I review." },
           ],
           edges: [
             { label: "Code Connect" },
@@ -224,7 +224,7 @@ missing a role — not a licence to reach one layer down. **Say so and stop.**
 Write it in \`DS-GAPS.md\` with what you reached for, what you would have to
 hand-roll, and what the hand-rolled version does worse.`,
           caption:
-            "Rule 1 of the agent skill, copied verbatim: generated code uses semantic tokens only, and a missing role is reported in DS-GAPS.md, not hand-rolled.",
+            "Rule 1 of the agent skill, copied verbatim. Generated code uses semantic tokens only, and a missing role is reported in DS-GAPS.md, not hand-rolled.",
           source: {
             text: "Source: Big Hat design system, agent/SKILL.md.",
             href: "https://github.com/Konstancja-Tanjga/bighat-design-system/blob/main/agent/SKILL.md",
@@ -248,7 +248,7 @@ hand-roll, and what the hand-rolled version does worse.`,
         },
         {
           kind: "passage",
-          html: "<p>I audited the Figma library against Storybook twice, in March and July 2026. <strong>The July audit found 115 differences: 110 real gaps and 5 that are noise.</strong></p>",
+          html: "<p>I audited the Figma library against Storybook twice, in March and July 2026. <strong>The July audit found 115 differences: 110 real gaps and 5 that were noise.</strong></p>",
         },
         {
           kind: "stats",
@@ -268,8 +268,8 @@ hand-roll, and what the hand-rolled version does worse.`,
             { key: "token drift", value: "Values that no longer match the tokens" },
             { key: "component drift", value: "Components built outside the library, or variants improvised in code" },
             { key: "state drift", value: "Loading, empty, error, hover, focus, and disabled states that differ between design and code" },
-            { key: "behaviour drift", value: "The same component behaves differently on different screens" },
-            { key: "documentation drift", value: "The docs say one thing and the code does another" },
+            { key: "behaviour drift", value: "One component that behaves differently on different screens" },
+            { key: "documentation drift", value: "Docs that say one thing while the code does another" },
             { key: "noise", value: "Differences that do not affect users, recorded and left alone" },
           ],
         },
@@ -296,7 +296,7 @@ hand-roll, and what the hand-rolled version does worse.`,
           src: "/work/fox-design-system/device/v3-colors-2400.webp",
           frame: "macbook",
           caption:
-            "Colours in the v3.0 Storybook: one token applied three ways, as a CSS variable, a text class, and a background class, then the scales it comes from: primary, primary opacity and highlight, brand, and secondary.",
+            "Colours in the v3.0 Storybook. One token is applied three ways, as a CSS variable, a text class, or a background class, and the colour scales follow: primary, primary opacity and highlight, brand, and secondary.",
         },
       ],
     },
@@ -305,7 +305,7 @@ hand-roll, and what the hand-rolled version does worse.`,
       n: "04",
       heading: "One component's API",
       standfirst:
-        "A component's public contract in the v3.0 Storybook, and the code a developer copies from it.",
+        "The v3.0 Storybook gives each component an API table and code to copy. fox-list-extended shows the first, fox-dialog the second.",
       blocks: [
         {
           kind: "shot",
@@ -313,7 +313,7 @@ hand-roll, and what the hand-rolled version does worse.`,
           src: "/work/fox-design-system/device/v3-list-extended-api-2400.webp",
           frame: "macbook",
           caption:
-            "fox-list-extended, one of the templates in the v3.0 Storybook: its attributes with type, default, and a live control, the list-item-clicked event, and the listItemTemplate slot. The whole contract on one page.",
+            "fox-list-extended, one of the templates in the v3.0 Storybook. One page holds the whole contract: the attributes, each with its type and a live control; the list-item-clicked event; and the listItemTemplate slot.",
         },
         {
           kind: "code",
@@ -338,7 +338,7 @@ hand-roll, and what the hand-rolled version does worse.`,
   </div>
 </fox-dialog>`,
           caption:
-            "fox-dialog in the v3.0 Storybook, the Default story, copied verbatim: a heading attribute, named slots for the side actions, the subline, and the actions, and buttons that close or confirm the dialog. The contract a developer and an agent both read.",
+            "fox-dialog in the v3.0 Storybook, the Default story, copied verbatim. It shows a heading attribute; named slots for the side actions, the subline, and the actions; and buttons that close or confirm the dialog. A developer and an agent read the same contract.",
           source: { text: "Source: FOX Storybook v3.0 (internal), organisms / fox-dialog, Default story." },
         },
       ],
@@ -381,7 +381,7 @@ hand-roll, and what the hand-rolled version does worse.`,
           src: "/work/fox-design-system/device/v3-nexus-versions-2400.webp",
           frame: "macbook",
           caption:
-            "fox-dialog in the internal npm registry on Nexus: one versioned package per release, from 1.13.8 through the 2.2 and 2.3 lines to 3.0.5, the v3.0 line. Identifying values in the side panel are blurred.",
+            "fox-dialog in the internal npm registry on Nexus. Each release is its own versioned package, from 1.13.8 through the 2.2 and 2.3 lines to 3.0.5, the v3.0 line. The side panel belongs to another package, with identifying values blurred.",
         },
       ],
     },

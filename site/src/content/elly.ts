@@ -39,7 +39,7 @@ export const elly: CaseStudy = {
     { label: "Role", value: "Lead Designer, UX Engineer; the only designer on this product" },
     { label: "Company", value: "Asseco Solutions" },
     { label: "Product", value: "APplus ERP, Elly" },
-    { label: "Design system", value: "FOX v2.2; the link opens the public v1 Storybook", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
+    { label: "Design system", value: "FOX v2.2. The link opens the public v1 Storybook", href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs" },
     { label: "Team", value: "A PM, a requirements engineer, developers, QA, and me as the only designer" },
     { label: "Period", value: "2024 to April 2025" },
     { label: "Released", value: "April 2025, with APplus 9" },

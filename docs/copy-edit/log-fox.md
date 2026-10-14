@@ -91,3 +91,9 @@ Six v3.0 screenshots supplied by Konstancja (`screenshots/fox-v3/`, the Nexus on
 | v1 links labelled: the "Design system" meta in `bi.ts`, `dms.ts`, `bph.ts`, `flow.ts`, `elly.ts` now ends "the link opens the public v1 Storybook"; the `bi.ts` fox-dialog source says "(public v1 line)". No v3 URL anywhere | Konstancja: v3.0 is internal and must not be linked |
 
 Not done: AGENTS.md (step 5, skipped at Konstancja's request; the FOX agent rules stay internal).
+
+### Review pass, 14 October 2026
+
+A fact and style review of the branch. Fixed without new facts: "In short" rows Problem, Decision 1, Decision 3, and Outcome are one sentence each and under 25 words; "every change" narrowed to "every component change" in Decision 3, chapter 02a, and the loop, as the source says; "so the file does not drift from it" became "so the file follows the code", because 02b reports drift; chapter 01 says the Storybook screens are v3.0, not every screen; colons after labels in six captions became sentences; serial comma in the AI tooling row; nested series take semicolons; the 02b spec rows are parallel noun phrases; "5 that are noise" became "were"; the chapter 04 standfirst names both components; the Nexus caption says the side panel belongs to another package; the v1 Storybook labels end in a sentence of their own. The AI-ready pass row above that says "No count is stated" for 02b is superseded by the drift audit section.
+
+Open for Konstancja: the audit year (2026 assumed); whether the July audit compared the Figma library with Storybook or the products with the library, since component and behaviour drift describe the products; the "four layers" bullet and Codex reading over MCP in 02a, which come from the first patch and are not on record in the repository.
