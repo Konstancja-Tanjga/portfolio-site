@@ -3,8 +3,9 @@
 Two kinds of export live in public/work/*/device and public/work/frames:
 
 - Composed by the MacBook pipeline (aspect ~1.599): under the aluminium
-  base sits a flat light-grey slab, and a 4-5 px silver sliver runs down
-  the left side of the lid only (the right side has none).
+  base sits a flat light-grey slab, sometimes wider than the base so its
+  square corners show beside the curved lip, and a 4-5 px silver sliver
+  runs down the left side of the lid only (the right side has none).
 - Exported from Figma (aspect ~1.587): a blurred grey shadow under the
   base, sometimes touching it, sometimes separated by empty rows.
 
@@ -63,22 +64,38 @@ def clean(path, dry=False):
     #    the lid's own blue-grey edge, above the base.
     rgb = a[..., :3].astype(np.int16)
     sat = rgb.max(axis=2) - rgb.min(axis=2)
+    light = (L > 160) & (sat < 24)
     limit = int(W * 0.12)
     for y in range(0, base_top):
         xs = np.nonzero(alpha[y, :limit])[0]
         if xs.size == 0:
             continue
-        for x in range(xs[0], limit):
-            if alpha[y, x] <= 10:
-                if alpha[y, x]:
-                    alpha[y, x] = 0
-                    changed += 1
-                continue
-            if L[y, x] > 160 and sat[y, x] < 24:
-                alpha[y, x] = 0
-                changed += 1
-                continue
-            break
+        clear = (alpha[y, xs[0]:limit] <= 10) | light[y, xs[0]:limit]
+        stop = int(np.argmin(clear)) if not clear.all() else clear.size
+        n = int((alpha[y, xs[0]:xs[0] + stop] > 0).sum())
+        if n:
+            alpha[y, xs[0]:xs[0] + stop] = 0
+            changed += n
+
+    # 4. The slab's corners: where it is wider than the base, its square
+    #    ends show beside the curved front lip. Below the aluminium deck
+    #    (from the first dark row in the middle), light pixels from either
+    #    edge inward are not the laptop.
+    lip = next((y for y in range(base_top, H) if alpha[y, W // 2] > 200 and L[y, W // 2] < 130), None)
+    if lip is not None:
+        corner = (L > 150) & (sat < 30)
+        for y in range(lip, H):
+            row = alpha[y] > 10
+            if not row.any():
+                break
+            for xs in (np.arange(W), np.arange(W - 1, -1, -1)):
+                c = corner[y, xs] | ~row[xs]
+                stop = int(np.argmin(c)) if not c.all() else W
+                hit = xs[:stop]
+                n = int((alpha[y, hit] > 0).sum())
+                if n:
+                    alpha[y, hit] = 0
+                    changed += n
 
     if changed and not dry:
         a[..., 3] = alpha
