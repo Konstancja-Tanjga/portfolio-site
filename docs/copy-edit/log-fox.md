@@ -52,3 +52,20 @@ Not done, and why:
 - No `hotspots`, no `folded` shot: no audit, benchmark, or research screen and no diagram is on record.
 - No `joint`, `loop`, `dossier`: the file holds no reflection, no use case, and no handoff cycle; the pipeline is already a `flow` in chapter 02.
 - The button API page stays a flat shot, as a scrolling Storybook page is.
+
+## AI-ready pass, 14 October 2026
+
+The study now says what the inventory and the other studies already record: FOX is built for agents as well as people. No number, date, or result was added.
+
+| Change | Source |
+| --- | --- |
+| New chapter 02a "Built for agents": points, a `loop`, the new-query clip, and rule 1 of the Big Hat agent skill as a `code` block | AGENTS.md, skills, Code Connect, MCP write-back, and review of every component change: `bi.ts` chapters 05, 06 and 09, `dms.ts` handoff loop. Four documentation layers and the Markdown pattern catalogue: inventory, September 2026. The clip is already published in `bi.ts`. The code block is copied verbatim from the public Big Hat repository |
+| New chapter 02b "Finding the drift" | The Figma to Storybook mapping, naming fixes, and the code-only, design-only, and noise classes: inventory, October 2026. No count is stated, because none is on record |
+| "In short": Problem, role, and Decision 1 to 3 rewritten to 25 words or fewer; Decision 3 is now "Built for agents"; the former Decision 3 merged into Decision 2 | RULES 2: each row at most 25 words |
+| Chapter 01: a fifth point; standfirst says five things | Same sources as 02a |
+| Chapter 01a: a fourth constraint, "Agents build UI too" | Stated as a constraint of the brief, not as an incident |
+| Chapter 04: the fox-dialog `code` block | Copied from `bi.ts`, with its source |
+| Meta: an "AI tooling" row; the Storybook row says the public link is the v1 line and v3.0 is internal | `bi.ts` code caption |
+| what, lead, subline, stamp | Name the agent work on the surface the skimmer reads |
+
+Open for Konstancja: v3.0 Storybook screenshots to replace the v1 exports; counts from the drift audit, with their source; an AGENTS.md excerpt, if the company allows it to be published.
