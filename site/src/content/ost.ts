@@ -162,25 +162,6 @@ export const ost: CaseStudy = {
       ],
     },
 
-    /* --------------------------------------------------------------- 01a */
-    {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>One mark, three audiences.</strong> Teachers want substance and professional respect, pupils of 12 to 19 want a challenge, and parents and partners want credibility.",
-            "<strong>The programme must not look like informatics.</strong> Prof. Szubartowski taught informatics, and the recruitment target says at least 60% of teachers must lead a different subject.",
-            "<strong>Half of the teachers must come from small places.</strong> The second target is at least 50% from towns and villages under 25 000 inhabitants, where a city look does not travel.",
-            "<strong>Two logic symbols that most people have never seen.</strong> ∀∃ had to read as a mark before anyone could read it as a sentence, and never as the letters VE or AE.",
-            "<strong>From 8 mm to 2 m.</strong> A pin, a favicon of 16 px, a stamp, an engraving, and a roll-up seen from the far side of a conference hall.",
-          ],
-        },
-      ],
-    },
-
     /* ---------------------------------------------------------------- 02 */
     {
       id: "who-for",

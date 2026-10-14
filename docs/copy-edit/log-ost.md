@@ -71,3 +71,4 @@ each claim and the drafts that were cut because no source carried them.
 | chapter 01 carousel: 7 boards | 17: brand book pages 01, 03, 04, 05, 07, 09, 10, 16, 19, 24, 26, 28, 29, 30, 31, the key visual, the social series | Konstancja: show the process and the artefacts |
 | no duration | "Five days of work" in chapter 01, the period row of "In short", and the metadata | Konstancja: the work took five days |
 | UC-01 "Ambassadors" | "Ambassadors and supporters", with the challenge (no Photoshop, simple and accessible) and "designed, built, and deployed by me on Vercel" as its own panel | Konstancja: the generator is a use case worth stating |
+| chapter 01a "Why this is a hard brief" | removed | Konstancja; its facts stay elsewhere: the two recruitment targets in UC-02, the founder as an informatics teacher in chapter 03, 15 mm to 2 m in "In short" |
