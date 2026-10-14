@@ -80,6 +80,39 @@ prefers-reduced-motion each stop is a still.
 | --- | --- |
 | ![Carousel](case-carousel.png) | ![Joint](case-joint.png) |
 
+## 14 October: depth
+
+A walk-through of the live site, then a page of ideas with live sketches:
+[depth-ideas/index.html](depth-ideas/index.html) (also published as a
+claude.ai artifact). Konstancja chose:
+
+- **The screen comes apart.** Between the hero and the work the page pins
+  the APplus Analytics dashboard and, as the reader scrolls, tilts it into
+  an axonometric view and lifts it into the scales the journey names:
+  layout, FOX components, tokens, one pixel, with a plumb line from the
+  pixel down to the screen. CSS 3D only (`system/Exploded.tsx`, data in
+  `home/exploded.ts`), so the screen stays as sharp as the image. The
+  components are crops of one export until her Figma layers arrive (DMS,
+  BI, Elly, Best Practice Hub); a part with its own `src` replaces its crop.
+- **The journey stays and grows.** Its overlays are part of the look; the
+  exploded screen sits inside the screen-to-component stretch of it.
+- **A larger hero image**, the screens carousel kept.
+- **The cover carried into the case.** View transitions: the tile's cover,
+  with its app image, grows into the case hero while the home falls back.
+  Every cover keeps a representative screen, for recruiters.
+- **Off screen on flat scans** (Chenonceau, Chambord, Le Cèdre Noir)
+  instead of room mockups.
+
+Not taken: the pixel blooming into a watercolour. Undecided: the contact
+screen built back up.
+
+| | |
+| --- | --- |
+| ![The hero, image larger](hero-larger.png) | ![The screen, flat](exploded-flat.png) |
+| ![The screen, apart](exploded-apart.png) | ![Cover into case, mid-transition](cover-to-case.png) |
+
+Off screen on scans: [off-screen-scans.png](off-screen-scans.png).
+
 ## Screens
 
 | | |

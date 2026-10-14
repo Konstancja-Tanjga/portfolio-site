@@ -1,0 +1,882 @@
+<title>Screen to Pigment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* One visual world, taken from the portfolio's brand.css: dark ground,
+   warm ink, one sand accent. Single theme by choice. */
+:root {
+  color-scheme: dark;
+  --ground: #0f0f0e;
+  --ground-2: #171715;
+  --ink: #f1ede4;
+  --ink-2: #c9c3b6;
+  --ink-3: #8f8a7f;
+  --line: #2a2a27;
+  --sand: #e3d2ad;
+  --on-sand: #0f0f0e;
+  --paper: #f6f1e7;
+  --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 40px; --s6: 64px; --s7: 112px;
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body {
+  background: var(--ground);
+  color: var(--ink-2);
+  font: 400 16px/1.65 var(--body);
+  padding-inline: max(16px, 4vw);
+  padding-block: 0 var(--s7);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--ink); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
+.wrap { max-width: 72rem; margin-inline: auto; }
+.prose { max-width: 40rem; }
+h1, h2, h3 { font-family: var(--display); color: var(--ink); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 800; line-height: .92; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 3.2rem); font-weight: 700; line-height: 1.02; letter-spacing: -.02em; }
+h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.15; letter-spacing: -.01em; }
+p { margin: 0; }
+.kicker, .unit, .label {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+}
+.kicker b { color: var(--sand); font-weight: 500; }
+
+/* ---------- intro ---------- */
+.intro { padding-block: var(--s6) var(--s6); display: grid; gap: var(--s4); border-bottom: 1px solid var(--line); }
+.intro h1 span { color: var(--sand); }
+.intro .lead { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--ink-2); max-width: 38rem; }
+.intro .lead strong { color: var(--ink); font-weight: 500; }
+.toc { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); margin-top: var(--s2); }
+.toc a { font-family: var(--mono); font-size: 13px; color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.toc a:hover { color: var(--ink); border-color: var(--sand); }
+
+section.block { padding-block: var(--s7) 0; display: grid; gap: var(--s4); }
+.head { display: grid; gap: var(--s3); }
+
+/* ---------- the spine ---------- */
+.spine { list-style: none; margin: var(--s3) 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.spine li { padding: var(--s3) var(--s3) var(--s3) 0; display: grid; gap: var(--s2); align-content: start; border-right: 1px solid var(--line); padding-left: var(--s3); }
+.spine li:first-child { padding-left: 0; }
+.spine li:last-child { border-right: 0; }
+.spine .glyph { height: 64px; display: flex; align-items: flex-end; }
+.spine .glyph i { display: block; border: 1px solid var(--sand); }
+.spine .px { font-family: var(--display); font-weight: 700; font-size: 1.5rem; color: var(--ink); line-height: 1; }
+.spine .name { color: var(--ink); font-weight: 500; }
+.spine .where { font-size: 13px; color: var(--ink-3); }
+.spine li.new .px, .spine li.new .name { color: var(--sand); }
+@media (max-width: 860px) {
+  .spine { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .spine li:nth-child(3) { border-right: 0; }
+  .spine li:nth-child(4) { padding-left: 0; }
+  .spine li:nth-child(n+4) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .spine { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spine li:nth-child(3) { border-right: 1px solid var(--line); padding-left: 0; }
+  .spine li:nth-child(4) { padding-left: var(--s3); border-right: 0; }
+  .spine li:nth-child(5) { padding-left: 0; border-right: 1px solid var(--line); }
+  .spine li:nth-child(6) { padding-left: var(--s3); }
+  .spine li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* ---------- what I saw ---------- */
+.seen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); margin-top: var(--s3); }
+.seen figure { margin: 0; display: grid; gap: var(--s3); align-content: start; }
+.seen img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top left; border: 1px solid var(--line); border-radius: 4px; display: block; }
+.seen figcaption { font-size: 15px; }
+.seen figcaption strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: var(--s1); }
+@media (max-width: 860px) { .seen { grid-template-columns: 1fr; } .seen img { aspect-ratio: 16 / 10; } }
+
+/* ---------- sketches ---------- */
+.sketch-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s5); align-items: end; }
+.sketch-head .facts { display: grid; gap: var(--s2); font-size: 15px; }
+.sketch-head .facts div { display: grid; grid-template-columns: 7.5rem 1fr; gap: var(--s3); padding-top: var(--s2); border-top: 1px solid var(--line); }
+.sketch-head .facts dt { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); padding-top: 3px; }
+.sketch-head .facts dd { margin: 0; }
+@media (max-width: 860px) { .sketch-head { grid-template-columns: 1fr; gap: var(--s4); } }
+@media (max-width: 480px) { .sketch-head .facts div { grid-template-columns: 1fr; gap: 2px; } }
+
+.scrub { position: relative; height: 300vh; margin-inline: calc(-1 * max(16px, 4vw)); }
+.scrub--short { height: 230vh; }
+.pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.hud { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); padding: var(--s3) max(16px, 4vw); border-bottom: 1px solid var(--line); background: var(--ground); position: relative; z-index: 3; }
+.hud .act { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--sand); }
+.hud .now { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--ink-2); text-transform: uppercase; min-width: 14ch; }
+.hud label { display: flex; align-items: center; gap: var(--s2); margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; }
+.hud input[type=range] { width: min(220px, 40vw); accent-color: var(--sand); }
+.scroll-hint { font-size: 13px; color: var(--ink-3); }
+
+.is-still .scrub { height: auto; }
+.is-still .pin { position: relative; height: min(88vh, 760px); }
+
+/* Sketch 1: the exploded screen */
+.stage { position: relative; perspective: 2200px; perspective-origin: 50% 35%; overflow: hidden; touch-action: pan-y; }
+.rig { position: absolute; left: 50%; top: 50%; width: 1225px; height: 793px; margin: -396.5px 0 0 -612.5px; transform-style: preserve-3d; will-change: transform; }
+.layer { position: absolute; inset: 0; transform-style: preserve-3d; }
+.crop { position: absolute; background-image: url(img/dashboards.webp); background-size: 1600px 1008px; background-repeat: no-repeat; }
+.screen-base { left: 0; top: 0; width: 1225px; height: 793px; border-radius: 6px; outline: 10px solid #1b1d22; }
+.hole { position: absolute; border: 2px dashed rgba(227,210,173,.85); background: rgba(15,15,14,.82); border-radius: 10px; opacity: 0; }
+.hole span { position: absolute; left: 10px; top: 8px; font: 500 15px/1 var(--mono); letter-spacing: .08em; color: var(--sand); text-transform: uppercase; }
+.comp { border-radius: 10px; }
+.comp.rail { border-radius: 6px 0 0 6px; }
+.layout-grid { position: absolute; left: 86px; top: 0; width: 1120px; height: 793px;
+  background: repeating-linear-gradient(to right, rgba(227,210,173,.16) 0 78px, transparent 78px 94px); }
+.outline { position: absolute; border: 2px solid rgba(227,210,173,.75); }
+.tag { position: absolute; font: 500 20px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--sand); white-space: nowrap; }
+.tag small { display: block; margin-top: 8px; font-size: 16px; color: var(--ink-2); letter-spacing: .06em; }
+.tokens { position: absolute; left: 330px; top: 250px; width: 600px; display: grid; gap: 34px; padding: 30px; border: 2px solid rgba(227,210,173,.5); background: rgba(15,15,14,.55); }
+.swatches { display: flex; gap: 22px; }
+.swatches div { display: grid; gap: 10px; font: 500 15px/1 var(--mono); color: var(--ink-2); letter-spacing: .06em; }
+.swatches i { width: 78px; height: 78px; border-radius: 8px; display: block; border: 1px solid rgba(241,237,228,.25); }
+.space { display: flex; align-items: flex-end; gap: 26px; }
+.space div { display: grid; justify-items: center; gap: 10px; font: 500 15px/1 var(--mono); color: var(--ink-2); }
+.space i { display: block; background: var(--sand); }
+.pixel { position: absolute; width: 14px; height: 14px; background: var(--sand); box-shadow: 0 0 0 6px rgba(227,210,173,.18); }
+.plumb { position: absolute; width: 2px; transform-origin: 50% 0; background: repeating-linear-gradient(to bottom, var(--sand) 0 8px, transparent 8px 16px); }
+
+/* Sketch 2: pixel to pigment */
+.paint-stage { display: grid; place-items: center; padding: var(--s4) max(16px, 4vw); gap: var(--s3); align-content: center; }
+.sheet { width: min(100%, 780px, calc((100svh - 220px) * 1.39)); aspect-ratio: 700 / 503; position: relative; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
+.sheet canvas { width: 100%; height: 100%; display: block; }
+.paint-cap { font-size: 14px; color: var(--ink-2); text-align: center; min-height: 2.6em; max-width: 40rem; }
+.paint-cap .unit { display: block; color: var(--sand); margin-bottom: 2px; }
+
+/* Sketch 3: cover to case */
+.browser { border: 1px solid var(--line); border-radius: 10px; background: var(--ground-2); overflow: hidden; }
+.browser__bar { display: flex; align-items: center; gap: var(--s3); padding: 10px 14px; border-bottom: 1px solid var(--line); font: 12px/1 var(--mono); color: var(--ink-3); }
+.browser__bar span { background: var(--ground); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.vp { position: relative; aspect-ratio: 16 / 10; perspective: 1400px; overflow: hidden; background: var(--ground); }
+@media (max-width: 640px) { .vp { aspect-ratio: 3 / 4; } }
+.home { position: absolute; inset: 0; padding: clamp(14px, 3.4%, 36px); display: grid; grid-template-rows: auto 1fr; gap: clamp(10px, 2.4%, 22px); transform-style: preserve-3d; }
+.home__h { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: clamp(1.1rem, 2.6vw, 1.9rem); letter-spacing: -.01em; }
+.tiles { display: grid; grid-template-columns: 1.45fr 1fr; grid-template-rows: 1fr 1fr; gap: clamp(8px, 1.8%, 16px); min-height: 0; transform-style: preserve-3d; }
+@media (max-width: 640px) { .tiles { grid-template-columns: 1fr; grid-template-rows: 1.4fr 1fr 1fr; } }
+.tile { all: unset; display: block; cursor: pointer; position: relative; border-radius: 8px; overflow: hidden; min-height: 0; transition: transform .7s cubic-bezier(.7,0,.2,1), opacity .7s; transform-style: preserve-3d; }
+.tile:first-child { grid-row: span 2; }
+@media (max-width: 640px) { .tile:first-child { grid-row: auto; } }
+.tile:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
+.tile:hover .cover { filter: brightness(1.08); }
+.home.is-leaving .tile:not(.is-picked) { transform: translateZ(-160px); opacity: .2; }
+.tile.is-picked { visibility: hidden; }
+.cover { position: absolute; inset: 0; background: radial-gradient(120% 90% at 85% 10%, #26241f 0%, #171715 55%, #121211 100%); border: 1px solid #2f2e2a; border-radius: inherit; overflow: hidden; display: grid; align-content: space-between; padding: clamp(10px, 4%, 22px); text-align: left; }
+.cover .kick { font: 500 clamp(8px, 1.1vw, 11px)/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); position: relative; z-index: 2; max-width: 70%; }
+.cover .t { font-family: var(--display); font-weight: 800; color: var(--ink); font-size: clamp(1rem, 3vw, 2.4rem); line-height: .95; letter-spacing: -.025em; position: relative; z-index: 2; max-width: 60%; }
+.cover .s { display: block; font: 400 clamp(11px, 1.2vw, 14px)/1.3 var(--body); color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.cover img { position: absolute; right: -14%; bottom: -8%; width: 78%; z-index: 1; }
+.cover .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(227,210,173,.22) 1px, transparent 1px); background-size: 14px 14px; mask-image: linear-gradient(200deg, #000 10%, transparent 60%); -webkit-mask-image: linear-gradient(200deg, #000 10%, transparent 60%); }
+.flyer { position: absolute; z-index: 5; border-radius: 8px; overflow: hidden; transform-origin: 50% 50%; box-shadow: 0 40px 80px -30px rgba(0,0,0,.9); }
+.case { position: absolute; inset: 0; z-index: 6; display: none; background: radial-gradient(120% 90% at 85% 10%, #26241f 0%, #171715 55%, #121211 100%); padding: clamp(14px, 4%, 40px); overflow: hidden; }
+.case.is-open { display: block; }
+.case > * { opacity: 0; transform: translateY(18px); transition: opacity .5s, transform .6s cubic-bezier(.2,.7,.2,1); }
+.case.is-shown > * { opacity: 1; transform: none; }
+.case.is-shown > :nth-child(2) { transition-delay: .06s; } .case.is-shown > :nth-child(3) { transition-delay: .12s; } .case.is-shown > :nth-child(4) { transition-delay: .18s; } .case.is-shown > :nth-child(5) { transition-delay: .26s; }
+.case .back { all: unset; cursor: pointer; font: 500 13px/1 var(--body); color: var(--ink-2); display: inline-block; padding: 6px 0; }
+.case .back:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
+.case .kick { margin-top: clamp(8px, 3%, 28px); font: 500 clamp(9px, 1.1vw, 12px)/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.case .t { font-family: var(--display); font-weight: 800; color: var(--ink); font-size: clamp(1.8rem, 7vw, 5.4rem); line-height: .9; letter-spacing: -.035em; margin-top: 10px; }
+.case .s { font-size: clamp(14px, 2vw, 1.5rem); color: var(--ink-2); margin-top: 8px; }
+.case img { position: absolute; left: 50%; bottom: -16%; width: min(78%, 760px); transform: translateX(-50%) translateY(18px); }
+.case.is-shown img { transform: translateX(-50%); }
+
+/* ---------- ranked ideas ---------- */
+.ideas { list-style: none; margin: var(--s3) 0 0; padding: 0; counter-reset: idea; }
+.idea { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--s2) var(--s5); padding-block: var(--s5); border-top: 1px solid var(--line); }
+.idea .rank { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: .9; color: var(--ink-3); }
+.idea.top .rank { color: var(--sand); }
+.idea .title { display: grid; gap: var(--s2); align-content: start; }
+.idea .story { color: var(--ink); font-size: 1.05rem; }
+.idea .meta { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s1); }
+.chip { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); }
+.chip.size { border-color: rgba(227,210,173,.45); color: var(--sand); }
+.idea dl { margin: 0; display: grid; gap: var(--s3); font-size: 15px; }
+.idea dl div { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--s3); }
+.idea dt { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); padding-top: 3px; }
+.idea dd { margin: 0; }
+.idea code, .prose code, .facts code { overflow-wrap: anywhere; font-family: var(--mono); font-size: .88em; color: var(--ink); background: var(--ground-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+@media (max-width: 860px) {
+  .idea { grid-template-columns: 3rem minmax(0, 1fr); }
+  .idea dl { grid-column: 2; }
+  .idea .rank { font-size: 1.9rem; }
+}
+@media (max-width: 480px) { .idea dl div { grid-template-columns: 1fr; gap: 2px; } }
+
+.out { list-style: none; padding: 0; margin: var(--s3) 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s5); }
+.out li { padding-block: var(--s3); border-top: 1px solid var(--line); font-size: 15px; }
+.out li strong { color: var(--ink); font-weight: 500; }
+@media (max-width: 760px) { .out { grid-template-columns: 1fr; } }
+
+.next { margin-top: var(--s3); padding: var(--s5); border: 1px solid rgba(227,210,173,.4); border-radius: 6px; display: grid; gap: var(--s3); max-width: 46rem; }
+.next p { color: var(--ink-2); }
+.next strong { color: var(--ink); font-weight: 500; }
+.foot { margin-top: var(--s6); font-size: 13px; color: var(--ink-3); }
+</style>
+
+<div class="wrap" id="top">
+  <header class="intro">
+    <p class="kicker"><b>Portfolio</b> · depth and 3D motion · ideas for konstancja-tanjga.github.io/portfolio-site · 14 October 2026</p>
+    <h1>Screen<br>to <span>pigment</span></h1>
+    <p class="lead">
+      A visitor comes once, so the home page should be one journey with a beginning and an end.
+      It starts on the whole screen you design. It goes down through its components and tokens to a single pixel.
+      The pixel becomes a drop of paint on paper. Then it comes back out to a screen where the visitor writes to you.
+      <strong>Your site already has the first half of this story.</strong> These ideas finish it and give it depth.
+    </p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#story">The story</a>
+      <a href="#seen">What the walk-through showed</a>
+      <a href="#sketch-1">Sketch 1: the screen comes apart</a>
+      <a href="#sketch-2">Sketch 2: the pixel becomes pigment</a>
+      <a href="#sketch-3">Sketch 3: the cover becomes the case</a>
+      <a href="#ranked">All ideas, ranked</a>
+      <a href="#leave-out">What I would leave out</a>
+    </nav>
+  </header>
+
+  <section class="block" id="story" aria-labelledby="story-h">
+    <div class="head prose">
+      <p class="kicker">The story</p>
+      <h2 id="story-h">Six stops, one scroll</h2>
+      <p>
+        The first four stops and their units come from your <code>ScaleJourney</code>, which runs behind the home page today.
+        The idea keeps them, adds one stop where the pixel turns into pigment, and gives each stop the full screen
+        instead of drawing it behind the work.
+      </p>
+    </div>
+    <ol class="spine">
+      <li><div class="glyph"><i style="width:64px;height:36px"></i></div><span class="px">1920</span><span class="name">Screen</span><span class="where">Hero. The dashboard, whole.</span></li>
+      <li><div class="glyph"><i style="width:30px;height:24px"></i></div><span class="px">304</span><span class="name">Component</span><span class="where">Selected work. The cards lift off.</span></li>
+      <li><div class="glyph"><i style="width:10px;height:10px"></i></div><span class="px">8</span><span class="name">Token</span><span class="where">How I work. Colour roles, spacing.</span></li>
+      <li><div class="glyph"><i style="width:3px;height:3px;background:var(--sand)"></i></div><span class="px">1</span><span class="name">Pixel</span><span class="where">The smallest thing you control.</span></li>
+      <li class="new"><div class="glyph"><i style="width:16px;height:16px;border-radius:50%;background:var(--sand)"></i></div><span class="px">drop</span><span class="name">Pigment</span><span class="where">Off screen. The painting blooms.</span></li>
+      <li><div class="glyph"><i style="width:64px;height:36px"></i></div><span class="px">1920</span><span class="name">Screen</span><span class="where">Contact. Built back up.</span></li>
+    </ol>
+  </section>
+
+  <section class="block" id="seen" aria-labelledby="seen-h">
+    <div class="head prose">
+      <p class="kicker">What the walk-through showed</p>
+      <h2 id="seen-h">The best idea on the site is hidden behind the work</h2>
+      <p>I went through Home, Analytics, Elly, About, Practice and Watercolours on the live site at 1440 × 900 and 390 × 844. Three things matter for depth.</p>
+    </div>
+    <div class="seen">
+      <figure>
+        <img src="img/seen-overlap.jpg" alt="Home page at 1440 px: the labels 1 COMPONENT, FOX-CARD and a SLOT: MEDIA box drawn across the Elly tile" loading="lazy">
+        <figcaption><strong>The journey collides with the tiles.</strong> “1 COMPONENT · FOX-CARD” and a “SLOT: MEDIA” box sit across the Elly tile. A ghost “SLOT: TITLE” runs under the practice row, and the token ramp floats in an empty column. A visitor reads this as a layout bug.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/seen-hero.jpg" alt="Home hero at 1440 by 900: the claim wraps to six lines on the left, a small laptop sits at the bottom right" loading="lazy">
+        <figcaption><strong>The hero hides its best picture.</strong> At 1440 × 900 the claim wraps to six lines, and the laptop with your dashboard is the smallest thing in the first screen.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/seen-plates.jpg" alt="Off screen section: three framed watercolours photographed in staged rooms" loading="lazy">
+        <figcaption><strong>Off screen opens on room mockups.</strong> A frame on a chair, a frame between monstera plants. The Watercolours page has flat scans with your handwriting and dates on the paper, and they make the point much better.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== SKETCH 1 ===================== -->
+  <section class="block" id="sketch-1" aria-labelledby="s1-h">
+    <div class="sketch-head">
+      <div class="head">
+        <p class="kicker">Sketch 1 · stops 1 to 4</p>
+        <h2 id="s1-h">The screen comes apart</h2>
+        <p>Scroll through it. The APplus Analytics dashboard fills the first screen, tilts into an axonometric view and separates into layout, FOX components, tokens and one pixel. A plumb line runs through every layer to the point on the screen where that pixel sits. On a desktop you can move the pointer over it to turn it.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Says</dt><dd>Every screen I ship is made of parts I own.</dd></div>
+        <div><dt>Built with</dt><dd>CSS 3D (<code>preserve-3d</code>, <code>translateZ</code>) over one screenshot, cropped per component. No WebGL, so the screen stays as sharp as the image.</dd></div>
+        <div><dt>In this sketch</dt><dd>Your 1600 px dashboard export. On the site I would use the 2400 px one or layer exports from Figma.</dd></div>
+      </dl>
+    </div>
+  </section>
+</div>
+
+<div class="scrub" id="scrubA" data-sketch="a">
+  <div class="pin">
+    <div class="hud">
+      <span class="act">Sketch 1</span>
+      <span class="now" id="nowA" aria-live="polite">Screen · 1920 × 1080</span>
+      <span class="scroll-hint">Scroll to take it apart</span>
+      <label for="rangeA">Scrub <input type="range" id="rangeA" min="0" max="100" value="0" aria-label="Take the screen apart"></label>
+    </div>
+    <div class="stage" id="stageA">
+      <div class="rig" id="rigA">
+        <div class="layer" data-z="0" id="Lscreen">
+          <div class="crop screen-base" style="background-position:-189px -49px"></div>
+          <div id="holes"></div>
+          <div class="tag" data-tag style="left:-330px;top:0">Screen<small>1920 × 1080</small></div>
+        </div>
+        <div class="layer" data-z="150" data-fade id="Llayout">
+          <div class="layout-grid"></div>
+          <div class="outline" style="left:0;top:0;width:50px;height:793px"></div>
+          <div class="outline" style="left:50px;top:0;width:1175px;height:150px"></div>
+          <div class="outline" style="left:86px;top:198px;width:825px;height:232px"></div>
+          <div class="outline" style="left:86px;top:504px;width:825px;height:232px"></div>
+          <div class="tag" data-tag style="left:-330px;top:0">Layout<small>rail, header, 12 columns</small></div>
+        </div>
+        <div class="layer" data-z="310" id="Lcomp">
+          <div class="tag" data-tag style="left:-330px;top:0">Components<small>fox-card, rail, tabs</small></div>
+        </div>
+        <div class="layer" data-z="480" data-fade id="Ltokens">
+          <div class="tokens">
+            <div class="swatches">
+              <div><i style="background:#2f6be4"></i>action</div>
+              <div><i style="background:#5d8bd8"></i>chart</div>
+              <div><i style="background:#ffffff"></i>surface</div>
+              <div><i style="background:#eef1f7"></i>canvas</div>
+              <div><i style="background:#2a2e37"></i>text</div>
+            </div>
+            <div class="space">
+              <div><i style="width:4px;height:4px"></i>4</div>
+              <div><i style="width:8px;height:8px"></i>8</div>
+              <div><i style="width:12px;height:12px"></i>12</div>
+              <div><i style="width:16px;height:16px"></i>16</div>
+              <div><i style="width:24px;height:24px"></i>24</div>
+              <div><i style="width:32px;height:32px"></i>32</div>
+            </div>
+          </div>
+          <div class="tag" data-tag style="left:-330px;top:0">Tokens<small>colour roles, 4 to 32 px</small></div>
+        </div>
+        <div class="layer" data-z="640" data-fade id="Lpixel">
+          <div class="pixel" style="left:620px;top:280px"></div>
+          <div class="tag" style="left:650px;top:240px">1 px<small>#E3D2AD</small></div>
+          <div class="tag" data-tag style="left:-330px;top:0">Pixel<small>1 px</small></div>
+        </div>
+        <div class="plumb" id="plumb" style="left:626px;top:287px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SKETCH 2 ===================== -->
+<div class="wrap">
+  <section class="block" id="sketch-2" aria-labelledby="s2-h">
+    <div class="sketch-head">
+      <div class="head">
+        <p class="kicker">Sketch 2 · stop 5</p>
+        <h2 id="s2-h">The pixel becomes pigment</h2>
+        <p>The sand pixel from sketch 1 grows on its pixel grid, rounds into a drop and lands on paper. The Chenonceau watercolour blooms out of it in layers, with the darker wet edge that water leaves on paper. This is the turn from designer to painter, and it happens without a paragraph.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Says</dt><dd>The person who works to the pixel also paints with water. The hand is the same.</dd></div>
+        <div><dt>Built with</dt><dd>Canvas 2D: stacked, randomly deformed polygons at low opacity used as a mask, the technique Tyler Hobbs published for generative watercolour. About 150 lines.</dd></div>
+        <div><dt>In this sketch</dt><dd>Your scan from <code>public/watercolours/architecture/france</code>.</dd></div>
+      </dl>
+    </div>
+  </section>
+</div>
+
+<div class="scrub scrub--short" id="scrubB" data-sketch="b">
+  <div class="pin">
+    <div class="hud">
+      <span class="act">Sketch 2</span>
+      <span class="now" id="nowB" aria-live="polite">Pixel · 1 px</span>
+      <span class="scroll-hint">Scroll to let it bloom</span>
+      <label for="rangeB">Scrub <input type="range" id="rangeB" min="0" max="100" value="0" aria-label="Let the painting bloom"></label>
+    </div>
+    <div class="paint-stage">
+      <div class="sheet"><canvas id="paint" role="img" aria-label="A sand pixel turns into a drop and the watercolour of Château de Chenonceau blooms from it"></canvas></div>
+      <p class="paint-cap" id="capB"><span class="unit">1 px · #E3D2AD</span>The site’s one accent colour, at the size of a single pixel.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SKETCH 3 ===================== -->
+<div class="wrap">
+  <section class="block" id="sketch-3" aria-labelledby="s3-h">
+    <div class="sketch-head">
+      <div class="head">
+        <p class="kicker">Sketch 3 · every click into a study</p>
+        <h2 id="s3-h">The cover becomes the case</h2>
+        <p>Pick a tile. It lifts toward you, the other tiles fall back, and the cover grows into the case-study hero. “Work” brings it back to its place. On a site someone visits once, every click into a study feels like one continuous move.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Says</dt><dd>You chose this project, and you are carried into it.</dd></div>
+        <div><dt>Built with</dt><dd>The View Transitions API: a <code>view-transition-name</code> on the cover and the hero. React Router 6.26, which the site uses, has the <code>unstable_viewTransition</code> prop on <code>Link</code>. Browsers without it navigate as today.</dd></div>
+        <div><dt>In this sketch</dt><dd>Plain JavaScript animation standing in for the browser’s transition.</dd></div>
+      </dl>
+    </div>
+
+    <div class="browser">
+      <div class="browser__bar"><span id="urlC">konstancja-tanjga.github.io/portfolio-site/</span></div>
+      <div class="vp" id="vp">
+        <div class="home" id="homeC">
+          <p class="home__h">Selected work</p>
+          <div class="tiles">
+            <button class="tile" data-case="0" aria-label="Open APplus Analytics">
+              <span class="cover"><span class="dots"></span><span class="kick">Product design · Enterprise software</span><span class="t">Business Intelligence<span class="s">for APplus ERP</span></span><img src="img/dashboards.webp" alt=""></span>
+            </button>
+            <button class="tile" data-case="1" aria-label="Open Elly">
+              <span class="cover"><span class="dots"></span><span class="kick">Product design · AI in production</span><span class="t">AI assistant for ERP<span class="s">Elly, for APplus ERP</span></span></span>
+            </button>
+            <button class="tile" data-case="2" aria-label="Open APplus Best Practice Hub">
+              <span class="cover"><span class="dots"></span><span class="kick">Product design · Enterprise software</span><span class="t">Best Practice Hub<span class="s">for APplus ERP</span></span></span>
+            </button>
+          </div>
+        </div>
+        <div class="case" id="caseC" aria-live="polite">
+          <button class="back" id="backC"><span aria-hidden="true">←</span> Work</button>
+          <p class="kick" id="caseKick"></p>
+          <p class="t" id="caseT"></p>
+          <p class="s" id="caseS"></p>
+          <img id="caseImg" src="img/dashboards.webp" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RANKED ===================== -->
+  <section class="block" id="ranked" aria-labelledby="ranked-h">
+    <div class="head prose">
+      <p class="kicker">All ideas, ranked</p>
+      <h2 id="ranked-h">Nine ideas, in the order I would build them</h2>
+      <p>The rank is the order, not only the value: ideas 2, 4 and 7 reuse the 3D rig from idea 2, and idea 1 makes room for all of them. Sizes are relative to each other.</p>
+    </div>
+    <ol class="ideas">
+      <li class="idea top">
+        <span class="rank">1</span>
+        <div class="title"><h3>Move the journey out from behind the work</h3><p class="story">The stops you already have become the chapters of the home page.</p><div class="meta"><span class="chip size">Medium</span><span class="chip">Fixes the collisions</span></div></div>
+        <dl>
+          <div><dt>Changes</dt><dd>Each stop gets its own pinned interlude, about one screen of scroll, between sections. The canvas has the screen to itself there, and the sections sit on a clean ground. The ruler on the left and the readout stay.</dd></div>
+          <div><dt>Why first</dt><dd>It removes the overlaps in the first screenshot, and every other idea hangs on it.</dd></div>
+        </dl>
+      </li>
+      <li class="idea top">
+        <span class="rank">2</span>
+        <div class="title"><h3>The screen comes apart</h3><p class="story">Every screen I ship is made of parts I own.</p><div class="meta"><span class="chip size">Medium</span><span class="chip">Sketch 1</span><span class="chip">New hero</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The laptop grows to fill the first screen. Scrolling tilts it and lifts the layers apart: layout, FOX components, tokens, one pixel.</dd></div>
+          <div><dt>Built with</dt><dd>CSS 3D over the 2400 px dashboard, cropped per component. On a phone: the same layers, less tilt. With reduced motion: the exploded view as a still.</dd></div>
+        </dl>
+      </li>
+      <li class="idea top">
+        <span class="rank">3</span>
+        <div class="title"><h3>The pixel becomes pigment</h3><p class="story">The same hand works to the pixel and paints with water.</p><div class="meta"><span class="chip size">Medium</span><span class="chip">Sketch 2</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The sand pixel grows, rounds into a drop, lands on paper, and a scan blooms out of it. Off screen then opens on your scans instead of the room mockups.</dd></div>
+          <div><dt>Built with</dt><dd>Canvas 2D mask from layered deformed polygons. One scan, already in <code>public/</code>.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">4</span>
+        <div class="title"><h3>The last screen is the contact</h3><p class="story">The journey ends where it started, on a screen, and this one is addressed to the visitor.</p><div class="meta"><span class="chip size">Small, after 2</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>At the contact stop the layers settle back together. The screen now shows a compose window built from FOX components, with your address in the To field and your status line as the subject.</dd></div>
+          <div><dt>Built with</dt><dd>The rig from idea 2 with a different top layer. The mail link and a copy button stay real controls.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">5</span>
+        <div class="title"><h3>The cover becomes the case</h3><p class="story">The visitor picks a project and is carried into it.</p><div class="meta"><span class="chip size">Small</span><span class="chip">Sketch 3</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The tile lifts, the others fall back, the cover grows into the hero. Back reverses it.</dd></div>
+          <div><dt>Built with</dt><dd>View Transitions with <code>unstable_viewTransition</code> on the tile links. The covers are already typed components, so the names line up.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">6</span>
+        <div class="title"><h3>Devices that land</h3><p class="story">The screens are objects on a desk, and they settle when you reach them.</p><div class="meta"><span class="chip size">Small</span><span class="chip">Every study</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The MacBook frames in the case studies arrive tilted back about 14° and lie flat at the reading position. A band of light crosses the aluminium as they settle.</dd></div>
+          <div><dt>Built with</dt><dd>CSS <code>animation-timeline: view()</code> where the browser supports it, the site’s <code>useScroll</code> hook elsewhere. One rule in <code>case.css</code> for every framed clip.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">7</span>
+        <div class="title"><h3>Exploded anatomy as a kit block</h3><p class="story">For the design-system studies, one component shown in all its layers.</p><div class="meta"><span class="chip size">Medium, after 2</span><span class="chip">Case-study kit</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The rig from idea 2 at component scale: a FOX card, or an Elly answer with its sources, separated into surface, content, tokens and states.</dd></div>
+          <div><dt>Built with</dt><dd>A new block kind, <code>exploded</code>, typed like the others in the kit, so FOX, Big Hat and Elly each get one signature shot.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">8</span>
+        <div class="title"><h3>One raptor per visit</h3><p class="story">The birding, and the course on telling raptors apart in flight, without a paragraph.</p><div class="meta"><span class="chip size">Small</span><span class="chip">Needs your drawing</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>Once per visit, a raptor silhouette in your own line crosses the Off screen section on a soaring path. Hover or tap names it, with the flight feature that identifies it.</dd></div>
+          <div><dt>Risk</dt><dd>It turns to kitsch if it is large, repeats, or follows the cursor. If the silhouette is not your drawing, leave the idea out.</dd></div>
+        </dl>
+      </li>
+      <li class="idea">
+        <span class="rank">9</span>
+        <div class="title"><h3>Watercolours as sheets of paper</h3><p class="story">The paintings are physical objects with edges and grain.</p><div class="meta"><span class="chip size">Small</span><span class="chip">Watercolours page</span></div></div>
+        <dl>
+          <div><dt>Moves</dt><dd>The white cards become paper lying on the dark ground with a soft contact shadow. On hover one corner lifts a degree or two. The lightbox lifts the sheet flat to full size.</dd></div>
+          <div><dt>Built with</dt><dd>CSS 3D on the existing grid and <code>Lightbox</code>.</dd></div>
+        </dl>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block" id="leave-out" aria-labelledby="out-h">
+    <div class="head prose">
+      <p class="kicker">What I would leave out</p>
+      <h2 id="out-h">Depth without the usual tricks</h2>
+    </div>
+    <ul class="out">
+      <li><strong>A three.js scene for the whole site.</strong> It adds several hundred kilobytes, and the text in your screens goes soft once it is a texture. CSS 3D keeps them as sharp images.</li>
+      <li><strong>A 3D trophy for the two Golds.</strong> The award reads better as a line of text naming the jury’s category.</li>
+      <li><strong>Custom cursors</strong> and blobs that follow the pointer.</li>
+      <li><strong>Gyroscope tilt on phones.</strong> iOS asks the visitor for permission first, which is an odd first question on a portfolio.</li>
+      <li><strong>Page-curl galleries</strong> for the watercolours.</li>
+      <li><strong>Scroll-jacking.</strong> Pinning a section is fine. Changing the speed of the wheel is not.</li>
+      <li><strong>Glass panels and blur</strong> on top of the 3D. Depth should come from layers and light.</li>
+      <li><strong>Motion the visitor cannot stop.</strong> Every sketch here has a still for reduced motion and a scrub control.</li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="next-h">
+    <div class="next">
+      <p class="kicker">Next step</p>
+      <h3 id="next-h">Start with ideas 1 and 2 together</h3>
+      <p>They fix what is wrong on the live home page today and give it a new hero in the same change. Ideas 3 and 4 follow on the same rig. <strong>Two things I need from you:</strong> which of the nine you want, and whether you can export the dashboard as separate layers from Figma (rail, header, tabs, cards) at 2×. Without them I crop one screenshot, as this page does.</p>
+    </div>
+    <p class="foot">Sketches use your own files: the APplus Analytics dashboard export and the Château de Chenonceau scan, May 2026. Nothing on this page is on the live site yet.</p>
+  </section>
+</div>
+
+<script>
+(() => {
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) document.documentElement.classList.add("is-still");
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const map = (v, a, b) => clamp((v - a) / (b - a));
+  const smooth = (v) => { v = clamp(v); return v * v * (3 - 2 * v); };
+
+  /* Each scrubbed section reports 0..1 from scroll, or from its range input
+     when motion is reduced (then the section does not pin). */
+  function scrubber(section, range, onChange, still) {
+    let p = reduced ? still : 0;
+    const fromScroll = () => {
+      const r = section.getBoundingClientRect();
+      const span = section.offsetHeight - innerHeight;
+      return span > 0 ? clamp(-r.top / span) : 0;
+    };
+    const set = (v) => { p = v; range.value = Math.round(v * 100); onChange(v); };
+    if (!reduced) {
+      let raf = 0;
+      const tick = () => { raf = 0; set(fromScroll()); };
+      addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(tick); }, { passive: true });
+      addEventListener("resize", () => { if (!raf) raf = requestAnimationFrame(tick); });
+      range.addEventListener("input", () => {
+        const top = section.getBoundingClientRect().top + scrollY;
+        const span = section.offsetHeight - innerHeight;
+        scrollTo({ top: top + span * (range.value / 100), behavior: "instant" });
+      });
+      requestAnimationFrame(tick);
+    } else {
+      range.addEventListener("input", () => set(range.value / 100));
+      set(still);
+    }
+    return () => p;
+  }
+
+  /* ---------------- Sketch 1: the screen comes apart ---------------- */
+  {
+    const IMG = { x: 189, y: 49 };                // screen origin inside the export
+    const parts = [                                // absolute coords in the 1600 px export
+      { name: "rail", x: 189, y: 49, w: 50, h: 793, cls: "rail" },
+      { name: "tabs", x: 270, y: 162, w: 530, h: 32 },
+      { name: "actions", x: 1280, y: 72, w: 104, h: 32 },
+      { name: "fox-card", x: 275, y: 247, w: 265, h: 231 },
+      { name: "fox-card", x: 555, y: 247, w: 265, h: 231 },
+      { name: "fox-card", x: 835, y: 247, w: 265, h: 231 },
+      { name: "fox-card", x: 275, y: 553, w: 265, h: 231 },
+      { name: "fox-card", x: 555, y: 553, w: 265, h: 231 },
+      { name: "fox-card", x: 835, y: 553, w: 265, h: 231 },
+    ];
+    const holes = document.getElementById("holes");
+    const comp = document.getElementById("Lcomp");
+    const compEls = [];
+    for (const p of parts) {
+      const l = p.x - IMG.x, t = p.y - IMG.y;
+      const h = document.createElement("div");
+      h.className = "hole";
+      h.style.cssText = `left:${l}px;top:${t}px;width:${p.w}px;height:${p.h}px;${p.cls === "rail" ? "border-radius:6px 0 0 6px" : ""}`;
+      if (p.w > 100 && p.h > 100) h.innerHTML = `<span>slot</span>`;
+      holes.appendChild(h);
+      const c = document.createElement("div");
+      c.className = "crop comp" + (p.cls ? " " + p.cls : "");
+      c.style.cssText = `left:${l}px;top:${t}px;width:${p.w}px;height:${p.h}px;background-position:-${p.x}px -${p.y}px`;
+      comp.appendChild(c);
+      compEls.push(c);
+    }
+    const holeEls = [...holes.children];
+    const stage = document.getElementById("stageA");
+    const rig = document.getElementById("rigA");
+    const layers = [...rig.querySelectorAll(".layer")];
+    const tags = [...rig.querySelectorAll("[data-tag]")];
+    const plumb = document.getElementById("plumb");
+    const now = document.getElementById("nowA");
+    let orbit = { x: 0, y: 0 }, target = { x: 0, y: 0 }, p = 0, raf = 0;
+
+    const render = () => {
+      raf = 0;
+      orbit.x += (target.x - orbit.x) * 0.12;
+      orbit.y += (target.y - orbit.y) * 0.12;
+      const W = stage.clientWidth, H = stage.clientHeight;
+      const k = Math.min((W * 0.94) / 1225, (H * 0.86) / 793);
+      const t = smooth(map(p, 0.06, 0.4));          // tilt into axonometric
+      const e = smooth(map(p, 0.2, 0.72));          // layers separate
+      const rx = 54 * t + orbit.y * -6 * t;
+      const rz = -34 * t + orbit.x * 10 * t;
+      const s = k * (1 - (W < 640 ? 0.12 : 0.45) * t);
+      rig.style.transform = `translateY(${(-30 * t * k).toFixed(1)}px) scale(${s.toFixed(4)}) rotateX(${rx.toFixed(2)}deg) rotateZ(${rz.toFixed(2)}deg)`;
+      for (const [i, L] of layers.entries()) {
+        const z = +L.dataset.z * e + i * 0.4;
+        L.style.transform = `translateZ(${z.toFixed(1)}px)`;
+        if (L.hasAttribute("data-fade")) L.style.opacity = e.toFixed(3);
+      }
+      const shadow = `0 ${(26 * e).toFixed(0)}px ${(46 * e).toFixed(0)}px rgba(0,0,0,${(0.5 * e).toFixed(2)})`;
+      for (const c of compEls) c.style.boxShadow = shadow;
+      for (const h of holeEls) h.style.opacity = smooth(map(e, 0.05, 0.4)).toFixed(3);
+      const tagO = smooth(map(e, 0.45, 0.9)).toFixed(3);
+      for (const g of tags) g.style.opacity = tagO;
+      plumb.style.height = `${(640 * e).toFixed(1)}px`;
+      plumb.style.transform = "rotateX(90deg)";
+      plumb.style.opacity = smooth(map(e, 0.3, 0.8)).toFixed(3);
+      now.textContent = e < 0.15 ? "Screen · 1920 × 1080" : e < 0.5 ? "Taking it apart" : p < 0.86 ? "Components · tokens" : "Pixel · 1 px";
+      if (Math.abs(target.x - orbit.x) > 0.002 || Math.abs(target.y - orbit.y) > 0.002) raf = requestAnimationFrame(render);
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(render); };
+    scrubber(document.getElementById("scrubA"), document.getElementById("rangeA"), (v) => { p = v; kick(); }, 0.8);
+    if (!reduced && matchMedia("(hover: hover)").matches) {
+      stage.addEventListener("pointermove", (ev) => {
+        const r = stage.getBoundingClientRect();
+        target = { x: (ev.clientX - r.left) / r.width - 0.5, y: (ev.clientY - r.top) / r.height - 0.5 };
+        kick();
+      });
+      stage.addEventListener("pointerleave", () => { target = { x: 0, y: 0 }; kick(); });
+    }
+    addEventListener("resize", kick);
+    kick();
+  }
+
+  /* ---------------- Sketch 2: the pixel becomes pigment ---------------- */
+  {
+    const canvas = document.getElementById("paint");
+    const ctx = canvas.getContext("2d");
+    const cap = document.getElementById("capB");
+    const now = document.getElementById("nowB");
+    const img = new Image();
+    img.src = "img/chenonceau.jpg";
+    const IW = 700, IH = 503;
+    let W = 0, H = 0, dpr = 1, mask, mctx, art, actx, grain;
+    let p = 0, ready = false, lastCap = -1;
+
+    function mulberry(a) { return () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    function gauss(r) { let u = 0, v = 0; while (!u) u = r(); while (!v) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+    function deform(pts, depth, variance, r) {
+      for (let d = 0; d < depth; d++) {
+        const out = [];
+        for (let i = 0; i < pts.length; i++) {
+          const a = pts[i], b = pts[(i + 1) % pts.length];
+          const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
+          out.push(a, [(a[0] + b[0]) / 2 + gauss(r) * variance * len, (a[1] + b[1]) / 2 + gauss(r) * variance * len]);
+        }
+        pts = out; variance *= 0.72;
+      }
+      return pts;
+    }
+    // Blooms, in fractions of the sheet: where the water lands and how far it runs.
+    const BLOOMS = [
+      { x: 0.47, y: 0.5, R: 0.95, d: 0 },
+      { x: 0.19, y: 0.42, R: 0.36, d: 0.1 },
+      { x: 0.66, y: 0.16, R: 0.34, d: 0.2 },
+      { x: 0.86, y: 0.5, R: 0.36, d: 0.28 },
+      { x: 0.1, y: 0.84, R: 0.34, d: 0.36 },
+      { x: 0.6, y: 0.86, R: 0.38, d: 0.42 },
+    ];
+    const LAYERS = 16;
+    for (const [i, b] of BLOOMS.entries()) {
+      const r = mulberry(17 + i * 101);
+      let base = [];
+      for (let j = 0; j < 10; j++) { const a = (j / 10) * Math.PI * 2; const rad = 0.85 + r() * 0.3; base.push([Math.cos(a) * rad, Math.sin(a) * rad]); }
+      base = deform(base, 3, 0.32, r);
+      b.layers = Array.from({ length: LAYERS }, () => deform(base.map((q) => q.slice()), 2, 0.26, r));
+      b.rot = r() * Math.PI * 2;
+    }
+
+    function size() {
+      dpr = Math.min(2, devicePixelRatio || 1);
+      const rect = canvas.getBoundingClientRect();
+      W = Math.max(1, Math.round(rect.width * dpr)); H = Math.max(1, Math.round(rect.height * dpr));
+      canvas.width = W; canvas.height = H;
+      mask = document.createElement("canvas"); mask.width = W; mask.height = H; mctx = mask.getContext("2d");
+      art = document.createElement("canvas"); art.width = W; art.height = H; actx = art.getContext("2d");
+      grain = document.createElement("canvas"); grain.width = grain.height = 160;
+      const g = grain.getContext("2d"), id = g.createImageData(160, 160), rr = mulberry(7);
+      for (let i = 0; i < id.data.length; i += 4) { const v = 120 + rr() * 110; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 26; }
+      g.putImageData(id, 0, 0);
+    }
+    function path(c, pts, cx, cy, s, rot) {
+      const co = Math.cos(rot), si = Math.sin(rot);
+      c.beginPath();
+      for (let i = 0; i < pts.length; i++) {
+        const x = cx + (pts[i][0] * co - pts[i][1] * si) * s, y = cy + (pts[i][0] * si + pts[i][1] * co) * s;
+        i ? c.lineTo(x, y) : c.moveTo(x, y);
+      }
+      c.closePath();
+    }
+    function draw() {
+      if (!ready) return;
+      // paper
+      ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
+      ctx.fillStyle = "#f6f1e7"; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = ctx.createPattern(grain, "repeat"); ctx.fillRect(0, 0, W, H);
+
+      // bloom
+      const b = map(p, 0.3, 0.94);
+      if (b > 0) {
+        mctx.clearRect(0, 0, W, H);
+        mctx.fillStyle = "rgba(0,0,0,0.085)";
+        const live = [];
+        for (const bl of BLOOMS) {
+          const lb = smooth(map(b, bl.d, bl.d + (1 - bl.d) * 0.8));
+          if (lb <= 0) continue;
+          const r = bl.R * W * lb;
+          live.push([bl, r]);
+          for (let k = 0; k < LAYERS; k++) { path(mctx, bl.layers[k], bl.x * W, bl.y * H, r * (0.62 + 0.38 * (k / (LAYERS - 1))), bl.rot); mctx.fill(); }
+        }
+        actx.globalCompositeOperation = "source-over"; actx.clearRect(0, 0, W, H);
+        actx.drawImage(img, 0, 0, W, H);
+        actx.globalCompositeOperation = "destination-in"; actx.drawImage(mask, 0, 0);
+        // the wet edge: pigment gathers where the water stops
+        actx.globalCompositeOperation = "source-atop";
+        actx.strokeStyle = "rgba(92,70,40,0.10)"; actx.lineWidth = 1.6 * dpr;
+        const edge = 1 - smooth(map(b, 0.8, 1));
+        if (edge > 0) for (const [bl, r] of live) for (let k = LAYERS - 4; k < LAYERS; k++) { path(actx, bl.layers[k], bl.x * W, bl.y * H, r * (0.62 + 0.38 * (k / (LAYERS - 1))), bl.rot); actx.globalAlpha = edge; actx.stroke(); }
+        actx.globalAlpha = 1; actx.globalCompositeOperation = "source-over";
+        ctx.drawImage(art, 0, 0);
+        const settle = smooth(map(b, 0.86, 1));
+        if (settle > 0) { ctx.globalAlpha = settle; ctx.drawImage(img, 0, 0, W, H); ctx.globalAlpha = 1; }
+      }
+
+      // the screen ground fades as the drop lands
+      const cx = BLOOMS[0].x * W, cy = BLOOMS[0].y * H;
+      const groundA = 1 - smooth(map(p, 0.24, 0.34));
+      if (groundA > 0) {
+        ctx.globalAlpha = groundA; ctx.fillStyle = "#0f0f0e"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
+        const grow = smooth(map(p, 0, 0.16));
+        const cell = (6 + 30 * grow) * dpr;
+        // the pixel grid it sits on
+        const gA = 0.22 * (1 - smooth(map(p, 0.12, 0.22))) * groundA;
+        if (gA > 0.003) {
+          ctx.strokeStyle = `rgba(227,210,173,${gA})`; ctx.lineWidth = 1;
+          ctx.beginPath();
+          for (let x = cx - cell / 2 - cell * 12; x < W; x += cell) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+          for (let y = cy - cell / 2 - cell * 12; y < H; y += cell) { ctx.moveTo(0, y); ctx.lineTo(W, y); }
+          ctx.stroke();
+        }
+      }
+      const dropP = map(p, 0, 0.3);
+      if (dropP < 1) {
+        const grow = smooth(map(p, 0, 0.16));
+        const s = (6 + 30 * grow) * dpr * (1 - 0.35 * smooth(map(p, 0.2, 0.28)));
+        const round = smooth(map(p, 0.12, 0.24));
+        const fade = 1 - smooth(map(p, 0.27, 0.31));
+        ctx.globalAlpha = fade;
+        ctx.fillStyle = "#e3d2ad";
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(cx - s / 2, cy - s / 2, s, s, (s / 2) * round); else ctx.rect(cx - s / 2, cy - s / 2, s, s);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      // the ring where it lands
+      const ring = map(p, 0.26, 0.42);
+      if (ring > 0 && ring < 1) {
+        ctx.strokeStyle = `rgba(150,120,70,${0.35 * (1 - ring)})`; ctx.lineWidth = 1.5 * dpr;
+        ctx.beginPath(); ctx.arc(cx, cy, (10 + ring * 120) * dpr, 0, Math.PI * 2); ctx.stroke();
+      }
+      const stageNo = p < 0.14 ? 0 : p < 0.3 ? 1 : p < 0.9 ? 2 : 3;
+      if (stageNo !== lastCap) {
+        lastCap = stageNo;
+        const caps = [
+          ["1 px · #E3D2AD", "The site’s one accent colour, at the size of a single pixel.", "Pixel · 1 px"],
+          ["A drop", "The pixel rounds and falls.", "Drop"],
+          ["Water on paper", "The bloom spreads in layers. Its edge darkens where the water stops.", "Pigment"],
+          ["Château de Chenonceau, May 2026", "Watercolour and ink. From the Loire series on the Watercolours page.", "Painting"],
+        ][stageNo];
+        cap.innerHTML = `<span class="unit">${caps[0]}</span>${caps[1]}`;
+        now.textContent = caps[2];
+      }
+    }
+    img.onload = () => { ready = true; size(); draw(); };
+    scrubber(document.getElementById("scrubB"), document.getElementById("rangeB"), (v) => { p = v; draw(); }, 1);
+    addEventListener("resize", () => { if (ready) { size(); draw(); } });
+  }
+
+  /* ---------------- Sketch 3: the cover becomes the case ---------------- */
+  {
+    const vp = document.getElementById("vp");
+    const home = document.getElementById("homeC");
+    const cs = document.getElementById("caseC");
+    const back = document.getElementById("backC");
+    const url = document.getElementById("urlC");
+    const CASES = [
+      { slug: "applus-analytics", kick: "Product design · Enterprise software", t: "Business Intelligence", s: "for APplus ERP", img: true },
+      { slug: "elly-ai-assistant", kick: "Product design · AI in production", t: "AI assistant for ERP", s: "Elly, for APplus ERP", img: false },
+      { slug: "applus-best-practice-hub", kick: "Product design · Enterprise software", t: "Best Practice Hub", s: "for APplus ERP", img: false },
+    ];
+    let picked = null, busy = false;
+    const D = reduced ? 1 : 950;
+    const ease = "cubic-bezier(.7,0,.2,1)";
+    const rel = (el) => { const a = el.getBoundingClientRect(), b = vp.getBoundingClientRect(); return { left: a.left - b.left, top: a.top - b.top, width: a.width, height: a.height }; };
+    const px = (r) => ({ left: r.left + "px", top: r.top + "px", width: r.width + "px", height: r.height + "px" });
+    function flyer(tile, r) {
+      const f = document.createElement("div");
+      f.className = "flyer";
+      f.innerHTML = tile.innerHTML;
+      Object.assign(f.style, px(r));
+      vp.appendChild(f);
+      return f;
+    }
+    function open(tile) {
+      if (busy) return; busy = true; picked = tile;
+      const c = CASES[+tile.dataset.case];
+      const r = rel(tile), full = { left: 0, top: 0, width: vp.clientWidth, height: vp.clientHeight };
+      const f = flyer(tile, r);
+      tile.classList.add("is-picked"); home.classList.add("is-leaving");
+      const a = f.animate([
+        { ...px(r), transform: "translateZ(0) rotateX(0deg)", borderRadius: "8px" },
+        { ...px(r), transform: "translateZ(120px) rotateX(7deg)", borderRadius: "8px", offset: 0.32 },
+        { ...px(full), transform: "translateZ(0) rotateX(0deg)", borderRadius: "0px" },
+      ], { duration: D, easing: ease, fill: "forwards" });
+      a.onfinish = () => {
+        document.getElementById("caseKick").textContent = c.kick;
+        document.getElementById("caseT").textContent = c.t;
+        document.getElementById("caseS").textContent = c.s;
+        document.getElementById("caseImg").hidden = !c.img;
+        url.textContent = `konstancja-tanjga.github.io/portfolio-site/work/${c.slug}`;
+        cs.classList.add("is-open");
+        requestAnimationFrame(() => { cs.classList.add("is-shown"); f.remove(); busy = false; back.focus({ preventScroll: true }); });
+      };
+    }
+    function close() {
+      if (busy || !picked) return; busy = true;
+      const tile = picked;
+      cs.classList.remove("is-shown");
+      setTimeout(() => {
+        cs.classList.remove("is-open");
+        const full = { left: 0, top: 0, width: vp.clientWidth, height: vp.clientHeight };
+        const r = rel(tile);
+        const f = flyer(tile, full);
+        home.classList.remove("is-leaving");
+        url.textContent = "konstancja-tanjga.github.io/portfolio-site/";
+        const a = f.animate([
+          { ...px(full), transform: "translateZ(0)", borderRadius: "0px" },
+          { ...px(r), transform: "translateZ(60px)", borderRadius: "8px", offset: 0.75 },
+          { ...px(r), transform: "translateZ(0)", borderRadius: "8px" },
+        ], { duration: D * 0.85, easing: ease, fill: "forwards" });
+        a.onfinish = () => { tile.classList.remove("is-picked"); f.remove(); picked = null; busy = false; tile.focus({ preventScroll: true }); };
+      }, reduced ? 0 : 260);
+    }
+    vp.querySelectorAll(".tile").forEach((t) => t.addEventListener("click", () => open(t)));
+    back.addEventListener("click", close);
+  }
+})();
+</script>
