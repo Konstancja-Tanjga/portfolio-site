@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import type { CSSProperties } from "react";
 import { asset } from "./asset";
 import { reduced } from "./motion";
@@ -30,8 +30,11 @@ export type ExplodedScreen = {
   layout: Rect[];
   /** Colours of the screen, named by the role they play there. */
   colours: [{ role: string; value: string }, ...{ role: string; value: string }[]];
-  /** The spacing steps, in px, smallest first. */
-  spacing: [number, ...number[]];
+  /**
+   * The design system's spacing steps, in px, smallest first. Left out
+   * when the steps have no source, and the token layer shows colours only.
+   */
+  spacing?: [number, ...number[]];
   /** Where the token panel floats. */
   tokensAt: [number, number];
   /** Where the one pixel sits. */
@@ -62,7 +65,8 @@ const place = ([x, y, w, h]: Rect): CSSProperties => ({ left: x, top: y, width: 
 /**
  * One screen, taken apart.
  *
- * Between the hero and the work, the page pins a product screen and, as
+ * On the home page between the hero and the work, and as a block in a
+ * case study's "Design system" chapter, it pins a product screen and, as
  * the reader scrolls, tilts it into a three-quarter view and lifts it
  * into layers: layout, components, tokens, one pixel (the journey's
  * scales, with layout added between screen and component). A dashed
@@ -74,7 +78,25 @@ const place = ([x, y, w, h]: Rect): CSSProperties => ({ left: x, top: y, width: 
  * prefers-reduced-motion the section does not pin and shows the stack
  * apart, as a still.
  */
-export function Exploded({ screen: s, id }: { screen: ExplodedScreen; id?: string }) {
+export function Exploded({
+  screen: s,
+  id,
+  title = "One screen, taken apart",
+  level = 2,
+}: {
+  screen: ExplodedScreen;
+  id?: string;
+  /** The heading over the stage. */
+  title?: string;
+  /**
+   * Heading level, and with it the setting: 2 for the home page's own
+   * section; 3 for a block in a case-study chapter, which also takes the
+   * in-chapter layout (`.xp--block`, home.css).
+   */
+  level?: 2 | 3;
+}) {
+  const headingId = useId();
+  const Heading = level === 3 ? "h3" : "h2";
   const track = useRef<HTMLDivElement | null>(null);
   const stage = useRef<HTMLDivElement | null>(null);
   const rig = useRef<HTMLDivElement | null>(null);
@@ -167,17 +189,17 @@ export function Exploded({ screen: s, id }: { screen: ExplodedScreen; id?: strin
   const steps = s.spacing;
 
   return (
-    <section className="xp" id={id} aria-labelledby="xp-heading">
+    <section className={level === 3 ? "xp xp--block" : "xp"} id={id} aria-labelledby={headingId}>
       <div className="xp__track" ref={track}>
         <div className="xp__pin">
           <div className="xp__head">
-            <h2 id="xp-heading" className="xp__title">One screen, taken apart</h2>
+            <Heading id={headingId} className="xp__title">{title}</Heading>
             <p className="xp__steps" aria-hidden="true">
               <span>Screen</span><span>Layout</span><span>Component</span><span>Token</span><span>Pixel 1 px</span>
             </p>
             <p className="xp__sr">
               The {s.name} screen separated into its layers: the layout grid, the {s.system} components lifted off it,
-              the colour and spacing tokens they use, and a single pixel.
+              the colour{steps ? " and spacing" : ""} tokens they use, and a single pixel.
             </p>
           </div>
           <div className="xp__stage" ref={stage} aria-hidden="true">
@@ -211,13 +233,15 @@ export function Exploded({ screen: s, id }: { screen: ExplodedScreen; id?: strin
                       <div key={i}><i style={{ background: c.value }} />{c.role}</div>
                     ))}
                   </div>
-                  <div className="xp__space">
-                    {steps.map((n, i) => (
-                      <div key={i}><i style={{ width: n, height: n }} />{n}</div>
-                    ))}
-                  </div>
+                  {steps && (
+                    <div className="xp__space">
+                      {steps.map((n, i) => (
+                        <div key={i}><i style={{ width: n, height: n }} />{n}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <p className="xp__tag">Token<small>colour roles, {steps[0]} to {steps[steps.length - 1]} px</small></p>
+                <p className="xp__tag">Token<small>colour roles{steps && `, ${steps[0]} to ${steps[steps.length - 1]} px`}</small></p>
               </div>
               <div className="xp__layer" data-z={Z.pixel} data-fade>
                 <div className="xp__pixel" style={{ left: px - 7, top: py - 7 }} />

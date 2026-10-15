@@ -1,4 +1,5 @@
 import type { CaseStudy } from "./types";
+import { documentsExploded } from "./exploded";
 
 /**
  * Chapter numbers are this page's own, 00–14, in the same skeleton as
@@ -334,30 +335,31 @@ export const dms: CaseStudy = {
           note: "The example below is dossier plans, which define how documents are grouped into dossiers at runtime, and then the runtime itself.",
         },
         {
-          kind: "duo",
+          kind: "annotated",
           items: [
             {
-              src: "/work/applus-documents/screens/proto-dossier-list.png",
-              caption:
-                "Dossier plan configuration. Customer, Order, and Project are system baselines mapped from APplus; they can be edited and reset to default. Quality Assurance is a custom draft.",
+              id: "01",
+              title: "Dossier plan configuration",
+              standfirst: "Customer, Order, and Project are system baselines mapped from APplus; they can be edited and reset to default. Quality Assurance is a custom draft.",
+              shot: { src: "/work/applus-documents/screens/proto-dossier-list.png" },
             },
             {
-              src: "/work/applus-documents/screens/proto-dossier-general.png",
-              caption: "One dossier definition, in six tabs from General to Change summary. Only active definitions are used at runtime.",
-            },
-          ],
-        },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: "/work/applus-documents/screens/proto-dossier-governance.png",
-              caption:
-                "Governance and validation: reserved metadata fields the system manages, and three validation rules: a unique dossier name, a document type scope, and identity metadata configured for every document type.",
+              id: "02",
+              title: "One dossier definition",
+              standfirst: "Six tabs, from General to Change summary. Only active definitions are used at runtime.",
+              shot: { src: "/work/applus-documents/screens/proto-dossier-general.png" },
             },
             {
-              src: "/work/applus-documents/screens/proto-dossier-summary.png",
-              caption: "Change summary: everything that will change, reviewed before it is applied as one consistent configuration.",
+              id: "03",
+              title: "Governance and validation",
+              standfirst: "Reserved metadata fields the system manages, and three validation rules: a unique dossier name, a document type scope, and identity metadata configured for every document type.",
+              shot: { src: "/work/applus-documents/screens/proto-dossier-governance.png" },
+            },
+            {
+              id: "04",
+              title: "Change summary",
+              standfirst: "Everything that will change, reviewed before it is applied as one consistent configuration.",
+              shot: { src: "/work/applus-documents/screens/proto-dossier-summary.png" },
             },
           ],
         },
@@ -415,6 +417,7 @@ export const dms: CaseStudy = {
           caption:
             "The update process. Solid line: a composition invented to solve one screen is reviewed, named, and versioned into FOX rather than left local. Dashed: the product consumes the system back at a pinned version, so a promotion never arrives as a surprise mid-release. Colour modes and accessibility sit underneath both, in the primitives.",
         },
+        { kind: "exploded", screen: documentsExploded },
         {
           kind: "shot",
           width: "wall",

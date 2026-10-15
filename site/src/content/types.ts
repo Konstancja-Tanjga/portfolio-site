@@ -1,4 +1,5 @@
 import type { MotifName } from "../system/Motif";
+import type { ExplodedScreen } from "../system/Exploded";
 /* ---------------------------------------------------------------
    The content model.
 
@@ -343,18 +344,32 @@ export type Block =
    */
   | { kind: "dossier"; items: Dossier[] }
   /**
-   * A cycle drawn as a ring: three or four stations, each a card, joined
-   * by connectors that draw themselves on first sight and keep flowing.
-   * For a loop that has no first step, such as file, code and prototype
-   * feeding one another. Where an order matters, use `flow`.
-   */
-  /**
    * Text beside a clip, so the reader can read and watch at once: the
    * prose on the left, a phone-sized recording on the right that stays in
    * view while the text scrolls. For a flow that is best explained while
    * it plays, such as voice mode.
    */
   | { kind: "beside"; html: string; video: { src: string; poster?: string; title: string }; caption?: string }
+  /**
+   * One screen of the product taken apart in 3D on scroll: layout,
+   * components, tokens, one pixel (system/Exploded.tsx; screens in
+   * content/exploded.ts). Full width and pinned while it plays, so at
+   * most one per chapter, and never inside a `dossier` panel: the panel
+   * scrolls on its own, so a sticky pin would stick to the panel, not the
+   * page. `Dossier.blocks` excludes it.
+   */
+  | {
+      kind: "exploded";
+      screen: ExplodedScreen;
+      /** Defaults to "One screen, taken apart". */
+      title?: string;
+    }
+  /**
+   * A cycle drawn as a ring: three or four stations, each a card, joined
+   * by connectors that draw themselves on first sight and keep flowing.
+   * For a loop that has no first step, such as file, code and prototype
+   * feeding one another. Where an order matters, use `flow`.
+   */
   | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
@@ -366,7 +381,8 @@ export type Dossier = {
   maxim: string;
   standfirst: string;
   cover: { src: string; frame?: "macbook" };
-  blocks: Block[];
+  /** Any block but `exploded`, whose sticky pin cannot work inside a scrolling panel. */
+  blocks: Exclude<Block, { kind: "exploded" }>[];
 };
 
 /** A named stretch of the wall. Chapters drive the jump bar. */

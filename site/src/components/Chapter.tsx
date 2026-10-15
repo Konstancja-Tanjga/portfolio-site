@@ -9,6 +9,7 @@ import {
   Dossier,
   Duo,
   Evolution,
+  Exploded,
   Flow,
   Joint,
   Lane,
@@ -98,6 +99,8 @@ function BlockView({ block }: { block: Block }) {
       return <AnnotatedSet items={block.items} />;
     case "beside":
       return <Beside html={block.html} video={block.video} caption={block.caption} />;
+    case "exploded":
+      return <Exploded screen={block.screen} title={block.title} level={3} />;
     case "loop":
       return <Loop stations={block.stations} edges={block.edges} centre={block.centre} caption={block.caption} />;
     case "dossier":
