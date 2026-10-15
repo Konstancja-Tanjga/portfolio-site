@@ -151,3 +151,45 @@ The study rebuilt in the APplus Analytics layout from three of Konstancja's Figm
 | --- | --- |
 | ![Partner Details, taken apart](volvo-exploded.png) | ![The user flow tiles](volvo-flows.png) |
 | ![The Partner flow, screens as folders](volvo-flow-partner.png) | |
+
+## 15 October: how I work, drawn
+
+Konstancja's brief: the "How I work" section spoke in text, and she
+speaks in pictures; show how she works and which tools she uses, and
+iterate until it is something to be proud of. Then, mid-build: the tools
+have to be visible.
+
+The section is now a drawing sheet (`site/src/home/Sheet.tsx`, words in
+`home/story.tsx`). One real component, the chart card from the Analytics
+dashboard, cropped from the same export and rects the exploded screen
+uses, goes through the eight tools it passes between the first option and
+the shipped screen. Each station is that tool's window, drawn in the two
+inks with the card inside it as the tool would show it: three options
+with one chosen (Claude Design), under selection handles (Figma), as a
+specification beside a Figma MCP prompt (Claude Code), as a story with
+its states (Storybook), as a baseline and a hatched diff (Chromatic), as
+a merged pull request (GitHub), as a package with a barcode (Nexus), and
+back in place on the dashboard, outlined, with five more products behind
+it. A conveyor line runs through the station numbers, as text sits on a
+dimension line, and is drawn by the scroll with the card as a square at
+its head; a station lights when the head reaches it. The line is routed
+after layout, so the same drawing wraps at four columns, two, or one.
+
+Along the top, the tools with their marks (Simple Icons, CC0, one path
+each in `home/marks.tsx`): Figma, Claude, Codex, Cursor, Storybook,
+Chromatic, GitHub, Nexus, Angular, React, web components. Underneath, a
+rhythm ruler (weekly critique, quarterly interviews and skill revisions,
+usability testing every release) and a title block in the corner with
+the tools, the stack, the two governing skills and the revision.
+
+Rejected on the way: a pinned horizontal strip (a second pin after the
+exploded screen, and awkward on a phone); the line through the window
+centres (the windows hid it); tool names without marks.
+
+| | |
+| --- | --- |
+| ![Before: the text](how-i-work-before.png) | ![The sheet](how-i-work-sheet.png) |
+| ![The line, mid-scroll](how-i-work-line.png) | ![On a phone](how-i-work-phone.png) |
+
+Open: the journey's token overlay (spacing scale, colour ramp) crosses
+the windows while the sheet is in view; it is kept as it is.

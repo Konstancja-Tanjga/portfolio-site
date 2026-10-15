@@ -5,54 +5,6 @@
  * it, and the words can be edited without touching the layout.
  */
 
-export const practices: { title: string; body: string }[] = [
-  {
-    title: "The design system is code",
-    body:
-      "Component APIs and tokens are authored in Figma, implemented as code, documented in Storybook, regression-tested in Chromatic, and published to Nexus as versioned packages. Product teams install them; nobody redraws them.",
-  },
-  {
-    title: "I merge the pull requests",
-    body:
-      "Across Angular, React, and web components. I take part in code review and check Chromatic snapshots against the design intent myself. The handoff is a working prototype alongside the Figma file, built from the design components in code.",
-  },
-  {
-    title: "AI, used agentically",
-    body:
-      "Claude and Codex in VS Code every day for component work, refactoring, and documentation. I write reusable agent skills that encode the system's components and rules, so that generated UI comes out on-system rather than plausibly wrong.",
-  },
-  {
-    title: "AI as a product",
-    body:
-      "Designed and shipped Elly, the product's first assistant: streaming answers over the documentation with cited sources, confidence and error states, and a handoff to a person when the system should not act alone. Now designing AI-driven analysis and dashboards.",
-  },
-  {
-    title: "One model for every module",
-    body:
-      "Led the redesigns that gave the platform a single navigation, content, and interaction model across all of its modules, on desktop and mobile.",
-  },
-  {
-    title: "Accessibility in the primitives",
-    body:
-      "Contrast tokens so a colour decision cannot fail silently; keyboard navigation and focus behaviour at component level; WCAG as a standing review criterion, not a pre-release audit.",
-  },
-  {
-    title: "Two senior designers with me",
-    body:
-      "I lead a team of two senior designers. Work is split by application, reviewed together in a weekly critique, and held to the same system: every frame points at a component, every component has a Storybook story, and nobody ships what the others have not seen.",
-  },
-  {
-    title: "Desktop, and mobile",
-    body:
-      "APplus runs on the planner's two monitors and on a phone. One navigation and one content model serve both; what changes is the density, the touch targets, and what goes into the bottom bar.",
-  },
-  {
-    title: "A research rhythm",
-    body:
-      "Quarterly interviews, journey mapping, usability testing every release. The team's decisions are argued from what users were seen to do, not from what was assumed.",
-  },
-];
-
 export const career: { years: string; org: string; role: string; what: string }[] = [
   {
     years: "2023 –",
@@ -115,3 +67,48 @@ export const offScreen: { src: string; alt: string; caption: string }[] = [
     caption: "Le Cèdre Noir",
   },
 ];
+
+/**
+ * The sheet on the home page: one component, drawn through every tool it
+ * passes on its way from the first option to the shipped screen. The
+ * stations are the pipeline from the About page, in the same order; the
+ * words here are the short ones, the long ones stay on About.
+ */
+export const sheet = {
+  stations: [
+    { tool: "Claude Design", mark: "claude", file: "options", title: "Options, one chosen", body: "Several options, iterated with the requirements engineer and the PM." },
+    { tool: "Figma", mark: "figma", file: "FOX v3 library", title: "Redrawn on FOX components", body: "Every value a variable; Code Connect on every component." },
+    { tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "Built to my spec, through MCP", body: "Claude Code reads the frame and implements the specification I write." },
+    { tool: "Storybook", mark: "storybook", file: "fox-card", title: "Storybook is the contract", body: "Every state a story: the reference design and engineering both check against." },
+    { tool: "Chromatic", mark: "chromatic", file: "snapshots", title: "Snapshots against the frames", body: "Visual regression on every pull request; I check the diff against the intent." },
+    { tool: "GitHub", mark: "github", file: "pull request", title: "I review and merge", body: "Against the frames and the acceptance criteria, before anything ships." },
+    { tool: "Nexus", mark: "sonatype", file: "package", title: "Versioned on Nexus", body: "Product teams install the package; nobody redraws it." },
+    { tool: "APplus", mark: "", file: "Analytics", title: "Shipped, six times", body: "The same card on the Analytics dashboard, and five more products that install FOX." },
+  ],
+  tools: [
+    { name: "Figma", mark: "figma", what: "library, Make, MCP, Code Connect" },
+    { name: "Claude", mark: "claude", what: "Design, Code, two agent skills" },
+    { name: "Codex", mark: "openai", what: "in VS Code" },
+    { name: "Cursor", mark: "cursor", what: "editor" },
+    { name: "Storybook", mark: "storybook", what: "the contract" },
+    { name: "Chromatic", mark: "chromatic", what: "visual regression" },
+    { name: "GitHub", mark: "github", what: "pull requests, I merge" },
+    { name: "Nexus", mark: "sonatype", what: "versioned packages" },
+    { name: "Angular", mark: "angular", what: "components" },
+    { name: "React", mark: "react", what: "components" },
+    { name: "Web components", mark: "", what: "one more target" },
+  ],
+  rhythm: [
+    { every: "Weekly", what: "critique with my two designers", ticks: 52 },
+    { every: "Quarterly", what: "interviews; the two agent skills revised", ticks: 4 },
+    { every: "Every release", what: "usability testing", ticks: 0 },
+  ],
+  block: [
+    ["Sheet", "How I work"],
+    ["Drawn for", "One fox-card, from the first option to the shipped screen"],
+    ["Tools", "Figma, Claude Design, Claude Code, Codex, Cursor, Figma Make, Figma MCP, Code Connect, Storybook, Chromatic, GitHub, Nexus"],
+    ["Stack", "Angular, React, web components"],
+    ["Governed by", "bighat-design-system skill, handoff-readiness skill"],
+    ["Rev", "2026-10"],
+  ] as [string, string][],
+};
