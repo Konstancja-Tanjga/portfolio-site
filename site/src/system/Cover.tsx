@@ -93,8 +93,12 @@ export function Cover({ cover, art: device }: { cover: CoverData; art?: string }
 }
 
 
-/** Several images of the work stacked in depth, surfacing in turn. */
-export function Layers({ layers, motif }: { layers: { src: string; label: string }[]; motif?: MotifName }) {
+/**
+ * Several images of the work stacked in depth, surfacing in turn. The motif
+ * drawn over them defaults to the chart; `motif={null}` draws none, which
+ * the home hero uses: the signs belong to each study's own cover.
+ */
+export function Layers({ layers, motif }: { layers: { src: string; label: string }[]; motif?: MotifName | null }) {
   const tilt = useTilt<HTMLDivElement>(3);
   return (
     <div className="layers" ref={tilt} style={{ "--layers": layers.length } as React.CSSProperties}>
@@ -104,7 +108,7 @@ export function Layers({ layers, motif }: { layers: { src: string; label: string
           <figcaption className="layers__label">{l.label}</figcaption>
         </figure>
       ))}
-      <Motif name={motif} />
+      {motif !== null && <Motif name={motif} />}
     </div>
   );
 }
