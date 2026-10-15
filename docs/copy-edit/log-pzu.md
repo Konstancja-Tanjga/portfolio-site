@@ -59,3 +59,40 @@ Not done, and why:
 - No `joint`: chapter 06 says what was not measured after launch. A question joined to "nothing" would be a slot filled, not a reflection on record.
 - No `dossier`: the three decisions in chapter 04 share one set of screens; they are not areas each with their own screens and rule.
 - `stats` and `flow` already existed from the 11 October pass and are unchanged.
+
+## 15 October 2026: screens from the final Figma file
+
+Sources: the final screens file `mojePZU_FINAL_2021` (Figma `VSnWUmgg3pJbKqtEjrc7uD`, page `2528:291`) and the process board `MojePZU_redesign-process` (`grHLzFzerDF965YjAlL6rF`), both opened through the Figma connector on the owner's account. Her answers on 15 October: which frames belong to prototype 1.0, 2.0, or 3.0 cannot be established; show no dates; do not use the board's "flow" frame (`1:522`), whose text belongs to another project.
+
+How the images were made: each frame exported at 3x (3840 px wide, the MacBook screen width), cropped to the frame, and blurred where it carries a name (first names included), an address, a policy or case number, a number plate, PESEL, a phone or account number, or a date. The blur boxes are the text layers' own bounds, read from the file and trimmed to the glyphs. The message list on `2528:3082` is a picture, not text, and was blurred by position. A review pass found three names the first filter missed ("Antonina" in the header, "Internista - Tomasz Miś" on `2528:1667`, "KARTA MARYSI" on `2598:81474`); they were added and the mockups and clips rebuilt. The top 3840 × 2522 of each page was laid into the MacBook template at 1600, 2400, and full width.
+
+The clips follow the file's own prototype links: `2528:2244` "Zaloguj się" to `2528:2613`, its button to `2528:2671`, "Pomiń" to `2825:6`, "Dalej" to `2825:961`, "Zakończ samouczek" to `2564:56755`; then "Opłać" to `2598:81474`, "Umów wizytę lub badanie" to `2528:1667`, and "Zgłoś szkodę" to `2528:1584`. Tall pages scroll inside the laptop screen. Rendered at 24 fps from the exports and encoded at 1440 × 946, like the Analytics clips.
+
+| Before | After | Source or rule |
+| --- | --- | --- |
+| credit: "UI Designer · PZU · 2019" | "UI Designer · PZU", + `org: "PZU"` | owner: no dates; `org` keeps the company on the Work tile, which reads it from a three-part credit |
+| { label: "Period", value: "January to December 2019" } | removed | owner: no dates |
+| key: "Period and team", value: "January to December 2019. Five people: …" | key: "Team", value: "Five people: …" | owner: no dates; the team is unchanged |
+| cover art `cover-art.webp`, shot `screens/cover.webp` (1340 and 1440 px composites) | `device/dashboard-2400.webp` for both | frame `2564:56755`; covers keep one app screen |
+| (no cover layers) | `layers`: Dashboard, Before logging in, Medical services, Payments, Klub PZU; `motif: "documents"` | frames `2564:56755`, `2528:2244`, `2528:1667`, `2598:81474`, `2613:15`; kit 4: four to six screens |
+| chapter 01: `shot` `screens/dashboard.webp` (a 1440 px crop) | `carousel` of 15 MacBook mockups, one per part of the portal, each with a title and one line on what the screen shows | frames, in slide order: `2528:2244`, `2528:2613`, `2528:2671`, `2564:56755`, `2654:7052`, `2598:81474`, `2528:1584`, `2528:1667`, `2598:78610`, `2600:16121`, `2528:3082`, `2528:1441`, `2528:732`, `2598:79994`, `2613:15`; captions describe only what is on each screen |
+| chapter 03 duo, second image: `screens/offers-final.webp` (360 × 345), "The same section in the final version, …" | `screens/dashboard-final.webp`, the whole logged-in home page (1440 px), "The logged-in home page in the final version, where each offer under "Wybrane dla Ciebie" ends in "Dowiedz się więcej" (find out more)." | frame `2564:56755`; the early mockup beside it is a whole page too |
+| (chapter 05 had no flow) | `flow`: Before logging in; Logging in; Choosing topics; The tutorial; Dashboard; note: "The path a customer takes on a first login, as the links in the Figma prototype run." | the prototype links above; "five steps" from "Krok 1 / 5" on `2825:961` |
+| (no clips) | two `video` clips in the MacBook: "A first login, from the public page to the dashboard" and "The shortcut bar: pay, book a visit, report a claim"; the second caption ends "The bar sits in the same place on every logged-in page." | the prototype links above; the bar is at the same position on every logged-in frame exported |
+| header comment: no cover layers and no carousel, and why | where the screens come from, what is blurred, that the clips follow only existing links, and that no screen is given a prototype version | the file says what it leaves out |
+
+Removed files, no longer referenced: `cover-art.webp`, `screens/cover.webp`, `screens/dashboard.webp`, `screens/offers-final.webp`.
+
+The public page (`2528:2244`) shows "KUP" (buy) beside "Szczegóły" on the product cards; the logged-in pages carry no "Buy" button. On 15 October the owner chose to narrow the decision to the logged-in portal:
+
+| Before | After | Source or rule |
+| --- | --- | --- |
+| Decision 1: "The "Buy" button that sat on every screen was dropped. …" | "After logging in, the "Buy" button that sat on every screen was dropped. …" | owner, 15 October; frames `2564:56755` and the other logged-in pages |
+| chapter 03: "<strong>The "Buy" button.</strong> Dropped. It had sat on every screen." | "… Dropped from the logged-in portal. It had sat on every screen." | the same |
+| rule 01 title: "Drop the "Buy" button from every screen" | "Drop the "Buy" button from the logged-in portal" | the same |
+| rule 01: "No screen carries a "Buy" button. …" | "No screen after logging in carries a "Buy" button. …" | the same |
+| `site/src/home/story.tsx`, career row PZU: years: "2019" | years: "" | owner: no dates (the row is not rendered at present) |
+
+Open:
+
+- The final-screens composite in chapter 05 and the early greyscale mockup in chapter 03 have no source in the Figma files and stay as they were.
