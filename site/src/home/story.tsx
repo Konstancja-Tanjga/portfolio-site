@@ -79,7 +79,7 @@ export const career: { years: string; org: string; role: string; what: string }[
     what: "Network optimisation products for the energy industry: dense data visualisation in the vocabulary of drilling engineers.",
   },
   {
-    years: "2019",
+    years: "",
     org: "PZU",
     role: "UI Designer",
     what: "Redesign of MojePZU, the customer portal and app of Poland's largest insurer.",

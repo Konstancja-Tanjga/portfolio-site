@@ -89,7 +89,7 @@ export const pzu: CaseStudy = {
             },
             {
               key: "Decision 1",
-              value: "The \"Buy\" button that sat on every screen was dropped. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\".",
+              value: "After logging in, the \"Buy\" button that sat on every screen was dropped. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\".",
             },
             {
               key: "Decision 2",
@@ -265,7 +265,7 @@ export const pzu: CaseStudy = {
             "<strong>Information architecture.</strong> Changed between prototypes.",
             "<strong>Navigation.</strong> Changed between prototypes.",
             "<strong>Screen layout.</strong> The content layout of individual screens changed.",
-            "<strong>The \"Buy\" button.</strong> Dropped. It had sat on every screen.",
+            "<strong>The \"Buy\" button.</strong> Dropped from the logged-in portal. It had sat on every screen.",
             "<strong>A new module.</strong> Added, for buying and managing policies and for booking doctor's appointments.",
           ],
         },
@@ -296,10 +296,10 @@ export const pzu: CaseStudy = {
           items: [
             {
               n: "01",
-              title: "Drop the \"Buy\" button from every screen",
+              title: "Drop the \"Buy\" button from the logged-in portal",
               rule: {
                 label: "Rule",
-                body: "No screen carries a \"Buy\" button. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\" and link to the details.",
+                body: "No screen after logging in carries a \"Buy\" button. Offer cards in \"Wybrane dla Ciebie\" end in \"Dowiedz się więcej\" and link to the details.",
               },
               why: {
                 label: "Round 1 finding",

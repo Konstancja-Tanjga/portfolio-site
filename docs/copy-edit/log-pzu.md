@@ -83,7 +83,16 @@ The clips follow the file's own prototype links: `2528:2244` "Zaloguj się" to `
 
 Removed files, no longer referenced: `cover-art.webp`, `screens/cover.webp`, `screens/dashboard.webp`, `screens/offers-final.webp`.
 
-Open, for the owner:
+The public page (`2528:2244`) shows "KUP" (buy) beside "Szczegóły" on the product cards; the logged-in pages carry no "Buy" button. On 15 October the owner chose to narrow the decision to the logged-in portal:
 
-- The public page (`2528:2244`) shows "KUP" (buy) beside "Szczegóły" on the product cards. Decision 1 and rule 01 say no screen carries a "Buy" button. The logged-in pages bear the rule out; the public page does not. The text is unchanged until she says which is right.
+| Before | After | Source or rule |
+| --- | --- | --- |
+| Decision 1: "The "Buy" button that sat on every screen was dropped. …" | "After logging in, the "Buy" button that sat on every screen was dropped. …" | owner, 15 October; frames `2564:56755` and the other logged-in pages |
+| chapter 03: "<strong>The "Buy" button.</strong> Dropped. It had sat on every screen." | "… Dropped from the logged-in portal. It had sat on every screen." | the same |
+| rule 01 title: "Drop the "Buy" button from every screen" | "Drop the "Buy" button from the logged-in portal" | the same |
+| rule 01: "No screen carries a "Buy" button. …" | "No screen after logging in carries a "Buy" button. …" | the same |
+| `site/src/home/story.tsx`, career row PZU: years: "2019" | years: "" | owner: no dates (the row is not rendered at present) |
+
+Open:
+
 - The final-screens composite in chapter 05 and the early greyscale mockup in chapter 03 have no source in the Figma files and stay as they were.
