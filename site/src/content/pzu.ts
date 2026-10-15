@@ -1,22 +1,25 @@
 import type { CaseStudy } from "./types";
 
 /**
- * Everything on this page comes from two places: the original project boards
- * (removed in 144a907, recoverable from history) and the owner's confirmation of what the board leaves out: that the portal shipped,
- * that she was the only designer, and what changed between the prototypes.
+ * Everything on this page comes from three places: the original project boards
+ * (removed in 144a907, recoverable from history), the final Figma file, and
+ * the owner's confirmation of what the board leaves out: that the portal
+ * shipped, that she was the only designer, and what changed between the
+ * prototypes.
  *
- * The board's words are text here. The research boards are crops from it in
- * /work/mojepzu/screens/.
+ * The board's words are text here. The research boards are crops from it:
+ * insights-board.webp in /work/mojepzu/screens/, and the prototype review
+ * laid into the MacBook in /work/mojepzu/device/.
  *
  * The product screens come from the final Figma file (mojePZU_FINAL_2021,
  * page 2528:291), exported at 3x and laid into the MacBook in
  * /work/mojepzu/device/. Names, addresses, policy and case numbers, number
- * plates, PESEL, phone and account numbers, and every date are blurred: the
+ * plates, PESEL, phone and account numbers, first names, and every date are blurred: the
  * data is mock, but it looks real, and the owner asked for no dates on the page.
  * The two clips in chapter 05 walk the file's own prototype links (login,
  * personalisation, the tutorial, the shortcut bar); nothing in them is a link
  * the prototype does not have. The file does not label which frames belong to
- * prototype 1.0, 2.0 or 3.0, so no screen here is given a version.
+ * prototype 1.0, 2.0, or 3.0, so no screen here is given a version.
  *
  * The two research boards in chapter 02 are folded, opened on demand, and
  * carry hotspots that repeat their captions at the place on the board.
@@ -40,6 +43,7 @@ export const pzu: CaseStudy = {
     subline: "the customer portal of an insurer",
     stamp: "RESEARCH · INFORMATION ARCHITECTURE · THREE PROTOTYPES",
     credit: "UI Designer · PZU",
+    org: "PZU",
     art: { src: "/work/mojepzu/device/dashboard-2400.webp" },
     shot: { src: "/work/mojepzu/device/dashboard-2400.webp" },
     layers: [
@@ -366,7 +370,7 @@ export const pzu: CaseStudy = {
           poster: "/work/mojepzu/clips/shortcuts.webp",
           title: "The shortcut bar: pay, book a visit, report a claim",
           caption:
-            "From the dashboard, \"Opłać\" opens payments, \"Umów wizytę lub badanie\" opens medical services, and \"Zgłoś szkodę\" opens claims and benefits. The bar sits in the same place on every page.",
+            "From the dashboard, \"Opłać\" opens payments, \"Umów wizytę lub badanie\" opens medical services, and \"Zgłoś szkodę\" opens claims and benefits. The bar sits in the same place on every logged-in page.",
         },
         {
           kind: "shot",
