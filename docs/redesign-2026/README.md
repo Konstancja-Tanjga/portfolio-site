@@ -142,3 +142,12 @@ field: [case-cover.png](case-cover.png).
   current one is a casual photo and sits behind the headline only just.
 - The case study template in this direction (hero, metadata, galleries,
   pull quotes, results).
+
+### Volvo Group ERP: Partner, User, and Unit screens, user flows, 3D
+
+The study rebuilt in the APplus Analytics layout from three of Konstancja's Figma files ("Partner", "USER", and "UNIT"): thirteen screens in the carousel, Partner Details taken apart in the "Design system" chapter, and a "User flows" dossier with Partner, User, and Unit, each a flow of steps and a folder per screen. Personal data on every new mockup is blurred. Edit log: `docs/copy-edit/log-volvo.md`.
+
+| | |
+| --- | --- |
+| ![Partner Details, taken apart](volvo-exploded.png) | ![The user flow tiles](volvo-flows.png) |
+| ![The Partner flow, screens as folders](volvo-flow-partner.png) | |

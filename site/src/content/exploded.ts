@@ -8,11 +8,13 @@ import type { ExplodedScreen, Rect } from "../system/Exploded";
  * that layer's position and size in the frame, read from the Figma file,
  * except the Hub card heights, measured on the export. The part names are
  * the layer names; on the Hub they match the three components its case
- * study names, plus `filters`. Colours were sampled from single points on
- * real elements of the frame, named by the role they play there.
+ * study names, plus `filters`; on Baldo they are the names of the
+ * components the layers are instances of. Colours were sampled from single
+ * points on real elements of the frame, named by the role they play there.
  *
- * No `spacing`: FOX's spacing steps are not on record here, and the scale
- * the home page shows is the site's own (Big Hat), not FOX's.
+ * No `spacing`: neither FOX's nor the Volvo Design System's spacing steps
+ * are on record here, and the scale the home page shows is the site's own
+ * (Big Hat).
  */
 
 /** Documents: the list, from Figma node 634:19568 ("Dashboard"). */
@@ -82,4 +84,51 @@ export const hubExploded: ExplodedScreen = {
   tokensAt: [560, 340],
   // the Install button on the first card
   pixel: [444, 531],
+};
+
+/**
+ * Volvo Group ERP: Partner Details, from Figma node 4:362716 in the file
+ * "Partner" ("Partner information form_default"). The signed-in user's name
+ * and ID in the header are blurred in the export (the frame's 2x export,
+ * blurred like the mockups, then converted to WebP). Part names are the names
+ * of the components the layers are instances of.
+ */
+export const baldoExploded: ExplodedScreen = {
+  name: "Baldo",
+  // from the owner's CV: the ERP's design system was built on the corporate Volvo Design System
+  system: "Volvo Design System",
+  src: "/work/volvo-erp/exploded/partner-details.webp",
+  size: [1920, 1588],
+  screen: [0, 0, 1920, 1588],
+  parts: [
+    { name: "Side menu", rect: [0, 0, 332, 1521], rail: true },
+    { name: "Header", rect: [300, 0, 1588, 56] },
+    { name: "Partner details top menu", rect: [390, 116, 1506, 56] },
+    ...[331, 425, 470, 515, 606, 655, 702].map((y) => ({ name: "Text field", rect: [580, y, 288, 32] as Rect })),
+    { name: "Dropdown", rect: [580, 560, 288, 32] },
+    { name: "Business Areas", rect: [984, 233, 633, 527] },
+    { name: "GDPR information comment", rect: [1614, 699, 269, 269] },
+    { name: "Tabs", rect: [366, 1045, 1506, 48] },
+    { name: "Footer", rect: [0, 1524, 1920, 64] },
+  ],
+  grid: [366, 116, 1520, 1408],
+  layoutNote: "side menu, header, top menu, partner information, tabs",
+  layout: [
+    [0, 0, 332, 1521],
+    [300, 0, 1588, 56],
+    [390, 116, 1506, 56],
+    [366, 232, 1520, 768],
+    [366, 1045, 1506, 419],
+    [0, 1524, 1920, 64],
+  ],
+  colours: [
+    { role: "action", value: "#141414" },
+    { role: "active tab", value: "#1f78d1" },
+    { role: "table head", value: "#323232" },
+    { role: "status", value: "#66b3a6" },
+    { role: "surface", value: "#ffffff" },
+  ],
+  tokensAt: [560, 1150],
+  // the checked Subscription Pay checkbox
+  pixel: [1058, 879],
 };
