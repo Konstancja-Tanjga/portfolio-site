@@ -57,3 +57,26 @@ Not done, and why:
 - No `joint`, `flow`, `stats`, `evolution`, `loop` or `video`: the boards record no reflection, no sequence of stages, no measured number, no system versions, no handoff and no clips, as the 11 October pass noted.
 - `website-02.png` to `website-05.png` stay as open flat shots: they show screens rather than explain, so folding them would hide the website.
 - The carousel keeps `website-01.png` and `website-03.png` flat: they are boards of several devices, not single screens, so a MacBook around them would be a frame around frames.
+
+## 15 October 2026: the Figma prototype, and the dates from the CV
+
+Sources: the product's Figma file "Unconv" (Figma `w7KrgQm0lIMZq54LTq8TS3`, page `0:1`), opened through the Figma connector on the owner's account, and her CV of October 2026 for the dates. Her answers on 15 October: take the dates from the CV; remove "Hess". "Hess" appears only in the file's notes, not on any exported screen, so nothing on the page carries it.
+
+How the images were made: each frame exported at 8/3, so a 1440 px frame is 3840 px wide, the laptop's screen width. The 900 px frame is shorter than the screen, so the band below it takes the frame's own bottom colour. Blurred: the four names in the comments panel (`1:12312`), the user's name in the greeting (`1:12846`), "Updated May 3, 2022" in the Insights header, and "Tuesday, October 12, 2021" in Network Optimization. Weekday dates without a year and chart axes are left.
+
+| Before | After | Source or rule |
+| --- | --- | --- |
+| credit: "Senior UX & UI designer · Xecta · 2020–2021 and 2022" | "Senior UX & UI designer · Xecta · 2020 to 2021" | CV: Xecta 04/2020 – 07/2021; 3.7 no en dash as "to" |
+| { label: "Period (product)", value: "April 2020 to July 2021" } + { label: "Period (website)", value: "2022" } | { label: "Period", value: "April 2020 to July 2021" } | CV: one engagement, "Designed the corporate website" inside it |
+| Context: "… Two projects, two years apart: the product, then the company website." | "… Two projects for it: the product and the company website." | CV period |
+| Period and team: "April 2020 to July 2021 for the product, … 2022 for the website, …" | "April 2020 to July 2021. The product with a UX designer and a researcher; the website with a UI designer and two developers." | CV period; the team unchanged |
+| cover art `cover-art.webp`, shot `00-cover.png` | `device/home-2400.webp` for both | frame `1:12139`; covers keep one app screen |
+| cover layers: Dashboard, Well Performance, Artificial Lift Timing Selection (photo crops), xecta.com | Wells, Pro summary, Opportunity, Production centric, Network optimisation, xecta.com | frames `1:12139`, `1:12310`, `1:12827`, `1:12852`, `1:12390`; website layer kept |
+| carousel: three product screens cropped from photographs, two website boards | 14 product screens from the prototype, then the same two website boards | frames, in slide order: `1:12139`, `1:12211`, `1:13077`, `1:12342`, `1:13165`, `1:12310`, `1:12316`, `1:12827`, `1:12823`, `1:12312`, `1:12846`, `1:12851`, `1:12852`, `1:12390`; captions describe only what is on screen |
+| (no chapter 03) | chapter 03 "Prototype": a `flow` of five stages and two clips in the MacBook | stages from the use-case notes beside the Anomalies frames ("User inspects the well card to see more well details", "User click on the pro summary button to see the well overview", "… deep dive into the 3rd level"); clip 1 along the prototype's links `1:12342` to `1:12310`, tabs to `1:12316` and `1:12827`, Comments to `1:12312`; clip 2 the frames `1:12390`, `1:12818`, `1:12820`, `1:12386`, `1:12387`, `1:12389`, `1:12388` in the file's numbering |
+
+The dossier keeps the three photo-cropped product screens and the boards: they are the record of the earlier screens and of the role lines.
+
+Not done: an early-and-final pair of the home page. The early frame beside the review notes (`1:146556`) is the same component as the final one, so the pair would show one screen twice.
+
+Removed files, no longer referenced: `cover-art.webp`, `00-cover.png`.
