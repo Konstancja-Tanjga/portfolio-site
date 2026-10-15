@@ -80,3 +80,11 @@ The dossier keeps the three photo-cropped product screens and the boards: they a
 Not done: an early-and-final pair of the home page. The early frame beside the review notes (`1:146556`) is the same component as the final one, so the pair would show one screen twice.
 
 Removed files, no longer referenced: `cover-art.webp`, `00-cover.png`.
+
+Later the same day, at the owner's request:
+
+| Before | After | Source or rule |
+| --- | --- | --- |
+| lead, plain | `leadAccent` on "production surveillance and optimisation software for upstream oil and gas", in `#e3d2ad`, the site's highlight (`--kt-sand`, `--bh-mark`) | owner: mark the phrase in the highlight colour |
+| chapter 01a: pull "“It made her master the nomenclature of the industry.”" and the folded board `05.png` | removed; `05.png` deleted | owner |
+| MacBook mockups with the light slab under the base and the silver sliver left of the lid | cleaned with `site/scripts/clean-mockups.py` | owner: no shadows or grey bars |

@@ -16,8 +16,8 @@ import type { CaseStudy } from "./types";
  * screen set in a photograph. The application rectangle is cropped out of
  * each into /work/xecta/screens/ and composited into a MacBook frame in
  * /work/xecta/device/, so the cover, the carousel and the dossier show the
- * product the way every other study does. The boards with typeset text
- * (02 and 05) are folded and open on demand.
+ * product the way every other study does. The board with typeset text
+ * (02) is folded and opens on demand.
  *
  * The cover layers, the carousel and chapter 03 come from the product's
  * Figma prototype ("Unconv", page 0:1), exported at 8/3 so that a 1440 px
@@ -35,6 +35,7 @@ export const xecta: CaseStudy = {
   what: "A production surveillance platform for upstream oil and gas, and the company website",
   lead:
     "Two projects for Xecta, a Texas company that makes production surveillance and optimisation software for upstream oil and gas. The first is a web application with heavy data visualisation for operators who are not analysts. The second is the company website, xecta.com. I documented the product work in Confluence for a distributed US team.",
+  leadAccent: { text: "production surveillance and optimisation software for upstream oil and gas", hex: "#e3d2ad" },
   status: { state: "live" },
   group: "product",
   cover: {
@@ -175,18 +176,6 @@ export const xecta: CaseStudy = {
             "<strong>Professionals from the drilling industry</strong> as the people to learn from, with a UX designer and a researcher beside me.",
             "<strong>A distributed US team, worked remotely.</strong> The product work was documented in Confluence so that it could be read without me.",
           ],
-        },
-        {
-          kind: "pull",
-          text: "“It made her master the nomenclature of the industry.”",
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${W}/05.png`,
-          folded: true,
-          caption:
-            "From the project board: my manager on how fast I learned the industry's nomenclature. Below it, the Opportunities list with a row opened on its recommendation, and the Insights screen with a liquid-loading chart.",
         },
       ],
     },
