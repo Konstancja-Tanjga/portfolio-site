@@ -267,7 +267,13 @@ export type Annotated = {
 
 export type Block =
   | { kind: "passage"; html: string }
-  | { kind: "points"; items: string[] }
+  /**
+   * `fold` is the head of a drawer the list sits behind: the reader sees the
+   * head and opens the list on demand. For lists a reader asks for rather
+   * than reads, such as a bibliography. The only copy of a fact that
+   * matters never lives behind one.
+   */
+  | { kind: "points"; items: string[]; fold?: string }
   | ({ kind: "shot"; width?: Width } & Shot)
   | { kind: "duo"; items: Shot[]; caption?: string }
   /**
