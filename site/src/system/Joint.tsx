@@ -14,14 +14,17 @@ import { Lane } from "./Wall";
 export function Joint({ question, answers }: { question: string; answers: string[] }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
   const list = useRef<HTMLOListElement | null>(null);
-  // the trunk ends at the last branch: measure where that is
+  // The trunk ends at the last branch: measure where that is, from the
+  // top of the joint (the rail starts there). offsetTop would measure from
+  // the nearest positioned ancestor, which is the page, and the trunk would
+  // run on far below the footer.
   useEffect(() => {
     const el = ref.current, ol = list.current;
     if (!el || !ol) return;
     const fit = () => {
       const last = ol.lastElementChild as HTMLElement | null;
       if (!last) return;
-      const end = last.offsetTop + 2.2 * 16;
+      const end = last.getBoundingClientRect().top - el.getBoundingClientRect().top + 2.2 * 16;
       el.style.setProperty("--trunk", `${end}px`);
     };
     fit();

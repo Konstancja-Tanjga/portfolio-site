@@ -24,7 +24,9 @@ import { analyticsExploded } from "../home/exploded";
  */
 export function Home() {
   const products = byGroup("product");
-  const practice = byGroup("practice");
+  // Home shows the practice tiles minus Tinder for Chihuahua; the study stays
+  // on the Practice page, reached from the link under the heading.
+  const practice = byGroup("practice").filter((c) => c.slug !== "tinder-for-chihuahua");
   const identity = byGroup("identity");
   const award = findCase("erp-of-the-year");
 
@@ -37,6 +39,7 @@ export function Home() {
         <div className="hm-hero__aurora" aria-hidden="true" />
         <div className="hm-hero__stage" aria-hidden="true">
           <Layers
+            motif={null}
             layers={[
               { src: "/work/applus-analytics/device/dashboards-2400.webp", label: "APplus Analytics" },
               { src: "/work/elly-ai-assistant/device/answer-desktop-2400.webp", label: "Elly, the AI assistant" },
@@ -80,7 +83,7 @@ export function Home() {
               <span>designed from zero and shipped since 2024</span>
             </li>
             <li className="hm-chip">
-              <strong>Ten years</strong>
+              <strong>Eight years</strong>
               <span>in data-dense, regulated software</span>
             </li>
           </ul>
@@ -200,7 +203,7 @@ function Numbers() {
     ["2", "Golds in User Experience, ERP-System des Jahres 2025 and 2026"],
     ["4", "products designed from zero at Asseco: Elly, Best Practice Hub, Documents, Analytics"],
     ["6", "products that install the FOX design system as a versioned package"],
-    ["10", "years in ERP, insurance and healthcare, legal, industrial energy"],
+    ["8", "years in ERP, insurance and healthcare, legal, industrial energy"],
   ];
   return (
     <dl ref={ref} className={shown ? "hm-numbers is-shown" : "hm-numbers"}>
