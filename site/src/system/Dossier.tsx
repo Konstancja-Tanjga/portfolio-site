@@ -71,7 +71,9 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
               key={d.id}
               type="button"
               role="tab"
-              id={`${base}-tab-${i}`}
+              // The tile id is the hash target, so a deep link scrolls here
+              // (ScrollToTop) as well as opening the tile (the effect above).
+              id={d.id}
               aria-selected={open === i}
               aria-controls={`${base}-wing`}
               className={open === i ? "dossier__tile is-current" : "dossier__tile"}
@@ -89,7 +91,7 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
           ))}
         </div>
 
-        <div id={`${base}-wing`} role="tabpanel" aria-labelledby={open === null ? undefined : `${base}-tab-${open}`} className="dossier__wing" hidden={!current}>
+        <div id={`${base}-wing`} role="tabpanel" aria-labelledby={current ? current.id : undefined} className="dossier__wing" hidden={!current}>
           {current && (
             <>
               <aside className="dossier__spine">

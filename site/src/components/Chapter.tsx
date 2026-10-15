@@ -38,7 +38,7 @@ function BlockView({ block }: { block: Block }) {
     case "passage":
       return <Passage html={block.html} />;
     case "points":
-      return <Points items={block.items} />;
+      return <Points items={block.items} fold={block.fold} />;
     case "shot":
       return (
         <Shot width={block.width} src={block.src} slot={block.slot} caption={block.caption} frame={block.frame} hotspots={block.hotspots} folded={block.folded} />
