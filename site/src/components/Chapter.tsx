@@ -1,4 +1,3 @@
-import { Exploded } from "../system/Exploded";
 import type { Block, Chapter } from "../content/types";
 import { useReveal } from "../system/Reveal";
 import {
@@ -10,6 +9,7 @@ import {
   Dossier,
   Duo,
   Evolution,
+  Exploded,
   Flow,
   Joint,
   Lane,

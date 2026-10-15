@@ -669,9 +669,11 @@
   .xp__pin { position: relative; height: min(88vh, 48rem); }
 }
 
-/* inside a case-study chapter: full bleed on the wall grid, a shorter run */
+/* inside a case-study chapter: full bleed on the wall grid, and on wide
+   screens the shorter 220vh run the phone layout already uses */
 .xp--block { grid-column: bleed; margin-top: var(--bh-beat-block); }
 .xp--block .xp__track { height: 220vh; }
 .xp--block .xp__head { padding-top: 6rem; }
 @media (max-width: 56rem) { .xp--block .xp__head { padding-top: calc(var(--appbar-h) + var(--bh-space-3)); } }
+/* restated: the block's track height above outranks the base reduced-motion rule */
 @media (prefers-reduced-motion: reduce) { .xp--block .xp__track { height: auto; } }

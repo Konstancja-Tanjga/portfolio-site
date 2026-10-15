@@ -409,7 +409,6 @@ export const dms: CaseStudy = {
       standfirst:
         "I own FOX, so on this product I was both a consumer of the system and its owner. That is why the update process is worth showing: the loop took days.",
       blocks: [
-        { kind: "exploded", screen: documentsExploded, title: "One screen, taken apart" },
         {
           kind: "shot",
           width: "wall",
@@ -418,6 +417,7 @@ export const dms: CaseStudy = {
           caption:
             "The update process. Solid line: a composition invented to solve one screen is reviewed, named, and versioned into FOX rather than left local. Dashed: the product consumes the system back at a pinned version, so a promotion never arrives as a surprise mid-release. Colour modes and accessibility sit underneath both, in the primitives.",
         },
+        { kind: "exploded", screen: documentsExploded },
         {
           kind: "shot",
           width: "wall",

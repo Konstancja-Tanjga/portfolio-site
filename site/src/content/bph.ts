@@ -295,7 +295,7 @@ export const bph: CaseStudy = {
       standfirst:
         "The project started on FOX 2.3 and moved to FOX 3.0 part-way through. I own FOX; the 3.0 migration I did with one other designer, so on this product I was both a consumer of the system and the person changing it.",
       blocks: [
-        { kind: "exploded", screen: hubExploded, title: "One screen, taken apart" },
+        { kind: "exploded", screen: hubExploded },
         {
           kind: "passage",
           html:

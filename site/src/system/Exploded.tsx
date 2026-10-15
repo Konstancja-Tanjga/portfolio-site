@@ -30,8 +30,11 @@ export type ExplodedScreen = {
   layout: Rect[];
   /** Colours of the screen, named by the role they play there. */
   colours: [{ role: string; value: string }, ...{ role: string; value: string }[]];
-  /** The spacing steps, in px, smallest first. */
-  spacing: [number, ...number[]];
+  /**
+   * The design system's spacing steps, in px, smallest first. Left out
+   * when the steps have no source, and the token layer shows colours only.
+   */
+  spacing?: [number, ...number[]];
   /** Where the token panel floats. */
   tokensAt: [number, number];
   /** Where the one pixel sits. */
@@ -85,7 +88,11 @@ export function Exploded({
   id?: string;
   /** The heading over the stage. */
   title?: string;
-  /** 2 on the home page, where it is a section; 3 inside a case-study chapter. */
+  /**
+   * Heading level, and with it the setting: 2 for the home page's own
+   * section; 3 for a block in a case-study chapter, which also takes the
+   * in-chapter layout (`.xp--block`, home.css).
+   */
   level?: 2 | 3;
 }) {
   const headingId = useId();
@@ -192,7 +199,7 @@ export function Exploded({
             </p>
             <p className="xp__sr">
               The {s.name} screen separated into its layers: the layout grid, the {s.system} components lifted off it,
-              the colour and spacing tokens they use, and a single pixel.
+              the colour{steps ? " and spacing" : ""} tokens they use, and a single pixel.
             </p>
           </div>
           <div className="xp__stage" ref={stage} aria-hidden="true">
@@ -226,13 +233,15 @@ export function Exploded({
                       <div key={i}><i style={{ background: c.value }} />{c.role}</div>
                     ))}
                   </div>
-                  <div className="xp__space">
-                    {steps.map((n, i) => (
-                      <div key={i}><i style={{ width: n, height: n }} />{n}</div>
-                    ))}
-                  </div>
+                  {steps && (
+                    <div className="xp__space">
+                      {steps.map((n, i) => (
+                        <div key={i}><i style={{ width: n, height: n }} />{n}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <p className="xp__tag">Token<small>colour roles, {steps[0]} to {steps[steps.length - 1]} px</small></p>
+                <p className="xp__tag">Token<small>colour roles{steps && `, ${steps[0]} to ${steps[steps.length - 1]} px`}</small></p>
               </div>
               <div className="xp__layer" data-z={Z.pixel} data-fade>
                 <div className="xp__pixel" style={{ left: px - 7, top: py - 7 }} />

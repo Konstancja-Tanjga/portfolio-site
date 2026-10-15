@@ -29,3 +29,5 @@ export { AnnotatedSet } from "./Annotated";
 export { Dossier } from "./Dossier";
 export { Loop } from "./Loop";
 export { Beside } from "./Beside";
+export { Exploded } from "./Exploded";
+export type { ExplodedScreen, Rect } from "./Exploded";
