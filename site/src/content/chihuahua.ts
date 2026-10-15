@@ -8,13 +8,14 @@ import type { CaseStudy } from "./types";
  * (research to tokens to guidelines to a working build) on a brief absurd
  * enough that every shortcut shows. That is what `practice` is for.
  *
- * Cut to about 2000 words in October 2026, from about 6000: a reader gets the
- * phases, the tools and the reasoning on the surface, and opens the rest.
+ * Cut in October 2026 from about 4700 words on the surface to about 2200: a
+ * reader gets the phases, the tools and the reasoning, and opens the rest.
  * Chapters run 00 to 11. The panel files keep their original numbers (ch02 to
  * ch12) because the app repo generates them. The two journeys and the
  * blueprint are three tiles of one dossier under 04, dog mode and human mode
- * two tiles under 08. The old chapter ids survive as tile ids, so the deep
- * links still open them.
+ * two tiles under 08. The three old chapter ids survive as tile ids, and the
+ * dossier opens and scrolls to a tile named in the hash, so the deep links
+ * still land.
  *
  * Panels are the same 1800px exports the repo uses, in English. Every chapter
  * that carries one has it; nothing stands as a placeholder.
@@ -410,7 +411,7 @@ export const chihuahua: CaseStudy = {
             { value: "34", label: "laws: 29 canine, 5 platform" },
             { value: "6", label: "groups, from palette to platform" },
             { value: "2", label: "recorded departures from the HIG" },
-            { value: "0", label: "numbers typed by hand" },
+            { value: "0", label: "numbers in the document typed by hand" },
           ],
         },
         {
@@ -429,7 +430,7 @@ export const chihuahua: CaseStudy = {
           caption: "Three of the thirty-four.",
           rows: [
             { key: "CIG-2.1", value: "Meaning is carried by blue and acid only. Black and white are ground and figure, never signal" },
-            { key: "CIG-3.2", value: "Dog-scale display type is 112 px, names 80 px, values 44 px. Minimum target: 214 × 300 px" },
+            { key: "CIG-2.3", value: "Dog-scale display type is 112 px, names 80 px, values 44 px. Minimum target: 214 × 300 px" },
             { key: "CIG-5.1", value: "A deck is 6 to 12 cards. A rising decision time is the signal to shorten it, not to add cards" },
           ],
         },
@@ -502,7 +503,7 @@ export const chihuahua: CaseStudy = {
                   kind: "points",
                   items: [
                     "<strong>Same handset, a different register.</strong> 26 px statistics instead of 112 px display type, 44 px targets instead of 214 px zones, real density, prose. It obeys the HIG because a person is using it.",
-                    "<strong>The door between the modes cannot be a button.</strong> A button big enough for a person to find is a button a dog will eventually stand on. So: a two-finger gesture with a wide spread, only on D5. Nothing about a nose produces two contact points that far apart.",
+                    "<strong>The door between the modes cannot be a button.</strong> A button big enough for a person to find is a button a dog will eventually stand on. The door is a two-finger gesture with a wide spread, and it works only on D5. Nothing about a nose produces two contact points that far apart.",
                     "<strong>H1 carries the sentence the product hangs on:</strong> this is a preference signal, not a match. The likeliest failure is a human over-reading the ranking, so the interface says so where it cannot be missed.",
                   ],
                 },
@@ -590,7 +591,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>Fifty values were publishing the word “undefined”.</strong> 47 of 53 token lookups would silently emit <code>undefined</code> into the guidelines and exit successfully. The build guard exists because of this.",
+            "<strong>Forty-seven values were publishing the word “undefined”.</strong> 47 of 53 token lookups would silently emit <code>undefined</code> into the guidelines and exit successfully. The build guard exists because of this.",
             "<strong>I overclaimed and had to walk it back.</strong> “Three departures from the HIG” was two. “29 laws” had omitted five. “Everything derives from ×4”: the factor is 3.75. Each read beautifully and none survived being checked.",
             "<strong>One of my laws described the wrong variable</strong>, and survived being written, designed for, and built. I only went looking because the number disagreed with me.",
           ],

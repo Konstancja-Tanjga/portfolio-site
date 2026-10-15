@@ -1033,6 +1033,10 @@
 }
 /* A drawer with no thumbnail: a folded list. The title takes the thumb column too. */
 .drawer--text .drawer__head { grid-template-columns: 1fr auto auto; }
+/* A tile is a hash target (Dossier.tsx), so it clears the sticky bar like a chapter head. */
+.dossier__tile { scroll-margin-top: var(--bh-space-6); }
+.drawer--text { margin-top: var(--bh-space-3); }
+.chapter__head + .lane .drawer--text { margin-top: calc(var(--bh-beat-block) * 1.5); }
 .drawer--text .drawer__body { padding-top: 0; }
 .drawer--text .drawer__body .points { margin-top: 0; }
 .drawer__thumb { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: #fff; }

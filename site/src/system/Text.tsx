@@ -17,21 +17,22 @@ export function Points({ items, fold }: { items: string[]; fold?: string }) {
   const { ref, shown } = useReveal<HTMLUListElement>();
   const [open, setOpen] = useState(false);
   const id = useId();
+  // A folded list is revealed by its drawer, not by scrolling into view.
   const list = (
-    <ul ref={ref} className={shown || fold ? "points is-shown" : "points"}>
+    <ul ref={fold ? undefined : ref} className={shown || fold ? "points is-shown" : "points"}>
       {items.map((item, i) => (
         <li key={item} style={{ transitionDelay: `${i * 90}ms` }} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </ul>
   );
   if (fold) {
-    // The same drawer a folded diagram uses, so a reader learns one control.
+    // The drawer a folded Shot uses, so a reader learns one control.
     return (
       <Lane width="wall">
         <div className={["drawer drawer--text is-shown", open ? "is-open" : ""].join(" ")}>
           <button type="button" className="drawer__head" aria-expanded={open} aria-controls={`${id}-body`} onClick={() => setOpen((v) => !v)}>
             <span className="drawer__title">{fold}</span>
-            <span className="drawer__hint" aria-hidden="true">{open ? "Close" : `Open: ${items.length}`}</span>
+            <span className="drawer__hint" aria-hidden="true">{open ? "Close" : `Open the list (${items.length})`}</span>
             <span className="drawer__chevron" aria-hidden="true" />
           </button>
           <div id={`${id}-body`} className="drawer__body passage passage--points" hidden={!open}>
