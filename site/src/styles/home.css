@@ -673,4 +673,5 @@
 .xp--block { grid-column: bleed; margin-top: var(--bh-beat-block); }
 .xp--block .xp__track { height: 220vh; }
 .xp--block .xp__head { padding-top: 6rem; }
+@media (max-width: 56rem) { .xp--block .xp__head { padding-top: calc(var(--appbar-h) + var(--bh-space-3)); } }
 @media (prefers-reduced-motion: reduce) { .xp--block .xp__track { height: auto; } }

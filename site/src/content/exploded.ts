@@ -1,4 +1,4 @@
-import type { ExplodedScreen } from "../system/Exploded";
+import type { ExplodedScreen, Rect } from "../system/Exploded";
 
 /**
  * Screens taken apart in the case studies' "Design system" chapters.
@@ -21,7 +21,7 @@ export const documentsExploded: ExplodedScreen = {
   parts: [
     { name: "navigation bar", rect: [0, 0, 260, 1080], rail: true },
     { name: "app bar", rect: [260, 0, 1660, 112] },
-    ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => ({ name: "list row", rect: [284, 184 + i * 90, 1612, 90] as [number, number, number, number] })),
+    ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => ({ name: "list row", rect: [284, 184 + i * 90, 1612, 90] as Rect })),
     { name: "pagination", rect: [284, 1042, 1297, 38] },
   ],
   grid: [284, 112, 1612, 968],
@@ -52,17 +52,17 @@ export const hubExploded: ExplodedScreen = {
   size: [1920, 994],
   screen: [0, 0, 1920, 994],
   parts: [
-    { name: "app bar", rect: [0, 0, 1920, 62] },
-    { name: "filtering", rect: [82, 215, 1100, 32] },
+    { name: "secondary app bar BPH", rect: [0, 0, 1920, 62] },
+    { name: "filters", rect: [82, 215, 1100, 32] },
     ...[0, 1].flatMap((row) =>
       [98, 535, 972, 1409].map((x, col) => ({
         name: "BPH Card",
-        rect: [x, 289 + row * 302, 397, (row + col) % 2 ? 270 : 278] as [number, number, number, number],
+        rect: [x, 289 + row * 302, 397, (row + col) % 2 ? 270 : 278] as Rect,
       })),
     ),
   ],
   grid: [98, 62, 1724, 932],
-  layoutNote: "app bar, filters, card grid BPH",
+  layoutNote: "secondary app bar BPH, filters, card grid BPH",
   layout: [
     [0, 0, 1920, 62],
     [82, 165, 1100, 82],

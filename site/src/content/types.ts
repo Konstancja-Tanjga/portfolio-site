@@ -360,7 +360,8 @@ export type Block =
    * One screen of the product taken apart in 3D on scroll: layout,
    * components, tokens, one pixel (system/Exploded.tsx). Built from a
    * Figma frame exported at 2x, with every part at its Figma coordinates.
-   * Full width and pinned while it plays, so at most one per chapter.
+   * Full width and pinned while it plays, so at most one per chapter,
+   * and never inside a `dossier` panel, where a sticky pin cannot work.
    */
   | { kind: "exploded"; screen: ExplodedScreen; title?: string }
   | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };

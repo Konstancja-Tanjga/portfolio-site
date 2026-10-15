@@ -62,7 +62,8 @@ const place = ([x, y, w, h]: Rect): CSSProperties => ({ left: x, top: y, width: 
 /**
  * One screen, taken apart.
  *
- * Between the hero and the work, the page pins a product screen and, as
+ * On the home page between the hero and the work, and as a block in a
+ * case study's "Design system" chapter, it pins a product screen and, as
  * the reader scrolls, tilts it into a three-quarter view and lifts it
  * into layers: layout, components, tokens, one pixel (the journey's
  * scales, with layout added between screen and component). A dashed
