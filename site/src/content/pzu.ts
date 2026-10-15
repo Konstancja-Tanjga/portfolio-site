@@ -5,15 +5,21 @@ import type { CaseStudy } from "./types";
  * (removed in 144a907, recoverable from history) and the owner's confirmation of what the board leaves out: that the portal shipped,
  * that she was the only designer, and what changed between the prototypes.
  *
- * The board's words are text here. Its images are cropped into
- * /work/mojepzu/screens/, with the addresses, policy numbers and number plate
- * on the policy cards blurred: they are mock data, but they look real.
+ * The board's words are text here. The research boards are crops from it in
+ * /work/mojepzu/screens/.
+ *
+ * The product screens come from the final Figma file (mojePZU_FINAL_2021,
+ * page 2528:291), exported at 3x and laid into the MacBook in
+ * /work/mojepzu/device/. Names, addresses, policy and case numbers, number
+ * plates, PESEL, phone and account numbers, and every date are blurred: the
+ * data is mock, but it looks real, and the owner asked for no dates on the page.
+ * The two clips in chapter 05 walk the file's own prototype links (login,
+ * personalisation, the tutorial, the shortcut bar); nothing in them is a link
+ * the prototype does not have. The file does not label which frames belong to
+ * prototype 1.0, 2.0 or 3.0, so no screen here is given a version.
  *
  * The two research boards in chapter 02 are folded, opened on demand, and
- * carry hotspots that repeat their captions at the place on the board. No
- * cover layers and no carousel: the project has one device mockup, and the
- * other screens are rendered device composites or crops, not flat desktop
- * screens a mockup could be made from.
+ * carry hotspots that repeat their captions at the place on the board.
  * Image paths are literal strings so that scripts/check-content.mjs sees them.
  * Chapter numbers were written for this page; the project has no Figma wall.
  * The stack follows docs/case-study-kit/RULES.md, with the chapters the board
@@ -33,9 +39,17 @@ export const pzu: CaseStudy = {
     headline: ["MojePZU"],
     subline: "the customer portal of an insurer",
     stamp: "RESEARCH · INFORMATION ARCHITECTURE · THREE PROTOTYPES",
-    credit: "UI Designer · PZU · 2019",
-    art: { src: "/work/mojepzu/cover-art.webp" },
-    shot: { src: "/work/mojepzu/screens/cover.webp" },
+    credit: "UI Designer · PZU",
+    art: { src: "/work/mojepzu/device/dashboard-2400.webp" },
+    shot: { src: "/work/mojepzu/device/dashboard-2400.webp" },
+    layers: [
+      { src: "/work/mojepzu/device/dashboard-2400.webp", label: "Dashboard" },
+      { src: "/work/mojepzu/device/guest-dashboard-2400.webp", label: "Before logging in" },
+      { src: "/work/mojepzu/device/medical-2400.webp", label: "Medical services" },
+      { src: "/work/mojepzu/device/payments-2400.webp", label: "Payments" },
+      { src: "/work/mojepzu/device/club-2400.webp", label: "Klub PZU" },
+    ],
+    motif: "documents",
   },
   meta: [
     { label: "Role", value: "UI Designer; the only designer on the project, freelance" },
@@ -43,7 +57,6 @@ export const pzu: CaseStudy = {
     { label: "Team", value: "Five: a UX researcher, a strategist, a developer, a service designer, and me" },
     { label: "Platform", value: "mojepzu.pl, on desktop, tablet, and phone" },
     { label: "Research", value: "6 workshops with the business, 54 in-depth interviews over three rounds" },
-    { label: "Period", value: "January to December 2019" },
     { label: "Launch", value: "Shipped to production on mojepzu.pl" },
   ],
   chapters: [
@@ -88,9 +101,9 @@ export const pzu: CaseStudy = {
                 "Shipped to production on mojepzu.pl, after 54 in-depth interviews in three rounds fed three prototypes. Not measured after launch: usage, self-service rates, and support contacts, so none is claimed.",
             },
             {
-              key: "Period and team",
+              key: "Team",
               value:
-                "January to December 2019. Five people: a UX researcher, a strategist, a developer, a service designer, and me.",
+                "Five people: a UX researcher, a strategist, a developer, a service designer, and me.",
             },
           ],
         },
@@ -121,11 +134,24 @@ export const pzu: CaseStudy = {
           ],
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: "/work/mojepzu/screens/dashboard.webp",
-          caption:
-            "The logged-in dashboard: insurance policies and medical services as cards, the shortcut bar on the left, and the latest updates top right. Addresses and policy numbers are blurred.",
+          kind: "carousel",
+          items: [
+            { src: "/work/mojepzu/device/guest-dashboard-2400.webp", frame: "macbook", title: "Before logging in", body: "Insurance, medical services, and investments as rows of product cards, the shortcut bar on the left, and \"Zaloguj się\" (log in) top right." },
+            { src: "/work/mojepzu/device/login-2400.webp", frame: "macbook", title: "Logging in", body: "E-mail and password in a panel over the dimmed page, with links for a login problem and for registering." },
+            { src: "/work/mojepzu/device/personalise-2400.webp", frame: "macbook", title: "Choosing topics", body: "\"Wybierz tematy, które Cię interesują\" (choose the topics that interest you): twelve tiles, \"Zapisz preferencje\" (save), and \"Pomiń\" (skip)." },
+            { src: "/work/mojepzu/device/dashboard-2400.webp", frame: "macbook", title: "Dashboard", body: "Policies and medical services as cards, the shortcut bar \"Moje skróty\" on the left, and the latest updates top right." },
+            { src: "/work/mojepzu/device/insurance-2400.webp", frame: "macbook", title: "Insurance", body: "Every policy in one list, filtered by product, policy number, status, and date range, with individual and group insurance as tabs." },
+            { src: "/work/mojepzu/device/payments-2400.webp", frame: "macbook", title: "Payments", body: "What is due, with its status and price, and the payment methods below: saved, quick transfer, BLIK, and card." },
+            { src: "/work/mojepzu/device/claims-2400.webp", frame: "macbook", title: "Claims and benefits", body: "Reporting starts with what it concerns: vehicles, property, or people. Assistance sits beside it, and reported claims are listed below." },
+            { src: "/work/mojepzu/device/medical-2400.webp", frame: "macbook", title: "Medical services", body: "Book a visit, a teleconsultation, or a test, with refunds, medical packages, and the medical offer as tabs, and the list of visits below." },
+            { src: "/work/mojepzu/device/investments-2400.webp", frame: "macbook", title: "Investments and savings", body: "Each product with its balance, type, and status, and a link to inPZU." },
+            { src: "/work/mojepzu/device/agent-offers-2400.webp", frame: "macbook", title: "Offers", body: "Offers shared by an agent or an employer, or saved by the customer, with a property calculator, a call-back request, and a branch finder above the list." },
+            { src: "/work/mojepzu/device/messages-2400.webp", frame: "macbook", title: "Messages", body: "Messages, announcements, and status changes as tabs, with renewal offers in the list." },
+            { src: "/work/mojepzu/device/archive-2400.webp", frame: "macbook", title: "Archive", body: "Past insurance, medical records, and payments, each with its own filters." },
+            { src: "/work/mojepzu/device/profile-2400.webp", frame: "macbook", title: "Profile", body: "Personal details, children, addresses, contact details, payment methods, and products." },
+            { src: "/work/mojepzu/device/shortcuts-2400.webp", frame: "macbook", title: "Editing shortcuts", body: "\"Edytuj Moje skróty\": an icon is dragged onto the bar to pin it there." },
+            { src: "/work/mojepzu/device/club-2400.webp", frame: "macbook", title: "Klub PZU", body: "Klub PZU Pomoc w Życiu, with a short survey on what members expect from it." },
+          ],
         },
       ],
     },
@@ -248,9 +274,9 @@ export const pzu: CaseStudy = {
                 "An early greyscale mockup of the logged-in home page: the offer cards under \"Wybrane dla Ciebie\" (selected for you) carry a \"KUP\" (buy) button.",
             },
             {
-              src: "/work/mojepzu/screens/offers-final.webp",
+              src: "/work/mojepzu/screens/dashboard-final.webp",
               caption:
-                "The same section in the final version, where each offer ends in \"Dowiedz się więcej\" (find out more).",
+                "The logged-in home page in the final version, where each offer under \"Wybrane dla Ciebie\" ends in \"Dowiedz się więcej\" (find out more).",
             },
           ],
         },
@@ -309,6 +335,39 @@ export const pzu: CaseStudy = {
       n: "05",
       heading: "Screens",
       blocks: [
+        {
+          kind: "flow",
+          stages: [
+            { title: "Before logging in", body: "The offer as product cards, and \"Zaloguj się\" in the header." },
+            { title: "Logging in", body: "E-mail and password in a panel over the page." },
+            { title: "Choosing topics", body: "Twelve topics to tailor the offer, or \"Pomiń\" to skip." },
+            { title: "The tutorial", body: "\"Poznaj portal\", then a tour in five steps, with \"Zakończ samouczek\" to end it." },
+            { title: "Dashboard", body: "Policies, medical services, and the shortcut bar, which leads to payments, visits, and claims." },
+          ],
+          note: "The path a customer takes on a first login, as the links in the Figma prototype run.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: "/work/mojepzu/clips/first-login.mp4",
+          poster: "/work/mojepzu/clips/first-login.webp",
+          title: "A first login, from the public page to the dashboard",
+          caption:
+            "The Figma prototype, clicked through: the public page scrolled, \"Zaloguj się\", the login panel, the topic choice skipped with \"Pomiń\", the tutorial's opening and its first step, ended with \"Zakończ samouczek\", and the dashboard scrolled to the offers.",
+        },
+        {
+          kind: "video",
+          clip: true,
+          frame: "macbook",
+          width: "wall",
+          src: "/work/mojepzu/clips/shortcuts.mp4",
+          poster: "/work/mojepzu/clips/shortcuts.webp",
+          title: "The shortcut bar: pay, book a visit, report a claim",
+          caption:
+            "From the dashboard, \"Opłać\" opens payments, \"Umów wizytę lub badanie\" opens medical services, and \"Zgłoś szkodę\" opens claims and benefits. The bar sits in the same place on every page.",
+        },
         {
           kind: "shot",
           width: "wall",
