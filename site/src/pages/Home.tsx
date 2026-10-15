@@ -9,7 +9,8 @@ import { Layers, TypeCover, firstDevice } from "../system/Cover";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
-import { offScreen, practices } from "../home/story";
+import { offScreen } from "../home/story";
+import { Sheet } from "../home/Sheet";
 import { QuickNav } from "../components/QuickNav";
 import { Exploded } from "../system/Exploded";
 import { analyticsExploded } from "../home/exploded";
@@ -136,29 +137,20 @@ export function Home() {
         <Numbers />
       </section>
 
-      <section id="stop-how" className="page hm-about" aria-labelledby="about-heading">
-        <div>
-          <h2 id="about-heading" className="hm-h2">How I work</h2>
-          <p className="hm-about__claim">
-            Design, the design system and the code that proves it are one job on my desk.
-          </p>
-          <p className="hm-about__body">
-            Tokens and component APIs are authored in Figma, implemented in Angular, React
-            and web components, documented in Storybook, tested in Chromatic and published
-            to Nexus. I author and merge the pull requests, review the build against the
-            frames, and reconcile the file to the code. Research runs on a rhythm:
-            quarterly interviews, journey mapping, usability testing every release.{" "}
+      <section id="stop-how" className="page hm-how" aria-labelledby="about-heading">
+        <div className="hm-how__head">
+          <div>
+            <h2 id="about-heading" className="hm-h2">How I work</h2>
+            <p className="hm-about__claim">
+              Design, the design system and the code that proves it are one job on my desk.
+            </p>
+          </div>
+          <p className="hm-note hm-how__note">
+            One component, drawn through every tool it passes between the first option and the shipped screen.{" "}
             <Link className="hm-link" to="/about">More about how I work</Link>
           </p>
         </div>
-        <ul className="hm-practices">
-          {practices.slice(0, 5).map((p) => (
-            <li key={p.title} className="hm-practice">
-              <h3 className="hm-practice__title">{p.title}</h3>
-              <p className="hm-practice__body">{p.body}</p>
-            </li>
-          ))}
-        </ul>
+        <Sheet />
       </section>
 
       <section id="stop-off" className="page hm-off" aria-labelledby="off-heading">
