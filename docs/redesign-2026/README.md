@@ -169,8 +169,7 @@ with one chosen (Claude Design), under selection handles (Figma), as a
 specification beside a Figma MCP prompt (Claude Code), as a story with
 its states (Storybook), as a baseline and a hatched diff (Chromatic), as
 a merged pull request (GitHub), as a package with a barcode (Nexus), and
-back in place on the dashboard, outlined, with five more products behind
-it. A conveyor line runs through the station numbers, as text sits on a
+back in place, outlined, on the dashboard it came from. A conveyor line runs through the station numbers, as text sits on a
 dimension line, and is drawn by the scroll with the card as a square at
 its head; a station lights when the head reaches it. The line is routed
 after layout, so the same drawing wraps at four columns, two, or one.
@@ -180,7 +179,7 @@ each in `home/marks.tsx`): Figma, Claude, Codex, Cursor, Storybook,
 Chromatic, GitHub, Nexus, Angular, React, web components. Underneath, a
 rhythm ruler (weekly critique, quarterly interviews and skill revisions,
 usability testing every release) and a title block in the corner with
-the tools, the stack, the two governing skills and the revision.
+the tools, the stack, the two governing skills, and the revision.
 
 Rejected on the way: a pinned horizontal strip (a second pin after the
 exploded screen, and awkward on a phone); the line through the window

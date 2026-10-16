@@ -12,18 +12,20 @@ import { Mark } from "./marks";
  * The sheet: how I work, drawn rather than written.
  *
  * One real component, the chart card from the Analytics dashboard, goes
- * through the eight tools it passes between the first option and the
- * shipped screen. Each station is that tool's window, drawn in the site's
- * two inks with the card inside it as the tool would show it: as one of
- * three options, under Figma's selection handles, as a specification in
- * the editor, as a story, as a snapshot diff, as a merged pull request,
- * as a package, and back in place on the screen it came from.
+ * through eight stations, seven tools and the product it ships in,
+ * between the first option and the shipped screen. Each station is that
+ * tool's window, drawn in the site's inks with the card inside it where
+ * the tool would show it: as one of three options, under Figma's
+ * selection handles, as a specification in the editor, as a story, as a
+ * snapshot diff, and back in place on the screen it came from; the pull
+ * request and the package show only their own chrome.
  *
  * A conveyor line runs through the windows and is drawn as the reader
  * scrolls, with the card as a small square at its head; a station lights
  * when the head reaches it. The line is routed after layout, so the same
- * drawing works at four columns, two, or one. Under reduced motion the
- * line is complete and every station is lit.
+ * drawing works at four columns, two, or one. Under reduced motion (read
+ * once, when the sheet mounts) the line is complete and every station is
+ * lit.
  *
  * The card is cropped from the same export the exploded screen uses, at
  * the rects measured there, so the sheet and the screen agree.
@@ -35,7 +37,7 @@ const [SX, SY, SCREEN_W, SCREEN_H] = dash.screen;
 const cards = dash.parts.filter((p) => p.name === "fox-card").map((p) => p.rect);
 const CARD = cards[0];
 
-/** A crop of the dashboard export: `rect`, measured on the 1600 px scale, shown at `k` of that size. */
+/** A crop of the dashboard export. `rect` is measured from the screen's corner on the 1600 px export, as the exploded-screen rects are; the crop is shown at `k` of that size. */
 function Crop({ rect, k, className, style, children }: { rect: Rect; k: number; className?: string; style?: CSSProperties; children?: ReactNode }) {
   const [x, y, w, h] = rect;
   return (
@@ -64,7 +66,7 @@ function Options() {
     <div className="sh-opts">
       {cards.slice(0, 3).map((r, i) => (
         <div key={i} className={i === 1 ? "sh-opt is-pick" : "sh-opt"}>
-          <Crop rect={r} k={0.27} />
+          <Crop rect={r} k={0.25} />
           {i === 1 && <b>chosen</b>}
         </div>
       ))}
@@ -177,17 +179,20 @@ const DRAWINGS = [Options, Figma, Code, Storybook, Chromatic, Merge, Nexus, Ship
 /* ---- the sheet ---- */
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+/** The window width the drawings are laid out for, in px: four columns at full page width. */
+const DESIGN = 254;
 
 export function Sheet() {
   const { ref, shown } = useReveal<HTMLDivElement>();
+  const track = useRef<HTMLDivElement | null>(null);
   const list = useRef<HTMLOListElement | null>(null);
   const svg = useRef<SVGSVGElement | null>(null);
   const line = useRef<SVGPathElement | null>(null);
   const head = useRef<SVGRectElement | null>(null);
 
   useEffect(() => {
-    const ol = list.current, sv = svg.current, path = line.current, dot = head.current;
-    if (!ol || !sv || !path || !dot) return;
+    const ol = list.current, tr = track.current, sv = svg.current, path = line.current, dot = head.current;
+    if (!ol || !tr || !sv || !path || !dot) return;
     const still = reduced();
     const items = [...ol.querySelectorAll<HTMLLIElement>(".sh-station")];
     const wins = items.map((li) => li.querySelector<HTMLElement>(".sh-win")!);
@@ -197,32 +202,38 @@ export function Sheet() {
     let total = 0;
     let frame = 0;
 
-    // The line runs through the row of station numbers, which sit on it
-    // as text sits on a dimension line, and enters a station at its
-    // window's left edge. Where the row wraps it steps out past the last
-    // window, down to a line 20 px above the next row, back to the first
-    // window, and down onto its row.
+    // The line runs along the row of station numbers, through their
+    // vertical centre, so the numbers sit on it as text sits on a
+    // dimension line. It is given a point above each window's left edge,
+    // where the station counts as entered, starts OUT px before the first
+    // window and ends OUT px after the last. Where the row wraps it steps
+    // OUT px past the last window, down to UP px above the next number
+    // row, back to OUT px before that row's first window, and down onto
+    // the row.
     const OUT = 12, UP = 20;
     const route = () => {
-      const base = ol.getBoundingClientRect();
+      // the drawings are laid out for a window DESIGN px wide; zoom them to the real one
+      wins.forEach((w) => w.style.setProperty("--sh-zoom", (w.clientWidth / DESIGN).toFixed(3)));
+      const base = tr.getBoundingClientRect();
+      /** l, w: the window; y: the number row's centre line. */
       const r = wins.map((w, i) => {
         const b = w.getBoundingClientRect();
         const n = nums[i].getBoundingClientRect();
-        return { l: b.left - base.left, t: n.top + n.height / 2 - base.top + OUT, w: b.width, h: b.height };
+        return { l: b.left - base.left, y: n.top + n.height / 2 - base.top, w: b.width };
       });
       sv.setAttribute("viewBox", `0 0 ${base.width} ${base.height}`);
       points = [];
       entry = [];
       const push = (x: number, y: number) => points.push([x, y]);
       r.forEach((b, i) => {
-        const y = b.t - OUT;
+        const y = b.y;
         if (i === 0) push(b.l - OUT, y);
         push(b.l, y);
         entry.push(points.length - 1);
         push(b.l + b.w, y);
         const n = r[i + 1];
         if (!n) { push(b.l + b.w + OUT, y); return; }
-        const ny = n.t - OUT;
+        const ny = n.y;
         if (Math.abs(ny - y) < 2 && n.l > b.l) return; // same row: straight on
         push(b.l + b.w + OUT, y);
         push(b.l + b.w + OUT, ny - UP);
@@ -246,7 +257,7 @@ export function Sheet() {
       frame = 0;
       let p = 1;
       if (!still) {
-        const b = ol.getBoundingClientRect();
+        const b = tr.getBoundingClientRect();
         const vh = window.innerHeight;
         p = clamp((vh * 0.82 - b.top) / (b.height + vh * 0.42));
       }
@@ -261,7 +272,7 @@ export function Sheet() {
 
     route();
     const ro = new ResizeObserver(route);
-    ro.observe(ol);
+    ro.observe(tr);
     if (!still) window.addEventListener("scroll", kick, { passive: true });
     return () => {
       ro.disconnect();
@@ -275,17 +286,18 @@ export function Sheet() {
       <ul className="sh-tools" aria-label="Tools">
         {sheet.tools.map((t) => (
           <li key={t.name} className="sh-tool">
-            <span className="sh-tool__mark">{t.mark ? <Mark name={t.mark} size={26} /> : <span className="sh-tool__glyph">&lt;/&gt;</span>}</span>
+            <span className="sh-tool__mark" aria-hidden="true">{t.mark ? <Mark name={t.mark} size={26} /> : <span className="sh-tool__glyph">&lt;/&gt;</span>}</span>
             <span className="sh-tool__name">{t.name}</span>
             <span className="sh-tool__what">{t.what}</span>
           </li>
         ))}
       </ul>
-      <ol ref={list} className="sh-stations">
+      <div ref={track} className="sh-track">
         <svg ref={svg} className="sh-line" aria-hidden="true" preserveAspectRatio="none">
           <path ref={line} className="sh-line__path" />
           <rect ref={head} className="sh-line__head" width="10" height="10" />
         </svg>
+      <ol ref={list} className="sh-stations">
         {sheet.stations.map((s, i) => {
           const Drawing = DRAWINGS[i];
           return (
@@ -301,6 +313,7 @@ export function Sheet() {
           );
         })}
       </ol>
+      </div>
 
       <div className="sh-foot">
         <div className="sh-rhythm">

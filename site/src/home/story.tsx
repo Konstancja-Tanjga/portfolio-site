@@ -71,15 +71,17 @@ export const offScreen: { src: string; alt: string; caption: string }[] = [
 /**
  * The sheet on the home page: one component, drawn through every tool it
  * passes on its way from the first option to the shipped screen. The
- * stations are the pipeline from the About page, in the same order; the
- * words here are the short ones, the long ones stay on About.
+ * stations follow the design-to-code pipeline described on About (the
+ * process block plus its four additions: Storybook, Chromatic, the merge
+ * gate, Nexus), compressed to the eight stops the component itself passes
+ * through. The words here are the short ones; the long ones stay on About.
  */
 export const sheet = {
   stations: [
     { tool: "Claude Design", mark: "claude", file: "options", title: "Options, one chosen", body: "Several options, iterated with the requirements engineer and the PM." },
-    { tool: "Figma", mark: "figma", file: "FOX v3 library", title: "Redrawn on FOX components", body: "Every value a variable; Code Connect on every component." },
+    { tool: "Figma", mark: "figma", file: "FOX v3 library", title: "Redrawn on FOX components", body: "Every value is a variable, and every component has Code Connect." },
     { tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "Built to my spec, through MCP", body: "Claude Code reads the frame and implements the specification I write." },
-    { tool: "Storybook", mark: "storybook", file: "fox-card", title: "Storybook is the contract", body: "Every state a story: the reference design and engineering both check against." },
+    { tool: "Storybook", mark: "storybook", file: "fox-card", title: "Storybook is the contract", body: "Every state has a story, and design and engineering both check against it." },
     { tool: "Chromatic", mark: "chromatic", file: "snapshots", title: "Snapshots against the frames", body: "Visual regression on every pull request; I check the diff against the intent." },
     { tool: "GitHub", mark: "github", file: "pull request", title: "I review and merge", body: "Against the frames and the acceptance criteria, before anything ships." },
     { tool: "Nexus", mark: "sonatype", file: "package", title: "Versioned on Nexus", body: "Product teams install the package; nobody redraws it." },
@@ -100,7 +102,7 @@ export const sheet = {
   ],
   rhythm: [
     { every: "Weekly", what: "critique with my two designers", ticks: 52 },
-    { every: "Quarterly", what: "interviews; the two agent skills revised", ticks: 4 },
+    { every: "Quarterly", what: "interviews and a revision of the two agent skills", ticks: 4 },
     { every: "Every release", what: "usability testing", ticks: 0 },
   ],
   block: [

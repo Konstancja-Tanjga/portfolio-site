@@ -145,7 +145,7 @@ export function Home() {
           <div>
             <h2 id="about-heading" className="hm-h2">How I work</h2>
             <p className="hm-about__claim">
-              Design, the design system and the code that proves it are one job on my desk.
+              Design, the design system, and the code that proves it are one job on my desk.
             </p>
           </div>
           <p className="hm-note hm-how__note">
