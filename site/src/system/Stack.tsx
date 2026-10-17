@@ -18,7 +18,7 @@ export function Stack({ rows, caption }: { rows: StackRow[]; caption?: string })
   const { ref, shown } = useReveal<HTMLDivElement>();
 
   return (
-    <Lane width="column">
+    <Lane width="wall">
       <div ref={ref} className={shown ? "stack is-running" : "stack"}>
         {rows.map((row, i) => (
           <div
@@ -28,13 +28,17 @@ export function Stack({ rows, caption }: { rows: StackRow[]; caption?: string })
                actually runs in rather than picking a row at random. */
             style={{ "--stack-delay": `${i * 90}ms` } as React.CSSProperties}
           >
-            <span className="stack__key">{row.key}</span>
+            {/* The mark sits with the key it qualifies, on the same line, so
+                a marked row is no taller than any other. */}
+            <span className="stack__key">
+              {row.key}
+              {row.mine && (
+                <span className="stack__mark" aria-label="my addition to the documented workflow">
+                  mine
+                </span>
+              )}
+            </span>
             <span className="stack__value">{row.value}</span>
-            {row.mine && (
-              <span className="stack__mark" aria-label="my addition to the documented workflow">
-                mine
-              </span>
-            )}
           </div>
         ))}
       </div>

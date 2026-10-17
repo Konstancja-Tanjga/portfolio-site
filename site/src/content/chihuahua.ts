@@ -172,6 +172,7 @@ export const chihuahua: CaseStudy = {
           kind: "shot",
           width: "wall",
           src: "/work/tinder-for-chihuahua/wall/ch02-research.png",
+          folded: true,
           hotspots: [
             { x: 48, y: 17, text: "Two hues, and that is the entire palette. Red and green do not exist for this user." },
             { x: 48, y: 25, text: "Everything roughly four times bigger: 20/75 against 20/20, a factor of 3.75." },
@@ -180,7 +181,7 @@ export const chihuahua: CaseStudy = {
             { x: 48, y: 83, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
           ],
           caption:
-            "Ten findings and their requirements. These are the numbers the app compiles against.",
+            "The research panel: ten findings and their requirements, the numbers the app compiles against.",
         },
       ],
     },
@@ -628,6 +629,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "shot",
           width: "column",
+          inset: true,
           src: "/work/tinder-for-chihuahua/photos/oboje.jpg",
           caption: "Auri and Karmel, waiting for the next session. She is his mother: the one match the app is built to rule out.",
         },

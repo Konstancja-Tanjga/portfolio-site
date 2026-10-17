@@ -15,7 +15,7 @@ export const ShotViewer = createContext<
 >(null);
 
 /** One image in the wall, or the slot where it will go. */
-export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded }: ShotData & { width?: Width }) {
+export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded, inset }: ShotData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
   const [open, setOpen] = useState(false);
   const id = useId();
@@ -38,7 +38,7 @@ export function Shot({ width = "wall", src, slot, caption, frame, hotspots, fold
   }
   return (
     <Lane width={width}>
-      <figure ref={ref} className={shown ? "shot is-shown" : "shot"}>
+      <figure ref={ref} className={["shot", inset && "shot--inset", shown && "is-shown"].filter(Boolean).join(" ")}>
         <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
         {caption && <figcaption className="shot__caption">{caption}</figcaption>}
       </figure>

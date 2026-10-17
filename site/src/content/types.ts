@@ -27,6 +27,12 @@ export type Shot = {
    * `<name>-2400.webp`) and the lightbox opens `<name>-full.webp`.
    * Point `src` at the 2400 file; the others are derived from its name.
    */
+  /**
+   * A photograph set small, beside its caption, drifting slowly once it is
+   * in view: for a picture that closes a wall rather than proves a claim.
+   * Ignored with `folded`.
+   */
+  inset?: boolean;
   frame?: "macbook";
   /**
    * A diagram or a board that is reference rather than evidence: shown

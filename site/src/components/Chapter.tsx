@@ -41,7 +41,7 @@ function BlockView({ block }: { block: Block }) {
       return <Points items={block.items} fold={block.fold} />;
     case "shot":
       return (
-        <Shot width={block.width} src={block.src} slot={block.slot} caption={block.caption} frame={block.frame} hotspots={block.hotspots} folded={block.folded} />
+        <Shot width={block.width} src={block.src} slot={block.slot} caption={block.caption} frame={block.frame} hotspots={block.hotspots} folded={block.folded} inset={block.inset} />
       );
     case "duo":
       return <Duo items={block.items} caption={block.caption} />;
