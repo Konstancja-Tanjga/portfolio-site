@@ -15,9 +15,10 @@ import "./styles/home.css";
 import "./styles/case.css";
 
 // Agentation: click an element in `npm run dev`, write a note, and hand
-// the agent its selector. Dev only — the import sits behind DEV, so the
+// the agent its selector. Dev only: the import sits behind DEV, so the
 // production build drops it and the live site never shows the toolbar.
-// The endpoint is the agentation-mcp server registered in .mcp.json.
+// The endpoint is the default port of the agentation-mcp server; without
+// it running, the toolbar still works through Copy.
 const Agentation = import.meta.env.DEV
   ? React.lazy(() => import("agentation").then((m) => ({ default: m.Agentation })))
   : null;
