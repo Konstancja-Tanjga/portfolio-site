@@ -44,3 +44,15 @@ Not done, and why:
 - No `folded` shot: the sketch is the evidence for the navigation, not a diagram that explains it.
 - No `stats`, `joint`, or `dossier`: no number with a source, no reflection, and one area, as in the first log.
 - No `evolution`: no design system versions on record.
+
+## 18 October 2026: Riyad Bank as the client
+
+Konstancja's correction: the client was Riyad Bank, so the study names Riyad Bank, not "Big Hat, via Intellias". The cover tile takes the middle part of `credit` as its top-right label, so the tile now reads RIYAD BANK.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| credit: "UX/UI Designer · Big Hat, via Intellias · Riyad Bank, Saudi Arabia" | credit: "UX/UI Designer · Riyad Bank · Saudi Arabia" | the client as she states it; same shape as the Volvo credit |
+| { label: "Role", value: "UX/UI Designer, through Big Hat, my own company, via Intellias" } | { label: "Role", value: "UX/UI Designer" } | the client is already in the Client row |
+| "UX/UI Designer, through Big Hat via Intellias. C-level interviews …" | "UX/UI Designer for Riyad Bank. C-level interviews …" | the client as she states it |
+
+Not changed here: the CV (`docs/cv/cv.html`) and the LinkedIn draft (`docs/copy-edit/linkedin-2026-10.md`) still say "(via Intellias)"; that is outside the case study.
