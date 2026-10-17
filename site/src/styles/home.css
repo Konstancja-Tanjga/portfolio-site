@@ -670,10 +670,11 @@
 @media (prefers-reduced-motion: reduce) { .xp--block .xp__track { height: auto; } }
 
 /* ---------- how I work: the sheet ----------
-   A drawing sheet: the faint grid of the journey's drawing paper, one
-   component through eight tool windows, a conveyor line drawn by the
-   scroll, a rhythm ruler and a title block in the corner. Two inks and
-   the sand; every line 1 px. */
+   A drawing sheet: a faint 24 px grid, one component through eight
+   windows, a conveyor line drawn by the scroll, a rhythm ruler and a
+   title block in the corner. Ink in three strengths and the sand for
+   anything lit; hairlines at 1 px, the conveyor line and the highlight
+   outlines at 1.5 px. */
 .hm-how { padding-top: var(--bh-space-8); }
 .hm-how__head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--bh-space-4) var(--bh-space-6); align-items: end; margin-bottom: var(--bh-space-5); }
 .hm-how__head .hm-about__claim { margin-bottom: 0; }
@@ -702,14 +703,19 @@
 .sh-label { margin: 0; font: 500 11px/1 var(--bh-font-id); letter-spacing: 0.12em; text-transform: uppercase; color: var(--kt-sand); }
 
 /* ---- the stations and the line ---- */
+.sh-track { position: relative; }
 .sh-stations { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--bh-space-6) var(--bh-space-4); }
 .sh-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
 .sh-line__path { fill: none; stroke: var(--kt-sand); stroke-width: 1.5; stroke-dashoffset: 0; opacity: 0.75; }
 .sh-line__head { fill: var(--kt-sand); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--kt-sand) 70%, transparent)); }
-.sh-station { position: relative; z-index: 1; display: grid; gap: var(--bh-space-2); align-content: start; }
-.sh-n { margin: 0; font: 500 11px/1 var(--bh-font-id); letter-spacing: 0.12em; color: var(--kt-ink-3); transition: color 400ms; }
+.sh-station { position: relative; z-index: 1; min-width: 0; display: grid; gap: 8px var(--bh-space-2); align-content: start; }
+/* the number sits on the line, as text on a dimension line does: its flat
+   ground masks the line and the grid under it */
+.sh-n { position: relative; z-index: 1; justify-self: start; margin: 0 0 0 -6px; padding: 0 6px; background: color-mix(in srgb, var(--kt-ground-2) 55%, var(--kt-ground)); font: 500 11px/1 var(--bh-font-id); letter-spacing: 0.12em; color: var(--kt-ink-3); transition: color 400ms; }
 .sh-station.is-lit .sh-n { color: var(--kt-sand); }
 .sh-win {
+  min-width: 0;
+  margin-top: 2px;
   border: 1px solid color-mix(in srgb, var(--kt-ink) 22%, transparent);
   background: var(--kt-ground);
   opacity: 0.42;
@@ -724,15 +730,15 @@
 }
 .sh-win__bar span + span { color: var(--kt-ink-3); text-transform: none; letter-spacing: 0.04em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sh-win__body { position: relative; aspect-ratio: 13 / 9; padding: 12px; display: grid; place-items: center; overflow: hidden; }
-/* the drawings are measured in px for a 260 px window; wider windows zoom them */
+/* the drawings are laid out in px for a 254 px window; Sheet.tsx sets --sh-zoom from the real width after layout, and the body clips what still overflows */
 .sh-win__body > * { zoom: var(--sh-zoom, 1); }
-.sh-title { margin: 0; font-family: var(--kt-font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.2; color: var(--kt-ink-2); transition: color 400ms; }
+.sh-title { margin: 6px 0 0; font-family: var(--kt-font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.2; color: var(--kt-ink-2); transition: color 400ms; }
 .sh-station.is-lit .sh-title { color: var(--kt-ink); }
 .sh-body { margin: 0; font-size: var(--bh-size-small); line-height: 1.5; color: var(--kt-ink-3); }
 .sh-crop { position: relative; flex: none; border-radius: 3px; background-repeat: no-repeat; box-shadow: 0 1px 0 color-mix(in srgb, var(--kt-ink) 10%, transparent); }
 
 /* 01 options */
-.sh-opts { display: flex; align-items: center; gap: 12px; }
+.sh-opts { display: flex; align-items: center; gap: 10px; }
 .sh-opt { position: relative; opacity: 0.4; }
 .sh-opt.is-pick { opacity: 1; outline: 1px solid var(--kt-sand); outline-offset: 4px; }
 .sh-opt b { position: absolute; right: -4px; top: -18px; font: 500 9px/1 var(--bh-font-id); letter-spacing: 0.08em; text-transform: uppercase; color: var(--kt-sand); }
@@ -782,7 +788,6 @@
 .sh-pr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font: 500 9.5px/1.3 var(--bh-font-id); color: var(--kt-ink-2); }
 .sh-pr li { display: flex; align-items: center; gap: 7px; }
 .sh-pr li::before { content: ""; width: 7px; height: 7px; flex: none; background: var(--kt-sand); clip-path: polygon(0 50%, 40% 100%, 100% 15%, 85% 0, 40% 70%, 15% 38%); }
-.sh-pr__thumb { position: absolute; right: 0; bottom: 0; opacity: 0.8; }
 
 /* 07 the package */
 .sh-pkg { display: grid; gap: 10px; justify-items: start; }
@@ -819,15 +824,16 @@
 .sheet .sh-foot { opacity: 0; transform: translateY(10px); transition: opacity 800ms 200ms, transform 800ms 200ms cubic-bezier(0.2, 0.7, 0.2, 1); }
 .sheet.is-shown .sh-foot { opacity: 1; transform: none; }
 
-@media (max-width: 64rem) { .sh-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sh-win__body { --sh-zoom: 1.4; } }
+@media (max-width: 64rem) { .sh-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 56rem) { .sh-foot { grid-template-columns: 1fr; } }
 @media (max-width: 40rem) {
   .sheet { padding: var(--bh-space-3); }
   .sh-stations { grid-template-columns: minmax(0, 1fr); gap: var(--bh-space-5); }
-  .sh-win__body { aspect-ratio: 16 / 10; --sh-zoom: 1.2; }
+  .sh-win__body { aspect-ratio: 16 / 10; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sh-win, .sh-n, .sh-title, .sheet .sh-foot { transition: none; }
+  .sh-win, .sh-n, .sh-title, .sh-tool__mark, .sheet .sh-foot { transition: none; }
+  .sh-tool:hover .sh-tool__mark { transform: none; }
   .sh-term i { animation: none; }
 }
 
@@ -842,8 +848,3 @@
 .sh-win__bar span:first-child { display: inline-flex; align-items: center; gap: 6px; }
 .sh-win__bar .mark { color: var(--kt-ink-2); transition: color 400ms; }
 .sh-station.is-lit .sh-win__bar .mark { color: var(--kt-sand); }
-/* the number sits on the line, as text on a dimension line does */
-.sh-n { position: relative; z-index: 1; justify-self: start; padding: 0 6px; margin-left: -6px; background: color-mix(in srgb, var(--kt-ground-2) 55%, var(--kt-ground)); }
-.sh-station { gap: 8px var(--bh-space-2); }
-.sh-station .sh-win { margin-top: 2px; }
-.sh-station .sh-title { margin-top: 6px; }
