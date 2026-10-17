@@ -169,18 +169,66 @@ export const chihuahua: CaseStudy = {
             "<p>No interviews, no analytics, no way to ask, so <strong>the requirements came from published research</strong>, with one rule: every finding arrives with a design consequence. Sources in chapter 11.</p>",
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch02-research.png",
-          hotspots: [
-            { x: 48, y: 17, text: "Two hues, and that is the entire palette. Red and green do not exist for this user." },
-            { x: 48, y: 25, text: "Everything roughly four times bigger: 20/75 against 20/20, a factor of 3.75." },
-            { x: 48, y: 33, text: "The finding that named the handset, and the one I drew the wrong conclusion from. See chapter 09." },
-            { x: 48, y: 41, text: "The native gesture is a drag, not a tap. The single most consequential finding in the set." },
-            { x: 48, y: 83, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
+          kind: "dossier",
+          items: [
+            {
+              id: "research-see",
+              n: "01",
+              title: "What the dog sees",
+              maxim: "Two hues, a quarter of the acuity, and a faster eye than ours.",
+              standfirst: "Goal: set the palette, the scale and the motion budget from four findings on canine vision, findings 01 to 03 and 10.",
+              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-see.png" },
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: "/work/tinder-for-chihuahua/wall/ch02-research-see.png",
+                  hotspots: [
+                    { x: 48, y: 29, text: "Two hues, and that is the entire palette. Red and green do not exist for this user." },
+                    { x: 48, y: 43, text: "Everything roughly four times bigger: 20/75 against 20/20, a factor of 3.75." },
+                    { x: 48, y: 57, text: "The finding that named the handset, and the one I drew the wrong conclusion from. See chapter 09." },
+                    { x: 48, y: 71, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
+                  ],
+                  caption: "Four findings on vision and their requirements. These are the numbers the app compiles against.",
+                },
+              ],
+            },
+            {
+              id: "research-touch",
+              n: "02",
+              title: "How a nose touches",
+              maxim: "A drag, not a tap, and a wet patch, not a point.",
+              standfirst: "Goal: decide what counts as one swipe, from findings 04 and 05 on gesture and contact.",
+              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-touch-cover.png" },
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: "/work/tinder-for-chihuahua/wall/ch02-research-touch.png",
+                  hotspots: [
+                    { x: 48, y: 50, text: "The native gesture is a drag, not a tap. The single most consequential finding in the set." },
+                  ],
+                  caption: "Two findings on input. The 1500 ms lock and undo as a core function come from here.",
+                },
+              ],
+            },
+            {
+              id: "research-want",
+              n: "03",
+              title: "What he works for",
+              maxim: "The screen announces the reward. The reward comes from a hand.",
+              standfirst: "Goal: decide what the screen shows, what a swipe means, and what success is, from findings 06 to 09.",
+              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-want-cover.png" },
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: "/work/tinder-for-chihuahua/wall/ch02-research-want.png",
+                  caption: "Four findings on attention and reward. A swipe is a preference, never a match.",
+                },
+              ],
+            },
           ],
-          caption:
-            "Ten findings and their requirements. These are the numbers the app compiles against.",
         },
       ],
     },
