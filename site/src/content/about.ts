@@ -21,7 +21,7 @@ export const aboutChapters: Chapter[] = [
           kicker: "Lead Designer, UX Engineer",
           claim:
             "Design, the design system, and the code that proves it are one job on my desk.",
-          lead: "Ten years in complex, data-rich software: ERP, banking, insurance, legal and regulatory, and industrial energy. I run a design-to-code pipeline: shipped components live in code and the Figma library mirrors them, Claude Code implements against a specification I author, Storybook is the contract, and Nexus versions the result so that six products can adopt it on their own schedule.",
+          lead: "Eight years in complex, data-rich software: ERP, banking, insurance, legal and regulatory, and industrial energy. I run a design-to-code pipeline: shipped components live in code and the Figma library mirrors them, Claude Code implements against a specification I author, Storybook is the contract, and Nexus versions the result so that six products can adopt it on their own schedule.",
           facts: [
             { label: "Based", value: "Warsaw, CET" },
             { label: "Working", value: "Remote only · B2B only" },
