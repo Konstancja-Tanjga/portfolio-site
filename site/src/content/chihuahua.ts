@@ -113,6 +113,7 @@ export const chihuahua: CaseStudy = {
         },
         {
           kind: "duo",
+          width: "column",
           items: [
             { src: "/work/tinder-for-chihuahua/photos/karmel.jpg", caption: "Karmel, five. The one who will work a screen for a treat." },
             { src: "/work/tinder-for-chihuahua/photos/auri.jpg", caption: "Auri, twelve, his mother. The one who sets every threshold in the system." },
@@ -676,6 +677,7 @@ export const chihuahua: CaseStudy = {
         {
           kind: "shot",
           width: "column",
+          inset: true,
           src: "/work/tinder-for-chihuahua/photos/oboje.jpg",
           caption: "Auri and Karmel, waiting for the next session. She is his mother: the one match the app is built to rule out.",
         },

@@ -15,7 +15,7 @@ export const ShotViewer = createContext<
 >(null);
 
 /** One image in the wall, or the slot where it will go. */
-export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded }: ShotData & { width?: Width }) {
+export function Shot({ width = "wall", src, slot, caption, frame, hotspots, folded, inset }: ShotData & { width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
   const [open, setOpen] = useState(false);
   const id = useId();
@@ -38,7 +38,7 @@ export function Shot({ width = "wall", src, slot, caption, frame, hotspots, fold
   }
   return (
     <Lane width={width}>
-      <figure ref={ref} className={shown ? "shot is-shown" : "shot"}>
+      <figure ref={ref} className={["shot", inset && "shot--inset", shown && "is-shown"].filter(Boolean).join(" ")}>
         <ShotFrame src={src} slot={slot} caption={caption} frame={frame} hotspots={hotspots} />
         {caption && <figcaption className="shot__caption">{caption}</figcaption>}
       </figure>
@@ -47,10 +47,10 @@ export function Shot({ width = "wall", src, slot, caption, frame, hotspots, fold
 }
 
 /** Two shots side by side: before and after, two states, a mobile pair. */
-export function Duo({ items, caption }: { items: ShotData[]; caption?: string }) {
+export function Duo({ items, caption, width = "wall" }: { items: ShotData[]; caption?: string; width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
   return (
-    <Lane width="wall">
+    <Lane width={width}>
       <figure ref={ref} className={shown ? "shot shot--duo is-shown" : "shot shot--duo"}>
         <div className="shot__pair">
           {items.map((item, i) => (

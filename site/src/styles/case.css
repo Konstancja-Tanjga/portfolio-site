@@ -327,11 +327,16 @@
 .spec__key { font-family: var(--kt-font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.3; color: var(--kt-ink); }
 .spec__value { font-family: var(--kt-font-body); color: var(--kt-ink-2); line-height: 1.55; max-width: 62ch; }
 .spec__caption { max-width: 62ch; color: var(--kt-ink-3); }
-.stack { border-radius: 10px; background: var(--kt-ground-2); border: 1px solid var(--kt-line); padding: var(--bh-space-3) var(--bh-space-4); }
-.stack__row { border-color: var(--kt-line); }
-.stack__key { color: var(--kt-ink-3); }
-.stack__value { color: var(--kt-ink); }
-@media (max-width: 56rem) { .spec__row { grid-template-columns: 1fr; } }
+/* The stack sits on the same grid as a spec table: key on the left, value
+   aligned with the maxim column, full wall width, no card around it. */
+.stack__row { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--bh-space-2) var(--bh-space-6); padding: var(--bh-space-3) 0; font-size: var(--bh-size-body); }
+.stack__row::before, .stack__row:last-child::after { background: var(--kt-line); }
+.stack__row--mine { background: linear-gradient(90deg, rgba(227, 210, 173, 0.05), transparent 60%); }
+.stack__key { font-family: var(--kt-font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.3; color: var(--kt-ink); }
+.stack__value { font-family: var(--kt-font-body); color: var(--kt-ink-2); line-height: 1.55; max-width: 62ch; }
+.stack__mark { font-family: var(--kt-font-body); font-weight: 400; letter-spacing: 0.08em; }
+.stack__caption { max-width: 62ch; color: var(--kt-ink-3); }
+@media (max-width: 56rem) { .spec__row, .stack__row { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .spec__row { opacity: 1; transform: none; transition: none; } }
 .persona, .stage, .uc, .evo__step, .anno, .process__stage, .artefact {
   border-radius: 10px;
@@ -468,9 +473,22 @@
 .persona .field__label { color: var(--kt-ink-3); }
 .persona .field__body { color: var(--kt-ink-2); font-size: var(--bh-size-small); }
 .persona .field--strong .field__body { color: var(--kt-ink); }
+/* A photo keeps the card's resting width. A hovered card widens to show its
+   fields; the face does not grow with it. The width is one card of the row at
+   rest: the row's width shared by the cards, less the gaps, the padding and
+   the border. */
+.personas { container-type: inline-size; --persona-n: 3; }
+.personas:has(> .persona:nth-child(2):last-child) { --persona-n: 2; }
+.personas:has(> .persona:nth-child(4)) { --persona-n: 4; }
+.persona__photo {
+  flex: none;
+  width: calc((100cqw - (var(--persona-n) - 1) * var(--bh-space-2)) / var(--persona-n) - 2 * var(--bh-space-4) - 2px);
+  max-width: 100%;
+}
 @media (max-width: 56rem) {
   .personas { flex-direction: column; }
   .persona, .persona:hover, .personas:hover .persona:not(:hover) { flex: none; }
+  .persona__photo { width: 100%; }
   .persona > .field, .persona > .persona__job { opacity: 1; max-height: none; margin-top: 0; overflow: visible; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -883,15 +901,15 @@
 .uc__slot + .uc__slot { margin-top: calc(var(--bh-space-4) * 1.5); }
 
 /* ---------- every card lifts under the cursor ---------- */
-.persona, .stage, .evo__tab, .flow__stage, .brief__decision, .uc, .thesis, .spec, .anno, .process__stage, .evo__panel, .stack, .folders__panel .anno, .hm-chip, .hm-practice, .plate, .card, .next, .artefact {
+.persona, .stage, .evo__tab, .flow__stage, .brief__decision, .uc, .thesis, .spec, .anno, .process__stage, .evo__panel, .folders__panel .anno, .hm-chip, .hm-practice, .plate, .card, .next, .artefact {
   transition: transform 350ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 350ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 300ms;
 }
-.persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .stack:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover {
+.persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover {
   transform: translateY(-4px);
   box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(227, 210, 173, 0.25);
 }
 @media (prefers-reduced-motion: reduce) {
-  .persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .stack:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover { transform: none; }
+  .persona:hover, .stage:hover, .evo__tab:hover, .flow__stage:hover, .brief__decision:hover, .uc:hover, .thesis:hover, .process__stage:hover, .evo__panel:hover, .hm-chip:hover, .hm-practice:hover, .plate:hover, .card:hover, .artefact:hover { transform: none; }
   .pins.is-live .pin__dot { animation: none; }
   .shot__open:hover .device { transform: none; }
 }
@@ -1662,3 +1680,25 @@ article { position: relative; z-index: 1; }
   .shot__stage:has(.shot__img--device), .video--device .video__frame { animation: none; transform: none; }
   .shot__open:has(.shot__img--device)::after, .video--device .video__frame::after { content: none; }
 }
+
+/* ---------- an inset photograph ----------
+   Small, beside its caption, and slowly drifting once revealed: a picture
+   that closes a wall rather than one that argues. The drift is the one
+   moving thing on its screen, and reduced motion holds it still. */
+.shot--inset { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: var(--bh-space-4); align-items: end; }
+.shot--inset .shot__open, .shot--inset .shot__img { border-radius: 8px; }
+.shot--inset .shot__open { overflow: hidden; aspect-ratio: 1; }
+.shot--inset .shot__img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; }
+.shot--inset.is-shown .shot__img { animation: inset-drift 14s ease-in-out 800ms infinite alternate both; }
+.shot--inset .shot__caption { margin: 0 0 var(--bh-space-2); }
+@keyframes inset-drift {
+  from { transform: scale(1.04) translate(0, 0); }
+  to { transform: scale(1.14) translate(-2%, 1.5%); }
+}
+@media (max-width: 30rem) { .shot--inset { grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: var(--bh-space-3); } }
+@media (prefers-reduced-motion: reduce) { .shot--inset.is-shown .shot__img { animation: none; } }
+
+/* A duo at reading measure stays a pair on a phone: two photographs side by
+   side at half width are smaller than one stacked above the other, which is
+   the point of setting them in the column. */
+.lane--column > .shot--duo .shot__pair { grid-template-columns: 1fr 1fr; }

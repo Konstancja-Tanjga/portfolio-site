@@ -1173,7 +1173,6 @@ img { max-width: 100%; height: auto; }
   gap: var(--bh-space-3);
   align-items: baseline;
   padding: var(--bh-space-2) 0;
-  font-family: var(--bh-font-id);
   font-size: var(--bh-size-small);
 }
 .stack__key { color: var(--bh-text-quiet); }
@@ -1202,13 +1201,14 @@ img { max-width: 100%; height: auto; }
 }
 
 /* A stage the documented workflow does not have. The label is set on the
-   mark itself rather than a legend, so a row carries its own claim. */
-.stack__row--mine::before { background: var(--bh-mark); height: 2px; }
+   mark itself rather than a legend, so a row carries its own claim. It sits
+   inline after the key; the rules above every row stay the same weight, so
+   a marked row does not read as a section break. */
 .stack__mark {
-  grid-column: 2;
-  justify-self: start;
-  margin-top: var(--bh-space-1);
-  padding: 2px 8px;
+  display: inline-block;
+  margin-inline-start: var(--bh-space-2);
+  vertical-align: 0.15em;
+  padding: 1px 7px;
   border-radius: 999px;
   background: var(--bh-mark);
   color: var(--bh-site-on-mark);
