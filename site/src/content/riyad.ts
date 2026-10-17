@@ -18,12 +18,12 @@ export const riyad: CaseStudy = {
     headline: ["The future", "of finance"],
     subline: "Digital Insights, for Riyad Bank",
     stamp: "DESIGNED FROM SCRATCH · 3D NAVIGATION · ILLUSTRATION SYSTEM · SHIPPED",
-    credit: "UX/UI Designer · Big Hat, via Intellias · Riyad Bank, Saudi Arabia",
+    credit: "UX/UI Designer · Riyad Bank · Saudi Arabia",
     art: { src: "/work/riyad-bank/cover-art.webp", portrait: true },
     shot: { src: "/work/riyad-bank/00-cover.png" },
   },
   meta: [
-    { label: "Role", value: "UX/UI Designer, through Big Hat, my own company, via Intellias" },
+    { label: "Role", value: "UX/UI Designer" },
     { label: "Client", value: "Riyad Bank, Saudi Arabia" },
     { label: "Shipped", value: "App Store and Google Play" },
     { label: "Research", value: "C-level interviews, SME sessions, and A/B testing before the build" },
@@ -51,7 +51,7 @@ export const riyad: CaseStudy = {
             {
               key: "My role and scope",
               value:
-                "UX/UI Designer, through Big Hat via Intellias. C-level interviews, sessions with subject-matter experts, and A/B testing before the build; the interactive 3D navigation was mine.",
+                "UX/UI Designer for Riyad Bank. C-level interviews, sessions with subject-matter experts, and A/B testing before the build; the interactive 3D navigation was mine.",
             },
             {
               key: "Decision 1",
