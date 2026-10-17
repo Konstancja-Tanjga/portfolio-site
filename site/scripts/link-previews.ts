@@ -59,7 +59,7 @@ function clip(s: string, max: number) {
 
 function pages(defaultDescription: string): Page[] {
   return [
-    { path: "", title: `Konstancja Tanjga — Portfolio · Lead Designer, UX Engineer`, description: defaultDescription },
+    { path: "", title: `Konstancja Tanjga — Portfolio · Lead Designer, UX Engineer, AI-fluent`, description: defaultDescription },
     { path: "about", title: `About — ${NAME}`, description: defaultDescription },
     {
       path: "practice",
