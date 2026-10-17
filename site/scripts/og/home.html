@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+  The link-preview card for the home page and the pages without a cover
+  of their own: 1200 x 630, the 1.91:1 that LinkedIn, X, Slack and
+  Facebook show without cropping. Rendered to public/og/home.png by
+  render.py next to this file; the colours are the ones in
+  src/styles/brand.css, the headline is the home hero's.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Mono:wght@500&display=block" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #0f0f0e;
+    color: #f1ede4;
+    font-family: Inter, sans-serif;
+    position: relative;
+  }
+  .text { position: absolute; left: 72px; top: 64px; width: 560px; }
+  .role {
+    font: 500 15px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #8f8a7f;
+  }
+  .role b { color: #e3d2ad; font-weight: 500; }
+  h1 {
+    margin-top: 30px;
+    font: 800 66px/0.98 "Bricolage Grotesque", sans-serif;
+    letter-spacing: -0.035em;
+  }
+  h1 span { color: #e3d2ad; }
+  .award { margin-top: 34px; font-size: 22px; line-height: 1.4; color: #c9c3b6; }
+  .award strong { color: #f1ede4; font-weight: 500; }
+  .foot {
+    position: absolute; left: 72px; bottom: 56px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .cta {
+    background: #e3d2ad; color: #0f0f0e;
+    font: 500 20px/1 Inter, sans-serif;
+    padding: 14px 22px; border-radius: 999px;
+  }
+  .mac { position: absolute; right: -150px; top: 150px; width: 780px; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <p class="role"><b>Konstancja Tanjga-Nawrot</b> · Lead Designer, UX Engineer</p>
+    <h1>Enterprise software, designed from zero <span>and built to be used.</span></h1>
+    <p class="award"><strong>APplus ERP</strong>, ERP System of the Year 2025 and 2026, Gold in the User Experience category.</p>
+  </div>
+  <div class="foot">
+    <span class="cta">See the case studies →</span>
+  </div>
+  <img class="mac" src="../../public/work/applus-analytics/device/dashboards-2400.webp" alt="" />
+</body>
+</html>
