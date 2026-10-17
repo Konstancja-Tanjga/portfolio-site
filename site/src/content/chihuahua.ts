@@ -113,6 +113,7 @@ export const chihuahua: CaseStudy = {
         },
         {
           kind: "duo",
+          width: "column",
           items: [
             { src: "/work/tinder-for-chihuahua/photos/karmel.jpg", caption: "Karmel, five. The one who will work a screen for a treat." },
             { src: "/work/tinder-for-chihuahua/photos/auri.jpg", caption: "Auri, twelve, his mother. The one who sets every threshold in the system." },
@@ -181,7 +182,7 @@ export const chihuahua: CaseStudy = {
             { x: 48, y: 83, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
           ],
           caption:
-            "The research panel: ten findings and their requirements, the numbers the app compiles against.",
+            "Ten findings and their requirements, the numbers the app compiles against.",
         },
       ],
     },

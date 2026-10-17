@@ -27,13 +27,13 @@ export type Shot = {
    * `<name>-2400.webp`) and the lightbox opens `<name>-full.webp`.
    * Point `src` at the 2400 file; the others are derived from its name.
    */
+  frame?: "macbook";
   /**
    * A photograph set small, beside its caption, drifting slowly once it is
    * in view: for a picture that closes a wall rather than proves a claim.
    * Ignored with `folded`.
    */
   inset?: boolean;
-  frame?: "macbook";
   /**
    * A diagram or a board that is reference rather than evidence: shown
    * as a closed drawer with a thumbnail strip and its caption as the
@@ -281,7 +281,12 @@ export type Block =
    */
   | { kind: "points"; items: string[]; fold?: string }
   | ({ kind: "shot"; width?: Width } & Shot)
-  | { kind: "duo"; items: Shot[]; caption?: string }
+  /**
+   * Two shots side by side. `width` defaults to the wall; "column" keeps a
+   * pair of photographs at reading measure, for pictures that accompany the
+   * text rather than carry the evidence.
+   */
+  | { kind: "duo"; items: Shot[]; caption?: string; width?: Width }
   /**
    * Several small screens laid out across the wall instead of one per
    * screenful. A 360x800 phone export stretched to the full wall is both

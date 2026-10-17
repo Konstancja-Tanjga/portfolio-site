@@ -47,10 +47,10 @@ export function Shot({ width = "wall", src, slot, caption, frame, hotspots, fold
 }
 
 /** Two shots side by side: before and after, two states, a mobile pair. */
-export function Duo({ items, caption }: { items: ShotData[]; caption?: string }) {
+export function Duo({ items, caption, width = "wall" }: { items: ShotData[]; caption?: string; width?: Width }) {
   const { ref, shown } = useReveal<HTMLElement>();
   return (
-    <Lane width="wall">
+    <Lane width={width}>
       <figure ref={ref} className={shown ? "shot shot--duo is-shown" : "shot shot--duo"}>
         <div className="shot__pair">
           {items.map((item, i) => (

@@ -1689,7 +1689,7 @@ article { position: relative; z-index: 1; }
 .shot--inset .shot__open, .shot--inset .shot__img { border-radius: 8px; }
 .shot--inset .shot__open { overflow: hidden; aspect-ratio: 1; }
 .shot--inset .shot__img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; }
-.shot--inset.is-shown .shot__img { animation: inset-drift 14s ease-in-out 800ms infinite alternate; }
+.shot--inset.is-shown .shot__img { animation: inset-drift 14s ease-in-out 800ms infinite alternate both; }
 .shot--inset .shot__caption { margin: 0 0 var(--bh-space-2); }
 @keyframes inset-drift {
   from { transform: scale(1.04) translate(0, 0); }
@@ -1697,3 +1697,8 @@ article { position: relative; z-index: 1; }
 }
 @media (max-width: 30rem) { .shot--inset { grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: var(--bh-space-3); } }
 @media (prefers-reduced-motion: reduce) { .shot--inset.is-shown .shot__img { animation: none; } }
+
+/* A duo at reading measure stays a pair on a phone: two photographs side by
+   side at half width are smaller than one stacked above the other, which is
+   the point of setting them in the column. */
+.lane--column > .shot--duo .shot__pair { grid-template-columns: 1fr 1fr; }
