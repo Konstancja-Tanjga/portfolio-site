@@ -37,7 +37,7 @@ const NAME = "Konstancja Tanjga-Nawrot";
 // the card; a crawler measures the cover itself.
 const CARD: Image = {
   src: "/og/home.png",
-  alt: "Konstancja Tanjga-Nawrot, Lead Designer and UX Engineer: the APplus Analytics dashboards on a MacBook.",
+  alt: "The APplus Analytics dashboards on a MacBook laptop, beside the headline Enterprise software, designed from zero and built to be used.",
   width: 1200,
   height: 630,
 };
