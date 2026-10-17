@@ -7,7 +7,7 @@ import type { CaseStudy } from "./types";
  */
 export const riyad: CaseStudy = {
   slug: "riyad-bank",
-  title: "Riyad Bank: Digital Insights",
+  title: "Digital Insights - app for Riyad Bank",
   what: "A financial-education product designed from scratch, shipped to both stores",
   lead:
     "A mobile financial-education app for Riyad Bank, Saudi Arabia, with banking and finance topics in text, video, and podcast form. Before the build, the work included C-level interviews, sessions with subject-matter experts, and A/B testing. I designed the interactive 3D navigation. The app shipped to the App Store and Google Play.",
