@@ -26,16 +26,32 @@ import { published } from "../src/content";
  * build does not.
  */
 
-type Page = { path: string; title: string; description: string; image?: string };
+type Image = { src: string; alt: string; width?: number; height?: number };
+type Page = { path: string; title: string; description: string; image?: Image };
 
 const NAME = "Konstancja Tanjga-Nawrot";
-const DEFAULT_IMAGE = "/work/applus-analytics/00-cover.png";
+
+// The card drawn for previews: 1200 x 630 is the 1.91:1 every platform
+// shows uncropped. Made from scripts/og/home.html by scripts/og/render.py.
+// A case-study cover is not that shape, so the size is only stated for
+// the card; a crawler measures the cover itself.
+const CARD: Image = {
+  src: "/og/home.png",
+  alt: "Konstancja Tanjga-Nawrot, Lead Designer and UX Engineer: the APplus Analytics dashboards on a MacBook.",
+  width: 1200,
+  height: 630,
+};
+
+// Search results cut a description at about 155 characters; social
+// previews at about 125.
+const SEARCH_MAX = 155;
+const SOCIAL_MAX = 125;
 
 const escape = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-/** Preview descriptions are cut at about two lines; end on a word. */
-function clip(s: string, max = 200) {
+/** Cut a description to `max` characters, ending on a word. */
+function clip(s: string, max: number) {
   if (s.length <= max) return s;
   const space = s.lastIndexOf(" ", max - 1);
   return s.slice(0, space > 0 ? space : max - 1).replace(/\s*[,;:—–-]?\s*$/, "") + "…";
@@ -55,26 +71,41 @@ function pages(defaultDescription: string): Page[] {
       path: `work/${c.slug}`,
       title: `${c.title} — ${NAME}`,
       description: c.lead,
-      image: c.cover.shot.src,
+      image: { src: c.cover.shot.src, alt: `Cover of the ${c.title} case study.` },
     })),
   ];
 }
 
 function render(template: string, page: Page, base: string, origin?: string): string {
   const title = escape(page.title);
-  const description = escape(clip(page.description));
+  const description = escape(clip(page.description, SEARCH_MAX));
+  const social = escape(clip(page.description, SOCIAL_MAX));
   const tags = [
     `<meta property="og:type" content="${page.path.startsWith("work/") ? "article" : "website"}" />`,
     `<meta property="og:site_name" content="${escape(NAME)}" />`,
+    `<meta property="og:locale" content="en_GB" />`,
     `<meta property="og:title" content="${title}" />`,
-    `<meta property="og:description" content="${description}" />`,
+    `<meta property="og:description" content="${social}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${title}" />`,
+    `<meta name="twitter:description" content="${social}" />`,
   ];
   if (origin) {
     const url = (p: string) => origin + base + p.replace(/^\//, "");
+    const image = page.image ?? CARD;
     tags.push(
       `<meta property="og:url" content="${url(page.path)}" />`,
-      `<meta property="og:image" content="${url(page.image ?? DEFAULT_IMAGE)}" />`,
+      `<meta property="og:image" content="${url(image.src)}" />`,
+      ...(image.width && image.height
+        ? [
+            `<meta property="og:image:type" content="image/png" />`,
+            `<meta property="og:image:width" content="${image.width}" />`,
+            `<meta property="og:image:height" content="${image.height}" />`,
+          ]
+        : []),
+      `<meta property="og:image:alt" content="${escape(image.alt)}" />`,
+      `<meta name="twitter:image" content="${url(image.src)}" />`,
+      `<meta name="twitter:image:alt" content="${escape(image.alt)}" />`,
       `<link rel="canonical" href="${url(page.path)}" />`,
     );
   }
