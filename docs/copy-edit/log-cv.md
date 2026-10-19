@@ -21,3 +21,9 @@
 
 Kept as the employer or the organiser writes them: "Senior UX/UI Designer"
 (Volvo, Big Hat titles), "A/B tests", "UI/UX Design" (CalArts course name).
+
+## 19 October 2026: Riyad Bank as the client
+
+| Before | After | Rule |
+| --- | --- | --- |
+| "Riyad Bank, Saudi Arabia (via Intellias): a mobile financial-education product…" | "Riyad Bank, Saudi Arabia: a mobile financial-education product…" | fact: Riyad Bank was the client (Konstancja, 18 Oct); same change in the case study and the LinkedIn draft |

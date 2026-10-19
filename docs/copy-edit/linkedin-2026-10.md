@@ -76,7 +76,7 @@ One of three designers on a production surveillance and optimisation platform fo
 
 My own company, and a collective of freelancers: designers, a researcher, a front-end developer, an architect.
 
-Riyad Bank, Saudi Arabia (via Intellias): a mobile financial-education product in text, video and podcast, shipped to the App Store and Google Play. C-level interviews, SME sessions and A/B tests before build; the interactive 3D navigation and the illustration system.
+Riyad Bank, Saudi Arabia: a mobile financial-education product in text, video and podcast, shipped to the App Store and Google Play. C-level interviews, SME sessions and A/B tests before build; the interactive 3D navigation and the illustration system.
 
 Big Hat, my public design system, MIT: 39 components, two token layers, WCAG AA held by a failing build, documented in Storybook.
 
