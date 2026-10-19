@@ -192,3 +192,9 @@ centres (the windows hid it); tool names without marks.
 
 Open: the journey's token overlay (spacing scale, colour ramp) crosses
 the windows while the sheet is in view; it is kept as it is.
+
+### 19 October: Prague in mockups
+
+Konstancja asked for the Prague watercolours to sit in mockups like New York, Birds and Animals. The rooms are generated (Figma AI, empty interiors only, no frame and no art); her scans are composited into them, so the painting itself is never redrawn by a model. Each scan gets a frame and a passe-partout in its own proportions (DOX black, Emmaus pale oak, food walnut, with wood grain), a contact and cast shadow, and the wall's own light (the leaf shadows by the window) carried onto the frame. The script is [prague-mockups-compose.py](prague-mockups-compose.py); the old flat scans are in git history.
+
+![DOX, Emmaus Monastery and food, in their rooms](prague-mockups.png)
