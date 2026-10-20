@@ -22,8 +22,15 @@ const problems = [];
 const contentDir = resolve(root, 'src/content');
 const referenced = new Map();
 
-for (const file of readdirSync(contentDir).filter((f) => f.endsWith('.ts'))) {
-  const source = readFileSync(resolve(contentDir, file), 'utf8');
+/* the home page keeps its own content (the off-screen plates) outside content/ */
+const homeDir = resolve(root, 'src/home');
+const sources = [
+  ...readdirSync(contentDir).filter((f) => f.endsWith('.ts')).map((f) => [resolve(contentDir, f), f]),
+  ...readdirSync(homeDir).filter((f) => /\.tsx?$/.test(f)).map((f) => [resolve(homeDir, f), 'home/' + f]),
+];
+
+for (const [path, file] of sources) {
+  const source = readFileSync(path, 'utf8');
   for (const [, path] of source.matchAll(/(?:src|poster|shot)\s*:\s*"(\/[^"]+)"/g)) {
     if (!referenced.has(path)) referenced.set(path, file);
   }

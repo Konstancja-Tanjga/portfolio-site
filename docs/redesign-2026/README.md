@@ -198,3 +198,13 @@ the windows while the sheet is in view; it is kept as it is.
 Konstancja asked for the Prague watercolours to sit in mockups like New York, Birds and Animals. The rooms are generated (Figma AI, empty interiors only, no frame and no art); her scans are composited into them, so the painting itself is never redrawn by a model. Each scan gets a frame and a passe-partout in its own proportions (DOX black, Emmaus pale oak, food walnut, with wood grain), a contact and cast shadow, and the wall's own light (the leaf shadows by the window) carried onto the frame. The script is [prague-mockups-compose.py](prague-mockups-compose.py); the old flat scans are in git history.
 
 ![DOX, Emmaus Monastery and food, in their rooms](prague-mockups.png)
+
+### 20 October: France, Loire and castles in mockups
+
+The same method as Prague, nine rooms this time, chosen from the kinds of scene in Konstancja's own Photoshop mockup library (over a sofa, on a mid-century sideboard, leaning against a sofa, above a bed, on a green wall, on a desk, on an empty wall with window shadows) and matched to each painting: Cèdre Noir leans against a green sofa, Chambord hangs above a marble fireplace in a panelled salon, Chenonceau above a bed, Chaumont on a teak sideboard, Saumur on a sage wall, Clos Lucé on a scholar's desk, the Nantes elephant in a concrete loft, Le Vazereau in a farmhouse kitchen, and the Chinon wines on a tuffeau wall above a tasting table. Rooms generated empty; the scans composited in. Frames vary with the room (walnut, gilt, white, oak, black, steel). Where a frame stands in front of furniture, the wall's light is not carried onto it, or the sofa's pattern would show through the painting.
+
+The home page keeps its three flat plates (Chenonceau, Chambord, Le Cèdre Noir) by choice, so those thumbnails stay in `public/`; `check-content` now also checks `src/home`, which is how a deleted plate would have been caught.
+
+Scripts: [mockuplib.py](mockuplib.py) and [france-mockups-compose.py](france-mockups-compose.py).
+
+![The nine France mockups](france-mockups.png)
