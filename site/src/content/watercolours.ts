@@ -97,9 +97,9 @@ export const watercolours: Category[] = [
         name: "Prague",
         blurb: "March, and mostly indoors.",
         paintings: [
-          { src: "/watercolours/architecture/prague/01-dox-copy.jpg", thumb: "/watercolours/architecture/prague/01-dox-copy-thumb.jpg", title: "DOX" },
-          { src: "/watercolours/architecture/prague/02-emaus-monastery-copy.jpg", thumb: "/watercolours/architecture/prague/02-emaus-monastery-copy-thumb.jpg", title: "Emmaus Monastery" },
-          { src: "/watercolours/architecture/prague/03-food-copy.jpg", thumb: "/watercolours/architecture/prague/03-food-copy-thumb.jpg", title: "Food" },
+          { src: "/watercolours/architecture/prague/01-dox-mockup.jpg", thumb: "/watercolours/architecture/prague/01-dox-mockup-thumb.jpg", title: "DOX" },
+          { src: "/watercolours/architecture/prague/02-emaus-monastery-mockup.jpg", thumb: "/watercolours/architecture/prague/02-emaus-monastery-mockup-thumb.jpg", title: "Emmaus Monastery" },
+          { src: "/watercolours/architecture/prague/03-food-mockup.jpg", thumb: "/watercolours/architecture/prague/03-food-mockup-thumb.jpg", title: "Food" },
         ],
       },
       {
