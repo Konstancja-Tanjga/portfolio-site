@@ -127,7 +127,7 @@ export const watercolours: Category[] = [
     paintings: [
       { src: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy.jpg", thumb: "/watercolours/birds/01-flaming-na-krzesle-w-ramce-copy-thumb.jpg", title: "Flamingo on a chair" },
       { src: "/watercolours/birds/02-gaviota-i-monstera-copy.jpg", thumb: "/watercolours/birds/02-gaviota-i-monstera-copy-thumb.jpg", title: "Gaviota and monstera" },
-      { src: "/watercolours/birds/03-glossy-ibis-mockup.jpg", thumb: "/watercolours/birds/03-glossy-ibis-mockup-thumb.jpg", title: "Glossy ibis" },
+      { src: "/watercolours/birds/03-glossy-ibis-mockup.jpg", thumb: "/watercolours/birds/03-glossy-ibis-mockup-thumb.jpg", title: "Ibis grzywiasty" },
     ],
   },
   {
