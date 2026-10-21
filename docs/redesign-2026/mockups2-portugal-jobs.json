@@ -1,0 +1,8 @@
+[
+ ["portugal", "01-arco-de-rua-augusta-rocio-train-station-lisbon", "portugal/bg-01.png", [30, 30, 32], 0.0, 1180, 930, 860, false, 0.3],
+ ["portugal", "02-cathedral-se-lisbon-copy", "portugal/bg-02.png", [96, 64, 42], 0.4, 1065, 1140, 1260, false, 0.06],
+ ["portugal", "03-se-cathedral", "portugal/bg-03.png", [194, 160, 116], 0.32, 1024, 1215, 560, true, 0.3],
+ ["portugal", "04-watercolour20250114-23141251", "portugal/bg-04.png", [194, 160, 116], 0.32, 960, 1250, 1000, false, 0.3],
+ ["portugal", "05-watercolour20250114-23400642", "portugal/bg-05.png", [96, 64, 42], 0.4, 1060, 1180, 820, true, 0.06],
+ ["portugal", "06-watercolour20250115-15125537", "portugal/bg-06.png", [176, 142, 78], 0.18, 1000, 1120, 900, false, 0.3]
+]

@@ -208,3 +208,11 @@ The home page keeps its three flat plates (Chenonceau, Chambord, Le Cèdre Noir)
 Scripts: [mockuplib.py](mockuplib.py) and [france-mockups-compose.py](france-mockups-compose.py).
 
 ![The nine France mockups](france-mockups.png)
+
+### 20 October: the painting first, Málaga and Portugal
+
+Konstancja's note on the first two series: the watercolours were too small, even in the lightbox; the room is background and must not dominate. Every mockup is now cropped tight around its frame, so the frame fills about 76 % of the width of a 5:4 crop (78 % of the height of a 4:5 crop for upright paintings), and it is composed at twice the room's size so the scan keeps its full sharpness while the room goes slightly soft, like a shallow depth of field. The light carried from the wall is capped low, so the colours of the paintings stay true. Prague and France were re-rendered this way from their scans in git history, and Málaga (six rooms: a bright living room, an Andalusian hallway, an olive tree on terracotta, a seaside bench, an architect's office, a white bench with geraniums) and Portugal (a Lisbon café, a stone wall above a bench, a sideboard with blue-and-white ceramics, a navy velvet sofa, an azulejo hall, a fado room) were made the same way.
+
+One script now does all four series: [mockups2.py](mockups2.py) with [mockuplib.py](mockuplib.py); Portugal's jobs are in [mockups2-portugal-jobs.json](mockups2-portugal-jobs.json).
+
+![Málaga and Portugal](malaga-portugal-mockups.png)

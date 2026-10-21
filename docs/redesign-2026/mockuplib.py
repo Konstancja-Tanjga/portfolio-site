@@ -68,7 +68,7 @@ def place(bg, fr, cx, bottom, lean, light_strength):
     f = np.asarray(fr, dtype=float) * np.clip(rel, 0.55, 1.35)[..., None]
     # a faint sheen of glass from the top left
     gy, gx = np.mgrid[0:H, 0:W]
-    sheen = np.clip(1 - ((gx / W) + (gy / H)) / 1.1, 0, 1) ** 3 * 10
+    sheen = np.clip(1 - ((gx / W) + (gy / H)) / 1.1, 0, 1) ** 3 * 5
     f = np.clip(f + sheen[..., None], 0, 255)
     a[y:y + H, x:x + W] = f
     return Image.fromarray(a.astype(np.uint8))
