@@ -52,19 +52,19 @@ export const career: { years: string; org: string; role: string; what: string }[
 
 export const offScreen: { src: string; alt: string; caption: string }[] = [
   {
-    src: "/watercolours/birds/plate-flamingo-thumb.jpg",
-    alt: "Watercolour of a pink flamingo walking on one raised leg, with splashes of crimson paint beside it, signed",
+    src: "/watercolours/birds/home-flamingo-mockup-thumb.jpg",
+    alt: "Watercolour of a pink flamingo walking on one raised leg, with splashes of crimson paint beside it, in a pale oak frame on a sideboard",
     caption: "Flamingo",
   },
   {
-    src: "/watercolours/birds/plate-gaviota-thumb.jpg",
-    alt: "Watercolour of a grey and white gull walking left with something red in its yellow beak, its shadow in blue-grey wash, signed",
+    src: "/watercolours/birds/home-gaviota-mockup-thumb.jpg",
+    alt: "Watercolour of a grey and white gull walking left with something red in its yellow beak, in a white frame on a driftwood shelf",
     caption: "Gaviota",
   },
   {
-    src: "/watercolours/birds/plate-glossy-ibis-thumb.jpg",
-    alt: "Watercolour of an ibis in profile, a long curved orange bill, a purple crest of loose feathers and dark green-blue plumage with a copper patch on the wing, signed",
-    caption: "Glossy ibis",
+    src: "/watercolours/birds/home-northern-bald-ibis-mockup-thumb.jpg",
+    alt: "Watercolour of a northern bald ibis in profile, a long curved orange bill, a purple crest of loose feathers and dark green plumage with a copper patch on the wing, in a walnut frame on a brick wall",
+    caption: "Ibis grzywiasty",
   },
 ];
 

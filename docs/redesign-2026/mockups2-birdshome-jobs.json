@@ -1,0 +1,5 @@
+[
+ ["birdshome", "flamingo", "birdshome/bg-01.png", [194, 160, 116], 0.32, 980, 1335, 480, true, 0.3],
+ ["birdshome", "gaviota", "birdshome/bg-02.png", [238, 235, 228], 0.0, 990, 1370, 840, true, 0.3],
+ ["birdshome", "northern-bald-ibis", "birdshome/bg-03.png", [96, 64, 42], 0.4, 1000, 1060, 820, false, 0.3]
+]
