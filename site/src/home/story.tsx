@@ -52,19 +52,19 @@ export const career: { years: string; org: string; role: string; what: string }[
 
 export const offScreen: { src: string; alt: string; caption: string }[] = [
   {
-    src: "/watercolours/architecture/france/03-chanonceau-thumb.jpg",
-    alt: "Watercolour and ink of the Château de Chenonceau over the Cher, two red balloons above, lettered and dated May 2026",
-    caption: "Chenonceau, May 2026",
+    src: "/watercolours/birds/plate-flamingo-thumb.jpg",
+    alt: "Watercolour of a pink flamingo walking on one raised leg, with splashes of crimson paint beside it, signed",
+    caption: "Flamingo",
   },
   {
-    src: "/watercolours/architecture/france/02-chambord-thumb.jpg",
-    alt: "Sketchbook spread: the double staircase of Chambord, two riders with banners, and the château across the water, dated May 2026",
-    caption: "Chambord, May 2026",
+    src: "/watercolours/birds/plate-gaviota-thumb.jpg",
+    alt: "Watercolour of a grey and white gull walking left with something red in its yellow beak, its shadow in blue-grey wash, signed",
+    caption: "Gaviota",
   },
   {
-    src: "/watercolours/architecture/france/01-cedre-noir-thumb.jpg",
-    alt: "Watercolour of a horse leaping over a rider in green, titled Grace of Le Cèdre Noir in hand lettering",
-    caption: "Le Cèdre Noir",
+    src: "/watercolours/birds/plate-glossy-ibis-thumb.jpg",
+    alt: "Watercolour of an ibis in profile, a long curved orange bill, a purple crest of loose feathers and dark green-blue plumage with a copper patch on the wing, signed",
+    caption: "Glossy ibis",
   },
 ];
 

@@ -37,7 +37,9 @@ JOBS = [
     ("malaga", "05-the-palacio-de-ferias-y-congresos-de-malaga-copy", "malaga/bg-05.png", BLACK, 0.0, 1260, 1352, 700, True, 0.35),
     ("malaga", "06-white-street-in-malaga-copy", "malaga/bg-06.png", OAK, 0.32, 1180, 1476, 560, True, 0.35),
 ]
-JOBS += [tuple(tuple(x) if isinstance(x, list) else x for x in j) for j in __import__("json").load(open(S + "/portugal/jobs.json"))] if __import__("os").path.exists(S + "/portugal/jobs.json") else []
+import glob as _glob, json as _json
+for _f in sorted(_glob.glob(S + "/*/jobs.json")):
+    JOBS += [tuple(tuple(x) if isinstance(x, list) else x for x in j) for j in _json.load(open(_f))]
 
 def render(series, stem, room, rgb, grain, cx, bottom, W, lean, light):
     art = Image.open(f"{PUB}/{series}/{stem}.jpg").convert("RGB")
