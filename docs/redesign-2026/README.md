@@ -216,3 +216,11 @@ Konstancja's note on the first two series: the watercolours were too small, even
 One script now does all four series: [mockups2.py](mockups2.py) with [mockuplib.py](mockuplib.py); Portugal's jobs are in [mockups2-portugal-jobs.json](mockups2-portugal-jobs.json).
 
 ![Málaga and Portugal](malaga-portugal-mockups.png)
+
+### 21 October: birds on the home page, her own mockups cropped, Cádiz
+
+- **Off screen shows birds.** Birding is the hobby the home page names, so the three plates are now the flamingo, the gull (gaviota) and the ibis, from the original flat scans in `~/Documents/Watercolors`, with the scanner-bed edges trimmed. The three flat France thumbnails are gone from `public/`.
+- **Her own Photoshop mockups cropped tighter** (Sevilla, New York, Birds, Animals): each cropped around its frame so the painting dominates, at the native resolution of the crop, with the same file names. Boxes in [crop-own-mockups.py](crop-own-mockups.py).
+- **Cádiz province** made the same way as the other series from the original scans: the Colegiata in Jerez on an oak cabinet in a sherry bodega, the windmills of Vejer on a white village bench. Jobs in [mockups2-cadiz-jobs.json](mockups2-cadiz-jobs.json).
+
+![Off screen with birds](home-off-screen-birds.png)

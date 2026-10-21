@@ -115,8 +115,8 @@ export const watercolours: Category[] = [
         name: "Cádiz province",
         blurb: "The white towns of Andalusia and the hills behind them.",
         paintings: [
-          { src: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-magazine-copy.jpg", thumb: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-magazine-copy-thumb.jpg", title: "Jerez cathedral" },
-          { src: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-1-copy.jpg", thumb: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-1-copy-thumb.jpg", title: "Molinos de Vejer" },
+          { src: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-mockup.jpg", thumb: "/watercolours/architecture/cadiz-province/01-cathedral-in-jerez-mockup-thumb.jpg", title: "Jerez cathedral" },
+          { src: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-mockup.jpg", thumb: "/watercolours/architecture/cadiz-province/02-molinos-de-vejer-mockup-thumb.jpg", title: "Molinos de Vejer" },
         ],
       },
     ],
