@@ -226,3 +226,7 @@ One script now does all four series: [mockups2.py](mockups2.py) with [mockuplib.
 ![Off screen with birds](home-off-screen-birds.png)
 
 The same day, on her note: the three birds on the home page now sit in tight mockups like the rest (a flamingo on an oak sideboard, the gull on a driftwood shelf, the ibis on a conservatory wall), and the ibis is captioned "Ibis grzywiasty" (northern bald ibis), on the home page and in the Birds series. Jobs in [mockups2-birdshome-jobs.json](mockups2-birdshome-jobs.json).
+
+### 24 October: spoonbills from Barbate
+
+A new watercolour, "Warzęchy z Barbate" (Eurasian spoonbills, 14 October 2026), added first in Off screen, in a pale oak frame on a beach-house console, made the same way (room generated empty, the scan composited in, scanner edge trimmed). With four plates the row is four columns wide and two below 64rem. Job in [mockups2-spoonbills-jobs.json](mockups2-spoonbills-jobs.json).

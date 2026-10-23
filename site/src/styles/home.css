@@ -233,7 +233,8 @@
 
 /* ---------- off screen ---------- */
 .hm-off { padding-top: var(--bh-space-8); }
-.hm-plates { list-style: none; margin: var(--bh-space-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--bh-space-3); align-items: end; }
+.hm-plates { list-style: none; margin: var(--bh-space-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--bh-space-3); align-items: end; }
+@media (max-width: 64rem) { .hm-plates { grid-template-columns: repeat(2, 1fr); } }
 .hm-plate { display: grid; gap: var(--bh-space-2); }
 .hm-plate img { width: 100%; height: auto; display: block; border-radius: 4px; }
 .hm-plate__caption { font-size: var(--bh-size-small); color: var(--kt-ink-3); }
