@@ -52,6 +52,11 @@ export const career: { years: string; org: string; role: string; what: string }[
 
 export const offScreen: { src: string; alt: string; caption: string }[] = [
   {
+    src: "/watercolours/birds/home-spoonbills-barbate-mockup-thumb.jpg",
+    alt: "Ink and watercolour of two white Eurasian spoonbills wading across a wet orange beach under a pale blue sky, lettered Warzęchy z Barbate and dated 14.10.2026, in a pale oak frame on a console",
+    caption: "Warzęchy z Barbate",
+  },
+  {
     src: "/watercolours/birds/home-flamingo-mockup-thumb.jpg",
     alt: "Watercolour of a pink flamingo walking on one raised leg, with splashes of crimson paint beside it, in a pale oak frame on a sideboard",
     caption: "Flamingo",
