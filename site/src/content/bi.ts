@@ -131,8 +131,6 @@ export const bi: CaseStudy = {
             { src: `${D}/home-2400.webp`, frame: "macbook", title: "Home", body: "The landing surface for people who consume rather than author: the biggest forecast change of the week on top, recent dashboards below." },
             { src: `${D}/dashboards-2400.webp`, frame: "macbook", title: "Dashboards", body: "The same object as a library: all, continue where you left off, favourites, shared with you, popular." },
             { src: `${D}/analysis-2400.webp`, frame: "macbook", title: "Analyses", body: "The same library as dashboards: all, continue where you left off, favourites, shared with you and popular, each card with its reach and its run count." },
-            { src: `${D}/analysis-sheet-2400.webp`, frame: "macbook", title: "Chart configuration", body: "The side sheet opens from the view toolbar and the chart reflows beside it; nothing is covered." },
-            { src: `${D}/analysis-pivot-2400.webp`, frame: "macbook", title: "Pivot", body: "The grid with a total row, and the view toolbar that stays with the workspace." },
             { src: `${D}/dashboard-open-2400.webp`, frame: "macbook", title: "A dashboard", body: "Regional sales review, opened: two widgets from saved analyses on the canvas, and the view toolbar with Edit on the right." },
             { src: `${D}/analyst-chat-2400.webp`, frame: "macbook", title: "AI Data Analyst", body: "An answer that names its cause, the chart under it, and where the number came from: the query, the run time, the tables joined, Show SQL." },
             { src: `${D}/analyst-thread-2400.webp`, frame: "macbook", title: "Detail thread", body: "One fragment of an answer questioned beside the analysis, without touching it; Apply or Discard." },
@@ -454,12 +452,12 @@ export const bi: CaseStudy = {
             {
               src: `${D}/analysis-sheet-2400.webp`,
               frame: "macbook",
-              caption: "Graph view with the side sheet open. Changing how the body renders (R2) opens the sheet from the view toolbar, without a scrim, and the chart reflows beside it.",
+              caption: "Graph view with the side sheet open. Changing how the body renders opens a side sheet from the view toolbar (R2, render scope), without a scrim, and the chart reflows beside it.",
             },
             {
               src: `${D}/analysis-pivot-2400.webp`,
               frame: "macbook",
-              caption: "Pivot view: the grid with its total row, and the view toolbar that travels with the workspace (R6, R7).",
+              caption: "Pivot view: the grid with its total row, and the view toolbar that travels with the workspace (R6, a view state has no surface; R7, one entry point per action).",
             },
           ],
         },
@@ -472,7 +470,7 @@ export const bi: CaseStudy = {
           src: `${C}/new-dashboard.mp4`,
           poster: `${C}/new-dashboard.webp`,
           title: "A dashboard created, a widget added, the layout saved",
-          caption: "New dashboard, in the prototype: name and description in a dialog (R1), the empty state, then two widgets, each chosen from the saved analyses and configured in the side sheet (R2), and the layout saved.",
+          caption: "New dashboard, in the prototype: name and description in a dialog (R1, an object opens a modal), the empty state, then two widgets, each chosen from the saved analyses and configured in the side sheet (R2, render scope), and the layout saved.",
         },
         {
           kind: "video",
@@ -589,7 +587,7 @@ export const bi: CaseStudy = {
             },
             {
               id: "uc-data-models",
-              n: "03",
+              n: "02",
               cover: { src: `${D}/models-relationship-2400.webp`, frame: "macbook" },
               title: "Data models",
               maxim: "Anything that changes the number a model produces is stated on the canvas, in words, before it is committed.",
@@ -790,7 +788,7 @@ export const bi: CaseStudy = {
           items: [
             { value: "7/7", label: "audit questions answered by a rule or a template" },
             { value: "9", label: "surface rules, one surface per action type" },
-            { value: "6/6", label: "app-bar actions obeying R1, and 6/6 panels obeying R2" },
+            { value: "6/6", label: "app-bar actions that open a modal (R1), and 6/6 render panels in a side sheet (R2)" },
           ],
         },
         {

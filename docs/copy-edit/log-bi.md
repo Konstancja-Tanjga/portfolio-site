@@ -91,3 +91,5 @@ Review from the reader's chair: 25 000 px, 3 300 visible words, the method sprea
 | "the implementation is the developers' code on the FOX package" (4x), "8 validation sessions" (5x), "the only designer" (3x) | 0x, 4x in four different roles, 2x | no sentence twice |
 
 Result: 22 000 px, 2 950 visible words, 36 images, 2 maxims. Still open from the review: a user or business number after release (none measured yet), the chapter spacing, and a line about the week-to-week work with the PM and the requirements engineer (not on record).
+
+Fixes after review, same day: the Data models tile renumbered 02; every rule id cited in a caption now carries its rule in words, because the folders that defined R1 to R7 are gone; the Chart configuration and Pivot slides left the 01 carousel, since 07 shows the same two screens with their rules; the sheet footer without a rhythm ruler is one column.
