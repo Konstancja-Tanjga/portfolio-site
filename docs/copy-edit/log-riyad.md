@@ -56,3 +56,35 @@ Konstancja's correction: the client was Riyad Bank, so the study names Riyad Ban
 | "UX/UI Designer, through Big Hat via Intellias. C-level interviews …" | "UX/UI Designer for Riyad Bank. C-level interviews …" | the client as she states it |
 
 Not changed here: the CV (`docs/cv/cv.html`) and the LinkedIn draft (`docs/copy-edit/linkedin-2026-10.md`) still say "(via Intellias)"; that is outside the case study.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, two minutes by scroll:
+
+1. The lead, the metadata strip, and the brief said the same six facts three times each: the client, the three content forms, the research, the 3D navigation, the two stores.
+2. The 3D navigation was told four times in chapter 01: the points, the flow, the hotspots on the sketch, and the sketch caption.
+3. No picture in 00: a reader who stopped there had no screen.
+4. The sketches came before the product; a hiring manager wants to see what shipped before how it was drawn.
+5. The two transition screens sat in the carousel as "parts of the app", which they are not.
+6. The role was clear (UX/UI Designer), the tools were not, and are not on record: no Figma, no prototype tool, no handoff is named anywhere in the file, the log, or the CV.
+7. The illustration system is in the stamp and on the CV and nowhere described.
+8. The store listing chapter is the one honest piece of evidence and was fine.
+9. The meta strip's Owned and Content rows repeated the lead.
+10. Nothing in the study is reference material; nothing to fold.
+
+| Before | After | Why |
+| --- | --- | --- |
+| lead of four sentences (client, research, navigation, stores) | one sentence on what the app is | the research is in the meta strip, the navigation and the stores are in 00 |
+| meta: Role, Client, Shipped, Research, Owned, Content | Role, Client, Research, Shipped | Owned is the My role row; Content is the lead |
+| 00 rows: Context, Problem, My role and scope, Decision 1, Decision 2, Outcome | What, Problem, My role, Decision 1 with shot 06 (home), Decision 2 with shot 09 (podcast player), Outcome | the sixty-second page; "the illustration system" added to My role from the CV source |
+| no Period and team row | still none | no period and no team size on record; not invented |
+| chapter 01 "The 3D navigation": points, flow, sketch with hotspots, carousel of seven | 01 "What it is": carousel of five (Home, A topic, Favourites, Podcast player, Video player); 02 "The 3D navigation": sketch with hotspots, then a `duo` of the two transition screens | kit order: the product before the prototypes; the transition is a sequence, not a part of the app |
+| `points` (three bullets) and `flow` (four stages) on the navigation | removed | both repeated Decision 1 and the pinned notes on the sketch |
+| sketch caption, 28 words | "The 3D navigation on paper, four stages left to right: circles, blob, glassy icons, pressed." | a fragment |
+| carousel bodies as sentences ("The topics as a feed, the 3D navigation underneath.") | fragments; "as a feed" dropped, the screen shows the topics in orbit, not a feed | captions say what is shown |
+| 02 "Shipped" | 03 "Shipped", `set` kept, caption a fragment | two store images side by side take one screen; tabs would hide one |
+| no sheet | no sheet | no tool chain on record: the file, the log and the CV name paper sketches and nothing else |
+
+Numbers at 1440 px: 607 to 452 visible words, 6 879 to 6 454 px, 3 to 4 chapters, 12 image files used before and after. No horizontal scroll at 1440 or 390.
+
+Open for Konstancja: period and team; the tools (Figma? a prototype tool? who built it?); one line on what the illustration system was, which would make Decision 3 with 23.png as its shot; whether the podcast player has chapters (the old caption said so, the screen shows a waveform with Back and Forth, so the caption now says "The audio for a topic").
