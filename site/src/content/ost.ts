@@ -6,13 +6,14 @@ import type { CaseStudy } from "./types";
  * kit (docs/case-study-kit); the plan behind it is docs/ost-identity/KONCEPCJA.md,
  * and the cuts of 25 October 2026 are in docs/copy-edit/log-ost.md.
  *
- * Chapter numbers keep the kit's stack. 01a (Why this is a hard brief) is
- * dropped, as the kit allows; its facts live in "In short", chapter 03 and
- * UC-02. Two headings are fitted to a mark rather than a product, with the
- * author's agreement: 04 is "What the mark had to answer" (there was no audit
- * of an existing product) and 06a is "Mark architecture" (there are no
- * screens to architect). 06 has no drawing sheet: the file names no design
- * tool for the mark, and a sheet of artefacts alone would be a handoff list.
+ * Ten chapters, numbered consecutively, after the second cut of 25 October
+ * 2026. The kit's 01a (hard brief), 04 (audit) and 06a (architecture) are
+ * folded into "In short", 03 and 05: the audit questions sit as hotspots in
+ * Discovery, the rule pages of the mark in a fold under Design system. The
+ * kit's 10 (Evidence) is dropped: its stats repeated 05, and the two clips
+ * of the generators now sit in UC-01. 05 has no drawing sheet: the file
+ * names no design tool for the mark, and a sheet of artefacts alone would
+ * be a handoff list.
  *
  * Sources. The three concept decks (26 September 2026), the brand book 1.0
  * (October 2026, 33 pages), the print and social boards, the CRM requirements
@@ -39,7 +40,7 @@ export const ost: CaseStudy = {
   title: "Ogólnopolska Strefa Talentu",
   what: "A visual identity that reads as a formula: ∀∃, for every student there exists a talent",
   lead:
-    "Ogólnopolska Strefa Talentu is a national programme of Stowarzyszenie Talent that brings Prof. Ryszard Szubartowski's method into Polish schools. I wrote its idea as two symbols from logic, ∀∃: for every student there exists a talent. Then I drew the mark, wrote the brand book, designed every application from the letterhead to the roll-up, and built two generators that let the programme's ambassadors make their own posts.",
+    "Ogólnopolska Strefa Talentu is a national programme of Stowarzyszenie Talent that brings Prof. Ryszard Szubartowski's method into Polish schools. I wrote its idea as two symbols from logic, ∀∃: for every student there exists a talent. Then I drew the mark, wrote the brand book, designed every application from the letterhead to the roll-up, and built two generators for the programme's ambassadors.",
   /* coral on the page ground #0F0F0E: 6.2:1. The brand book allows coral text on navy for headings and highlights (C1, page 18); the page ground is darker than navy, so the same use holds */
   leadAccent: { text: "Prof. Ryszard Szubartowski's method", hex: "#FF5A36" },
   status: { state: "live" },
@@ -85,29 +86,29 @@ export const ost: CaseStudy = {
             {
               key: "What",
               value:
-                "The visual identity of a national programme that brings Prof. Szubartowski's method into Polish schools: a mark, a brand book, print, social, and two generators.",
+                "The identity of a national programme that brings Prof. Szubartowski's method into Polish schools: mark, brand book, print, social, two generators.",
             },
             {
               key: "Problem",
               value:
-                "A name and no picture: one mark for teachers, pupils, and parents, from 15 mm on a pin to 2 m on a roll-up.",
+                "A name and no picture: one mark for teachers, pupils, and parents, from a 15 mm pin to a 2 m roll-up.",
             },
             {
               key: "My role",
               value:
-                "Everything, alone: three concepts, the mark, the brand book, the print and social applications, and two browser generators for ambassadors.",
+                "Everything, alone: three concepts, the mark, the brand book, print and social, two browser generators.",
             },
             {
               key: "Decision 1",
               value:
-                "Write the method as ∀∃, for every student there exists a talent. The order of the two symbols carries the idea, so the mark explains the method.",
+                "Write the method as ∀∃, for every student there exists a talent: the order of the two symbols carries the idea.",
               shot: { src: `${S}/book-origin.webp`, alt: "Brand book page: ∃∀, one pattern for everybody, against ∀∃, a talent of one's own", to: "#discovery" },
             },
             {
               key: "Decision 2",
               value:
-                "The coral bar is the student. A gap keeps it apart in every version, and its height is the unit of the clear space.",
-              shot: { src: `${S}/book-clearspace.webp`, alt: "Brand book page: the clear space of 2K around the mark, K being the height of the coral bar", to: "#mark-architecture" },
+                "The coral bar is the student: a gap keeps it apart in every version, and its height is the unit of the clear space.",
+              shot: { src: `${S}/book-clearspace.webp`, alt: "Brand book page: the clear space of 2K around the mark, K being the height of the coral bar", to: "#design-system" },
             },
             {
               key: "Decision 3",
@@ -118,7 +119,7 @@ export const ost: CaseStudy = {
             {
               key: "Outcome",
               value:
-                "Adopted by the programme and live on www.ost.edu.pl. Recruitment opened on 13 October 2026; no result is stated here yet.",
+                "Adopted by the programme and live on www.ost.edu.pl; recruitment opened on 13 October 2026, so no result is stated yet.",
             },
           ],
         },
@@ -133,22 +134,17 @@ export const ost: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html:
-            "<p>The idea, the mark, and everything the programme puts it on. The brand book, one board at a time.</p>",
+          html: "<p>The idea, the mark, and what the programme puts it on: the brand book, one board at a time.</p>",
         },
         {
           kind: "carousel",
           items: [
-            { src: `${S}/book-cover.webp`, title: "The mark", body: "Horizontal logo with the tagline \"Dla każdego ucznia istnieje talent.\" (For every student there exists a talent.)" },
+            { src: `${S}/book-cover.webp`, title: "The mark", body: "Horizontal logo with the tagline \"Dla każdego ucznia istnieje talent.\"" },
             { src: `${S}/book-formula.webp`, title: "The name as a formula", body: "∀ for \"Ogólnopolska\", every pupil in the country; ∃ for \"Talentu\", a talent of one's own." },
-            { src: `${S}/book-versions.webp`, title: "Which version when", body: "Horizontal, vertical, with \"uczeń\" and \"talent\", the pair alone, the ∃ alone: each with its job." },
+            { src: `${S}/book-versions.webp`, title: "Which version when", body: "Horizontal, vertical, with \"uczeń\" and \"talent\", the pair alone, the ∃ alone." },
             { src: `${S}/book-mono.webp`, title: "Black and white", body: "Stamp, engraving, fax, foil: in one colour the student keeps the gap." },
-            { src: `${S}/book-grounds.webp`, title: "Which version on which ground", body: "Every colourway against every background, the forbidden pairs crossed out." },
-            { src: `${S}/book-hierarchy.webp`, title: "Hierarchy", body: "Slogan, lead, text, caption, footer: typeface, size for print and screen, leading, tracking." },
-            { src: `${S}/book-slogans.webp`, title: "Three groups, three slogans", body: "Teachers, pupils, and parents each get one sentence that solves the mark for them." },
-            { src: `${S}/book-social.webp`, title: "Social media and gadgets", body: "Avatar, post, story, a pin of 25 mm, and a sticker with a line for the pupil's own talent." },
-            { src: `${S}/book-animation.webp`, title: "Four seconds", body: "Frame by frame: lines from one point, then each to its own point, then ∀∃." },
-            { src: `${S}/concept-forall-keyvisual.webp`, title: "Key visual", body: "∃∀, one pattern for every pupil, against ∀∃, every pupil to a point of their own." },
+            { src: `${S}/book-slogans.webp`, title: "Three groups, three slogans", body: "One sentence each for teachers, pupils, and parents." },
+            { src: `${S}/book-animation.webp`, title: "Four seconds", body: "Lines from one point, then each to its own point, then ∀∃." },
           ],
         },
       ],
@@ -160,7 +156,7 @@ export const ost: CaseStudy = {
       n: "02",
       heading: "Who it is for",
       standfirst:
-        "Three groups from the brief, and a fourth once the programme asked people to spread the word. Each quote is the slogan written for that group, in translation.",
+        "Three groups from the brief and a fourth once the programme asked people to spread the word; each quote is that group's slogan.",
       blocks: [
         {
           kind: "personas",
@@ -168,46 +164,42 @@ export const ost: CaseStudy = {
             {
               n: "01",
               name: "The teacher",
-              badge: "JOINS · ANY SUBJECT, ANY SIZE OF TOWN",
+              badge: "JOINS · ANY SUBJECT, ANY TOWN",
               quote: "Order matters.",
-              context: "Grade 6 to secondary school; often a small school, often not informatics.",
-              goals: ["The method in one sentence", "A programme for their subject too"],
-              breaks: "Talent means olympiads in maths or physics, not their subject.",
-              must: "Say the change out loud: a talent of one's own, not one pattern for all.",
-              job: "JOIN",
+              context: "Grade 6 to secondary school.",
+              goals: ["The method in one sentence"],
+              breaks: "Talent means olympiads, not their subject.",
+              must: "Say the change: a talent of one's own.",
             },
             {
               n: "02",
               name: "The pupil",
               badge: "ASKS · AGED 12 TO 19",
               quote: "Only one like you exists.",
-              context: "Meets the programme on a noticeboard or in a story; decides in a second.",
-              goals: ["Addressed, not assessed", "The next step: ask the teacher"],
-              breaks: "Most school posters look like another lesson.",
-              must: "A formula for older pupils, a plain sentence for younger ones.",
-              job: "ASK",
+              context: "A noticeboard or a story.",
+              goals: ["Addressed, not assessed"],
+              breaks: "Posters look like another lesson.",
+              must: "A formula for the older, a plain sentence for the younger.",
             },
             {
               n: "03",
               name: "The parent or partner",
               badge: "TRUSTS · PARENTS, HEADS, SPONSORS",
               quote: "For every student there exists a talent.",
-              context: "Needs no logic, only a reason to believe.",
-              goals: ["The promise without decoding", "A credible source behind it"],
-              breaks: "Symbols from logic mean nothing to most parents.",
-              must: "The plain reading under the mark, always in the same words.",
-              job: "TRUST",
+              context: "No logic, only a reason to believe.",
+              goals: ["The promise without decoding"],
+              breaks: "Symbols from logic mean nothing to them.",
+              must: "The plain reading under the mark, always the same words.",
             },
             {
               n: "04",
               name: "The ambassador",
-              badge: "SHARES · SUPPORTERS OF THE PROGRAMME",
+              badge: "SHARES · A SUPPORTER",
               quote: "I am an ambassador of Ogólnopolska Strefa Talentu.",
-              context: "A teacher or a friend of the programme, asked to post. Not a designer.",
-              goals: ["A photo of themselves with the programme's name", "Minutes, not an evening"],
-              breaks: "A template file means a graphics program and questions about where to click.",
-              must: "Do the composition for them; leave the face untouched.",
-              job: "SHARE",
+              context: "A friend of the programme; not a designer.",
+              goals: ["Their own photo with the programme's name"],
+              breaks: "A template file needs a graphics program.",
+              must: "Compose for them; leave the face untouched.",
             },
           ],
         },
@@ -224,123 +216,93 @@ export const ost: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>The method starts from one conviction.</strong> Every pupil has a talent of their own; the teacher sets the conditions for finding it.",
-            "<strong>The usual school order is the opposite.</strong> One pattern for the whole class: ∃∀, there exists one pattern for all. Swapped, ∀∃ states the method. Order matters became the teachers' slogan.",
-            "<strong>The founder taught informatics.</strong> Symbols from logic are the method's own language.",
-            "<strong>The method has a record.</strong> Pupils of Prof. Szubartowski won 126 medals at international olympiads; the parents' poster and the website carry it.",
+            "<strong>One conviction.</strong> Every pupil has a talent of their own.",
+            "<strong>School order is the opposite.</strong> ∃∀, one pattern for all; swapped, ∀∃ states the method. Order matters became the teachers' slogan.",
+            "<strong>The founder taught informatics.</strong> Logic is the method's own language; his pupils won 126 medals at international olympiads.",
           ],
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/book-origin.webp`,
-          folded: true,
-          caption: "From the method to the mark, brand book page 03: ∃∀ is one pattern for everybody, ∀∃ is a talent of one's own (M3).",
+          kind: "duo",
+          items: [
+            {
+              src: `${S}/book-not-ve.webp`,
+              caption: "Not VE: four details keep the pair from reading as letters (M4).",
+              hotspots: [
+                { x: 43, y: 52, text: "The crossbar of ∀ sits high and runs past the arms; A has it low." },
+                { x: 58, y: 59, text: "The middle bar is the longest and stands apart; in an E, the shortest and joined." },
+              ],
+            },
+            {
+              src: `${S}/concept-forall-15mm.webp`,
+              caption: "15 mm, 8 mm, and 16 px: below about 30 mm the ∃ works alone (K2).",
+              hotspots: [
+                { x: 56, y: 46, text: "At 16 px the coral bar still separates it from a plain E." },
+              ],
+            },
+          ],
         },
       ],
     },
 
     /* ---------------------------------------------------------------- 04 */
     {
-      id: "what-the-mark-answers",
-      n: "04",
-      heading: "What the mark had to answer",
-      standfirst: "The questions the concept raised, pinned to the boards that answer them. Unfamiliar symbols have to win the argument at 8 mm first.",
-      blocks: [
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${S}/book-not-ve.webp`,
-              caption: "Four details keep the pair from reading as letters (M4).",
-              hotspots: [
-                { x: 14, y: 52, text: "Will people read VE or AE?" },
-                { x: 43, y: 52, text: "The crossbar of ∀ sits high and runs past the arms; A has it low." },
-                { x: 68, y: 45, text: "The stem of ∃ overshoots the frames; in an E it ends flush." },
-                { x: 58, y: 59, text: "The middle bar is the longest and stands apart; in an E, the shortest and joined." },
-              ],
-            },
-            {
-              src: `${S}/concept-forall-15mm.webp`,
-              caption: "The test at 15 mm, 8 mm, and 16 px: below about 30 mm the ∃ works alone (K2).",
-              hotspots: [
-                { x: 10, y: 46, text: "Does the full logo survive 15 mm? Only the mark; the name needs about 30 mm." },
-                { x: 49, y: 46, text: "Is the ∃ readable at 8 mm? Yes, in colour and in black." },
-                { x: 56, y: 46, text: "As a favicon of 16 px? The coral bar still separates it from a plain E." },
-              ],
-            },
-          ],
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>Will laypeople understand it?</strong> As a mark, yes. The meaning travels in the tagline and the slogans, never in the symbols alone.",
-            "<strong>Does coral survive on white?</strong> Not as text: 2.7:1 on warm white. Coral is a shape only; a darker coral below 25 mm (C1, C2).",
-            "<strong>Does the student stay visible in one colour?</strong> Only with the gap; the joined version lost the bar in black (M2).",
-          ],
-        },
-      ],
-    },
-
-    /* ---------------------------------------------------------------- 05 */
-    {
       id: "prototypes",
-      n: "05",
+      n: "04",
       heading: "First prototypes",
-      standfirst: "Three complete directions, each with logo, colour, posters, social, gadgets, motion, and its risks.",
+      standfirst: "Three complete directions, each with logo, colour, posters, social, and risks.",
       blocks: [
         {
           kind: "set",
           size: "wide",
           items: [
-            { src: `${S}/concept-asterisk.webp`, caption: "Zadanie z gwiazdką (the starred problem): an asterisk with six arms of different length." },
-            { src: `${S}/concept-cursor.webp`, caption: "Twoja kolej (your turn): a prompt and a coral cursor waiting for the pupil." },
+            { src: `${S}/concept-asterisk.webp`, caption: "Zadanie z gwiazdką (the starred problem): six arms of different length." },
+            { src: `${S}/concept-cursor.webp`, caption: "Twoja kolej (your turn): a coral cursor waiting for the pupil." },
             { src: `${S}/concept-forall.webp`, caption: "Dla każdego istnieje (for every, there exists): the pair ∀∃." },
           ],
         },
         {
           kind: "flow",
           stages: [
-            { title: "Three directions", body: "Each with its own risk table. Your turn: strong with pupils, average with parents, read as informatics only." },
-            { title: "The choice", body: "A representative of the programme chose ∀∃: it matched his picture of the programme and of Prof. Szubartowski, who taught informatics." },
-            { title: "The drawing", body: "A bar joined to the frame against a bar with a gap. The gap won: the joined bar vanishes in black." },
+            { title: "Three directions", body: "Each with a risk table; Your turn read as informatics only, average with parents." },
+            { title: "The choice", body: "A representative of the programme chose ∀∃: his picture of it and of Prof. Szubartowski." },
+            { title: "The drawing", body: "A joined bar against a bar with a gap; the joined bar vanishes in black, so the gap won." },
           ],
-          note: "The mark was tested with parents and pupils of grades 4 to 6. The results belong to the programme and are not stated here.",
+          note: "Tested with parents and pupils of grades 4 to 6; the results belong to the programme.",
         },
       ],
     },
 
-    /* ---------------------------------------------------------------- 06 */
+    /* ---------------------------------------------------------------- 05 */
     {
       id: "design-system",
-      n: "06",
+      n: "05",
       heading: "Design system",
-      standfirst: "The concept deck became a brand book. The palette and the type, which every application reuses; the two versions folded under them.",
+      standfirst: "The concept deck became a brand book: the palette and the type on the surface, the versions and the rule pages folded.",
       blocks: [
         {
           kind: "palette",
-          standfirst: "Four colours, plus plain white and black. The share is for the whole set, not for each page.",
+          standfirst: "Four colours, plus plain white and black; shares for the whole set.",
           items: [
-            { hex: "#1B1F3B", name: "Navy", role: "Mark, name, and text. 45% of the set", note: "16.1:1 on white. Pantone 5255 C" },
-            { hex: "#FF5A36", name: "Coral", role: "The student's bar and large shapes. 5%", note: "2.7:1 on warm white: never text there. Pantone 171 C" },
-            { hex: "#D8411F", name: "Dark coral", role: "The student's bar below 25 mm. 3%", note: "4.47:1 on white: the bar only, never text. Pantone 173 C" },
-            { hex: "#F4EFE6", name: "Warm white", role: "Background. 35%", note: "Plain white takes the other 12%. Pantone 9224 C" },
+            { hex: "#1B1F3B", name: "Navy", role: "Mark, name, and text. 45%", note: "16.1:1 on white" },
+            { hex: "#FF5A36", name: "Coral", role: "The student's bar and large shapes. 5%", note: "2.7:1 on warm white: never text there" },
+            { hex: "#D8411F", name: "Dark coral", role: "The student's bar below 25 mm. 3%", note: "4.47:1 on white: the bar only" },
+            { hex: "#F4EFE6", name: "Warm white", role: "Background. 35%", note: "Plain white takes the other 12%" },
           ],
-          caption: "Contrast to WCAG 2.2: text 4.5:1, large graphic elements 3:1 (C1, C3).",
+          caption: "WCAG 2.2: text 4.5:1, large shapes 3:1 (C1, C3).",
         },
         {
           kind: "spec",
-          caption: "Both free under the SIL Open Font License, so the office can install them (T1).",
+          caption: "Both under the SIL Open Font License, so the office can install them (T1).",
           rows: [
-            { key: "Archivo ExtraBold", value: "Capitals only, leading 0.9: the name in the logo, slogans, headings, large numbers. Never running text." },
-            { key: "Outfit", value: "Text, leads, the tagline, labels. No italic: emphasis is weight." },
-            { key: "∀ and ∃ in text", value: "Glyph files at cap height, in the colour of the text; neither typeface has them." },
+            { key: "Archivo ExtraBold", value: "Capitals only, leading 0.9: the name, slogans, headings, large numbers; never running text." },
+            { key: "Outfit", value: "Text, leads, the tagline, labels; no italic, emphasis is weight." },
+            { key: "∀ and ∃ in text", value: "Glyph files at cap height, in the text colour; neither typeface has them." },
           ],
         },
         {
           kind: "fold",
           title: "From the concept deck to brand book 1.0",
-          hint: "Open: two versions, what each one could and could not do",
+          hint: "Open: two versions",
           blocks: [
             {
               kind: "evolution",
@@ -364,63 +326,54 @@ export const ost: CaseStudy = {
             },
           ],
         },
-      ],
-    },
-
-    /* --------------------------------------------------------------- 06a */
-    {
-      id: "mark-architecture",
-      n: "06a",
-      heading: "Mark architecture",
-      maxim: "The student's bar is the ruler: every distance around the mark is measured in it.",
-      standfirst: "K is the height of the coral bar. Clear space and minimum sizes follow from it; the other rule pages are folded below.",
-      blocks: [
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/book-clearspace.webp`,
-          caption: "Clear space of 2K around every version, measured without a ruler because the bar is in every version (K1). Minimum sizes: the ∃ alone 8 mm and 16 px; with tagline 72 mm and 380 px (K2).",
-        },
         {
           kind: "fold",
-          title: "The pages that set the rules: construction, proportions, contrast, errors",
-          hint: "Open: three annotated pages, the drawing of the gap, fifteen errors",
+          title: "The rule pages: clear space, construction, proportions, contrast, errors",
+          hint: "Open: four annotated pages and fifteen errors",
           blocks: [
             {
               kind: "annotated",
               items: [
                 {
                   id: "01",
+                  title: "Clear space",
+                  standfirst: "K is the height of the coral bar, so the clear space is measured without a ruler.",
+                  shot: { src: `${S}/book-clearspace.webp` },
+                  rules: [
+                    { id: "K1", text: "Clear space of 2K around every version." },
+                    { id: "K2", text: "The ∃ alone 8 mm and 16 px; with tagline 72 mm and 380 px." },
+                  ],
+                },
+                {
+                  id: "02",
                   title: "Construction",
                   standfirst: "164 by 88 grid units.",
                   shot: { src: `${S}/book-grid.webp` },
                   rules: [
                     { id: "M1", text: "One stroke of 12 units in both symbols." },
-                    { id: "M2", text: "A gap of 8 units between the coral bar and the frame, in every version, black and white included." },
-                    { id: "M4", text: "The crossbar of ∀ runs 10 units past the arms; the stem of ∃ overshoots the frames by 8." },
+                    { id: "M2", text: "A gap of 8 units between the coral bar and the frame, in every version." },
+                    { id: "M4", text: "The crossbar of ∀ runs 10 units past the arms; the stem of ∃ overshoots by 8." },
                   ],
-                  notes: [{ label: "The bar", body: "56 by 12 units, the longest stroke in ∃. In an E the middle bar is the shortest." }],
+                  notes: [{ label: "The bar", body: "56 by 12 units, the longest stroke in ∃." }],
                 },
                 {
-                  id: "02",
+                  id: "03",
                   title: "Mark, name, and tagline",
-                  standfirst: "The name spans exactly the height between the frames of ∃.",
+                  standfirst: "The name spans the height between the frames of ∃.",
                   shot: { src: `${S}/book-proportions.webp` },
-                  rules: [
-                    { id: "M3", text: "∀ first, then ∃. The reversed order is an error, because it states the opposite idea." },
-                  ],
+                  rules: [{ id: "M3", text: "∀ first, then ∃. The reversed order states the opposite idea." }],
                   notes: [
                     { label: "Name", body: "Three lines of 20-unit capitals, 6 units between: 72 units, frame to frame." },
                     { label: "Tagline", body: "Capitals of 8 units, 40% of the name, always the same words." },
                   ],
                 },
                 {
-                  id: "03",
+                  id: "04",
                   title: "Coral is a shape, not text",
                   standfirst: "Every pair of colours, with its ratio and what it may carry.",
                   shot: { src: `${S}/book-contrast.webp` },
                   rules: [
-                    { id: "C1", text: "On a light background coral never carries text. On navy it may set headings." },
+                    { id: "C1", text: "On a light background coral never carries text; on navy it may set headings." },
                     { id: "C2", text: "Below 25 mm the bar turns dark coral, #D8411F." },
                     { id: "C3", text: "Across the set, coral never outweighs navy." },
                   ],
@@ -430,8 +383,8 @@ export const ost: CaseStudy = {
             {
               kind: "duo",
               items: [
-                { src: `${S}/concept-forall-drawing.webp`, caption: "One stroke, one logic: the joined bar against the gap; the gap was chosen (M1, M2)." },
-                { src: `${S}/book-errors.webp`, caption: "Fifteen errors, from stretching to the reversed order ∃∀ and the missing gap (M2, M3)." },
+                { src: `${S}/concept-forall-drawing.webp`, caption: "The joined bar against the gap; the gap was chosen (M1, M2)." },
+                { src: `${S}/book-errors.webp`, caption: "Fifteen errors, from stretching to the reversed order ∃∀ (M2, M3)." },
               ],
             },
           ],
@@ -439,12 +392,12 @@ export const ost: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 07 */
+    /* ---------------------------------------------------------------- 06 */
     {
       id: "sign-off",
-      n: "07",
+      n: "06",
       heading: "Design and sign-off",
-      standfirst: "The website design, the identity on the programme's site, and the print and social applications, one per tab.",
+      standfirst: "The website design, the live site, and the print and social applications, one per tab.",
       blocks: [
         {
           kind: "tabs",
@@ -458,7 +411,7 @@ export const ost: CaseStudy = {
                   width: "wall",
                   src: `${D}/website-design-2400.webp`,
                   frame: "macbook",
-                  caption: "My website design at 1280 and 390: the promise with the mark read aloud, \"uczeń\" under ∀ and \"talent\" under ∃, then one card per group (M3).",
+                  caption: "My website design at 1280 and 390: \"uczeń\" under ∀, \"talent\" under ∃, then one card per group (M3).",
                 },
               ],
             },
@@ -470,7 +423,7 @@ export const ost: CaseStudy = {
                   width: "wall",
                   src: `${D}/site-home-2400.webp`,
                   frame: "macbook",
-                  caption: "The identity in use: www.ost.edu.pl, built by the programme's own team, on 14 October 2026. Logo without tagline in the header, the bar as the section marker.",
+                  caption: "www.ost.edu.pl, built by the programme's own team, 14 October 2026: the bar as the section marker.",
                 },
               ],
             },
@@ -481,10 +434,10 @@ export const ost: CaseStudy = {
                   kind: "carousel",
                   shape: "portrait",
                   items: [
-                    { src: `${S}/social-pupils.webp`, title: "A post for pupils", body: "Older pupils get the formula, ∀x ∈ Uczniowie ∃t ∈ Talenty: x ma t; younger ones a story with the plain slogan." },
+                    { src: `${S}/social-pupils.webp`, title: "A post for pupils", body: "The formula for older pupils, a story with the plain slogan for younger ones." },
                     { src: `${S}/posters-a3.webp`, title: "A3 posters", body: "One slogan, one image, one action per group, each with a QR to the form." },
-                    { src: `${S}/folder.webp`, title: "Folder", body: "220 by 310 mm, spine of 4 mm; the key visual on the cover, a pocket with slits for a card." },
-                    { src: `${S}/rollup.webp`, title: "Roll-up", body: "85 by 200 cm. The slogan in the eye zone, 100 to 180 cm above the floor; a QR of 22 cm scans from about 2 m." },
+                    { src: `${S}/folder.webp`, title: "Folder", body: "220 by 310 mm, spine of 4 mm; the key visual on the cover." },
+                    { src: `${S}/rollup.webp`, title: "Roll-up", body: "85 by 200 cm; the slogan in the eye zone, a QR of 22 cm that scans from about 2 m." },
                   ],
                 },
               ],
@@ -494,12 +447,12 @@ export const ost: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 08 */
+    /* ---------------------------------------------------------------- 07 */
     {
       id: "use-cases",
-      n: "08",
+      n: "07",
       heading: "Two use cases",
-      standfirst: "The ambassadors and the recruitment campaign, each in the hands of someone who is not a designer. Open a tile; the use case unfolds to the right.",
+      standfirst: "The ambassadors and the recruitment campaign, each in the hands of someone who is not a designer; open a tile.",
       blocks: [
         {
           kind: "dossier",
@@ -509,14 +462,14 @@ export const ost: CaseStudy = {
               n: "01",
               title: "Ambassadors and supporters",
               maxim: "A supporter should need a photo and a browser, nothing else.",
-              standfirst: "Goal: a supporter posts their own photo in the programme's frame, with a slogan. Two pages of plain HTML on Vercel: ambassadors, supporters.",
+              standfirst: "Goal: a supporter posts their own photo in the programme's frame, with a slogan. Two pages of plain HTML on Vercel.",
               cover: { src: `${D}/generator-ambassador-2400.webp`, frame: "macbook" },
               blocks: [
                 {
                   kind: "duo",
                   items: [
-                    { src: `${S}/ambassador-v1.webp`, caption: "The first frame: the coral bar across the neck of whoever is in the photo. Rejected (G1)." },
-                    { src: `${D}/generator-support-story-2400.webp`, frame: "macbook", caption: "The generator: the photo inside the ∃, the bar beside it, above the slogan (G1)." },
+                    { src: `${S}/ambassador-v1.webp`, caption: "The first frame: the coral bar across the neck. Rejected (G1)." },
+                    { src: `${D}/generator-support-story-2400.webp`, frame: "macbook", caption: "The generator: the photo inside the ∃, the bar beside it (G1)." },
                   ],
                 },
                 {
@@ -529,22 +482,56 @@ export const ost: CaseStudy = {
                     precondition: { body: "A photo on the phone or the laptop, ideally upright with the face in the upper part." },
                     flow: [
                       { n: "1", text: "Upload a photo.", note: "Read in the browser; goes nowhere else." },
-                      { n: "2", text: "Choose the slogan: \"Jestem ambasadorką\" or \"Jestem ambasadorem\"; on the support page \"Wspieram\", \"Kibicuję\", \"Popieram\".", note: "Grammatical gender is a choice, not a guess." },
-                      { n: "3", text: "Choose post 4:5 or story 9:16.", note: "The two formats people publish." },
-                      { n: "4", text: "Drag the photo to set the crop; the slider zooms.", note: "Arrow keys and plus and minus do the same." },
-                      { n: "5", text: "Keep the duotone in navy and warm white, or switch to the original colours.", note: "A dozen photos from phones and staff rooms then look like one campaign." },
-                      { n: "6", text: "Download the PNG.", note: "Made on the device, saved to Downloads." },
+                      { n: "2", text: "Choose the slogan, in the right grammatical gender, and the format: post 4:5 or story 9:16.", note: "On the support page: \"Wspieram\", \"Kibicuję\", \"Popieram\"." },
+                      { n: "3", text: "Drag the photo to set the crop; the slider zooms. Keep the duotone or switch to the original colours.", note: "Arrow keys and plus and minus do the same; a dozen phone photos then look like one campaign." },
+                      { n: "4", text: "Download the PNG.", note: "Made on the device, saved to Downloads." },
                     ],
                     exits: [
                       { label: "Download", text: "A finished post in the chosen format." },
                       { label: "Leave", text: "Close the tab; nothing was stored anywhere." },
                     ],
-                    exitsNote: "No account and no server, so no third state such as a half-saved draft.",
-                    postcondition: { body: "A post in the programme's look. The programme holds no copy of the photo, by design." },
-                    why: "Rejected: a frame file to fill in. The first put the coral bar across the neck, like a censor's bar; the second needed a graphics program and patience.",
+                    exitsNote: "No account and no server, so no half-saved draft.",
+                    postcondition: { body: "A post in the programme's look; the programme holds no copy of the photo, by design." },
+                    why: "Rejected: a frame file to fill in. The first put the coral bar across the neck; the second needed a graphics program and patience.",
                     rule: "G1: no element of the mark touches a face.",
                     ruleNote: "The same rule places the logo on photos in print: a calm part of the frame, or a strip of navy (brand book page 30).",
                   },
+                },
+                {
+                  kind: "tabs",
+                  label: "The generators",
+                  items: [
+                    {
+                      label: "Ambassador page",
+                      blocks: [
+                        {
+                          kind: "video",
+                          clip: true,
+                          frame: "macbook",
+                          width: "wall",
+                          src: `${C}/generator-ambassador.mp4`,
+                          poster: `${C}/generator-ambassador.webp`,
+                          title: "The ambassador generator: slogan, zoom, crop, and colour",
+                          caption: "The slogan switched, the photo zoomed and dragged, the duotone off and on (G1).",
+                        },
+                      ],
+                    },
+                    {
+                      label: "Support page",
+                      blocks: [
+                        {
+                          kind: "video",
+                          clip: true,
+                          frame: "macbook",
+                          width: "wall",
+                          src: `${C}/generator-story.mp4`,
+                          poster: `${C}/generator-story.webp`,
+                          title: "The support generator: three slogans, a post, and a story",
+                          caption: "Three slogans, then the same photo as a story of 9:16 and back to a post of 4:5.",
+                        },
+                      ],
+                    },
+                  ],
                 },
               ],
             },
@@ -565,7 +552,7 @@ export const ost: CaseStudy = {
                     { src: `${S}/social-10-15_przedmioty_story.webp`, caption: "3 of 4: talent does not choose a subject." },
                     { src: `${S}/social-10-16_zespoly_story.webp`, caption: "4 of 4: apply as a team of two or three." },
                   ],
-                  caption: "The four stories, scheduled for 13 to 16 October 2026; each also as an Instagram post and a LinkedIn square (S1).",
+                  caption: "Four stories, 13 to 16 October 2026; each also as an Instagram post and a LinkedIn square (S1).",
                 },
                 {
                   kind: "usecase",
@@ -573,21 +560,20 @@ export const ost: CaseStudy = {
                     id: "UC-02",
                     title: "Invite a teacher from a small town who does not teach informatics",
                     actor: { name: "01, the teacher", body: "Polish, history, biology, PE, or art, in a school far from a big city.", note: "Assumes talent means olympiads in maths and informatics, not them." },
-                    trigger: { body: "The first week of recruitment.", note: "Two targets: at least 60% of teachers outside informatics, at least 50% from places under 25 000 inhabitants." },
+                    trigger: { body: "The first week of recruitment.", note: "Two targets: at least 60% of teachers outside informatics, at least 50% from places under 25 000 inhabitants." },
                     precondition: { body: "The application form is open at www.ost.edu.pl." },
                     flow: [
                       { n: "1", text: "Post 1 announces the programme and its idea.", note: "∃∀ turning into ∀∃ explains the mark once, for everybody." },
-                      { n: "2", text: "Post 2 invites schools from small towns and villages.", note: "Points in the shape of Poland, without its outline, each with a line to its own coral point." },
+                      { n: "2", text: "Post 2 invites schools from small towns and villages.", note: "Points in the shape of Poland, each with a line to its own coral point." },
                       { n: "3", text: "Post 3 lists subjects: Polish, history, biology, maths, art, PE.", note: "Each subject ends in an ∃ and a coral point." },
-                      { n: "4", text: "Post 4 asks teachers to apply as a team.", note: "Three teachers in one school; the diagram branches out to eight pupils." },
-                      { n: "5", text: "The teacher taps the coral button and lands on the form.", note: "Every post ends the same way: the button, the address, \"Bezpłatny udział\" (free of charge)." },
+                      { n: "4", text: "Post 4 asks teachers to apply as a team; the coral button lands on the form.", note: "Every post ends the same way: the button, the address, \"Bezpłatny udział\" (free of charge)." },
                     ],
                     exits: [
-                      { label: "Slogan A", text: "The literal reading: \"Talent nie zależy od wielkości miejscowości\" (talent does not depend on the size of the town)." },
+                      { label: "Slogan A", text: "The literal reading: \"Talent nie zależy od wielkości miejscowości\"." },
                       { label: "Slogan B", text: "The livelier line: \"Dla każdego, także daleko od dużych miast\"." },
                     ],
                     exitsNote: "The programme publishes one of the two; captions, hashtags, and alt text are written for both.",
-                    postcondition: { body: "Four posts in three formats, with captions for Instagram and Facebook, a longer one for LinkedIn, and alt text." },
+                    postcondition: { body: "Four posts in three formats, with captions for Instagram, Facebook, and LinkedIn, and alt text." },
                     why: "Rejected: one general launch post. It speaks to everybody and therefore to nobody the targets count.",
                     rule: "S1: every post shares one foot, the coral button on navy, the address, and \"free of charge\".",
                     ruleNote: "The roll-up, the website, and the folder end with the same call to action and a QR to the same form.",
@@ -600,99 +586,45 @@ export const ost: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 09 */
+    /* ---------------------------------------------------------------- 08 */
     {
       id: "handoff",
-      n: "09",
+      n: "08",
       heading: "Handoff",
-      standfirst: "What the programme, its printers, and its web developers received. The identity works without its designer: typefaces free to install, logo files outlined, margins in the template (T1).",
+      standfirst: "What the programme, its printers, and its developers received (T1).",
       blocks: [
         {
           kind: "flow",
           stages: [
-            { title: "Mark files", body: "28 files: six versions in four colourways, clear space in the bounds, the grid, the two glyphs, a manifest." },
-            { title: "Brand book 1.0", body: "33 pages. Every measure in grid units, every colour in HEX, RGB, two CMYK profiles, and Pantone." },
-            { title: "Print and office", body: "Business card, roll-up, and letterhead with bleed and eye zone marked; a Word template with styles, and an instruction for Google Docs." },
-            { title: "Social and generators", body: "12 PNG files with captions, hashtags, and alt text. Two pages of plain HTML on Vercel, no build step, source on GitHub." },
+            { title: "Mark files", body: "28 files: six versions in four colourways, the grid, the glyphs." },
+            { title: "Brand book 1.0", body: "33 pages; measures in grid units, colours in HEX, CMYK, and Pantone." },
+            { title: "Print and office", body: "Business card, roll-up, letterhead with bleed and eye zone; a Word template." },
+            { title: "Social and generators", body: "12 PNG files with captions and alt text; two HTML pages on Vercel, source on GitHub." },
           ],
         },
       ],
     },
 
-    /* ---------------------------------------------------------------- 10 */
-    {
-      id: "evidence",
-      n: "10",
-      heading: "Evidence",
-      standfirst: "What was measured, and the generators at work. Recruitment results are not stated: the campaign opened on 13 October 2026.",
-      blocks: [
-        {
-          kind: "stats",
-          items: [
-            { value: "8 mm", label: "Smallest printed mark, the ∃ alone; 16 px on screen" },
-            { value: "16.1:1", label: "Navy on white; 14.0:1 on warm white" },
-            { value: "2.7:1", label: "Coral on warm white, so coral never carries text there" },
-          ],
-        },
-        {
-          kind: "tabs",
-          label: "The generators",
-          items: [
-            {
-              label: "Ambassador page",
-              blocks: [
-                {
-                  kind: "video",
-                  clip: true,
-                  frame: "macbook",
-                  width: "wall",
-                  src: `${C}/generator-ambassador.mp4`,
-                  poster: `${C}/generator-ambassador.webp`,
-                  title: "The ambassador generator: slogan, zoom, crop, and colour",
-                  caption: "The slogan switched, the photo zoomed and dragged, the duotone off and on again (G1).",
-                },
-              ],
-            },
-            {
-              label: "Support page",
-              blocks: [
-                {
-                  kind: "video",
-                  clip: true,
-                  frame: "macbook",
-                  width: "wall",
-                  src: `${C}/generator-story.mp4`,
-                  poster: `${C}/generator-story.webp`,
-                  title: "The support generator: three slogans, a post, and a story",
-                  caption: "Three slogans, then the same photo as a story of 9:16 and back to a post of 4:5.",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    /* ---------------------------------------------------------------- 11 */
+    /* ---------------------------------------------------------------- 09 */
     {
       id: "reflection",
-      n: "11",
+      n: "09",
       heading: "What I would do differently",
       blocks: [
         {
           kind: "joint",
           question: "What would I do differently?",
           answers: [
-            "<strong>Test the ambassador frame on real photos before sending it.</strong> Drawn around a placeholder silhouette; on a real portrait the bar crossed the neck.",
-            "<strong>Build the four-second animation, not only describe it.</strong> A file in code would leave the video team nothing to interpret.",
+            "<strong>Test the ambassador frame on real photos first.</strong> Drawn around a silhouette, on a real portrait the bar crossed the neck.",
+            "<strong>Build the four-second animation, not only describe it.</strong> A file in code leaves nothing to interpret.",
           ],
         },
         {
           kind: "joint",
           question: "What will I measure, and how?",
           answers: [
-            "<strong>The two recruitment targets.</strong> Teachers outside informatics, and places under 25 000 inhabitants, from the programme's records at the end of recruitment.",
-            "<strong>Whether ambassadors post.</strong> The generators collect nothing, so the count comes from posts tagged #OgólnopolskaStrefaTalentu.",
+            "<strong>The two recruitment targets.</strong> From the programme's records.",
+            "<strong>Whether ambassadors post.</strong> The generators collect nothing; count posts tagged #OgólnopolskaStrefaTalentu.",
           ],
         },
       ],
