@@ -164,7 +164,7 @@ export const fox: CaseStudy = {
           kind: "points",
           items: [
             "<strong>Agents get the contract engineers get.</strong> Code Connect binds every Figma component to its implementation, and the Figma MCP server hands that context to the agent: Codex first, Claude Code now.",
-            "<strong>The rules are written down, not assumed.</strong> An AGENTS.md and a set of skills, which I own, keep generated UI on the system.",
+            "<strong>The rules are written down, not assumed.</strong> An AGENTS.md and a set of skills, which I maintain, keep generated UI on the system.",
             "<strong>Documentation in four layers.</strong> The layers are tokens, components, patterns, and templates, and the pattern catalogue is Markdown that a person and an agent read alike.",
             "<strong>A person merges every component change.</strong> Generated code arrives as a pull request, and I review and merge it.",
             "<strong>The file follows the code.</strong> What is done in code is written back into Figma over MCP, so the file follows the code.",

@@ -371,7 +371,7 @@ export const aboutChapters: Chapter[] = [
       {
         kind: "points",
         items: [
-          "<strong>FOX is Asseco's.</strong> I own it there: the tokens, the component API, the review gate. The products I designed for that platform are built on it, and its artefacts stay inside the company.",
+          "<strong>FOX is Asseco's.</strong> I lead it there: the tokens, the component API, the review gate. The products I designed for that platform are built on it, and its artefacts stay inside the company.",
           "<strong>Big Hat is mine.</strong> I built it from nothing for my own projects and published it under MIT, so the tokens, the contrast gate, the migration, and the source can all be read in full.",
           "<strong>This site is built on Big Hat.</strong> The footer prints the installed version.",
         ],

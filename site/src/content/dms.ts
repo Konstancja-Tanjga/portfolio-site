@@ -50,7 +50,7 @@ export const dms: CaseStudy = {
     { label: "Product", value: "APplus ERP, Documents" },
     {
       label: "Design system",
-      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer. The link opens the public v1 Storybook",
+      value: "FOX, Asseco's design system, which I lead: tokens, component API and the review gate. The migration from v2.3 to v3.0 with one other designer. The link opens the public v1 Storybook",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -152,7 +152,7 @@ export const dms: CaseStudy = {
             "<strong>The early prototypes in Figma Make</strong>, used to test ideas and settle open questions with the PM, the requirements engineer, and a group of SMEs.",
             "<strong>The low-fidelity work</strong> and requirement-level design with sign-off.",
             "<strong>Day-to-day work with the developers</strong>, through to review of the build.",
-            "<strong>FOX, the design system it is built on.</strong> It is mine to own; I did its migration from v2.3 to v3.0 with one other designer.",
+            "<strong>FOX, the design system it is built on.</strong> Asseco's system, which I lead; I did its migration from v2.3 to v3.0 with one other designer.",
           ],
         },
         {
@@ -407,7 +407,7 @@ export const dms: CaseStudy = {
       n: "09",
       heading: "Design system",
       standfirst:
-        "I own FOX, so on this product I was both a consumer of the system and its owner. That is why the update process is worth showing: the loop took days.",
+        "I lead FOX, so on this product I was both a consumer of the system and its maintainer. That is why the update process is worth showing: the loop took days.",
       blocks: [
         {
           kind: "shot",
@@ -567,14 +567,14 @@ export const dms: CaseStudy = {
       heading: "Handoff",
       maxim: "On a team this size, alignment enforced by tooling is the only kind that survives eleven months.",
       standfirst:
-        "Concepts in Figma Make, the design in Figma, the handoff through Dev Mode, Code Connect, and Storybook. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. I own the component API and the tokens, and I review every pull request into the library.",
+        "Concepts in Figma Make, the design in Figma, the handoff through Dev Mode, Code Connect, and Storybook. A prototype answers the behaviour questions and proves the composition; the implementation is the developers' code on the FOX package. the component API and the tokens are my responsibility, and I review every pull request into the library.",
       blocks: [
         {
           kind: "loop",
           centre: "Alignment enforced by tooling",
           stations: [
             { label: "Figma", title: "The file", body: "Code Connect binds each design component to its implementation. Dev Mode is what development opens, with Storybook as the reference." },
-            { label: "Code", title: "The FOX package", body: "The implementation is the developers' code on the FOX package. I own the component API and the tokens, and I review every pull request into the library." },
+            { label: "Code", title: "The FOX package", body: "The implementation is the developers' code on the FOX package. the component API and the tokens are my responsibility, and I review every pull request into the library." },
             { label: "Prototype", title: "Prototypes in code", body: "A prototype answers the behaviour questions and proves the composition. Some questions were settled as working prototypes in code, because behaviour is not something a static mockup can decide." },
           ],
           edges: [

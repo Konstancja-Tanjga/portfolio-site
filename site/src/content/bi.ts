@@ -19,8 +19,6 @@ import type { CaseStudy } from "./types";
 const S = "/work/applus-analytics/screens";
 const D = "/work/applus-analytics/device";
 const C = "/work/applus-analytics/clips";
-/** the prototype route, under the deployment base */
-const P = ((import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/").replace(/\/$/, "") + "/prototype/analytics";
 
 export const bi: CaseStudy = {
   slug: "applus-analytics",
@@ -50,7 +48,7 @@ export const bi: CaseStudy = {
     { label: "Product", value: "APplus ERP, Analytics" },
     {
       label: "Design system",
-      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer. The link opens the public v1 Storybook",
+      value: "FOX, Asseco's design system, which I lead: tokens, component API and the review gate. The migration from v2.3 to v3.0 with one other designer. The link opens the public v1 Storybook",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Team", value: "Seven: three developers, a requirements engineer, QA, a PM and me" },
@@ -120,10 +118,6 @@ export const bi: CaseStudy = {
           kind: "passage",
           html:
             "<p>Analytics is the new business intelligence module inside APplus ERP. It turns the data a company already has into numbers it can act on, and it does that on the data the ERP is already producing.</p>",
-        },
-        {
-          kind: "passage",
-          html: `<p><strong>A working prototype</strong> of the application, built on FOX design system components with fictional data, is open at <a href="${P}" target="_blank" rel="noopener">${P.replace(/^\//, "")}</a>. The clips on this page are recorded from it.</p>`,
         },
         {
           kind: "carousel",
@@ -319,7 +313,7 @@ export const bi: CaseStudy = {
             { title: "Argued over in the room", body: "The eight SME sessions walked these prototypes, not slides." },
             { title: "Proven, then handed on", body: "The prototype answers the behaviour questions; development builds the same screens on the FOX package." },
           ],
-          note: "I own the skills and the AGENTS.md that keep generated UI on-system.",
+          note: "I maintain the skills and the AGENTS.md that keep generated UI on-system.",
         },
         {
           kind: "video",
@@ -358,7 +352,7 @@ export const bi: CaseStudy = {
               { tool: "Lovable", mark: "", file: "the PM's prototype", title: "Audited, screen by screen", body: "Seven questions pinned where they arose; each became a rule.", image: { src: "/work/applus-analytics/screens/audit-1.png", alt: "The PM's Lovable prototype imported into Figma, with purple question notes pinned to the screens" } },
               { tool: "Codex, Claude", mark: "openai", file: "AGENTS.md, FOX skills", title: "A prototype within hours", body: "Generated on the FOX package, walked with the SMEs.", image: { src: "/work/applus-analytics/screens/prototype.png", alt: "A generated prototype of the application, built on FOX components" } },
               { drawing: "figma", tool: "Figma", mark: "figma", file: "REQ-1735 · Review", title: "Redrawn, tied to its requirement", body: "Every frame carries its REQ number, date and sign-off." },
-              { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "FOX v3.0", title: "The library as code", body: "Authored and versioned in Storybook; I own the API and the tokens." },
+              { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "FOX v3.0", title: "The library as code", body: "Authored and versioned in Storybook; the API and the tokens are my responsibility." },
               { drawing: "nexus", tool: "Nexus", mark: "sonatype", file: "package", title: "Six products move a version", body: "A component changes where it runs." },
               { drawing: "merge", lines: ["Storybook", "Design QA against the REQ", "Reviewed on the build, by me"], tool: "GitHub", mark: "github", file: "pull request", title: "Reviewed on the running build", body: "Every pull request that changes a screen." },
               { drawing: "code", tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "The file follows the code", body: "An accepted deviation is written back into the frame over MCP." },

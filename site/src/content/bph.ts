@@ -41,7 +41,7 @@ export const bph: CaseStudy = {
     { label: "Product", value: "APplus ERP, Best Practice Hub" },
     {
       label: "Design system",
-      value: "FOX, which I own. The migration from v2.3 to v3.0, with one other designer. The link opens the public v1 Storybook",
+      value: "FOX, Asseco's design system, which I lead: tokens, component API and the review gate. The migration from v2.3 to v3.0 with one other designer. The link opens the public v1 Storybook",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     {
@@ -293,7 +293,7 @@ export const bph: CaseStudy = {
       n: "06",
       heading: "Design system",
       standfirst:
-        "The project started on FOX 2.3 and moved to FOX 3.0 part-way through. I own FOX; the 3.0 migration I did with one other designer, so on this product I was both a consumer of the system and the person changing it.",
+        "The project started on FOX 2.3 and moved to FOX 3.0 part-way through. I lead FOX, Asseco's design system; the 3.0 migration I did with one other designer, so on this product I was both a consumer of the system and the person changing it.",
       blocks: [
         { kind: "exploded", screen: hubExploded },
         {
