@@ -249,3 +249,7 @@ Konstancja considered turning the chapters of a study into horizontal tabs, so a
 ![In short: the three decisions as cards with their screens](analytics-in-short-decisions.png)
 
 ![Design and sign-off: four tabs](analytics-sign-off-tabs.png)
+
+### 25 October, later: every study the Analytics way
+
+Konstancja asked for the other studies to be rebuilt as Analytics was. Fourteen were, each by its own pass (Documents, Elly, OST, Chihuahua, Reading the sky, MojePZU, FOX, Big Hat, Best Practice Hub, Volvo, Riyad Bank, Flow, Xecta, Futures); the three one-chapter recognition pages were left alone. Each got the sixty-second "In short" with decision cards, a sheet of its tools where the file states a tool chain (none for OST, Riyad, Flow, Futures: nothing on record, nothing invented), `tabs` for peer screens and clips, `fold` for reference, and cuts to about 2 000 words or fewer. The longest pages came down from 26 to 28 thousand pixels to about 17 thousand. Every pass wrote its Before | After | Why table into the study's log; the open questions are collected in `docs/copy-edit/questions-2026-10-25.md`.
