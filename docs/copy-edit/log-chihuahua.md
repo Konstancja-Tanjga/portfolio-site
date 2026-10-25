@@ -119,3 +119,47 @@ Not done, and why:
 - No `flow`: the two journeys list their steps only on the panels, as the first pass found, and the pipeline of chapter 12a is already a `stack` with seven rows.
 - The journeys (04, 05), the blueprint (06), the directions (08), and the two mode boards stay visible: each is the picture of its chapter.
 - `ch03-personas.png` is still unreferenced, as before.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Against `docs/copy-edit/REBUILD-BRIEF` (the Analytics rebuild as the pattern), `docs/case-study-kit/RULES.md`, and `docs/STYLE.md`; `site/src/content/bi.ts` as the reference. Branch `studies-rebuild`.
+
+Review from the hiring manager's chair, before the rebuild (2 560 visible words, 18 347 px at 1440, 14 chapters):
+
+1. The 00 page carried eight rows and no picture; Context repeated the lead, "Period and team" repeated the metadata strip.
+2. Twelve maxims, one per chapter: the sharp line stopped being sharp by chapter 04.
+3. Three dossiers, every one a wall of tiles to open: research, service, modes. Most readers open none.
+4. The research dossier hid the ten findings, which are the requirements, behind three tiles; the "hard brief" chapter 01a then said the same findings as bullets.
+5. "Design for Auri, test with Karmel" appeared in 00, as a pull quote in 03, and in the persona cards.
+6. The "maybe later" line appeared as a pull quote and as a hotspot in the same chapter; the undo rule in the service spec and in the benchmark bullets.
+7. The tools were told as a `stack` in a chapter of their own, 09a, after the testing chapter: the method came after the result.
+8. The stats block in 07 restated the standfirst and the metadata strip (34 laws, 0 numbers by hand).
+9. Two photographs of the dogs in 01 and two more on the persona cards: the clients shown twice before the product once.
+10. The sheet's drawings `code`, `figma`, `storybook`, `nexus`, and `shipped` carry FOX text and an APplus screen, so a phone study without Figma can use only `options`, `merge`, and its own images.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team | What, Problem, My role, three decisions with shots (`ch11-human-mode.png` to #modes, `ch03-personas.png` to #personas, `ch09-cig.png` to #cig), Outcome | the sixty-second page; Context was the lead, Period is in the metadata strip, the team is one person and the strip's Role says so |
+| 01: passage, two photographs, thesis, two bullets | passage, thesis | the photographs are on the persona cards; bullet one repeated Decision 1, bullet two moved into the passage |
+| 01a "Why this is a hard brief", five bullets | chapter dropped | the five constraints are the 02 hotspots and the 00 Problem row |
+| 02: maxim, passage, `dossier` of three research tiles | standfirst, `tabs` of the three boards | the boards are peers a reader picks between; the tiles hid the requirements |
+| 03: maxim, passage, pull "Design for Auri. Test with Karmel.", personas | standfirst, personas | the pull is Decision 2; fields cut to one line |
+| 04: maxim, spec, `dossier` of two journeys and the blueprint | standfirst, spec, `fold` "Two journeys and the service blueprint" | the spec is the argument, the boards are reference |
+| 05: maxim, spec, three bullets, pull, folded board | standfirst, spec, two bullets, folded board | the pull is hotspot six; the undo bullet is Answer 3 in 04 |
+| 06: maxim, board, thesis | standfirst, board with the winner's weakness in the caption | one block says it |
+| 07: maxim, standfirst, two bullets, stats, palette, spec, folded board | maxim, standfirst, `sheet`, one passage, `fold` with palette, spec and board | the sheet replaces 09a; the stats repeated the strip; the palette and the laws are reference once the sheet shows the generated panel |
+| 08: maxim, `dossier` of dog mode and human mode | standfirst, the same dossier | the one dossier kept: the modes are the product's use cases; `#dog-mode` and `#human-mode` still open |
+| 09: maxim, thesis, four bullets, folded ladder | standfirst, four bullets, folded ladder | the thesis became bullet one |
+| 09a "Tools and pipeline": maxim, passage, `stack` of seven rows | dropped; its content is the sheet in 07 and the fold in 10 | the sheet and the stack told the same chain |
+| 10: maxim, three bullets, joint, `set` of thirteen photographs, inset, passage | standfirst, three bullets, joint, `fold` with the set, inset with the closing line | the deck is reference; the closing line moved into the caption |
+| 11: maxim, four folded lists | standfirst, four folded lists | two maxims on the page: 01 and 07 |
+| 12 maxims, 2 pull quotes, 3 theses, 3 dossiers, 2 stats, 1 stack | 2 maxims, 0 pulls, 1 thesis, 1 dossier, 0 stats, 1 sheet, 1 tabs, 3 folds | RULES 6 and "Scroll, tabs, folds" |
+
+Numbers: 2 560 words and 18 347 px at 1440 before; 1 937 words and 15 464 px after (the last 1 300 px are the page's footer and next-case link); 14 chapters to 12; 35 image elements to 37, of which 17 are behind folds (the thirteen deck photographs, the three service boards, the CIG panel) and two inside the mode tiles; the one clip stays. Renumbering: none needed, 01a and 09a were letters.
+
+Not done, and why:
+
+- The `code`, `figma`, `storybook`, `nexus`, and `shipped` drawings of the sheet hardcode FOX file names, "figma mcp" and an APplus screen (home/Sheet.tsx), so the token file station has no drawing of its own: it is merged into the Generator station, with the generated CIG panel as its picture. A neutral "file" or "tokens" drawing would let the tokens.json station stand alone.
+- The tile ids `research-see`, `research-touch`, `research-want`, `journey-dog`, `journey-human`, `blueprint`, and the chapter id `pipeline` are gone with the tiles and the chapter; `#the-user`, `#service`, and `#cig` cover them. No inbound link on the site used them.
+- `ch03-personas.png` is now used once, as the Decision 2 shot; it still has no caption on the wall.
+- The sources stay four folded lists, as before.
