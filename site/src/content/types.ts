@@ -387,7 +387,34 @@ export type Block =
    * For a loop that has no first step, such as file, code and prototype
    * feeding one another. Where an order matters, use `flow`.
    */
-  | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
+  | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string }
+  /**
+   * The drawing sheet from the home page, with a project's own stations:
+   * one artefact through the tools it passes, as tool windows on a
+   * conveyor line drawn by the scroll (home/Sheet.tsx). A station shows
+   * either one of the sheet's drawings or a screenshot of the project.
+   */
+  | { kind: "sheet"; sheet: SheetData };
+
+/** One of the drawings home/Sheet.tsx can put in a tool window. */
+export type SheetDrawing = "options" | "figma" | "code" | "storybook" | "chromatic" | "merge" | "nexus" | "shipped";
+
+export type SheetData = {
+  tools: { name: string; mark: string; what: string; glyph?: string }[];
+  stations: {
+    tool: string;
+    mark: string;
+    file: string;
+    title: string;
+    body: string;
+    drawing?: SheetDrawing;
+    /** The check lines of the "merge" drawing; the home sheet's three by default. */
+    lines?: string[];
+    image?: { src: string; alt: string };
+  }[];
+  rhythm?: { every: string; what: string; ticks: number }[];
+  block: [string, string][];
+};
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
 export type Dossier = {

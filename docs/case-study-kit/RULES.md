@@ -35,8 +35,8 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 | 03 | Discovery and research | `points` + folded `shot` | What was found, as bullets. Diagrams folded, opened on demand. |
 | 04 | What the audit asked | `duo` with `hotspots` | The questions, as speech bubbles on the screens that provoked them. Seven questions, seven decisions. |
 | 05 | First prototypes | `flow` | The sequence of what was tried, three to five stages, one sentence each. |
-| 06 | Design system | `evolution` | One tab per version. What changed, who owned it. |
-| 06a | Screen architecture | `duo` + `annotated` | The two or three screens that set the rules, then folders of screens with their rule ids. |
+| 06 | Design system | `sheet` + `evolution` | The project's own drawing sheet first: one requirement through the tools it passed, as tool windows on a conveyor line (the home page's "How I work", with this project's stations). Then one tab per version: what changed, who owned it. |
+| 06a | Screen architecture | `duo` + `annotated` | The two or three screens that set the rules, then folders of screens with their rule ids. Optional: the folders are reference for engineers; when the study has to stay short for a hiring manager, the rule screens move to 07 and the folders stay in git history. |
 | 07 | Design and sign-off | `set` or `carousel` | The screens as signed off. |
 | 07a | A flow best watched | `beside` | Prose beside a phone-sized clip that stays in view while the text scrolls, for a flow such as voice mode. |
 | 08 | Use cases | `dossier` of `usecase` | One tile per area. Each unfolds to the right: screens, the use-case template, the rule it sets. |

@@ -31,6 +31,7 @@ import {
   UseCase,
   Video,
 } from "../system";
+import { Sheet } from "../home/Sheet";
 
 /** Content block → component. The only place this mapping exists. */
 function BlockView({ block }: { block: Block }) {
@@ -105,6 +106,12 @@ function BlockView({ block }: { block: Block }) {
       return <Loop stations={block.stations} edges={block.edges} centre={block.centre} caption={block.caption} />;
     case "dossier":
       return <Dossier items={block.items} render={(b) => <BlockView block={b} />} />;
+    case "sheet":
+      return (
+        <Lane width="wall">
+          <Sheet data={block.sheet} />
+        </Lane>
+      );
   }
 }
 

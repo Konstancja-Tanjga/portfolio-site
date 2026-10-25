@@ -32,7 +32,7 @@ export const bi: CaseStudy = {
   group: "product",
   cover: {
     kicker: "PRODUCT DESIGN · ENTERPRISE SOFTWARE",
-    headline: ["Business", "Intelligence"],
+    headline: ["APplus", "Analytics"],
     subline: "for APplus ERP",
     stamp: "DASHBOARDS · QUERIES · DATA MODELS · AI ANALYST",
     credit: "Lead Designer, UX Engineer · Asseco Solutions · 2026",
@@ -100,7 +100,7 @@ export const bi: CaseStudy = {
             {
               key: "Outcome",
               value:
-                "Shipped. 7 of 7 audit questions answered by a rule or a template; 8 validation sessions with subject-matter experts; every app-bar action and every render panel in the prototype checked against the rules. Presented at Vision Days on 22 September 2026, generally available from October 2026.",
+                "Shipped. 7 of 7 audit questions answered by a rule or a template; every app-bar action and every render panel in the prototype checked against the rules. Presented at Vision Days on 22 September 2026, generally available from October 2026.",
             },
             {
               key: "Period and team",
@@ -145,7 +145,7 @@ export const bi: CaseStudy = {
         },
         {
           kind: "passage",
-          html: "<p><strong>What I owned.</strong> The only designer on the product, from the audit to the review of the build.</p>",
+          html: "<p><strong>What I owned.</strong> From the audit to the review of the build.</p>",
         },
         {
           kind: "points",
@@ -157,10 +157,6 @@ export const bi: CaseStudy = {
             "<strong>Design review of every pull request</strong> that changes a screen, on its preview build.",
             "<strong>FOX, the design system it runs on</strong>: its tokens and its component API are mine. I did its migration from v2.3 to v3.0 with one other designer.",
           ],
-        },
-        {
-          kind: "pull",
-          text: "Concepts in Claude Design, the design in Figma, the handoff through Dev Mode, Code Connect and Storybook. The prototype answers the behaviour questions; the implementation is the developers' code on the FOX package.",
         },
       ],
     },
@@ -174,7 +170,7 @@ export const bi: CaseStudy = {
         {
           kind: "personas",
           standfirst:
-            "The numbering is the handoff: a number is built at 01 and believed at 04, or it is not believed at all. Every surface rule in this project first answers which of the four a screen is serving.",
+            "Four composites, drawn from how customers used the old BI tool and from the eight validation sessions; the quotes are paraphrases, not transcripts. A number is built at 01 and believed at 04, or it is not believed at all.",
           items: [
             {
               n: "01",
@@ -340,8 +336,7 @@ export const bi: CaseStudy = {
       id: "prototypes",
       n: "05",
       heading: "First prototypes",
-      maxim:
-        "A generated prototype is cheap enough to throw away. A designed and signed-off screen is not, so the disagreements happen here.",
+      standfirst: "Before a frame was drawn, the requirement went into a generated prototype on FOX components. The disagreements happened there, where a screen was still cheap to throw away.",
       blocks: [
         {
           kind: "flow",
@@ -349,7 +344,7 @@ export const bi: CaseStudy = {
             { title: "A settled requirement", body: "Before a frame was drawn, it went into Codex, and later Claude." },
             { title: "Clickable within hours", body: "A generated prototype on FOX components: cheap enough to throw away." },
             { title: "Argued over in the room", body: "The eight SME sessions walked these prototypes, not slides." },
-            { title: "Proven, then handed on", body: "The prototype answers the behaviour questions and proves the composition. The implementation is the developers' code on the FOX package." },
+            { title: "Proven, then handed on", body: "The prototype answers the behaviour questions and proves the composition; development builds the same screens on the FOX package." },
           ],
           note: "On that side I own the skills and the AGENTS.md that keep generated UI on-system, the tokens, and the review and merge of every component change.",
         },
@@ -382,12 +377,40 @@ export const bi: CaseStudy = {
       n: "06",
       heading: "Design system",
       standfirst:
-        "Same system, three homes. What changed each time was where the truth lived, and therefore who was allowed to change it.",
+        "How I worked on this product, drawn: one requirement through the tools it passed, from the PM's prototype to the shipped screen. Then the system itself, in its three homes.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>On this product I was both a consumer of FOX and its owner, which is why the update loop is worth showing: it ran in days, not quarters. Once the library lived in Storybook and shipped through Nexus, version control followed. We started on Bitbucket and then moved to GitHub: the design system source, the skills, the prototypes and the rest of the UX repository, owned and maintained by design.</p>",
+          kind: "sheet",
+          sheet: {
+            tools: [
+              { name: "Lovable", mark: "", glyph: "L", what: "the PM's prototype, audited" },
+              { name: "Claude", mark: "claude", what: "Design, Code, Figma MCP" },
+              { name: "Codex", mark: "openai", what: "the first prototypes" },
+              { name: "Figma", mark: "figma", what: "Dev Mode, Code Connect, sign-off" },
+              { name: "Storybook", mark: "storybook", what: "FOX v3.0, the contract" },
+              { name: "Nexus", mark: "sonatype", what: "versioned packages" },
+              { name: "GitHub", mark: "github", what: "pull requests; Bitbucket before" },
+              { name: "Web components", mark: "", what: "Lit, one package each" },
+            ],
+            stations: [
+              { tool: "Lovable", mark: "", file: "the PM's prototype", title: "Audited, screen by screen", body: "Seven questions pinned where they arose; each became a rule or a template.", image: { src: "/work/applus-analytics/screens/audit-1.png", alt: "The PM's Lovable prototype imported into Figma, with purple question notes pinned to the screens" } },
+              { tool: "Codex, Claude", mark: "openai", file: "AGENTS.md, FOX skills", title: "A prototype within hours", body: "Generated on the FOX package from a settled requirement, and walked with the SMEs.", image: { src: "/work/applus-analytics/screens/prototype.png", alt: "A generated prototype of the application, built on FOX components" } },
+              { drawing: "figma", tool: "Figma", mark: "figma", file: "REQ-1735 · Review", title: "Redrawn, tied to its requirement", body: "Every frame carries its SRS, REQ number, date and sign-off status." },
+              { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "FOX v3.0", title: "The library as code", body: "Authored, reviewed and versioned in Storybook; I own the component API and the tokens." },
+              { drawing: "nexus", tool: "Nexus", mark: "sonatype", file: "package", title: "Six products move a version", body: "A component changes where it runs; nobody copies a frame." },
+              { drawing: "merge", lines: ["Storybook", "Design QA against the REQ", "Reviewed on the build, by me"], tool: "GitHub", mark: "github", file: "pull request", title: "Reviewed on the running build", body: "Every pull request that changes a screen, beside the frame it implements." },
+              { drawing: "code", tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "The file follows the code", body: "An accepted deviation is written back into the frame over MCP the same week." },
+              { drawing: "shipped", tool: "APplus", mark: "", file: "Analytics", title: "Shipped", body: "Presented at Vision Days on 22 September 2026; generally available from October." },
+            ],
+            block: [
+              ["Sheet", "How I worked on Analytics"],
+              ["Drawn for", "One requirement, from the PM's prototype to the shipped screen"],
+              ["Tools", "Lovable, Claude Design, Claude Code, Codex, Figma, Dev Mode, Code Connect, Figma MCP, Storybook, Nexus, GitHub"],
+              ["Stack", "FOX, Lit web components, one package per component"],
+              ["Governed by", "nine surface rules, AGENTS.md and the FOX skills; design acceptance in the definition of done"],
+              ["Repository", "Bitbucket, then GitHub: the system source, the skills and the prototypes, maintained by design"],
+            ],
+          },
         },
         {
           kind: "evolution",
@@ -416,43 +439,14 @@ export const bi: CaseStudy = {
             },
           ],
         },
-        {
-          kind: "passage",
-          html:
-            "<p>A FOX component, as a developer meets it. Every screen in this case study is assembled from elements like this one: attributes for state, named slots for content, and actions the dialog itself resolves. The object-scope rule, R1 on the screen architecture folders, ends in exactly this element.</p>",
-        },
-        {
-          kind: "code",
-          code: `<fox-dialog heading="Dialog Default Header" id="dialog">
-  <div>Dialog Default Content</div>
-  <fox-button
-    label="Cancel"
-    slot="secondaryAction"
-    dialogAction="cancel"
-  ></fox-button>
-  <fox-button
-    slot="primaryAction"
-    dialogAction="save"
-    primary
-    raised
-    label="save"
-  ></fox-button>
-</fox-dialog>`,
-          caption:
-            "fox-dialog, the Default story, copied verbatim. FOX components are Lit web components published one package per component, for example @assecosolutions/fox-dialog. The public Storybook documents the v1 line; v3.0 stays inside the company.",
-          source: {
-            text: "Source: FOX Storybook (public v1 line), atoms / fox-dialog.",
-            href: "https://design-system-v1.assecosolutions.com/?path=/story/atoms-fox-dialog--default-story",
-          },
-        },
       ],
     },
     {
-      id: "screen-architecture",
-      n: "06a",
-      heading: "Screen architecture",
+      id: "sign-off",
+      n: "07",
+      heading: "Design and sign-off",
       standfirst:
-        "Every screen in the product is one of five layouts with different content in the same zones. That is what made the layout arguments reusable instead of per-screen. Zone map from the Analytics prototype; one rectangle is one real container, and sizes are the values in code.",
+        "A frame is tied to its requirement: the SRS, the REQ number, a date and a status, then sign-off; REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 3 June 2026. The two screens set the layout rules; the clips are the flows as signed off.",
       blocks: [
         {
           kind: "duo",
@@ -470,145 +464,6 @@ export const bi: CaseStudy = {
           ],
         },
 
-        {
-          kind: "annotated",
-          items: [
-            {
-              id: "01",
-              title: "Main page: nav rail and panel",
-              standfirst: "The default gallery page. fox-navigation-bar rail 56 + sub-level panel 248 = 304.",
-              shot: { src: `${S}/tpl-main.png` },
-              notes: [
-                {
-                  label: "Layer stack, bottom to top",
-                  body: "fox-navigation-bar (persistent, outside the page) · fox-back-layer · fox-app-bar (breadcrumbs, title, actions) · fox-content-layer (scroll body, layout-isolated) · fox-side-sheet (inside the content layer) · fox-menu (anchored, no scrim) · fox-dialog with scrim · fox-notification-container (toasts, top right).",
-                },
-                {
-                  label: "Key sizes",
-                  body: "App bar 64 on main pages, 96 on detail pages. Search max-width 420. Card grid minmax(280px, 1fr), gap 40. Card media 136.",
-                },
-                {
-                  label: "Guardrails",
-                  body: "Main actions only in the app bar; secondaries collapse into the burger. Settings opens as an overlay, never as a side sheet. Sort and filter belong to gallery pages only. One export entry point per page. Toasts mount in a single container.",
-                },
-              ],
-              rules: [
-                { id: "R1", text: "Object → modal" },
-                { id: "R3", text: "The card is an object" },
-                { id: "R4", text: "Choice → anchored menu" },
-                { id: "R5", text: "Destructive → modal" },
-                { id: "R6", text: "View state → no surface" },
-              ],
-            },
-            {
-              id: "04",
-              title: "Main page: anchored menu",
-              standfirst: "fox-menu, anchored to its trigger, above the content layer, without a scrim.",
-              shot: { src: `${S}/tpl-menu.png` },
-              notes: [
-                {
-                  label: "Where it sits",
-                  body: "It must render above fox-content-layer, never inside it: the layout-isolated content layer would clip it. Two anchors on a gallery page: the card overflow (Edit · Copy · Share · Permissions · Delete) and the app-bar burger.",
-                },
-                {
-                  label: "Guardrails",
-                  body: "A menu offers a choice, never a form. A menu item may only ask for a destructive act; the modal performs it. One menu open at a time.",
-                },
-              ],
-              rules: [
-                { id: "R4", text: "A choice, never a form" },
-                { id: "R7", text: "One entry point per action" },
-              ],
-            },
-            {
-              id: "07",
-              title: "Detail page: side sheet open",
-              standfirst: "fox-side-sheet inside the content layer. The body reflows beside it (1584 → 1136) instead of being covered.",
-              shot: { src: `${S}/tpl-sheet.png` },
-              notes: [
-                {
-                  label: "Panels",
-                  body: "Chart configuration · Table grouping · Table calculation · Table columns · Smart filter · Sorting. One sheet host, one panel at a time.",
-                },
-                {
-                  label: "Guardrails",
-                  body: "No scrim: you watch the content react while you configure it. Never opened from the app bar. Closing a panel keeps the filter or sort already applied; only Save commits and clears the Unsaved changes badge.",
-                },
-              ],
-              rules: [{ id: "R2", text: "Render scope → side sheet" }],
-            },
-            {
-              id: "08",
-              title: "Detail page: split workspace",
-              standfirst: "Pivot view: available fields (340), three drop areas, the pivot toolbar and the result grid (1196).",
-              shot: { src: `${S}/tpl-split.png` },
-              notes: [
-                {
-                  label: "A gap in the system",
-                  body: "The pivot result grid needs grouped two-level headers, collapsible row groups and row and column totals. fox-table-executor cannot express this, so the grid is a native table.",
-                },
-              ],
-              rules: [
-                { id: "R2", text: "Render scope → side sheet" },
-                { id: "R7", text: "Pivot actions stay inside the view" },
-              ],
-            },
-            {
-              id: "09",
-              title: "Detail page: enlarged",
-              standfirst: "viz-workspace--enlarged, inset: 0 inside the layout-isolated content layer.",
-              shot: { src: `${S}/tpl-enlarged.png` },
-              notes: [
-                {
-                  label: "Why inset: 0",
-                  body: "fox-content-layer is layout-isolated, so it is the containing block for the fixed child and already starts below the app bar. Offsetting by the app-bar height again would push the workspace 96px too low.",
-                },
-                {
-                  label: "Guardrails",
-                  body: "A maximised body, not fullscreen: the rail, the panel and the app bar stay usable. The view toolbar travels with the workspace, so Enlarge is reversible in one click from inside.",
-                },
-              ],
-              rules: [
-                { id: "R6", text: "No surface, reversible in one click" },
-                { id: "R7", text: "The one sanctioned exception" },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "sign-off",
-      n: "07",
-      heading: "Design and sign-off",
-      standfirst:
-        "A frame is tied to its requirement: the SRS it comes from, the REQ number, a date and a status, then design sign-off. For example, REQ-1735 from the SRS “APplus BI Analysis” carries a sign-off dated 3 June 2026 and the status Review. Design acceptance is part of the definition of done.",
-      blocks: [
-        {
-          kind: "shot",
-          width: "wall",
-          src: `${D}/home-2400.webp`,
-          frame: "macbook",
-          caption:
-            "Home, the landing surface for people who consume rather than author. The biggest forecast change of the week sits on top, with Read analysis, Save and Ask AI Data Analyst about this; recent dashboards below, each with its author and its last opened date.",
-        },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${D}/dashboards-2400.webp`,
-          frame: "macbook",
-              caption:
-                "Dashboards: the same object as a library, with all, continue where you left off, favourites, shared with you and popular. Each card carries its reach, its key figure, its author and its date.",
-            },
-            {
-              src: `${D}/analysis-2400.webp`,
-          frame: "macbook",
-              caption:
-                "Analyses reuse the card, the badges and the filters of dashboards exactly. What differs is what the object does, not how it is found.",
-            },
-          ],
-        },
         {
           kind: "video",
           clip: true,
@@ -640,32 +495,15 @@ export const bi: CaseStudy = {
           caption:
             "The AI Data Analyst, in the prototype: a suggested question asked, the answer that names the cause with the number and the chart under it, one phrase selected, the detail thread beside the analysis with its chips and evidence card, and the correction applied back into the main thread as one step.",
         },
-        {
-          kind: "duo",
-          items: [
-            {
-              src: `${D}/models-relationship-2400.webp`,
-          frame: "macbook",
-              caption:
-                "Data models: two queries on the canvas with typed columns, and the join drawn as an object that states its direction and type.",
-            },
-            {
-              src: `${D}/settings-2400.webp`,
-          frame: "macbook",
-              caption:
-                "Settings: master data sources as a table with their type, columns and filter, and the admin spine on the left: translations, data sources, AI and analytics, users and permissions, system.",
-            },
-          ],
-        },
       ],
     },
     {
       id: "use-cases",
       n: "08",
-      heading: "Three use cases",
+      heading: "Two use cases",
       maxim: "Each one makes the thing that could mislead you legible before it does.",
       standfirst:
-        "One per area: the AI Data Analyst, Queries and Data models. Open a tile and the use case unfolds to the right, one panel at a time: screens, the template, the rule it sets.",
+        "One per area: the AI Data Analyst and Data models. Open a tile and the use case unfolds to the right, one panel at a time: screens, the template, the rule it sets.",
       blocks: [
         {
           kind: "dossier",
@@ -745,85 +583,6 @@ export const bi: CaseStudy = {
                     why: "Rejected: a plain threaded reply. It can carry the question, but it cannot carry a decision back, and the analysis drifts while nobody is watching.",
                     rule: "An action on a fragment opens a surface scoped to that fragment, and returns exactly one thing to its parent: a change, or nothing.",
                     ruleNote: "The same rule governs widget settings inside a dashboard.",
-                  },
-                },
-              ],
-            },
-            {
-              id: "uc-queries",
-              n: "02",
-              cover: { src: `${D}/queries-shelf-2400.webp`, frame: "macbook" },
-              title: "Queries",
-              maxim: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-              standfirst:
-                "Goal: publish a query other people can use, and let everyone see who else can use it without opening a permissions dialog.",
-              blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/queries-shelf-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "The shelf. A query arrives with its reach, the system it reads, its author and its date, so anyone reusing it can see what they are standing on before they build.",
-                },
-                {
-                  kind: "duo",
-                  items: [
-                    {
-                      src: `${D}/queries-card-2400.webp`,
-                  frame: "macbook",
-                      caption:
-                        "The query itself: access, data model, owner and eligible roles on top, the SQL definition under them, and a result preview below. Who can use it is part of the query, not a separate screen.",
-                    },
-                    {
-                      src: `${D}/queries-add-2400.webp`,
-                      frame: "macbook",
-                      caption:
-                        "Edit query. Name, data source and eligible roles are one form, and the roles sit beside the query, not behind a permissions dialog. A query with no eligible role is visible only to its author.",
-                    },
-                  ],
-                },
-                {
-                  kind: "usecase",
-                  uc: {
-                    id: "UC-02",
-                    title: "Publish a query other people can use, and see who can use it",
-                    actor: {
-                      name: "01, the key user, publishing",
-                      body: "02, 03 and 04 appear here only as readers of what was published. They never open this screen, and they inherit its consequences anyway.",
-                      note: "One author, three kinds of reader.",
-                    },
-                    trigger: {
-                      body: "A query built for one department turns out to be useful to three. Its reach starts growing before anyone decides that it should.",
-                      note: "Success is the trigger, which is exactly when exposure grows without a decision behind it.",
-                    },
-                    precondition: {
-                      body: "The query runs against a named data model, and roles exist in the system, so “who can see this” is already an answerable question.",
-                    },
-                    flow: [
-                      { n: "1", text: "Saved queries are presented as cards, not rows: the unit is an object with an owner, not a record in a list." },
-                      {
-                        n: "2",
-                        text: "Each card states on its face who it reaches, who made it, when, and what it reads: Public or Private; data source, author, date.",
-                        note: "Exposure is visible at rest.",
-                      },
-                      {
-                        n: "3",
-                        text: "Settings is organised by what an admin owns: data sources (connections, column glossary, master data sources), users and permissions, and system (ERP links, version and updates).",
-                      },
-                      {
-                        n: "4",
-                        text: "Column links are configured against a template, /customers/{value}, and tested in place with a column name and a test value before they are saved.",
-                        note: "Configuration you can verify where you write it does not become a support ticket next month.",
-                      },
-                      { n: "5", text: "Translations, versions and update policy live in the same shell." },
-                    ],
-                    postcondition: {
-                      body: "Reach is a property of the artefact, visible wherever the artefact is. Nobody has to open a permissions dialog to find out who can see their work.",
-                    },
-                    why: "The dangerous failure in BI on an ERP is a query that quietly reaches further than its author thought. Rejected: permissions behind a per-item dialog. Fewer pixels, but exposure becomes something you have to go and check.",
-                    rule: "If a property determines who can see an object, it belongs on the object, not one click away from it.",
-                    ruleNote: "Both use cases make the thing that could mislead you legible before it does.",
                   },
                 },
               ],
@@ -937,26 +696,9 @@ export const bi: CaseStudy = {
       id: "handoff",
       n: "09",
       heading: "Handoff",
-      maxim: "When the system lives in code and the file only consumes it, there is no second copy to forget.",
       standfirst:
-        "What development receives: the Figma file through Dev Mode, every component bound to its implementation by Code Connect, Storybook as the reference, and a working prototype that answers the behaviour questions. The implementation is the developers' code on the FOX package.",
+        "Development receives the Figma file through Dev Mode, every component bound to its code by Code Connect, Storybook as the reference, and the working prototype. Three requirements were in the tokens and templates from the start.",
       blocks: [
-        {
-          kind: "loop",
-          centre: "One system, no second copy",
-          stations: [
-            { label: "Figma", title: "The file", body: "Every component bound to the implementation that ships it, through Code Connect. Dev Mode is what development opens." },
-            { label: "Code", title: "The FOX package", body: "By v3.0 the binding is the distribution model: a versioned package six products pick up by moving a version. I own the component API and the tokens, and I review and merge every pull request into the library." },
-            { label: "Prototype", title: "The running prototype", body: "Composed on the package, it answers the behaviour questions and proves the composition. The implementation is the developers' code on the same package." },
-          ],
-          edges: [
-            { label: "Code Connect" },
-            { label: "Composed on the package" },
-            { label: "Written back over MCP" },
-          ],
-          caption:
-            "The loop. The file binds to the code through Code Connect; the prototype is composed on that code; what is done in code is written back into the file over MCP from Claude Code, so the file follows the code instead of drifting from it.",
-        },
         {
           kind: "flow",
           stages: [
@@ -964,7 +706,6 @@ export const bi: CaseStudy = {
             { title: "Colour modes", body: "Light, dark and high contrast, implemented in tokens rather than per screen. A screen cannot fall out of high contrast if it never hard-codes a colour." },
             { title: "Language", body: "German is the default, English second. Layouts were tested against German compound words, where a layout that survives English quietly breaks. The screens on this page are the English variant." },
           ],
-          note: "Three requirements that were in the tokens and templates from the start, not added in review.",
         },
       ],
     },
@@ -972,7 +713,6 @@ export const bi: CaseStudy = {
       id: "after-development",
       n: "10",
       heading: "After development",
-      maxim: "A merged pull request is not a finished feature. It is the first time the design exists at all.",
       standfirst:
         "The developers build on the FOX package, so what reaches review is already made from the right parts. What is left to check is what a component library cannot guarantee: composition, states, real data, German, and whether the requirement was met.",
       blocks: [
@@ -1049,17 +789,8 @@ export const bi: CaseStudy = {
           kind: "stats",
           items: [
             { value: "7/7", label: "audit questions answered by a rule or a template" },
-            { value: "8", label: "validation sessions with SMEs" },
             { value: "9", label: "surface rules, one surface per action type" },
             { value: "6/6", label: "app-bar actions obeying R1, and 6/6 panels obeying R2" },
-          ],
-        },
-        {
-          kind: "stats",
-          items: [
-            { value: "9", label: "months, January to September 2026" },
-            { value: "7", label: "people: three developers, a requirements engineer, QA, a PM and me" },
-            { value: "1", label: "designer: the shape of the product, its rules, and the design system it ships on" },
           ],
         },
         {

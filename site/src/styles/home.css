@@ -733,6 +733,11 @@
 .sh-win__body { position: relative; aspect-ratio: 13 / 9; padding: 12px; display: grid; place-items: center; overflow: hidden; }
 /* the drawings are laid out in px for a 254 px window; Sheet.tsx sets --sh-zoom from the real width after layout, and the body clips what still overflows */
 .sh-win__body > * { zoom: var(--sh-zoom, 1); }
+/* a station that shows a screenshot instead of a drawing */
+.sh-win__body--image { padding: 0; display: block; }
+.sh-win__body--image > img { zoom: 1; width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.sh-foot--block { grid-template-columns: minmax(0, 1fr); }
+.sh-foot--block .sh-block { align-self: start; max-width: 40rem; }
 .sh-title { margin: 6px 0 0; font-family: var(--kt-font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.2; color: var(--kt-ink-2); transition: color 400ms; }
 .sh-station.is-lit .sh-title { color: var(--kt-ink); }
 .sh-body { margin: 0; font-size: var(--bh-size-small); line-height: 1.5; color: var(--kt-ink-3); }

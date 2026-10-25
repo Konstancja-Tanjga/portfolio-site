@@ -1,3 +1,5 @@
+import type { SheetData } from "../content/types";
+
 /**
  * The home page's own content: what the case studies do not carry.
  *
@@ -81,16 +83,16 @@ export const offScreen: { src: string; alt: string; caption: string }[] = [
  * gate, Nexus), compressed to the eight stops the component itself passes
  * through. The words here are the short ones; the long ones stay on About.
  */
-export const sheet = {
+export const sheet: SheetData = {
   stations: [
-    { tool: "Claude Design", mark: "claude", file: "options", title: "Options, one chosen", body: "Several options, iterated with the requirements engineer and the PM." },
-    { tool: "Figma", mark: "figma", file: "FOX v3 library", title: "Redrawn on FOX components", body: "Every value is a variable, and every component has Code Connect." },
-    { tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "Built to my spec, through MCP", body: "Claude Code reads the frame and implements the specification I write." },
-    { tool: "Storybook", mark: "storybook", file: "fox-card", title: "Storybook is the contract", body: "Every state has a story, and design and engineering both check against it." },
-    { tool: "Chromatic", mark: "chromatic", file: "snapshots", title: "Snapshots against the frames", body: "Visual regression on every pull request; I check the diff against the intent." },
-    { tool: "GitHub", mark: "github", file: "pull request", title: "I review and merge", body: "Against the frames and the acceptance criteria, before anything ships." },
-    { tool: "Nexus", mark: "sonatype", file: "package", title: "Versioned on Nexus", body: "Product teams install the package; nobody redraws it." },
-    { tool: "APplus", mark: "", file: "Analytics", title: "Shipped, six times", body: "The same card on the Analytics dashboard, and five more products that install FOX." },
+    { drawing: "options", tool: "Claude Design", mark: "claude", file: "options", title: "Options, one chosen", body: "Several options, iterated with the requirements engineer and the PM." },
+    { drawing: "figma", tool: "Figma", mark: "figma", file: "FOX v3 library", title: "Redrawn on FOX components", body: "Every value is a variable, and every component has Code Connect." },
+    { drawing: "code", tool: "Claude Code", mark: "claude", file: "Figma MCP", title: "Built to my spec, through MCP", body: "Claude Code reads the frame and implements the specification I write." },
+    { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "fox-card", title: "Storybook is the contract", body: "Every state has a story, and design and engineering both check against it." },
+    { drawing: "chromatic", tool: "Chromatic", mark: "chromatic", file: "snapshots", title: "Snapshots against the frames", body: "Visual regression on every pull request; I check the diff against the intent." },
+    { drawing: "merge", tool: "GitHub", mark: "github", file: "pull request", title: "I review and merge", body: "Against the frames and the acceptance criteria, before anything ships." },
+    { drawing: "nexus", tool: "Nexus", mark: "sonatype", file: "package", title: "Versioned on Nexus", body: "Product teams install the package; nobody redraws it." },
+    { drawing: "shipped", tool: "APplus", mark: "", file: "Analytics", title: "Shipped, six times", body: "The same card on the Analytics dashboard, and five more products that install FOX." },
   ],
   tools: [
     { name: "Figma", mark: "figma", what: "library, Make, MCP, Code Connect" },

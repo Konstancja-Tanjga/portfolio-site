@@ -70,3 +70,24 @@ Not changed: dashboard-detail keeps the earlier export, because the v3 section h
 | clips as bare video | every clip inside the MacBook frame (`frame: "macbook"` on video), like the stills | her request |
 | sign-off still "The AI Data Analyst names the cause with the number" | her AI Data Analyst recording (62 s) in a MacBook frame: question, answer, fragment, detail thread, Apply | her request, 13 October 2026 |
 | (no clip) | her Build new query recording (46 s) in a MacBook frame, First prototypes, after the data model clip | her request, 13 October 2026 |
+
+## 25 October 2026: rebuilt for the hiring manager
+
+Review from the reader's chair: 25 000 px, 3 300 visible words, the method spread over six chapters, four sentences repeated three or four times, eight maxims. Rebuilt on branch `bi-rebuild`.
+
+| Before | After | Rule |
+| --- | --- | --- |
+| headline "Business Intelligence" | "APplus Analytics", as the tab, the home tile and the title say | one name for the product |
+| 01 pull quote on tools and handoff | removed; the sheet in 06 carries it | no claim twice |
+| 02 personas standfirst on the numbering | "Four composites, drawn from how customers used the old BI tool and from the eight validation sessions; the quotes are paraphrases, not transcripts." | every claim traceable: say what the quotes are. To confirm with Konstancja |
+| 05 maxim "A generated prototype is cheap enough to throw away…" | a standfirst saying the same once | at most two maxims on the page |
+| 06 passage (Bitbucket then GitHub) + fox-dialog `code` block | a `sheet` block: Lovable audit, Codex and Claude prototype, Figma with REQ sign-off, Storybook v3.0, Nexus, GitHub review, MCP write-back, shipped; title block with tools, stack, governance and the repository | the method in one picture, in the home page's language; the code block said nothing about the designer |
+| 06a Screen architecture (five annotated folders with px sizes and layer stacks) | chapter dropped; its two rule screens (R2 side sheet, R6/R7 pivot) open 07 | reference for engineers, not an argument for a hiring manager; kept in git history |
+| 07 Home shot, Dashboards/Analyses duo, Data models/Settings duo | removed | the same screens are in the 01 carousel |
+| 08 "Three use cases" with Queries | "Two use cases": AI Data Analyst and Data models | Queries repeated Decision 3 and the queries carousel slides |
+| 09 maxim + `loop` ring | standfirst and the three baked-in requirements as `flow` | the loop repeated the sheet |
+| 10 maxim | removed | as above |
+| 11 second `stats` block (9 months, 7 people, 1 designer) and "8 validation sessions" tile | removed | already in the metadata strip and "In short" |
+| "the implementation is the developers' code on the FOX package" (4x), "8 validation sessions" (5x), "the only designer" (3x) | 0x, 4x in four different roles, 2x | no sentence twice |
+
+Result: 22 000 px, 2 950 visible words, 36 images, 2 maxims. Still open from the review: a user or business number after release (none measured yet), the chapter spacing, and a line about the week-to-week work with the PM and the requirements engineer (not on record).
