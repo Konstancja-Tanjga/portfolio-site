@@ -598,13 +598,17 @@
 }
 .brief__shot img {
   display: block;
-  width: 130%;
-  max-width: none;
-  height: auto;
-  transform: translate(-11.4%, -3.4%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
   transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.brief__decision:hover .brief__shot img, .brief__decision:focus-within .brief__shot img { transform: translate(-11.4%, -3.4%) scale(1.03); }
+.brief__decision:hover .brief__shot img, .brief__decision:focus-within .brief__shot img { transform: scale(1.03); }
+/* A MacBook export: the screen is 76.9% of the width, from 11.4% in and
+   3.4% down, so the frame is cropped away by those numbers. */
+.brief__shot--macbook img { width: 130%; max-width: none; height: auto; object-fit: unset; transform: translate(-11.4%, -3.4%); }
+.brief__decision:hover .brief__shot--macbook img, .brief__decision:focus-within .brief__shot--macbook img { transform: translate(-11.4%, -3.4%) scale(1.03); }
 .brief__shot:focus-visible { outline: 2px solid var(--kt-sand); outline-offset: -2px; }
 @media (max-width: 56rem) { .brief__row { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .brief__row, .brief__decision { opacity: 1; transform: none; transition: none; } }

@@ -46,3 +46,35 @@ Not done, and why:
 - No `hotspots`: no audit or benchmark screen exists.
 - No `joint`: the file holds no reflection.
 - Two facts on the structure board could settle open points from the first pass, and were not written into the brief: the board dates stage 1 to 11 June 2025 (the Period row says 2025 only), and it says "five participants plus me as facilitator", which answers whether the five include the facilitator. The board also says the second session started from twelve submissions, against five participants; left off the page until Konstancja confirms the count.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review as a hiring manager, skimming by scroll:
+
+1. Good: the lead says the problem and the result in two sentences, and the boards are typeset well enough to read as the argument.
+2. Good: the method has a named source (IFTF, the certificate on the last board), and the chosen matrix board says why that pair won.
+3. Eleven chapters for ten boards, one board each: the jump bar is longer than the story, and every heading repeats the title typeset on the board below it.
+4. "In short" had Context and "Period and team" rows that repeat the lead and the metadata strip, and no pictures; the three decisions read as three sentences.
+5. The `flow` in 02 and the structure board under it tell the same three stages twice, the board with its minutes.
+6. The `stats` row in 09 (3, 5, 6, 2) repeats the metadata strip and the "What it produced" board, which prints its own three numbers.
+7. The boards are tall (1 801 by 2 154 up to 1 801 by 5 217): fully loaded, the page was 31 500 px at 1440 wide, not the 12 000 px a lazy measure reports.
+8. The role is clear (designed, facilitated); the tools are not on the page at all, and the study is a workshop, so a tool chain is not something to add.
+9. What is reference: the structure board with its minutes, and the "Where the method comes from" board. A first pass does not need either.
+10. The six matrices and the chosen matrix are two views of one artefact; workshop one's board and "what the six groups asked for" are two boards of one session. Peers, stacked.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team; no pictures | 00: What, Problem, My role, three decisions each with the board that shows it (ch03 to #workshop-one, ch06 to #matrices, ch07 to #jobs), Outcome | the sixty-second page; the meta strip already states period, participants, and role, so no "Period and team" row |
+| Problem row: "two arguments it could not close by discussion" | the two arguments named: tasks or modules as the entry point, and how far the interface adapts to its user | read off the brief board (ch01); the old row said there were arguments without saying which |
+| 01 caption: the lead repeated | the two arguments, and that both were bets nobody in the room could evidence | the lead is four screens above; the board's own words |
+| 02: `flow` of three stages with long bodies, then the structure board open | `flow` with one-sentence bodies and the homework note; the structure board in a `fold` "The three stages, block by block" | the same process twice; the board with every block's minutes is reference |
+| 03 "Inside workshop one" and 04 "What all six groups asked for", one board each | one chapter `workshop-one` with `tabs` "The board", "What six groups asked for"; maxim from the board: "Preparation is not admin work" | two boards of one session, equal rank; id `crosscutting` dropped |
+| 05 "Six matrices, one chosen" and 06 "The matrix that decided it", one board each | one chapter `matrices` with `tabs` "All six", "The chosen one"; maxim from the board: "Choosing the axes is the whole method" | two views of one artefact; id `the-matrix` dropped |
+| 07 jobs, 08 off-site: captions that repeated the headings | 05 jobs, 06 offsite, renumbered; captions say what the board shows (the three columns and the verdict; owners and dates, mobile left open) | consecutive numbers; captions as fragments |
+| 09 "What it produced": `stats` (3, 5, 6, 2) then the board | 07 `produced`: the board alone | the stats repeated the meta strip and the board's own numbers |
+| 10 "Where the method comes from", its own chapter | a `fold` at the end of 07, "Where the method comes from: the Institute for the Future" | a method is reference on a first pass; id `method` dropped |
+| no sheet | no sheet | no tool chain is on record for a workshop (a FigJam board, a room, a whiteboard); nothing to draw without inventing it |
+
+Numbers, every image loaded, at 1440 wide: 31 538 px to 21 463 px; 714 to 740 visible words (the three decision cards and two maxims are new, the stats, the standfirsts and the long captions are gone); 11 chapters to 8; 12 image blocks to 13 image elements (the three decision cards reuse three boards; ten boards still on the page, two of them folded, two behind a second tab). At 390 wide: 16 687 to 13 702 px, no horizontal scroll. The lazy measure the first batch used reported 12 264 px before, which is what the page is before the boards load.
+
+Open for Konstancja: the boards are what the page is made of, and they are tall. The real cut would be shorter exports (each board's prose as text blocks, the FigJam screenshots and whiteboard photos as the images), which is Figma work, not a content edit. Also still open from the earlier passes: whether the five participants include the facilitator (the structure board says "five participants plus me"), the twelve submissions against five participants, and the 11 June 2025 date of stage 1.

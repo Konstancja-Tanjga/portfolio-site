@@ -84,19 +84,19 @@ export const bi: CaseStudy = {
               key: "Decision 1",
               value:
                 "The surface follows the scope of what is acted on. Nine rules give every action type exactly one surface.",
-              shot: { src: `${D}/analysis-sheet-1600.webp`, alt: "Graph view with the render side sheet open", to: "#sign-off" },
+              shot: { frame: "macbook", src: `${D}/analysis-sheet-1600.webp`, alt: "Graph view with the render side sheet open", to: "#sign-off" },
             },
             {
               key: "Decision 2",
               value:
                 "A follow-up question to the AI analyst is a branch with two exits, apply or discard, so the analysis never changes without a stated reason.",
-              shot: { src: `${D}/analyst-thread-1600.webp`, alt: "A detail thread beside the main analysis", to: "#use-cases" },
+              shot: { frame: "macbook", src: `${D}/analyst-thread-1600.webp`, alt: "A detail thread beside the main analysis", to: "#use-cases" },
             },
             {
               key: "Decision 3",
               value:
                 "Reach, authorship and join type are printed on the object itself. Nobody has to open a dialog to learn who can see a query.",
-              shot: { src: `${D}/models-relationship-1600.webp`, alt: "A join stated on the model canvas", to: "#use-cases" },
+              shot: { frame: "macbook", src: `${D}/models-relationship-1600.webp`, alt: "A join stated on the model canvas", to: "#use-cases" },
             },
             {
               key: "Outcome",

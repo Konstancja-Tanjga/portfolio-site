@@ -30,7 +30,7 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 | meta | Metadata strip | `MetaStrip` | Role, team, period, stack, launch, product context. Facts only, each traceable. |
 | 00 | In short | `brief` | What, Problem, My role, Decision 1 to 3, Outcome. Each row one sentence, at most 25 words; nothing the metadata strip already says. Each decision carries the screen that shows it taken (`shot`, a device export; the card crops the frame away) and links to the chapter that argues it. This is the sixty-second page: a reader who stops here has the product, the problem, the three decisions as pictures, and the result. |
 | 01 | What it is | `passage` + `carousel` | One sentence on what it is, then every part of the application, one screen per slide. The role is in 00; it is not listed again here. |
-| 01a | Why this is a hard brief | `points` | Three to five constraints, hardest first, each a bold claim and one reason. |
+| 01a | Why this is a hard brief | `points` | Optional. Three to five constraints, hardest first, each a bold claim and one reason. Dropped when the constraints are already the Problem row of 00 and the hotspots of 02. |
 | 02 | Who it is for | `personas` | Two to four people, named by role, stacked horizontally. State of mind before task list. |
 | 03 | Discovery and research | `points` + folded `shot` | What was found, as bullets. Diagrams folded, opened on demand. |
 | 04 | What the audit asked | `duo` with `hotspots` | The questions, as speech bubbles on the screens that provoked them. Seven questions, seven decisions. |

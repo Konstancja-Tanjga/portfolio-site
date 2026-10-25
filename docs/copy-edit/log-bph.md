@@ -65,3 +65,47 @@ Not done, and why:
 - The chapter 01 carousel stays at three slides (catalogue, template, installed boards): there is no fourth part of the Hub on record.
 - `concept.png` stays unfolded: it shows the installed and available boards rather than explaining them.
 - The two audiences stay a `spec`, not `personas`, for the reason in the first log.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, skimming by scroll (18 137 px, 2 086 visible words, 11 chapters, 13 images):
+
+1. The cover, the lead, and the old-modal shot with its four hotspots say the problem in one screen; good.
+2. "In short" had eight rows and no picture; Context repeated the lead and Period and team repeated the metadata strip.
+3. The role was said four times: meta Role, meta Team, the "My role and scope" row, and the "What I owned" bullets in 01.
+4. The two FOX versions, the tools, and the three Hub components were spread over an exploded screen, a passage, points, an evolution, and a spec table in 06, with no picture of how the work was done.
+5. The three screens of the product appeared three times each: the 01 carousel, the 07 concept shot and duo, and the two use-case shots on top of the dossier covers.
+6. Chapter 05 "First prototypes" restated the answers in the 04 table (entry point, search, what a card says).
+7. Four stats blocks: two repeated the metadata strip, one repeated the chapter's own bullets.
+8. Four maxims, the kit allows two.
+9. The award passage in 10 repeated the Product context row of the meta strip.
+10. Decisions had no pictures and no link to the chapter that argues them.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team (eight rows) | What, Problem, My role, Decision 1 to 3 with shots, Outcome (seven rows, each at most 25 words) | the sixty-second page; the meta strip states period and team |
+| 00 decisions as text | Decision 1: `device/grid-1600.webp` (macbook), to `#what-the-audit-asked`; Decision 2: `screens/concept.png`, to `#concept`; Decision 3: `device/detail-1600.webp` (macbook), to `#use-cases` | each decision as the screen that shows it taken |
+| 01 maxim, standfirst "What the Hub is and what I owned on it", "What I owned" points | standfirst "The Hub's three parts, one screen per slide."; points removed; carousel bodies as fragments | the role is in 00 and in the meta strip; two maxims at most |
+| 01a maxim "Installing into the Board Designer had to keep working…" | removed; the first point says it | two maxims at most |
+| 02 spec, full sentences | the same two rows as fragments | one line per field |
+| 03 maxim; four points; stats (6 columns, 5 findings, 1 product, 9 tags) | maxim as standfirst; three points (five findings folded into the audit point; "six columns" is in the lead sentence); stats removed | the numbers were the chapter's own bullets said again |
+| 04 standfirst; spec rows as sentences | maxim "The first approved change was one line in the side drawer." (from 05); rows as fragments; the entry-point row carries "below Board Designer and Process Designer; nothing else in the drawer moved"; the search row carries the nine process-area tags | 05 folded into 04 |
+| 05 "First prototypes" `flow` (three stages, the nine-tags note) | chapter dropped; its facts in the 04 table | the stages were the 04 answers restated; Decision 1 now links to 04 |
+| 06 passage + points (three Hub pieces, the rest is FOX, library first) + `evolution` open + tools `spec` | `exploded` kept; a `sheet`: Figma audit board (old-modal image), Figma Make concept (concept image), Figma sign-off, Storybook FOX v3.0, Bitbucket merge, APplus shipped (grid-flat image); `evolution` inside a `fold` "FOX under the product: v2.3 to v3.0" | the method in one picture; the system's history is reference |
+| 06 evolution entries as full sentences | the bi.ts v2.3 and v3.0 fragments, the Hub's own `moved` line kept | fragments where a sentence adds nothing |
+| 07 passage "The entry carries the decision", concept `shot`, `duo` of grid and detail | the passage in the standfirst; one `tabs` block: Concept, Catalogue, Template | peer screens, one screen of scroll |
+| 08 maxim "Both protect the thing the old modal already did well" | in the standfirst | two maxims at most |
+| 08 each dossier tile: a `shot` of the screen, then the use case | the use case only; the cover carries the screen | the same screen was the tile's cover and the 01 carousel |
+| 08 flow steps and conditions as sentences | fragments | step bodies as fragments |
+| 10 second stats (13 months, 6 people, 2 FOX versions); award passage | removed | the meta strip says both |
+| 10 "What it adds up to" | n "09" after the drop of 05, then "08" | consecutive numbering |
+| chapter n: 00, 01, 01a, 02, 03, 04, 05, 06, 07, 08, 10 | 00, 01, 01a, 02, 03, 04, 05, 06, 07, 08 | consecutive; every id kept |
+
+Not done, and why:
+
+- No Nexus station. The file names Nexus only in the FOX v3.0 evolution text copied from bi.ts, not among the Hub's tools, and the `nexus` drawing prints "six installs", an Analytics fact.
+- No Chromatic or Codex station. Both are listed as tools in the file (the old 06 spec) with nothing on record about what either did on the Hub; they stay in the sheet's tool strip with a short `what`.
+- The 04 findings table renders one row and "Show more: 4 more" (the `spec` block's own behaviour); the hotspots on the screen above carry the same four questions, so the first pass still sees them.
+- The exploded screen stays (kept at Konstancja's request); it is about 2 500 px of the 16 700.
+
+Result: 16 702 px at 1440 (from 18 137), 1 683 visible words (from 2 086), 10 chapters (from 11), 17 images in the DOM (from 13: the three decision shots and the three sheet images added, the three 07 and 08 shots removed), 2 maxims (from 4). `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 390.

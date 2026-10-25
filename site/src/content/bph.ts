@@ -65,42 +65,40 @@ export const bph: CaseStudy = {
           kind: "brief",
           rows: [
             {
-              key: "Context",
+              key: "What",
               value:
-                "The Best Practice Hub is a library of over 50 field-tested Flowboard templates inside APplus ERP. A customer installs one into a running system instead of drawing the process from scratch.",
+                "A library of over 50 field-tested Flowboard templates inside APplus ERP; a customer installs one instead of drawing the process from scratch.",
             },
             {
               key: "Problem",
               value:
-                "Customers installed templates from a modal table inside the Board Designer: no search, no filter, a version dropdown on every row, and status as an unlabelled dot.",
+                "Templates were installed from a modal table in the Board Designer: no search, no filter, a version dropdown per row, status as an unlabelled dot.",
             },
             {
-              key: "My role and scope",
+              key: "My role",
               value:
-                "The only designer on the product, with two developers, an architect, a requirements engineer, and a PM. The audit of the old modal, the benchmark, the entry point, the card and list concepts, the user stories designed and signed off, and the components the Hub added to FOX.",
+                "The only designer. The audit of the old modal, the benchmark, the entry point, the card and list concepts, the signed-off user stories, the Hub's FOX components.",
             },
             {
               key: "Decision 1",
-              value: "One entry point of its own: a link in the side drawer, below Board Designer and Process Designer.",
+              value: "The Hub becomes a page of its own, opened from a link in the side drawer, not a dialog behind an import action.",
+              shot: { frame: "macbook", src: `${D}/grid-1600.webp`, alt: "The catalogue as a page of its own, with Explore and Installed tabs and a filter field", to: "#what-the-audit-asked" },
             },
             {
               key: "Decision 2",
               value:
-                "The card carries the decision: version, the state of that version against the system, and documentation per version. Installed boards with an update available sort first.",
+                "The card carries the decision: version, its state against the system, documentation per version. Installed boards with an update available sort first.",
+              shot: { src: `${S}/concept.png`, alt: "Installed boards with their state and the update menu open on one of them", to: "#concept" },
             },
             {
               key: "Decision 3",
-              value: "Installing from the new Hub costs no extra step compared with the old modal.",
+              value: "Installing from the new Hub costs no extra step compared with the old modal: version and install button sit side by side.",
+              shot: { frame: "macbook", src: `${D}/detail-1600.webp`, alt: "A template's detail view with the latest version and Install now side by side", to: "#use-cases" },
             },
             {
               key: "Outcome",
               value:
-                "Shipped inside APplus ERP. Evidence before release: an annotated audit of the old screen, a benchmark of comparable libraries, and reviews with the PM and subject-matter experts. Use after release was not measured.",
-            },
-            {
-              key: "Period and team",
-              value:
-                "August 2024 to August 2025, thirteen months. Six people: two developers, an architect, a requirements engineer, a PM, and me.",
+                "Shipped inside APplus ERP. Evidence before release: the annotated audit, the benchmark, reviews with the PM and subject-matter experts. Use after release not measured.",
             },
           ],
         },
@@ -110,29 +108,19 @@ export const bph: CaseStudy = {
       id: "what-it-is",
       n: "01",
       heading: "What it is",
-      maxim: "A catalogue you can narrow, judge, and install from, without leaving the screen.",
-      standfirst: "What the Hub is and what I owned on it, then its parts, one screen per slide.",
+      standfirst: "The Hub's three parts, one screen per slide.",
       blocks: [
         {
           kind: "passage",
           html:
-            "<p>The Best Practice Hub is <strong>a library of ready-made process templates inside APplus ERP</strong>: over 50 field-tested Flowboard templates for purchasing, production, warehousing, and accounting. A customer installs one into a running system instead of drawing the process from scratch, so the work is configuration rather than custom code.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>The audit</strong> of the old modal, action by action, and <strong>the benchmark</strong> of comparable libraries.",
-            "<strong>The entry point</strong>, and <strong>the card and list concepts</strong> for the catalogue.",
-            "<strong>The user stories</strong>, designed and signed off; two of them are on this page.",
-            "<strong>The components the Hub added to FOX</strong>: proposed, built, and published in the library before the product used them.",
-          ],
+            "<p>The Best Practice Hub is <strong>a library of ready-made process templates inside APplus ERP</strong>: over 50 field-tested Flowboard templates for purchasing, production, warehousing, and accounting. Installing one is configuration, not custom code.</p>",
         },
         {
           kind: "carousel",
           items: [
-            { src: `${D}/grid-2400.webp`, frame: "macbook", title: "The catalogue", body: "Every template is a card with its process area, complexity, a short description, and an install action." },
-            { src: `${D}/detail-2400.webp`, frame: "macbook", title: "A template", body: "The latest version and one install button side by side, what the template includes, documentation per language, and the previous versions underneath." },
-            { src: `${S}/concept.png`, title: "Installed boards", body: "Each installed board with its documentation language and its state against the system; the update menu lists the versions it can move to." },
+            { src: `${D}/grid-2400.webp`, frame: "macbook", title: "The catalogue", body: "A card per template: process area, complexity, a short description, install." },
+            { src: `${D}/detail-2400.webp`, frame: "macbook", title: "A template", body: "Latest version beside one install button; documentation per language; previous versions underneath." },
+            { src: `${S}/concept.png`, title: "Installed boards", body: "Each with its documentation language and its state against the system; the update menu lists the versions it can move to." },
           ],
         },
       ],
@@ -141,7 +129,6 @@ export const bph: CaseStudy = {
       id: "hard-brief",
       n: "01a",
       heading: "Why this is a hard brief",
-      maxim: "Installing into the Board Designer had to keep working exactly as it did, for new Flowboards and for updates.",
       blocks: [
         {
           kind: "passage",
@@ -151,7 +138,7 @@ export const bph: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>The install could not cost one step more than the old modal.</strong> A redesign that makes the primary action slower is a regression, however much better it looks.",
+            "<strong>The install could not cost one step more than the old modal.</strong> A redesign that slows the primary action is a regression, however it looks.",
             "<strong>Every template has versions</strong>, and a customer may need an older release on purpose.",
             "<strong>Each version has its own documentation</strong>, so documentation belongs to the version, not to the board.",
           ],
@@ -163,7 +150,7 @@ export const bph: CaseStudy = {
       n: "02",
       heading: "Who it is for",
       standfirst:
-        "Two audiences meet on one screen. APplus runs at over 2 000 customers, mostly mid-sized manufacturers with 50 to 1 000 employees.",
+        "Two audiences on one screen. APplus runs at over 2 000 customers, mostly mid-sized manufacturers with 50 to 1 000 employees.",
       blocks: [
         {
           kind: "spec",
@@ -171,15 +158,15 @@ export const bph: CaseStudy = {
             {
               key: "Installs",
               value:
-                "An APplus consultant or a customer-side administrator who sets a workflow up. Searches the library, checks whether a template fits their APplus version, and installs it.",
+                "An APplus consultant or a customer-side administrator. Searches the library, checks whether a template fits their APplus version, installs it.",
             },
             {
               key: "Publishes",
               value:
-                "The person at Asseco who publishes and maintains the templates. Edits the same cards in place: name, process-area tags, description, documentation links, version.",
+                "The person at Asseco who maintains the templates. Edits the same cards in place: name, process-area tags, description, documentation links, version.",
             },
           ],
-          caption: "The installer needs to judge a template quickly; the publisher needs the card to say exactly what was published.",
+          caption: "The installer has to judge a template quickly; the publisher needs the card to say exactly what was published.",
         },
       ],
     },
@@ -187,7 +174,7 @@ export const bph: CaseStudy = {
       id: "audit",
       n: "03",
       heading: "Discovery and research",
-      maxim: "Before the rework, the Best Practice Hub was a modal dialog inside the Board Designer.",
+      standfirst: "Before the rework, the Hub was a modal dialog inside the Board Designer.",
       blocks: [
         {
           kind: "passage",
@@ -197,19 +184,9 @@ export const bph: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>Six columns.</strong> Name, description, installed version, status, available versions, and action.",
-            "<strong>The audit, in place.</strong> I walked the existing screen action by action and annotated it on the board.",
-            "<strong>The benchmark.</strong> Products that solve the same structural problem: a large catalogue, versioned items, and an install step that must not break what is already running.",
-            "<strong>Reviews.</strong> The findings went through reviews with the PM and subject-matter experts.",
-          ],
-        },
-        {
-          kind: "stats",
-          items: [
-            { value: "6", label: "columns in the old table: name, description, installed version, status, available versions, and action" },
-            { value: "5", label: "audit findings, each answered by a rule in chapter 04" },
-            { value: "1", label: "product benchmarked step by step: the Adobe Creative Cloud desktop app" },
-            { value: "9", label: "process-area tags, taken from the product itself" },
+            "<strong>The audit, in place.</strong> I walked the existing screen action by action and annotated it on the board; five findings, each answered by a rule in chapter 04.",
+            "<strong>The benchmark.</strong> A product with the same structural problem: a large catalogue, versioned items, and an install that must not break what is already running.",
+            "<strong>Reviews</strong> of the findings with the PM and subject-matter experts.",
           ],
         },
         {
@@ -224,7 +201,7 @@ export const bph: CaseStudy = {
             { x: 56, y: 92, text: "Progress shown in place, with Cancel." },
           ],
           caption:
-            "Benchmark, step by step: how the Adobe Creative Cloud desktop app lists its catalogue, announces updates, and runs an update with a confirmation dialog.",
+            "Benchmark, step by step: the Adobe Creative Cloud desktop app listing its catalogue, announcing updates, and running one behind a confirmation dialog.",
         },
       ],
     },
@@ -232,8 +209,9 @@ export const bph: CaseStudy = {
       id: "what-the-audit-asked",
       n: "04",
       heading: "What the audit asked",
+      maxim: "The first approved change was one line in the side drawer.",
       standfirst:
-        "The questions, pinned to the places on the old modal that raised them. The table says what answered each one.",
+        "The questions, pinned to the places on the old modal that raised them; the table says what answered each one.",
       blocks: [
         {
           kind: "shot",
@@ -252,133 +230,130 @@ export const bph: CaseStudy = {
           kind: "spec",
           caption: "What the audit found, and what answered it.",
           rows: [
-            { key: "No entry point of its own; the Hub sat behind a menu action", value: "A Best Practice Hub link in the side drawer, opening in a new tab" },
-            { key: "Nothing searchable or filterable", value: "Text search over name and description, with tags and complexity as filter chips" },
-            { key: "A version dropdown on every row", value: "The version moves onto the card, next to the state of that version against the system" },
+            { key: "No entry point of its own", value: "A Best Practice Hub link in the side drawer, below Board Designer and Process Designer, opening in a new tab; nothing else in the drawer moved" },
+            { key: "Nothing searchable or filterable", value: "Text search over name and description; complexity and the nine process-area tags from the product itself as filter chips" },
+            { key: "A version dropdown on every row", value: "The version on the card, next to its state against the system" },
             { key: "Status as an unlabelled dot", value: "Labelled states: up to date, update available, legacy version" },
-            { key: "Documentation not tied to a version", value: "A language select per version, because documentation exists per version, not per board" },
+            { key: "Documentation not tied to a version", value: "A language select per version" },
           ],
-        },
-      ],
-    },
-    {
-      id: "exploration",
-      n: "05",
-      heading: "First prototypes",
-      maxim: "The first approved change was one line in the side drawer.",
-      blocks: [
-        {
-          kind: "flow",
-          stages: [
-            {
-              title: "An entry point",
-              body: "A Best Practice Hub link in the side drawer, below Board Designer and Process Designer, opening in a new browser tab. Nothing else in the drawer moved.",
-            },
-            {
-              title: "Narrowing the catalogue",
-              body: "How you get from over 50 templates to the few that fit: text search, process-area tags, and complexity.",
-            },
-            {
-              title: "What one item must say",
-              body: "How much a single card has to tell you before you commit to installing it: version, state against the system, documentation.",
-            },
-          ],
-          note:
-            "The process areas came from the product itself: nine German tags, from Produktion and Lager und Logistik through to Qualitätsmanagement and Projektverwaltung.",
         },
       ],
     },
     {
       id: "design-system",
-      n: "06",
+      n: "05",
       heading: "Design system",
       standfirst:
-        "The project started on FOX 2.3 and moved to FOX 3.0 part-way through. I lead FOX, Asseco's design system; the 3.0 migration I did with one other designer, so on this product I was both a consumer of the system and the person changing it.",
+        "The screen in its pieces, then how I worked on this product, drawn: one template card through the tools it passed. The project started on FOX 2.3 and moved to FOX 3.0 part-way through; I lead FOX, so on this product I was both a consumer of the system and the person changing it.",
       blocks: [
         { kind: "exploded", screen: hubExploded },
         {
-          kind: "passage",
-          html:
-            "<p>The screens are assembled from <strong>named, reusable pieces rather than one-off layouts</strong>.</p>",
+          kind: "sheet",
+          sheet: {
+            tools: [
+              { name: "Figma", mark: "figma", what: "the audit board, the signed-off screens" },
+              { name: "Figma Make", mark: "figma", what: "the concept as a prototype" },
+              { name: "Storybook", mark: "storybook", what: "FOX v3.0, the library as code" },
+              { name: "Bitbucket", mark: "", glyph: "Bb", what: "pull requests" },
+            ],
+            stations: [
+              { tool: "Figma", mark: "figma", file: "audit board", title: "The old modal, audited", body: "Four questions pinned where they arose; five findings, each answered by a rule.", image: { src: `${S}/old-modal.webp`, alt: "The legacy import modal: a table with a version dropdown on every row" } },
+              { tool: "Figma Make", mark: "figma", file: "concept", title: "The concept, as a prototype", body: "Installed boards with their state on top, available boards as cards below.", image: { src: `${S}/concept.png`, alt: "The concept prototype: installed boards with their state, available boards as cards" } },
+              { drawing: "figma", tool: "Figma", mark: "figma", file: "grid · detail · sign-off", title: "Signed off", body: "The catalogue and the template, the two screens the use cases are built on." },
+              { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "FOX v3.0", title: "Library first, product second", body: "BPH Card, card grid BPH, and secondary app bar BPH published in the library before the product used them. The rest is FOX: menu, select, tooltip." },
+              { drawing: "merge", lines: ["Storybook", "Component API", "The review gate"], tool: "Bitbucket", mark: "", file: "pull request", title: "Through the review gate", body: "Tokens, component API, and the review gate are mine on FOX." },
+              { tool: "APplus", mark: "", file: "Best Practice Hub", title: "Shipped inside APplus ERP", body: "The catalogue as it runs: Explore and Installed, a filter field, a card per template.", image: { src: `${S}/grid-flat.png`, alt: "The shipped catalogue of the Best Practice Hub" } },
+            ],
+            block: [
+              ["Sheet", "How I worked on the Best Practice Hub"],
+              ["Drawn for", "One template card, from the audited modal to the shipped catalogue"],
+              ["Governed by", "five audit findings, each answered by a rule; FOX v3.0 tokens and component API; the review gate"],
+              ["Repository", "Bitbucket"],
+            ],
+          },
         },
         {
-          kind: "points",
-          items: [
-            "<strong>Three pieces are the Hub's own:</strong> BPH Card, card grid BPH, and secondary app bar BPH.",
-            "<strong>The rest is FOX:</strong> the menu, the select, and the tooltip.",
-            "<strong>Library first, product second.</strong> Anything the Hub needed that 3.0 did not have yet was proposed, built, and published in the library before the product used it.",
-          ],
-        },
-        {
-          kind: "evolution",
-          items: [
+          kind: "fold",
+          title: "FOX under the product: v2.3 to v3.0",
+          hint: "Open: two versions, what each one changed",
+          blocks: [
             {
-              version: "v2.3",
-              claim: "The file is bound to the code",
-              sourceOfTruth: "Still Figma, but every component is tied to its implementation through Code Connect.",
-              ships: "Figma to Storybook to development, with code-side work written back into the file over MCP.",
-              costs: "The binding is real, the ownership is not: the file still has to be kept honest by hand every time code moves first.",
+              kind: "evolution",
+              items: [
+                {
+                  version: "v2.3",
+                  claim: "The file is bound to the code",
+                  sourceOfTruth: "Still Figma, every component tied to its code through Code Connect.",
+                  ships: "Figma to Storybook to development; code-side work written back over MCP.",
+                  costs: "Binding real, ownership not: the file kept honest by hand whenever code moves first.",
+                },
+                {
+                  version: "v3.0",
+                  claim: "The code is the system",
+                  sourceOfTruth: "Storybook: the library authored, reviewed and versioned as code, published through Nexus.",
+                  ships: "A component changed where it runs; products move a version, not a frame.",
+                  costs: "No file to lean on: reviewing the system means reading a story.",
+                  moved: "What moved: the authority, from the file that describes the system to the code that is it. The Hub's three pieces were published in 3.0 before the product used them.",
+                },
+              ],
             },
-            {
-              version: "v3.0",
-              claim: "The code is the system",
-              sourceOfTruth: "Storybook. The library is authored, reviewed and versioned as code and published as a package through Nexus.",
-              ships: "A component is changed where it runs. Products pick it up by moving a version, not by copying a frame.",
-              costs: "Design loses the comfort of the file. Reviewing the system means reading a story, not opening a page.",
-              moved: "What moved was the authority: from the file that describes the system to the code that is the system. The Hub's three pieces were published in 3.0 before the product used them.",
-            },
-          ],
-        },
-        {
-          kind: "spec",
-          caption: "Tools on this project.",
-          rows: [
-            { key: "design", value: "Figma, Figma Make" },
-            { key: "code", value: "Bitbucket, Codex" },
-            { key: "system", value: "Storybook, Chromatic" },
           ],
         },
       ],
     },
     {
       id: "concept",
-      n: "07",
+      n: "06",
       heading: "Design and sign-off",
       maxim: "If something a customer already relies on can be updated, that is the first thing the screen shows.",
-      standfirst: "The concept for the installed and available boards, then the two signed-off screens the use cases are built on.",
+      standfirst: "The entry carries the decision: every card says what you need to know before you act on it. The concept, then the two signed-off screens, one per tab.",
       blocks: [
-        {
-          kind: "passage",
-          html: "<p><strong>The entry carries the decision.</strong> Every card says what you need to know before you act on it.</p>",
-        },
         {
           kind: "points",
           items: [
             "<strong>An installed board</strong> shows the state of its version against the system, up to date or update available, and an update menu with the versions it can move to.",
             "<strong>Its documentation language</strong> is chosen per version, because documentation exists per version, not per board.",
-            "<strong>An available board</strong> shows its version, complexity, and process area, and says when it needs a newer APplus release.",
-            "<strong>The sort rule:</strong> in installed boards, “installed and update available” sorts first.",
+            "<strong>An available board</strong> shows version, complexity, and process area, and says when it needs a newer APplus release.",
+            "<strong>The sort rule:</strong> among installed boards, “update available” sorts first.",
           ],
         },
         {
-          kind: "shot",
-          width: "wall",
-          src: `${S}/concept.png`,
-          caption:
-            "The concept. Installed boards on top, each with its documentation language and state, and the update menu open on one of them. Available boards below as cards, marked where a template needs a newer APplus release.",
-        },
-        {
-          kind: "duo",
+          kind: "tabs",
+          label: "Concept and signed-off screens",
           items: [
             {
-              src: `${D}/grid-2400.webp`,
-              frame: "macbook",
-              caption: "Signed off: the catalogue. Explore and Installed as tabs, a filter field, and a card per template with its complexity, process area, and install action.",
+              label: "Concept",
+              blocks: [
+                {
+                  kind: "shot",
+                  width: "wall",
+                  src: `${S}/concept.png`,
+                  caption:
+                    "Installed boards on top, each with its documentation language and state, the update menu open on one. Available boards below as cards, marked where a template needs a newer APplus release.",
+                },
+              ],
             },
             {
-              src: `${D}/detail-2400.webp`,
-              frame: "macbook",
-              caption: "Signed off: a template. Latest version and Install now side by side, German and English documentation, and the previous versions with their status.",
+              label: "Catalogue",
+              blocks: [
+                {
+                  kind: "shot",
+                  src: `${D}/grid-2400.webp`,
+                  frame: "macbook",
+                  caption: "Signed off: Explore and Installed as tabs, a filter field, a card per template with complexity, process area, and install action.",
+                },
+              ],
+            },
+            {
+              label: "Template",
+              blocks: [
+                {
+                  kind: "shot",
+                  src: `${D}/detail-2400.webp`,
+                  frame: "macbook",
+                  caption: "Signed off: latest version and Install now side by side, German and English documentation, previous versions with their status.",
+                },
+              ],
             },
           ],
         },
@@ -386,11 +361,10 @@ export const bph: CaseStudy = {
     },
     {
       id: "use-cases",
-      n: "08",
+      n: "07",
       heading: "Two use cases",
-      maxim: "Both protect the thing the old modal already did well: getting a board into the Board Designer.",
       standfirst:
-        "One per area: search and filter, then install and import. Open a tile and the use case unfolds to the right: the screen, the template, the rule it sets.",
+        "One per area, search and filter, then install and import; both protect what the old modal already did well, getting a board into the Board Designer. Open a tile and the use case unfolds to the right.",
       blocks: [
         {
           kind: "dossier",
@@ -400,17 +374,9 @@ export const bph: CaseStudy = {
               n: "01",
               title: "Search and filter",
               maxim: "Multiple tags resolve the same way everywhere.",
-              standfirst: "Goal: narrow the catalogue down to the templates that fit, with words and chips that combine into one list.",
+              standfirst: "Goal: narrow the catalogue to the templates that fit, with words and chips that combine into one list.",
               cover: { src: `${D}/grid-2400.webp`, frame: "macbook" },
               blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/grid-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "The catalogue with the filter field in the app bar. Complexity and process area are printed on every card, so the chips that narrow the list are the same words the cards carry.",
-                },
                 {
                   kind: "usecase",
                   uc: {
@@ -418,19 +384,19 @@ export const bph: CaseStudy = {
                     title: "Narrow the catalogue down to the templates that fit",
                     actor: {
                       name: "The installer",
-                      body: "An APplus consultant or a customer administrator looking for a template for one process area.",
+                      body: "A consultant or a customer administrator looking for a template for one process area.",
                     },
-                    trigger: { body: "A process needs setting up, and a template may already exist for it." },
+                    trigger: { body: "A process needs setting up; a template may already exist for it." },
                     precondition: {
-                      body: "The Hub is open from the side drawer, showing the templates available for the customer's APplus version.",
+                      body: "The Hub open from the side drawer, showing the templates for the customer's APplus version.",
                     },
                     flow: [
-                      { n: "1", text: "Type into search. Text search runs across name and description." },
-                      { n: "2", text: "Add process-area tags and complexity as filter chips. Several tags can be active at once." },
+                      { n: "1", text: "Type into search: name and description." },
+                      { n: "2", text: "Add process-area tags and complexity as chips; several at once." },
                       { n: "3", text: "Search and chips combine into one result list." },
-                      { n: "4", text: "One action resets search and chips together." },
+                      { n: "4", text: "One action resets both." },
                     ],
-                    postcondition: { body: "A short list of templates that match both the words and the chips." },
+                    postcondition: { body: "A short list of templates matching both the words and the chips." },
                     why: "Rejected: a filter whose logic depends on which chip was clicked. AND or OR is a product decision, but if the same selection returned different results in two places, nobody could trust the filter.",
                     rule: "Multiple tags resolve the same way everywhere.",
                   },
@@ -446,34 +412,26 @@ export const bph: CaseStudy = {
               cover: { src: `${D}/detail-2400.webp`, frame: "macbook" },
               blocks: [
                 {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${D}/detail-2400.webp`,
-                  frame: "macbook",
-                  caption:
-                    "The detail view: the latest version and one install button side by side, what the template includes, documentation in German and English, and the previous versions underneath with their status.",
-                },
-                {
                   kind: "usecase",
                   uc: {
                     id: "UC-02",
                     title: "Install a template, or a specific older version",
                     actor: {
                       name: "The installer",
-                      body: "Installing a new Flowboard, or updating one that is already in use.",
+                      body: "Installing a new Flowboard, or updating one already in use.",
                     },
                     trigger: { body: "A template fits, or an installed board shows “update available”." },
-                    precondition: { body: "The installer has picked a template in the catalogue." },
+                    precondition: { body: "A template picked in the catalogue." },
                     flow: [
-                      { n: "1", text: "The detail view shows the latest version and the install action side by side." },
+                      { n: "1", text: "The detail view: latest version and install action side by side." },
                       { n: "2", text: "Install sends the board straight into the Board Designer, as the old modal did." },
-                      { n: "3", text: "The previous-versions table underneath covers the case where a customer deliberately needs an older release." },
+                      { n: "3", text: "The previous-versions table covers a customer who deliberately needs an older release." },
                     ],
                     exits: [
                       { label: "Install latest", text: "One action, no extra step compared with the old modal." },
-                      { label: "Install an older version", text: "Chosen from the previous-versions table, with its own documentation." },
+                      { label: "Install an older version", text: "From the previous-versions table, with its own documentation." },
                     ],
-                    postcondition: { body: "The board is in the Board Designer, installed or updated exactly as before the redesign." },
+                    postcondition: { body: "The board in the Board Designer, installed or updated exactly as before the redesign." },
                     why: "Rejected: a detail view that separates judging a template from installing it. Direct installation into the Board Designer had to keep working as it did, so version and action sit next to each other.",
                     rule: "A redesign must not add a step to the primary action.",
                   },
@@ -486,38 +444,25 @@ export const bph: CaseStudy = {
     },
     {
       id: "results",
-      n: "10",
+      n: "08",
       heading: "What it adds up to",
-      standfirst: "The Hub shipped inside APplus ERP. Product figures are public (applus-erp.de and cobus-concept.de); project figures are mine.",
+      standfirst: "The Hub shipped inside APplus ERP. Product figures are public (applus-erp.de and cobus-concept.de); use after release was not measured.",
       blocks: [
         {
           kind: "stats",
           items: [
-            { value: "2 000+", label: "customers running APplus ERP" },
+            { value: "2 000+", label: "customers running APplus ERP" },
             { value: "50+", label: "field-tested process templates in the Hub" },
             { value: "30", label: "years of APplus in the ERP market" },
           ],
-        },
-        {
-          kind: "stats",
-          items: [
-            { value: "13", label: "months, August 2024 to August 2025" },
-            { value: "6", label: "people on the team, one designer" },
-            { value: "2", label: "FOX versions, 2.3 then 3.0" },
-          ],
-        },
-        {
-          kind: "passage",
-          html:
-            "<p>APplus was named <strong>ERP System of the Year 2025</strong> and took Gold in the User Experience category, awarded in Frankfurt am Main on 13 October 2025, after this work shipped.</p>",
         },
         {
           kind: "joint",
           question: "What will I measure next, and how?",
           answers: [
             "<strong>How long an install takes</strong> from opening the Hub, against the old modal.",
-            "<strong>How many installed boards with “update available” are updated.</strong>",
-            "<strong>Which process-area tags people filter by</strong>, to see whether the nine areas match how customers look for templates.",
+            "<strong>How many boards with “update available”</strong> are updated.",
+            "<strong>Which process-area tags people filter by</strong>, to see whether the nine areas match how customers look.",
           ],
         },
       ],

@@ -8,25 +8,31 @@ import type { CaseStudy } from "./types";
  * (research to tokens to guidelines to a working build) on a brief absurd
  * enough that every shortcut shows. That is what `practice` is for.
  *
- * Cut in October 2026 from about 4700 words on the surface to about 2200: a
- * reader gets the phases, the tools and the reasoning, and opens the rest.
- * Chapters run 00 to 11. The panel files keep their original numbers (ch02 to
- * ch12) because the app repo generates them. The two journeys and the
- * blueprint are three tiles of one dossier under 04, dog mode and human mode
- * two tiles under 08. The three old chapter ids survive as tile ids, and the
- * dossier opens and scrolls to a tile named in the hash, so the deep links
+ * Cut in October 2026 from about 4700 words on the surface to about 2200,
+ * then rebuilt the Analytics way to about 1800: the 00 page carries the three
+ * decisions as pictures, the tool chain is a `sheet` in 07, the research
+ * boards are `tabs` under 02 (the "hard brief" bullets of the old 01a are those
+ * boards' hotspots), the journeys and the blueprint a `fold` under
+ * 04, and the one dossier left is the two modes under 08, which is where the
+ * product's use cases live. Chapters run 00 to 11. The panel files keep their
+ * original numbers (ch02 to ch12) because the app repo generates them. The
+ * two mode tiles keep the old chapter ids `dog-mode` and `human-mode`, and the
+ * dossier opens and scrolls to a tile named in the hash, so those deep links
  * still land.
  *
- * Panels are the same 1800px exports the repo uses, in English. Every chapter
- * that carries one has it; nothing stands as a placeholder.
+ * Panels are the same 1800px exports the repo uses, in English. A phone app,
+ * so no MacBook mockup anywhere.
  */
+
+const W = "/work/tinder-for-chihuahua/wall";
+const P = "/work/tinder-for-chihuahua/photos";
 
 export const chihuahua: CaseStudy = {
   slug: "tinder-for-chihuahua",
   title: "Tinder for Chihuahua",
   what: "A swipe interface for a dichromat with 20/75 vision, whose pointing device is a nose",
   lead:
-    "Karmel and Auri are chihuahuas, and they would like to meet someone who is neither mum nor son. So they got an app, on an old iPhone, and they operate it themselves. Speculative design taken at face value: assume a dog can work a touchscreen, and what is left is not a joke but a hard accessibility brief with published numbers attached.",
+    "Karmel and Auri are chihuahuas, and they would like to meet someone who is neither mum nor son. So they got an app, on an old iPhone, and they operate it themselves. Speculative design taken at face value: assume a dog can work a touchscreen, and what is left is a hard accessibility brief with published numbers attached.",
   status: { state: "live" },
   group: "practice",
   cover: {
@@ -56,42 +62,35 @@ export const chihuahua: CaseStudy = {
           kind: "brief",
           rows: [
             {
-              key: "Context",
-              value:
-                "A personal project: two chihuahuas, an old iPhone 13 Pro Max, and the speculative premise that a dog can operate a touchscreen.",
+              key: "What",
+              value: "A swipe app two chihuahuas work with their noses on an old iPhone 13 Pro Max; a human reads the result.",
             },
             {
               key: "Problem",
-              value:
-                "A dichromat with 20/75 acuity who cannot read, whose pointer is a wet nose, and who cannot say when the design is wrong.",
+              value: "A dichromat with 20/75 acuity who cannot read, whose pointer is a wet nose, and who cannot say when the design is wrong.",
             },
             {
-              key: "My role and scope",
-              value:
-                "Everything: literature research, personas, journeys, blueprint, the Canine Interface Guidelines, the token pipeline, and the PWA.",
+              key: "My role",
+              value: "Everything, alone: research, personas, journeys, blueprint, the Canine Interface Guidelines, the token pipeline, the PWA.",
             },
             {
               key: "Decision 1",
-              value:
-                "The output is a ranked preference signal handed to a human matchmaker, never a match, so v1 is one-sided and local, with no backend.",
+              value: "The app never matches dogs. Its output is a ranked preference signal for a human matchmaker, so v1 is one-sided and local.",
+              shot: { src: `${W}/ch11-human-mode.png`, alt: "The four human-mode screens: the session result as a ranking, candidates, profiles, and setup", to: "#modes" },
             },
             {
               key: "Decision 2",
               value: "Design for Auri, test with Karmel: the older dog sets every threshold, the younger one stress-tests the input.",
+              shot: { src: `${W}/ch03-personas.png`, alt: "The persona board: Karmel, Auri, and Konstancja side by side", to: "#personas" },
             },
             {
               key: "Decision 3",
-              value:
-                "CIG govern dog mode, HIG govern human mode, and every number in both is generated from one token file.",
+              value: "CIG govern dog mode, HIG govern human mode, and every number in both is generated from one token file.",
+              shot: { src: `${W}/ch09-cig.png`, alt: "The generated Canine Interface Guidelines panel, with the palette and the CIG and HIG split", to: "#cig" },
             },
             {
               key: "Outcome",
-              value:
-                "Live as a PWA, source public. The first measured session broke a law rather than the build.",
-            },
-            {
-              key: "Period and team",
-              value: "September 2026. One person; the users are two dogs.",
+              value: "Live as a PWA, source public. The first measured session broke a law, not the build.",
             },
           ],
         },
@@ -109,48 +108,13 @@ export const chihuahua: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>My two chihuahuas gave me a brief: <strong>a kindred spirit who is not each other</strong>. They now have an app, on an old iPhone 13 Pro Max, and they work it themselves.</p>",
-        },
-        {
-          kind: "duo",
-          width: "column",
-          items: [
-            { src: "/work/tinder-for-chihuahua/photos/karmel.jpg", caption: "Karmel, five. The one who will work a screen for a treat." },
-            { src: "/work/tinder-for-chihuahua/photos/auri.jpg", caption: "Auri, twelve, his mother. The one who sets every threshold in the system." },
-          ],
-          caption: "The clients. Only one is reliably motivated.",
+            "<p>My two chihuahuas gave me a brief: <strong>a kindred spirit who is not each other</strong>. I have designed for enterprise users I could not reach; this is the same problem, excuses removed.</p>",
         },
         {
           kind: "thesis",
           label: "The thesis",
           text:
-            "One screen, two users. The dog swipes and expresses a preference about what it sees. The human reads that preference and decides about a meeting. The app never matches dogs: its output is a ranked preference signal handed to a matchmaker, never a “match”.",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>That sentence is why this is buildable.</strong> Every dog-dating app in the benchmark died of the two-sided marketplace. A signal instead of a match makes v1 one-sided and local: no second user, no cold start.",
-            "<strong>I have designed for enterprise users I could not reach.</strong> Same problem, excuses taken away.",
-          ],
-        },
-      ],
-    },
-
-    /* --------------------------------------------------------------- 01a */
-    {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>No feedback channel.</strong> The user cannot say when the design is wrong, so every requirement comes from published research.",
-            "<strong>Two hues carry all the meaning.</strong> A dichromat sees blue and yellow-green; red and green do not exist for him.",
-            "<strong>A quarter of the acuity.</strong> 20/75 against 20/20, so everything is sized by a factor, not by eye.",
-            "<strong>The pointer is a nose.</strong> Wet, multi-point, moving, and far bigger than a fingertip.",
-            "<strong>Two users on one screen.</strong> The dog swipes, the human reads the ranking, and the door between the modes must open for one and not the other.",
-          ],
+            "One screen, two users. The dog swipes and expresses a preference; the human reads it and decides about a meeting. A signal instead of a match is why this is buildable: every dog-dating app in the benchmark died of the two-sided market.",
         },
       ],
     },
@@ -160,72 +124,52 @@ export const chihuahua: CaseStudy = {
       id: "the-user",
       n: "02",
       heading: "Who it is for",
-      maxim: "The user could not be interviewed. He was, however, extremely available for testing.",
       standfirst:
-        "Ten findings from the literature on canine vision and motor behaviour, each paired with the requirement it forces.",
+        "No interviews, no analytics, no way to ask, so the requirements came from the literature on canine vision and motor behaviour, one rule throughout: every finding arrives with a design consequence. Sources in chapter 11.",
       blocks: [
         {
-          kind: "passage",
-          html:
-            "<p>No interviews, no analytics, no way to ask, so <strong>the requirements came from published research</strong>, with one rule: every finding arrives with a design consequence. Sources in chapter 11.</p>",
-        },
-        {
-          kind: "dossier",
+          kind: "tabs",
+          label: "Ten findings, three boards",
           items: [
             {
-              id: "research-see",
-              n: "01",
-              title: "What the dog sees",
-              maxim: "Two hues, a quarter of the acuity, and a faster eye than ours.",
-              standfirst: "Goal: set the palette, the scale and the motion budget from four findings on canine vision, findings 01 to 03 and 10.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-see.png" },
+              label: "What the dog sees",
               blocks: [
                 {
                   kind: "shot",
                   width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch02-research-see.png",
+                  src: `${W}/ch02-research-see.png`,
                   hotspots: [
-                    { x: 48, y: 29, text: "Two hues, and that is the entire palette. Red and green do not exist for this user." },
-                    { x: 48, y: 43, text: "Everything roughly four times bigger: 20/75 against 20/20, a factor of 3.75." },
-                    { x: 48, y: 57, text: "The finding that named the handset, and the one I drew the wrong conclusion from. See chapter 09." },
-                    { x: 48, y: 71, text: "The one claim with no source behind it. Design for Auri rests on the direction of an age effect, not a measured number." },
+                    { x: 48, y: 29, text: "Two hues, the entire palette; no red, no green." },
+                    { x: 48, y: 43, text: "20/75 against 20/20: a factor of 3.75 on everything." },
+                    { x: 48, y: 57, text: "The finding that named the handset, and the wrong conclusion I drew; chapter 09." },
+                    { x: 48, y: 71, text: "The one claim with no source: an age effect, direction known, size not." },
                   ],
-                  caption: "Four findings on vision and their requirements. These are the numbers the app compiles against.",
+                  caption: "Findings 01 to 03 and 10: the palette, the scale, the motion budget. The numbers the app compiles against.",
                 },
               ],
             },
             {
-              id: "research-touch",
-              n: "02",
-              title: "How a nose touches",
-              maxim: "A drag, not a tap, and a wet patch, not a point.",
-              standfirst: "Goal: decide what counts as one swipe, from findings 04 and 05 on gesture and contact.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-touch-cover.png" },
+              label: "How a nose touches",
               blocks: [
                 {
                   kind: "shot",
                   width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch02-research-touch.png",
+                  src: `${W}/ch02-research-touch.png`,
                   hotspots: [
-                    { x: 48, y: 50, text: "The native gesture is a drag, not a tap. The single most consequential finding in the set." },
+                    { x: 48, y: 50, text: "A drag, not a tap: the most consequential finding in the set." },
                   ],
-                  caption: "Two findings on input. The 1500 ms lock and undo as a core function come from here.",
+                  caption: "Findings 04 and 05: a wet patch, not a point. The 1500 ms lock and undo as a core function come from here.",
                 },
               ],
             },
             {
-              id: "research-want",
-              n: "03",
-              title: "What he works for",
-              maxim: "The screen announces the reward. The reward comes from a hand.",
-              standfirst: "Goal: decide what the screen shows, what a swipe means, and what success is, from findings 06 to 09.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch02-research-want-cover.png" },
+              label: "What he works for",
               blocks: [
                 {
                   kind: "shot",
                   width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch02-research-want.png",
-                  caption: "Four findings on attention and reward. A swipe is a preference, never a match.",
+                  src: `${W}/ch02-research-want.png`,
+                  caption: "Findings 06 to 09: attention and reward. The screen announces the reward; a hand gives it. A swipe is a preference, never a match.",
                 },
               ],
             },
@@ -239,50 +183,45 @@ export const chihuahua: CaseStudy = {
       id: "personas",
       n: "03",
       heading: "Two dogs, two thresholds",
-      maxim: "Same species, same dichromacy, different contrast floor. That difference is the entire persona.",
+      standfirst:
+        "One persona called “the dog” would have averaged two thresholds. Same species, same dichromacy, different contrast floor: that difference is the entire persona.",
       blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>One persona called “the dog” would have <strong>quietly averaged two thresholds</strong>. Auri is twelve, and her contrast sensitivity has dropped. One rule follows.</p>",
-        },
-        { kind: "pull", text: "Design for Auri. Test with Karmel." },
         {
           kind: "personas",
           items: [
             {
               n: "01",
               name: "Karmel",
-              shot: { src: "/work/tinder-for-chihuahua/photos/karmel-bieg.jpg" },
-              badge: "PRIMARY SWIPER · THE STRESS TEST FOR INPUT",
-              quote: "He touched it and nothing happened. Sound too quiet. Screen too far away.",
-              context: "Five, male. Dichromat, acuity around 20/75.",
-              goals: ["Novelty, a treat, and your attention", "Someone to love who is not his mother"],
-              breaks: "Quick and agile: the messiest, longest, multi-point nose drags in the house.",
-              must: "Tolerate sloppy input. If his swipe registers, anyone's will.",
+              shot: { src: `${P}/karmel-bieg.jpg` },
+              badge: "PRIMARY SWIPER · STRESS TEST FOR INPUT",
+              quote: "He touched it and nothing happened.",
+              context: "Five, male. Dichromat, acuity about 20/75.",
+              goals: ["Novelty, a treat, your attention", "Someone who is not his mother"],
+              breaks: "The messiest, longest nose drags in the house.",
+              must: "Tolerate sloppy input; if his swipe registers, any will.",
               job: "SWIPE",
             },
             {
               n: "02",
               name: "Auri",
-              shot: { src: "/work/tinder-for-chihuahua/photos/auri-bieg.jpg" },
-              badge: "THE USER THIS APP HAS REAL VALUE FOR",
+              shot: { src: `${P}/auri-bieg.jpg` },
+              badge: "THE USER WITH REAL VALUE AT STAKE",
               quote: "Someone to love who is not her son.",
-              context: "Twelve, Karmel's mother. Same baseline, less contrast sensitivity from an ageing lens.",
-              goals: ["Routine, quiet, and a person nearby", "Cognitive stimulation in old age"],
-              breaks: "Calmer, slower to decide, so she manages fewer cards per session.",
-              must: "Set the floor: minimum contrast, minimum target size, maximum session length.",
+              context: "Twelve, Karmel's mother. An ageing lens, less contrast sensitivity.",
+              goals: ["Routine, quiet, a person nearby", "Something to think about"],
+              breaks: "Slower to decide; fewer cards per session.",
+              must: "Sets the floor: contrast, target size, session length.",
               job: "SET THE FLOOR",
             },
             {
               n: "03",
               name: "Konstancja",
-              badge: "OWNER · OPERATOR · MATCHMAKER",
-              quote: "While the dog works, she rewards; she does not tap.",
-              context: "The only participant who can act on the result.",
-              goals: ["Two less bored dogs, and one real meeting", "A result legible at a glance"],
-              breaks: "Setup in minutes, or the session does not happen.",
-              must: "Keep her hands free. She is the interpreter, and the decision stays hers.",
+              badge: "OWNER · MATCHMAKER",
+              quote: "While the dog works, she rewards. She does not tap.",
+              context: "The only one who can act on the result.",
+              goals: ["Two less bored dogs, one real meeting", "A result legible at a glance"],
+              breaks: "Setup in minutes, or no session.",
+              must: "Hands free; the decision stays hers.",
               job: "INTERPRET",
             },
           ],
@@ -295,70 +234,41 @@ export const chihuahua: CaseStudy = {
       id: "service",
       n: "04",
       heading: "The service",
-      maxim: "The most important moment in the loop is the one the software is not present for.",
       standfirst:
-        "Two journeys and a blueprint, one tile each. The numbers were decided in the blueprint's risk row.",
+        "The most important moment in the loop is the one the software is absent for: the treat comes from a hand. Two journeys and a blueprint set the numbers; the risk that mattered most is below.",
       blocks: [
         {
           kind: "spec",
-          caption: "One risk from the blueprint, and the three decisions it produced.",
+          caption: "One risk from the blueprint's risk row, three decisions.",
           rows: [
             { key: "Risk", value: "A wet nose registers one swipe as three" },
-            { key: "Answer 1", value: "Take the centroid of the contact patch and ignore the number of touch points" },
-            { key: "Answer 2", value: "Require 40 px of travel before anything counts as intent" },
-            { key: "Answer 3", value: "Refuse input for 1500 ms afterwards, and make undo a core function, not a courtesy" },
+            { key: "Answer 1", value: "The centroid of the contact patch counts; the number of touch points does not" },
+            { key: "Answer 2", value: "40 px of travel before anything counts as intent" },
+            { key: "Answer 3", value: "Input refused for 1500 ms afterwards; undo a core function, not a courtesy" },
           ],
         },
         {
-          kind: "dossier",
-          items: [
+          kind: "fold",
+          title: "Two journeys and the service blueprint",
+          hint: "Open: three boards",
+          blocks: [
             {
-              id: "journey-dog",
-              n: "01",
-              title: "The dog's session",
-              maxim: "Eleven steps. Four happen nowhere near the application.",
-              standfirst: "Goal: one session, from the phone going down to the treat, in swimlanes marked by where each step happens.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch04-journey-sesja-psa.png" },
-              blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch04-journey-sesja-psa.png",
-                  caption: "Eleven steps. Four happen nowhere near the application, which is the most unusual property this product has.",
-                },
-              ],
+              kind: "shot",
+              width: "wall",
+              src: `${W}/ch04-journey-sesja-psa.png`,
+              caption: "The dog's session: eleven steps in swimlanes by where each happens. Four happen nowhere near the application.",
             },
             {
-              id: "journey-human",
-              n: "02",
-              title: "The matchmaker",
-              maxim: "Double opt-in, rewritten: one side swipes, the other side is accountable.",
-              standfirst: "Goal: make it structurally true that the app cannot arrange a meeting. It can only report a preference.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch05-journey-swatka.png" },
-              blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch05-journey-swatka.png",
-                  caption: "Five steps, from putting the phone down to a meeting in the park.",
-                },
-              ],
+              kind: "shot",
+              width: "wall",
+              src: `${W}/ch05-journey-swatka.png`,
+              caption: "The matchmaker: five steps from putting the phone down to a meeting in the park. One side swipes, the other is accountable.",
             },
             {
-              id: "blueprint",
-              n: "03",
-              title: "Service blueprint",
-              maxim: "The journey says what happens. The blueprint says what has to hold underneath.",
-              standfirst: "Goal: name the data, the hardware, and the risks under each phase, and answer each risk with a number.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch06-blueprint.png" },
-              blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch06-blueprint.png",
-                  caption: "Six phases across, five lanes down. The support layer names the data and the hardware; the risk layer names the answer.",
-                },
-              ],
+              kind: "shot",
+              width: "wall",
+              src: `${W}/ch06-blueprint.png`,
+              caption: "The blueprint: six phases across, five lanes down. The support layer names the data and the hardware; the risk layer names the answer.",
             },
           ],
         },
@@ -370,34 +280,29 @@ export const chihuahua: CaseStudy = {
       id: "benchmark",
       n: "05",
       heading: "Benchmark",
-      maxim:
-        "The card deck has already run its entire life cycle in dating and in recruitment. Their failures are free.",
+      standfirst:
+        "The card deck has run its whole life cycle in dating and in recruitment. Their failures are free.",
       blocks: [
         {
           kind: "spec",
           caption: "Two families of dog apps, and the empty space between them.",
           rows: [
-            { key: "Social, for dogs", value: "Pawmates, Tindog, BarkHappy: the human operates; the dog is profile content. Produces playdates between owners" },
-            { key: "Toys, for dogs", value: "App for Dog, BetterPawPlay, DOGLi: the dog operates, phone flat. Produces nothing that outlives the session" },
-            { key: "This project", value: "The dog operates, the human interprets. Produces a ranking a human turns into a real meeting" },
+            { key: "Social, for dogs", value: "Pawmates, Tindog, BarkHappy: the human operates, the dog is profile content. Playdates between owners" },
+            { key: "Toys, for dogs", value: "App for Dog, BetterPawPlay, DOGLi: the dog operates, phone flat. Nothing outlives the session" },
+            { key: "This project", value: "The dog operates, the human interprets. A ranking that becomes a real meeting" },
           ],
         },
         {
           kind: "points",
           items: [
-            "<strong>App for Dog sells “big, full-screen buttons, so a curious nose can't miss them”.</strong> The pattern I had derived from gesture research, already validated commercially.",
-            "<strong>Undo is premium in human apps and core here.</strong> A wet nose misfires regularly, so undo is large and immediate.",
-            "<strong>Hinge and Bumble moved away from volume</strong> towards fewer, more considered signals. Hence a deck ceiling of 6 to 12 cards.",
+            "<strong>App for Dog sells “big, full-screen buttons, so a curious nose can't miss them”.</strong> The pattern I derived from gesture research, already validated commercially.",
+            "<strong>Hinge and Bumble moved from volume to fewer, considered signals.</strong> Hence a deck ceiling of 6 to 12 cards, and no “maybe later” pile: it relocates the decision, it saves no work.",
           ],
-        },
-        {
-          kind: "pull",
-          text: "A swipe onto a “maybe later” pile saves no work. It relocates the decision.",
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch07-benchmark.png",
+          src: `${W}/ch07-benchmark.png`,
           folded: true,
           hotspots: [
             { x: 60, y: 23, text: "The human operates; the dog is profile content, not a user." },
@@ -407,7 +312,7 @@ export const chihuahua: CaseStudy = {
             { x: 60, y: 72, text: "Fewer, better, more considered signals: hence a deck ceiling of 6 to 12." },
             { x: 50, y: 87, text: "A swipe onto a “maybe later” pile saves no work. It relocates the decision." },
           ],
-          caption: "The benchmark panel: the two families, and what dating and recruitment already paid to find out.",
+          caption: "The benchmark panel: two families, and what dating and recruitment already paid to find out.",
         },
       ],
     },
@@ -417,22 +322,14 @@ export const chihuahua: CaseStudy = {
       id: "directions",
       n: "06",
       heading: "Three visual directions",
-      maxim: "A direction with no named weakness has not been evaluated, only preferred.",
       standfirst:
-        "The same three screens in each column, so the comparison is between directions, not screens.",
+        "The same three screens in each column, so the comparison is between directions, not screens. A direction with no named weakness has not been evaluated, only preferred.",
       blocks: [
         {
           kind: "shot",
           width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch08-kierunki.png",
-          caption:
-            "Three directions on the same three screens, each with an argument for and against. The rejected two are a record of a decision, not material to build from.",
-        },
-        {
-          kind: "thesis",
-          label: "The winner's weakness, named",
-          text:
-            "In human mode the same language is shouting. Poster scale hands a matchmaker four-inch numerals to read a subtle ranking from, so human mode needed its own scale.",
+          src: `${W}/ch08-kierunki.png`,
+          caption: "Three directions, each with an argument for and against; the rejected two are a record of a decision. The winner's weakness: in human mode the same language is shouting, four-inch numerals for a subtle ranking, so human mode needed its own scale.",
         },
       ],
     },
@@ -445,51 +342,71 @@ export const chihuahua: CaseStudy = {
       maxim:
         "In dog mode the Human Interface Guidelines are not insufficient. They are harmful.",
       standfirst:
-        "34 laws generated from the token file, so not one number in the document is typed by hand.",
+        "34 laws generated from one token file, so not one number in the document is typed by hand. First, how the work was done: one value through the tools it passed. No Figma in the chain, which is the interesting part and the limitation.",
       blocks: [
         {
-          kind: "points",
-          items: [
-            "<strong>The HIG describe a specific animal.</strong> A fingertip, a 44-point target, red meaning danger, text carrying the content. Every one is false for this user, so adapting the HIG is fan fiction.",
-            "<strong>CIG govern dog mode, HIG govern human mode.</strong> Human mode is an iOS surface for a person, with two recorded departures: semantic colour and typography.",
-          ],
+          kind: "sheet",
+          sheet: {
+            tools: [
+              { name: "Claude Design", mark: "claude", what: "three directions, one canvas" },
+              { name: "tokens.json", mark: "", glyph: "{ }", what: "every value with its rationale" },
+              { name: "Generator", mark: "", glyph: "gen", what: "guidelines, panels, constants" },
+              { name: "Vite", mark: "", glyph: "V", what: "TypeScript, no framework" },
+              { name: "ffmpeg", mark: "", glyph: "ff", what: "the session clip" },
+              { name: "GitHub", mark: "github", what: "Actions to Pages" },
+            ],
+            stations: [
+              { tool: "Claude Design", mark: "claude", file: "three directions", title: "Three directions on one canvas", body: "The same three screens per column; the winner's weakness named.", image: { src: `${W}/ch08-kierunki.png`, alt: "Three visual directions on the same three screens, as artboards on one canvas" } },
+              { tool: "Generator", mark: "", file: "design/tokens.json", title: "One token file, every value with its rationale", body: "Generates the guidelines in EN and PL, the panels, the app's CSS and constants.", image: { src: `${W}/ch09-cig.png`, alt: "The generated Canine Interface Guidelines panel: palette, the CIG and HIG split, six groups of laws" } },
+              { drawing: "merge", lines: ["No undefined", "No unsubstituted placeholder", "No Polish in the English output"], tool: "Generator", mark: "", file: "build guard", title: "Refuses to emit", body: "47 of 53 lookups once published “undefined” and exited green. Hence the guard." },
+              { tool: "Vite", mark: "", file: "TypeScript", title: "The app, one-sided and local", body: "No framework, no backend, no accounts; constants from the same file.", image: { src: `${W}/ch10-dog-mode.png`, alt: "The five dog-mode screens of the app, D1 to D5" } },
+              { tool: "GitHub", mark: "github", file: "Actions, Pages", title: "Live as a PWA", body: "HTTPS on GitHub Pages makes it installable. Source public.", image: { src: "/work/tinder-for-chihuahua/cover-art.webp", alt: "The app installed on the phone" } },
+            ],
+            block: [
+              ["Sheet", "How I worked on Tinder for Chihuahua"],
+              ["Drawn for", "One value, from the canvas to the installed PWA"],
+              ["Governed by", "34 Canine Interface Guidelines and the build guard"],
+              ["Repository", "GitHub, public"],
+            ],
+          },
         },
         {
-          kind: "stats",
-          items: [
-            { value: "34", label: "laws: 29 canine, 5 platform" },
-            { value: "6", label: "groups, from palette to platform" },
-            { value: "2", label: "recorded departures from the HIG" },
-            { value: "0", label: "numbers in the document typed by hand" },
-          ],
+          kind: "passage",
+          html:
+            "<p><strong>The HIG describe a specific animal</strong>: a fingertip, a 44-point target, red as danger, text as content. Every one is false for this user, so adapting the HIG is fan fiction. Human mode keeps them, with two recorded departures: semantic colour and typography.</p>",
         },
         {
-          kind: "palette",
-          standfirst: "Two hues carry every piece of meaning. The other two are forbidden from carrying any.",
-          items: [
-            { hex: "#0033FF", name: "Blue", role: "Signal. One of two colours allowed to mean anything.", note: "Near the cone peak at 429 to 435 nm." },
-            { hex: "#D6F000", name: "Acid", role: "Signal. Reward, progress, yes.", note: "Near the cone peak at 555 nm. It replaced a warmer yellow for this reason." },
-            { hex: "#000000", name: "Ink", role: "Ground. Never a signal." },
-            { hex: "#FFFFFF", name: "White", role: "Figure. Shape and edge, never meaning." },
-          ],
-          caption: "No red, no green: a red warning would be a warning nobody receives.",
-        },
+          kind: "fold",
+          title: "The palette, three of the thirty-four laws, and the generated panel",
+          hint: "Open: four swatches, a table, one board",
+          blocks: [
         {
-          kind: "spec",
-          caption: "Three of the thirty-four.",
-          rows: [
-            { key: "CIG-2.1", value: "Meaning is carried by blue and acid only. Black and white are ground and figure, never signal" },
-            { key: "CIG-2.3", value: "Dog-scale display type is 112 px, names 80 px, values 44 px. Minimum target: 214 × 300 px" },
-            { key: "CIG-5.1", value: "A deck is 6 to 12 cards. A rising decision time is the signal to shorten it, not to add cards" },
+              kind: "palette",
+              standfirst: "Two hues carry every meaning; the other two are forbidden from carrying any.",
+              items: [
+                { hex: "#0033FF", name: "Blue", role: "Signal. One of two colours allowed to mean anything.", note: "Near the cone peak at 429 to 435 nm." },
+                { hex: "#D6F000", name: "Acid", role: "Signal. Reward, progress, yes.", note: "Near the cone peak at 555 nm; it replaced a warmer yellow for that reason." },
+                { hex: "#000000", name: "Ink", role: "Ground. Never a signal." },
+                { hex: "#FFFFFF", name: "White", role: "Figure. Shape and edge, never meaning." },
+              ],
+              caption: "No red, no green: a red warning would be a warning nobody receives.",
+            },
+            {
+              kind: "spec",
+              caption: "Three of the thirty-four.",
+              rows: [
+                { key: "CIG-2.1", value: "Meaning is carried by blue and acid only. Black and white are ground and figure, never signal" },
+                { key: "CIG-2.3", value: "Dog-scale display type is 112 px, names 80 px, values 44 px. Minimum target: 214 × 300 px" },
+                { key: "CIG-5.1", value: "A deck is 6 to 12 cards. A rising decision time is the signal to shorten it, not to add cards" },
+              ],
+            },
+            {
+              kind: "shot",
+              width: "wall",
+              src: `${W}/ch09-cig.png`,
+              caption: "The laws, their groups, and the split of responsibility between CIG and HIG. Generated, so the numbers on it cannot disagree with the app.",
+            },
           ],
-        },
-        {
-          kind: "shot",
-          width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch09-cig.png",
-          folded: true,
-          caption:
-            "The laws, their groups, and the split of responsibility between CIG and HIG. This panel is generated, so the numbers on it cannot disagree with the app.",
         },
       ],
     },
@@ -499,9 +416,8 @@ export const chihuahua: CaseStudy = {
       id: "modes",
       n: "08",
       heading: "Dog mode and human mode",
-      maxim: "One product, two scales, and the gesture between them is deliberately hard to perform.",
       standfirst:
-        "One tile per mode. Open a tile and the mode unfolds: the session as recorded, the screens, and the rules each one obeys.",
+        "One product, two scales, and the gesture between them deliberately hard to perform. One tile per mode: the session recorded, the screens, the rules.",
       blocks: [
         {
           kind: "dossier",
@@ -512,7 +428,7 @@ export const chihuahua: CaseStudy = {
               title: "Dog mode",
               maxim: "Two targets, each 214 px wide and the full height of the display. Nothing to miss.",
               standfirst: "Goal: register a dog's preference from one horizontal drag, and reward it.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch10-dog-mode.png" },
+              cover: { src: `${W}/ch10-dog-mode.png` },
               blocks: [
                 {
                   kind: "video",
@@ -521,22 +437,20 @@ export const chihuahua: CaseStudy = {
                   src: "/work/tinder-for-chihuahua/showcase-sesja.mp4",
                   poster: "/work/tinder-for-chihuahua/showcase-poster.png",
                   title: "One full session in dog mode, recorded on the phone",
-                  caption:
-                    "Warm-up, six candidate cards, and the end screen with the session log. One whole session.",
+                  caption: "One whole session: warm-up, six candidate cards, the end screen with the session log.",
                 },
                 {
                   kind: "points",
                   items: [
-                    "<strong>Five screens, one gesture.</strong> Choose the dog, warm up, the card, the reward cue, the end. Tap, long-press, double-tap, pinch, and edge-swipe are all forbidden.",
-                    "<strong>One carve-out, on the warm-up screen.</strong> The whole display is one target and a tap counts, because the point of that screen is to reward any contact at all.",
+                    "<strong>Five screens, one gesture.</strong> Choose the dog, warm up, the card, the reward cue, the end. Tap, long-press, double-tap, pinch, and edge-swipe forbidden.",
+                    "<strong>One carve-out, on the warm-up screen.</strong> The whole display is one target and a tap counts, because that screen exists to reward any contact at all.",
                   ],
                 },
                 {
                   kind: "shot",
                   width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch10-dog-mode.png",
-                  caption:
-                    "D1 to D5 at dog scale. Two hues, flat fills, square corners, type sized by the acuity factor rather than by eye. The screens are in Polish, because the human half of the audience is.",
+                  src: `${W}/ch10-dog-mode.png`,
+                  caption: "D1 to D5 at dog scale: two hues, flat fills, square corners, type sized by the acuity factor. In Polish, because the human half of the audience is.",
                 },
               ],
             },
@@ -546,22 +460,21 @@ export const chihuahua: CaseStudy = {
               title: "Human mode",
               maxim: "The door between the modes is reachable by a human and unreachable by a nose.",
               standfirst: "Goal: read the ranking as a preference signal, not a match, and decide about a meeting.",
-              cover: { src: "/work/tinder-for-chihuahua/wall/ch11-human-mode.png" },
+              cover: { src: `${W}/ch11-human-mode.png` },
               blocks: [
                 {
                   kind: "points",
                   items: [
-                    "<strong>Same handset, a different register.</strong> 26 px statistics instead of 112 px display type, 44 px targets instead of 214 px zones, real density, prose. It obeys the HIG because a person is using it.",
-                    "<strong>The door between the modes cannot be a button.</strong> A button big enough for a person to find is a button a dog will eventually stand on. The door is a two-finger gesture with a wide spread, and it works only on D5. Nothing about a nose produces two contact points that far apart.",
-                    "<strong>H1 carries the sentence the product hangs on:</strong> this is a preference signal, not a match. The likeliest failure is a human over-reading the ranking, so the interface says so where it cannot be missed.",
+                    "<strong>Same handset, a different register.</strong> 26 px statistics instead of 112 px display type, 44 px targets instead of 214 px zones, real density, prose. HIG, because a person is using it.",
+                    "<strong>The door cannot be a button.</strong> A button a person can find is one a dog will eventually stand on. The door is a two-finger gesture with a wide spread, on D5 only; no nose produces two contact points that far apart.",
+                    "<strong>H1 carries the sentence the product hangs on:</strong> a preference signal, not a match. The likeliest failure is a human over-reading the ranking, so the screen says so where it cannot be missed.",
                   ],
                 },
                 {
                   kind: "shot",
                   width: "wall",
-                  src: "/work/tinder-for-chihuahua/wall/ch11-human-mode.png",
-                  caption:
-                    "H1 to H4 at human scale: the ranking, the candidates, decision latency across the session, and the setup screen with the per-dog calibration measured on D2.",
+                  src: `${W}/ch11-human-mode.png`,
+                  caption: "H1 to H4 at human scale: the ranking, the candidates, decision latency across the session, and setup with the per-dog calibration measured on D2.",
                 },
               ],
             },
@@ -575,57 +488,23 @@ export const chihuahua: CaseStudy = {
       id: "testing",
       n: "09",
       heading: "Testing",
-      maxim: "The first measurement did not catch the build failing. It caught a law being wrong.",
+      standfirst: "The first measurement did not catch the build failing. It caught a law being wrong.",
       blocks: [
-        {
-          kind: "thesis",
-          label: "First result, and it broke a law rather than the build",
-          text:
-            "The session log reads FPS 60, against a law demanding 120 Hz “or the screen flickers to the dog”. That looked like a failure for an hour. It was not: the law conflated two things.",
-        },
         {
           kind: "points",
           items: [
-            "<strong>Flicker is luminance modulation, and on an OLED that is the dimming, not the refresh.</strong> This phone dims at 480 Hz against a canine threshold of 70 to 80 Hz. The screen never flickered for the dog.",
-            "<strong>What 60 fps costs is motion continuity.</strong> And 60 was not the hardware: iOS Safari caps page rendering near 60 fps by default, on ProMotion devices too.",
-            "<strong>One law became two.</strong> Flicker is CIG-1.3, satisfied by the dimming. Frame rate is CIG-2.5: measure the rate the page gets.",
-            "<strong>The one remaining flicker risk is the lamp above the dog</strong>, which can modulate below 80 Hz. Outside the app, in the blueprint's support layer.",
+            "<strong>The session log read FPS 60, against a law demanding 120 Hz “or the screen flickers to the dog”.</strong> A failure for an hour; then not. The law conflated two things.",
+            "<strong>Flicker is luminance modulation; on an OLED, the dimming, not the refresh.</strong> This phone dims at 480 Hz against a canine threshold of 70 to 80 Hz. No flicker for the dog.",
+            "<strong>60 was not the hardware.</strong> iOS Safari caps page rendering near 60 fps by default, ProMotion or not; what 60 costs is motion continuity.",
+            "<strong>One law became two.</strong> Flicker, CIG-1.3, satisfied by the dimming. Frame rate, CIG-2.5: measure the rate the page gets. The flicker risk left is the lamp above the dog.",
           ],
         },
         {
           kind: "shot",
           width: "wall",
-          src: "/work/tinder-for-chihuahua/wall/ch12-test.png",
+          src: `${W}/ch12-test.png`,
           folded: true,
-          caption: "The test ladder, with the state of play rather than the plan, including rung 2, which failed on refresh rate.",
-        },
-      ],
-    },
-
-    /* --------------------------------------------------------------- 09a */
-    {
-      id: "pipeline",
-      n: "09a",
-      heading: "Tools and pipeline",
-      maxim: "This pipeline has no Figma in it. That is the interesting part, and it is also the limitation.",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p><strong>One token file generates the guidelines, the panels, and the app's constants.</strong> The marked rows are not off the shelf.</p>",
-        },
-        {
-          kind: "stack",
-          caption: "The real pipeline.",
-          rows: [
-            { key: "Concepts", value: "Three directions as artboards on a Claude Design canvas" },
-            { key: "Decision", value: "design/tokens.json: every value with its rationale attached", mine: true },
-            { key: "Generated", value: "Guidelines (EN + PL), the panels, app CSS and constants", mine: true },
-            { key: "Build guard", value: "The generator refuses to emit on undefined, unsubstituted placeholders, or Polish in the English output", mine: true },
-            { key: "App", value: "Vite + TypeScript. No framework, no backend, no accounts" },
-            { key: "Video", value: "ffmpeg: cropped to a measured grid, looped, fitted to a byte budget", mine: true },
-            { key: "Deploy", value: "GitHub Actions to GitHub Pages. HTTPS makes it installable as a PWA" },
-          ],
+          caption: "The test ladder, state of play rather than plan, with rung 2 failed on refresh rate.",
         },
       ],
     },
@@ -635,56 +514,58 @@ export const chihuahua: CaseStudy = {
       id: "what-it-cost",
       n: "10",
       heading: "What it cost",
-      maxim: "A case study with no errors in it is a case study written afterwards.",
+      standfirst: "A case study with no errors in it is a case study written afterwards.",
       blocks: [
         {
           kind: "points",
           items: [
-            "<strong>Forty-seven values were publishing the word “undefined”.</strong> 47 of 53 token lookups would silently emit <code>undefined</code> into the guidelines and exit successfully. The build guard exists because of this.",
-            "<strong>I overclaimed and had to walk it back.</strong> “Three departures from the HIG” was two. “29 laws” had omitted five. “Everything derives from ×4”: the factor is 3.75. Each read beautifully and none survived being checked.",
-            "<strong>One of my laws described the wrong variable</strong>, and survived being written, designed for, and built. I only went looking because the number disagreed with me.",
+            "<strong>Forty-seven values were publishing the word “undefined”.</strong> 47 of 53 token lookups emitted <code>undefined</code> into the guidelines and exited green. Hence the build guard.",
+            "<strong>I overclaimed and walked it back.</strong> “Three departures from the HIG” was two. “29 laws” had omitted five. “Everything derives from ×4”: the factor is 3.75.",
+            "<strong>One of my laws described the wrong variable</strong> and survived being written, designed for, and built. I went looking only because the number disagreed with me.",
           ],
         },
         {
           kind: "joint",
           question: "What is still to be measured?",
           answers: [
-            "<strong>Whether a dog drags at all</strong>, rather than pushes, paws, or licks the glass.",
-            "<strong>Whether one swipe registers once.</strong> The 40 px threshold and the 1500 ms cooldown are estimates.",
-            "<strong>Auri's contrast threshold.</strong> “Design for Auri” rests on the direction of an age effect, not on a measured number.",
+            "<strong>Whether a dog drags at all</strong>, rather than pushes, paws, or licks.",
+            "<strong>Whether one swipe registers once.</strong> 40 px and 1500 ms are estimates.",
+            "<strong>Auri's contrast threshold.</strong> “Design for Auri” rests on the direction of an age effect, not a number.",
           ],
         },
         {
-          kind: "set",
-          size: "square",
-          items: [
-            { src: "/work/tinder-for-chihuahua/photos/deck-auris.jpg", caption: "Fasola" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-aurora.jpg", caption: "Malina" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-baltic.jpg", caption: "Rogal" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-ciastek.jpg", caption: "Piegus" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-fistaszka.jpg", caption: "Bąbel" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-kwiatuch.jpg", caption: "Szpilka" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-lola.jpg", caption: "Kluska" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-mafinka.jpg", caption: "Truskawka" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-misiek.jpg", caption: "Pączek" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-okruszek.jpg", caption: "Bajgiel" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-orotava.jpg", caption: "Tofik" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-pindzia.jpg", caption: "Sernik" },
-            { src: "/work/tinder-for-chihuahua/photos/deck-skowronek.jpg", caption: "Kajtek" },
+          kind: "fold",
+          title: "The whole deck: thirteen candidates",
+          hint: "Open: thirteen photographs",
+          blocks: [
+            {
+              kind: "set",
+              size: "square",
+              items: [
+                { src: `${P}/deck-auris.jpg`, caption: "Fasola" },
+                { src: `${P}/deck-aurora.jpg`, caption: "Malina" },
+                { src: `${P}/deck-baltic.jpg`, caption: "Rogal" },
+                { src: `${P}/deck-ciastek.jpg`, caption: "Piegus" },
+                { src: `${P}/deck-fistaszka.jpg`, caption: "Bąbel" },
+                { src: `${P}/deck-kwiatuch.jpg`, caption: "Szpilka" },
+                { src: `${P}/deck-lola.jpg`, caption: "Kluska" },
+                { src: `${P}/deck-mafinka.jpg`, caption: "Truskawka" },
+                { src: `${P}/deck-misiek.jpg`, caption: "Pączek" },
+                { src: `${P}/deck-okruszek.jpg`, caption: "Bajgiel" },
+                { src: `${P}/deck-orotava.jpg`, caption: "Tofik" },
+                { src: `${P}/deck-pindzia.jpg`, caption: "Sernik" },
+                { src: `${P}/deck-skowronek.jpg`, caption: "Kajtek" },
+              ],
+              caption: "Real chihuahuas under assumed names, so a deck never reads as Karmel's own family.",
+            },
           ],
-          caption: "The whole deck. Every candidate is a real chihuahua under an assumed name, so a deck never reads as Karmel's own family.",
         },
         {
           kind: "shot",
           width: "column",
           inset: true,
-          src: "/work/tinder-for-chihuahua/photos/oboje.jpg",
-          caption: "Auri and Karmel, waiting for the next session. She is his mother: the one match the app is built to rule out.",
-        },
-        {
-          kind: "passage",
-          html:
-            "<p>It is live: <a href=\"https://konstancja-tanjga.github.io/Tinder-for-chihuahua/\">open it on a phone</a>. The <a href=\"https://github.com/Konstancja-Tanjga/Tinder-for-chihuahua\">source</a> is public.</p><p>Karmel has been through the deck. He has preferences. He is not telling me why.</p>",
+          src: `${P}/oboje.jpg`,
+          caption: "Auri and Karmel, waiting for the next session. She is his mother, the one match the app exists to rule out. Karmel has been through the deck; he has preferences, and he is not telling me why.",
         },
       ],
     },
@@ -694,11 +575,11 @@ export const chihuahua: CaseStudy = {
       id: "sources",
       n: "11",
       heading: "Sources",
-      maxim: "The requirements came from published research rather than from my taste. That claim is worthless unless it is checkable.",
+      standfirst: "The requirements came from published research, not from my taste. That claim is worthless unless it is checkable.",
       blocks: [
         {
           kind: "points",
-          fold: "Canine vision: the numbers the palette, the scale, and the card are built on",
+          fold: "Canine vision: the numbers behind the palette, the scale, the card",
           items: [
             "Neitz, Geist, and Jacobs, <em>Color vision in the dog</em>, Visual Neuroscience, 1989: the cone peaks at 429 and 555 nm that fix the palette to two hues.",
             "<em>In vivo electroretinographic differentiation of rod, short- and long/medium-wavelength cone responses in dogs</em>: the same result confirmed by ERG.",
@@ -732,7 +613,7 @@ export const chihuahua: CaseStudy = {
         },
         {
           kind: "points",
-          fold: "The products in the benchmark",
+          fold: "The benchmark products",
           items: [
             "App for Dog: the source of &ldquo;big, full-screen buttons, so a curious nose can&rsquo;t miss them&rdquo;. BetterPawPlay: eleven nose-and-paw games, tablet flat.",
             "<em>Training senior dogs to play games on touch screens</em>, PetMD.",

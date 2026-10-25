@@ -88,3 +88,43 @@ Later the same day, at the owner's request:
 | lead, plain | `leadAccent` on "production surveillance and optimisation software for upstream oil and gas", in `#e3d2ad`, the site's highlight (`--kt-sand`, `--bh-mark`) | owner: mark the phrase in the highlight colour |
 | chapter 01a: pull "“It made her master the nomenclature of the industry.”" and the folded board `05.png` | removed; `05.png` deleted | owner |
 | MacBook mockups with the light slab under the base and the silver sliver left of the lid | cleaned with `site/scripts/clean-mockups.py` | owner: no shadows or grey bars |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review as a hiring manager, skimming by scroll:
+
+1. Good: the cover cycles six prototype screens, the carousel walks every part of the product, the dossier's "same client, opposite audience" is the one idea worth remembering, and the two clips show the prototype moving.
+2. The role was stated five times: the metadata strip (Role, Product, Website, Documentation), 00 "My role and scope", 00 "Period and team", the three "What I owned" bullets in 01, and the dossier captions ("my tasks were", "my role was").
+3. The team was stated four times: metadata, 00, 01, 01a.
+4. Confluence was stated five times: lead, metadata, 00, 01, 01a.
+5. 00 "Context" repeated the lead; 00 "Period and team" repeated the metadata strip, which carries the period and both teams.
+6. The 03 `flow` retold five carousel slides in the same words (Wells, One well, Pro summary, the tabs, Network optimisation).
+7. Reference rather than argument: the website tile stacked five flat boards of the same site one under the other; the product tile stacked a folded board and three mockups.
+8. The sixteen-slide carousel had five variants of a screen already shown (Alert, Opportunity selected, Constraints, Time centric, and the website product page, which the dossier shows).
+9. Three maxims on chapters (01, 01a, 02) for a study with one idea.
+10. The tools the file names (Figma, Confluence, Photoshop, Illustrator) sat in the metadata strip only; nothing on the page said what passed through them.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team | What, Problem, My role, Decision 1 to 3 with a shot each, Outcome | the sixty-second page; the metadata strip carries period and team, so no row for them |
+| 00 decisions, text only | Decision 1 on `device/lift-timing-1600.webp` (NPV, IPR, VLP on the screen), Decision 2 on `device/dashboard-1600.webp`, Decision 3 on `website-02.png`; links to `#product`, `#product`, `#website` | each decision as the picture that shows it taken |
+| 01 maxim + "What I owned" points + carousel of 16 | one passage sentence (the former maxim) + carousel of 11 | the role is in 00 and the strip; Alert, Opportunity selected, Constraints, Time centric, and the website product page were variants of slides kept or screens the dossier shows |
+| 01a four points | three; "Professionals from the drilling industry … with a UX designer and a researcher" dropped | the team is in the strip |
+| (no chapter) | 02 "How I worked": a `sheet` of three stations, Figma product prototype, Figma, Photoshop, Illustrator website pages, xecta.com built by two developers; tools strip Figma, Confluence, Photoshop, Illustrator | the tools the file names, drawn once; Governed by and Repository rows dropped, nothing on record |
+| 02 "Two pieces of work" | 03, same id `two-pieces`; standfirst unchanged | renumbered after the new chapter |
+| product tile: folded board, then three stacked mockups | `tabs` Dashboard, Well performance, Lift timing, then the folded board | peer screens, one screen of scroll |
+| product tile captions with "From the project board: my tasks were mockups and clickable prototypes, with a UX designer and a researcher" | "The project board: three earlier screens. Insights for one well, …" | the role is in 00 |
+| website tile: five stacked boards | `tabs` Home, Desktop and phone, Product page, Tablet, Phones | peer boards of one site |
+| website captions with "my role was the UX and UI of the website and the work with the developers. The team was one more UI designer and two developers." | captions name only what is on the board | the role and the team are in the strip |
+| 03 Prototype: `flow` of five stages + two stacked clips | 04 Prototype: `tabs` Wells to issues, Network optimisation | the flow repeated the carousel bodies; the clips are peers |
+| maxims on 01, 01a, 02 | maxims on 01a and 03 only (the dossier tiles keep theirs, the type requires them) | two at most |
+
+Numbers at 1440 px: 958 to 784 visible words; 10 262 to 9 959 px; 5 to 6 chapters; 27 images and 2 clips before and after (the clips now sit behind tabs, so one is in the DOM at a time). The page is short by design and was not padded.
+
+Checked: `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 390 px; the 00 cards, the sheet, both dossier tabs blocks, the folded board, and the prototype tabs looked at in screenshots (`xecta-*.png` in the scratchpad).
+
+Open, for Konstancja:
+
+- The decision cards link to `#product` and `#website`. A direct link opens the tile; a click on the card inside the page scrolls to the dossier but does not open the tile, because `Dossier.tsx` reads the hash only on mount. A `hashchange` listener in the component would fix it; not touched here.
+- The sheet has three stations. Confluence is in the tools strip but has no station: no screenshot of the documentation exists, and a station without an image is an empty window.
+- Still as found: the product dates (CV April 2020 to July 2021; LinkedIn April 2021 to July 2022); the board's "web, iOS, Android" claim, not repeated on the page; the CV's "one of three designers" against the strip's "with a UX designer and a researcher".

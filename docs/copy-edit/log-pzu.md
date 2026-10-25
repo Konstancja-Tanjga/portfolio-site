@@ -96,3 +96,48 @@ The public page (`2528:2244`) shows "KUP" (buy) beside "Szczegóły" on the prod
 Open:
 
 - The final-screens composite in chapter 05 and the early greyscale mockup in chapter 03 have no source in the Figma files and stay as they were.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the reader's chair, skimming by scroll (branch `studies-rebuild`, per the rebuild brief):
+
+- Good: the cover layers and the carousel say what the product is before a word is read; the three decisions in 04 each carry a rule and a round-one finding; the two clips prove the prototype was clickable.
+- The research counts were stated four times: the meta strip, the `stats` block, the `flow` cards, and the Outcome row.
+- The process was told twice, as a `flow` of three streams and as a passage about Zoom and the three aims, and neither showed a tool.
+- 00 had eight rows and no picture; Context repeated the lead and chapter 01, Team repeated the meta strip, My role and scope ran to 50 words.
+- 03 listed five changes of which three said only "changed between prototypes"; 04 then said the same three with reasons.
+- 05 opened with a `flow` that narrated the first-login clip, then the clip, the second clip, and a composite, stacked: 3 100 px for four peers.
+- 06 "What it adds up to" repeated the Outcome row word for word.
+- The palette is reference, open at full size at the end of the page.
+- Role and tools were clear in the meta strip; the tools (Zoom, Figma) were buried in a passage and a note.
+- 1 429 words, 13 395 px at 1440, 7 chapters, 30 images, 2 clips.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Team | What, Problem, My role, Decision 1 to 3 with `shot`, Outcome | the sixty-second page; Context was the lead, Team is in the meta strip; the meta strip states the team and, at the owner's request, no period, so no "Period and team" row |
+| 00 My role and scope (50 words) | "The only designer: the business workshops, co-designed and run by me, the competitor audit and benchmark, lo-fi mockups tested with users, the clickable prototype." | at most 25 words; the team is in the meta strip |
+| 00 decisions as text | Decision 1 with `device/dashboard-1600.webp` (the logged-in dashboard, no Buy button) to `#prototypes`; Decision 2 with `device/medical-1600.webp` to `#decisions`; Decision 3 with `device/shortcuts-1600.webp` to `#decisions` | each decision as the screen that shows it taken, linked to the chapter that argues it |
+| 00 Outcome: "after 54 in-depth interviews in three rounds fed three prototypes" | "after three prototypes" | the interview count is in the meta strip |
+| 01: two passages and two 45-word bullets on the goals | one passage with the key phrase in bold, two bullets as fragments | a passage over 60 words becomes a lead and points; fragments where a sentence adds nothing |
+| 01 carousel: 15 slides | 11 slides, one-line bodies (Logging in, Investments, Archive, Editing shortcuts dropped) | login and shortcuts are in the clips; investments and archive proved nothing the others do not |
+| 02 heading "Research" | "Research, and how I worked" | the chapter now carries the sheet |
+| 02 `stats` (6, 24, 18, 12) | removed | the meta strip says 6 workshops and 54 interviews; the sheet's first window says 24 · 18 · 12 |
+| 02 `flow` of three streams + passage on Zoom and the three aims + three bullets on the aims | one `sheet`: Zoom interviews (analysis board), Figma synthesis board, Figma lo-fi mockup, Figma prototype 3.0 (first-login poster), mojepzu.pl shipped (three-device composite); tools Zoom, Figma, mojepzu.pl | the process in one picture, in the home page's language; the sheet replaces the prose and the diagram that told it; the study's own boards and screens in the windows, no FOX drawings |
+| 02 two folded `shot`s, one drawer each | one `fold` "The two research boards: first-round analysis and synthesis", both boards with their hotspots | one control for the reference material |
+| 02 pull quote | kept | the board's own words, 10 words, the only quote on the page |
+| 03 five bullets, three of them "Changed between prototypes" | one standfirst naming the five changes and pointing to 04 | nothing said twice; 04 argues the three that are decisions |
+| 03 duo | kept as a duo | before and after side by side is the comparison; tabs would hide one half |
+| 04 why bodies | fragments | the finding is in 02 in full |
+| 05 `flow` of five stages (the first-login path) | removed | the first-login clip and its caption show the same path |
+| 05 two clips and the composite stacked | one `tabs` block: First login, Shortcut bar, Three devices | peer content; the chapter is one screen |
+| 05 `palette` open | inside a `fold` "The palette from the project board", hint "Open: six colours and where the final screens use each" | reference, not argument |
+| 06 "What it adds up to" | chapter dropped | it repeated the Outcome row; the id `results` is no longer a hash target |
+| header comment | + the 25 October rebuild | the file says what it leaves out |
+
+Numbers: 1 429 words, 13 395 px, 7 chapters, 30 images, 2 clips before; 970 words, 10 973 px at 1440, 6 chapters, 30 images (the sheet's five windows replace the carousel's four dropped slides and the posters), 2 clips in tabs after. `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 390 (13 216 px tall there).
+
+Open for Konstancja:
+
+- Whether rounds two and three were also held over Zoom. The file says so only of round one, so the tools strip says "the first round of interviews, online".
+- Whether the lo-fi mockups were made in Figma. The file does not name the tool; the sheet's third window says Figma because the final file and the boards are Figma files. If they were drawn elsewhere, the window's tool label changes.
+- The chapter id `results` is gone with chapter 06; any external link to `#results` now lands on the page top.

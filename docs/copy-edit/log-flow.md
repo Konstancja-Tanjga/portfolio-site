@@ -59,3 +59,45 @@ Not done, and why:
 - No `folded` shot: no diagram or board on the page.
 - No `stats`: the study has no number with a source.
 - The tablet cuts are 930 px wide and the carousel draws them at up to 72 rem, so they will be soft on a large screen. Larger exports would fix this; none exist.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, before the rebuild (1 023 words, 10 708 px at 1440, 7 chapters, 14 images):
+
+- Good: a short study that says what is hers and what is not; the maxim in 01 and the dialog quote in 03 are specific.
+- Good: the tablet screens show the three navigation decisions; the phone screens show the bottom bar.
+- 00 has eight rows and no picture; Context repeats the lead, Period and team repeats the Period row.
+- The role is stated four times: lead, 00 My role and scope, 01 third bullet, 03 closing passage.
+- The 01 bullets repeat the lead and 00; the carousel is the only new thing in the chapter.
+- 03 is a dossier of two tiles: the decisions hide behind a click, and the third decision has no tile and no screen.
+- 04 carries a third maxim and its Workshop stage repeats 02.
+- 05 Screens is reference, not argument: the dark theme (already in 01) and four phone screens with no claim beside them.
+- 06 repeats the outcome and the award, both in the metadata strip and in 00.
+- Tools: the file names FOX and nothing else; no Figma, Storybook, repository, or test tool is on record, so the reader cannot tell how the work was done.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00 rows Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team | What, Problem, My role, Decision 1 to 3 with shots, Outcome, Period and team | the sixty-second page; the meta strip has Period but no team, so the team row stays |
+| 00 Decision 3 "Where the new navigation needed a pattern FOX did not have, I designed the component" (no screen shows it) | Decision 3 "Board parameters sit under the header as chips and are edited in a popover" with the tablet-parameters shot; the FOX components fact moves to My role and to the "On a phone" tab | each decision carries the screen that shows it taken; the components fact stays, said once |
+| 00 shots: none | tablet-tenant (Decision 1), tablet-details (Decision 2), tablet-parameters (Decision 3), all linking to #decisions; no `frame`, the cuts are tablet exports, not MacBook files | brief rule 2 |
+| 01 passage + three bullets (board, my part, FOX v2.5) | one passage with the board's columns; bullets cut | the second and third bullets were the lead and 00 |
+| 01 carousel of five (desktop, tenant dialog, parameters, details, dark theme) | four: desktop, parameters, details, dark theme | the tenant dialog is the proof of Decision 1 and lives in 03; the dark theme moves here from the dropped 05 |
+| 02 three bullets | passage with the workshop link and "has its own page", two bullets | the third bullet was a sentence about the link |
+| 03 `dossier` of two tiles + closing passage on FOX components | `tabs` of three peers: The navigation (points + duo), Page details (points + wall shot), On a phone (points + portrait carousel of four phones) | peer content of equal rank in one row; nothing hides behind a tile; the third decision gets its screens |
+| 03 standfirst "Open a tile and the decision unfolds to the right." | "Three decisions, one per tab, with the screens that show them." | says what is on the page |
+| 04 maxim "I stayed with the work while it was built." | the same line as standfirst | two maxims on the page at most (01 and 03) |
+| 04 flow stage bodies, four sentences | fragments | the kit's step bodies |
+| 05 Screens (dark theme shot + phone carousel) | chapter dropped; the dark theme is a slide in 01, the phones are the "On a phone" tab in 03; 06 renumbered 05 | reference without a claim; the deep link #screens had no inbound link on the site |
+| 06 passage "What I can show is the navigation, the Page details layout, and the FOX v2.5 components … Gold … ERP-System des Jahres 2025" | cut; the standfirst stays | the outcome is in 00, the award in the metadata strip (2025 and 2026, the confirmed fact; the passage said 2025 only) |
+| 06 joint "What will I measure, and how?" | "What will I measure?" | the file never answers "how" |
+| captions, slide bodies | fragments | kit: captions as fragments |
+
+No `sheet`: the file, its log, and the sources name no tool chain for this work beyond FOX v2.5 (the CV states Figma, Storybook, and Nexus as her general practice, not for Flow mode in 2023). The `flow` of four stages stays as the only process block. No `fold`: nothing on the page is reference a first pass skips. Images: 14 to 11 (two duplicates of the tenant dialog and one of the dark theme gone).
+
+Numbers at 1440: 1 023 to 789 visible words; 10 708 to 8 791 px; 7 to 6 chapters; 14 to 11 images. At 390 px no horizontal scroll.
+
+Unresolved, for Konstancja:
+
+- The tools of this work: Figma for the navigation and the Page details layout, the FOX v2.5 library (Figma or Storybook at that version), the repository, and how the usability tests were run and with how many users. With these on record the chapter 04 flow becomes a sheet.
+- Which components were added to FOX for the navigation (the chips and popover for board parameters, the phone bottom bar, the tenant dialog). The page says only "the components FOX lacked".
+- Decision 3 now reads "Board parameters sit under the header as chips and are edited in a popover, so the board stays in view": the reason clause is inferred from the screens, not stated in the earlier file.

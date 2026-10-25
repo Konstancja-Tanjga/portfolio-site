@@ -114,3 +114,41 @@ Nothing is open.
 | Change | Source |
 | --- | --- |
 | Chapter 02 "Source of truth": a fourth point, "Nexus holds every release, one versioned package per component in the internal npm registry, and the products install FOX from there." | Konstancja's request. The Pipeline row and the Nexus stage of the chapter 02 flow; `fox-v3-nexus-versions.png` (npm-internal, one package per release); `fox-v3-get-started.png` (install with npm or yarn) |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Against `REBUILD-BRIEF.md`, with `bi.ts` as the reference. Only `site/src/content/fox.ts` and this log changed. No fact, number, tool, date, or result was added; "owner of the design system" and "as the owner of the system" are gone, because FOX is Asseco's and Konstancja leads it.
+
+Review as a hiring manager, skimming by scroll:
+
+1. Good: the v3.0 Storybook and Nexus mockups prove every claim; the drift counts are the one hard number on the page.
+2. Good: the agent chapter is the study's difference from any other design-system study.
+3. The role was said four times: Role meta, "My role and scope", "Period and team" ("as the owner"), and 02a's "A person merges every change".
+4. The pipeline was told three times: the Pipeline meta row, the four points of 02, and the `flow` under them; the agent loop told it a fourth time.
+5. "In short" had no picture: eight rows of text, a Context row that repeated the lead and the meta strip.
+6. Chapter 01's five points repeated Decisions 1 to 3 word for word.
+7. The two code blocks are reference for an engineer; a hiring manager scrolled past 40 lines of HTML and Markdown.
+8. The evolution block in 05 is the system's history, reference on a first pass.
+9. Chapter 06 "What it changed" was the meta strip again as four tiles (~80, 6, 3, v3.0), with no measured result behind it.
+10. Nothing said which tool did what in sequence, or where the agent joins; the role of Codex and Claude Code was a clause in a bullet.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team; no picture | What, Problem, My role, Decision 1 to 3 each with a screen and a link (`#tokens`, `#evolution`, `#ready-for-agents`), Outcome, Period and team | the sixty-second page; Context repeated the lead; the meta strip states the period but no team, so the row stays and names the review with engineering (CV) |
+| Role meta: "owner of the design system" | "I lead FOX: the tokens, the component API, and the review gate on every component pull request" | FOX is Asseco's |
+| 01: five points + the Get started shot | the v3.0 note and the shot; standfirst "The live library, as a product installs it" | the points were Decisions 1 to 3 again |
+| 02: four points + `flow` (Figma, Storybook, Chromatic, Nexus) | one `sheet`, seven stations, three block rows | the sheet tells the tool chain once; the points and the flow said it twice |
+| 02a: five points, `loop`, button-docs shot, clip, passage, `code` | three points; `tabs` (What it reads: button docs; What it builds: the clip); passage; the code inside a `fold` | the loop repeated the sheet; two of the five points were sheet stations; the shot and the clip are peers; the rule is reference |
+| 02b: three points, passage, stats, `spec` | two points, passage, stats, the `spec` inside a `fold` "What each category means" | the third point was the Storybook station; the definitions are reference |
+| 03: a two-row `spec` + the Colours shot | the standfirst states what the build emits; the shot | two rows under 20 words are a sentence |
+| 04: shot + fox-dialog `code` | shot; the code inside a `fold` "fox-dialog, the Default story, verbatim" | reference |
+| 05: `evolution` + Nexus shot | the `evolution` inside a `fold` "v2.0 to v3.0: what each version changed"; the Nexus shot; the "what moved" sentence in the standfirst | the version history is reference; the brief asks for it folded |
+| 06 "What it changed": stats ~80, 6, 3, v3.0 | removed | the meta strip says all four; no measured result was behind them |
+| Captions in 01, 02a, 03, 04, 05 | fragments | a full sentence added nothing |
+| Maxims | one (02a), unchanged | at most two |
+
+Numbers at 1440 px: 1 531 visible words and 16 695 px before; 1 250 words and 14 224 px after. Chapters 9 to 8, images 8 to 12 counted on the page (the three decision shots and the two sheet images reuse the five device exports; no new asset), one clip, now inside a tab. At 390 px no horizontal scroll (scrollWidth 390). `npx tsc --noEmit -p site` and `npm run check` pass. Screenshots: `fox-design-system-*.png` in the session scratchpad.
+
+Sheet stations (drawings allowed on a FOX study, per the brief's addendum; `shipped` not used): Figma (`figma`, Bound to the code), Codex and Claude Code (image: fox-button docs, Agents build on the package), Storybook (`storybook`, The reference), Chromatic (`chromatic`, The live catalogue), Pull request (`merge`, A person merges every change; glyph "PR", because the FOX repository host is not on record), Nexus (image: the Nexus registry, One package per release), Figma MCP (`code`, The file follows the code). Block rows: Sheet, Drawn for, Governed by; Repository dropped, not on record.
+
+Open for Konstancja: where the FOX repository lives (GitHub, Bitbucket), for a Repository row and a mark on the pull-request station; whether the pipeline order on the sheet (Figma, agent, Storybook, Chromatic, pull request, Nexus, write-back) is how a component actually travels, or whether the pull request comes before Chromatic; a team line for "Period and team", since the file names no one besides her; "the review of every component pull request" (00) and "every component change" (sheet) stand as before, if "every" is still true.
