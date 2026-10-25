@@ -445,14 +445,15 @@ export type Dossier = {
 /**
  * One row of the brief. A decision row may carry the screen that shows the
  * decision taken and the chapter it links to, so the summary is three
- * pictures as well as three sentences. `src` is a MacBook export from
- * public/work/<slug>/device/ (the 1600 file): the card crops the frame
- * away by its known geometry, so any other kind of image shows wrong.
+ * pictures as well as three sentences. With `frame: "macbook"`, `src` is a
+ * MacBook export from public/work/<slug>/device/ (the 1600 file) and the
+ * card crops the frame away by its known geometry. Without it, the image
+ * is shown as it is, filling the card from its top left.
  */
 export type BriefRow = {
   key: string;
   value: string;
-  shot?: { src: string; alt: string; to: string };
+  shot?: { src: string; alt: string; to: string; frame?: "macbook" };
 };
 
 /** A named stretch of the wall. Chapters drive the jump bar. */

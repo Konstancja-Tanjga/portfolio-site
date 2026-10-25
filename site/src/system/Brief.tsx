@@ -38,7 +38,7 @@ export function Brief({ rows }: { rows: BriefRow[] }) {
                     dl's group may hold only dt and dd. */}
                 <dt className="brief__key">
                   {r.shot && (
-                    <a className="brief__shot" href={r.shot.to} aria-label={`${r.shot.alt}: see the chapter`}>
+                    <a className={r.shot.frame ? "brief__shot brief__shot--macbook" : "brief__shot"} href={r.shot.to} aria-label={`${r.shot.alt}: see the chapter`}>
                       <img src={asset(r.shot.src)} alt="" loading="lazy" decoding="async" />
                     </a>
                   )}
