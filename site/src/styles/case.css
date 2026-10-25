@@ -1497,7 +1497,9 @@ article { position: relative; z-index: 1; }
 .car__slide.is-current { opacity: 1; transform: none; z-index: 2; }
 .car__slide.is-next { opacity: 0.18; transform: translateX(12%) scale(0.88) rotateY(-8deg); z-index: 1; }
 .car__slide.is-prev { opacity: 0.18; transform: translateX(-12%) scale(0.88) rotateY(8deg); z-index: 1; }
-.car__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 100%; }
+/* A slide fills the stage's width whatever the export's pixel size, so a
+   930 px tablet cut is as readable as a 2400 px MacBook export. */
+.car__img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 /* a definite row, so a tall slide's max-height has something to resolve against */
 .car__slide { grid-template-rows: 100%; overflow: hidden; }
 .car__img--device { filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.7)); }
