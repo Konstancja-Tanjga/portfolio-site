@@ -29,7 +29,11 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
     const fromHash = () => {
       const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
       const i = items.findIndex((d) => d.id === hash);
-      if (i >= 0) { setOpen(i); setPage(0); }
+      if (i >= 0) {
+        setOpen(i);
+        setPage(0);
+        requestAnimationFrame(() => track.current?.scrollTo({ left: 0 }));
+      }
     };
     fromHash();
     window.addEventListener("hashchange", fromHash);
@@ -59,9 +63,12 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
     const target = panels[Math.max(0, Math.min(panels.length - 1, i))];
     if (target) el.scrollTo({ left: target.offsetLeft - 24, behavior: "smooth" });
   };
+  /** The URL names the open tile, so a card that links to it works twice. */
+  const setHash = (id?: string) => history.replaceState(null, "", id ? `#${id}` : window.location.pathname + window.location.search);
   const choose = (i: number) => {
     setOpen(i);
     setPage(0);
+    setHash(items[i].id);
     requestAnimationFrame(() => {
       track.current?.scrollTo({ left: 0 });
       track.current?.closest(".dossier")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -84,7 +91,7 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
               aria-controls={`${base}-wing`}
               className={open === i ? "dossier__tile is-current" : "dossier__tile"}
               style={{ transitionDelay: open === null ? `${i * 120}ms` : "0ms" }}
-              onClick={() => (open === i ? setOpen(null) : choose(i))}
+              onClick={() => { if (open === i) { setOpen(null); setHash(); } else choose(i); }}
             >
               <span className="dossier__cover" aria-hidden="true">
                 <img src={asset(d.cover.src)} alt="" loading="lazy" decoding="async" />
@@ -126,7 +133,7 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
                 <button type="button" className="dossier__arrow" onClick={() => go(page - 1)} disabled={page === 0} aria-label="Previous panel">←</button>
                 <span className="dossier__progress" aria-hidden="true"><span style={{ transform: `scaleX(${(page + 1) / count})` }} /></span>
                 <button type="button" className="dossier__arrow" onClick={() => go(page + 1)} disabled={page >= count - 1} aria-label="Next panel">→</button>
-                <button type="button" className="dossier__close" onClick={() => setOpen(null)}>Close</button>
+                <button type="button" className="dossier__close" onClick={() => { setOpen(null); setHash(); }}>Close</button>
               </nav>
             </>
           )}
