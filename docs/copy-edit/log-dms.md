@@ -130,3 +130,42 @@ Review from the hiring manager's chair, before the rebuild (28 422 px, 3 408 vis
 Numbers: 3 408 to 1 792 visible words; 28 422 to 17 069 px at 1440 (16 932 at 1024); 15 to 10 chapters; 47 to 25 images in the article, 3 clips kept behind tabs. `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 1440, 1024 or 390.
 
 Not added, and why: no "Shipped" station and no release claim, because the file makes none; no Nexus or GitHub station, because the Documents file names neither (the repository row of the sheet block is dropped for the same reason); no "What would I do differently" joint, because there is no such reflection on record.
+
+## 25 October 2026: second cut
+
+Her brief after the rebuild: cut more, to about 1 200 words and 12 000 px; delete "Why this is a hard brief" outright; one sentence per standfirst, one fragment per caption, one line per step body, at most three points, at most six slides, the "After development" steps down to the two that carry a rule; keep the exploded screen, the sheet, the tabs, and the three decision cards; add nothing.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 02 "Why this is a hard brief": standfirst, five GoBD points, stats (~22 document types, ~10 custom fields, 4 audiences) | chapter dropped, with its id `hard-brief` and its stats | her decision; the first point is the lead and the Problem row, the rest were the audit walk's rule restated |
+| 01 passage: what Documents holds, then the customer line | the customer line only (several hundred manufacturers, archives in the tens of thousands) | the first sentence was the What row of 00 |
+| 01 carousel: eight slides, Tags and Custom properties among them | six slides, one fragment each: Documents, Bulk actions, A document, Version history, Document types, Permission rules | at most six; Tags and Custom properties are fields of a document, not parts of the application |
+| 03 Discovery standfirst: two sentences (the sessions, then the cost of a late question) | the sessions | one sentence |
+| 03 points: the competitor "one action and one menu at a time"; the borrowed decisions listed four ways | three shorter points; the borrowed decisions are the three hotspots on the finance tool, not a list beside them | a finding once, on the picture that provoked it |
+| 03 caption: "open tasks counted per company before anything to do, and an inbox table of invoices" | "tasks counted first, then an inbox table of invoices" | one fragment; the first hotspot says the rest |
+| 04 Prototypes standfirst: Figma Make in hours, who walked it, where disagreements happened, the dossier example | "Disagreements happened in the Figma Make prototype, one step before REQ identifiers and sign-off made them expensive." | one sentence; the Figma Make station of the sheet says the rest; the tabs label names the dossier prototype |
+| 04 clip captions, two or three sentences each | one fragment each | her rule |
+| 05 Design system standfirst: what is drawn, the FOX double role, "then one screen taken apart" | the FOX double role | the sheet block's "Drawn for" row says what is drawn; the exploded block has its own title |
+| 05 sheet: the Confluence station "Spec first, then design: ..."; the Figma station in two sentences; the Governed by row with "design acceptance in the definition of done" | one line each; the Governed by row ends at the sign-off | one line per station body; design acceptance is the Pull request station |
+| 06 Sign-off standfirst: what every frame carries, then who reads it | who reads it | one sentence; Decision 3 and the Figma station say what a frame carries |
+| 06 tab captions, two sentences each | one fragment each | her rule |
+| 07 Handoff standfirst: Dev Mode, Code Connect, Storybook, the prototypes, then the three requirements | the three requirements, "never per screen" | one sentence; the handoff tools are the Figma station; "never per screen" moved up from the Colour modes card |
+| 08 After development standfirst: the FOX package and annotated frames, then what is left to check | what is left to check | one sentence; the package and the frames are the sheet |
+| 08 steps: Design review, Design QA, Audit walk, Triage, rule and why in one or two sentences | Design QA and Audit walk, renumbered 01 and 02, rule and why one line each, both contrasts and both artefacts kept | the two that carry a rule; Design review is the Pull request station word for word; Triage was a filing convention |
+| 09 results standfirst: eleven months and the paper trail in either direction | dropped; the joint stands alone under the heading | it was the Outcome row of 00 and the Period row of the strip |
+| 09 joint answers | one fragment each | her rule |
+| chapter numbers 00 to 09 | 00 to 08: in-short, what-it-is, discovery, prototypes, design-system, sign-off, handoff, after-development, results | consecutive after the drop; every other id kept |
+
+Numbers: 1 792 to 1 257 visible words; 17 069 to 14 845 px at 1440 (14 902 at 1024, 17 634 at 390); 10 to 9 chapters; 25 to 23 images, the 3 clips kept behind tabs. `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 1440, 1024 or 390.
+
+Why not 12 000 px: the blocks she asked to keep are fixed-height. Cover with its layers and the strip 2 130 px, the 00 cards 1 000, the carousel 870, the sheet 1 255, the exploded screen 1 980, the two tabs blocks 870 each: about 9 000 px before any prose, and the nine chapter heads add roughly 2 400 more. The prose left on the page is under 2 000 px. Reaching 12 000 would mean dropping a chapter she did not name (Handoff at ~500 px, the research reference at ~670 px) or one of the kept blocks, which the brief forbids.
+
+Not cut, and why:
+
+- The three hotspots on the finance tool: they are the only evidence the research chapter has, and the points no longer repeat them.
+- The two step artefacts (the QA checklist, the audit walk): they are the rule written the way it is checked, not prose; their em dashes and the `v3 → v4` arrow stay, as decided on 11 October.
+- The two maxims (01 and the sign-off chapter): the rebuild's limit is two, and both earn their place.
+- The meta strip's Design system value (three sentences): not a passage, and the same shape as on Analytics.
+- The tablet-width version history in the Template tab: it is the claim that the template holds at a narrower width, and a duo adds no height.
+
+Noticed, not mine to fix: at 390 the sheet's frame begins a few pixels under the standfirst's last line (the same in the first rebuild's screenshot `applus-documents-m-sheet.png`), a margin in home/Sheet.tsx.

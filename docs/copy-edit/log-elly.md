@@ -119,3 +119,35 @@ Review from the hiring manager's chair, before the rebuild (3 846 visible words,
 Result: 2 011 visible words, 16 570 px at 1440 (measure.mjs, same script as Analytics at 16 446), 12 chapters, 26 images, 2 clips. No console errors; no horizontal scroll at 390.
 
 Not on record, left out: a "what I would do differently" joint and a measure after release; a handoff chapter (Elly ran on FOX v2.2, before Code Connect); which tool the Aria teardown was annotated in (the sheet says Figma, as the board was cropped from the Figma frames). To confirm with Konstancja: the UC-01 "why" now names the rejected alternative as sources listed under the answer, inferred from the rule "Citations sit at the claim, not at the bottom".
+
+## 25 October 2026: second cut
+
+Konstancja's brief: cut more, delete "Why this is a hard brief", "Exploration", and "Specified as use cases" outright, keep the sheet, the voice `beside`, the tabs, the three decision cards, and the fold of quotes; aim at about 1 200 words and 11 000 px. Nothing was added; the one move is the "Pinned won" sentence, which now sits on the sheet station "Overlay against pinned", so Decision 1 links to `#how-i-worked`.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 02 "Why this is a hard brief": three points | dropped | repeated the Problem row of 00 |
+| 04 "Exploration": maxim, spec of two options, board with six hotspots, "Pinned won" passage | dropped; the board stays on the sheet as station 02, its body now carries "Pinned won: an answer you cannot check against the record under it is worth less than the space it costs" | the sheet is the process; Decision 1 states the widths |
+| 06 "Specified as use cases": six points, the scope-answer passage | dropped; the sheet's "Governed by" row and station 03 name the twelve use cases; the carousel's "The scope answer" body now says "documentation only, Flow mode only, no history saved" | the twelve groups were a list, the scope answer is on the screen the carousel shows |
+| Decision 1 `to: "#exploration"` | `to: "#how-i-worked"` | the chapter that shows the decision |
+| 01 passage: "Elly Smart Help is the first AI assistant shipped in APplus ERP… Every answer comes from the APplus documentation." | "The first AI assistant shipped in APplus ERP, an ERP for mid-sized and large manufacturers across the DACH region." | 00 What already says documentation |
+| 01 carousel bodies (full sentences) | fragments | captions to one fragment |
+| 03 standfirst, two sentences; three archetype points, two sentences each | one sentence; one fragment each | standfirsts to one sentence; points as fragments |
+| 05 sheet standfirst, two sentences; station bodies | one sentence; station 01 without the archetypes (they are in 02), station 03 without the "full path with every state drawn" (it is the Governed by row), station 04 without "on the sidebar component set" | said once |
+| 07 UC-01: captions ("The question typed, Submit on hover." …), six-word steps, precondition repeating step 1 | captions to one fragment, steps to fragments ("Text mode; the question typed."), precondition "Elly open in the docked panel." | flows to four steps, fragments |
+| 08 Voice `beside`: four bullets | three bullets; "One exit" folded into the Pause bullet; "the panel changes shape" cut | points to at most three bullets |
+| 09 UC-03: standfirst two sentences; captions quoting the screens; three step bodies with full quotes; ruleNote | standfirst one sentence; captions "Retrieval failure." …; steps shortened; ruleNote "Five states by release: retrieval, model, monthly limit, daily limit, and limit reached mid-voice-input; under all of them the footer, Elly can be wrong." | captions to one fragment; the screens show the quotes |
+| 10 Study standfirst: three sentences with the five objectives | one sentence (who, when, how, before release) | standfirsts to one sentence; the objectives are implied by the stats |
+| 10 "How I read it": four points | three; "One answer came confidently from an old release note" joined to the "numbers" point | three bullets |
+| 10 quote attributions | shorter ("Senior consultant, 20 years, on an answer from an outdated release note.") | fragments |
+| 11 Live captions, two sentences each | one fragment each | captions to one fragment |
+| chapters 00, 01, 03, 05, 07, 08, 09, 10, 11 | 00 to 08, consecutive | renumbered |
+
+Result: 1 273 visible words (measure.mjs; 2 008 before), 13 589 px at 1440 (16 570 before), 9 chapters (12 before), 27 images, 2 clips. tsc and `npm run check` pass; no console errors; no horizontal scroll at 390 (19 110 px tall there).
+
+Not cut, and why:
+
+- 11 000 px was not reached. The remaining height is images: 00 with its three cards (1 200 px), the carousel, the sheet (1 630 px), the three-phone set and use case of 04 (2 090 px), the voice clip, the four-phone set and use case of 06 (1 850 px), the live tabs. Getting under 11 000 would mean dropping the question and thinking states of 04 or two of the four error states of 06, and those screens are the evidence for Decisions 2 and 3; left in.
+- The nine quotes stay complete inside the fold; only their attributions were shortened.
+- The five stats in 07 stay: each is a different number and appears once.
+- The five hotspots on the folded teardown stay (one shortened); they are inside the fold and prove the audit.
