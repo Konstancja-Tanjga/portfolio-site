@@ -23,11 +23,17 @@ export function Dossier({ items, render }: { items: DossierData[]; render: (b: B
   const current = open === null ? null : items[open];
   const count = current ? current.blocks.length + 1 : 0;
 
-  // a deep link to a use case opens it
+  // A deep link to a tile opens it: on arrival, and on an in-page hash
+  // change too, so a decision card in "In short" can land on an open tile.
   useEffect(() => {
-    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
-    const i = items.findIndex((d) => d.id === hash);
-    if (i >= 0) setOpen(i);
+    const fromHash = () => {
+      const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      const i = items.findIndex((d) => d.id === hash);
+      if (i >= 0) { setOpen(i); setPage(0); }
+    };
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
   }, [items]);
 
   // which panel is in view
