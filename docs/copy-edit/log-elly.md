@@ -78,3 +78,44 @@ Not done, and why:
 - The video `title` keeps its em dash, as decided on 11 October: it is the player's accessible name, not prose.
 | exploration board in a MacBook frame with hotspots | flat board, hotspots remapped to the board | her request, 13 October 2026: a board of six screens is not one screen |
 | Voice mode: two phone stills at full set size | prose on the left, her voice-mode recording on the right at phone size (`beside` block) | her request, 13 October 2026: smaller, read and watch at once |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, before the rebuild (3 846 visible words, 26 333 px at 1440, 16 chapters, 35 images, 2 clips):
+
+1. The product and the problem are clear by the end of 00, but 00 took 1 300 px and had no picture of a decision.
+2. The role was stated four times: the metadata strip, 00 "My role and scope", 00 "Period and team", 01 "What I owned".
+3. Three use-case chapters each restated a decision already in 00; UC-02 repeated the `beside` prose beside it line for line.
+4. The study spread over four chapters (10, 11, 12, 13) with five stats blocks; 13/13, 12/13, 10/13 and 13 participants each appeared two or three times, 15 repeated 10 and 11 as a scoreboard.
+5. Chapter 13 "What I designed" listed the three decisions a fourth time, with a set of five sidebar states already shown in 06, 07 and 08.
+6. The prototype chapter (09) was 300 words of method with two screens the carousel already shows.
+7. The answer and Resources mockups appeared in the cover layers, the carousel, and a duo in chapter 11.
+8. The tools were never drawn: Figma, the Flow board, FOX v2.2 and the study were facts scattered across six chapters.
+9. Nine maxims and two pull quotes; one pull quote repeated the passage above it verbatim.
+10. The teardown board and the exploration board were both good evidence, but the teardown is reference and sat open at full width.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3 (text only), Outcome, Period and team | What, Problem, My role, Decision 1 to 3 with shots, Outcome; no Context, no Period and team | the sixty-second page; the strip states period and team; Context repeated the lead |
+| Decision shots: none | D1 answer-desktop (MacBook) to #exploration; D2 resources-desktop (MacBook) to #uc-text; D3 09.png (the panel across sizes with the model failure) to #uc-errors | each decision as the screen that shows it taken |
+| 01: passage, three points, carousel, devices collage, "What I owned" | one sentence and the carousel | the role is in 00 and the strip; the collage is in 11 behind a tab |
+| 02: points, pull quote, 09.png | three points | the pull quote repeated the points; 09.png is now the Decision 3 shot |
+| 03: passage, spec of three archetypes, teardown open with hotspots | three points, teardown folded with its hotspots | the archetypes are a list; the teardown is reference |
+| 04: spec, board with hotspots, "Pinned won" passage, two points blocks of four | spec (fragments), board with hotspots, one passage carrying the consequences | the two points blocks repeated the hotspots and the passage |
+| 09 "The prototype" (passage, two points blocks, two mockups, passage) | dropped; the facts (full scale, 331 interactions, timed voice states, 13 sessions) moved to the sheet stations | the mockups are in the carousel; the method belongs on the sheet |
+| (no sheet) | 05 "How I worked": Figma teardown, Figma options board, Figma 12 use cases, Figma prototype, 13 sessions on the prototype, APplus release 9; tools Figma, FOX v2.2, APplus | the tools and the steps as one drawing, in the home page's language |
+| 05 "Specified as use cases": points, set of three phones, passage, pull quote | points (fragments) and the scope-answer passage | the pull quote repeated the passage; the greeting and consent states are in 07 and the voice clip |
+| 06 UC-01: set of four phones, six-step flow | set of three (the scope state is in the carousel), four-step flow, a rejected alternative named | fragments; "why" now names what lost |
+| 07 Voice: `beside` plus UC-02 | `beside` only, with Pause and the one exit folded into its bullets | the use case repeated the prose beside it; the clip proves the claim |
+| 08 UC-03: set of four, use case | kept; bodies and exits as fragments; why names the rejected generic error | the four states each prove the rule |
+| 10 Study: stats, passage, four points, nine quotes, passage, four points | one chapter: five stats, one passage, four points, the nine quotes in a fold | one copy of every number |
+| 11 "Easy, yes. Trusted, no.": stats, passage, points, duo | dropped; its numbers are in the study stats, its mockups in the carousel | said twice |
+| 12 "The barriers they named": stats, points, passage | dropped; 10/13 context-awareness is a study stat, sourcing is in "How I read it" | said twice |
+| 13 "What I designed": four points, set of five sidebar states | dropped; the decisions are in 00, the states in 07, 08 and the carousel | said a fourth time |
+| 14 Live: film, 12.png, 15.png stacked | 11 Live: tabs The film, Across devices, An answer in German | peer content, one screen |
+| 15 "What it adds up to": two stats blocks, two points | dropped | repeated the strip, 00 and the study |
+| nine maxims, two pull quotes | two maxims (04, 10), no pull quotes | at most two |
+
+Result: 2 011 visible words, 16 570 px at 1440 (measure.mjs, same script as Analytics at 16 446), 12 chapters, 26 images, 2 clips. No console errors; no horizontal scroll at 390.
+
+Not on record, left out: a "what I would do differently" joint and a measure after release; a handoff chapter (Elly ran on FOX v2.2, before Code Connect); which tool the Aria teardown was annotated in (the sheet says Figma, as the board was cropped from the Figma frames). To confirm with Konstancja: the UC-01 "why" now names the rejected alternative as sources listed under the answer, inferred from the rule "Citations sit at the claim, not at the bottom".

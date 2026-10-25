@@ -94,3 +94,39 @@ Three review agents (code, comments, types) ran before the pull request. Fixed:
 | portrait carousel `object-fit: contain` letterboxed wide boards on phones | `height: auto; max-height: 100%`; Riyad and Flow slides are taller than the stage, so they look the same | review |
 | `leadAccent` unchecked | `LeadAccent` type with `#${string}` hex; development throws when the phrase is not in the lead | type review |
 | stale comments in ost.ts, types.ts, index.ts, Cover.tsx, Quantifiers.tsx, case.css; README image table and script paths | rewritten to match the code and the files; `scripts/clips.sh` added; screenshots retaken | comment review |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair (two minutes, by scroll), before the rebuild:
+
+1. The cover, the lead, and "In short" all say the role and the scope; the metadata strip says them a fourth time, and chapter 01 a fifth ("What I delivered", six bullets).
+2. "In short" has eight rows and no picture; Context repeats the lead, Period and team repeats the strip.
+3. The idea (∃∀ against ∀∃) is explained in 01, 03, the 03 fold, 04, and UC-02: five times.
+4. Six maxims, one per chapter; none of them earns more than its chapter's standfirst.
+5. A 17-slide carousel in 01 shows pages that 03, 04, 06, 06a, and 08 show again.
+6. 06a is four annotated brand-book pages with grid-unit notes: reference for whoever rebuilds the mark, not an argument.
+7. 07 stacks a MacBook, a five-slide carousel, and a second MacBook: 2 500 px for material of equal rank.
+8. UC-03 (a letter from the office) is a Word template; UC-01 repeats Decision 3 in its challenge bullets.
+9. 09 is six `steps` for a handoff that is a list of files; 10 counts files that the strip already counts (24 SVG, 12 PNG).
+10. No tool for drawing the mark is named anywhere on the page, so the reader cannot tell how the identity was made, only what it is.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, three decisions, Outcome, Period and team | What, Problem, My role, three decisions with a picture each, Outcome | the sixty-second page; the strip has Team and Period |
+| 00 decisions as text | Decision 1 on brand book page 03 (∃∀ against ∀∃), linking to 03; Decision 2 on page 12 (K, the student's bar), linking to 06a; Decision 3 on the ambassador generator in its MacBook, linking to 08 | each shows the decision taken |
+| 01: maxim, standfirst, six "What I delivered" bullets, 17 slides | one sentence and 10 slides | the role is in 00 and the strip; the origin, grid, not-VE, palette, media, engraving, and social-series pages are shown where they are argued |
+| 02: two standfirsts, teacher with three goals, sentences in every field | one standfirst, two goals each, one line per field | personas rule of the kit |
+| 03: six bullets | four | the starred problem is in the 05 captions; the ∃∀ bullet half as long |
+| 04: maxim and standfirst | the maxim's claim folded into the standfirst | two maxims on the page: 03 and 06a |
+| 05: five flow stages and a duo (risk table, the gap drawing) | three stages; the risk table dropped, the gap drawing moved into the 06a fold | the three concept boards are the set above; the choice and the drawing are the stages that matter |
+| 06: maxim, `evolution` open, palette, type spec | palette and type first, the two versions in a `fold` | the deck's history is reference |
+| 06: no sheet | none | the file names no design tool for the mark; a sheet of PDFs and SVGs would be the handoff list again. Question for Konstancja below |
+| 06a: four annotated pages open, the errors page folded | the clear-space page open with K1 and K2 in the caption; construction, proportions, contrast, the gap drawing, and the errors page in one `fold` | the folder is for whoever rebuilds the mark; the one page that shows Decision 2 stays on the surface |
+| 07: MacBook, portrait carousel of five, MacBook, stacked | `tabs`: Website design, www.ost.edu.pl, Print and social (the portrait carousel of four) | peer content; the flat website board left the carousel because the MacBook tab shows it |
+| 08: three use cases, UC-01 opening with a three-bullet "challenge" | two use cases; the challenge bullets gone, the Vercel line in the standfirst | UC-03 was the Word template, now a line in 09; the bullets repeated Decision 3 and the strip |
+| 09: six `steps` | `flow` of four cards; T1 in the standfirst | a handoff list reads as cards, not rules |
+| 10: four stats and two clips stacked | three stats (8 mm, 16.1:1, 2.7:1) and the clips as two `tabs` | 24 files and 12 graphics are in the strip |
+| 11: full sentences | fragments | joint answers |
+| "25 000" with a plain space (after the rewrite) | narrow no-break space | STYLE 3.5 |
+
+Numbers at 1440 px, measured on the dev server after a full scroll: 2 786 to 2 066 visible words; 20 333 to 16 751 px; 13 chapters before and after; 50 to 36 images on the surface (the folds and the dossier hold the rest); two clips, now one per tab. Still open: which tool drew the mark and set the brand book (not on the page, so no sheet), and whether the 126 medals line in 03 should carry its source on the page.
