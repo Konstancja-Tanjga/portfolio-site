@@ -92,3 +92,41 @@ Not done, and why:
 - The tablet-versions mockup is not a carousel slide: it is a width variant of version history, not a part of the application.
 - The checklist lines in the After development steps keep their em dashes and the `v3 → v4` arrow, as decided on 11 October: code, not prose.
 | chapter 07 reference: the xentral screen with its caption and hotspots | removed, with its files | her decision, 13 October 2026 |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, before the rebuild (28 422 px, 3 408 visible words, 15 chapters, 47 images, 3 clips; the longest study on the site):
+
+1. The product is clear by the end of the carousel; the cover headline said "Document Management" while the tab, the tile, and the title said APplus Documents.
+2. The role was stated four times: the metadata strip, "My role and scope", "What I owned" with six bullets, and the "1 designer" stat.
+3. The three decisions were there, but as sentences only; a reader stopping at 00 had no picture of any of them.
+4. The six-stage process list in 01, the prototype `flow` in 08, the handoff `loop` with its folded PNG in 12, and the folded FOX update diagram in 09 all told the tool chain, four times in four shapes.
+5. All twelve sign-off screens in 10 were already slides of the 01 carousel, with longer captions.
+6. Chapters 04, 05 and 07 (discovery, competition, inspiration) were three heads for one finding each.
+7. The four annotated dossier-plan screens and their standfirsts were reference for the prototype's configuration side, not an argument.
+8. Seven after-development steps at full length, each with rule, why, and contrast, was a process manual inside a case study.
+9. The results stats repeated the metadata strip (eleven months, one designer) and the discovery chapter (six sessions); the four points repeated the decisions.
+10. Eight maxims and a pull quote; two of them earn their place.
+
+| Before | After | Why |
+| --- | --- | --- |
+| headline "Document Management" | "APplus Documents" | one name for the product, as on Analytics |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team; 1 300 px of text | What, Problem, My role, Outcome, and the three decisions as cards: filters (to the sign-off tabs), the document info template (to the sign-off tabs), the documented frame (to the sign-off tabs) | the sixty-second page; period and team are in the metadata strip |
+| 01 "What I owned" passage, six ownership bullets, six-stage process list | removed; the customer line from 03 joins the passage | the role is in 00 and the strip; the process is the sheet |
+| 01 carousel, twelve slides with two-line bodies | eight slides with one-line bodies; Filters, Document info, Retention, and Deleted documents left for the sign-off tabs | a screen shown once |
+| 02 maxim, two passages, pull quote | a standfirst and five points (the pull quote is the fifth) | at most two maxims; no claim twice |
+| 03 Who it is for (passage, stats, thesis) | chapter dropped; the stats sit under the hard-brief points; the thesis is Decision 1 | the passage repeated the stats, the thesis repeated 00 |
+| 04 Discovery, 05 Competition analysis, 07 Inspiration and ideas (three maxims, three passages, ten points, a stats block) | one chapter "Discovery and research": a standfirst and three points, the finance-tool reference with its hotspots | three heads for one finding each |
+| 08 Prototypes: maxim, `flow` of three stages, four annotated dossier-plan screens, three clips stacked | a standfirst and the three clips as `tabs` (A dossier, Down to a document, Nested search); one dossier-plan screen moves to the Figma Make station of the sheet, the other three stay in git history | the flow is the sheet; the folders were reference; peer clips take one screen |
+| 09 Design system: folded FOX update diagram, exploded screen, FOX documentation shot | a `sheet` of six stations (Confluence and Jira, Figma Make, Figma, FOX, Pull request, Codex over Figma MCP), then the exploded screen; the FOX documentation page is the FOX station's window, the update diagram's text is that station's body | the method in one picture; never the diagram and the sheet both |
+| 06 Specification (maxim, passage, folded traceability diagram) and 11 Documentation (maxim, passage, three points, documented frame) | merged into 08 Design and sign-off: the identifier maxim, one standfirst, the documented frame as the first tab; the traceability diagram is the first station of the sheet | the same argument twice, 2 600 px |
+| 10 Design and sign-off: one duo, two shots, four duos (twelve screens, 4 800 px) | five `tabs`: A documented frame, Filters, The template (document info, the tablet width), Deleted not gone (deleted document, retention), A retired policy | peer content; the chapter is one screen |
+| 12 Handoff: maxim, `loop` ring, folded loop PNG, `flow` | a standfirst and the `flow` of three baked-in requirements | the loop repeated the sheet |
+| 13 After development: seven steps with rule, why, contrast, two artefacts | four steps (Design review, Design QA, Audit walk, Triage), rule and why cut to one or two sentences each, both artefacts kept; Reconcile is the Codex station, Acceptance is in the Pull request station, After release is the results joint | the brief's cut list; the manual is in git history |
+| 14 results: stats (11 months, 6 sessions, 5 tabs, 1 designer), four points, joint | the standfirst and the joint | the stats repeat the strip and discovery; the points repeat 00 |
+| maxims: 01, 02, 04, 05, 06, 07, 08, 11, 12, 13 and a pull quote | two: 01 (permissions, compliance, search box) and the sign-off chapter (identifier) | at most two |
+| chapter ids who-for, competition, inspiration, specification, documentation | dropped | merged as above; the remaining ids are unchanged and the numbers run 00 to 09 |
+
+Numbers: 3 408 to 1 792 visible words; 28 422 to 17 069 px at 1440 (16 932 at 1024); 15 to 10 chapters; 47 to 25 images in the article, 3 clips kept behind tabs. `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 1440, 1024 or 390.
+
+Not added, and why: no "Shipped" station and no release claim, because the file makes none; no Nexus or GitHub station, because the Documents file names neither (the repository row of the sheet block is dropped for the same reason); no "What would I do differently" joint, because there is no such reflection on record.
