@@ -66,3 +66,23 @@ Not done, and why:
 - No `joint`: the file holds no reflection, only the "What it does not claim" points, which are limits rather than lessons.
 - No clips: nothing is recorded for this study.
 - The `v6/` exports (the 6.0 cover, the logo, the button contract and variants) stay flat: they are Figma pages and a lockup sheet, not product screens.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, two minutes by scroll: 1 743 words, 16 886 px, 10 chapters, 26 images. What is good: the three decisions are real and each has a picture; the contract page, the colour roles, and the Storybook page prove them; the limits chapter is honest. What repeats: the role four times (meta strip, Context, My role and scope, Period and team); the counts three times (meta strip, the stats row, the 6.0 cover caption); the drift sentence twice (Problem, chapter 05 maxim); the tool chain twice (the six-stage process board and the three-station loop, both in chapter 05, with the 4px-grid thesis between them saying the loop's third edge again); the templates twice (the chapter 01 carousel and the chapter 07 dossier, same screens, same captions). What is reference, not argument: the logo spec page (already folded), the breaking-change history, the three product screens in chapter 07. Where the role and the tools were unclear: the eight-slide carousel mixed product screens with Figma pages and Storybook, so a first pass could not tell what Big Hat is from what it is drawn with; and nothing said which tool does what in one place. Four maxims and two theses on a ten-chapter page.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team | What, Problem, My role, Decision 1 to 3 with shots, Outcome | the meta strip states Role and Period; Context said the lead again. Decision shots: colour roles (MacBook) to #foundations, the Button contract page (flat) to #components, Button in Storybook (MacBook) to #workflow |
+| 01: passage, four points, stats, eight-slide carousel, the 6.0 cover shot | passage with the templates' rule in it, six-slide carousel | the points said the role, the public source, and the three products again; the stats repeated the meta strip; the 6.0 cover moved into the sheet as the release station; primitives and the records-empty slide left the carousel because chapters 03 and 06 show them with their rule |
+| 02: four points, logo, folded logo page | the same, the brim point shortened | no change of substance |
+| 03: two MacBook shots stacked, thesis | `tabs` Colour roles and Primitives, thesis | two screens of equal rank; one screen of scroll instead of two |
+| 04: three shots stacked (contract, variants, Storybook) | `tabs` Contract, Variants, Storybook | the three surfaces are peers, which is the chapter's point |
+| 05: maxim, six-stage `process`, code, thesis on the 4px grid, three-station `loop` | standfirst, `sheet` of seven stations (Contract, Figma, React, Storybook, Figma Code Connect, GitHub merge, Release 6.0), code | the board and the loop told the same chain; the sheet tells it once in the home page's language, with the study's own screens; the thesis is the merge station's body; the maxim was the 00 Problem row |
+| 07 Templates: dossier of three tiles (tpl-kanban, tpl-records, tpl-ai-chat) | chapter dropped; its rule is one sentence in the 01 passage | the same three screens with the same captions are the 01 carousel; chapters 08 and 09 renumbered 07 and 08 |
+| 08 Governance: `evolution` open | standfirst, `fold` "The split, 1.x to 3.0" with the evolution inside | reference on a first pass; the standfirst says what was split and why it took three versions |
+| maxims: 01, 05, 06, 07; theses: 03, 05 | maxims 01 and 06; thesis 03 | two maxims at most; the 05 thesis became a sheet station |
+
+Numbers: 1 743 to 1 364 visible words; 16 886 to 14 384 px at 1440; 10 to 9 chapters; 26 images before and after (the sheet's seven windows carry six of them). No fact, number, tool, date, or result was added. The sheet uses `image` stations with the study's own exports and the neutral `merge` drawing; no FOX drawing. The tool list names only what the file already named: the contract files, Figma, React, Storybook, GitHub. The agent that generated the library over Figma's MCP server is not named in the file, so the station says "an agent".
+
+Deep links lost with chapter 07: `#tpl-kanban`, `#tpl-records`, `#tpl-ai-chat`. Still open for Konstancja: which agent generated the Figma library; the fourth template's name; whether "Docu Manager" should read "APplus Documents" (the Kanban slide shows a "bighat Document Manager" demo, which looks like a separate thing from the Asseco study).
