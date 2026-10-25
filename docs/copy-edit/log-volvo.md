@@ -107,3 +107,44 @@ She approved both (her answer "3 - ok"). Source: `docs/copy-edit/sources/cv-2026
 | meta Team: "Angular developers, a business analyst, …" | "Four Angular developers, a business analyst, …" | CV: "Delivered with four Angular developers, a BA, product owner and project manager" |
 | In short, Period and team: "… Angular developers, …" | "… Four Angular developers, …" | as above |
 | 3D block `system`: "Baldo" | "Volvo Design System" | CV: "built its design system on the corporate Volvo Design System" |
+
+## 25 October 2026: rebuilt the Analytics way
+
+Against `REBUILD-BRIEF.md` and `site/src/content/bi.ts`. Measured on the dev server at 1440 wide, after a scroll to the bottom: before 1 434 words, 13 032 px, 8 chapters, 29 images; after 1 101 words, 11 954 px, 6 chapters, 34 images (the four annotated folders now carry their own thumbnails in the folds). At 390 wide: 16 278 px, no horizontal scroll. `tsc --noEmit` and `npm run check` pass.
+
+Review as a hiring manager, skimming by scroll:
+
+1. The cover, the meta strip, and the lead say what Baldo is and what she did; the role is clear from the first screen.
+2. "In short" repeated the meta strip (Period and team) and the lead (Context), and its three decisions had no pictures.
+3. Chapter 01 said the product's purpose a third time, then thirteen slides with full-sentence bodies.
+4. Chapter 02 "The problem" said what 00's Problem row and the dossier's before screens already say: one row of tabs, reports as long forms.
+5. Chapter 03 opened with a stats block, then a passage with the same three numbers, then the six insights.
+6. The dossier of three parts is the argument of the study and reads well; its hotspots repeat its bullets, so the bubbles could be shorter.
+7. The exploded Partner Details is the one thing a skimmer stops at; the folded component board under it is right.
+8. "User flows" opened each tile on a flow, then seven, four, four, and six annotated screens in a row: reference an engineer reads, a hiring manager scrolls past.
+9. Chapter 07 "What it adds up to" said in 55 words what 00's Outcome row says in 25.
+10. The tools (Dovetail, Usability Hub, Maze, Figma, the Angular build) were named in prose in two places and drawn nowhere.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 00: Context, Problem, My role and scope, Decision 1 to 3 (text only), Outcome, Period and team | 00: What, Problem, My role, Decision 1 to 3 with `shot` and `to: "#redesign"`, Outcome; no Context, no Period and team | the meta strip states period and team; the sixty-second page carries the decisions as pictures |
+| Decision 1 to 3 without shots | Decision 1 `device/partner-after-1600.webp` (macbook), Decision 2 `device/report-builder-after-1600.webp` (macbook), Decision 3 `screens/email-after.png` (flat, portrait) | the screen that shows each decision taken |
+| 00 Outcome: 58 words on the research methods and the missing release record | 25 words: boards, prototypes, Figma files with most frames Approved /Done; no release or results on record | at most 25 words; the methods moved to the sheet |
+| 01: passage + three bullets (500 applications, master-data hub, the administrators) + carousel | one passage of two sentences + carousel | the first two bullets repeated 00's What row |
+| 01 carousel: thirteen bodies as full sentences | the same thirteen slides, bodies as fragments | captions as fragments |
+| 02 "The problem": passage, three bullets, two legacy screens with hotspots | dropped; `reports-before.png` shows in the sheet's first station; `report-loading-before.png` is no longer used | said twice: 00's Problem row and the dossier's before screens with their hotspots |
+| 03 Research: `stats` (15, 45 min, 5) + passage naming Dovetail, Usability Hub, Maze + six insights | 02 Research: one lead sentence (card sort, interviews, Dovetail) + the six insights; Usability Hub and Maze moved to the sheet | the stats repeated the passage; the tool chain is drawn once, in the sheet |
+| 04 dossier: hotspot texts as full sentences, captions as full sentences | 03 dossier: the same three tiles, hotspots and captions as fragments | fragments where a full sentence adds nothing |
+| 05 Design system: exploded + folded component board | 04 Design system: exploded + `sheet` (four stations, all `image`) + folded component board | the sheet replaces the prose that told the process |
+| 06 User flows: each tile a `flow` then an open `annotated` folder | 05 User flows: each tile a `flow` then the folder inside a `fold` ("The Partner screens, in order", "Creating a user, in order", "Copying applications, in order", "The Unit screens, in order"), hint says how many screens | the folders are reference for engineers; a first pass skips them |
+| 07 "What it adds up to": 55-word passage | dropped | 00's Outcome row says it; the frame statuses moved there |
+| chapter numbers 00 to 07 | 00 to 05, consecutive | renumbered after the two drops; ids `what-it-is`, `research`, `redesign`, `design-system`, `user-flows`, `search`, `reports`, `email`, `flow-*` unchanged; `problem` and `outcome` are gone |
+
+The sheet: tools Dovetail (glyph Dv), Figma, Usability Hub (UH), Maze (Mz), Angular; stations 01 Baldo "legacy Reports" (the legacy report list; card sort with 15 administrators, 45-minute interviews), 02 Figma "Partner · Approved /Done" (the redesigned Partner search), 03 Usability Hub, Maze "prototype" (the My reports prototype), 04 Figma "components" (the component board, for four Angular developers). Block rows: Sheet, Drawn for; Governed by and Repository dropped, nothing on record. A fifth station, the Behance boards, was drawn and removed: alone on a second row it looked like an afterthought, and the boards are the documentation, not the work.
+
+Not done, and why:
+
+- The decision cards link to `#redesign`, not to the tile ids: the dossier opens a tile from the hash on mount only, so a click inside the page would scroll to the tile without opening it.
+- No `tabs`: the sign-off screens are already in the dossier panels, and the flows are sequences.
+- No `evolution`, `usecase`, `joint`, `video`, `merge` station: none on record, as the 13 and 15 October entries say.
+- `report-loading-before.png` stays in the folder, unused.
