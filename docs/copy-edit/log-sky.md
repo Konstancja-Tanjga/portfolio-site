@@ -46,3 +46,40 @@ Not done, and why:
 - No `dossier` or `flow`: no use case and no staged process is on record.
 - The night chorus (06), the scale view (08-scale), the flashcard pair (07), and the About page's type (09) stay flat: they are sections of a page, not full screens, so a MacBook frame would claim a viewport they do not fill.
 - The 04-groups clip runs 26 seconds; it loops muted like the others. If that is too long for a clip, it goes back to a film with controls by removing `clip: true`.
+
+## 25 October 2026: rebuilt the Analytics way
+
+Review from the hiring manager's chair, before the rebuild (2 742 words, 18 352 px at 1440, 11 chapters, 22 images, 4 clips):
+
+1. The product is clear in a scroll: the sky, the birds from numbers, the morphs, the owls, the flashcards. The pictures carry it.
+2. The first chapter said the same thing four times: a brief, a passage, four bullets, a stats block, and a thesis, all on "plain, redesigned with Claude, 42 species".
+3. The role was stated in the cover credit, the metadata strip, the brief, the bullets, the thesis, and chapter 11. Six times.
+4. The tools were never drawn: Claude Code, Big Hat, Playwright, GitHub, Vercel sat in a spec table under chapter 10, in the file's own comment, and in metadata, never as a chain.
+5. The code block in 03 and the palette in 09 are reference: an engineer reads them, a hiring manager scrolls past 1 200 px of them.
+6. Four clips of equal rank sat one under the other in three chapters, 3 000 px of autoplaying video for a reader who wants to see one.
+7. The species page and the About page appeared twice each: in the carousel and again as flat shots in 08 and 11.
+8. Eleven maxims, one per chapter; the kit allows two.
+9. No chapter 00: the brief sat under a chapter titled "From plain to gripping" with a maxim, so the sixty-second page was not the first thing on the page.
+10. The 09 type shot is almost square and sat at wall width: 1 200 px for a sample of accented letters.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 01 "From plain to gripping": `brief` (eight rows, Context and Period and team), passage, four bullets, six-slide carousel, kettle clip, `stats`, `thesis` | 00 "In short": `brief` with What, Problem, My role, three decisions with shots (morph slider to #motion, red kite plate to #silhouettes, home by day in a MacBook to #sky), Outcome | the sixty-second page; the metadata strip already states period and team, so no row for them |
+| (same chapter) | 01 "What it is": one passage, carousel of four (day, night, species page, About page) | the kit's 01; dawn and dusk are in 02, the role is in 00 |
+| `stats` (42, 282, 82, 60) and `thesis` "Who made what" | removed | the Outcome row and the metadata strip say both |
+| 02: points, then dawn, dusk, night as a `set` of three; the kettle clip above it | points cut to three; `set` of four with the day poster added; the clip moved to the 10 tabs | the four hours in one row; the clip is peer content |
+| 03: code block in the open | `fold` "Two look-alikes in the source", hint "five lines of sylwetki.ts" | reference an engineer opens |
+| 04: two clips under the points | points only, last bullet points to the clips in 10 | the clips are in the tabs |
+| 05: kestrel clip | points only, three bullets instead of five | as above |
+| 06: passage and shot | shot with the passage's facts in its caption, standfirst for the owl module | 68 words said what the caption now says |
+| 07: five bullets | four, fragments | as the kit says |
+| 08: three bullets, species-page shot, scale shot | three bullets, scale shot | the species page is slide three of the carousel |
+| 09: palette in the open; type shot at wall width | palette in a `fold` "Two palettes, one for each mode"; type shot at column width | reference; a near-square image at wall width was 1 200 px |
+| 10: points and a `spec` table "Under the hood" | points and `tabs` of the four clips (The kettle, Eight groups, Buzzard or honey buzzard, A kestrel); the spec's facts moved into the sheet | peer clips, one screen instead of four; the stack is part of the tool chain |
+| 11 "Credits": passage, four bullets, About shot | 11 "How it was made, and by whom": `sheet` with six stations (Claude Code, Big Hat 4.9, sylwetki.ts, Playwright, GitHub, Vercel), then two bullets on the photographs and the About page | the process in the home page's language; the About page is slide four of the carousel |
+| maxims on 11 chapters | 2 kept (03 "No silhouette in the course is a drawing", 11 "Made by two of us"); the rest became standfirsts or went | the kit allows two |
+| lead, 95 words with the kettle and the owl | 55 words: plain, one principle, who made what | the sky is described in 00 and 02 |
+
+Result: 1 983 words, 15 914 px at 1440, 12 chapters (00 to 11), 27 images counted by the browser (the four `set` stills and the six sheet windows included), 4 clips in one `tabs` block. The ids `brief`, `sky`, `silhouettes`, `look-alikes`, `flight`, `owls`, `flashcards`, `atlas`, `type-and-colour`, `motion`, `credits` all still resolve; `what-it-is` is new.
+
+Not done, and why: the Big Hat station shows `/work/bighat-design-system/colour-roles.png`, a picture from her own study, because the sheet's `storybook` drawing carries an Analytics thumbnail and the `code` drawing prints "fox-card.spec.md" and "figma mcp"; a station for Claude Code shows the app's About page for the same reason.
