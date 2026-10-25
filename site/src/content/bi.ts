@@ -66,44 +66,42 @@ export const bi: CaseStudy = {
           kind: "brief",
           rows: [
             {
-              key: "Context",
+              key: "What",
               value:
-                "APplus customers already had analytics, through a third-party BI tool outside the ERP. Analytics is the in-house replacement: a data warehouse and the application on top of it, informed by how customers used the old tool and by market practice for BI.",
+                "The in-house replacement for the third-party BI tool APplus customers used: a data warehouse, and the application on top of it.",
             },
             {
               key: "Problem",
               value:
-                "The PM had built a working prototype of the replacement in Lovable. It showed the product could be built and left open how people would find, trust and share a number.",
+                "The PM's Lovable prototype proved the product could be built. Open: how people find, trust and share a number.",
             },
             {
-              key: "My role and scope",
+              key: "My role",
               value:
-                "The only designer: the audit, the information architecture, the nine surface rules, requirement-level sign-off, a working prototype on FOX, and the design review of every pull request. I ran the eight validation sessions myself.",
+                "The only designer. The audit, the information architecture, the nine surface rules, sign-off against every requirement, the design review of every pull request; eight validation sessions, run by me.",
             },
             {
               key: "Decision 1",
               value:
                 "The surface follows the scope of what is acted on. Nine rules give every action type exactly one surface.",
+              shot: { src: `${D}/analysis-sheet-1600.webp`, alt: "Graph view with the render side sheet open", to: "#sign-off" },
             },
             {
               key: "Decision 2",
               value:
                 "A follow-up question to the AI analyst is a branch with two exits, apply or discard, so the analysis never changes without a stated reason.",
+              shot: { src: `${D}/analyst-thread-1600.webp`, alt: "A detail thread beside the main analysis", to: "#use-cases" },
             },
             {
               key: "Decision 3",
               value:
                 "Reach, authorship and join type are printed on the object itself. Nobody has to open a dialog to learn who can see a query.",
+              shot: { src: `${D}/models-relationship-1600.webp`, alt: "A join stated on the model canvas", to: "#use-cases" },
             },
             {
               key: "Outcome",
               value:
-                "Shipped. 7 of 7 audit questions answered by a rule; every app-bar action and render panel checked against the rules. Vision Days, 22 September 2026; generally available from October.",
-            },
-            {
-              key: "Period and team",
-              value:
-                "January to September 2026. Seven people: three developers, a requirements engineer, QA, a PM and me.",
+                "Shipped. 7 of 7 audit questions answered by a rule; every app-bar action and render panel checked against them. Vision Days, 22 September 2026; generally available from October.",
             },
           ],
         },
@@ -130,19 +128,6 @@ export const bi: CaseStudy = {
             { src: `${D}/queries-card-2400.webp`, frame: "macbook", title: "A query", body: "Access, owner and eligible roles on the query itself, the SQL and a preview below." },
             { src: `${D}/models-relationship-2400.webp`, frame: "macbook", title: "Data models", body: "The join states its direction and type on the canvas." },
             { src: `${D}/settings-2400.webp`, frame: "macbook", title: "Settings", body: "Master data sources, and the admin spine: translations, data sources, AI, users, system." },
-          ],
-        },
-        {
-          kind: "passage",
-          html: "<p><strong>What I owned.</strong> From the audit to the review of the build.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>The audit</strong> of the PM's prototype, and <strong>the shape of the product</strong> that came out of it.",
-            "<strong>The nine surface rules</strong> the whole application obeys, and <strong>the sign-off</strong> of every frame against its REQ.",
-            "<strong>Design review of every pull request</strong> that changes a screen, on its build.",
-            "<strong>FOX, the design system it runs on</strong>: tokens and component API, and its migration to v3.0.",
           ],
         },
       ],
@@ -367,29 +352,36 @@ export const bi: CaseStudy = {
           },
         },
         {
-          kind: "evolution",
-          items: [
+          kind: "fold",
+          title: "FOX under the product: v2.0 to v3.0",
+          hint: "Open: three versions, what each one changed",
+          blocks: [
             {
-              version: "v2.0",
-              claim: "The file is the system",
-              sourceOfTruth: "The Figma library; code a rendering of it, from a spec and a conversation.",
-              ships: "Designer edits and writes up; developer reimplements downstream.",
-              costs: "Two artefacts claim to be the component; drift found by a person, too late.",
-            },
-            {
-              version: "v2.3",
-              claim: "The file is bound to the code",
-              sourceOfTruth: "Still Figma, every component tied to its code through Code Connect.",
-              ships: "Figma to Storybook to development; code-side work written back over MCP.",
-              costs: "Binding real, ownership not: the file kept honest by hand whenever code moves first.",
-            },
-            {
-              version: "v3.0",
-              claim: "The code is the system",
-              sourceOfTruth: "Storybook: the library authored, reviewed and versioned as code, published through Nexus.",
-              ships: "A component changed where it runs; products move a version, not a frame.",
-              costs: "No file to lean on: reviewing the system means reading a story.",
-              moved: "What moved: the authority, from the file that describes the system to the code that is it.",
+              kind: "evolution",
+              items: [
+                {
+                  version: "v2.0",
+                  claim: "The file is the system",
+                  sourceOfTruth: "The Figma library; code a rendering of it, from a spec and a conversation.",
+                  ships: "Designer edits and writes up; developer reimplements downstream.",
+                  costs: "Two artefacts claim to be the component; drift found by a person, too late.",
+                },
+                {
+                  version: "v2.3",
+                  claim: "The file is bound to the code",
+                  sourceOfTruth: "Still Figma, every component tied to its code through Code Connect.",
+                  ships: "Figma to Storybook to development; code-side work written back over MCP.",
+                  costs: "Binding real, ownership not: the file kept honest by hand whenever code moves first.",
+                },
+                {
+                  version: "v3.0",
+                  claim: "The code is the system",
+                  sourceOfTruth: "Storybook: the library authored, reviewed and versioned as code, published through Nexus.",
+                  ships: "A component changed where it runs; products move a version, not a frame.",
+                  costs: "No file to lean on: reviewing the system means reading a story.",
+                  moved: "What moved: the authority, from the file that describes the system to the code that is it.",
+                },
+              ],
             },
           ],
         },
@@ -400,44 +392,65 @@ export const bi: CaseStudy = {
       n: "07",
       heading: "Design and sign-off",
       standfirst:
-        "Every frame carries its REQ number, a date and a status, then sign-off; REQ-1735 was signed off on 3 June 2026. Two screens that set the layout rules, and two flows as signed off.",
+        "Every frame carries its REQ number, a date and a status, then sign-off; REQ-1735 was signed off on 3 June 2026. Two screens that set the layout rules and two flows, one per tab.",
       blocks: [
         {
-          kind: "duo",
+          kind: "tabs",
+          label: "Screens and flows as signed off",
           items: [
             {
-              src: `${D}/analysis-sheet-2400.webp`,
-              frame: "macbook",
-              caption: "Graph view with the side sheet open. Changing how the body renders opens a side sheet from the view toolbar (R2, render scope), without a scrim, and the chart reflows beside it.",
+              label: "Graph view",
+              blocks: [
+                {
+                  kind: "shot",
+                  src: `${D}/analysis-sheet-2400.webp`,
+                  frame: "macbook",
+                  caption: "The side sheet, opened from the view toolbar: render scope, no scrim, the chart reflows beside it.",
+                },
+              ],
             },
             {
-              src: `${D}/analysis-pivot-2400.webp`,
-              frame: "macbook",
-              caption: "Pivot view: the grid with its total row, and the view toolbar that travels with the workspace (R6, a view state has no surface; R7, one entry point per action).",
+              label: "Pivot view",
+              blocks: [
+                {
+                  kind: "shot",
+                  src: `${D}/analysis-pivot-2400.webp`,
+                  frame: "macbook",
+                  caption: "The grid with its total row; the view toolbar travels with the workspace. A view state has no surface; one entry point per action.",
+                },
+              ],
+            },
+            {
+              label: "A dashboard built",
+              blocks: [
+                {
+                  kind: "video",
+                  clip: true,
+                  frame: "macbook",
+                  width: "wall",
+                  src: `${C}/new-dashboard.mp4`,
+                  poster: `${C}/new-dashboard.webp`,
+                  title: "A dashboard created, a widget added, the layout saved",
+                  caption: "In the prototype: a dashboard named in a dialog, two widgets configured in the side sheet, the layout saved.",
+                },
+              ],
+            },
+            {
+              label: "The analyst asked",
+              blocks: [
+                {
+                  kind: "video",
+                  clip: true,
+                  frame: "macbook",
+                  width: "wall",
+                  src: `${C}/ai-analyst.mp4`,
+                  poster: `${C}/ai-analyst.webp`,
+                  title: "The AI Data Analyst, from question to applied correction",
+                  caption: "In the prototype: a question, the answer that names its cause, one phrase questioned in a detail thread, the correction applied as one step.",
+                },
+              ],
             },
           ],
-        },
-
-        {
-          kind: "video",
-          clip: true,
-          frame: "macbook",
-          width: "wall",
-          src: `${C}/new-dashboard.mp4`,
-          poster: `${C}/new-dashboard.webp`,
-          title: "A dashboard created, a widget added, the layout saved",
-          caption: "In the prototype: a new dashboard named in a dialog (R1, an object opens a modal), two widgets configured in the side sheet (R2, render scope), the layout saved.",
-        },
-        {
-          kind: "video",
-          clip: true,
-          frame: "macbook",
-          width: "wall",
-          src: `${C}/ai-analyst.mp4`,
-          poster: `${C}/ai-analyst.webp`,
-          title: "The AI Data Analyst, from question to applied correction",
-          caption:
-            "In the prototype: a question asked, the answer that names the cause, one phrase questioned in a detail thread, and the correction applied back as one step.",
         },
       ],
     },

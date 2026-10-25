@@ -97,3 +97,18 @@ Fixes after review, same day: the Data models tile renumbered 02; every rule id 
 Second pass, same day, at Konstancja's request ("ucięłabym więcej treści", "skróć treści person", fragments instead of sentences, fewer elements per use case): personas cut to one line per field and two goals each, the chapter standfirst halved; carousel 11 to 8 slides with one-line bodies; ownership bullets 6 to 4; discovery bullets 4 to 2; the new-query and new-analysis clips removed (the data-model and dashboard clips stay); audit table, evolution tabs, handoff cards, after-development steps and the reflection answers rewritten as fragments; AI analyst use case loses the product shot (the carousel has it), data models loses the shelf duo and the "One relationship" still; one of four measures dropped; the sheet's Tools row dropped (the strip above lists them). Visible words 2 950 to 2 300; 25 to 20 000 px.
 
 Konstancja's corrections, 25 October: "FOX, which I own" is not true, FOX is Asseco's design system. Every ownership phrase about FOX on the site now states the role instead: "FOX, Asseco's design system, which I lead: tokens, component API and the review gate" (metadata of Analytics, Best Practice Hub, Documents, Flow), "I lead FOX" and "its maintainer" (Documents, Hub), "the component API and the tokens are my responsibility", "the skills and the AGENTS.md, which I maintain" (Analytics, FOX study), "I lead it there" (About). Not touched: the CV, which says "Own the FOX design system" in the scope line, for her to decide. Also at her request: the passage "A working prototype of the application … is open at prototype/analytics" is gone, and the prototype itself (site/src/proto, the /prototype/analytics route) is removed from the site; the clips recorded from it stay.
+
+## 25 October 2026: one scroll, shorter, with a map
+
+Konstancja asked whether the chapters should become horizontal tabs, to cut the vertical scroll. Answer: no, tabs hide what is not chosen and cut a story into equal parts that are not equal; the problem is length and orientation. Built instead, on branch `study-nav`:
+
+| Where | Before | After | Why |
+| --- | --- | --- | --- |
+| 00 In short | eight rows, 1 300 px, no picture; Context and Period repeated the lead and the metadata strip | What, Problem, My role, Outcome; the three decisions as cards with the screen that shows each decision taken, linking to the chapter | the sixty-second page: a hiring manager who stops here has product, problem, three decisions as pictures, result |
+| jump bar | twelve chapter names, cut off after the eighth, no scroll anyone could see | numbered 00 to 11, scrolls sideways, the current chapter kept in view | the map tabs would have given, without hiding the page |
+| 01 What it is | "What I owned" and four bullets | removed | the role is in 00 and in the metadata strip |
+| 06 Design system | the evolution tabs open under the sheet | folded: "FOX under the product: v2.0 to v3.0" | the system's history is reference on a product study |
+| 07 Design and sign-off | two screens and two clips stacked, 2 500 px | one row of four tabs: Graph view, Pivot view, A dashboard built, The analyst asked | peer content; the reader picks one, the chapter is one screen |
+| between chapters | one and a half beats | one | a screen of nothing between chapters reads as an end |
+
+Captions in 07 lose their rule ids (R1, R2, R6, R7), which named folders no longer on the page; each says its rule in words. Page at 1440 px: 19 000 to 17 100 px before the use cases open; the sign-off chapter 2 500 to 1 300 px.

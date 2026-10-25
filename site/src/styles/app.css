@@ -987,11 +987,28 @@ img { max-width: 100%; height: auto; }
   max-width: var(--bh-wall);
   margin: 0 auto;
   padding: var(--bh-space-2) var(--bh-gutter);
-  overflow-x: auto;
+  overflow: hidden;
 }
 .jump__title { flex: 0 0 auto; font-size: var(--bh-size-small); font-weight: 500; color: var(--bh-text-strong); }
-.jump__nav { display: flex; gap: var(--bh-space-3); font-size: var(--bh-size-small); white-space: nowrap; }
-.jump__nav a { color: var(--bh-text-quiet); }
+/* The chapter list is wider than the bar on every study with more than
+   six chapters. It scrolls on its own, without a scrollbar, and fades at
+   the edge that has more; JumpBar.tsx keeps the current chapter in view. */
+.jump__nav {
+  position: relative;
+  display: flex;
+  gap: var(--bh-space-4);
+  font-size: var(--bh-size-small);
+  white-space: nowrap;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-right: var(--bh-space-6);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 3rem), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 3rem), transparent);
+}
+.jump__nav::-webkit-scrollbar { display: none; }
+.jump__nav a { display: inline-flex; align-items: baseline; gap: 0.45em; flex: 0 0 auto; color: var(--bh-text-quiet); }
+.jump__n { font-family: var(--bh-font-id); font-size: var(--bh-size-id); letter-spacing: 0.06em; color: var(--bh-mark); }
 .jump__nav a:hover { color: var(--bh-text-strong); }
 .jump__nav a[aria-current="true"] { color: var(--bh-text-strong); box-shadow: inset 0 -0.12em 0 var(--bh-mark); }
 

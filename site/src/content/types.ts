@@ -314,7 +314,20 @@ export type Block =
    * spec, laid out across the whole wall. Rows whose key starts with
    * "Decision" are set side by side as the three things to remember.
    */
-  | { kind: "brief"; rows: { key: string; value: string }[] }
+  | { kind: "brief"; rows: BriefRow[] }
+  /**
+   * Peer content behind one row of tabs: screens and clips of equal rank
+   * that a reader picks between, such as the two screens and two flows of a
+   * sign-off. Never for the chapters of the story, which are read in order;
+   * tabs hide what is not chosen, and most readers never choose.
+   */
+  | { kind: "tabs"; label: string; items: { label: string; blocks: Block[] }[] }
+  /**
+   * Material a reader can do without on a first pass, closed under one
+   * title: the system's history under the product, a long table, a method.
+   * The drawer a folded shot or list uses, so the reader learns one control.
+   */
+  | { kind: "fold"; title: string; hint?: string; blocks: Block[] }
   /**
    * A short chain of stages, read left to right: what goes in, what comes
    * out, in three or four cards. For a process that is the point of a
@@ -427,6 +440,17 @@ export type Dossier = {
   cover: { src: string; frame?: "macbook" };
   /** Any block but `exploded`, whose sticky pin cannot work inside a scrolling panel. */
   blocks: Exclude<Block, { kind: "exploded" }>[];
+};
+
+/**
+ * One row of the brief. A decision row may carry the screen that shows the
+ * decision taken and the chapter it links to, so the summary is three
+ * pictures as well as three sentences.
+ */
+export type BriefRow = {
+  key: string;
+  value: string;
+  shot?: { src: string; alt: string; to: string };
 };
 
 /** A named stretch of the wall. Chapters drive the jump bar. */

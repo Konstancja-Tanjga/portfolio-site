@@ -35,6 +35,7 @@ export function JumpBar({
   const { direction } = useScroll();
   const location = useLocation();
   const named = useMemo(() => chapters.filter((c) => c.heading), [chapters]);
+  const nav = useRef<HTMLElement | null>(null);
 
   /**
    * A hash names the chapter outright, so it wins until the reader moves.
@@ -122,6 +123,25 @@ export function JumpBar({
     }
   }, [location.key, location.hash, named]);
 
+  /**
+   * Twelve chapter names are wider than the bar, so the list scrolls
+   * sideways and the current one is kept in view: a map is no use when the
+   * "you are here" is off its edge. The bar's own scroll only, never the
+   * page's, which is why this is not scrollIntoView.
+   */
+  useEffect(() => {
+    const el = nav.current;
+    const current = el?.querySelector<HTMLElement>('[aria-current="true"]');
+    if (!el || !current) return;
+    const left = current.offsetLeft;
+    const right = left + current.offsetWidth;
+    const pad = 24;
+    if (left < el.scrollLeft + pad || right > el.scrollLeft + el.clientWidth - pad) {
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      el.scrollTo({ left: Math.max(0, left - pad), behavior: reduced ? "instant" : "smooth" });
+    }
+  }, [active]);
+
   return (
     <div className={direction === "down" ? "jump is-tucked" : "jump"}>
       <div className="jump__inner">
@@ -132,14 +152,15 @@ export function JumpBar({
         </Link>
         <span className="jump__title">{title}</span>
         {named.length > 0 && (
-        <nav className="jump__nav" aria-label="Chapters">
+        <nav ref={nav} className="jump__nav" aria-label="Chapters">
           {named.map((c) => (
             <a
               key={c.id}
               href={`#${c.id}`}
               aria-current={active === c.id ? "true" : undefined}
             >
-              {c.heading}
+              {c.n && <span className="jump__n">{c.n}</span>}
+              <span className="jump__label">{c.heading}</span>
             </a>
           ))}
         </nav>

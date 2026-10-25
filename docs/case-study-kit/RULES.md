@@ -28,16 +28,16 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 | --- | --- | --- | --- |
 | cover | Cover | `cover` with `layers` | What the product is, in one line, over the product's own screens blending through. Credit: role, company, year. |
 | meta | Metadata strip | `MetaStrip` | Role, team, period, stack, launch, product context. Facts only, each traceable. |
-| 00 | In short | `brief` | Context, Problem, My role and scope, Decision 1 to 3, Outcome, Period and team. Each row one sentence, at most 25 words. |
-| 01 | What it is | `points` + `carousel` | What I owned, as bullets with the claim in bold. Then every part of the application, one screen per slide. |
+| 00 | In short | `brief` | What, Problem, My role, Decision 1 to 3, Outcome. Each row one sentence, at most 25 words; nothing the metadata strip already says. Each decision carries the screen that shows it taken (`shot`, a device export; the card crops the frame away) and links to the chapter that argues it. This is the sixty-second page: a reader who stops here has the product, the problem, the three decisions as pictures, and the result. |
+| 01 | What it is | `passage` + `carousel` | One sentence on what it is, then every part of the application, one screen per slide. The role is in 00; it is not listed again here. |
 | 01a | Why this is a hard brief | `points` | Three to five constraints, hardest first, each a bold claim and one reason. |
 | 02 | Who it is for | `personas` | Two to four people, named by role, stacked horizontally. State of mind before task list. |
 | 03 | Discovery and research | `points` + folded `shot` | What was found, as bullets. Diagrams folded, opened on demand. |
 | 04 | What the audit asked | `duo` with `hotspots` | The questions, as speech bubbles on the screens that provoked them. Seven questions, seven decisions. |
 | 05 | First prototypes | `flow` | The sequence of what was tried, three to five stages, one sentence each. |
-| 06 | Design system | `sheet` + `evolution` | The project's own drawing sheet first: one requirement through the tools it passed, as tool windows on a conveyor line (the home page's "How I work", with this project's stations). Then one tab per version: what changed, who owned it. |
+| 06 | Design system | `sheet` + `evolution` | The project's own drawing sheet first: one requirement through the tools it passed, as tool windows on a conveyor line (the home page's "How I work", with this project's stations). Then the system's history under the product, one tab per version, inside a `fold`: it is reference, and a first reading passes it by. |
 | 06a | Screen architecture | `duo` + `annotated` | The two or three screens that set the rules, then folders of screens with their rule ids. Optional: the folders are reference for engineers; when the study has to stay short for a hiring manager, the rule screens move to 07 and the folders stay in git history. |
-| 07 | Design and sign-off | `set` or `carousel` | The screens as signed off. |
+| 07 | Design and sign-off | `tabs` of `shot` and `video` | The screens and flows as signed off, one per tab, so four of them take one screen of scroll instead of four. |
 | 07a | A flow best watched | `beside` | Prose beside a phone-sized clip that stays in view while the text scrolls, for a flow such as voice mode. |
 | 08 | Use cases | `dossier` of `usecase` | One tile per area. Each unfolds to the right: screens, the use-case template, the rule it sets. |
 | 09 | Handoff | `loop` + `flow` | What development receives and in what form, drawn as the cycle it is: file, code and prototype feeding one another. The requirements baked in from the start as `flow` cards. |
@@ -46,6 +46,27 @@ put in it; a chapter is never reordered and never renamed to sound bigger.
 
 Chapter numbers keep the Figma numbering. A sub-chapter gets a letter
 (`06a`), never a new number, so the numbers on the wall match the file.
+
+### Scroll, tabs, folds
+
+The study is one scroll, read in order, and the chapters never become
+tabs: a tab hides what is not chosen, most readers never choose, and the
+chapters are a story whose later parts depend on the earlier ones. What
+keeps the scroll short is a shorter story, not a hidden one. Three
+controls do the rest, each in its place:
+
+- `brief` with decision shots in 00 is the whole study in one screen, for
+  the reader who gives it sixty seconds.
+- `tabs` holds content of equal rank the reader picks between: the screens
+  and clips of a sign-off, variants of one screen, before and after. Never
+  a sequence.
+- `fold` closes material a first reading can skip: the system's history,
+  a long table, a method. The title says what is inside, the hint says how
+  much.
+
+The jump bar numbers the chapters, scrolls sideways when they do not fit,
+and keeps the current one in view, so the map is there without the page
+being cut up.
 
 ## 3. The use-case template
 
