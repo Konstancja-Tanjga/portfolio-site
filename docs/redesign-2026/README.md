@@ -230,3 +230,9 @@ The same day, on her note: the three birds on the home page now sit in tight moc
 ### 24 October: spoonbills from Barbate
 
 A new watercolour, "Warzęchy z Barbate" (Eurasian spoonbills, 14 October 2026), added first in Off screen, in a pale oak frame on a beach-house console, made the same way (room generated empty, the scan composited in, scanner edge trimmed). With four plates the row is four columns wide and two below 64rem. Job in [mockups2-spoonbills-jobs.json](mockups2-spoonbills-jobs.json).
+
+### 25 October: the Analytics study, rebuilt for the hiring manager
+
+A review from the reader's chair (25 000 px, 3 300 words, the method spread over six chapters, eight maxims) led to a rebuild: the tools and the workflow are now one picture, the home page's drawing sheet with this project's own stations (the Lovable audit, the Codex and Claude prototype, Figma with REQ sign-off, Storybook v3.0, Nexus, the pull-request review, the MCP write-back, the shipped screen), and the study lost its duplicates: the fox-dialog code block, the screen-architecture folders, the repeated screens in sign-off, the Queries use case, the loop ring, the second stats block and six maxims. `Sheet.tsx` takes its data as a prop, so the home page and a case study share one component. Edit log: `docs/copy-edit/log-bi.md`.
+
+![The sheet inside the Analytics study](analytics-how-i-worked-sheet.png)
