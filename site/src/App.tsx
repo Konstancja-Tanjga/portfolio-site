@@ -7,18 +7,9 @@ import { Case } from "./pages/Case";
 import { About } from "./pages/About";
 import { Watercolours } from "./pages/Watercolours";
 import { Practice } from "./pages/Practice";
-import { Prototype } from "./proto/Prototype";
 
 export default function App() {
   const { pathname } = useLocation();
-  // The prototype is an application, not a page of the site: no masthead.
-  if (pathname.startsWith("/prototype/")) {
-    return (
-      <Routes>
-        <Route path="/prototype/analytics/*" element={<Prototype />} />
-      </Routes>
-    );
-  }
   return (
     <Shell>
       <ScrollToTop />

@@ -5,7 +5,7 @@ import type { Rect } from "../system/Exploded";
 import { reduced } from "../system/motion";
 import { useReveal } from "../system/Reveal";
 import { analyticsExploded as dash } from "./exploded";
-import { sheet } from "./story";
+import type { SheetData, SheetDrawing } from "../content/types";
 import { Mark } from "./marks";
 
 /*
@@ -136,14 +136,12 @@ function Chromatic() {
   );
 }
 
-function Merge() {
+function Merge({ lines = ["Storybook", "Chromatic", "Reviewed against the frames, by me"] }: { lines?: string[] }) {
   return (
     <div className="sh-pr">
       <div className="sh-pr__head"><Bar w={58} /><span className="sh-pill is-fill">Merged</span></div>
       <ul>
-        <li>Storybook</li>
-        <li>Chromatic</li>
-        <li>Reviewed against the frames, by me</li>
+        {lines.map((l) => <li key={l}>{l}</li>)}
       </ul>
     </div>
   );
@@ -174,7 +172,7 @@ function Shipped() {
   );
 }
 
-const DRAWINGS = [Options, Figma, Code, Storybook, Chromatic, Merge, Nexus, Shipped];
+const DRAWINGS: Record<SheetDrawing, (p: { lines?: string[] }) => JSX.Element> = { options: Options, figma: Figma, code: Code, storybook: Storybook, chromatic: Chromatic, merge: Merge, nexus: Nexus, shipped: Shipped };
 
 /* ---- the sheet ---- */
 
@@ -182,7 +180,7 @@ const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 /** The window width the drawings are laid out for, in px: four columns at full page width. */
 const DESIGN = 254;
 
-export function Sheet() {
+export function Sheet({ data: sheet }: { data: SheetData }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
   const track = useRef<HTMLDivElement | null>(null);
   const list = useRef<HTMLOListElement | null>(null);
@@ -286,7 +284,7 @@ export function Sheet() {
       <ul className="sh-tools" aria-label="Tools">
         {sheet.tools.map((t) => (
           <li key={t.name} className="sh-tool">
-            <span className="sh-tool__mark" aria-hidden="true">{t.mark ? <Mark name={t.mark} size={26} /> : <span className="sh-tool__glyph">&lt;/&gt;</span>}</span>
+            <span className="sh-tool__mark" aria-hidden="true">{t.mark ? <Mark name={t.mark} size={26} /> : <span className="sh-tool__glyph">{t.glyph ?? "</>"}</span>}</span>
             <span className="sh-tool__name">{t.name}</span>
             <span className="sh-tool__what">{t.what}</span>
           </li>
@@ -299,13 +297,17 @@ export function Sheet() {
         </svg>
       <ol ref={list} className="sh-stations">
         {sheet.stations.map((s, i) => {
-          const Drawing = DRAWINGS[i];
+          const Drawing = s.drawing ? DRAWINGS[s.drawing] : null;
           return (
             <li key={s.title} className="sh-station">
               <p className="sh-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</p>
               <div className="sh-win">
                 <p className="sh-win__bar"><span>{s.mark && <Mark name={s.mark} size={13} />}{s.tool}</span><span>{s.file}</span></p>
-                <div className="sh-win__body" aria-hidden="true"><Drawing /></div>
+                {s.image ? (
+                  <div className="sh-win__body sh-win__body--image"><img src={asset(s.image.src)} alt={s.image.alt} loading="lazy" decoding="async" /></div>
+                ) : (
+                  <div className="sh-win__body" aria-hidden="true">{Drawing && <Drawing lines={s.lines} />}</div>
+                )}
               </div>
               <h3 className="sh-title">{s.title}</h3>
               <p className="sh-body">{s.body}</p>
@@ -315,8 +317,8 @@ export function Sheet() {
       </ol>
       </div>
 
-      <div className="sh-foot">
-        <div className="sh-rhythm">
+      <div className={sheet.rhythm ? "sh-foot" : "sh-foot sh-foot--block"}>
+        {sheet.rhythm && <div className="sh-rhythm">
           <p className="sh-label">Rhythm</p>
           {sheet.rhythm.map((r) => (
             <div key={r.every} className="sh-rhythm__row">
@@ -330,7 +332,7 @@ export function Sheet() {
               <p><strong>{r.every}</strong> {r.what}</p>
             </div>
           ))}
-        </div>
+        </div>}
         <dl className="sh-block">
           {sheet.block.map(([k, v]) => (
             <div key={k}><dt>{k}</dt><dd>{v}</dd></div>

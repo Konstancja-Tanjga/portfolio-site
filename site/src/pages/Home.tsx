@@ -9,7 +9,7 @@ import { Layers, TypeCover, firstDevice } from "../system/Cover";
 import { byGroup, findCase } from "../content";
 import type { CaseStudy } from "../content/types";
 import { asset } from "../system/asset";
-import { offScreen } from "../home/story";
+import { offScreen, sheet } from "../home/story";
 import { Sheet } from "../home/Sheet";
 import { QuickNav } from "../components/QuickNav";
 import { Exploded } from "../system/Exploded";
@@ -153,7 +153,7 @@ export function Home() {
             <Link className="hm-link" to="/about">More about how I work</Link>
           </p>
         </div>
-        <Sheet />
+        <Sheet data={sheet} />
       </section>
 
       <section id="stop-off" className="page hm-off" aria-labelledby="off-heading">

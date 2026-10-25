@@ -230,3 +230,22 @@ The same day, on her note: the three birds on the home page now sit in tight moc
 ### 24 October: spoonbills from Barbate
 
 A new watercolour, "Warzęchy z Barbate" (Eurasian spoonbills, 14 October 2026), added first in Off screen, in a pale oak frame on a beach-house console, made the same way (room generated empty, the scan composited in, scanner edge trimmed). With four plates the row is four columns wide and two below 64rem. Job in [mockups2-spoonbills-jobs.json](mockups2-spoonbills-jobs.json).
+
+### 25 October: the Analytics study, rebuilt for the hiring manager
+
+A review from the reader's chair (25 000 px, 3 300 words, the method spread over six chapters, eight maxims) led to a rebuild: the tools and the workflow are now one picture, the home page's drawing sheet with this project's own stations (the Lovable audit, the Codex and Claude prototype, Figma with REQ sign-off, Storybook v3.0, Nexus, the pull-request review, the MCP write-back, the shipped screen), and the study lost its duplicates: the fox-dialog code block, the screen-architecture folders, the repeated screens in sign-off, the Queries use case, the loop ring, the second stats block and six maxims. `Sheet.tsx` takes its data as a prop, so the home page and a case study share one component. Edit log: `docs/copy-edit/log-bi.md`.
+
+![The sheet inside the Analytics study](analytics-how-i-worked-sheet.png)
+
+### 25 October: one scroll, with a map
+
+Konstancja considered turning the chapters of a study into horizontal tabs, so a reader clicks instead of scrolling. We decided against it: a tab hides what is not chosen, a hiring manager skims by scrolling, and a study is a story read in order. What we built instead, on the Analytics study first:
+
+- "In short" is now the sixty-second page: four rows and the three decisions as cards, each with the screen that shows the decision taken, linking to the chapter that argues it.
+- The jump bar numbers the chapters, scrolls sideways when they do not fit, and keeps the current chapter in view.
+- Two new blocks for every study: `tabs` for content of equal rank (the sign-off's two screens and two clips are one row of four tabs now, one screen instead of four) and `fold` for material a first reading can skip (the design system's version history).
+- One beat between chapters instead of one and a half.
+
+![In short: the three decisions as cards with their screens](analytics-in-short-decisions.png)
+
+![Design and sign-off: four tabs](analytics-sign-off-tabs.png)

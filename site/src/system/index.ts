@@ -27,6 +27,8 @@ export { UseCase } from "./UseCase";
 export { Evolution } from "./Evolution";
 export { AnnotatedSet } from "./Annotated";
 export { Dossier } from "./Dossier";
+export { Tabs } from "./Tabs";
+export { Fold } from "./Fold";
 export { Loop } from "./Loop";
 export { Beside } from "./Beside";
 export { Exploded } from "./Exploded";

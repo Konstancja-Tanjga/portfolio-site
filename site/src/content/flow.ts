@@ -43,7 +43,7 @@ export const flow: CaseStudy = {
     { label: "Product", value: "APplus ERP, Flow mode, in the product since APplus 8 (October 2023)" },
     {
       label: "Design system",
-      value: "FOX, which I own; Flow mode's screens migrated to v2.5. The link opens the public v1 Storybook",
+      value: "FOX, Asseco's design system, which I lead; Flow mode's screens migrated to v2.5. The link opens the public v1 Storybook",
       href: "https://design-system-v1.assecosolutions.com/?path=/docs/intro--docs",
     },
     { label: "Platforms", value: "Desktop, tablet, mobile" },
@@ -117,7 +117,7 @@ export const flow: CaseStudy = {
           items: [
             "<strong>A board is a set of columns by status</strong>, such as Created, Ready for release, Released, and Inactive. Each card is one item with its key figures and tags.",
             "<strong>I changed how people move around it</strong> and how an item is shown once they open it: the new navigation and the new Page details layout.",
-            "<strong>The screens moved to FOX v2.5</strong>, the design system I own, and I designed the components that were missing for the new navigation.",
+            "<strong>The screens moved to FOX v2.5</strong>, the design system I lead, and I designed the components that were missing for the new navigation.",
           ],
         },
         {

@@ -314,7 +314,20 @@ export type Block =
    * spec, laid out across the whole wall. Rows whose key starts with
    * "Decision" are set side by side as the three things to remember.
    */
-  | { kind: "brief"; rows: { key: string; value: string }[] }
+  | { kind: "brief"; rows: BriefRow[] }
+  /**
+   * Peer content behind one row of tabs: screens and clips of equal rank
+   * that a reader picks between, such as the two screens and two flows of a
+   * sign-off. Never for the chapters of the story, which are read in order;
+   * tabs hide what is not chosen, and most readers never choose.
+   */
+  | { kind: "tabs"; label: string; items: { label: string; blocks: Exclude<Block, { kind: "exploded" }>[] }[] }
+  /**
+   * Material a reader can do without on a first pass, closed under one
+   * title: the system's history under the product, a long table, a method.
+   * The drawer a folded shot or list uses, so the reader learns one control.
+   */
+  | { kind: "fold"; title: string; hint?: string; blocks: Exclude<Block, { kind: "exploded" }>[] }
   /**
    * A short chain of stages, read left to right: what goes in, what comes
    * out, in three or four cards. For a process that is the point of a
@@ -387,7 +400,34 @@ export type Block =
    * For a loop that has no first step, such as file, code and prototype
    * feeding one another. Where an order matters, use `flow`.
    */
-  | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string };
+  | { kind: "loop"; stations: { title: string; body: string; label?: string }[]; edges: { label: string }[]; centre?: string; caption?: string }
+  /**
+   * The drawing sheet from the home page, with a project's own stations:
+   * one artefact through the tools it passes, as tool windows on a
+   * conveyor line drawn by the scroll (home/Sheet.tsx). A station shows
+   * either one of the sheet's drawings or a screenshot of the project.
+   */
+  | { kind: "sheet"; sheet: SheetData };
+
+/** One of the drawings home/Sheet.tsx can put in a tool window. */
+export type SheetDrawing = "options" | "figma" | "code" | "storybook" | "chromatic" | "merge" | "nexus" | "shipped";
+
+export type SheetData = {
+  tools: { name: string; mark: string; what: string; glyph?: string }[];
+  stations: {
+    tool: string;
+    mark: string;
+    file: string;
+    title: string;
+    body: string;
+    drawing?: SheetDrawing;
+    /** The check lines of the "merge" drawing; the home sheet's three by default. */
+    lines?: string[];
+    image?: { src: string; alt: string };
+  }[];
+  rhythm?: { every: string; what: string; ticks: number }[];
+  block: [string, string][];
+};
 
 /** One tile of a dossier: a chapter's worth of blocks, opened sideways. */
 export type Dossier = {
@@ -400,6 +440,19 @@ export type Dossier = {
   cover: { src: string; frame?: "macbook" };
   /** Any block but `exploded`, whose sticky pin cannot work inside a scrolling panel. */
   blocks: Exclude<Block, { kind: "exploded" }>[];
+};
+
+/**
+ * One row of the brief. A decision row may carry the screen that shows the
+ * decision taken and the chapter it links to, so the summary is three
+ * pictures as well as three sentences. `src` is a MacBook export from
+ * public/work/<slug>/device/ (the 1600 file): the card crops the frame
+ * away by its known geometry, so any other kind of image shows wrong.
+ */
+export type BriefRow = {
+  key: string;
+  value: string;
+  shot?: { src: string; alt: string; to: string };
 };
 
 /** A named stretch of the wall. Chapters drive the jump bar. */

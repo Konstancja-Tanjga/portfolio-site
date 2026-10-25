@@ -11,6 +11,7 @@ import {
   Evolution,
   Exploded,
   Flow,
+  Fold,
   Joint,
   Lane,
   Loop,
@@ -27,10 +28,12 @@ import {
   Stack,
   Stats,
   Steps,
+  Tabs,
   Thesis,
   UseCase,
   Video,
 } from "../system";
+import { Sheet } from "../home/Sheet";
 
 /** Content block → component. The only place this mapping exists. */
 function BlockView({ block }: { block: Block }) {
@@ -105,6 +108,16 @@ function BlockView({ block }: { block: Block }) {
       return <Loop stations={block.stations} edges={block.edges} centre={block.centre} caption={block.caption} />;
     case "dossier":
       return <Dossier items={block.items} render={(b) => <BlockView block={b} />} />;
+    case "tabs":
+      return <Tabs label={block.label} items={block.items} render={(b) => <BlockView block={b} />} />;
+    case "fold":
+      return <Fold title={block.title} hint={block.hint} render={(b) => <BlockView block={b} />} blocks={block.blocks} />;
+    case "sheet":
+      return (
+        <Lane width="wall">
+          <Sheet data={block.sheet} />
+        </Lane>
+      );
   }
 }
 
