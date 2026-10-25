@@ -321,13 +321,13 @@ export type Block =
    * sign-off. Never for the chapters of the story, which are read in order;
    * tabs hide what is not chosen, and most readers never choose.
    */
-  | { kind: "tabs"; label: string; items: { label: string; blocks: Block[] }[] }
+  | { kind: "tabs"; label: string; items: { label: string; blocks: Exclude<Block, { kind: "exploded" }>[] }[] }
   /**
    * Material a reader can do without on a first pass, closed under one
    * title: the system's history under the product, a long table, a method.
    * The drawer a folded shot or list uses, so the reader learns one control.
    */
-  | { kind: "fold"; title: string; hint?: string; blocks: Block[] }
+  | { kind: "fold"; title: string; hint?: string; blocks: Exclude<Block, { kind: "exploded" }>[] }
   /**
    * A short chain of stages, read left to right: what goes in, what comes
    * out, in three or four cards. For a process that is the point of a
@@ -445,7 +445,9 @@ export type Dossier = {
 /**
  * One row of the brief. A decision row may carry the screen that shows the
  * decision taken and the chapter it links to, so the summary is three
- * pictures as well as three sentences.
+ * pictures as well as three sentences. `src` is a MacBook export from
+ * public/work/<slug>/device/ (the 1600 file): the card crops the frame
+ * away by its known geometry, so any other kind of image shows wrong.
  */
 export type BriefRow = {
   key: string;

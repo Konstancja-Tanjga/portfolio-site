@@ -133,6 +133,8 @@ export function JumpBar({
     const el = nav.current;
     const current = el?.querySelector<HTMLElement>('[aria-current="true"]');
     if (!el || !current) return;
+    // A hand on the list is scrolling it; do not pull it back.
+    if (el.matches(":hover")) return;
     const left = current.offsetLeft;
     const right = left + current.offsetWidth;
     const pad = 24;

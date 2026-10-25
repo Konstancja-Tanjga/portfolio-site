@@ -992,7 +992,8 @@ img { max-width: 100%; height: auto; }
 .jump__title { flex: 0 0 auto; font-size: var(--bh-size-small); font-weight: 500; color: var(--bh-text-strong); }
 /* The chapter list is wider than the bar on every study with more than
    six chapters. It scrolls on its own, without a scrollbar, and fades at
-   the edge that has more; JumpBar.tsx keeps the current chapter in view. */
+   its right edge, the one that runs on; the left edge meets the title, so
+   it stays sharp. JumpBar.tsx keeps the current chapter in view. */
 .jump__nav {
   position: relative;
   display: flex;

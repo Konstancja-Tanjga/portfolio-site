@@ -586,6 +586,7 @@
    laptop frame the export comes in is cropped away, and the card links to
    the chapter that argues the decision. */
 .brief__decision--shot { padding-top: 0; overflow: hidden; }
+.brief__decision--shot .brief__key { display: grid; gap: var(--bh-space-2); }
 .brief__shot {
   display: block;
   margin: 0 calc(-1 * var(--bh-space-4)) var(--bh-space-2);

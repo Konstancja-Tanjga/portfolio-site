@@ -11,8 +11,8 @@ import { Lane } from "./Wall";
  * story stay in the scroll, because a tab hides what is not chosen.
  *
  * `render` is the wall's own block renderer, passed in so this file does
- * not depend on the mapping. The panel is keyed by its tab, so a clip
- * starts from its first frame each time it is chosen.
+ * not depend on the mapping. The panel is keyed by the tab's index, so a
+ * clip starts from its first frame each time it is chosen.
  */
 export function Tabs({
   label,
@@ -26,6 +26,7 @@ export function Tabs({
   const { ref, shown } = useReveal<HTMLDivElement>();
   const [current, setCurrent] = useState(0);
   const id = useId();
+  if (!items.length) return null;
 
   const onKey = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
     const n = items.length;
@@ -42,7 +43,7 @@ export function Tabs({
         <div className="tabs__list" role="tablist" aria-label={label}>
           {items.map((t, i) => (
             <button
-              key={t.label}
+              key={i}
               type="button"
               role="tab"
               id={`${id}-tab-${i}`}
@@ -59,7 +60,7 @@ export function Tabs({
           ))}
         </div>
         <div
-          key={items[current].label}
+          key={current}
           role="tabpanel"
           id={`${id}-panel`}
           aria-labelledby={`${id}-tab-${current}`}
