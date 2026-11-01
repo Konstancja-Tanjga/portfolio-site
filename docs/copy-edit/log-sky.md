@@ -83,3 +83,18 @@ Review from the hiring manager's chair, before the rebuild (2 742 words, 18 352 
 Result: 1 983 words, 15 914 px at 1440, 12 chapters (00 to 11), 27 images counted by the browser (the four `set` stills and the six sheet windows included), 4 clips in one `tabs` block. The ids `brief`, `sky`, `silhouettes`, `look-alikes`, `flight`, `owls`, `flashcards`, `atlas`, `type-and-colour`, `motion`, `credits` all still resolve; `what-it-is` is new.
 
 Not done, and why: the Big Hat station shows `/work/bighat-design-system/colour-roles.png`, a picture from her own study, because the sheet's `storybook` drawing carries an Analytics thumbnail and the `code` drawing prints "fox-card.spec.md" and "figma mcp"; a station for Claude Code shows the app's About page for the same reason.
+
+## 1 November 2026: the course has grown, the study catches up
+
+Konstancja extended World of Raptors after the redesign; the study still described the October state. Figures from the live site on 1 November 2026 (/o-projekcie, /plan), nothing else added.
+
+| Before | After |
+| --- | --- |
+| twelve modules, sixty lessons, 42 species | two paths (biology, field recognition), 24 modules, 125 lessons, 45 raptors and owls, 55 wetland birds |
+| ten owls | thirteen owls (the night-chorus caption keeps "ten": it describes the picture) |
+| 282 flashcards | 502 flashcards |
+| 82 reference photographs, more than two hundred photographers | 609 photographs, 364 people and institutions; the focal-point line no longer carries a count |
+| Scope row: five parts | ten parts: plan, checklist, recognition guide, field planner, My sky added |
+| 01 carousel, four slides | nine: course plan, checklist, Recognise, When and where, My sky added, screenshots of the live site |
+
+Not changed: the redesign story itself, the sheet (the tools of October), the clips.

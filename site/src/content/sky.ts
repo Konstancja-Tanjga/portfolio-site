@@ -21,6 +21,10 @@ import type { CaseStudy } from "./types";
  * one keyboard step (1%) per frame and its clock never runs, so its pace was
  * chosen for the film, not the app's.
  *
+ * Updated 1 November 2026: the course's figures and parts as the live site
+ * states them (/o-projekcie and /plan on that day); five new carousel slides
+ * are screenshots of the live site at 1440 px, 12-*.webp.
+ *
  * Rebuilt 25 October 2026 the Analytics way: 00 "In short" with decision
  * shots, the tool chain as a `sheet`, the four clips as `tabs`, the source
  * and the stack as `fold`s. See docs/copy-edit/log-sky.md.
@@ -56,11 +60,11 @@ export const sky: CaseStudy = {
   meta: [
     { label: "Role", value: "Idea, course content, and direction. Design, motion, and code made with Claude" },
     { label: "Made with", value: "Claude, Anthropic's AI model, in Claude Code. One commit for every milestone" },
-    { label: "Scope", value: "Home, atlas, species pages, flashcards, and an About page; 42 species drawn from numbers" },
+    { label: "Scope", value: "Home, course plan, atlas, species pages, flashcards, checklist, a recognition guide, a field planner, My sky, and an About page; 45 species drawn from numbers" },
     { label: "System", value: "Big Hat 4.9 underneath, with a product layer for display type, motion and the sky" },
     { label: "Live", value: "Running on Vercel", href: "https://world-of-raptors.vercel.app" },
     { label: "Source", value: "Public, the whole history included", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
-    { label: "Period", value: "October 2026" },
+    { label: "Period", value: "October 2026; the course has grown since, figures as of 1 November 2026" },
   ],
   chapters: [
     /* ---------------------------------------------------------------- 00 */
@@ -75,7 +79,7 @@ export const sky: CaseStudy = {
             {
               key: "What",
               value:
-                "World of Raptors, the course on birds of prey I wrote for myself: twelve modules, sixty lessons, an atlas of 42 species.",
+                "World of Raptors, the course on birds of prey I wrote for myself: two paths, biology and field recognition, 24 modules, 125 lessons, an atlas of 45 raptors and owls with 55 wetland birds beside them.",
             },
             {
               key: "Problem",
@@ -106,7 +110,7 @@ export const sky: CaseStudy = {
             {
               key: "Outcome",
               value:
-                "Live on Vercel, source public: 42 species drawn from numbers, 282 flashcards scheduled by FSRS, 82 reference photographs, Big Hat 4.9 underneath.",
+                "Live on Vercel, source public: 45 species drawn from numbers, 502 flashcards scheduled by FSRS, 609 photographs from 364 people and institutions, Big Hat underneath.",
             },
           ],
         },
@@ -122,7 +126,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A course in Polish on telling birds of prey apart in flight: the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from.</p>",
+            "<p>A course in Polish on telling birds of prey apart in flight: the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from. Since the redesign the course has grown around that frame: two paths, a checklist, a recognition guide by sight and by voice, a field planner, and My sky, where finished modules light up as constellations.</p>",
         },
         {
           kind: "carousel",
@@ -130,7 +134,12 @@ export const sky: CaseStudy = {
             { src: `${D}/01-kettle-poster-2400.webp`, frame: "macbook", title: "Home by day", body: "The sky above Warsaw at this hour, with a kettle of soaring migrants circling in a thermal." },
             { src: `${D}/02-sky-night-2400.webp`, frame: "macbook", title: "Home at night", body: "Stars and the moon, and now and then an owl crosses it." },
             { src: `${D}/08-species-2400.webp`, frame: "macbook", title: "A species page", body: "The red kite's page opens on the bird itself, the navigation turning light over the dark scene." },
-            { src: `${D}/11-credits-2400.webp`, frame: "macbook", title: "The About page", body: "Who made what, and the credit to more than two hundred photographers." },
+            { src: `${D}/11-credits-2400.webp`, frame: "macbook", title: "The About page", body: "Who made what, and the credit to 364 photographers and institutions." },
+            { src: `${W}/12-plan.webp`, title: "The course plan", body: "Two paths, biology and field recognition: 24 modules, 125 lessons, a starting test, a final project outdoors." },
+            { src: `${W}/12-checklista.webp`, title: "My checklist", body: "Species seen, with date, place, note, and own photographs; filtered by region, place, and time of day. Kept in the browser, with a backup." },
+            { src: `${W}/12-rozpoznaj.webp`, title: "Recognise", body: "Four questions narrow the atlas to the birds that fit; on a phone, recognition by voice through BirdNET." },
+            { src: `${W}/12-kiedy-i-gdzie.webp`, title: "When and where", body: "Tides and weather for ten days at Marismas del Barbate and La Janda, the best hours named; observation points ordered from where you start." },
+            { src: `${W}/12-moje-niebo.webp`, title: "My sky", body: "A finished module lights its constellation, the module's bird drawn in stars; species collect rings, skills earn badges. Nothing is locked." },
           ],
         },
       ],
@@ -186,7 +195,7 @@ export const sky: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>All 42 species calibrated against reference photographs,</strong> one silhouette group at a time; static SVG on the server, animated in the browser.",
+            "<strong>All 45 species calibrated against reference photographs,</strong> one silhouette group at a time; static SVG on the server, animated in the browser.",
             "<strong>A bird that is numbers can do what a drawing cannot:</strong> be drawn at any size, raise its wings, fold its hand, fan its tail, or turn into another bird.",
           ],
         },
@@ -262,7 +271,7 @@ export const sky: CaseStudy = {
       id: "owls",
       n: "06",
       heading: "Owls are heard first",
-      standfirst: "Ten of the 42 species are owls, and the owl module teaches them by ear before eye.",
+      standfirst: "Thirteen of the 45 species are owls, and the owl module teaches them by ear before eye.",
       blocks: [
         {
           kind: "shot",
@@ -284,7 +293,7 @@ export const sky: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>282 cards of three kinds,</strong> photographs, silhouettes, and names, scheduled by FSRS, the spaced-repetition algorithm Anki offers as an option.",
+            "<strong>502 cards of three kinds,</strong> photographs, silhouettes, and names, scheduled by FSRS, the spaced-repetition algorithm Anki offers as an option.",
             "<strong>Photographs shown whole</strong> over a blurred copy of themselves; a crop can hide the very mark that identifies the bird.",
             "<strong>Silhouettes fly in the species' own style,</strong> at a different heading and spread on every review; the answer gives the group first, then the species.",
             "<strong>Names go both ways</strong> between Polish and English or Spanish.",
@@ -311,9 +320,9 @@ export const sky: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>Three views of the 42 species:</strong> photographs, silhouettes grouped as the method teaches, and all at one scale, from the pygmy owl to the cinereous vulture.",
+            "<strong>Three views of the 45 species:</strong> photographs, silhouettes grouped as the method teaches, and all at one scale, from the pygmy owl to the cinereous vulture.",
             "<strong>Each species page opens on its bird, full-bleed,</strong> then its plate, its flight, its wingspan to scale, its look-alikes.",
-            "<strong>Every one of the 82 reference photographs has a focal point,</strong> so no crop cuts a head off. My first correction during the work, after the black kite, the goshawk, and the merlin lost theirs.",
+            "<strong>Every reference photograph has a focal point,</strong> so no crop cuts a head off. My first correction during the work, after the black kite, the goshawk, and the merlin lost theirs.",
           ],
         },
         {
@@ -461,7 +470,7 @@ export const sky: CaseStudy = {
       id: "credits",
       n: "11",
       heading: "How it was made, and by whom",
-      maxim: "Made by two of us, with photographs from more than two hundred people.",
+      maxim: "Made by two of us, with photographs from 364 people and institutions.",
       standfirst: "The redesign as the tools it passed through, from the brief to the live site.",
       blocks: [
         {
@@ -479,7 +488,7 @@ export const sky: CaseStudy = {
             stations: [
               { tool: "Claude Code", mark: "claude", file: "the brief", title: "Briefed, steered, built in one session", body: "I set the brief and asked for changes; Claude designed, animated, and coded. A commit for every milestone.", image: { src: `${W}/11-credits.webp`, alt: "The About page of the app, crediting the course to me and the design, motion, and code to Claude" } },
               { tool: "Big Hat 4.9", mark: "", file: "DS-GAPS.md", title: "Big Hat underneath, gaps recorded", body: "Components and colour roles from my design system; a product layer for display type, motion, and the sky.", image: { src: "/work/bighat-design-system/colour-roles.png", alt: "The colour roles of Big Hat, the semantic layer the app builds on" } },
-              { tool: "sylwetki.ts", mark: "", file: "42 species", title: "Calibrated against photographs", body: "About twenty proportions per species, checked one silhouette group at a time.", image: { src: `${W}/03-plate.webp`, alt: "The red kite as a labelled plate, with the numbers behind each part of the bird" } },
+              { tool: "sylwetki.ts", mark: "", file: "45 species", title: "Calibrated against photographs", body: "About twenty proportions per species, checked one silhouette group at a time.", image: { src: `${W}/03-plate.webp`, alt: "The red kite as a labelled plate, with the numbers behind each part of the bird" } },
               { tool: "Playwright", mark: "", file: "paused clock", title: "Filmed frame by frame", body: "Screenshots stepped 1/30 s under a paused clock, encoded at 30 fps: the films play at the app's speed.", image: { src: `${W}/05-kestrel-poster.webp`, alt: "A kestrel hovering on its species page, the first frame of the film" } },
               { drawing: "merge", lines: ["feature/redesign", "One commit per milestone", "Merged as f45ab72"], tool: "GitHub", mark: "github", file: "PR #14", title: "Merged, history public", body: "The redesign reached production in pull request 14; every milestone is a commit anyone can read." },
               { tool: "Vercel", mark: "", file: "world-of-raptors", title: "Live", body: "Every page but the home page generated at build time. No accounts: progress and flashcards stay in the browser.", image: { src: `${W}/01-kettle-poster.webp`, alt: "The live home page by day" } },
@@ -495,7 +504,7 @@ export const sky: CaseStudy = {
         {
           kind: "points",
           items: [
-            "<strong>The photographs come from more than two hundred photographers and institutions on Wikimedia Commons,</strong> each credited under its photograph; the little owl in the atlas is mine.",
+            "<strong>609 photographs from 364 photographers and institutions on Wikimedia Commons,</strong> each credited under its photograph; the little owl in the atlas and the Barbate photographs are mine.",
             "<strong>The app's About page lists every one of them,</strong> and says who made what, as this page does.",
           ],
         },
