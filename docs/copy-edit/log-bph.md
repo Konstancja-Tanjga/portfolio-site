@@ -109,3 +109,7 @@ Not done, and why:
 - The exploded screen stays (kept at Konstancja's request); it is about 2 500 px of the 16 700.
 
 Result: 16 702 px at 1440 (from 18 137), 1 683 visible words (from 2 086), 10 chapters (from 11), 17 images in the DOM (from 13: the three decision shots and the three sheet images added, the three 07 and 08 shots removed), 2 maxims (from 4). `tsc --noEmit` and `npm run check` pass; no horizontal scroll at 390.
+
+## 25 October 2026, evening: Konstancja's cuts
+
+Chapter "Why this is a hard brief" removed. The Concept tab, its image (concept.png) and its text removed from Design and sign-off, from the 01 carousel and from the sheet; the two signed-off tabs, Catalogue and Template, stay. Decision 2 card now shows the template detail (versions, state, documentation per version) instead of the concept; Decision 3 the flat detail export.

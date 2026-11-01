@@ -2,7 +2,7 @@ import type { CaseStudy } from "./types";
 import { documentsExploded } from "./exploded";
 
 /**
- * Chapter numbers are this page's own, 00–09, in the same skeleton as
+ * Chapter numbers are this page's own, 00–08, in the same skeleton as
  * APplus Analytics (bi.ts). The Figma wall these chapters came from is the
  * Documents page of the portfolio file, frames 12–22 with 18a.
  *
@@ -17,10 +17,11 @@ import { documentsExploded } from "./exploded";
  * There are no use-case chapters and no persona cards, because the frames
  * have no use cases and describe the audiences without personas.
  *
- * Rebuilt 25 October 2026 the Analytics way: 00 is the sixty-second page
- * with the three decisions as pictures, the tool chain is the sheet in 06,
- * the sign-off screens sit behind one row of tabs, and what was said twice
- * is said once. docs/copy-edit/log-dms.md has the cuts.
+ * Rebuilt 25 October 2026 the Analytics way, then cut a second time the
+ * same day: 00 is the sixty-second page with the three decisions as
+ * pictures, the tool chain is the sheet in 04, the sign-off screens sit
+ * behind one row of tabs, and nothing is said twice. docs/copy-edit/log-dms.md
+ * has the cuts.
  */
 const S = "/work/applus-documents/screens";
 const D = "/work/applus-documents/device";
@@ -128,63 +129,34 @@ export const dms: CaseStudy = {
       blocks: [
         {
           kind: "passage",
-          html: "<p>Documents holds what an ERP produces and receives, from invoices and purchase orders to goods receipt notes and customs declarations, with their versions, metadata, tags, permissions, and retention. For several hundred mid-sized and large manufacturers across Germany, Italy, and Austria, each with an archive in the tens of thousands of documents.</p>",
+          html: "<p>For several hundred mid-sized and large manufacturers across Germany, Italy, and Austria, each with an archive in the tens of thousands of documents.</p>",
         },
         {
           kind: "carousel",
           items: [
-            { src: `${D}/list-2400.webp`, frame: "macbook", title: "Documents", body: "346 documents, types in the left panel; each row says where the search matched." },
-            { src: `${D}/list-bulk-2400.webp`, frame: "macbook", title: "Bulk actions", body: "All versions or latest only, download ZIP, export metadata, tag; delete set apart in red." },
-            { src: `${D}/detail-invoice-2400.webp`, frame: "macbook", title: "A document", body: "General information on top, Export audit package and Download, the details in five tabs." },
-            { src: `${D}/detail-versions-2400.webp`, frame: "macbook", title: "Version history", body: "Each version with its author, number, and date; a download on the highlighted row." },
-            { src: `${D}/detail-tags-2400.webp`, frame: "macbook", title: "Tags", body: "Up to 20 per document, 64 characters, no duplicates, enforced in place." },
-            { src: `${D}/custom-properties-2400.webp`, frame: "macbook", title: "Custom properties", body: "Metadata on one document, each field with its data type." },
-            { src: `${D}/document-type-2400.webp`, frame: "macbook", title: "Document types", body: "CONTRACT_V2: naming rules, allowed extensions, a metadata schema, the retention policy." },
-            { src: `${D}/permission-rule-2400.webp`, frame: "macbook", title: "Permission rules", body: "A role, Grant or Deny, an operation scope, and predicates on metadata joined with AND." },
-          ],
-        },
-      ],
-    },
-    {
-      id: "hard-brief",
-      n: "02",
-      heading: "Why this is a hard brief",
-      standfirst:
-        "Most document UIs optimise one thing: getting the file. This one has to satisfy German commercial retention law (GoBD) at the same time, and every rule below is a UI constraint before it is a backend constraint, because the UI is where a user forms a false belief about what just happened.",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>A deleted document is not gone.</strong>",
-            "<strong>A restored document is not the same document.</strong>",
-            "<strong>An audit trail is append-only.</strong>",
-            "<strong>A field the user is not cleared to see</strong> must behave as though it does not exist.",
-            "<strong>Every document needs a visible status and a clear owner.</strong> Several people, sometimes from different companies, hand it back and forth.",
-          ],
-        },
-        {
-          kind: "stats",
-          items: [
-            { value: "~22", label: "document types configured by a typical customer" },
-            { value: "~10", label: "custom metadata fields" },
-            { value: "4", label: "audiences with different jobs against one archive: warehouse, finance, compliance, audit" },
+            { src: `${D}/list-2400.webp`, frame: "macbook", title: "Documents", body: "346 documents by type, each row saying where the search matched." },
+            { src: `${D}/list-bulk-2400.webp`, frame: "macbook", title: "Bulk actions", body: "All versions or latest only, ZIP, metadata export, tag; delete set apart in red." },
+            { src: `${D}/detail-invoice-2400.webp`, frame: "macbook", title: "A document", body: "Identity on top, the details in five tabs." },
+            { src: `${D}/detail-versions-2400.webp`, frame: "macbook", title: "Version history", body: "Author, number, and date per version." },
+            { src: `${D}/document-type-2400.webp`, frame: "macbook", title: "Document types", body: "Naming rules, allowed extensions, a metadata schema, the retention policy." },
+            { src: `${D}/permission-rule-2400.webp`, frame: "macbook", title: "Permission rules", body: "A role, Grant or Deny, a scope, and predicates on metadata." },
           ],
         },
       ],
     },
     {
       id: "discovery",
-      n: "03",
+      n: "02",
       heading: "Discovery and research",
       standfirst:
-        "Business requirements from the stakeholders, then six sessions with internal subject-matter experts, before anything was specified. Questions settled before specification cost a conversation; settled after, a rewrite.",
+        "Business requirements from the stakeholders, then six sessions with internal subject-matter experts, before anything was specified.",
       blocks: [
         {
           kind: "points",
           items: [
             "<strong>Three questions first.</strong> What kinds of documents move through the system, who exchanges them with whom, and where things go wrong today.",
-            "<strong>A competitor annotated in place</strong>, one action and one menu at a time: where they put user actions, how many clicks reach a document, and which choices break under retention law.",
-            "<strong>Decisions borrowed, not styling</strong>, from products with dense data, many roles, and long lists: a landing surface counts before it offers actions; a table stays readable at a few hundred rows; a detail panel beats a detail page; a record has a limit.",
+            "<strong>A competitor annotated in place</strong>: where the actions sit, how many clicks reach a document, which choices break under retention law.",
+            "<strong>Decisions borrowed, not styling</strong>, from products with dense data, many roles, and long lists.",
           ],
         },
         {
@@ -194,22 +166,22 @@ export const dms: CaseStudy = {
           hotspots: [
             { x: 19, y: 18, text: "Open tasks counted per company before anything is offered to do." },
             { x: 63, y: 25, text: "A landing surface summarises state before it offers actions." },
-            { x: 67, y: 72, text: "A table stays readable at a few hundred rows: density set for the archive, not the demo." },
+            { x: 67, y: 72, text: "A table readable at a few hundred rows, set for the archive, not the demo." },
           ],
-          caption: "A finance tool: open tasks counted per company before anything to do, and an inbox table of invoices.",
+          caption: "A finance tool: tasks counted first, then an inbox table of invoices.",
         },
       ],
     },
     {
       id: "prototypes",
-      n: "04",
+      n: "03",
       heading: "Prototypes",
       standfirst:
-        "Before a frame was drawn, a settled requirement went into Figma Make and came back clickable in hours, for the PM, the requirements engineer, and the SMEs to walk end to end. Disagreements happened here, one step before REQ identifiers and sign-off made them expensive. The example: dossiers, the runtime side of dossier plans, three walks from the four dossier types.",
+        "Disagreements happened in the Figma Make prototype, one step before REQ identifiers and sign-off made them expensive.",
       blocks: [
         {
           kind: "tabs",
-          label: "Three walks through the prototype",
+          label: "Three walks through the dossier prototype",
           items: [
             {
               label: "A dossier",
@@ -222,8 +194,7 @@ export const dms: CaseStudy = {
                   src: `${C}/dossier-details.mp4`,
                   poster: `${C}/dossier-details.webp`,
                   title: "A dossier and what defines it",
-                  caption:
-                    "From the four dossier types into Company 466 and its details: the identity property first, CompanyID, then the non-grouping properties, the 16 document types it accepts, and its sub-dossier types.",
+                  caption: "Company 466 and what defines it: CompanyID, the 16 document types it accepts, its sub-dossier types.",
                 },
               ],
             },
@@ -238,8 +209,7 @@ export const dms: CaseStudy = {
                   src: `${C}/dossier-to-document.mp4`,
                   poster: `${C}/dossier-to-document.webp`,
                   title: "From a dossier down to a document, and back up",
-                  caption:
-                    "Company 466, its Sales Files, a Customer Invoice File, four documents. Invoice CI-2026-008874 opens with its preview, and its Dossiers tab lists the five dossiers that hold it: one document sits in several at once, and the list says which.",
+                  caption: "Company 466, a Customer Invoice File, invoice CI-2026-008874, and its Dossiers tab listing the five dossiers that hold it.",
                 },
               ],
             },
@@ -254,8 +224,7 @@ export const dms: CaseStudy = {
                   src: `${C}/dossier-search-nested.mp4`,
                   poster: `${C}/dossier-search-nested.webp`,
                   title: "Search and filters across nested dossiers",
-                  caption:
-                    "Scope switched from Direct to Nested, so a search for Northwind reaches the sub-dossiers; four match, each saying which property matched. A metadata filter narrows them to one and stays on as a chip when its documents open.",
+                  caption: "Scope switched to Nested: a search for Northwind reaches the sub-dossiers, each match saying which property matched.",
                 },
               ],
             },
@@ -265,10 +234,10 @@ export const dms: CaseStudy = {
     },
     {
       id: "design-system",
-      n: "05",
+      n: "04",
       heading: "Design system",
       standfirst:
-        "How I worked on this product, drawn: one requirement through the tools it passed, from the specification to the reviewed build. I lead FOX, so here I was both a consumer of the system and its maintainer. Then one screen of the product, taken apart.",
+        "I lead FOX, so on this product I was both a consumer of the system and its maintainer.",
       blocks: [
         {
           kind: "sheet",
@@ -282,9 +251,9 @@ export const dms: CaseStudy = {
               { name: "Codex", mark: "openai", what: "prototypes in code; Figma MCP" },
             ],
             stations: [
-              { tool: "Confluence, Jira", mark: "", file: "REQ-984 · PX-1774", title: "Written up front", body: "Spec first, then design: the requirement numbered in the specification, the Jira task its unit of work.", image: { src: `${S}/traceability.png`, alt: "The traceability chain: Confluence specification, requirement REQ-984, Jira task PX-1774, Figma frame, dated sign-off" } },
+              { tool: "Confluence, Jira", mark: "", file: "REQ-984 · PX-1774", title: "Written up front", body: "The requirement numbered in the specification, the Jira task its unit of work.", image: { src: `${S}/traceability.png`, alt: "The traceability chain: Confluence specification, requirement REQ-984, Jira task PX-1774, Figma frame, dated sign-off" } },
               { tool: "Figma Make", mark: "figma", file: "a settled requirement", title: "Clickable in hours", body: "Walked end to end with the PM, the requirements engineer, and the SMEs; weak options dropped on the spot.", image: { src: `${S}/proto-dossier-list.png`, alt: "The dossier plan configuration in the Figma Make prototype: Customer, Order, and Project as system baselines" } },
-              { tool: "Figma", mark: "figma", file: "REQ-984 · Approved", title: "Drawn, tied to its requirement", body: "Every frame carries its REQ, the requirement text in a doc band, and a dated sign-off. Dev Mode opens it with each component bound to its code by Code Connect.", image: { src: `${S}/documentation.png`, alt: "A documented frame: the doc band with the Jira link and acceptance criteria, the screens with annotations" } },
+              { tool: "Figma", mark: "figma", file: "REQ-984 · Approved", title: "Drawn, tied to its requirement", body: "The REQ, the requirement text, and a dated sign-off on every frame; Dev Mode binds each component to its code by Code Connect.", image: { src: `${S}/documentation.png`, alt: "A documented frame: the doc band with the Jira link and acceptance criteria, the screens with annotations" } },
               { tool: "FOX", mark: "", file: "secondary app bar", title: "The pattern goes into the system", body: "A composition invented for one screen is reviewed, named, and versioned into FOX; the product consumes it back at a pinned version.", image: { src: `${S}/fox-docs.png`, alt: "FOX documentation for the secondary app bar: status, owner, reviewer, the components it uses, its variant per application, and the demo in light, dark, and client colour" } },
               { drawing: "merge", lines: ["Preview build, beside the frame", "Design QA against the REQ, as every role", "Delete, restore, retention walked as an auditor"], tool: "Pull request", mark: "", file: "preview build", title: "Reviewed on the running build", body: "Every pull request that changes a screen, by me; design acceptance is a dated status on the ticket." },
               { drawing: "code", tool: "Codex", mark: "openai", file: "Figma MCP", title: "The file follows the code", body: "An accepted deviation is written back into the frame and its annotations the same week." },
@@ -292,7 +261,7 @@ export const dms: CaseStudy = {
             block: [
               ["Sheet", "How I worked on Documents"],
               ["Drawn for", "One requirement, from the specification to the reviewed build"],
-              ["Governed by", "GoBD on every state; a REQ identifier and a dated sign-off on every frame; design acceptance in the definition of done"],
+              ["Governed by", "GoBD on every state; a REQ identifier and a dated sign-off on every frame"],
             ],
           },
         },
@@ -301,11 +270,11 @@ export const dms: CaseStudy = {
     },
     {
       id: "sign-off",
-      n: "06",
+      n: "05",
       heading: "Design and sign-off",
       maxim: "A frame without an identifier is an opinion. A frame with one is a commitment somebody can check.",
       standfirst:
-        "Requirements were written up front and the design worked against them: every frame carries a REQ identifier rather than a title, and ships with its documentation attached, so a developer, a tester, and an auditor read the same artefact. Then the screens that set the rules, one per tab.",
+        "A frame ships with its documentation attached, so a developer, a tester, and an auditor read the same artefact.",
       blocks: [
         {
           kind: "tabs",
@@ -318,8 +287,7 @@ export const dms: CaseStudy = {
                   kind: "shot",
                   src: `${D}/documentation-2400.webp`,
                   frame: "macbook",
-                  caption:
-                    "On top, the doc band: the Jira link (PX-1774), the acceptance criteria, the designer, and the Approved sign-off. Below, the screens with annotations in five kinds: requirements, development, content, user flow, and interaction.",
+                  caption: "The doc band on top (Jira link PX-1774, acceptance criteria, designer, Approved), the annotated screens below.",
                 },
               ],
             },
@@ -330,8 +298,7 @@ export const dms: CaseStudy = {
                   kind: "shot",
                   src: `${D}/filters-2400.webp`,
                   frame: "macbook",
-                  caption:
-                    "Tags, then metadata filters typed by field: string, integer, enum, boolean, date, date and time. All criteria must match; once every field is in use the panel says so and greys out Add new filter.",
+                  caption: "Tags, then metadata filters typed by field; all criteria must match.",
                 },
               ],
             },
@@ -344,13 +311,12 @@ export const dms: CaseStudy = {
                     {
                       src: `${D}/detail-info-2400.webp`,
                       frame: "macbook",
-                      caption:
-                        "Document info: an identity panel (scope, format, size, created, last modified, version, checksum), the five-tab band, the preview. The tabs hold the audit-relevant history, so they are the template, not a per-screen choice.",
+                      caption: "Identity panel, five-tab band, preview: the tabs hold the audit-relevant history, so they are the template.",
                     },
                     {
                       src: `${D}/tablet-versions-2400.webp`,
                       frame: "macbook",
-                      caption: "Version history at a narrower width: the template holds without a second layout.",
+                      caption: "Version history at a narrower width, the same template.",
                     },
                   ],
                 },
@@ -365,14 +331,12 @@ export const dms: CaseStudy = {
                     {
                       src: `${D}/deleted-document-2400.webp`,
                       frame: "macbook",
-                      caption:
-                        "Deleted documents under Configuration, filtered by type, deletion date, reason, and who deleted it. DOC-8001 opens there with its format, size, version, and checksum intact.",
+                      caption: "Deleted documents under Configuration; DOC-8001 open with its format, size, version, and checksum intact.",
                     },
                     {
                       src: `${D}/retention-2400.webp`,
                       frame: "macbook",
-                      caption:
-                        "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, started, cutoff, end, then eligible for disposition. The clock starts from a metadata date field.",
+                      caption: "Retention on a proforma invoice: policy FINANCE_INVOICE_7Y, started, cutoff, end, eligible for disposition.",
                     },
                   ],
                 },
@@ -385,8 +349,7 @@ export const dms: CaseStudy = {
                   kind: "shot",
                   src: `${D}/document-type-new-2400.webp`,
                   frame: "macbook",
-                  caption:
-                    "A document type linked to a retired retention policy: still visible for historical reference, no longer applied to new documents; a RETIRED badge and a warning say so. Changing it touches only documents stored after the change.",
+                  caption: "A document type on a retired retention policy: a RETIRED badge, a warning, and no change to documents already stored.",
                 },
               ],
             },
@@ -396,58 +359,44 @@ export const dms: CaseStudy = {
     },
     {
       id: "handoff",
-      n: "07",
+      n: "06",
       heading: "Handoff",
       standfirst:
-        "Development receives the Figma file through Dev Mode, every component bound to its code by Code Connect, Storybook as the reference, and the prototypes. Three requirements were in the tokens and templates from the start.",
+        "Three requirements were in the tokens and templates from the start, never per screen.",
       blocks: [
         {
           kind: "flow",
           stages: [
             { title: "Accessibility", body: "WCAG AA from the first frame." },
-            { title: "Colour modes", body: "Light, dark, and high contrast in tokens, never per screen: a screen cannot fall out of high contrast if it never hard-codes a colour." },
-            { title: "Language", body: "German default, English second; layouts tested against German compound words. The screens here: English." },
+            { title: "Colour modes", body: "Light, dark, and high contrast in tokens." },
+            { title: "Language", body: "German default, English second; layouts tested against German compound words." },
           ],
         },
       ],
     },
     {
       id: "after-development",
-      n: "08",
+      n: "07",
       heading: "After development",
       standfirst:
-        "The developers build on the FOX package and work from annotated frames, so what reaches review is made from the right parts. What is left to check: that every state tells the truth about the document behind it, whether deleted, restored, hidden, or versioned.",
+        "What is left to check: that every state tells the truth about the document behind it, whether deleted, restored, hidden, or versioned.",
       blocks: [
         {
           kind: "steps",
           items: [
             {
               n: "01",
-              stage: "Design review",
-              flow: { from: "A pull request", to: "Review comments before merge" },
-              title: "I review the running build against the annotated frame",
-              rule: {
-                label: "Rule",
-                body: "Every pull request that changes a screen, reviewed on its preview build beside the frame; each comment quotes the annotation it checks against.",
-              },
-              why: {
-                label: "Why",
-                body: "A comment that cites the frame's own rule is a check, not a matter of taste, and it lands before merge.",
-              },
-            },
-            {
-              n: "02",
               stage: "Design QA",
               flow: { from: "A REQ identifier", to: "Every acceptance criterion checked" },
               feature: true,
               title: "Design QA runs against the requirement and every role",
               rule: {
                 label: "Rule",
-                body: "The REQ on the frame is the REQ on the ticket: acceptance criteria walked one by one, then the walk repeated as each role, because the same screen is a different screen for a user not cleared to see a field.",
+                body: "Acceptance criteria walked one by one, then the walk repeated as each role.",
               },
               why: {
                 label: "Why",
-                body: "A hidden field has to behave as though it does not exist: no empty label, no gap, no count that includes it, no search hit that betrays it. None of that is visible from the admin account most builds are reviewed from.",
+                body: "A hidden field has to behave as though it does not exist, and none of that is visible from the admin account most builds are reviewed from.",
               },
               contrast: {
                 does: "The walk is repeated for every role.",
@@ -468,18 +417,18 @@ export const dms: CaseStudy = {
               },
             },
             {
-              n: "03",
+              n: "02",
               stage: "Audit walk",
               flow: { from: "A built flow", to: "No false belief left in the UI" },
               feature: true,
               title: "I walk every destructive flow the way an auditor would",
               rule: {
                 label: "Rule",
-                body: "Delete, restore, replace, and retention, end to end, reading only what the interface says. Every message matches what the system did; the audit trail shows it, append-only, with nothing on screen that suggests it could be edited.",
+                body: "Delete, restore, replace, and retention, end to end, reading only what the interface says.",
               },
               why: {
                 label: "Why",
-                body: "The backend can be correct and the user still walk away believing the opposite. This pass checks the belief, not the data.",
+                body: "The backend can be correct and the user still walk away believing the opposite.",
               },
               contrast: {
                 does: "The copy says what the system did.",
@@ -496,38 +445,22 @@ export const dms: CaseStudy = {
                 ],
               },
             },
-            {
-              n: "04",
-              stage: "Triage",
-              flow: { from: "A list of findings", to: "Blocker, fix, or backlog" },
-              title: "Compliance findings block by rule",
-              rule: {
-                label: "Rule",
-                body: "Findings filed with the REQ, the Figma node, expected against actual, and one of three severities. Anything that misleads about retention or leaks a hidden field is a blocker by default.",
-              },
-              why: {
-                label: "Why",
-                body: "The one class of defect that cannot ship is never up for negotiation in a release meeting.",
-              },
-            },
           ],
         },
       ],
     },
     {
       id: "results",
-      n: "09",
+      n: "08",
       heading: "What it adds up to",
-      standfirst:
-        "Eleven months, and a paper trail an auditor can walk in either direction: from a frame to its requirement, and from a requirement to its frame and signature. The measures wait for release.",
       blocks: [
         {
           kind: "joint",
           question: "What will I measure after release, and how?",
           answers: [
-            "<strong>Whether documents left the drives.</strong> With the researcher, back to the people from discovery: where documents still end up in network drives and mail threads.",
+            "<strong>Whether documents left the drives.</strong> With the researcher, back to the people from discovery.",
             "<strong>Whether retrieval works.</strong> Which searches return nothing.",
-            "<strong>Whether hand-offs hold.</strong> Where hand-offs between companies stall; findings into the backlog with the same REQ structure.",
+            "<strong>Whether hand-offs hold.</strong> Where hand-offs between companies stall; findings into the backlog under the same REQ structure.",
           ],
         },
       ],

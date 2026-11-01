@@ -101,3 +101,7 @@ Unresolved, for Konstancja:
 - The tools of this work: Figma for the navigation and the Page details layout, the FOX v2.5 library (Figma or Storybook at that version), the repository, and how the usability tests were run and with how many users. With these on record the chapter 04 flow becomes a sheet.
 - Which components were added to FOX for the navigation (the chips and popover for board parameters, the phone bottom bar, the tenant dialog). The page says only "the components FOX lacked".
 - Decision 3 now reads "Board parameters sit under the header as chips and are edited in a popover, so the board stays in view": the reason clause is inferred from the screens, not stated in the earlier file.
+
+## 25 October 2026, evening
+
+The 01 carousel showed the 930 px tablet cuts at their pixel size inside a 2530 px stage, barely readable. Fixed in the carousel CSS: a slide now fills the stage width whatever the export size (all studies).

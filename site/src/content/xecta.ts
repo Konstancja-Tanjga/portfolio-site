@@ -152,22 +152,6 @@ export const xecta: CaseStudy = {
       ],
     },
     {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      maxim: "The people reading these charts are operators rather than analysts, and the industry has its own language for every number.",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>Industry language first.</strong> Lift types, deferrals, setpoints, and traverses are the operators' words, and the screens had to use them from the first weeks.",
-            "<strong>Heavy data visualisation</strong> for readers who are not analysts: charts, Sankeys, and traverses inside a complex design system and its patterns.",
-            "<strong>A distributed US team, worked remotely,</strong> so the product work was documented in Confluence and read without me in the room.",
-          ],
-        },
-      ],
-    },
-    {
       id: "how-i-worked",
       n: "02",
       heading: "How I worked",

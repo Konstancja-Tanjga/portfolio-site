@@ -128,3 +128,7 @@ Open, for Konstancja:
 - The decision cards link to `#product` and `#website`. A direct link opens the tile; a click on the card inside the page scrolls to the dossier but does not open the tile, because `Dossier.tsx` reads the hash only on mount. A `hashchange` listener in the component would fix it; not touched here.
 - The sheet has three stations. Confluence is in the tools strip but has no station: no screenshot of the documentation exists, and a station without an image is an empty window.
 - Still as found: the product dates (CV April 2020 to July 2021; LinkedIn April 2021 to July 2022); the board's "web, iOS, Android" claim, not repeated on the page; the CV's "one of three designers" against the strip's "with a UX designer and a researcher".
+
+## 25 October 2026, evening: Konstancja's cuts
+
+Chapter "Why this is a hard brief" removed at her request.

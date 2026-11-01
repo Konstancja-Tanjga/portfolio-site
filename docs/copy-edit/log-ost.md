@@ -130,3 +130,27 @@ Review from the hiring manager's chair (two minutes, by scroll), before the rebu
 | "25 000" with a plain space (after the rewrite) | narrow no-break space | STYLE 3.5 |
 
 Numbers at 1440 px, measured on the dev server after a full scroll: 2 786 to 2 066 visible words; 20 333 to 16 751 px; 13 chapters before and after; 50 to 36 images on the surface (the folds and the dossier hold the rest); two clips, now one per tab. Still open: which tool drew the mark and set the brand book (not on the page, so no sheet), and whether the 126 medals line in 03 should carry its source on the page.
+
+## 25 October 2026: second cut
+
+Konstancja's brief: cut more, about 1 300 words and 12 000 px, fewer than thirteen chapters; keep the three decision cards, the tabs, and the folds; add nothing.
+
+| Before | After | Why |
+| --- | --- | --- |
+| 13 chapters (00 to 11, with 06a) | 10 chapters, 00 to 09, numbered consecutively | three merges and one drop, below |
+| 04 "What the mark had to answer": duo with seven hotspots, three points | the duo in 03 Discovery with three hotspots; the three points gone | the coral ratio is in the palette, the gap in the prototypes flow, "laypeople" in the parent persona |
+| 06a "Mark architecture": maxim, clear-space page open, fold of three annotated pages and a duo | in 05 Design system: the clear-space page is the first of four annotated pages inside the rule fold (K1, K2); maxim dropped | the fold stays; the open page repeated the Decision 2 card. Decision 2 now links to `#design-system` |
+| 10 "Evidence": three stats and the two clips as tabs | dropped; the clips (still two tabs) sit in UC-01, after the use case | 8 mm, 16.1:1, and 2.7:1 are already in the palette and the rule fold; the generators at work belong with the generator use case |
+| 03: four points, folded shot of page 03 | three points; the folded shot gone | page 03 is the Decision 1 card |
+| 01 carousel: 10 slides | 6: mark, formula, versions, black and white, slogans, four seconds | grounds, hierarchy, social, and the key visual are shown or said elsewhere (05, 06, 00) |
+| personas: two goals, sentences, `job` | one goal, fragments, no `job`; badges shortened | the type requires badge, quote, context, goals, breaks, and must, so no field could be dropped; each is one fragment |
+| UC-01: six steps; UC-02: five | four each: slogan and format in one step, crop and colour in one; the coral button joins post 4 | the brief; nothing lost but a step boundary |
+| maxims: 03 and 06a | 03 only ("The method already had a sentence…") | at most one. The dossier tiles keep theirs: the type requires them |
+| standfirsts of 02, 04, 05, 06, 07, 08; captions; flow bodies; handoff cards; joints | one sentence; one fragment | the brief |
+| lead: "…two generators that let the programme's ambassadors make their own posts" | "…two generators for the programme's ambassadors" | `leadAccent` text kept verbatim |
+| palette notes with Pantone numbers; "Pantone" in the handoff card | Pantone numbers gone from the notes; "colours in HEX, CMYK, and Pantone" stays in 08 | the brand book has them; the page states that it does |
+| fold hints: "Open: two versions, what each one could and could not do", "Open: three annotated pages, the drawing of the gap, fifteen errors" | "Open: two versions", "Open: four annotated pages and fifteen errors" | one fragment |
+
+Numbers at 1440 px on the dev server after a full scroll: 2 066 to 1 400 visible words (263 of them the cover, lead, and strip, which the brief does not touch); 16 751 to 12 899 px; 13 to 10 chapters; 36 to 29 surface images; the two clips are now inside the dossier. At 390 px: 18 348 px, no horizontal scroll.
+
+Refused or not reached: personas to three fields (the type makes six required; cut to fragments instead); 12 000 px (the last 900 px would cost the brand-book carousel, the three concept boards, or the audit duo, each the only evidence of its chapter; the cover, lead, strip, and the next-project band take about 3 700 px of the total); the dossier maxims (required by `Dossier`). Still open from the first cut: which tool drew the mark, and whether the 126 medals line in 03 carries its source.

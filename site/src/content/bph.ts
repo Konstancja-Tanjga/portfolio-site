@@ -88,12 +88,12 @@ export const bph: CaseStudy = {
               key: "Decision 2",
               value:
                 "The card carries the decision: version, its state against the system, documentation per version. Installed boards with an update available sort first.",
-              shot: { src: `${S}/concept.png`, alt: "Installed boards with their state and the update menu open on one of them", to: "#concept" },
+              shot: { frame: "macbook", src: `${D}/detail-1600.webp`, alt: "A template with its versions, their state and documentation per version", to: "#concept" },
             },
             {
               key: "Decision 3",
               value: "Installing from the new Hub costs no extra step compared with the old modal: version and install button sit side by side.",
-              shot: { frame: "macbook", src: `${D}/detail-1600.webp`, alt: "A template's detail view with the latest version and Install now side by side", to: "#use-cases" },
+              shot: { src: `${S}/detail-flat.png`, alt: "A template's detail view with the latest version and Install now side by side", to: "#use-cases" },
             },
             {
               key: "Outcome",
@@ -108,7 +108,7 @@ export const bph: CaseStudy = {
       id: "what-it-is",
       n: "01",
       heading: "What it is",
-      standfirst: "The Hub's three parts, one screen per slide.",
+      standfirst: "The Hub's two screens, one per slide.",
       blocks: [
         {
           kind: "passage",
@@ -120,27 +120,6 @@ export const bph: CaseStudy = {
           items: [
             { src: `${D}/grid-2400.webp`, frame: "macbook", title: "The catalogue", body: "A card per template: process area, complexity, a short description, install." },
             { src: `${D}/detail-2400.webp`, frame: "macbook", title: "A template", body: "Latest version beside one install button; documentation per language; previous versions underneath." },
-            { src: `${S}/concept.png`, title: "Installed boards", body: "Each with its documentation language and its state against the system; the update menu lists the versions it can move to." },
-          ],
-        },
-      ],
-    },
-    {
-      id: "hard-brief",
-      n: "01a",
-      heading: "Why this is a hard brief",
-      blocks: [
-        {
-          kind: "passage",
-          html:
-            "<p>A template lands in a system that is <strong>already running a company's processes</strong>, and the old modal handled every case below in one table.</p>",
-        },
-        {
-          kind: "points",
-          items: [
-            "<strong>The install could not cost one step more than the old modal.</strong> A redesign that slows the primary action is a regression, however it looks.",
-            "<strong>Every template has versions</strong>, and a customer may need an older release on purpose.",
-            "<strong>Each version has its own documentation</strong>, so documentation belongs to the version, not to the board.",
           ],
         },
       ],
@@ -252,13 +231,11 @@ export const bph: CaseStudy = {
           sheet: {
             tools: [
               { name: "Figma", mark: "figma", what: "the audit board, the signed-off screens" },
-              { name: "Figma Make", mark: "figma", what: "the concept as a prototype" },
               { name: "Storybook", mark: "storybook", what: "FOX v3.0, the library as code" },
               { name: "Bitbucket", mark: "", glyph: "Bb", what: "pull requests" },
             ],
             stations: [
               { tool: "Figma", mark: "figma", file: "audit board", title: "The old modal, audited", body: "Four questions pinned where they arose; five findings, each answered by a rule.", image: { src: `${S}/old-modal.webp`, alt: "The legacy import modal: a table with a version dropdown on every row" } },
-              { tool: "Figma Make", mark: "figma", file: "concept", title: "The concept, as a prototype", body: "Installed boards with their state on top, available boards as cards below.", image: { src: `${S}/concept.png`, alt: "The concept prototype: installed boards with their state, available boards as cards" } },
               { drawing: "figma", tool: "Figma", mark: "figma", file: "grid · detail · sign-off", title: "Signed off", body: "The catalogue and the template, the two screens the use cases are built on." },
               { drawing: "storybook", tool: "Storybook", mark: "storybook", file: "FOX v3.0", title: "Library first, product second", body: "BPH Card, card grid BPH, and secondary app bar BPH published in the library before the product used them. The rest is FOX: menu, select, tooltip." },
               { drawing: "merge", lines: ["Storybook", "Component API", "The review gate"], tool: "Bitbucket", mark: "", file: "pull request", title: "Through the review gate", body: "Tokens, component API, and the review gate are mine on FOX." },
@@ -306,7 +283,7 @@ export const bph: CaseStudy = {
       n: "06",
       heading: "Design and sign-off",
       maxim: "If something a customer already relies on can be updated, that is the first thing the screen shows.",
-      standfirst: "The entry carries the decision: every card says what you need to know before you act on it. The concept, then the two signed-off screens, one per tab.",
+      standfirst: "The entry carries the decision: every card says what you need to know before you act on it. The two signed-off screens, one per tab.",
       blocks: [
         {
           kind: "points",
@@ -319,20 +296,8 @@ export const bph: CaseStudy = {
         },
         {
           kind: "tabs",
-          label: "Concept and signed-off screens",
+          label: "Signed-off screens",
           items: [
-            {
-              label: "Concept",
-              blocks: [
-                {
-                  kind: "shot",
-                  width: "wall",
-                  src: `${S}/concept.png`,
-                  caption:
-                    "Installed boards on top, each with its documentation language and state, the update menu open on one. Available boards below as cards, marked where a template needs a newer APplus release.",
-                },
-              ],
-            },
             {
               label: "Catalogue",
               blocks: [
