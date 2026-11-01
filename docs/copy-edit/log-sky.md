@@ -98,3 +98,13 @@ Konstancja extended World of Raptors after the redesign; the study still describ
 | 01 carousel, four slides | nine: course plan, checklist, Recognise, When and where, My sky added, screenshots of the live site |
 
 Not changed: the redesign story itself, the sheet (the tools of October), the clips.
+
+## 1 November 2026: three chapters removed, language sentence fixed
+
+| Was | Is | Why |
+|---|---|---|
+| 04 "Look-alikes, one slider apart", 05 "How it flies", 09 "Type for Polish, colour from the field" | removed; the rest renumbered 00 to 08 | her request, 1 November; the slider and the kestrel still play as clips in chapter 07 |
+| "A course in Polish on telling birds of prey apart in flight" | "A course on telling birds of prey apart in flight, written in Polish and built for browser translation into any language, with species names marked to stay as they are" | her correction: the app is read in any language through the browser; species and Latin names carry `translate="no"` |
+| `09-type.webp` | deleted | used only by the removed chapter |
+
+Result: 9 chapters (00 to 08). The ids `look-alikes`, `flight`, `type-and-colour` no longer resolve; nothing on the site linked to them.
