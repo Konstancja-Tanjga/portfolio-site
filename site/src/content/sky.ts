@@ -10,7 +10,7 @@ import type { CaseStudy } from "./types";
  * both, in this file and on the app's About page (/o-projekcie), because both
  * are true; change them together.
  *
- * The screens are the app in Polish, taken
+ * The screens are the app as written, in Polish, taken
  * from World of Raptors `feature/redesign` at commit 6d16cea, running
  * locally; the sky shots set the hour with `?pora=`. The redesign reached
  * production in World of Raptors PR #14 (merge commit f45ab72), which the
@@ -126,7 +126,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A course in Polish on telling birds of prey apart in flight: the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from. Since the redesign the course has grown around that frame: two paths, a checklist, a recognition guide by sight and by voice, a field planner, and My sky, where finished modules light up as constellations.</p>",
+            "<p>A course on telling birds of prey apart in flight, written in Polish and built for browser translation into any language, with species names marked to stay as they are. It covers the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from. Since the redesign the course has grown around that frame: two paths, a checklist, a recognition guide by sight and by voice, a field planner, and My sky, where finished modules light up as constellations.</p>",
         },
         {
           kind: "carousel",
