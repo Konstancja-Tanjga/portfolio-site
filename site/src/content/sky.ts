@@ -10,7 +10,7 @@ import type { CaseStudy } from "./types";
  * both, in this file and on the app's About page (/o-projekcie), because both
  * are true; change them together.
  *
- * The screens are the app in Polish, taken
+ * The screens are the app as written, in Polish, taken
  * from World of Raptors `feature/redesign` at commit 6d16cea, running
  * locally; the sky shots set the hour with `?pora=`. The redesign reached
  * production in World of Raptors PR #14 (merge commit f45ab72), which the
@@ -126,7 +126,7 @@ export const sky: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A course in Polish on telling birds of prey apart in flight: the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from. Since the redesign the course has grown around that frame: two paths, a checklist, a recognition guide by sight and by voice, a field planner, and My sky, where finished modules light up as constellations.</p>",
+            "<p>A course on telling birds of prey apart in flight, written in Polish and built for browser translation into any language, with species names marked to stay as they are. It covers the diurnal raptors and the owls of Poland, southern Spain, and the Strait of Gibraltar. <strong>The brief:</strong> a site a motion designer would put in a portfolio, without losing a course I can learn from. Since the redesign the course has grown around that frame: two paths, a checklist, a recognition guide by sight and by voice, a field planner, and My sky, where finished modules light up as constellations.</p>",
         },
         {
           kind: "carousel",
@@ -175,7 +175,7 @@ export const sky: CaseStudy = {
             { src: `${W}/02-sky-night.webp`, caption: "Night" },
           ],
           caption:
-            "The same opening at four hours; the line over the title changes with the light. The day sky plays as a clip in chapter 10.",
+            "The same opening at four hours; the line over the title changes with the light. The day sky plays as a clip in chapter 07.",
         },
       ],
     },
@@ -232,44 +232,8 @@ export const sky: CaseStudy = {
 
     /* ---------------------------------------------------------------- 04 */
     {
-      id: "look-alikes",
-      n: "04",
-      heading: "Look-alikes, one slider apart",
-      standfirst: "The method sorts raptors into eight silhouette groups, and what moves on screen is exactly what tells them apart.",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>One silhouette steps through the eight groups</strong> on the home page, from vultures to eagles to buzzards and on, the cues from the lesson's own table changing beside it.",
-            "<strong>Every diurnal species page puts the bird next to each look-alike on a slider.</strong> Drag it, and the numbers of one silhouette become the numbers of the other, each species' cues fading in as the drawing comes closer.",
-            "<strong>Both play as clips in chapter 10.</strong>",
-          ],
-        },
-      ],
-    },
-
-    /* ---------------------------------------------------------------- 05 */
-    {
-      id: "flight",
-      n: "05",
-      heading: "How it flies",
-      standfirst: "After shape, the second question is how the bird moves. Each diurnal species has a flight style, read from its cues in the atlas.",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>A kestrel hovers</strong> on fast beats with its tail fanned; a sparrowhawk flaps in a burst and glides; a harrier rocks low from side to side; a kite steers with its tail; soaring birds hold still and drift.",
-            "<strong>On the upstroke the hand folds,</strong> as in a real wingbeat.",
-            "<strong>Species pages and flashcards share the animation,</strong> so what a reader learns is the movement, not one picture.",
-          ],
-        },
-      ],
-    },
-
-    /* ---------------------------------------------------------------- 06 */
-    {
       id: "owls",
-      n: "06",
+      n: "04",
       heading: "Owls are heard first",
       standfirst: "Thirteen of the 45 species are owls, and the owl module teaches them by ear before eye.",
       blocks: [
@@ -283,10 +247,10 @@ export const sky: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 07 */
+    /* ---------------------------------------------------------------- 05 */
     {
       id: "flashcards",
-      n: "07",
+      n: "05",
       heading: "Flashcards that ask three ways",
       standfirst: "Knowing a bird means recognising its photograph, its silhouette, and its name.",
       blocks: [
@@ -310,10 +274,10 @@ export const sky: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 08 */
+    /* ---------------------------------------------------------------- 06 */
     {
       id: "atlas",
-      n: "08",
+      n: "06",
       heading: "Every bird at one scale",
       standfirst: "A wingspan in centimetres means little until you see it next to your own arms.",
       blocks: [
@@ -335,55 +299,10 @@ export const sky: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 09 */
-    {
-      id: "type-and-colour",
-      n: "09",
-      heading: "Type for Polish, colour from the field",
-      standfirst: "Titles in Półtawski Nowy, lessons in Newsreader, the interface in the system font.",
-      blocks: [
-        {
-          kind: "points",
-          items: [
-            "<strong>Półtawski Nowy revives the antiqua Adam Półtawski drew for Polish text in the 1920s,</strong> accents and tails designed in from the start; the revival is by Mateusz Machalski, Borys Kosmynka, and Ania Wieluńska.",
-            "<strong>Newsreader, by Production Type, for long reading on screen,</strong> with an italic for the Latin names.",
-            "<strong>The interface stays quiet,</strong> so the only saturated colours on screen are the birds'. Light mode is the warm paper of a field guide; dark mode takes the colours of the sky after sunset.",
-          ],
-        },
-        {
-          kind: "shot",
-          width: "column",
-          src: `${W}/09-type.webp`,
-          caption: "Polish accents in Półtawski Nowy, on the About page.",
-        },
-        {
-          kind: "fold",
-          title: "Two palettes, one for each mode",
-          hint: "Open: eight colours, each with its contrast on its background",
-          blocks: [
-            {
-              kind: "palette",
-              standfirst: "Every text colour passes WCAG AA on its background; text over the skies and photographs sits on a shade measured to pass.",
-              items: [
-                { hex: "#F8F3E9", name: "Paper", role: "The page in light mode: a field guide's paper" },
-                { hex: "#261D17", name: "Ink", role: "Text on paper", note: "14.9:1 on Paper" },
-                { hex: "#A54A24", name: "Red kite rust", role: "The accent in light mode: links, numbers, progress", note: "5.3:1 on Paper" },
-                { hex: "#2B5D86", name: "Focus blue", role: "The keyboard focus ring in light mode", note: "6.3:1 on Paper" },
-                { hex: "#0A1018", name: "Night", role: "The page in dark mode" },
-                { hex: "#F2EEE6", name: "Bone", role: "Text on the night sky", note: "16.5:1 on Night" },
-                { hex: "#F5B75B", name: "Eye gold", role: "The accent at night: a raptor's eye", note: "10.7:1 on Night" },
-                { hex: "#A85556", name: "Dusk rose", role: "The middle of the dusk sky, never behind text" },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    /* ---------------------------------------------------------------- 10 */
+    /* ---------------------------------------------------------------- 07 */
     {
       id: "motion",
-      n: "10",
+      n: "07",
       heading: "Motion that means something",
       standfirst: "Nothing on the page waits for an animation. Four clips, one per tab.",
       blocks: [
@@ -465,10 +384,10 @@ export const sky: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 11 */
+    /* ---------------------------------------------------------------- 08 */
     {
       id: "credits",
-      n: "11",
+      n: "08",
       heading: "How it was made, and by whom",
       maxim: "Made by two of us, with photographs from 364 people and institutions.",
       standfirst: "The redesign as the tools it passed through, from the brief to the live site.",
