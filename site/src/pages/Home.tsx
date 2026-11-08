@@ -80,10 +80,6 @@ export function Home() {
               </span>
             </li>
             <li className="hm-chip">
-              <strong>Four products</strong>
-              <span>designed from zero and shipped since 2024</span>
-            </li>
-            <li className="hm-chip">
               <strong>Eight years</strong>
               <span>in data-dense, regulated software</span>
             </li>
