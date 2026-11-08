@@ -3,8 +3,8 @@ import type { CaseStudy } from "./types";
 /**
  * A client project in its first iteration: a brief, a user flow, nine
  * wireframes, nine screens, a clickable prototype, and a handoff spec,
- * all in one Figma file, for a global automotive supplier whose name is
- * not on record here. Period on the strip: November 2025 to June 2026. A phone app, so no MacBook
+ * all in one Figma file, at APplus, for a global automotive supplier who
+ * is not named. Period on the strip: November 2025 to June 2026. A phone app, so no MacBook
  * mockup anywhere: the screens are the 390 by 844 frames exported at 3x,
  * the clips are the prototype's own sequence of screens played inside a
  * drawn phone, and the boards are the Figma pages as they are.
@@ -31,12 +31,13 @@ export const flowLogistics: CaseStudy = {
     headline: ["From scan", "to action"],
     subline: "A shop-floor app for the plants of a global automotive supplier",
     stamp: "BRIEF · USER FLOW · WIREFRAMES · PROTOTYPE · HANDOFF SPEC",
-    credit: "Product Designer · Automotive supplier · 2026",
+    credit: "Product Designer · APplus · 2025–2026",
     art: { src: `${W}/cover-art.webp`, portrait: true },
     shot: { src: `${W}/00-cover.png` },
   },
   meta: [
     { label: "Role", value: "Product Designer: brief, user flow, wireframes, screens, prototype, handoff spec" },
+    { label: "Company", value: "APplus" },
     { label: "Users", value: "Shop-floor and warehouse workers, on a company phone or an industrial terminal, often in gloves" },
     { label: "Method", value: "Requirements from market practice and IATF 16949, hypotheses with fallbacks, a hard scope budget, one test with a fresh person" },
     { label: "Tools", value: "Figma, with a local foundation of variables, text styles, and five components; Claude Code for quick prototypes; Storybook for the design system" },
