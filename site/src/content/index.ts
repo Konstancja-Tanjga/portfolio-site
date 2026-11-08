@@ -33,17 +33,18 @@ import type { CaseStudy, Group, Process } from "./types";
  * oldest to newest.
  */
 export const cases: CaseStudy[] = [
-  // product
-  bi,
-  elly,
-  dms,
-  bph,
-  volvo,
-  pzu,
-  flow,
-  flowLogistics,
-  xecta,
-  riyad,
+  // product: newest first, by the end of each period on its strip.
+  // Riyad Bank has no period on record; its screens date it to 2022.
+  bi, // January to October 2026
+  dms, // October 2025 to August 2026
+  flowLogistics, // November 2025 to June 2026
+  bph, // August 2024 to August 2025
+  elly, // 2024 to April 2025
+  flow, // late 2023
+  volvo, // August 2022 to August 2023
+  riyad, // 2022, from the screens
+  xecta, // April 2020 to July 2021
+  pzu, // 2019
   // identity
   ost,
   // practice
