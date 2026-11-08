@@ -85,3 +85,17 @@ flow 2 in 8.2 s.
 6. Whether the Claude Code and Figma MCP workflow used to build the file
    should be named in the Tools row, as the other studies name their tool
    chain.
+
+## 8 November 2026: Konstancja's corrections
+
+| Before | After | Why |
+| --- | --- | --- |
+| Period: "November 2026, first iteration" | "November 2025 to June 2026" | as stated by Konstancja |
+| Client row | removed | as requested |
+| Status row | removed | as requested |
+| Tools: Figma and the local foundation | adds "Claude Code for quick prototypes; Storybook for the design system" | as requested |
+| Period and team: "November 2026. …" | "June 2026. …" | as requested |
+| chapter 10 "What happens next" | removed | as requested |
+| "tested with one fresh person on 5 November 2026" (00) and "One session on 5 November 2026" (09) | the date dropped | the brief's test date falls after the period now stated; the facts about the test stay |
+
+Still open: items 1 to 3 and 5 of the list above (the company and contract title, whether the client may be named, who agreed what with whom, a "what I would do differently" answer).

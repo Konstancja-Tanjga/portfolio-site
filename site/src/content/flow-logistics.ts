@@ -3,8 +3,8 @@ import type { CaseStudy } from "./types";
 /**
  * A client project in its first iteration: a brief, a user flow, nine
  * wireframes, nine screens, a clickable prototype, and a handoff spec,
- * all in one Figma file, written in November 2026 for a global automotive
- * supplier whose name is not on record here. A phone app, so no MacBook
+ * all in one Figma file, for a global automotive supplier whose name is
+ * not on record here. Period on the strip: November 2025 to June 2026. A phone app, so no MacBook
  * mockup anywhere: the screens are the 390 by 844 frames exported at 3x,
  * the clips are the prototype's own sequence of screens played inside a
  * drawn phone, and the boards are the Figma pages as they are.
@@ -37,12 +37,10 @@ export const flowLogistics: CaseStudy = {
   },
   meta: [
     { label: "Role", value: "Product Designer: brief, user flow, wireframes, screens, prototype, handoff spec" },
-    { label: "Client", value: "A global automotive supplier with plants in many countries and an ERP in place" },
     { label: "Users", value: "Shop-floor and warehouse workers, on a company phone or an industrial terminal, often in gloves" },
     { label: "Method", value: "Requirements from market practice and IATF 16949, hypotheses with fallbacks, a hard scope budget, one test with a fresh person" },
-    { label: "Tools", value: "Figma, with a local foundation of variables, text styles, and five components" },
-    { label: "Period", value: "November 2026, first iteration" },
-    { label: "Status", value: "Prototype v1 tested; seven questions open with the product owner" },
+    { label: "Tools", value: "Figma, with a local foundation of variables, text styles, and five components; Claude Code for quick prototypes; Storybook for the design system" },
+    { label: "Period", value: "November 2025 to June 2026" },
   ],
   chapters: [
     /* ---------------------------------------------------------------- 00 */
@@ -90,11 +88,11 @@ export const flowLogistics: CaseStudy = {
             {
               key: "Outcome",
               value:
-                "Prototype v1 in one iteration: nine screens, five taps on the main path, tested with one fresh person on 5 November 2026 with no cuts needed. Time per report is not measured yet.",
+                "Prototype v1 in one iteration: nine screens, five taps on the main path, tested with one fresh person with no cuts needed. Time per report is not measured yet.",
             },
             {
               key: "Period and team",
-              value: "November 2026. One designer, with seven questions open to the client's product owner.",
+              value: "June 2026. One designer, with seven questions open to the client's product owner.",
             },
           ],
         },
@@ -529,7 +527,7 @@ export const flowLogistics: CaseStudy = {
       id: "evidence",
       n: "09",
       heading: "What was tested, and what was not",
-      standfirst: "One session on 5 November 2026 with a person who had not seen the file, five minutes, two tasks. The numbers below are the ones on record.",
+      standfirst: "One session with a person who had not seen the file, five minutes, two tasks. The numbers below are the ones on record.",
       blocks: [
         {
           kind: "stats",
@@ -551,23 +549,5 @@ export const flowLogistics: CaseStudy = {
       ],
     },
 
-    /* ---------------------------------------------------------------- 10 */
-    {
-      id: "next",
-      n: "10",
-      heading: "What happens next",
-      blocks: [
-        {
-          kind: "joint",
-          question: "What is open before the client sees it?",
-          answers: [
-            "<strong>The product owner's answers to the seven questions,</strong> and the hypotheses updated. Question one, what AI Virtual Assistant means to the client, decides whether the input assistant is the right shape.",
-            "<strong>The standard in its own text.</strong> IATF 16949 clauses 8.5.2.1 and 8.7, and the client's customer-specific requirements: is a proposed hold enough, or must the worker be able to hold.",
-            "<strong>A real product photo from the client's ERP</strong> in place of the placeholder on screens 8 and 9.",
-            "<strong>The next users.</strong> The shift leader's view with actions, then checklists, audits, and the desktop version, each as its own iteration against the same budget.",
-          ],
-        },
-      ],
-    },
   ],
 };
