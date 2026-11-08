@@ -7,6 +7,7 @@ import { chihuahua } from "./chihuahua";
 import { dms } from "./dms";
 import { elly } from "./elly";
 import { flow } from "./flow";
+import { flowLogistics } from "./flow-logistics";
 import { fox } from "./fox";
 import { futures } from "./futures";
 import { ost } from "./ost";
@@ -40,6 +41,7 @@ export const cases: CaseStudy[] = [
   volvo,
   pzu,
   flow,
+  flowLogistics,
   xecta,
   riyad,
   // identity
