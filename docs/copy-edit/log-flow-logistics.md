@@ -110,3 +110,10 @@ Still open: items 1 to 3 and 5 of the list above (the company and contract title
 Closed by Konstancja: the client stays unnamed; no "agreed with" line and no
 sign-off chapter; no "What I would do differently". The list of open points
 above is closed.
+
+## 10 November 2026: company corrected
+
+| Before | After | Why |
+| --- | --- | --- |
+| credit: "Product Designer · APplus · 2025–2026" | "Product Designer · Asseco Solutions · 2025–2026" | Konstancja: the company is Asseco Solutions; APplus is its ERP. The organisation segment of the credit now matches the other Asseco studies |
+| Company: "APplus" | Company: "Asseco Solutions" and a new row Product: "APplus ERP" | same; company and product in separate rows, as on the other Asseco studies |
