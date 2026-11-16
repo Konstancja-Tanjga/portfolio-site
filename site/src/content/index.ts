@@ -14,6 +14,7 @@ import { ost } from "./ost";
 import { possible } from "./possible";
 import { pzu } from "./pzu";
 import { riyad } from "./riyad";
+import { sailrock } from "./sailrock";
 import { sky } from "./sky";
 import { volvo } from "./volvo";
 import { xecta } from "./xecta";
@@ -28,9 +29,9 @@ import type { CaseStudy, Group, Process } from "./types";
  * holds Ogólnopolska Strefa Talentu. Big Hat
  * opens `practice` because it is the one design system whose artefacts
  * can be shown in full — it is mine. FOX follows: the same discipline
- * at six-product scale, but its exports belong to Asseco. Reading the
- * sky goes before both as the newest wall; after FOX, `practice` runs
- * oldest to newest.
+ * at six-product scale, but its exports belong to Asseco. SailRock and
+ * Reading the sky go before both as the newest walls, newest first; after
+ * FOX, `practice` runs oldest to newest.
  */
 export const cases: CaseStudy[] = [
   // product: newest first, by the end of each period on its strip.
@@ -48,6 +49,7 @@ export const cases: CaseStudy[] = [
   // identity
   ost,
   // practice
+  sailrock,
   sky,
   bighat,
   fox,

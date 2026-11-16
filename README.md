@@ -91,7 +91,7 @@ Anthropic's, not mine, linked rather than copied in.
 | Band | | |
 |---|---|---|
 | **Products** | 9 walls | APplus Analytics · Elly · APplus Documents · APplus Best Practice Hub · Volvo · MojePZU · APplus Flow mode · Xecta · Riyad Bank |
-| **Practice** | 5 walls | Big Hat design system · FOX design system · Futures Thinking · Tinder for Chihuahua · Reading the sky |
+| **Practice** | 6 walls | Big Hat design system · FOX design system · Futures Thinking · Tinder for Chihuahua · Reading the sky · SailRock |
 | **Recognition** | 3 short pages | ERP of the Year · Bydgoszcz · Possible Reality |
 
 Plus **Watercolours**: architecture, birds, animals, people. Kept off the work
