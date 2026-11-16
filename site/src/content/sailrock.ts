@@ -11,7 +11,8 @@ import type { CaseStudy } from "./types";
  *
  * A phone app, so no MacBook mockup anywhere, as on Flow Logistics. The
  * screens are the live app at https://sail-rock.vercel.app (SailRock commit
- * 3f4b322) in a 390 by 844 viewport, in Polish, as the app is written. The
+ * cb7986a) in a 390 by 844 viewport, in English; the app is written in
+ * Polish and English and follows the language of the browser. The
  * clips are not screen recordings: each frame is a screenshot of the live
  * app inside a drawn phone, taken after one scripted step (a tap, a typed
  * character, a scroll increment), held for a set time, and encoded at
@@ -47,7 +48,7 @@ export const sailrock: CaseStudy = {
   meta: [
     { label: "Role", value: "Brief, planning rules, and design direction. Interface, code, table transcription, and tests made with Claude" },
     { label: "Made with", value: "Claude, Anthropic's AI model, in Claude Code" },
-    { label: "Scope", value: "A planner for no-decompression dives on air, EANx32, and EANx36; a planner for decompression dives; a nitrox calculator; a gas plan; saved plans; a slate view" },
+    { label: "Scope", value: "A planner for no-decompression dives on air, EANx32, and EANx36; a planner for decompression dives; a nitrox calculator; a gas plan; saved plans; a slate view. In Polish and English" },
     { label: "System", value: "Big Hat 6.1 underneath, components and semantic tokens only", href: "https://konstancja-tanjga.github.io/bighat-design-system/" },
     { label: "Live", value: "Running on Vercel, installable on a phone", href: "https://sail-rock.vercel.app" },
     { label: "Source", value: "Public, the whole history included", href: "https://github.com/Konstancja-Tanjga/SailRock" },
@@ -97,7 +98,7 @@ export const sailrock: CaseStudy = {
             {
               key: "Outcome",
               value:
-                "Live on Vercel, source public. 75 tests, among them the nine worked examples published with the tables. No cell-by-cell check against the printed cards yet, and the app says so on first run.",
+                "Live on Vercel, source public. 79 tests, among them the nine worked examples published with the tables. No cell-by-cell check against the printed cards yet, and the app says so on first run.",
             },
             {
               key: "Period and team",
@@ -117,7 +118,7 @@ export const sailrock: CaseStudy = {
         {
           kind: "passage",
           html:
-            "<p>A web app that installs on a phone and works without network. It plans <strong>no-decompression dives</strong> from the Recreational Dive Planner on air, EANx32, and EANx36, and <strong>decompression dives</strong> from the Bühlmann-Hahn table for waters up to 250 m above sea level. The interface is in Polish; the captions on this page translate what matters.</p>",
+            "<p>A web app that installs on a phone and works without network. It plans <strong>no-decompression dives</strong> from the Recreational Dive Planner on air, EANx32, and EANx36, and <strong>decompression dives</strong> from the Bühlmann-Hahn table for waters up to 250 m above sea level. The interface is in Polish and in English, and follows the language of the browser.</p>",
         },
         {
           kind: "carousel",
@@ -247,7 +248,7 @@ export const sailrock: CaseStudy = {
                 {
                   kind: "beside",
                   html:
-                    "<p><strong>A dive beyond the no-decompression limit, read from the Bühlmann-Hahn table.</strong> The same two fields, on the second tab.</p><ul><li><strong>40 m for 30 minutes.</strong> The planner reads the row for 42 m.</li><li><strong>The stops.</strong> One minute at 12 m, four at 9 m, six at 6 m, eighteen at 3 m.</li><li><strong>Two warnings in words.</strong> A decompression dive, and beyond an Advanced Open Water certification.</li><li><strong>The gas does not fit.</strong> A 15-litre cylinder is 73 bar short, and the plan says so before anyone is under water.</li></ul>",
+                    "<p><strong>A dive beyond the no-decompression limit, read from the Bühlmann-Hahn table.</strong> The same two fields, on the second tab.</p><ul><li><strong>40 m for 30 minutes.</strong> The planner reads the row for 42 m.</li><li><strong>The stops.</strong> Four of them, each with its depth and its minutes, and under them the row of the table they came from.</li><li><strong>Two warnings in words.</strong> A decompression dive, and beyond an Advanced Open Water certification.</li><li><strong>The gas does not fit.</strong> A 15-litre cylinder is 73 bar short, and the plan says so before anyone is under water.</li></ul>",
                   video: { src: `${C}/deco-from-the-table.mp4`, poster: `${C}/deco-from-the-table.webp`, title: "A decompression dive read from the table, then its stops and its gas", mockup: true },
                   caption: "A decompression dive in the live app, 15 seconds, looping.",
                 },
@@ -307,7 +308,7 @@ export const sailrock: CaseStudy = {
         {
           kind: "stats",
           items: [
-            { value: "75", label: "tests, run before every deploy" },
+            { value: "79", label: "tests, run before every deploy" },
             { value: "9", label: "worked examples published with the tables, all reproduced" },
             { value: "351", label: "surface-interval ranges, read from three cards and compared" },
             { value: "19", label: "depths in the Bühlmann-Hahn table, 9 m to 63 m" },
@@ -366,7 +367,7 @@ export const sailrock: CaseStudy = {
             { title: "The build", body: "Claude's, with me: the transcription, the planners, the tests, and the interface on Big Hat, a commit for every milestone." },
             { title: "The review", body: "Shared: I compared results with my paper tables and asked for changes; Claude reviewed the interface on a phone-sized screen and fixed what it found." },
           ],
-          note: "Six commits in three days, all public.",
+          note: "Eight commits in three days, all public.",
         },
         {
           kind: "points",
@@ -389,7 +390,6 @@ export const sailrock: CaseStudy = {
           question: "What does the app still owe a diver?",
           answers: [
             "A check of every transcribed cell against the printed cards, so the first-run warning can go.",
-            "An interface in English beside the Polish one.",
             "Plus and minus buttons on depth and time, so the keyboard stops covering the result.",
             "The Bühlmann-Hahn tables for lakes above 250 m.",
           ],

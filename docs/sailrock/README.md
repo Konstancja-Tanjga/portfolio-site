@@ -2,7 +2,7 @@
 
 Process notes for `site/src/content/sailrock.ts`. Everything in
 `site/public/work/sailrock/` was produced by the scripts in this folder from
-the live app at https://sail-rock.vercel.app (SailRock commit `3f4b322`),
+the live app at https://sail-rock.vercel.app (SailRock commit `cb7986a`),
 on 16 November 2026.
 
 | File | Makes |
@@ -25,4 +25,5 @@ Conventions worth knowing before changing anything:
   not part of the app.
 - The first-run dialog is dismissed through `localStorage` for every image
   except `01-first-run`, which shows it.
-- The app is in Polish. Captions on the page translate what matters.
+- The app is in Polish and English and follows the browser's language. The
+  stage sets the locale to `en-GB`, so every image is in English.
