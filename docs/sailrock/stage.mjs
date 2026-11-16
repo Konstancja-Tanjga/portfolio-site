@@ -27,7 +27,7 @@ export async function openStage({ dsf = 2, dark = false, transparent = false, ac
     viewport: { width: 430, height: 900 },
     deviceScaleFactor: dsf,
     colorScheme: dark ? 'dark' : 'light',
-    locale: 'pl-PL',
+    locale: 'en-GB',
   })
   await context.addInitScript((ack) => {
     if (location.hostname.endsWith('vercel.app') && ack) {
