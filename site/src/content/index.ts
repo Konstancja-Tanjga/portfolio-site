@@ -42,7 +42,7 @@ export const cases: CaseStudy[] = [
   riyad,
   // identity
   ost,
-  // practice, in the order Konstancja set on 19 November 2026
+  // practice
   fsc,
   sky,
   chihuahua,

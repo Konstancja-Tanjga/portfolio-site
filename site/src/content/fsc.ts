@@ -7,7 +7,10 @@ import type { CaseStudy } from "./types";
  *
  * What is on record, and what is not:
  * - No user research and no usability test: the persona is a role, and the
- *   study states no result. Chapters 02, 03, 04, 05 and 10 are dropped.
+ *   study states no result, so 02, 03 and 10 are dropped. 04 and 05 are
+ *   dropped because there was no audit of an earlier version and no earlier
+ *   prototype; 07 because every signed-off screen is already in the 01
+ *   carousel.
  * - The device mockups are of the coded prototype at 1440 px, set in the
  *   site's MacBook frame (fsc-wealth-prototype.vercel.app, 19 November 2026);
  *   the Figma file renders the same screens from the SLDS 2 kits.
@@ -86,7 +89,7 @@ export const fsc: CaseStudy = {
               value: "Nothing the agent drafts is saved silently: an action plan, note, or agenda opens as a preview the advisor edits.",
               shot: { src: `${D}/action-plan-1600.webp`, alt: "Action plan preview before saving", to: "#use-cases", frame: "macbook" },
             },
-            { key: "Outcome", value: "Not measured: no advisor has tested it. Five screens, docs, annotations, and a prototype." },
+            { key: "Outcome", value: "Not measured, as no advisor has tested it; delivered five screens, docs, annotations, and a prototype." },
             { key: "Period and team", value: "November 2026, alone." },
           ],
         },
@@ -103,9 +106,9 @@ export const fsc: CaseStudy = {
           kind: "carousel",
           items: [
             { src: `${D}/home-2400.webp`, frame: "macbook", title: "Advisor Home", body: "Today’s priorities from Agentforce, clients needing attention, meetings, and the book of business." },
-            { src: `${D}/client-2400.webp`, frame: "macbook", title: "Client 360", body: "The Person Account: assets, liabilities, accounts, goals, household, and open work on one page." },
+            { src: `${D}/client-2400.webp`, frame: "macbook", title: "Client 360", body: "Maria Kowalczyk’s Person Account: assets, liabilities, accounts, goals, household, and open work on one page." },
             { src: `${D}/agentforce-brief-2400.webp`, frame: "macbook", title: "Meeting brief", body: "Agentforce reads the record and writes the brief for the review." },
-            { src: `${D}/agentforce-options-2400.webp`, frame: "macbook", title: "Options for a goal at risk", body: "Three options for the holiday home goal, from her risk profile." },
+            { src: `${D}/agentforce-options-2400.webp`, frame: "macbook", title: "Options for a goal at risk", body: "Three options for Maria’s holiday home goal, from her risk profile." },
             { src: `${D}/action-plan-2400.webp`, frame: "macbook", title: "Action plan preview", body: "The plan the agent drafted, edited before it is saved." },
             { src: `${D}/household-2400.webp`, frame: "macbook", title: "Household", body: "The family as one client: members, relationships, combined accounts." },
             { src: `${D}/account-2400.webp`, frame: "macbook", title: "Financial Account", body: "A joint investment account: holdings, transactions, and roles." },
@@ -159,7 +162,7 @@ export const fsc: CaseStudy = {
               n: "01",
               title: "Meeting brief",
               maxim: "An answer about money cites the record or says what is missing.",
-              standfirst: "Goal: be ready for a client review in under a minute.",
+              standfirst: "Goal: be ready for a client review without opening every record.",
               cover: { src: `${D}/agentforce-brief-2400.webp`, frame: "macbook" },
               blocks: [
                 { kind: "shot", width: "wall", src: `${D}/agentforce-brief-2400.webp`, frame: "macbook", caption: "The brief in the pinned Agentforce panel, next to the record it was written from (R1)." },
@@ -168,14 +171,14 @@ export const fsc: CaseStudy = {
                   uc: {
                     id: "UC-01",
                     title: "Prepare for a client review without opening every record",
-                    actor: { name: "01, the wealth advisor", body: "Owns a book of clients and holds several reviews a week.", note: "A role, not a researched persona: short of time, and accountable for every figure said to the client." },
+                    actor: { name: "The wealth advisor (a role)", body: "Owns a book of clients and holds several reviews a week.", note: "A role, not a researched persona: short of time, and accountable for every figure said to the client." },
                     trigger: { body: "A review in the calendar for tomorrow at 10:00.", note: "Time pressure, not curiosity." },
                     precondition: { body: "The client has financial accounts, goals, and at least one action plan in the org." },
                     flow: [
                       { n: "1", text: "The advisor opens the meeting on Advisor Home.", note: "The brief starts from the event, where the advisor already is." },
                       { n: "2", text: "Client 360 opens with the Agentforce panel pinned.", note: "The record stays visible, so each figure can be checked against it." },
                       { n: "3", text: "Agentforce writes the brief: portfolio, goals, open work.", note: "Only from this record and what the advisor may see." },
-                      { n: "4", text: "The advisor saves the brief as an interaction note.", note: "Opens as a preview, edited before saving." },
+                      { n: "4", text: "The advisor opens the brief as an interaction note preview.", note: "Edited before saving, or discarded." },
                     ],
                     exits: [
                       { label: "Save", text: "The brief becomes an Interaction Summary on the client." },
@@ -203,7 +206,7 @@ export const fsc: CaseStudy = {
                   uc: {
                     id: "UC-02",
                     title: "Turn a proposal for a goal at risk into an action plan",
-                    actor: { name: "01, the wealth advisor", body: "Has the brief and sees the holiday home goal at 23%.", note: "Wants a plan to show the client, not a paragraph." },
+                    actor: { name: "The wealth advisor (a role)", body: "Has the brief and sees the holiday home goal at 23%.", note: "Wants a plan to show the client, not a paragraph." },
                     trigger: { body: "A goal marked At Risk.", note: "The status comes from funded percent against time elapsed." },
                     precondition: { body: "The goal has a target value and a target date." },
                     flow: [
@@ -239,7 +242,7 @@ export const fsc: CaseStudy = {
                   uc: {
                     id: "UC-03",
                     title: "See what the family owns before advising one member",
-                    actor: { name: "01, the wealth advisor", body: "About to advise Maria on a goal that affects her husband.", note: "Needs the whole picture, quickly." },
+                    actor: { name: "The wealth advisor (a role)", body: "About to advise Maria on a goal that affects her husband.", note: "Needs the whole picture, quickly." },
                     trigger: { body: "A goal or account shared with another member." },
                     precondition: { body: "The members are related to one Household account." },
                     flow: [
