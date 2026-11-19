@@ -12,6 +12,7 @@ Written 19 November 2026 against docs/case-study-kit and docs/STYLE.md.
 | 66 Dev Mode annotations in six categories | Figma file, 19 Nov |
 | Acceptance criteria AC0.1 to AC4.5 | documentation blocks in the Figma file |
 | Client data: Maria Kowalczyk, the 10:00 review, the holiday home goal at 23%, three options, an action plan of four tasks | fictional records in the coded prototype, as captured on 19 Nov |
+| Mobile screens (chapter 07) | the FSC Figma file, frames Mobile 01–03, exported at 1x (390 × 844); 2x export exceeded the connector limit |
 | Device mockups | the coded prototype at fsc-wealth-prototype.vercel.app, 1440 px at 2x, set in public/work/frames/macbook.webp |
 
 ## Decisions

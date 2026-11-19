@@ -9,8 +9,8 @@ import type { CaseStudy } from "./types";
  * - No user research and no usability test: the persona is a role, and the
  *   study states no result, so 02, 03 and 10 are dropped. 04 and 05 are
  *   dropped because there was no audit of an earlier version and no earlier
- *   prototype; 07 because every signed-off screen is already in the 01
- *   carousel.
+ *   prototype. 07 shows the three mobile screens, exported from Figma
+ *   at 1x (390 x 844) because the connector's export is capped.
  * - The device mockups are of the coded prototype at 1440 px, set in the
  *   site's MacBook frame (fsc-wealth-prototype.vercel.app, 19 November 2026);
  *   the Figma file renders the same screens from the SLDS 2 kits.
@@ -89,7 +89,7 @@ export const fsc: CaseStudy = {
               value: "Nothing the agent drafts is saved silently: an action plan, note, or agenda opens as a preview the advisor edits.",
               shot: { src: `${D}/action-plan-1600.webp`, alt: "Action plan preview before saving", to: "#use-cases", frame: "macbook" },
             },
-            { key: "Outcome", value: "Not measured, as no advisor has tested it; delivered five screens, docs, annotations, and a prototype." },
+            { key: "Outcome", value: "Not measured, as no advisor has tested it; delivered five desktop and three mobile screens, docs, annotations, and a prototype." },
             { key: "Period and team", value: "November 2026, alone." },
           ],
         },
@@ -143,6 +143,33 @@ export const fsc: CaseStudy = {
             "<strong>1219 of the 1349 component instances on the five screens come from the SLDS 2 kits</strong>: global header, navigation, page header, cards, data table cells, progress bars, badges, avatars, and the Agentforce panel.",
             "<strong>The other 130 are local components on SLDS tokens</strong>, for what the kit does not have: record field, metric tile, goal row, household member, action plan item, interaction item.",
             "<strong>Colours, spacing, and type are SLDS 2 styling hooks and text styles</strong>, so the screens follow the kit when it changes.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "mobile",
+      n: "07",
+      heading: "On a phone",
+      maxim: "The record keeps its rules; only the layout changes.",
+      standfirst: "The same path at 390 px, designed in Figma: the day, the client, and the brief.",
+      blocks: [
+        {
+          kind: "points",
+          items: [
+            "<strong>One column, three key values.</strong> The header keeps Total Assets, Net Worth, and Risk Tolerance; the full highlights move to Details.",
+            "<strong>Related lists become lists.</strong> Name, one meta line, and one value per row, because a five-column table does not fit a phone.",
+            "<strong>Agentforce opens full screen and names the record it reads.</strong> R1 to R3 apply unchanged.",
+          ],
+        },
+        {
+          kind: "set",
+          size: "phone",
+          caption: "Today, Client 360 with Related, Details, and Activity tabs, and the Agentforce brief, from the Figma file.",
+          items: [
+            { src: `${S}/mobile-today.webp` },
+            { src: `${S}/mobile-client.webp` },
+            { src: `${S}/mobile-agentforce.webp` },
           ],
         },
       ],
