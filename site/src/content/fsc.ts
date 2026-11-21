@@ -306,8 +306,18 @@ export const fsc: CaseStudy = {
             { n: "02", stage: "Annotations", title: "66 annotations in Dev Mode", rule: { label: "Categories", body: "Development, Interaction, Accessibility, Content, plus Data · FSC for objects and fields, and AI · Agentforce for grounding and confirmation." } },
             { n: "03", stage: "Spec", title: "A handoff spec beside every screen", rule: { label: "Sections", body: "Layout, tokens, components, states, responsive behaviour, edge cases, motion, and accessibility." } },
             { n: "04", stage: "Prototype", title: "The path, clickable", rule: { label: "Where", body: "Coded prototype with the five screens and the Agentforce answers." } },
+            { n: "05", stage: "Data", title: "A board for the developer and the architect", rule: { label: "Contains", body: "Objects and fields per card, the three Agentforce actions as Given, When, Then, calculations, LWC and Apex contracts, and open questions." } },
           ],
         },
+        {
+          kind: "points",
+          items: [
+            "<strong>Every card names its object, fields, and filter</strong>, and whether a standard related list builds it or it needs a custom LWC.",
+            "<strong>API names are marked “confirm”.</strong> The concept does not know whether the org runs the managed FinServ__ package or the core FSC objects, so the board says so instead of guessing.",
+            "<strong>Each Agentforce action states what it writes and what happens if it fails</strong>: nothing is created, and the preview stays open (R2).",
+          ],
+        },
+        { kind: "shot", width: "column", src: `${S}/handoff-data-actions.webp`, folded: true, caption: "The data and actions board: objects per screen, Agentforce actions, setup, calculations, LWC and Apex, non-functional requirements, and open questions." },
         { kind: "shot", width: "wall", src: `${S}/doc-agentforce.webp`, folded: true, caption: "The documentation block above screen 02, with its acceptance criteria." },
         { kind: "shot", width: "column", src: `${S}/spec-agentforce.webp`, folded: true, caption: "The handoff spec for screen 02, Agentforce meeting prep." },
       ],
