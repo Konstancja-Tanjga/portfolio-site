@@ -25,9 +25,10 @@ import { analyticsExploded } from "../home/exploded";
  */
 export function Home() {
   const products = byGroup("product");
-  // Home shows the practice tiles minus Tinder for Chihuahua; the study stays
-  // on the Practice page, reached from the link under the heading.
-  const practice = byGroup("practice").filter((c) => c.slug !== "tinder-for-chihuahua");
+  // Home shows four practice tiles, one full row: Tinder for Chihuahua and
+  // Futures Thinking stay on the Practice page, reached from the link under
+  // the heading.
+  const practice = byGroup("practice").filter((c) => c.slug !== "tinder-for-chihuahua" && c.slug !== "futures-thinking");
   const identity = byGroup("identity");
   const award = findCase("erp-of-the-year");
 

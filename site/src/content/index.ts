@@ -9,6 +9,7 @@ import { elly } from "./elly";
 import { flow } from "./flow";
 import { flowLogistics } from "./flow-logistics";
 import { fox } from "./fox";
+import { fsc } from "./fsc";
 import { futures } from "./futures";
 import { ost } from "./ost";
 import { possible } from "./possible";
@@ -26,12 +27,10 @@ import type { CaseStudy, Group, Process } from "./types";
  * Within `product`, the order is deliberate: Analytics leads, then Elly,
  * Documents and the Best Practice Hub, then Volvo, MojePZU and Flow mode,
  * with the two short pages, Xecta and Riyad Bank, at the end. `identity`
- * holds Ogólnopolska Strefa Talentu. Big Hat
- * opens `practice` because it is the one design system whose artefacts
- * can be shown in full — it is mine. FOX follows: the same discipline
- * at six-product scale, but its exports belong to Asseco. SailRock and
- * Reading the sky go before both as the newest walls, newest first; after
- * FOX, `practice` runs oldest to newest.
+ * holds Ogólnopolska Strefa Talentu. `practice` follows the order
+ * Konstancja set on 19 November 2026: the Salesforce FSC concept, World of
+ * Raptors, Tinder for Chihuahua, FOX, Big Hat, Futures Thinking. SailRock,
+ * merged on 16 November, goes second as the next-newest wall.
  */
 export const cases: CaseStudy[] = [
   // product: newest first, by the end of each period on its strip.
@@ -49,12 +48,13 @@ export const cases: CaseStudy[] = [
   // identity
   ost,
   // practice
+  fsc,
   sailrock,
   sky,
-  bighat,
-  fox,
-  futures,
   chihuahua,
+  fox,
+  bighat,
+  futures,
   // recognition
   award,
   bydgoszcz,

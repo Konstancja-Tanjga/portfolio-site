@@ -34,7 +34,7 @@ const D = "/work/reading-the-sky/device";
 
 export const sky: CaseStudy = {
   slug: "reading-the-sky",
-  title: "Reading the sky",
+  title: "World of Raptors",
   what: "World of Raptors redesigned with Claude: birds drawn from numbers, a sky that follows the sun, and motion that teaches identification",
   lead:
     "The first version of my course on birds of prey worked, and it was plain. The redesign keeps to one principle: every piece of motion has to teach something about the birds. I wrote the course and directed the work; Claude, Anthropic's AI model, designed, animated, and built it with me.",
@@ -42,8 +42,8 @@ export const sky: CaseStudy = {
   group: "practice",
   cover: {
     kicker: "PERSONAL PROJECT · MOTION AND INTERACTION",
-    headline: ["Reading", "the sky"],
-    subline: "World of Raptors, redesigned with Claude",
+    headline: ["World of", "Raptors"],
+    subline: "my course on birds of prey, redesigned with Claude",
     stamp: "PARAMETRIC SILHOUETTES · LIVE SKY · MORPHS · SPACED REPETITION",
     credit: "Idea, content and direction · Built with Claude · 2026",
     org: "Personal project",
@@ -62,7 +62,7 @@ export const sky: CaseStudy = {
     { label: "Made with", value: "Claude, Anthropic's AI model, in Claude Code. One commit for every milestone" },
     { label: "Scope", value: "Home, course plan, atlas, species pages, flashcards, checklist, a recognition guide, a field planner, My sky, and an About page; 45 species drawn from numbers" },
     { label: "System", value: "Big Hat 4.9 underneath, with a product layer for display type, motion and the sky" },
-    { label: "Live", value: "Running on Vercel", href: "https://world-of-raptors.vercel.app" },
+    { label: "Live", value: "worldofraptors.com", href: "https://worldofraptors.com/" },
     { label: "Source", value: "Public, the whole history included", href: "https://github.com/Konstancja-Tanjga/world-of-raptors" },
     { label: "Period", value: "October 2026; the course has grown since, figures as of 1 November 2026" },
   ],
