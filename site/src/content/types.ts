@@ -379,7 +379,19 @@ export type Block =
    * view while the text scrolls. For a flow that is best explained while
    * it plays, such as voice mode.
    */
-  | { kind: "beside"; html: string; video: { src: string; poster?: string; title: string }; caption?: string }
+  | {
+      kind: "beside";
+      html: string;
+      /**
+       * `mockup` says the clip already contains its phone: a drawn frame on
+       * the case ground, as the Flow Logistics clips are. The player then
+       * takes the clip's own aspect ratio and draws no frame of its own, so
+       * the phone is shown whole instead of cropped to the bare-screen
+       * stage that the Elly voice clip fills.
+       */
+      video: { src: string; poster?: string; title: string; mockup?: boolean };
+      caption?: string;
+    }
   /**
    * One screen of the product taken apart in 3D on scroll: layout,
    * components, tokens, one pixel (system/Exploded.tsx; screens in

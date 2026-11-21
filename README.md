@@ -91,7 +91,7 @@ Anthropic's, not mine, linked rather than copied in.
 | Band | | |
 |---|---|---|
 | **Products** | 9 walls | APplus Analytics · Elly · APplus Documents · APplus Best Practice Hub · Volvo · MojePZU · APplus Flow mode · Xecta · Riyad Bank |
-| **Practice** | 6 walls | Client 360 for wealth advisors (Salesforce FSC) · World of Raptors · Tinder for Chihuahua · FOX design system · Big Hat design system · Futures Thinking |
+| **Practice** | 7 walls | Client 360 for wealth advisors (Salesforce FSC) · SailRock · World of Raptors · Tinder for Chihuahua · FOX design system · Big Hat design system · Futures Thinking |
 | **Recognition** | 3 short pages | ERP of the Year · Bydgoszcz · Possible Reality |
 
 Plus **Watercolours**: architecture, birds, animals, people. Kept off the work

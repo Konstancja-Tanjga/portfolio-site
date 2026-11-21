@@ -1,0 +1,75 @@
+import { openStage, shotPhone, shotScreen, scrollTo, scrollToEl, syncStatus } from './stage.mjs'
+const out = process.argv[2]
+const D = { exact: true }
+
+async function capture(name, st) {
+  await st.page.waitForTimeout(250)
+  await shotScreen(st.page, `${out}/screen-${name}.png`)
+  await shotPhone(st.page, `${out}/phone-${name}.png`, true)
+}
+async function fillDive(st, i, depth, time) {
+  await st.panel().getByLabel('Depth (m)', D).nth(i).fill(depth)
+  await st.panel().getByLabel('Bottom time (min)', D).nth(i).fill(time)
+}
+
+// 01 first run
+let st = await openStage({ dsf: 3, transparent: true, acknowledged: false })
+await st.app.getByRole('dialog').waitFor()
+await capture('01-first-run', st)
+await st.browser.close()
+
+// 02-07 no-deco day
+st = await openStage({ dsf: 3, transparent: true })
+await fillDive(st, 0, '20', '28')
+await st.panel().getByRole('switch').first().click()
+await st.frame.evaluate(() => document.activeElement?.blur())
+await scrollTo(st.frame, 0)
+await capture('02-no-deco-result', st)
+await st.panel().getByRole('button', { name: 'Add a repetitive dive' }).click()
+await st.panel().getByLabel('Previous dive ended').fill('13:00')
+await st.panel().getByLabel('This dive starts').fill('14:00')
+await fillDive(st, 1, '18', '20')
+await st.panel().getByRole('switch').nth(1).click()
+await st.frame.evaluate(() => document.activeElement?.blur())
+await scrollToEl(st.frame, st.panel().getByRole('heading', { name: 'Dive 2' }), 70)
+await capture('03-repetitive-dive', st)
+await scrollToEl(st.frame, st.panel().locator('.sr-stats').nth(1), 16)
+await capture('04-gas', st)
+await scrollToEl(st.frame, st.panel().getByRole('heading', { name: 'Cylinder and gas consumption' }), 70)
+await capture('05-gas-settings', st)
+await st.panel().getByLabel('Plan name').fill('Hańcza, Saturday')
+await st.panel().getByRole('button', { name: 'Save the current plan' }).click()
+await st.frame.evaluate(() => document.activeElement?.blur())
+await scrollToEl(st.frame, st.panel().getByRole('heading', { name: 'Saved plans' }), 70)
+await capture('06-saved-plans', st)
+await st.panel().getByRole('button', { name: 'Show the slate' }).click()
+await st.app.getByRole('dialog', { name: 'Slate' }).waitFor()
+await capture('07-slate', st)
+await st.app.getByRole('dialog', { name: 'Slate' }).getByRole('button', { name: 'Close' }).last().click()
+await st.app.getByRole('dialog', { name: 'Slate' }).waitFor({ state: 'hidden' })
+
+// 08-09 deco from the table
+await st.app.getByRole('tab', { name: 'Deco', exact: true }).click()
+await fillDive(st, 0, '40', '30')
+await st.frame.evaluate(() => document.activeElement?.blur())
+await scrollTo(st.frame, 0)
+await capture('08-deco-result', st)
+await scrollToEl(st.frame, st.panel().getByText('Decompression stops').first(), 90)
+await capture('09-deco-stops', st)
+
+// 10 nitrox
+await st.app.getByRole('tab', { name: 'Nitrox', exact: true }).click()
+await st.panel().getByLabel('Planned depth (m)').fill('30')
+await st.frame.evaluate(() => document.activeElement?.blur())
+await scrollTo(st.frame, 0)
+await capture('10-nitrox', st)
+await st.browser.close()
+
+// 11 dark
+st = await openStage({ dsf: 3, transparent: true, dark: true })
+await fillDive(st, 0, '18', '40')
+await st.frame.evaluate(() => document.activeElement?.blur())
+await syncStatus(st.page, st.frame)
+await capture('11-dark', st)
+await st.browser.close()
+console.log('stills done')

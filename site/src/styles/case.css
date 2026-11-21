@@ -1696,6 +1696,8 @@ article { position: relative; z-index: 1; }
 .beside__text li { margin: 0.35em 0; }
 .beside__media { position: sticky; top: 5rem; margin: 0; display: grid; gap: var(--bh-space-2); justify-items: center; }
 .beside__player { display: block; width: auto; height: min(78vh, 42rem); max-width: 19rem; aspect-ratio: 634 / 1800; border-radius: 22px; border: 1px solid var(--kt-line); background: var(--kt-ground-2); box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.9); object-fit: cover; }
+/* a clip that carries its own phone (Flow Logistics): the clip's aspect, no second frame */
+.beside__player--mockup { aspect-ratio: 720 / 1506; border: 0; border-radius: 0; background: none; box-shadow: none; }
 .beside__caption { font-size: var(--bh-size-small); color: var(--kt-ink-3); text-align: center; }
 @media (max-width: 56rem) { .beside { grid-template-columns: 1fr; } .beside__media { position: static; } .beside__player { max-width: 16rem; } }
 @media (prefers-reduced-motion: reduce) { .beside { opacity: 1; transform: none; transition: none; } }

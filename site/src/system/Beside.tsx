@@ -10,7 +10,7 @@ import { Lane } from "./Wall";
  * once. The clip is muted, loops, plays only while on screen, and under
  * reduced motion shows its poster with a play button.
  */
-export function Beside({ html, video, caption }: { html: string; video: { src: string; poster?: string; title: string }; caption?: string }) {
+export function Beside({ html, video, caption }: { html: string; video: { src: string; poster?: string; title: string; mockup?: boolean }; caption?: string }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
   const player = useRef<HTMLVideoElement | null>(null);
   const [reduced] = useState(() => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -28,7 +28,7 @@ export function Beside({ html, video, caption }: { html: string; video: { src: s
         <figure className="beside__media">
           <video
             ref={player}
-            className="beside__player"
+            className={video.mockup ? "beside__player beside__player--mockup" : "beside__player"}
             poster={video.poster ? asset(video.poster) : undefined}
             title={video.title}
             muted
